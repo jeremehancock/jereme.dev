@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Pi Lab</title>
+    <link>http://velvethotdog.com:8080</link>
+    <description>Raspberry Pi Cluster</description>
+    <lastBuildDate>Fri, 17 May 2019 10:16:22 -0500</lastBuildDate>
+    <item>
+      <title>Random Goat</title>
+      <link>http://velvethotdog.com:8080/randomgoat</link>
+      <description>&lt;p&gt;Looking for random goat gifs? Look no further! &lt;/p&gt;
+&lt;p&gt;Powered by: &lt;a href="https://giphy.com"&gt;Giphy &lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://facebook.com/randomgoat"&gt;facebook.com/randomgoat&lt;/a&gt;  &lt;/li&gt;
+&lt;li&gt;&lt;a href="https://twitter.com/Random_Goat"&gt;@Random_Goat&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://giphy.com/randomgoat"&gt;giphy.com/randomgoat&lt;/a&gt; &lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="centered"&gt;
+&lt;iframe src='//randomgoat.com/embed.php' width='100%' height='500' frameBorder='0' id='random-goat-embed' allowFullScreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;h3&gt;Check it out at &lt;a href="https://randomgoat.com/"&gt;randomgoat.com&lt;/a&gt;!&lt;/h3&gt;</description>
+      <pubDate>Thu, 16 May 2019 23:45:12 -0500</pubDate>
+      <guid isPermaLink="false">393c200818d533248492f5bf17bffaf6</guid>
+    </item>
+    <item>
+      <title>Animal  TV Kodi  Addon</title>
+      <link>http://velvethotdog.com:8080/animal-tv-kodi-addon</link>
+      <description>&lt;p&gt;If you love to bird watch or going to the zoo you will love this Kodi addon!&lt;/p&gt;
+&lt;p&gt;Animal TV pulls all streams from &lt;a href="https://explore.org"&gt;Explore.org&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="centered"&gt;
+    &lt;img src="/bl-content/uploads/pages/742ad4233bf89bf642371bf15216842b/animal-tv-screenshot.png"/&gt;
+&lt;/div&gt;
+&lt;h3&gt;Check it out at &lt;a href="https://m7kodi.dev/"&gt;m7kodi.dev&lt;/a&gt;!&lt;/h3&gt;</description>
+      <pubDate>Thu, 16 May 2019 22:28:59 -0500</pubDate>
+      <guid isPermaLink="false">742ad4233bf89bf642371bf15216842b</guid>
+    </item>
+    <item>
+      <title>Bludit Mention</title>
+      <link>http://velvethotdog.com:8080/bludit-mention</link>
+      <description>&lt;p&gt;Thanks Dimo Belov (@DimoBelov) for the mention!&lt;/p&gt;
+&lt;blockquote class="twitter-tweet tw-align-center" data-lang="en"&gt;&lt;p lang="en" dir="ltr"&gt;Bludit is so lightweight and performant that it can easily be hosted on Raspberry Pi 2&lt;br&gt;Live demo and stack &lt;a href="https://t.co/A4oyUd66CQ"&gt;https://t.co/A4oyUd66CQ&lt;/a&gt;&lt;a href="https://twitter.com/hashtag/bludit?src=hash&amp;ref_src=twsrc%5Etfw"&gt;#bludit&lt;/a&gt;&lt;/p&gt;— Dimo Belov (@DimoBelov) &lt;a href="https://twitter.com/DimoBelov/status/1127111766046064640?ref_src=twsrc%5Etfw"&gt;May 11, 2019&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</description>
+      <pubDate>Wed, 15 May 2019 19:28:21 -0500</pubDate>
+      <guid isPermaLink="false">481e97ca001cee77e02fb7009ced50ca</guid>
+    </item>
+    <item>
+      <title>Bludit Flat File CMS</title>
+      <link>http://velvethotdog.com:8080/bludit-flat-file-cms</link>
+      <description>&lt;p&gt;Pi Lab is powered by &lt;a href="https://www.bludit.com"&gt;Bludit&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Bludit is an amazing Flat File CMS. There is no database to configure!&lt;/p&gt;
+&lt;p&gt;With a full featured plugin and theme system the ability to fully customize your setup is truly amazing. It is SEO friendly. It supports Markdown and HTML for your content and includes a Markdown Editor and WYSIWYG Editor.&lt;/p&gt;
+&lt;p&gt;If you are looking for a powerful and lean CMS I highly recommend Bludit.&lt;/p&gt;
+&lt;h3&gt;&lt;a href="https://www.bludit.com"&gt;Checkout Bludit&lt;/a&gt;&lt;/h3&gt;</description>
+      <pubDate>Mon, 13 May 2019 22:44:20 -0500</pubDate>
+      <guid isPermaLink="false">ac8ccb18a83431544795409cc634f1df</guid>
+    </item>
+    <item>
+      <title>Pi-hole is amazing!</title>
+      <link>http://velvethotdog.com:8080/pi-hole-is-amazing</link>
+      <description>&lt;p&gt;If you are tired of being bombarded by all of the internet advertisements online then you should give Pi-hole a try.&lt;/p&gt;
+&lt;p&gt;It is super simple to setup and get running. It not only blocks advertisements but also many sites that you might prefer your kids not see. With the ability to white-list or black-lists sites you can really fine tune things to your needs.&lt;/p&gt;
+&lt;p&gt;Since the blocking is done at the network level you are able to even block in-app advertising. &lt;/p&gt;
+&lt;p&gt;I recommend setting things up to cover your entire network. This requires a minor change in your router to point your DNS to the IP of the Pi-hole. It is nice to know that your entire network is instantly covered.&lt;/p&gt;
+&lt;p&gt;So far I haven't seen any negative effects or running Pi-hole. Our connection speeds have not suffered and no one in our home has had any issues with things getting blocked that shouldn't.&lt;/p&gt;
+&lt;h3&gt;&lt;a href="https://pi-hole.net"&gt;Checkout Pi-hole&lt;/a&gt;&lt;/h3&gt;</description>
+      <pubDate>Sat, 11 May 2019 22:38:01 -0500</pubDate>
+      <guid isPermaLink="false">0e9263b7d2f8b652caac722b98ae9511</guid>
+    </item>
+  </channel>
+</rss>

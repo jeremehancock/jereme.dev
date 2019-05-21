@@ -1,0 +1,16 @@
+{
+	"plugin-data":
+	{
+		"name": "tail.writer",
+		"description": "Ein ordentlicher, starker und erweiterbarer Markup ([GitHub Flavored] Markdown, BBCode, Textile) Editor, geschrieben in purem JavaScript!"
+	},
+	"Design": "Design",
+	"White": "Weiß",
+	"Dark": "Dunkel",
+	"GitHub": "GitHub",
+	"English": "Englisch",
+	"German": "Deutsch",
+	"Interface Language": "Sprachausgabe",
+	"Markup Language": "Markup Sprache",
+	"markup-support": "Die Textile und BBCode Markups werden direkt als HTML geparst und gespeichert, da Bludit aktuell keine anderen Markup Sprachen außer Markdown unterstützt!"
+}

@@ -1,0 +1,51 @@
+.sticky-header {
+    position: fixed;
+    box-shadow: 0 2px 2px -2px gray;
+    right: 0;
+    left: 0;
+    z-index: 999;
+}
+
+.body-padding {
+    margin-top: 100px;
+}
+
+.italic-link {
+    font-style: italic;
+}
+
+.hentry-border {
+    border: 1px solid #d4d3d3 !important;
+}
+
+.site-footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+@media (max-width : 1005px) {
+    .body-padding {
+        margin-top: 40px;
+    }
+
+    .entry-header-bg {
+        border-bottom: 1px solid #d4d3d3 !important;
+    }
+
+    .site-footer {
+        font-size: .6em;
+        max-height: 50px;
+        padding :5px;
+    }
+
+
+    .site-branding {
+        max-height: 30px;
+    }
+
+    .site-logo {
+        max-height: 30px;
+    }
+}
