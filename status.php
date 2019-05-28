@@ -1,9 +1,16 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
+<style>
+    .reload {
+        font-size: .7em !important;
+        font-style: italic;
+    }
+</style>
+
 <script>
     $(window).ready( function() {
 
-        var time = 5
+        var time = 5;
 
         setInterval( function() {
 
@@ -24,25 +31,25 @@
 
 <?php
     $server = $_SERVER['SERVER_ADDR'];
-    echo "IP: " . $server;
+    echo "<b>IP:</b> " . $server;
 
     echo "</br>";
 
     if ($server == '192.168.86.140') {
         if ($_SERVER['HTTP_HOST'] == "velvethotdog.com:8080") {
-            echo "Node: 1 (Dev Mode)";
+            echo "<b>Node:</b> 1 (Dev Mode)";
         } else {
-            echo "Node: 1";
+            echo "<b>Node:</b> 1";
         }
 
     } else if ($server == '192.168.86.141') {
-        echo "Node: 2";
+        echo "<b>Node:</b> 2";
     } else if ($server == '192.168.86.142') {
-        echo "Node: 3";
+        echo "<b>Node:</b> 3";
     }
     echo "</br>";
 
-    echo "Uptime: " . exec('uptime -p');
+    echo "<b>Uptime:</b> " . exec('uptime -p');
 
     echo "</br>";
 
@@ -50,5 +57,5 @@
 ?>
 
 </br>
-</br>
-<span>Reload in: </span><span id="time">5</span><span> seconds</span>
+
+<span class="reload">Reload in: </span><span class="reload" id="time">5</span><span class="reload"> seconds</span>
