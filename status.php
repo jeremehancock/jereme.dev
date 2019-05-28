@@ -22,9 +22,6 @@
     });
 </script>
 
-<span>Reload in: </span><span id="time">5</span><span> seconds</span>
-</br>
-</br>
 <?php
     $server = $_SERVER['SERVER_ADDR'];
     echo "IP: " . $server;
@@ -51,3 +48,7 @@
 
     echo exec('/home/pi/scripts/status/temp');
 ?>
+
+</br>
+</br>
+<span>Reload in: </span><span id="time">5</span><span> seconds</span>
