@@ -19,7 +19,7 @@
     </style>
 <body>
 <div class="content">
-    
+
 <script>
     $(window).ready( function() {
 
@@ -44,9 +44,6 @@
 
 <?php
     $server = $_SERVER['SERVER_ADDR'];
-    echo "<b>IP:</b> " . $server;
-
-    echo "</br>";
 
     if ($server == '192.168.86.140') {
         if ($_SERVER['HTTP_HOST'] == "velvethotdog.com:8080") {
@@ -60,6 +57,10 @@
     } else if ($server == '192.168.86.142') {
         echo "<b>Node:</b> 3";
     }
+    echo "</br>";
+
+    echo "<b>IP:</b> " . $server;
+
     echo "</br>";
 
     echo "<b>Uptime:</b> " . exec('uptime -p');
