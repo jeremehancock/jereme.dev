@@ -4,12 +4,13 @@
     <title>Pi Lab</title>
     <link>http://velvethotdog.com:8080</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Mon, 27 May 2019 21:43:20 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 27 May 2019 21:44:49 -0500</lastBuildDate>
     <item>
       <title>First CMS Upgrade</title>
       <link>http://velvethotdog.com:8080/first-cms-upgrade</link>
       <description>&lt;p&gt;Pi Lab has survived the first upgrade to the latest version of &lt;a href="https://www.bludit.com/"&gt;Bludit&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;I was concerned how this would go since I had things running so smoothly. It worked perfectly! &lt;/p&gt;
+&lt;p&gt;I was concerned how this would go since I had things running so smoothly.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;It worked perfectly! &lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Pi Lab is now setup to have a &amp;quot;source copy&amp;quot; on the main node that allows me to work on that version without affecting the live site. Once I have it working I simply run a script that I wrote to &amp;quot;promote&amp;quot; this &amp;quot;source copy&amp;quot; to all of the nodes. It also creates a backup on &lt;a href="https://github.com"&gt;GitHub&lt;/a&gt;. This gives me full redundancy and a keeps a historical record of any changes that I make.&lt;/p&gt;
 &lt;p&gt;The upgrade was as simple as copying the new version over my &amp;quot;source copy&amp;quot; of Pi Lab and then running my &amp;quot;promote&amp;quot; script. &lt;/p&gt;
 &lt;p&gt;I am working on getting a post together to give more information on how I have setup Pi Lab.&lt;/p&gt;</description>
