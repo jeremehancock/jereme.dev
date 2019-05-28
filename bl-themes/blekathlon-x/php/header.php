@@ -20,29 +20,7 @@
 		</div>
 		<div class="main-navigation-wrapper" id="main-navigation-wrapper">
 			<nav id="site-navigation" class="main-navigation" role="navigation">
-<!--                <h2>Categories</h2>-->
-<!--				<ul class="primary-menu">-->
-<!--					--><?php //if($site->homepage()):?>
-<!--					<li class="nav-item">-->
-<!--						<a class="nav-link" href="--><?php //echo DOMAIN_BASE.$url->filters('blog').'/'; ?><!--">-->
-<!--							--><?php //echo $L->get('Blog'); ?>
-<!--						</a>-->
-<!--					</li>-->
-<!--					--><?php //endif;?>
-<!---->
-<!--					--><?php //foreach ($categories->db as $key=>$fields):
-//                              if($fields['list']):  ?>
-<!--					<li class="nav-item">-->
-<!--						<a class="nav-link" href="--><?php //echo DOMAIN_CATEGORIES.$key; ?><!--">-->
-<!--							--><?php //echo $fields['name']; ?>
-<!--						</a>-->
-<!--					</li>-->
-<!--					--><?php
-//                              endif;
-//                          endforeach; ?>
-<!--				</ul>				-->
 			     <?php Theme::plugins('siteSidebar') ?>
-
 			</nav>
 		</div>
 
@@ -72,19 +50,14 @@
 			<label class="search-overlay" for="search-toggle"></label>
 			<div class="search-inner" role="search">
 				<div class="search-form" name="search">
-					<label class="search-icon" for="search-toggle">
-						<svg viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="currentcolor" stroke-width="2">
-							<path d="M10 6 L2 16 10 26 M2 16 L30 16"></path>
-						</svg>
-					</label>
 
 					<input type="text" class="search-input" name="query" placeholder="<?php echo $L->get('Search');?>" autocorrect="off" autocomplete="off" spellcheck="false" />
 
-					<div class="search-icon reset-search" tabindex="-1">
+					<label class="search-icon-x reset-search" for="search-toggle">
 						<svg viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="currentcolor" stroke-width="2">
 							<path d="M2 30 L30 2 M30 30 L2 2"></path>
 						</svg>
-					</div>
+					</label>
 				</div>
 				<div class="search-output">
 					<div class="search-scrollwrap" data-scrollfix="">
