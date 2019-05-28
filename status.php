@@ -16,6 +16,14 @@
             font-size: .7em !important;
             font-style: italic;
         }
+
+        @media only screen and (max-device-width : 1005px) {
+            .content {
+                font-size: 1.5em;
+                font-family: Lora;
+                color: #303030;
+            }
+        }
     </style>
 <body>
 <div class="content">

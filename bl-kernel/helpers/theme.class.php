@@ -199,8 +199,9 @@ class Theme {
 
 		$links = '';
 		foreach($files as $file) {
-			$links .= '<link rel="stylesheet" type="text/css" href="'.$base.$file.'?version='.BLUDIT_VERSION.'">'.PHP_EOL;
-		}
+//			$links .= '<link rel="stylesheet" type="text/css" href="'.$base.$file.'?version='.BLUDIT_VERSION.'">'.PHP_EOL;
+            $links .= '<link rel="stylesheet" type="text/css" href="'.$base.$file.'">'.PHP_EOL;
+        }
 
 		return $links;
 	}
