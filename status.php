@@ -53,7 +53,7 @@
 <?php
     $server = $_SERVER['SERVER_ADDR'];
 
-    $uptime = exec("uptime -p");
+    $uptime = exec("uptime -p | sed 's/\up//g'");
 
     if ($server == '192.168.86.140') {
         if ($_SERVER['HTTP_HOST'] == "velvethotdog.com:8080") {
