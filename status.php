@@ -24,7 +24,7 @@
 
 <span>Reload in: </span><span id="time">5</span><span> seconds</span>
 </br>
-
+</br>
 <?php
     $server = $_SERVER['SERVER_ADDR'];
     echo "IP: " . $server;
