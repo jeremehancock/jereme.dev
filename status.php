@@ -53,6 +53,8 @@
 <?php
     $server = $_SERVER['SERVER_ADDR'];
 
+    $uptime = exec('uptime -p | tr --delete up');
+
     if ($server == '192.168.86.140') {
         if ($_SERVER['HTTP_HOST'] == "velvethotdog.com:8080") {
             echo "<b>Node:</b> 1 (Dev Mode)";
@@ -71,7 +73,7 @@
 
     echo "</br>";
 
-    echo "<b>Uptime:</b> " . exec('uptime -p');
+    echo "<b>Uptime:</b> $uptime";
 
     echo "</br>";
 
