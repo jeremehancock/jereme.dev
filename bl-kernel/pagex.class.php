@@ -76,8 +76,10 @@ class Page {
 		$content = $this->contentRaw();
 
 		// Parse Markdown
-		$parsedown = new Parsedown();
-		$content = $parsedown->text($content);
+		if (MARKDOWN_PARSER) {
+			$parsedown = new Parsedown();
+			$content = $parsedown->text($content);
+		}
 
 		// Parse img src relative to absolute (with domain)
 		if (IMAGE_RELATIVE_TO_ABSOLUTE) {
@@ -359,6 +361,12 @@ class Page {
 	public function draft()
 	{
 		return ($this->getValue('type')=='draft');
+	}
+
+	// (boolean) Returns TRUE if the page is autosave, FALSE otherwise
+	public function autosave()
+	{
+		return ($this->getValue('type')=='autosave');
 	}
 
 	// (boolean) Returns TRUE if the page is sticky, FALSE otherwise

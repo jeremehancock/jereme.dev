@@ -7,13 +7,14 @@
 	<meta name="robots" content="noindex,nofollow">
 
 	<!-- Favicon -->
-	<link rel="shortcut icon" type="image/x-icon" href="<?php echo HTML_PATH_ADMIN_THEME.'img/favicon.png?version='.BLUDIT_VERSION ?>">
+	<link rel="shortcut icon" type="image/x-icon" href="<?php echo HTML_PATH_CORE_IMG.'favicon.png?version='.BLUDIT_VERSION ?>">
 
 	<!-- CSS -->
 	<?php
 		echo Theme::cssBootstrap();
 		echo Theme::css(array(
-			'bludit.css'
+			'bludit.css',
+			'bludit.bootstrap.css'
 		), DOMAIN_ADMIN_THEME_CSS);
 	?>
 

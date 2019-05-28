@@ -8,16 +8,17 @@
 	<meta name="generator" content="Bludit">
 
 	<!-- Favicon -->
-	<link rel="shortcut icon" type="image/x-icon" href="<?php echo DOMAIN_ADMIN_THEME.'img/favicon.png?version='.BLUDIT_VERSION ?>">
+	<link rel="shortcut icon" type="image/x-icon" href="<?php echo HTML_PATH_CORE_IMG.'favicon.png?version='.BLUDIT_VERSION ?>">
 
 	<!-- CSS -->
 	<?php
-		echo Theme::cssBootstrap();
+		echo Theme::cssBootstrap(); // Bootstrap
+		echo Theme::cssLineAwesome(); // Icons
 		echo Theme::css(array(
 			'jquery-auto-complete.css',
-			'open-iconic-bootstrap.min.css',
 			'jquery.datetimepicker.min.css',
-			'bludit.css'
+			'bludit.css',
+			'bludit.bootstrap.css'
 		), DOMAIN_ADMIN_THEME_CSS);
 	?>
 

@@ -2,7 +2,7 @@
 
 <?php
 
-echo Bootstrap::pageTitle(array('title'=>$L->g('Users'), 'icon'=>'people'));
+echo Bootstrap::pageTitle(array('title'=>$L->g('Users'), 'icon'=>'users'));
 
 echo Bootstrap::link(array(
 	'title'=>$L->g('add-a-new-user'),
@@ -30,7 +30,7 @@ foreach ($list as $username) {
 	try {
 		$user = new User($username);
 		echo '<tr>';
-		echo '<td><img class="profilePicture mr-1" alt="" src="'.(Sanitize::pathFile(PATH_UPLOADS_PROFILES.$user->username().'.png')?DOMAIN_UPLOADS_PROFILES.$user->username().'.png':HTML_PATH_ADMIN_THEME_IMG.'default.svg').'" /><a href="'.HTML_PATH_ADMIN_ROOT.'edit-user/'.$username.'">'.$username.'</a></td>';
+		echo '<td><img class="profilePicture mr-1" alt="" src="'.(Sanitize::pathFile(PATH_UPLOADS_PROFILES.$user->username().'.png')?DOMAIN_UPLOADS_PROFILES.$user->username().'.png':HTML_PATH_CORE_IMG.'default.svg').'" /><a href="'.HTML_PATH_ADMIN_ROOT.'edit-user/'.$username.'">'.$username.'</a></td>';
 		echo '<td class="d-none d-lg-table-cell">'.$user->nickname().'</td>';
 		echo '<td>'.$user->email().'</td>';
 		echo '<td>'.($user->enabled()?'<b>'.$L->g('Enabled').'</b>':$L->g('Disabled')).'</td>';
@@ -38,6 +38,8 @@ foreach ($list as $username) {
 			echo '<td>'.$L->g('Administrator').'</td>';
 		} elseif ($user->role()=='editor') {
 			echo '<td>'.$L->g('Editor').'</td>';
+		} elseif ($user->role()=='author') {
+			echo '<td>'.$L->g('Author').'</td>';
 		} else {
 			echo '<td>'.$L->g('Reader').'</td>';
 		}

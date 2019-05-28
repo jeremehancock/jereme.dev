@@ -4,7 +4,7 @@
     <title>Pi Lab</title>
     <link>http://velvethotdog.com:8080</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Fri, 17 May 2019 10:16:22 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 27 May 2019 19:32:17 -0500</lastBuildDate>
     <item>
       <title>Random Goat</title>
       <link>http://velvethotdog.com:8080/randomgoat</link>
@@ -55,16 +55,12 @@
       <guid isPermaLink="false">ac8ccb18a83431544795409cc634f1df</guid>
     </item>
     <item>
-      <title>Pi-hole is amazing!</title>
-      <link>http://velvethotdog.com:8080/pi-hole-is-amazing</link>
-      <description>&lt;p&gt;If you are tired of being bombarded by all of the internet advertisements online then you should give Pi-hole a try.&lt;/p&gt;
-&lt;p&gt;It is super simple to setup and get running. It not only blocks advertisements but also many sites that you might prefer your kids not see. With the ability to white-list or black-lists sites you can really fine tune things to your needs.&lt;/p&gt;
-&lt;p&gt;Since the blocking is done at the network level you are able to even block in-app advertising. &lt;/p&gt;
-&lt;p&gt;I recommend setting things up to cover your entire network. This requires a minor change in your router to point your DNS to the IP of the Pi-hole. It is nice to know that your entire network is instantly covered.&lt;/p&gt;
-&lt;p&gt;So far I haven't seen any negative effects or running Pi-hole. Our connection speeds have not suffered and no one in our home has had any issues with things getting blocked that shouldn't.&lt;/p&gt;
-&lt;h3&gt;&lt;a href="https://pi-hole.net"&gt;Checkout Pi-hole&lt;/a&gt;&lt;/h3&gt;</description>
-      <pubDate>Sat, 11 May 2019 22:38:01 -0500</pubDate>
-      <guid isPermaLink="false">0e9263b7d2f8b652caac722b98ae9511</guid>
+      <title>Stats</title>
+      <link>http://velvethotdog.com:8080/pi-lab-stats</link>
+      <description>&lt;iframe width="100%" height="1500" src="https://status.pilab.dev" frameborder="0"&gt;&lt;/iframe&gt;
+&lt;p&gt;&lt;a href="https://status.pilab.dev"&gt;View Fullscreen&lt;/a&gt;&lt;/p&gt;</description>
+      <pubDate>Sun, 12 May 2019 20:36:47 -0500</pubDate>
+      <guid isPermaLink="false">50e60cf8d7d73957bf263265a2581ba2</guid>
     </item>
   </channel>
 </rss>
