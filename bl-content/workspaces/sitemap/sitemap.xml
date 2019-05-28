@@ -4,6 +4,11 @@
     <loc>http://velvethotdog.com:8080</loc>
   </url>
   <url>
+    <loc>http://velvethotdog.com:8080/first-cms-upgrade</loc>
+    <lastmod>2019-05-27</lastmod>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
     <loc>http://velvethotdog.com:8080/randomgoat</loc>
     <lastmod>2019-05-16</lastmod>
     <changefreq>daily</changefreq>

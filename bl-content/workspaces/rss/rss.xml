@@ -4,7 +4,18 @@
     <title>Pi Lab</title>
     <link>http://velvethotdog.com:8080</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Mon, 27 May 2019 21:07:35 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 27 May 2019 21:39:40 -0500</lastBuildDate>
+    <item>
+      <title>First CMS Upgrade</title>
+      <link>http://velvethotdog.com:8080/first-cms-upgrade</link>
+      <description>&lt;p&gt;Pi Lab has survived the first upgrade to the latest version of &lt;a href="https://www.bludit.com/"&gt;Bludit&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I was concerned how this would go since I had things running so smoothly. It worked perfectly! &lt;/p&gt;
+&lt;p&gt;Pi Lab is now setup to have a &amp;quot;source copy&amp;quot; on the main node that allows me to work on that version without affecting the live site. Once I have it working I simply run a script that I wrote to &amp;quot;promote&amp;quot; this &amp;quot;source copy&amp;quot; to all of the nodes. It also creates a backup on &lt;a href="https://github.com"&gt;GitHub&lt;/a&gt;. This gives me full redundancy and a keeps a historical record of any changes that I make.&lt;/p&gt;
+&lt;p&gt;The upgrade was as simple as copying the new version over my &amp;quot;source copy&amp;quot; of Pi Lab and then running my &amp;quot;promote&amp;quot; script. &lt;/p&gt;
+&lt;p&gt;I am working on getting a post together to give more information on how I have setup Pi Lab.&lt;/p&gt;</description>
+      <pubDate>Mon, 27 May 2019 21:14:23 -0500</pubDate>
+      <guid isPermaLink="false">6bef1d6939b8b0d64ff01d308792dccf</guid>
+    </item>
     <item>
       <title>Random Goat</title>
       <link>http://velvethotdog.com:8080/randomgoat</link>
@@ -53,15 +64,6 @@
 &lt;h3&gt;&lt;a href="https://www.bludit.com"&gt;Checkout Bludit&lt;/a&gt;&lt;/h3&gt;</description>
       <pubDate>Mon, 13 May 2019 22:44:20 -0500</pubDate>
       <guid isPermaLink="false">ac8ccb18a83431544795409cc634f1df</guid>
-    </item>
-    <item>
-      <title>Stats</title>
-      <link>http://velvethotdog.com:8080/pi-lab-stats</link>
-      <description>&lt;iframe  width="100%" height="255"  src="status.php" frameborder="0"&gt;&lt;/iframe&gt;
-&lt;iframe width="100%" height="1500" src="https://status.pilab.dev" frameborder="0"&gt;&lt;/iframe&gt;
-&lt;p&gt;&lt;a href="https://status.pilab.dev"&gt;View Fullscreen&lt;/a&gt;&lt;/p&gt;</description>
-      <pubDate>Sun, 12 May 2019 20:36:47 -0500</pubDate>
-      <guid isPermaLink="false">50e60cf8d7d73957bf263265a2581ba2</guid>
     </item>
   </channel>
 </rss>
