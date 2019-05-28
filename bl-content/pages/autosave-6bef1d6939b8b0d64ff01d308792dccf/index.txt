@@ -1,0 +1,11 @@
+Pi Lab has survived the first upgrade to the latest version of [Bludit](https://www.bludit.com/).
+
+I was concerned how this would go since I had things running so smoothly. 
+
+***It worked perfectly! ***
+
+Pi Lab is now setup to have a "source copy" on the main node that allows me to work on that version without affecting the live site. Once I have it working I simply run a script that I wrote to "promote" this "source copy" to all of the nodes. It also creates a backup on [GitHub](https://github.com). This gives me full redundancy and a keeps a historical record of any changes that I make.
+
+The upgrade was as simple as copying the new version over my "source copy" of Pi Lab and then running my "promote" script. 
+
+I am working on getting a post together to give more information on how I have setup Pi Lab.
