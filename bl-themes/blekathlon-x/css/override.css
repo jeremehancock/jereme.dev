@@ -18,7 +18,7 @@
     border: 1px solid #d4d3d3 !important;
 }
 
-.page-content, .entry-header, .entry-content {
+.page-content, .entry-header, .entry-content, .entry-footer {
     max-width: 1000px;
 }
 
