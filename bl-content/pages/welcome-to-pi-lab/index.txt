@@ -1,3 +1,9 @@
+<style>
+	.page-content, .entry-header, .entry-content {
+    max-width: 740px;
+}
+</style>
+
 <div class="centered">
     <img src="/bl-content/uploads/pages/ae6baedd36be1d5b3fa9ec0d872cc735/picluster.jpg"/>
 </div>
