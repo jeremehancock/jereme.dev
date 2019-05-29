@@ -4,24 +4,24 @@
     <title>Pi Lab</title>
     <link>http://velvethotdog.com:8080</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Tue, 28 May 2019 23:24:53 -0500</lastBuildDate>
+    <lastBuildDate>Tue, 28 May 2019 23:40:00 -0500</lastBuildDate>
     <item>
       <title>Pi Lab Setup</title>
       <link>http://velvethotdog.com:8080/pi-lab-setup</link>
       <description>&lt;p&gt;I have received several requests to post more details on how I setup Pi Lab. The majority of these requests were from people wanting information on how I setup &lt;a href="https://bludit.com"&gt;Bludit&lt;/a&gt; to work on a Raspberry Pi cluster. &lt;/p&gt;
 &lt;p&gt;This post will not attempt to be a step by step guide or an exhaustive guide on setting up a Raspberry Pi cluster. I will simply highlight the specific challenges that I had with setting Pi Lab up to properly run  &lt;a href="https://bludit.com"&gt;Bludit&lt;/a&gt;. &lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Note: This is &lt;strong&gt;NOT&lt;/strong&gt; a copy paste how-to. It is an overview. I will include reference articles thoughout that I used during the setup of Pi Lab.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Note&lt;/strong&gt;: This is NOT a copy paste how-to. It is an overview. I will include reference articles thoughout that I used during the setup of Pi Lab.&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3&gt;Raspberry Pi Cluster&lt;/h3&gt;
 &lt;p&gt;I am using four Raspberry Pi 2 Model Bs. One is used as the Load Balancer and the other three are setup as the web nodes. I am using NGINX as the Load Balancer and Web Server. Here is one of the many articles that I used to setup NGINX and php-fpm on each of the nodes.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://www.raspberrypi.org/documentation/remote-access/web-server/nginx.md"&gt;Setting up an NGINX web server on a Raspberry Pi&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Once each node was setup with NGINX and/or php-fpm I setup the load balancing. This is done on the Load Balancing Node. &lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Tip:&lt;/strong&gt; I recommend setting up the hostnames for each Pi so that it is easy to remember which Pi is which. I chose pi0, pi1, pi2, and pi3. pi0 being the Load Balancer&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Tip&lt;/strong&gt;: I recommend setting up the hostnames for each Pi so that it is easy to remember which Pi is which. I chose pi0, pi1, pi2, and pi3. pi0 being the Load Balancer&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h5&gt;Example Load Balancer NGINX conf&lt;/h5&gt;
-&lt;p&gt;This example NGINX conf file assumes that you have already setup Let's Encrypt for your domain (production-domain.com www.production-domain.com). I used several articles to learn how to best install Let's Encrypt with the Pi Lab setup. So I don't have a single article to reference. &lt;/p&gt;
+&lt;p&gt;This example NGINX conf file assumes that you have already setup Let's Encrypt for your domain (&lt;em&gt;production-domain.com, www.production-domain.com&lt;/em&gt;). I used several articles to learn how to best install Let's Encrypt with the Pi Lab setup. So I don't have a single article to reference. &lt;/p&gt;
 &lt;p&gt;Port forwarding is also assumed. Since Port Forwarding works differently depending on your home network I will leave that for you to Google. Here is a decent article covering Port Forwarding. &lt;a href="https://www.noip.com/support/knowledgebase/general-port-forwarding-guide/"&gt;How to Port Forward – General Guide to Multiple Router Brands&lt;/a&gt;. &lt;/p&gt;
 &lt;p&gt;This example also includes specific recommendations from the &lt;a href="https://docs.bludit.com/en/webservers/nginx"&gt;Bludit Docs&lt;/a&gt; as well as other specific configuration options such as forcing SSL and non-www on the domain.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;user www-data;
