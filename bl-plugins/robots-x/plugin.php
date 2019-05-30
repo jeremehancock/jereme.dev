@@ -5,7 +5,8 @@ class pluginRobotsX extends Plugin {
 	public function init()
 	{
 		$this->dbFields = array(
-			'robotstxt'=>'User-agent: *'.PHP_EOL.'Allow: /'
+			'robotstxt'=>'User-agent: *'.PHP_EOL.'Allow: /',
+			'porttxt'=>'8000'
 		);
 	}
 
@@ -18,6 +19,8 @@ class pluginRobotsX extends Plugin {
 		$html .= '<div>';
 		$html .= '<label>'.DOMAIN.'/robots.txt</label>';
 		$html .= '<textarea name="robotstxt" id="jsrobotstxt">'.$this->getValue('robotstxt').'</textarea>';
+		$html .= '<label>Port to deny all</label>';
+		$html .= '<textarea name="porttxt" id="jsporttxt">'.$this->getValue('porttxt').'</textarea>';
 		$html .= '</div>';
 
 		return $html;
@@ -58,7 +61,7 @@ class pluginRobotsX extends Plugin {
 		$webhook = 'robots.txt';
 		if ($this->webhook($webhook)) {
 
-            if ($_SERVER['SERVER_PORT'] == '8080') {
+            if ($_SERVER['SERVER_PORT'] == $this->getValue('porttxt')) {
                 header('X-Robots-Tag: noindex');
                 echo "User-agent: *\r\nDisallow: /";
             }
