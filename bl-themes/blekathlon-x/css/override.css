@@ -61,6 +61,31 @@
     font-style: italic;;
 }
 
+.menu-social a, .menu-social a:visited {
+    color: #e6e6e6;
+}
+
+.menu-social a:hover, .menu-social a:focus, .menu-social a:active {
+    background-color: transparent;
+    color: #ffffff;
+}
+
+.menu-social a {
+     background-color: transparent;
+     border-bottom: none;
+     border-radius: 0;
+     display: inline;
+     position: relative;
+     width: auto;
+     height: auto;
+}
+
+.menu-social {
+    font-size: .8em;
+    position: relative;
+    top: -30px;
+}
+
 @media (max-width : 1005px) {
     .body-padding {
         margin-top: 40px;
@@ -73,7 +98,7 @@
     .site-footer {
         font-size: .6em;
         max-height: 50px;
-        padding :5px;
+        padding :10px;
     }
 
 
