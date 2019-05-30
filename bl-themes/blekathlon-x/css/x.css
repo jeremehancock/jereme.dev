@@ -82,6 +82,7 @@
 
 .menu-social {
     font-size: .8em;
+    font-family: "Lora",sans-serif;
     position: relative;
     top: -30px;
 }
@@ -108,7 +109,7 @@
     }
 
     .site-footer {
-        font-size: .6em;
+        font-size: .8em;
         max-height: 50px;
         padding :10px;
     }
@@ -123,6 +124,7 @@
     }
 
     .menu-social {
+        font-size: 1em;
         top: -5px;
     }
 }
