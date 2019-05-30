@@ -109,4 +109,8 @@
     .site-logo {
         max-height: 30px;
     }
+
+    .menu-social {
+        top: -5px;
+    }
 }
