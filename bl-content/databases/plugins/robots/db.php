@@ -1,2 +1,2 @@
 <?php defined('BLUDIT') or die('Bludit CMS.'); ?>
-{"position":1,"robotstxt":"User-agent: *\r\nAllow: \/"}
+{"position":1,"robotstxt":"User-agent: *\r\nDisallow: \/bl-content\/\r\nDisallow: \/bl-kernel\/\r\nDisallow: \/bl-languages\/\r\nDisallow: \/bl-plugins\/\r\nDisallow: \/bl-themes\/"}
