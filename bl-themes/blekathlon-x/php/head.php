@@ -7,7 +7,7 @@
 
 <?php echo Theme::favicon('img/favicon.ico'); ?>
 <?php echo Theme::css('css/style.min.css'); ?>
-<?php echo Theme::css('css/override.css'); ?>
+<?php echo Theme::css('css/x.css'); ?>
 <?php Theme::plugins('siteHead'); ?>
 
 <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700|Roboto:400,400i,700" rel="stylesheet" />
