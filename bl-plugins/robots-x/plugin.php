@@ -58,7 +58,7 @@ class pluginRobotsX extends Plugin {
 		$webhook = 'robots.txt';
 		if ($this->webhook($webhook)) {
 
-            if ($_SERVER['SERVER_PORT'] != '80' || $_SERVER['SERVER_PORT'] != '443') {
+            if ($_SERVER['SERVER_PORT'] == '8080') {
                 header('X-Robots-Tag: noindex');
                 echo "User-agent: *\r\nDisallow: /";
             }
