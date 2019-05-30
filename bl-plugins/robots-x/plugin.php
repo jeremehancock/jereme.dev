@@ -63,7 +63,7 @@ class pluginRobotsX extends Plugin {
 
             if ($_SERVER['SERVER_PORT'] == $this->getValue('porttxt')) {
                 header('X-Robots-Tag: noindex');
-                echo "User-agent: *\r\nDisallow: /";
+                echo "User-agent: *\nDisallow: /";
             }
             else {
                 header('Content-type: text/plain');
