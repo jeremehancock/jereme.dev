@@ -20,7 +20,7 @@ class pluginRobotsX extends Plugin {
 		$html .= '<label>'.DOMAIN.'/robots.txt</label>';
 		$html .= '<textarea name="robotstxt" id="jsrobotstxt">'.$this->getValue('robotstxt').'</textarea>';
 		$html .= '<label>Port to deny all</label>';
-		$html .= '<textarea name="porttxt" id="jsporttxt">'.$this->getValue('porttxt').'</textarea>';
+        $html .= '<input type="text" name="porttxt" id="jsporttxt" value="'.$this->getValue('porttxt').'">';
 		$html .= '</div>';
 
 		return $html;
