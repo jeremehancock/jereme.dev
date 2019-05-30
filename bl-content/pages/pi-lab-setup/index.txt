@@ -102,13 +102,13 @@ At this point I had [Bludit](https://bludit.com) setup and installed on my "prim
 
 Now I simply copied the contents of "/var/www/html" from my "primary" web node to the other two nodes. Once copied I put the other two nodes back into rotation and restarted NGINX. 
 
-At this point I had [Bludit](https://bludit.com) setup and running on a load balanced cluster. This was great, however, there was an issue. I couldn't login to the [Bludit](https://bludit.com) Admin panel. This is due to the way that sessions are handled. There are several ways that I could solve this. I could have gone the route of using a singe NFS so that each web node would actually read the files from a single source. I didn't like this since one of the reasons that I wanted to run a cluster was for the redundancy. 
+At this point I had [Bludit](https://bludit.com) setup and running on a load balanced cluster. This was great, however, there was an issue. I couldn't login to the [Bludit](https://bludit.com) Admin panel. This is due to the way that sessions are handled. There are several ways that I could solve this. I could have gone the route of using NFS so that each web node would actually read the files from a single source. I didn't like this since one of the reasons that I wanted to run a cluster was for the redundancy. 
 
 So I decided to setup a seperate installation of [Bludit](https://bludit.com) on the "primary" web node in a different directory using a different domain and port. This copy serves as my source of truth and a "sandbox" to try things before I push them live. 
 
 ### Bludit Dev Setup
 
-For this portion I setup a Port Forwarding for a different domain on a different port to point directly to my "primary" web node. Below is an example of the NGINX configuration that I setup in "/etc/nginx/sites-enabled" on the "primary" web node.
+For this portion I setup Port Forwarding for a different domain on a different port to point directly to my "primary" web node. Below is an example of the NGINX configuration that I setup in "/etc/nginx/sites-enabled" on the "primary" web node.
 
 ##### Example NGINX conf
 ```
