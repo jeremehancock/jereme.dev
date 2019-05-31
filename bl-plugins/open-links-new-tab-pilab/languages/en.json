@@ -1,0 +1,7 @@
+{
+	"plugin-data":
+	{
+		"name": "target='_blank' - Pi Lab",
+		"description": "Open all links in pages in new tabs."
+	}
+}

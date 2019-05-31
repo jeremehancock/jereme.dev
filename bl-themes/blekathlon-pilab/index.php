@@ -21,8 +21,6 @@
 
     <?php echo Theme::javascript('js/bundle.min.js'); ?>
 
-    <?php echo Theme::javascript('js/_blank.js'); ?>
-
     <?php //Theme::plugins('siteBodyEnd'); ?>
 
 </body>
