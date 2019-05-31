@@ -1,0 +1,10 @@
+{
+	"author": "Pi Lab",
+	"email": "",
+	"website": "https://pilab.dev",
+	"version": "x.x.x",
+	"releaseDate": "2019-05-30",
+	"license": "MIT",
+	"compatible": "3.0",
+	"notes": "Credit to BlThemes for the original version."
+}

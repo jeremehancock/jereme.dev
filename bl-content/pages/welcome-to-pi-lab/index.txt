@@ -18,7 +18,7 @@
 -    **Webserver/Load Balancer:** [Nginx](https://nginx.org/)
 -    **SSL:** [Let's Encrypt](https://letsencrypt.org/)
 -    **CMS:** [Bludit - v3.9.1](https://www.bludit.com/)
--    **Theme:** [Blekathlon](https://blthemes.pp.ua/) (Customized)
+-    **Theme:** [Blekathlon](https://blthemes.pp.ua/) (Pi Lab Version)
 -    **Network** 
     -    [Linksys WRT1900AC](https://www.linksys.com/us/support-product?pid=01t80000003KdJ7AAK)
     -    [Netgear ProSAFE GS105](https://www.netgear.com/support/product/GS105v5)
