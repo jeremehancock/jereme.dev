@@ -1,6 +1,6 @@
 <?php
 
-class pluginRobotsX extends Plugin {
+class pluginRobotsPiLab extends Plugin {
 
 	public function init()
 	{
@@ -12,15 +12,25 @@ class pluginRobotsX extends Plugin {
 
 	public function form()
 	{
-		$html  = '<div class="alert alert-primary" role="alert">';
+        global $L;
+
+        $html  = '<div class="alert alert-primary" role="alert">';
 		$html .= $this->description();
 		$html .= '</div>';
+
+        // Check if the Bludit plugin Simple Stats is activated
+        if (pluginActivated('pluginRobots')) {
+            // Show an alert about the conflict of the original plugin
+            $html .= '<div class="alert alert-warning" role="alert">';
+            $html .= $L->get('robots-plugin-active-warning');
+            $html .= '</div>';
+        }
 
 		$html .= '<div>';
 		$html .= '<label>'.DOMAIN.'/robots.txt</label>';
 		$html .= '<textarea name="robotstxt" id="jsrobotstxt">'.$this->getValue('robotstxt').'</textarea>';
 		$html .= '<label>Port to deny all</label>';
-        $html .= '<input type="text" name="porttxt" id="jsporttxt" value="'.$this->getValue('porttxt').'">';
+        $html .= '<input type="number" name="porttxt" id="jsporttxt" value="'.$this->getValue('porttxt').'">';
 		$html .= '</div>';
 
 		return $html;

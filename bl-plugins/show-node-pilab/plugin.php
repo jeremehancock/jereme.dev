@@ -1,6 +1,6 @@
 <?php
 
-class pluginShowNode extends Plugin
+class pluginShowNodePiLab extends Plugin
 {
 
     public function init()
@@ -93,7 +93,7 @@ class pluginShowNode extends Plugin
         $html .= '<hr>';
 
         $html .= '<div class="alert alert-secondary" role="alert">';
-        
+
         // New node, when the user click on save button this call the method post()
         // and the new node is added to the database
         $html .= '<h4 class="mt-3">' . $L->get('Add a new node') . '</h4>';

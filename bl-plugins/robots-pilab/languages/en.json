@@ -1,0 +1,8 @@
+{
+	"plugin-data":
+	{
+		"name": "Robots - Pi Lab",
+		"description": "You can use a special HTML meta tag to tell robots not to index the content of a page, and/or not scan it for links to follow.<br><br>This was built specifically for <a href='https://pilab.dev' target='_blank'>Pi Lab</a> and allows you to select a port to deny all on."
+	},
+		"robots-plugin-active-warning": "Bludit's 'Robots' plugin is still active... you are strongly advised to disable it."
+}
