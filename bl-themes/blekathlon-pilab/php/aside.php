@@ -64,7 +64,7 @@
 						</li>
 						<?php endforeach; ?>
                     </ul>
-                    <img src="bl-themes/blekathlon-x/img/poweredby.png" />
+                    <img src="bl-themes/blekathlon-pilab/img/poweredby.png" />
                     <span class="clear">
                         Powered By: <a target="_blank" class="text-white" href="https://www.raspberrypi.org">Raspberry Pi</a> & <a target="_blank" class="text-white" href="https://www.bludit.com">Bludit</a>
                     </span>
