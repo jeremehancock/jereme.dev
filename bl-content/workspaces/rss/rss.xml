@@ -4,7 +4,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Fri, 31 May 2019 00:15:16 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 31 May 2019 00:24:17 -0500</lastBuildDate>
     <item>
       <title>Pi Lab Setup</title>
       <link>https://pilab.dev/pi-lab-setup</link>
@@ -130,18 +130,15 @@ echo "Updating file permisions to 'pi:www-data'\n"
 sudo chown -R pi:www-data /var/www/dev
 
 echo "Updating url in settings\n"
-sudo sed -i 's/http/https/g' /var/www/dev/bl-content/databases/site.php
-sudo sed -i 's/development-domain.com:8000/production-domain.com/g' /var/www/dev/bl-content/databases/site.php
+sudo sed -i 's/http:\\\/\\\/development-domain.com:8000/https:\\\/\\\/production-domain.com/g' /var/www/dev/bl-content/databases/site.php
 echo "Complete\n"
 
 echo "Updating url in rss\n"
-sudo sed -i 's/http/https/g' /var/www/dev/bl-content/workspaces/rss/rss.xml
-sudo sed -i 's/development-domain.com:8000/production-domain.com/g' /var/www/dev/bl-content/workspaces/rss/rss.xml
+sudo sed -i 's/http:\/\/development-domain.com:8000/https:\/\/production-domain.com/g' /var/www/dev/bl-content/workspaces/rss/rss.xml
 echo "Complete\n"
 
 echo "Updating url in sitemap\n"
-sudo sed -i 's/http/https/g' /var/www/dev/bl-content/workspaces/sitemap/sitemap.xml
-sudo sed -i 's/development-domain.com:8000/production-domain.com/g' /var/www/dev/bl-content/workspaces/sitemap/sitemap.xml
+sudo sed -i 's/http:\/\/development-domain.com:8000/https:\/\/production-domain.com/g' /var/www/dev/bl-content/workspaces/sitemap/sitemap.xml
 echo "Complete\n"
 
 echo "Copying dev to html\n"
@@ -161,8 +158,7 @@ ssh pi@192.168.xx.xx3 'sudo chown -R www-data:www-data /var/www/html'
 echo "Complete\n"
 
 echo "Reverting url in settings\n"
-sudo sed -i 's/https/http/g' /var/www/dev/bl-content/databases/site.php
-sudo sed -i 's/production-domain.com/development-domain.com:8000/g' /var/www/dev/bl-content/databases/site.php
+sudo sed -i 's/https:\\\/\\\/production-domain.com/http:\\\/\\\/development-domain.com:8000/g' /var/www/dev/bl-content/databases/site.php
 echo "Complete\n"
 
 echo "Updating file permisions to 'www-data:'\n"
