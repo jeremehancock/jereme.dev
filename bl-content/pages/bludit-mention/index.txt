@@ -1,4 +1,8 @@
-Thanks Dimo Belov (@DimoBelov) for the mention!
+Thanks Dimo Belov ([@DimoBelov](https://twitter.com/DimoBelov)) for the mentions!
 
 <blockquote class="twitter-tweet tw-align-center" data-lang="en"><p lang="en" dir="ltr">Bludit is so lightweight and performant that it can easily be hosted on Raspberry Pi 2<br>Live demo and stack <a href="https://t.co/A4oyUd66CQ">https://t.co/A4oyUd66CQ</a><a href="https://twitter.com/hashtag/bludit?src=hash&ref_src=twsrc%5Etfw">#bludit</a></p>— Dimo Belov (@DimoBelov) <a href="https://twitter.com/DimoBelov/status/1127111766046064640?ref_src=twsrc%5Etfw">May 11, 2019</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<blockquote class="twitter-tweet  tw-align-center" data-lang="en"><p lang="en" dir="ltr">Nice article with details how to setup <a href="https://twitter.com/bludit?ref_src=twsrc%5Etfw">@Bludit</a> on  Raspberry PI. Also cover some advanced aspects such as auto replication of dev server to production with bash, load balancing with nginx.<a href="https://t.co/464jq9gGXs">https://t.co/464jq9gGXs</a></p>&mdash; Dimo Belov (@DimoBelov) <a href="https://twitter.com/DimoBelov/status/1134318134448365568?ref_src=twsrc%5Etfw">May 31, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
