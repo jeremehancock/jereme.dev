@@ -2,7 +2,9 @@
 	"plugin-data":
 	{
 		"name": "Show Node - Pi Lab",
-		"description": "TEST"
+		"description": "This plugin allows you to specify names for each IP in a webserver cluster.<br><br>This was built specifically for <a href='https://pilab.dev' target='_blank'>Pi Lab</a>, but can be used with any Bludit installation on a server cluster."
 	},
-	"add-a-new-node": "Add a new node"
+	"add-a-new-node": "Add Node",
+	"add-a-dev-port": "Dev Node Port",
+	"add-a-dev-name": "Dev Node Name"
 }
