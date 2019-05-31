@@ -2,12 +2,12 @@
 <rss version="2.0">
   <channel>
     <title>Pi Lab</title>
-    <link>http://velvethotdog.com:8080</link>
+    <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
     <lastBuildDate>Fri, 31 May 2019 00:15:16 -0500</lastBuildDate>
     <item>
       <title>Pi Lab Setup</title>
-      <link>http://velvethotdog.com:8080/pi-lab-setup</link>
+      <link>https://pilab.dev/pi-lab-setup</link>
       <description>&lt;p&gt;I have received several requests to post more details on how I setup Pi Lab. The majority of these requests were from people wanting information on how I setup &lt;a href="https://bludit.com"&gt;Bludit&lt;/a&gt; to work on a Raspberry Pi cluster. &lt;/p&gt;
 &lt;p&gt;This post will not attempt to be a step by step guide or an exhaustive guide on setting up a Raspberry Pi cluster. I will simply highlight the specific challenges that I had with setting Pi Lab up to properly run  &lt;a href="https://bludit.com"&gt;Bludit&lt;/a&gt;. &lt;/p&gt;
 &lt;blockquote&gt;
@@ -192,7 +192,7 @@ echo "Promote Complete\n"&lt;/code&gt;&lt;/pre&gt;
     </item>
     <item>
       <title>First CMS Upgrade</title>
-      <link>http://velvethotdog.com:8080/first-cms-upgrade</link>
+      <link>https://pilab.dev/first-cms-upgrade</link>
       <description>&lt;p&gt;Pi Lab has survived the first upgrade to the latest version of &lt;a href="https://www.bludit.com/"&gt;Bludit&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;I was concerned how this would go since I had things running so smoothly.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;It worked perfectly! &lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
@@ -204,7 +204,7 @@ echo "Promote Complete\n"&lt;/code&gt;&lt;/pre&gt;
     </item>
     <item>
       <title>Random Goat</title>
-      <link>http://velvethotdog.com:8080/randomgoat</link>
+      <link>https://pilab.dev/randomgoat</link>
       <description>&lt;p&gt;Looking for random goat gifs? Look no further! &lt;/p&gt;
 &lt;p&gt;Powered by: &lt;a href="https://giphy.com"&gt;Giphy &lt;/a&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -221,7 +221,7 @@ echo "Promote Complete\n"&lt;/code&gt;&lt;/pre&gt;
     </item>
     <item>
       <title>Animal  TV Kodi  Addon</title>
-      <link>http://velvethotdog.com:8080/animal-tv-kodi-addon</link>
+      <link>https://pilab.dev/animal-tv-kodi-addon</link>
       <description>&lt;p&gt;If you love to bird watch or going to the zoo you will love this Kodi addon!&lt;/p&gt;
 &lt;p&gt;Animal TV pulls all streams from &lt;a href="https://explore.org"&gt;Explore.org&lt;/a&gt;.&lt;/p&gt;
 &lt;div class="centered"&gt;
@@ -233,7 +233,7 @@ echo "Promote Complete\n"&lt;/code&gt;&lt;/pre&gt;
     </item>
     <item>
       <title>Bludit Mention</title>
-      <link>http://velvethotdog.com:8080/bludit-mention</link>
+      <link>https://pilab.dev/bludit-mention</link>
       <description>&lt;p&gt;Thanks Dimo Belov (@DimoBelov) for the mention!&lt;/p&gt;
 &lt;blockquote class="twitter-tweet tw-align-center" data-lang="en"&gt;&lt;p lang="en" dir="ltr"&gt;Bludit is so lightweight and performant that it can easily be hosted on Raspberry Pi 2&lt;br&gt;Live demo and stack &lt;a href="https://t.co/A4oyUd66CQ"&gt;https://t.co/A4oyUd66CQ&lt;/a&gt;&lt;a href="https://twitter.com/hashtag/bludit?src=hash&amp;ref_src=twsrc%5Etfw"&gt;#bludit&lt;/a&gt;&lt;/p&gt;— Dimo Belov (@DimoBelov) &lt;a href="https://twitter.com/DimoBelov/status/1127111766046064640?ref_src=twsrc%5Etfw"&gt;May 11, 2019&lt;/a&gt;&lt;/blockquote&gt;
 &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</description>
