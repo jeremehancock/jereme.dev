@@ -30,7 +30,7 @@ class pluginRobotsPiLab extends Plugin {
 		$html .= '<label>'.DOMAIN.'/robots.txt</label>';
 		$html .= '<textarea name="robotstxt" id="jsrobotstxt">'.$this->getValue('robotstxt').'</textarea>';
 		$html .= '<label>Port to deny all</label>';
-        $html .= '<input type="number" name="porttxt" id="jsporttxt" value="'.$this->getValue('porttxt').'">';
+        $html .= '<input class="form-control" type="number" name="porttxt" id="jsporttxt" value="'.$this->getValue('porttxt').'">';
 		$html .= '</div>';
 
 		return $html;

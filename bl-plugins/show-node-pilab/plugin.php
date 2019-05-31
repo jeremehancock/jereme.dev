@@ -76,14 +76,14 @@ class pluginShowNodePiLab extends Plugin
 
         $html .= '<div>';
         $html .= '<input name="devport" class="form-control" type="number" value="' . $this->getValue('devport') . '">';
-        $html .= '<span style="color: #303030; font-style: italic;">' . $L->get('This is the port for the "dev" node. For example: devnode.com:8000') . '</span>';
+        $html .= '<span style="color: #303030; font-style: italic;">' . $L->get('dev port tip') . '</span>';
         $html .= '</div>';
 
         $html .= '<h4 class="mt-3">' . $L->get('add a dev name') . '</h4>';
 
         $html .= '<div>';
         $html .= '<input name="devnode" class="form-control" type="text" value="' . $this->getValue('devnode') . '">';
-        $html .= '<span style="color: #303030; font-style: italic;">' . $L->get('This is what will display when viewing your "dev" node.') . '</span>';
+        $html .= '<span style="color: #303030; font-style: italic;">' . $L->get('dev name tip') . '</span>';
         $html .= '</div>';
 
         $html .= '<div>';
@@ -96,17 +96,17 @@ class pluginShowNodePiLab extends Plugin
 
         // New node, when the user click on save button this call the method post()
         // and the new node is added to the database
-        $html .= '<h4 class="mt-3">' . $L->get('Add a new node') . '</h4>';
+        $html .= '<h4 class="mt-3">' . $L->get('add a new node') . '</h4>';
 
         $html .= '<div>';
         $html .= '<input name="nodeName" type="text" class="form-control" value="" placeholder="Node X">';
-        $html .= '<span style="color: #303030; font-style: italic;">' . $L->get('This is what will display when viewing this node.') . '</span>';
+        $html .= '<span style="color: #303030; font-style: italic;">' . $L->get('add node tip') . '</span>';
         $html .= '</div>';
 
         $html .= '<div>';
         $html .= '<div>&nbsp;</div>';
         $html .= '<input name="nodeIP" type="text" class="form-control" value="" placeholder="192.168.x.x">';
-        $html .= '<span style="color: #303030; font-style: italic;">' . $L->get('This is the IP of the node.') . '</span>';
+        $html .= '<span style="color: #303030; font-style: italic;">' . $L->get('ip tip') . '</span>';
         $html .= '</div>';
 
         $html .= '<div>';
@@ -158,7 +158,7 @@ class pluginShowNodePiLab extends Plugin
                 if ($_SERVER['SERVER_PORT'] == $this->getValue('devport')) {
                     $html = $this->getValue('devnode');
                 }
-                else if ($_SERVER['SERVER_ADDR'] == $ip) {
+                elseif ($_SERVER['SERVER_ADDR'] == $ip) {
                     $html = $name;
                 }
             }
