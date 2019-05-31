@@ -4,7 +4,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Thu, 30 May 2019 23:40:57 -0500</lastBuildDate>
+    <lastBuildDate>Thu, 30 May 2019 23:49:04 -0500</lastBuildDate>
     <item>
       <title>Pi Lab Setup</title>
       <link>https://pilab.dev/pi-lab-setup</link>
@@ -134,6 +134,16 @@ sudo sed -i 's/https/httpss/g' /var/www/dev/bl-content/databases/site.php
 sudo sed -i 's/development-domain.com:8000/production-domain.com/g' /var/www/dev/bl-content/databases/site.php
 echo "Complete\n"
 
+echo "Updating url in rss\n"
+sudo sed -i 's/https/httpss/g' /var/www/dev/bl-content/workspaces/rss/rss.xml
+sudo sed -i 's/development-domain.com:8000/production-domain.com/g' /var/www/dev/bl-content/workspaces/rss/rss.xml
+echo "Complete\n"
+
+echo "Updating url in sitemap\n"
+sudo sed -i 's/https/httpss/g' /var/www/dev/bl-content/workspaces/sitemap/sitemap.xml
+sudo sed -i 's/development-domain.com:8000/production-domain.com/g' /var/www/dev/bl-content/workspaces/sitemap/sitemap.xml
+echo "Complete\n"
+
 echo "Copying dev to html\n"
 sudo rsync -azvr /var/www/dev/ /var/www/html/ --delete
 echo "Complete\n"
@@ -172,7 +182,11 @@ echo "Promote Complete\n"&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Now all the changes that were made on the &amp;quot;dev&amp;quot; copy are live on each web node!&lt;/p&gt;
 &lt;p&gt;This workflow is something that I am still polishing, but this is working very well for me. It allows me to try things in a &amp;quot;sandbox&amp;quot; without affecting my live site. It also gives me some redundancy with things. So if I somehow really mess up the &amp;quot;dev&amp;quot; copy I can always revert to the latest &amp;quot;prod&amp;quot; copy by copying the files from one of the live web nodes to the &amp;quot;dev&amp;quot; copy.&lt;/p&gt;
 &lt;p&gt;I actually have an additional step setup that I didn't cover with my &amp;quot;promote&amp;quot; script to push the latest and greatest to Github. &lt;/p&gt;
-&lt;p&gt;I hope this helps someone looking to run &lt;a href="httpss://bludit.com"&gt;Bludit&lt;/a&gt; on a Raspberry Pi cluster. I welcome comments and feedback. I will keep this article updated with any changes to my workflow that I feel would be beneficial to share.&lt;/p&gt;</description>
+&lt;p&gt;I hope this helps someone looking to run &lt;a href="httpss://bludit.com"&gt;Bludit&lt;/a&gt; on a Raspberry Pi cluster. I welcome comments and feedback. I will keep this article updated with any changes to my workflow that I feel would be beneficial to share.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Updates:&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I have added a few more items to the promote script. I found that the Sitemap and RSS plugins needed to also have the URL updated during the promotion to ensure that the production URL was used.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
       <pubDate>Tue, 28 May 2019 21:06:25 -0500</pubDate>
       <guid isPermaLink="false">75985f8036100bd2c1f9c4ca271e499f</guid>
     </item>

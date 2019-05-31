@@ -163,6 +163,16 @@ sudo sed -i 's/http/https/g' /var/www/dev/bl-content/databases/site.php
 sudo sed -i 's/development-domain.com:8000/production-domain.com/g' /var/www/dev/bl-content/databases/site.php
 echo "Complete\n"
 
+echo "Updating url in rss\n"
+sudo sed -i 's/http/https/g' /var/www/dev/bl-content/workspaces/rss/rss.xml
+sudo sed -i 's/development-domain.com:8000/production-domain.com/g' /var/www/dev/bl-content/workspaces/rss/rss.xml
+echo "Complete\n"
+
+echo "Updating url in sitemap\n"
+sudo sed -i 's/http/https/g' /var/www/dev/bl-content/workspaces/sitemap/sitemap.xml
+sudo sed -i 's/development-domain.com:8000/production-domain.com/g' /var/www/dev/bl-content/workspaces/sitemap/sitemap.xml
+echo "Complete\n"
+
 echo "Copying dev to html\n"
 sudo rsync -azvr /var/www/dev/ /var/www/html/ --delete
 echo "Complete\n"
@@ -207,6 +217,9 @@ This workflow is something that I am still polishing, but this is working very w
 I actually have an additional step setup that I didn't cover with my "promote" script to push the latest and greatest to Github. 
 
 I hope this helps someone looking to run [Bludit](https://bludit.com) on a Raspberry Pi cluster. I welcome comments and feedback. I will keep this article updated with any changes to my workflow that I feel would be beneficial to share.
+
+**Updates:**
+> I have added a few more items to the promote script. I found that the Sitemap and RSS plugins needed to also have the URL updated during the promotion to ensure that the production URL was used.
 
 
 
