@@ -45,11 +45,11 @@ class pluginSiteRedirect extends Plugin {
 	{
 		if ($this->getValue('enable')) {
 		    if ($this->getValue('port') == '') {
-                header('Location:' . $this->getValue('url'));
+                header('Location:' . $this->getValue('url') . $_SERVER['REQUEST_URI']);
                 die();
             }
             elseif ($this->getValue('port') != '' && $this->getValue('url') != '' && $_SERVER['SERVER_PORT'] == $this->getValue('port')) {
-                header('Location:' . $this->getValue('url'));
+                header('Location:' . $this->getValue('url') . $_SERVER['REQUEST_URI']);
                 die();
             }
 		}
