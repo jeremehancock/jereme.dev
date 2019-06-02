@@ -4,6 +4,11 @@
     <loc>https://pilab.dev</loc>
   </url>
   <url>
+    <loc>https://pilab.dev/plugins</loc>
+    <lastmod>2019-06-01</lastmod>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
     <loc>https://pilab.dev/pi-lab-setup</loc>
     <lastmod>2019-05-28</lastmod>
     <changefreq>daily</changefreq>

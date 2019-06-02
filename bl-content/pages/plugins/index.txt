@@ -1,0 +1,46 @@
+These are plugins built specifically for Pi Lab.
+
+## Show Node - Pi Lab
+This plugin displays the current node in the sidebar of a [Bludit](https://bludit.com) installation on a server cluster. 
+
+> <a href="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/show-node.png" data-lightbox="show-node" data-title="Show Node - Pi Lab">
+> <img src="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/show-node.png" width="50%"></a>
+
+<a href="https://github.com/mhancoc7/show-node-pilab">
+	<button type="button" class="btn btn-md btn-success" id="download-show-node">Download</button>
+</a>
+
+
+-----
+
+## Robots - Pi Lab
+This plugin is a customized version of the  [Bludit](https://bludit.com) Robots plugin. It allows for adding a port to deny all for. This useful when you have a special "Dev" node setup on a different port.
+
+> <a href="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/robots-pilab.png" data-lightbox="show-node" data-title="Robots - Pi Lab">
+> <img src="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/robots-pilab.png" width="50%"></a>
+
+<a href="https://github.com/mhancoc7/robots-pilab">
+	<button type="button" class="btn btn-md btn-success" id="download-robots">Download</button>
+</a>
+
+-----
+
+## Site Redirect - Pi Lab
+This plugin allows you to temporarily redirect your site to another URL. The [Bludit](https://bludit.com) admin panel is still available.
+
+> <a href="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/redirect.png" data-lightbox="show-node" data-title="Robots - Pi Lab">
+> <img src="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/redirect.png" width="50%"></a>
+
+<a href="https://github.com/mhancoc7/site-redirect-pilab">
+	<button type="button" class="btn btn-md btn-success" id="download-redirect">Download</button>
+</a>
+
+
+-----
+
+## target='_blank' - Pi Lab
+This plugin forces all links on pages to open in new tabs.
+
+<a href="https://github.com/mhancoc7/open-links-new-tab-pilab">
+	<button type="button" class="btn btn-md btn-success" id="download-target">Download</button>
+</a>

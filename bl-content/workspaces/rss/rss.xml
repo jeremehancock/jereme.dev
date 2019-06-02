@@ -4,7 +4,49 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Fri, 31 May 2019 08:00:50 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 01 Jun 2019 23:53:32 -0500</lastBuildDate>
+    <item>
+      <title>Plugins</title>
+      <link>https://pilab.dev/plugins</link>
+      <description>&lt;p&gt;These are plugins built specifically for Pi Lab.&lt;/p&gt;
+&lt;h2&gt;Show Node - Pi Lab&lt;/h2&gt;
+&lt;p&gt;This plugin displays the current node in the sidebar of a &lt;a href="https://bludit.com"&gt;Bludit&lt;/a&gt; installation on a server cluster. &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/show-node.png" data-lightbox="show-node" data-title="Show Node - Pi Lab"&gt;
+&lt;img src="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/show-node.png" width="50%"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href="https://github.com/mhancoc7/show-node-pilab"&gt;&lt;/p&gt;
+&lt;button type="button" class="btn btn-md btn-success" id="download-show-node"&gt;Download&lt;/button&gt;
+&lt;p&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2&gt;Robots - Pi Lab&lt;/h2&gt;
+&lt;p&gt;This plugin is a customized version of the  &lt;a href="https://bludit.com"&gt;Bludit&lt;/a&gt; Robots plugin. It allows for adding a port to deny all for. This useful when you have a special &amp;quot;Dev&amp;quot; node setup on a different port.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/robots-pilab.png" data-lightbox="show-node" data-title="Robots - Pi Lab"&gt;
+&lt;img src="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/robots-pilab.png" width="50%"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href="https://github.com/mhancoc7/robots-pilab"&gt;&lt;/p&gt;
+&lt;button type="button" class="btn btn-md btn-success" id="download-robots"&gt;Download&lt;/button&gt;
+&lt;p&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2&gt;Site Redirect - Pi Lab&lt;/h2&gt;
+&lt;p&gt;This plugin allows you to temporarily redirect your site to another URL. The &lt;a href="https://bludit.com"&gt;Bludit&lt;/a&gt; admin panel is still available.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/redirect.png" data-lightbox="show-node" data-title="Robots - Pi Lab"&gt;
+&lt;img src="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/redirect.png" width="50%"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href="https://github.com/mhancoc7/site-redirect-pilab"&gt;&lt;/p&gt;
+&lt;button type="button" class="btn btn-md btn-success" id="download-redirect"&gt;Download&lt;/button&gt;
+&lt;p&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2&gt;target='_blank' - Pi Lab&lt;/h2&gt;
+&lt;p&gt;This plugin forces all links on pages to open in new tabs.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/mhancoc7/open-links-new-tab-pilab"&gt;&lt;/p&gt;
+&lt;button type="button" class="btn btn-md btn-success" id="download-target"&gt;Download&lt;/button&gt;
+&lt;p&gt;&lt;/a&gt;&lt;/p&gt;</description>
+      <pubDate>Sat, 01 Jun 2019 23:24:03 -0500</pubDate>
+      <guid isPermaLink="false">c3b759b0f699f31b9bbf641efcf6cbe5</guid>
+    </item>
     <item>
       <title>Pi Lab Setup</title>
       <link>https://pilab.dev/pi-lab-setup</link>
@@ -226,17 +268,6 @@ echo "Promote Complete\n"&lt;/code&gt;&lt;/pre&gt;
 &lt;h3&gt;Check it out at &lt;a href="https://m7kodi.dev/"&gt;m7kodi.dev&lt;/a&gt;!&lt;/h3&gt;</description>
       <pubDate>Thu, 16 May 2019 22:28:59 -0500</pubDate>
       <guid isPermaLink="false">742ad4233bf89bf642371bf15216842b</guid>
-    </item>
-    <item>
-      <title>Bludit Mention</title>
-      <link>https://pilab.dev/bludit-mention</link>
-      <description>&lt;p&gt;Thanks Dimo Belov (&lt;a href="https://twitter.com/DimoBelov"&gt;@DimoBelov&lt;/a&gt;)!&lt;/p&gt;
-&lt;blockquote class="twitter-tweet tw-align-center" data-lang="en"&gt;&lt;p lang="en" dir="ltr"&gt;Bludit is so lightweight and performant that it can easily be hosted on Raspberry Pi 2&lt;br&gt;Live demo and stack &lt;a href="https://t.co/A4oyUd66CQ"&gt;https://t.co/A4oyUd66CQ&lt;/a&gt;&lt;a href="https://twitter.com/hashtag/bludit?src=hash&amp;ref_src=twsrc%5Etfw"&gt;#bludit&lt;/a&gt;&lt;/p&gt;— Dimo Belov (@DimoBelov) &lt;a href="https://twitter.com/DimoBelov/status/1127111766046064640?ref_src=twsrc%5Etfw"&gt;May 11, 2019&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
-&lt;blockquote class="twitter-tweet  tw-align-center" data-lang="en"&gt;&lt;p lang="en" dir="ltr"&gt;Nice article with details how to setup &lt;a href="https://twitter.com/bludit?ref_src=twsrc%5Etfw"&gt;@Bludit&lt;/a&gt; on  Raspberry PI. Also cover some advanced aspects such as auto replication of dev server to production with bash, load balancing with nginx.&lt;a href="https://t.co/464jq9gGXs"&gt;https://t.co/464jq9gGXs&lt;/a&gt;&lt;/p&gt;&amp;mdash; Dimo Belov (@DimoBelov) &lt;a href="https://twitter.com/DimoBelov/status/1134318134448365568?ref_src=twsrc%5Etfw"&gt;May 31, 2019&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;</description>
-      <pubDate>Wed, 15 May 2019 19:28:21 -0500</pubDate>
-      <guid isPermaLink="false">481e97ca001cee77e02fb7009ced50ca</guid>
     </item>
   </channel>
 </rss>
