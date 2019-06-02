@@ -9,6 +9,8 @@ $plugins = array(
 	'siteBodyBegin'=>array(),
 	'siteBodyEnd'=>array(),
 	'siteSidebar'=>array(),
+	//Custom for Pi Lab
+	'siteFooter'=>array(),
 	'beforeSiteLoad'=>array(),
 	'afterSiteLoad'=>array(),
 

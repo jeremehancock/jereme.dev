@@ -21,7 +21,7 @@
 
     <?php echo Theme::javascript('js/bundle.min.js'); ?>
 
-    <?php //Theme::plugins('siteBodyEnd'); ?>
+    <?php Theme::plugins('siteBodyEnd'); ?>
 
 </body>
 </html>
