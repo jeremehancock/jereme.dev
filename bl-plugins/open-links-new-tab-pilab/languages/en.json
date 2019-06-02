@@ -2,6 +2,6 @@
 	"plugin-data":
 	{
 		"name": "target='_blank' - Pi Lab",
-		"description": "Set all external links in pages to open in new tabs"
+		"description": "Set all external links to open in new tabs."
 	}
 }
