@@ -4,7 +4,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Sun, 02 Jun 2019 07:53:58 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 02 Jun 2019 08:05:15 -0500</lastBuildDate>
     <item>
       <title>Plugins</title>
       <link>https://pilab.dev/plugins</link>
@@ -230,6 +230,7 @@ echo "Promote Complete\n"&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;strong&gt;Updates:&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;I have added a few more items to the promote script. I found that the Sitemap and RSS plugins needed to also have the URL updated during the promotion to ensure that the production URL was used.&lt;/p&gt;
+&lt;p&gt;Checkout the plugins that I built specifically for Pi Lab: &lt;a href="plugins"&gt;Plugins&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;</description>
       <pubDate>Tue, 28 May 2019 21:06:25 -0500</pubDate>
       <guid isPermaLink="false">75985f8036100bd2c1f9c4ca271e499f</guid>

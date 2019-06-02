@@ -217,6 +217,7 @@ I hope this helps someone looking to run [Bludit](https://bludit.com) on a Raspb
 **Updates:**
 > I have added a few more items to the promote script. I found that the Sitemap and RSS plugins needed to also have the URL updated during the promotion to ensure that the production URL was used.
 
+> Checkout the plugins that I built specifically for Pi Lab: [Plugins](plugins)
 
 
 
