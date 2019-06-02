@@ -61,6 +61,18 @@
     font-style: italic;;
 }
 
+.search-result-list {
+
+    margin: 0;
+    padding: 0;
+    border-top: .1rem solid rgba(0,0,0,.07);
+    list-style: none;
+    max-height: 500px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+
+}
+
 .menu-social a, .menu-social a:visited {
     color: #e6e6e6;
 }
