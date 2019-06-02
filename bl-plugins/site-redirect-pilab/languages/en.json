@@ -2,7 +2,7 @@
 	"plugin-data":
 	{
 		"name": "Site Redirect - Pi Lab",
-		"description": "Redirct your site to another URL. Admin access is still accessible<br><br>This was built specifically for <a href='https://pilab.dev' target='_blank'>Pi Lab</a>, but could be useful for anyone wanting to temporarily redirect their Bludit site to another URL."
+		"description": "Redirct your site to another URL. Admin access is still accessible. The frontend is also still accessible for administrators or editors.<br><br>This was built specifically for <a href='https://pilab.dev' target='_blank'>Pi Lab</a>, but could be useful for anyone wanting to temporarily redirect their Bludit site to another URL."
 	},
 
 	"enable-site-redirect": "Enable Site Redirect",

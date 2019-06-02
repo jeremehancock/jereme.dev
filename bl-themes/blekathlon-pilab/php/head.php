@@ -8,7 +8,6 @@
 <?php echo Theme::favicon('img/favicon.ico'); ?>
 
 <?php echo Theme::jquery(); ?>
-<?php echo Theme::cssBootstrap(); ?>
 
 <?php echo Theme::css('css/style.min.css'); ?>
 <?php echo Theme::css('css/x.css'); ?>

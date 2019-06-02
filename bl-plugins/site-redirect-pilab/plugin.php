@@ -44,13 +44,18 @@ class pluginSiteRedirect extends Plugin {
 	public function beforeAll()
 	{
 		if ($this->getValue('enable')) {
-		    if ($this->getValue('port') == '') {
-                header('Location:' . $this->getValue('url') . $_SERVER['REQUEST_URI']);
-                die();
-            }
-            elseif ($this->getValue('port') != '' && $this->getValue('url') != '' && $_SERVER['SERVER_PORT'] == $this->getValue('port')) {
-                header('Location:' . $this->getValue('url') . $_SERVER['REQUEST_URI']);
-                die();
+
+            $login = new Login();
+
+            if($login->role()!=='admin' && $login->role()!=='editor') {
+
+                if ($this->getValue('port') == '') {
+                    header('Location:' . $this->getValue('url') . $_SERVER['REQUEST_URI']);
+                    die();
+                } elseif ($this->getValue('port') != '' && $this->getValue('url') != '' && $_SERVER['SERVER_PORT'] == $this->getValue('port')) {
+                    header('Location:' . $this->getValue('url') . $_SERVER['REQUEST_URI']);
+                    die();
+                }
             }
 		}
 	}
