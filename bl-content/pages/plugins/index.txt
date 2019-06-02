@@ -14,7 +14,7 @@ This plugin displays the current node in the sidebar of a [Bludit](https://bludi
 -----
 
 ## Robots - Pi Lab
-This plugin is a customized version of the  [Bludit](https://bludit.com) Robots plugin. It allows for adding a port to deny all for. This useful when you have a special "Dev" node setup on a different port.
+This plugin is a customized version of the  [Bludit](https://bludit.com) Robots plugin. It allows for adding a port to deny all for. This is useful when you have a special "Dev" node setup on a different port.
 
 > <a href="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/robots-pilab.png" data-lightbox="show-node" data-title="Robots - Pi Lab">
 > <img src="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/robots-pilab.png" width="50%"></a>

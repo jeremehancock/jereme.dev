@@ -4,7 +4,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Sat, 01 Jun 2019 23:53:32 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 01 Jun 2019 23:55:43 -0500</lastBuildDate>
     <item>
       <title>Plugins</title>
       <link>https://pilab.dev/plugins</link>
@@ -20,7 +20,7 @@
 &lt;p&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h2&gt;Robots - Pi Lab&lt;/h2&gt;
-&lt;p&gt;This plugin is a customized version of the  &lt;a href="https://bludit.com"&gt;Bludit&lt;/a&gt; Robots plugin. It allows for adding a port to deny all for. This useful when you have a special &amp;quot;Dev&amp;quot; node setup on a different port.&lt;/p&gt;
+&lt;p&gt;This plugin is a customized version of the  &lt;a href="https://bludit.com"&gt;Bludit&lt;/a&gt; Robots plugin. It allows for adding a port to deny all for. This is useful when you have a special &amp;quot;Dev&amp;quot; node setup on a different port.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;a href="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/robots-pilab.png" data-lightbox="show-node" data-title="Robots - Pi Lab"&gt;
 &lt;img src="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/robots-pilab.png" width="50%"&gt;&lt;/a&gt;&lt;/p&gt;
