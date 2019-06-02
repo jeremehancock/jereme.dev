@@ -20,7 +20,7 @@ This plugin is a customized version of the  [Bludit](https://bludit.com) Robots 
 
 For more information on a setup that this plugin is intended for checkout [Pi Lab Setup](pi-lab-setup).
 
-> <a href="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/robots-pilab.png" data-lightbox="show-node" data-title="Robots - Pi Lab">
+> <a href="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/robots-pilab.png" data-lightbox="robots" data-title="Robots - Pi Lab">
 > <img src="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/robots-pilab.png" width="50%"></a>
 
 <a href="https://github.com/mhancoc7/robots-pilab">
@@ -32,7 +32,7 @@ For more information on a setup that this plugin is intended for checkout [Pi La
 ## Site Redirect - Pi Lab
 This plugin allows you to temporarily redirect your site to another URL. The [Bludit](https://bludit.com) admin panel is still available.
 
-> <a href="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/redirect.png" data-lightbox="show-node" data-title="Robots - Pi Lab">
+> <a href="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/redirect.png" data-lightbox="redirect" data-title="Site Redirect - Pi Lab">
 > <img src="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/redirect.png" width="50%"></a>
 
 <a href="https://github.com/mhancoc7/site-redirect-pilab">
@@ -44,6 +44,9 @@ This plugin allows you to temporarily redirect your site to another URL. The [Bl
 
 ## target='_blank' - Pi Lab
 This plugin forces all external links on pages to open in new tabs.
+
+> <a href="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/target-blank.png" data-lightbox="target-blank" data-title="target='_blank' - Pi Lab">
+> <img src="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/target-blank.png" width="50%"></a>
 
 <a href="https://github.com/mhancoc7/open-links-new-tab-pilab">
 	<button type="button" class="btn btn-md btn-success" id="download-target">Download</button>
