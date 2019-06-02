@@ -3,6 +3,8 @@ These are plugins built specifically for Pi Lab.
 ## Show Node - Pi Lab
 This plugin displays the current node in the sidebar of a [Bludit](https://bludit.com) installation on a server cluster. 
 
+For more information on a setup that this plugin is intended for checkout [Pi Lab Setup](pi-lab-setup).
+
 > <a href="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/show-node.png" data-lightbox="show-node" data-title="Show Node - Pi Lab">
 > <img src="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/show-node.png" width="50%"></a>
 
@@ -15,6 +17,8 @@ This plugin displays the current node in the sidebar of a [Bludit](https://bludi
 
 ## Robots - Pi Lab
 This plugin is a customized version of the  [Bludit](https://bludit.com) Robots plugin. It allows for adding a port to deny all for. This is useful when you have a special "Dev" node setup on a different port.
+
+For more information on a setup that this plugin is intended for checkout [Pi Lab Setup](pi-lab-setup).
 
 > <a href="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/robots-pilab.png" data-lightbox="show-node" data-title="Robots - Pi Lab">
 > <img src="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/robots-pilab.png" width="50%"></a>
@@ -39,7 +43,7 @@ This plugin allows you to temporarily redirect your site to another URL. The [Bl
 -----
 
 ## target='_blank' - Pi Lab
-This plugin forces all links on pages to open in new tabs.
+This plugin forces all external links on pages to open in new tabs.
 
 <a href="https://github.com/mhancoc7/open-links-new-tab-pilab">
 	<button type="button" class="btn btn-md btn-success" id="download-target">Download</button>
