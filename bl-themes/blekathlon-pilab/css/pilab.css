@@ -111,6 +111,30 @@
     z-index: 1000;
 }
 
+div.table-wrapper {
+  border: 1px solid #ccc;
+  height: 40vh;
+  width: 100%;
+  overflow-y: auto;
+}
+ 
+table {
+  width: 100%;
+}
+
+table thead tr th {
+  text-align: left;
+  padding-left:10px !important;
+  position: sticky;
+  top: 0px;
+  background-color: #373737;
+  color: #fff;
+}
+
+table td {
+  padding-left:10px !important;
+} 
+ 
 @media (max-width : 1005px) {
     .body-padding {
         margin-top: 40px;
