@@ -10,5 +10,6 @@
 	"add-node-tip": "This is what will display when viewing this node.",
 	"ip-tip": "This is the IP of the node.",
 	"dev-port-tip": "This is the port for the 'dev' node. For example: devnode.com:8000",
-	"dev-name-tip": "This is what will display when viewing your 'dev' node."
+	"dev-name-tip": "This is what will display when viewing your 'dev' node.",
+	"show-admin": "Include Admin Link"
 }

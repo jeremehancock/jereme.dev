@@ -140,7 +140,7 @@ class pluginShowNodePiLab extends Plugin
     // Customized for Pi Lab
     public function siteFooter()
     {
-        global $L;
+        global $site;
 
         // Get the JSON DB, getValue() with the option unsanitized HTML code
         $jsondb = $this->getValue('jsondb', false);
@@ -151,13 +151,13 @@ class pluginShowNodePiLab extends Plugin
                 $html = "No Nodes Specified - Check Show Node Settings!";
             }
             else {
-                $html = $this->getValue('devnode');
+                $html = '<a href="'. $site->url() . '/admin/" target="_blank">' . $this->getValue('devnode'). '</a>';
             }
         }
         else {
             foreach ($nodes as $name => $ip) {
                 if ($_SERVER['SERVER_PORT'] == $this->getValue('devport')) {
-                    $html = $this->getValue('devnode');
+                    $html = '<a href="'. $site->url() . '/admin/" target="_blank">' . $this->getValue('devnode'). '</a>';
                 }
                 elseif ($_SERVER['SERVER_ADDR'] == $ip) {
                     $html = $name;

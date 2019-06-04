@@ -155,6 +155,10 @@ table td {
     position: relative;
     top: 4px;
 }
+
+.copyright a {
+    text-transform: uppercase;
+}
  
 @media (max-width : 1005px) {
     .body-padding {
