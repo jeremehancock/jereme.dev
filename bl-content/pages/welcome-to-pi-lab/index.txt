@@ -1,9 +1,3 @@
-<style>
-	.page-content, .entry-header, .entry-content {
-    max-width: 740px;
-}
-</style>
-
 <div class="centered">
     <img src="/bl-content/uploads/pages/ae6baedd36be1d5b3fa9ec0d872cc735/picluster.jpg"/>
 </div>
@@ -24,3 +18,9 @@
     -    [Linksys WRT1900AC](https://www.linksys.com/us/support-product?pid=01t80000003KdJ7AAK)
     -    [Netgear ProSAFE GS105](https://www.netgear.com/support/product/GS105v5)
 -    **Power:** [CyberPower EC850LCD](https://www.cyberpowersystems.com/product/ups/ec850lcd/)
+
+<style>
+	.page-content, .entry-header, .entry-content {
+    max-width: 740px;
+}
+</style>
