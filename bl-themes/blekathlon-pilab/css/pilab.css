@@ -94,7 +94,6 @@
 
 .menu-social {
     font-size: .8em;
-    font-family: "Lora",sans-serif;
     position: relative;
     top: -30px;
 }
@@ -134,6 +133,28 @@ table thead tr th {
 table td {
   padding-left:10px !important;
 } 
+
+.backer {
+    float: left;
+}
+
+.site-footer a{
+    border-bottom: none;
+    text-transform: none;
+}
+
+.backer-logo {
+    max-height: 20px;
+    margin-left: 3px;
+    position: relative;
+    top: 3px;
+}
+
+.copyright {
+    float: right;
+    position: relative;
+    top: 4px;
+}
  
 @media (max-width : 1005px) {
     .body-padding {
@@ -162,5 +183,18 @@ table td {
     .menu-social {
         font-size: 1em;
         top: -5px;
+    }
+    
+    .backer {
+        font-size: .8em;
+    }
+    
+    .backer-logo {
+        max-height: 15px;
+    }
+    
+    .copyright {
+        font-size: .8em;
+        top: 3px;
     }
 }

@@ -1,9 +1,12 @@
-er<footer class="site-footer main-padding text-center smaller-font-size">
+er<footer class="site-footer main-padding smaller-font-size">
     <div class="site-info main-width">
-        <div class="text-center text-white text-uppercase">
+        <div class="copyright text-white text-uppercase">
             <?php echo $site->footer(); ?>
             <span class="sep"> | </span>
             <?php Theme::plugins('siteFooter'); ?>
+        </div>
+        <div class="backer">
+                <a href="https://www.patreon.com/bludit">Bludit Backer <img src="../bl-themes/blekathlon-pilab/img/patreon.png" class="backer-logo"/></a>
         </div>
     </div>
 </footer>
