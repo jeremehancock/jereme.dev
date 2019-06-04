@@ -13,7 +13,7 @@ if (!isset($helper)) {
 
 $pubList = $pages->getDB(false);
 foreach ($pubList as $key=>$fields) {
-	if ($fields['type']!='published' && $fields['type']!='sticky') {
+	if ($fields['type']!='published' && $fields['type']!='sticky' && $fields['type']!='static') {
 		unset($pubList[$key]);
 	}
 }
