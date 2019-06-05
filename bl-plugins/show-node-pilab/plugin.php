@@ -66,6 +66,7 @@ class pluginShowNodePiLab extends Plugin
     public function form()
     {
         global $L;
+        global $site;
 
         $html = '<div class="alert alert-primary" role="alert">';
         $html .= $this->description();
@@ -83,7 +84,7 @@ class pluginShowNodePiLab extends Plugin
 
         $html .= '<div>';
         $html .= '<input name="devnode" class="form-control" type="text" value="' . $this->getValue('devnode') . '">';
-        $html .= '<span style="color: #303030; font-style: italic;">' . $L->get('dev name tip') . '</span>';
+        $html .= '<span style="color: #303030; font-style: italic;">' . $L->get('dev name tip') . ' This will also link to ' .  $site->url(). '/admin/</span>';
         $html .= '</div>';
 
         $html .= '<div>';
