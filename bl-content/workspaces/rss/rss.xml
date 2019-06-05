@@ -4,7 +4,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Tue, 04 Jun 2019 16:24:07 -0500</lastBuildDate>
+    <lastBuildDate>Tue, 04 Jun 2019 23:19:12 -0500</lastBuildDate>
     <item>
       <title>Free Live TV</title>
       <link>https://pilab.dev/free-live-tv</link>
@@ -33,8 +33,8 @@
 &lt;p&gt;This plugin displays the current node in the sidebar of a &lt;a href="https://bludit.com"&gt;Bludit&lt;/a&gt; installation on a server cluster. &lt;/p&gt;
 &lt;p&gt;For more information on a setup that this plugin is intended for checkout &lt;a href="pi-lab-setup"&gt;Pi Lab Setup&lt;/a&gt;.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;a href="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/show-node.png" data-lightbox="show-node" data-title="Show Node - Pi Lab"&gt;
-&lt;img src="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/show-node.png" width="50%"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/show-node-plugin.png" data-lightbox="show-node" data-title="Show Node - Pi Lab"&gt;
+&lt;img src="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/show-node-plugin.png" class="plugin-thumb"&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;a href="https://github.com/mhancoc7/show-node-pilab"&gt;&lt;/p&gt;
 &lt;button type="button" class="btn btn-md btn-success" id="download-show-node"&gt;Download&lt;/button&gt;
@@ -44,7 +44,7 @@
 &lt;p&gt;This plugin is a customized version of the  &lt;a href="https://bludit.com"&gt;Bludit&lt;/a&gt; Robots plugin. It allows for adding a port to deny all for. This is useful when you have a special &amp;quot;Dev&amp;quot; node setup on a different port.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;a href="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/robots-pilab.png" data-lightbox="robots" data-title="Robots - Pi Lab"&gt;
-&lt;img src="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/robots-pilab.png" width="50%"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;img src="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/robots-pilab.png" class="plugin-thumb"&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;a href="https://github.com/mhancoc7/robots-pilab"&gt;&lt;/p&gt;
 &lt;button type="button" class="btn btn-md btn-success" id="download-robots"&gt;Download&lt;/button&gt;
@@ -54,7 +54,7 @@
 &lt;p&gt;This plugin allows you to temporarily redirect your site to another URL. The &lt;a href="https://bludit.com"&gt;Bludit&lt;/a&gt; admin panel is still available. The frontend is also still accessible for administrators or editors.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;a href="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/redirect.png" data-lightbox="redirect" data-title="Site Redirect - Pi Lab"&gt;
-&lt;img src="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/redirect.png" width="50%"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;img src="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/redirect.png" class="plugin-thumb"&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;a href="https://github.com/mhancoc7/site-redirect-pilab"&gt;&lt;/p&gt;
 &lt;button type="button" class="btn btn-md btn-success" id="download-redirect"&gt;Download&lt;/button&gt;
@@ -64,7 +64,7 @@
 &lt;p&gt;This plugin forces all external links on pages to open in new tabs.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;a href="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/target-blank.png" data-lightbox="target-blank" data-title="target='_blank' - Pi Lab"&gt;
-&lt;img src="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/target-blank.png" width="50%"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;img src="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/target-blank.png" class="plugin-thumb"&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;a href="https://github.com/mhancoc7/open-links-new-tab-pilab"&gt;&lt;/p&gt;
 &lt;button type="button" class="btn btn-md btn-success" id="download-target"&gt;Download&lt;/button&gt;
