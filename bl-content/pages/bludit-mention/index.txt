@@ -4,6 +4,11 @@ Thanks Dimo Belov ([@DimoBelov](https://twitter.com/DimoBelov))!
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 <br>
+<blockquote class="twitter-tweet tw-align-center" data-lang="en"><p lang="en" dir="ltr">Two small giants together - <a href="https://twitter.com/hashtag/RaspberryPi?src=hash&amp;ref_src=twsrc%5Etfw">#RaspberryPi</a>  and <a href="https://twitter.com/hashtag/Bludit?src=hash&amp;ref_src=twsrc%5Etfw">#Bludit</a> <a href="https://t.co/NqUNdcR52l">https://t.co/NqUNdcR52l</a></p>&mdash; Dimo Belov (@DimoBelov) <a href="https://twitter.com/DimoBelov/status/1136259362769559552?ref_src=twsrc%5Etfw">June 5, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<br>
 <blockquote class="twitter-tweet  tw-align-center" data-lang="en"><p lang="en" dir="ltr">Nice article with details how to setup <a href="https://twitter.com/bludit?ref_src=twsrc%5Etfw">@Bludit</a> on  Raspberry PI. Also cover some advanced aspects such as auto replication of dev server to production with bash, load balancing with nginx.<a href="https://t.co/464jq9gGXs">https://t.co/464jq9gGXs</a></p>&mdash; Dimo Belov (@DimoBelov) <a href="https://twitter.com/DimoBelov/status/1134318134448365568?ref_src=twsrc%5Etfw">May 31, 2019</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
