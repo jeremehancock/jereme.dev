@@ -4,13 +4,14 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Thu, 06 Jun 2019 22:31:38 -0500</lastBuildDate>
+    <lastBuildDate>Thu, 06 Jun 2019 23:08:33 -0500</lastBuildDate>
     <item>
       <title>Free Live TV</title>
       <link>https://pilab.dev/free-live-tv</link>
       <description>&lt;p&gt;Interested in watching Free Live TV?&lt;/p&gt;
 &lt;p&gt;My Free Live TV addon for &lt;a href="https://kodi.tv/"&gt; Kodi&lt;/a&gt; has something for everyone. Best of all it is 100% legal. Channels are pulled from freely available sources online.&lt;/p&gt;
 &lt;h2&gt;Current Channel Lineup:&lt;/h2&gt;
+&lt;div class="table-border"&gt;
 &lt;div class="table-wrapper"&gt;
 &lt;table&gt;
     &lt;thead&gt;
@@ -386,6 +387,7 @@
     &lt;/tr&gt;
     &lt;/tbody&gt;
 &lt;/table&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;h3&gt;Check it out at &lt;a href="https://m7kodi.dev/"&gt;m7kodi.dev&lt;/a&gt;!&lt;/h3&gt;</description>
       <pubDate>Sun, 02 Jun 2019 22:18:37 -0500</pubDate>

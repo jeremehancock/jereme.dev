@@ -1,10 +1,10 @@
-<iframe  width="100%" height="255"  src="status.php" frameborder="0"></iframe>
+<iframe  width="100%" height="255"  src="status.php" frameborder="0" class="iframe-border"></iframe>
 
-# Web Stats
-<iframe width="100%" height="600" src="https://statcounter.com/p12007932/summary/?account_id=324824&login_id=1&code=8be480ebcbd8fbe290785aac26c3ab68&guest_login=1" frameborder="0"></iframe>
+## Web Stats
+<iframe width="100%" height="550" src="https://statcounter.com/p12007932/summary/?account_id=324824&login_id=1&code=8be480ebcbd8fbe290785aac26c3ab68&guest_login=1" frameborder="0" class="iframe-border"></iframe>
 
-[View Fullscreen](https://statcounter.com/p12007932/summary/?account_id=324824&login_id=1&code=8be480ebcbd8fbe290785aac26c3ab68&guest_login=1)
-# Uptime Stats
-<iframe width="100%" height="500" src="https://status.pilab.dev" frameborder="0"></iframe>
+<a href="https://statcounter.com/p12007932/summary/?account_id=324824&login_id=1&code=8be480ebcbd8fbe290785aac26c3ab68&guest_login=1" style="float:right;">View Fullscreen</a>
+## Uptime Stats
+<iframe width="100%" height="500" src="https://status.pilab.dev" frameborder="0" class="iframe-border"></iframe>
 
-[View Fullscreen](https://status.pilab.dev)
+<a href="https://status.pilab.dev" style="float:right;">View Fullscreen</a>

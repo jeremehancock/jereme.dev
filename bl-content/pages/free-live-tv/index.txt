@@ -3,6 +3,7 @@ Interested in watching Free Live TV?
 My Free Live TV addon for [ Kodi](https://kodi.tv/) has something for everyone. Best of all it is 100% legal. Channels are pulled from freely available sources online.
 
 ## Current Channel Lineup:
+<div class="table-border">
 <div class="table-wrapper">
 <table>
     <thead>
@@ -378,6 +379,7 @@ My Free Live TV addon for [ Kodi](https://kodi.tv/) has something for everyone. 
     </tr>
     </tbody>
 </table>
+</div>
 </div>
 
 ### Check it out at [m7kodi.dev](https://m7kodi.dev/)!
