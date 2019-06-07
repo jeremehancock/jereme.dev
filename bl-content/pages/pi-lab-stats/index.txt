@@ -1,5 +1,10 @@
 <iframe  width="100%" height="255"  src="status.php" frameborder="0"></iframe>
 
-<iframe width="100%" height="1500" src="https://status.pilab.dev" frameborder="0"></iframe>
+# Web Stats
+<iframe width="100%" height="600" src="https://statcounter.com/p12007932/summary/?account_id=324824&login_id=1&code=8be480ebcbd8fbe290785aac26c3ab68&guest_login=1" frameborder="0"></iframe>
+
+[View Fullscreen](https://statcounter.com/p12007932/summary/?account_id=324824&login_id=1&code=8be480ebcbd8fbe290785aac26c3ab68&guest_login=1)
+# Uptime Stats
+<iframe width="100%" height="500" src="https://status.pilab.dev" frameborder="0"></iframe>
 
 [View Fullscreen](https://status.pilab.dev)
