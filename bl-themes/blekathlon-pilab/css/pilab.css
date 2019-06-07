@@ -111,7 +111,8 @@
 }
 
 div.table-wrapper {
-  border: 1px solid #ccc;
+  border: 1px solid #f2f2f2;
+  background-color: #ffffff;
   height: 40vh;
   width: 100%;
   overflow-y: auto;
@@ -133,6 +134,15 @@ table thead tr th {
 table td {
   padding-left:10px !important;
 } 
+
+.table-border {
+    border-radius: .5em;
+    border: 5px solid #f2f2f2;
+    background-color: #f2f2f2;
+    padding: 5px;
+    transition: all 0.3s ease 0s;
+    box-shadow: rgba(0, 0, 0, 0.25) 3px 4px 5px;
+}
 
 .backer {
     float: left;
@@ -187,14 +197,6 @@ table td {
     border-radius: .5em;
     border: 5px solid #f2f2f2;
     background-color: #f2f2f2;
-    padding: 5px;
-    transition: all 0.3s ease 0s;
-    box-shadow: rgba(0, 0, 0, 0.25) 3px 4px 5px;
-}
-
-.table-border {
-    border-radius: .5em;
-    border: 5px solid #eee;
     padding: 5px;
     transition: all 0.3s ease 0s;
     box-shadow: rgba(0, 0, 0, 0.25) 3px 4px 5px;
