@@ -4,6 +4,6 @@
 		"name": "Web Stats - Pi Lab",
 		"description": "Add your web stats code to your site (ex: <a href='https://statcounter.com' target='_blank'>Statcounter</a>).<br><br>Allows you to specify a port that is used for your 'Dev' node so the stats will only be gathered on your production site.<br><br>This was built specifically for <a href='https://pilab.dev' target='_blank'>Pi Lab</a>, but can be used with any Bludit installation."
 	},
-	"insert-dev-port": "This is the port that you use for your 'Dev' node. The web stats code will not be used for this port. Leave blank to always use the web stats code.",
+	"insert-dev-port": "This is the port that you use for your 'dev' node. The web stats code will not be used for this port. Leave blank to always use the web stats code.",
 	"insert-code": "This is where you put your web stats code."
 }
