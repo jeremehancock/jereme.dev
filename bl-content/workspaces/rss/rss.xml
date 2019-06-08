@@ -4,7 +4,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Fri, 07 Jun 2019 08:16:03 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 08 Jun 2019 16:40:37 -0500</lastBuildDate>
     <item>
       <title>Free Live TV</title>
       <link>https://pilab.dev/free-live-tv</link>
@@ -409,7 +409,7 @@
 &lt;p&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h2&gt;Robots - Pi Lab&lt;/h2&gt;
-&lt;p&gt;This plugin is a customized version of the  &lt;a href="https://bludit.com"&gt;Bludit&lt;/a&gt; Robots plugin. It allows for adding a port to deny all for. This is useful when you have a special &amp;quot;Dev&amp;quot; node setup on a different port.&lt;/p&gt;
+&lt;p&gt;This plugin is a customized version of the  &lt;a href="https://bludit.com"&gt;Bludit&lt;/a&gt; Robots plugin. It allows for adding a port to deny all for. This is useful when you have a special &amp;quot;dev&amp;quot; node setup on a different port.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;a href="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/robots-pilab.png" data-lightbox="robots" data-title="Robots - Pi Lab"&gt;
 &lt;img src="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/robots-pilab.png" class="plugin-thumb"&gt;&lt;/a&gt;&lt;/p&gt;
@@ -426,6 +426,16 @@
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;a href="https://github.com/mhancoc7/site-redirect-pilab"&gt;&lt;/p&gt;
 &lt;button type="button" class="btn btn-md btn-success" id="download-redirect"&gt;Download&lt;/button&gt;
+&lt;p&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2&gt;Web Stats - Pi Lab&lt;/h2&gt;
+&lt;p&gt;Add your favorite web stats code (ex: &lt;a href="https://statcounter.com"&gt;Statcounter&lt;/a&gt; to your website. You can also assign a port for your &amp;quot;dev&amp;quot; node so the stats code will not be used.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/web-stats-pilab.png" data-lightbox="webstats" data-title="Web Stats - Pi Lab"&gt;
+&lt;img src="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/web-stats-pilab.png" class="plugin-thumb"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href="https://github.com/mhancoc7/web-stats-pilab"&gt;&lt;/p&gt;
+&lt;button type="button" class="btn btn-md btn-success" id="download-webstatus"&gt;Download&lt;/button&gt;
 &lt;p&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h2&gt;target='_blank' - Pi Lab&lt;/h2&gt;

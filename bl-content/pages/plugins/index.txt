@@ -16,7 +16,7 @@ For more information on a setup that this plugin is intended for checkout [Pi La
 -----
 
 ## Robots - Pi Lab
-This plugin is a customized version of the  [Bludit](https://bludit.com) Robots plugin. It allows for adding a port to deny all for. This is useful when you have a special "Dev" node setup on a different port.
+This plugin is a customized version of the  [Bludit](https://bludit.com) Robots plugin. It allows for adding a port to deny all for. This is useful when you have a special "dev" node setup on a different port.
 
 > <a href="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/robots-pilab.png" data-lightbox="robots" data-title="Robots - Pi Lab">
 > <img src="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/robots-pilab.png" class="plugin-thumb"></a>
@@ -35,6 +35,20 @@ This plugin allows you to temporarily redirect your site to another URL. The [Bl
 
 <a href="https://github.com/mhancoc7/site-redirect-pilab">
 	<button type="button" class="btn btn-md btn-success" id="download-redirect">Download</button>
+</a>
+
+
+-----
+
+## Web Stats - Pi Lab
+Add your favorite web stats code (ex: [Statcounter](https://statcounter.com) to your website. You can also assign a port for your "dev" node so the stats code will not be used.
+
+
+> <a href="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/web-stats-pilab.png" data-lightbox="webstats" data-title="Web Stats - Pi Lab">
+> <img src="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/web-stats-pilab.png" class="plugin-thumb"></a>
+
+<a href="https://github.com/mhancoc7/web-stats-pilab">
+	<button type="button" class="btn btn-md btn-success" id="download-webstatus">Download</button>
 </a>
 
 
