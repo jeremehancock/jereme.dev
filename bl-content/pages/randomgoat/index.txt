@@ -6,7 +6,7 @@ Powered by: [Giphy ](https://giphy.com)
 -    [giphy.com/randomgoat](https://giphy.com/randomgoat) 
 
 <div class="centered">
-<iframe src='//randomgoat.com/embed.php' width='100%' height='500' frameBorder='0' id='random-goat-embed' allowFullScreen></iframe>
+<iframe src='//randomgoat.com/embed.php' width='100%' height='500' frameBorder='0' id='random-goat-embed' class="iframe-border" allowFullScreen></iframe>
 </div>
 
 ### Check it out at [randomgoat.com](https://randomgoat.com/)!

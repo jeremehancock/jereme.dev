@@ -3,7 +3,7 @@ If you love to bird watch or going to the zoo you will love this [Kodi](https://
 Animal TV pulls all streams from [Explore.org](https://explore.org).
 
 <div class="centered">
-    <img src="/bl-content/uploads/pages/742ad4233bf89bf642371bf15216842b/animal-tv-screenshot.png"/>
+    <img src="/bl-content/uploads/pages/742ad4233bf89bf642371bf15216842b/animal-tv-screenshot.png" class="image-border" />
 </div>
 
 ### Check it out at [m7kodi.dev](https://m7kodi.dev/)!

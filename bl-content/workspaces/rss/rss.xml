@@ -4,7 +4,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Sat, 08 Jun 2019 16:49:31 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 08 Jun 2019 17:22:28 -0500</lastBuildDate>
     <item>
       <title>Free Live TV</title>
       <link>https://pilab.dev/free-live-tv</link>
@@ -655,7 +655,7 @@ echo "Promote Complete\n"&lt;/code&gt;&lt;/pre&gt;
 &lt;li&gt;&lt;a href="https://giphy.com/randomgoat"&gt;giphy.com/randomgoat&lt;/a&gt; &lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class="centered"&gt;
-&lt;iframe src='//randomgoat.com/embed.php' width='100%' height='500' frameBorder='0' id='random-goat-embed' allowFullScreen&gt;&lt;/iframe&gt;
+&lt;iframe src='//randomgoat.com/embed.php' width='100%' height='500' frameBorder='0' id='random-goat-embed' class="iframe-border" allowFullScreen&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 &lt;h3&gt;Check it out at &lt;a href="https://randomgoat.com/"&gt;randomgoat.com&lt;/a&gt;!&lt;/h3&gt;</description>
       <pubDate>Thu, 16 May 2019 23:45:12 -0500</pubDate>
