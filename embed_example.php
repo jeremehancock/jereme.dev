@@ -69,7 +69,7 @@
         $a = array_slice($item, 0, 9);
         foreach ($a as $val) {
             if ($val{"type"} == "published") {
-                echo "<div class='grid-item'>" . "<a href=" . $val{"permalink"} . " target='_blank'><img src='" . $val{"coverImage"} . "' title='" . $val{"title"} . "' class='page-thumb'/></a>" . "</div>";
+                echo "<div class='grid-item'>" . "<a href=" . $val{"permalink"} . "><img src='" . $val{"coverImage"} . "' title='" . $val{"title"} . "' class='page-thumb'/></a>" . "</div>";
             }
         }
     }
