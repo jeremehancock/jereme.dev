@@ -15,7 +15,7 @@
         .grid-item {
             background-color: rgb(242, 242, 242);
             border: 1px solid rgba(0, 0, 0, 0.8);
-            padding: 20px;
+            padding: 10px;
             font-size: 30px;
             text-align: center;
         }
