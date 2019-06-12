@@ -4,6 +4,11 @@
     <loc>https://pilab.dev</loc>
   </url>
   <url>
+    <loc>https://pilab.dev/bludit-api-php-example</loc>
+    <lastmod>2019-06-11</lastmod>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
     <loc>https://pilab.dev/free-live-tv</loc>
     <lastmod>2019-06-02</lastmod>
     <changefreq>daily</changefreq>

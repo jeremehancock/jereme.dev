@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700|Roboto:400,400i,700" rel="stylesheet"/>
+
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            background-color: rgb(55, 55, 55);
+            padding: 2px;
+        }
+
+        .grid-item {
+            background-color: rgb(242, 242, 242);
+            border: 1px solid rgba(0, 0, 0, 0.8);
+            padding: 12px;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        .page-thumb {
+            width: 100px;
+            border-radius: .5em;
+            border: 5px solid rgb(242, 242, 242);
+            background-color: rgb(242, 242, 242);
+            transition: all 0.3s ease 0s;
+            box-shadow: rgba(0, 0, 0, 0.25) 3px 4px 5px;
+        }
+
+        .page-thumb:hover {
+            transition: all 0.3s ease 0s;
+            transform: scale(1.04);
+        }
+
+        h2 {
+            font-family: "Lora", Palatino, Georgia, Times, serif;
+            font-style: italic;
+            font-size: 2.0em;
+            margin-bottom: 5px;
+        }
+
+        @media only screen and (max-width: 500px) {
+            .grid-container {
+                display: flow-root;
+                padding: 2px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h2>Latest from Pi Lab:</h2>
+<div class="grid-container">
+
+
+    <?php
+
+    $API_KEY = "f77c596ec98f9bc1b764e5e30a86486f";
+
+    $json = file_get_contents("https://pilab.dev/api/pages?token=$API_KEY");
+
+    $json = json_decode($json, true);
+
+    foreach ($json as $item) {
+        // This allows you to limit the results. This example shows the first 9 pages in the array
+        $a = array_slice($item, 0, 9);
+        foreach ($a as $val) {
+            if ($val{"type"} == "published") {
+                echo "<div class='grid-item'>" . "<a href=" . $val{"permalink"} . " target='_blank'><img src='" . $val{"coverImage"} . "' title='" . $val{"title"} . "' class='page-thumb'/></a>" . "</div>";
+            }
+        }
+    }
+
+    ?>
+
+</div>
+</body>
+</html>

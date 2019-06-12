@@ -4,7 +4,99 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Mon, 10 Jun 2019 22:36:04 -0500</lastBuildDate>
+    <lastBuildDate>Tue, 11 Jun 2019 23:06:04 -0500</lastBuildDate>
+    <item>
+      <title>Bludit API PHP Example</title>
+      <link>https://pilab.dev/bludit-api-php-example</link>
+      <description>&lt;p&gt;The Bludit API (Application Programming Interface) is a plugin to provide an easy integration with Bludit. With this plugin, you can retrieve or update data from the database with just an HTTP request.&lt;/p&gt;
+&lt;p&gt;This is a really awesome feature that will hopefully continue to be expanded.&lt;/p&gt;
+&lt;p&gt;Check out the &lt;a href="https://docs.bludit.com/en/api/introduction"&gt;Bludit API Documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;PHP code example:&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html&amp;gt;
+&amp;lt;head&amp;gt;
+
+    &amp;lt;link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700|Roboto:400,400i,700" rel="stylesheet"/&amp;gt;
+
+    &amp;lt;style&amp;gt;
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            background-color: rgb(55, 55, 55);
+            padding: 2px;
+        }
+
+        .grid-item {
+            background-color: rgb(242, 242, 242);
+            border: 1px solid rgba(0, 0, 0, 0.8);
+            padding: 12px;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        .page-thumb {
+            width: 100px;
+            border-radius: .5em;
+            border: 5px solid rgb(242, 242, 242);
+            background-color: rgb(242, 242, 242);
+            transition: all 0.3s ease 0s;
+            box-shadow: rgba(0, 0, 0, 0.25) 3px 4px 5px;
+        }
+
+        .page-thumb:hover {
+            transition: all 0.3s ease 0s;
+            transform: scale(1.04);
+        }
+
+        h2 {
+            font-family: "Lora", Palatino, Georgia, Times, serif;
+            font-style: italic;
+            font-size: 2.0em;
+            margin-bottom: 5px;
+        }
+
+        @media only screen and (max-width: 500px) {
+            .grid-container {
+                display: flow-root;
+                padding: 2px;
+                text-align: center;
+            }
+        }
+    &amp;lt;/style&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+
+&amp;lt;h2&amp;gt;Latest from Pi Lab:&amp;lt;/h2&amp;gt;
+&amp;lt;div class="grid-container"&amp;gt;
+
+    &amp;lt;?php
+
+    $API_KEY = "redacted";
+
+    $json = file_get_contents("https://pilab.dev/api/pages?token=$API_KEY");
+
+    $json = json_decode($json, true);
+
+    foreach ($json as $item) {
+        // This allows you to limit the results. This example shows the first 9 pages in the array
+        $a = array_slice($item, 0, 9);
+        foreach ($a as $val) {
+            if ($val{"type"} == "published") {
+                echo "&amp;lt;div class='grid-item'&amp;gt;" . "&amp;lt;a href=" . $val{"permalink"} . " target='_blank'&amp;gt;&amp;lt;img src='" . $val{"coverImage"} . "' title='" . $val{"title"} . "' class='page-thumb'/&amp;gt;&amp;lt;/a&amp;gt;" . "&amp;lt;/div&amp;gt;";
+            }
+        }
+    }
+
+    ?&amp;gt;
+
+&amp;lt;/div&amp;gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;Results:&lt;/h2&gt;
+&lt;iframe  width="100%" height="550"  src="embed_example.php" frameborder="0" class="iframe-border"&gt;&lt;/iframe&gt;</description>
+      <pubDate>Tue, 11 Jun 2019 22:32:04 -0500</pubDate>
+      <guid isPermaLink="false">521564befbfb99c2e9a16f6e2e4ce421</guid>
+    </item>
     <item>
       <title>Free Live TV</title>
       <link>https://pilab.dev/free-live-tv</link>
@@ -643,23 +735,6 @@ echo "Promote Complete\n"&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;I am working on getting a post together to give more information on how I have setup Pi Lab.&lt;/p&gt;</description>
       <pubDate>Mon, 27 May 2019 21:14:23 -0500</pubDate>
       <guid isPermaLink="false">6bef1d6939b8b0d64ff01d308792dccf</guid>
-    </item>
-    <item>
-      <title>Random Goat</title>
-      <link>https://pilab.dev/randomgoat</link>
-      <description>&lt;p&gt;Looking for random goat gifs? Look no further! &lt;/p&gt;
-&lt;p&gt;Powered by: &lt;a href="https://giphy.com"&gt;Giphy &lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://facebook.com/randomgoat"&gt;facebook.com/randomgoat&lt;/a&gt;  &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://twitter.com/Random_Goat"&gt;@Random_Goat&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://giphy.com/randomgoat"&gt;giphy.com/randomgoat&lt;/a&gt; &lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="centered"&gt;
-&lt;iframe src='//randomgoat.com/embed.php' width='100%' height='500' frameBorder='0' id='random-goat-embed' class="iframe-border" allowFullScreen&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-&lt;h3&gt;Check it out at &lt;a href="https://randomgoat.com/"&gt;randomgoat.com&lt;/a&gt;!&lt;/h3&gt;</description>
-      <pubDate>Thu, 16 May 2019 23:45:12 -0500</pubDate>
-      <guid isPermaLink="false">393c200818d533248492f5bf17bffaf6</guid>
     </item>
   </channel>
 </rss>
