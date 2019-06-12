@@ -21,7 +21,7 @@
         }
 
         .page-thumb {
-            width: 75px;
+            width: 100px;
             border-radius: .5em;
             border: 5px solid rgb(242, 242, 242);
             background-color: rgb(242, 242, 242);
