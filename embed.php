@@ -37,7 +37,7 @@
         h2 {
             font-family: "Lora", Palatino, Georgia, Times, serif;
             font-style: italic;
-            font-size: 2.0em;
+            font-size: 2.2em;
             margin-bottom: 5px;
         }
 
