@@ -77,6 +77,11 @@
                 padding: 2px;
                 text-align: center;
             }
+            .tooltip .tooltiptext {
+                position: absolute;
+                top: 80px;
+                left: 8px;
+            }
         }
     </style>
 </head>
