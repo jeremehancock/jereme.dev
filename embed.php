@@ -6,7 +6,7 @@
 
     <style>
         .grid-container {
-            display: inline-grid;
+            display: grid;
             grid-template-columns: auto auto auto;
             background-color: rgb(55, 55, 55);
             padding: 10px;
