@@ -15,7 +15,7 @@
         .grid-item {
             background-color: rgb(242, 242, 242);
             border: 1px solid rgba(0, 0, 0, 0.8);
-            padding: 10px;
+            padding: 15px;
             font-size: 30px;
             text-align: center;
         }
@@ -37,7 +37,7 @@
         h2 {
             font-family: "Lora", Palatino, Georgia, Times, serif;
             font-style: italic;
-            font-size: 2.0em;
+            font-size: 1.5em;
             margin-bottom: 5px;
         }
 
