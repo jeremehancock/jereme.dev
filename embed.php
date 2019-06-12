@@ -15,13 +15,13 @@
         .grid-item {
             background-color: rgb(242, 242, 242);
             border: 1px solid rgba(0, 0, 0, 0.8);
-            padding: 15px;
+            padding: 20px;
             font-size: 30px;
             text-align: center;
         }
 
         .page-thumb {
-            width: 100px;
+            width: 75px;
             border-radius: .5em;
             border: 5px solid rgb(242, 242, 242);
             background-color: rgb(242, 242, 242);
@@ -37,7 +37,7 @@
         h2 {
             font-family: "Lora", Palatino, Georgia, Times, serif;
             font-style: italic;
-            font-size: 1.5em;
+            font-size: 2.0em;
             margin-bottom: 5px;
         }
 
