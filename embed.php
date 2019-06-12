@@ -84,7 +84,7 @@
     $json = json_decode($json, true);
 
     foreach ($json as $item) {
-        $a = array_slice($item, 0, 6);
+        $a = array_slice($item, 0, 9);
         foreach ($a as $val) {
             if ($val{"type"} == "published") {
                 echo "<div class='tooltip'><span class='tooltiptext'>" . $val{"title"} . "</span><div class='grid-item'>" . "<a href=" . $val{"permalink"} . " target='_blank'><img src='" . $val{"coverImage"} . "' class='page-thumb'/></a>" . "</div></div>";
