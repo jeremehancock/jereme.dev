@@ -9,13 +9,13 @@
             display: grid;
             grid-template-columns: auto auto auto;
             background-color: rgb(55, 55, 55);
-            padding: 10px;
+            padding: 2px;
         }
 
         .grid-item {
             background-color: rgb(242, 242, 242);
             border: 1px solid rgba(0, 0, 0, 0.8);
-            padding: 20px;
+            padding: 12px;
             font-size: 30px;
             text-align: center;
         }
@@ -37,7 +37,7 @@
         h2 {
             font-family: "Lora", Palatino, Georgia, Times, serif;
             font-style: italic;
-            font-size: 2.2em;
+            font-size: 2.0em;
             margin-bottom: 5px;
         }
 
@@ -56,8 +56,8 @@
             border-radius: 6px;
             padding: 5px 0;
             position: absolute;
-            top: 110px;
-            left: 17px;
+            top: 80px;
+            left: 38px;
             z-index: 1;
             opacity: 0;
             transition: opacity 1s;
@@ -66,6 +66,17 @@
         .tooltip:hover .tooltiptext {
             visibility: visible;
             opacity: 1;
+        }
+
+        @media only screen and (max-width: 500px) {
+            h2 {
+                font-size: 1.0em;
+            }
+            .grid-container {
+                display: flow-root;
+                padding: 2px;
+                text-align: center;
+            }
         }
     </style>
 </head>
