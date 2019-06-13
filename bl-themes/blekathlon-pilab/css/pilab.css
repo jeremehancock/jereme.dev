@@ -196,6 +196,16 @@ table td {
 .iframe-border {
     border-radius: .5em;
     border: 5px solid #f2f2f2;
+    background: url(/images/loader.gif) center center no-repeat;
+    background-color: #f2f2f2;
+    padding: 5px;
+    transition: all 0.3s ease 0s;
+    box-shadow: rgba(0, 0, 0, 0.25) 3px 4px 5px;
+}
+
+.stats-border {
+    border-radius: .5em;
+    border: 5px solid #f2f2f2;
     background-color: #f2f2f2;
     padding: 5px;
     transition: all 0.3s ease 0s;
