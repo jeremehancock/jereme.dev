@@ -55,6 +55,9 @@ Check out the [Bludit API Documentation](https://docs.bludit.com/en/api/introduc
                 padding: 2px;
                 text-align: center;
             }
+		    .page-thumb {
+                width: 200px;
+            }
         }
     </style>
 </head>

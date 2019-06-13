@@ -47,6 +47,9 @@
                 padding: 2px;
                 text-align: center;
             }
+            .page-thumb {
+            width: 200px;
+            }
         }
     </style>
 </head>
