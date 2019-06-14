@@ -96,4 +96,4 @@ Check out the [Bludit API Documentation](https://docs.bludit.com/en/api/introduc
 
 ## Example use on website:
 
->** Checkout [Jereme.dev](https://jereme.dev/)!**
+>** Checkout [Jereme.dev](https://jereme.dev/#pilab)!**
