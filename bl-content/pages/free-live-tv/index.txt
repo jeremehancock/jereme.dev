@@ -29,6 +29,10 @@ My Free Live TV addon for [ Kodi](https://kodi.tv/) has something for everyone. 
         <td>Aljazeera</td>
         <td>News</td>
     </tr>
+		<tr>
+        <td>Antenna TV</td>
+        <td>Retro</td>
+    </tr>
     <tr>
         <td>Big Life TV</td>
         <td>Lifestyle</td>
@@ -49,9 +53,9 @@ My Free Live TV addon for [ Kodi](https://kodi.tv/) has something for everyone. 
         <td>Catholic TV Network</td>
         <td>Faith</td>
     </tr>
-    <tr>
-        <td>Celebrity Page Network</td>
-        <td>Celebrity</td>
+		<tr>
+        <td>CBN</td>
+        <td>Faith</td>
     </tr>
     <tr>
         <td>Charge!</td>
@@ -92,6 +96,10 @@ My Free Live TV addon for [ Kodi](https://kodi.tv/) has something for everyone. 
     <tr>
         <td>Court TV</td>
         <td>Crime</td>
+    </tr>
+    <tr>
+        <td>Cozi TV</td>
+        <td>Retro</td>
     </tr>
     <tr>
         <td>Crime Network</td>
@@ -214,6 +222,10 @@ My Free Live TV addon for [ Kodi](https://kodi.tv/) has something for everyone. 
         <td>News</td>
     </tr>
     <tr>
+        <td>News Net</td>
+        <td>News</td>
+    </tr>
+    <tr>
         <td>Outdoor America</td>
         <td>Lifestyle</td>
     </tr>
@@ -290,6 +302,10 @@ My Free Live TV addon for [ Kodi](https://kodi.tv/) has something for everyone. 
         <td>Shopping</td>
     </tr>
     <tr>
+        <td>Retro TV</td>
+        <td>Retro</td>
+    </tr>
+    <tr>
         <td>Rev'n TV</td>
         <td>Special Interest</td>
     </tr>
@@ -360,6 +376,10 @@ My Free Live TV addon for [ Kodi](https://kodi.tv/) has something for everyone. 
     <tr>
         <td>The Pet Collective</td>
         <td>Special Interest</td>
+    </tr>
+    <tr>
+        <td>This TV</td>
+        <td>Retro</td>
     </tr>
     <tr>
         <td>Unsolved Mysteries</td>

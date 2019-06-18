@@ -4,7 +4,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Sat, 15 Jun 2019 22:20:39 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 17 Jun 2019 22:40:45 -0500</lastBuildDate>
     <item>
       <title>Bludit API PHP Example</title>
       <link>https://pilab.dev/bludit-api-php-example</link>
@@ -136,6 +136,10 @@
         &lt;td&gt;Aljazeera&lt;/td&gt;
         &lt;td&gt;News&lt;/td&gt;
     &lt;/tr&gt;
+        &lt;tr&gt;
+        &lt;td&gt;Antenna TV&lt;/td&gt;
+        &lt;td&gt;Retro&lt;/td&gt;
+    &lt;/tr&gt;
     &lt;tr&gt;
         &lt;td&gt;Big Life TV&lt;/td&gt;
         &lt;td&gt;Lifestyle&lt;/td&gt;
@@ -156,9 +160,9 @@
         &lt;td&gt;Catholic TV Network&lt;/td&gt;
         &lt;td&gt;Faith&lt;/td&gt;
     &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;Celebrity Page Network&lt;/td&gt;
-        &lt;td&gt;Celebrity&lt;/td&gt;
+        &lt;tr&gt;
+        &lt;td&gt;CBN&lt;/td&gt;
+        &lt;td&gt;Faith&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
         &lt;td&gt;Charge!&lt;/td&gt;
@@ -199,6 +203,10 @@
     &lt;tr&gt;
         &lt;td&gt;Court TV&lt;/td&gt;
         &lt;td&gt;Crime&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Cozi TV&lt;/td&gt;
+        &lt;td&gt;Retro&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
         &lt;td&gt;Crime Network&lt;/td&gt;
@@ -321,6 +329,10 @@
         &lt;td&gt;News&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
+        &lt;td&gt;News Net&lt;/td&gt;
+        &lt;td&gt;News&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
         &lt;td&gt;Outdoor America&lt;/td&gt;
         &lt;td&gt;Lifestyle&lt;/td&gt;
     &lt;/tr&gt;
@@ -397,6 +409,10 @@
         &lt;td&gt;Shopping&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
+        &lt;td&gt;Retro TV&lt;/td&gt;
+        &lt;td&gt;Retro&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
         &lt;td&gt;Rev'n TV&lt;/td&gt;
         &lt;td&gt;Special Interest&lt;/td&gt;
     &lt;/tr&gt;
@@ -467,6 +483,10 @@
     &lt;tr&gt;
         &lt;td&gt;The Pet Collective&lt;/td&gt;
         &lt;td&gt;Special Interest&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;This TV&lt;/td&gt;
+        &lt;td&gt;Retro&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
         &lt;td&gt;Unsolved Mysteries&lt;/td&gt;
