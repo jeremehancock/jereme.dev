@@ -1,0 +1,10 @@
+{
+	"author": "Pi Lab",
+	"email": "",
+	"website": "https://pilab.dev",
+	"version": "1.0.0",
+	"releaseDate": "2019-06-21",
+	"license": "MIT",
+	"compatible": "3.9.2",
+	"notes": "Credits to Bludit for original version"
+}

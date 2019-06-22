@@ -8,8 +8,8 @@ function getLatestVersion() {
 		method: "GET",
 		dataType: 'json',
 		success: function(json) {
-			// Constant BLUDIT_BUILD is defined on variables.js
-			if (json.stable.build > BLUDIT_BUILD) {
+			// Constant BLUDIT_VERSION is defined on variables.js
+			if (json.stable.version > BLUDIT_VERSION) {
 				$("#current-version").hide();
 				$("#new-version").show();
 			}

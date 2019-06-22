@@ -4,7 +4,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Fri, 21 Jun 2019 19:25:01 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 21 Jun 2019 22:03:01 -0500</lastBuildDate>
     <item>
       <title>Bludit API PHP Example</title>
       <link>https://pilab.dev/bludit-api-php-example</link>
@@ -564,6 +564,16 @@
 &lt;img src="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/target-blank.png" class="plugin-thumb"&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;a href="https://github.com/mhancoc7/open-links-new-tab-pilab"&gt;&lt;/p&gt;
+&lt;button type="button" class="btn btn-md btn-success" id="download-target"&gt;Download&lt;/button&gt;
+&lt;p&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2&gt;Version - Pi Lab&lt;/h2&gt;
+&lt;p&gt;Show the current version on the sidebar of the admin panel, and check periodically for new Bludit releases. If there is a new release a link to the Bludit site will be displayed. If you are a Bludit PRO user a link to Bludit's Patreon page will be displayed.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/version-pilab.png" data-lightbox="version-pilab" data-title="Version - Pi Lab"&gt;
+&lt;img src="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/version-pilab.png" class="plugin-thumb"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href="https://github.com/mhancoc7/version-pilab"&gt;&lt;/p&gt;
 &lt;button type="button" class="btn btn-md btn-success" id="download-target"&gt;Download&lt;/button&gt;
 &lt;p&gt;&lt;/a&gt;&lt;/p&gt;</description>
       <pubDate>Sat, 01 Jun 2019 23:24:03 -0500</pubDate>

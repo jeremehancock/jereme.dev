@@ -12,7 +12,6 @@ For more information on a setup that this plugin is intended for checkout [Pi La
 	<button type="button" class="btn btn-md btn-success" id="download-show-node">Download</button>
 </a>
 
-
 -----
 
 ## Robots - Pi Lab
@@ -37,7 +36,6 @@ This plugin allows you to temporarily redirect your site to another URL. The [Bl
 	<button type="button" class="btn btn-md btn-success" id="download-redirect">Download</button>
 </a>
 
-
 -----
 
 ## Web Stats - Pi Lab
@@ -51,7 +49,6 @@ Add your favorite web stats code (ex: [Statcounter](https://statcounter.com) to 
 	<button type="button" class="btn btn-md btn-success" id="download-webstatus">Download</button>
 </a>
 
-
 -----
 
 ## target='_blank' - Pi Lab
@@ -61,5 +58,17 @@ This plugin forces all external links on pages to open in new tabs.
 > <img src="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/target-blank.png" class="plugin-thumb"></a>
 
 <a href="https://github.com/mhancoc7/open-links-new-tab-pilab">
+	<button type="button" class="btn btn-md btn-success" id="download-target">Download</button>
+</a>
+
+-----
+
+## Version - Pi Lab
+Show the current version on the sidebar of the admin panel, and check periodically for new Bludit releases. If there is a new release a link to the Bludit site will be displayed. If you are a Bludit PRO user a link to Bludit's Patreon page will be displayed.
+
+> <a href="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/version-pilab.png" data-lightbox="version-pilab" data-title="Version - Pi Lab">
+> <img src="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/version-pilab.png" class="plugin-thumb"></a>
+
+<a href="https://github.com/mhancoc7/version-pilab">
 	<button type="button" class="btn btn-md btn-success" id="download-target">Download</button>
 </a>
