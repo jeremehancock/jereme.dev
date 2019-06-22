@@ -14,7 +14,7 @@
 *    **Operating System:** [Raspbian](https://www.raspbian.org/)
 *    **Webserver/Load Balancer:** [Nginx](https://nginx.org/)
 *    **SSL:** [Let's Encrypt](https://letsencrypt.org/)
-*   **CMS:** [Bludit - v3.9.1](https://www.bludit.com/)
+*   **CMS:** [Bludit - v3.9.2](https://www.bludit.com/)
 *    **Theme:** [Blekathlon](https://blthemes.pp.ua/) (Pi Lab Version)
 *    **Plugins:** [Pi Lab Plugins](plugins)
 *    **Network** 
