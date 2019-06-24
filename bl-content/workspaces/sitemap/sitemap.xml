@@ -4,6 +4,11 @@
     <loc>https://pilab.dev</loc>
   </url>
   <url>
+    <loc>https://pilab.dev/pi-lab-sd-card-upgrade</loc>
+    <lastmod>2019-06-23</lastmod>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
     <loc>https://pilab.dev/bludit-api-php-example</loc>
     <lastmod>2019-06-11</lastmod>
     <changefreq>daily</changefreq>

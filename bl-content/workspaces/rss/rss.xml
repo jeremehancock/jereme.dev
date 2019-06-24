@@ -4,7 +4,45 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Sun, 23 Jun 2019 20:26:05 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 23 Jun 2019 21:50:17 -0500</lastBuildDate>
+    <item>
+      <title>Pi Lab SD Card Upgrade</title>
+      <link>https://pilab.dev/pi-lab-sd-card-upgrade</link>
+      <description>&lt;p&gt;When I first put Pi Lab together I used various SD cards I could find laying around. They were a combination fo 8GB and 16GB class 4 cards. &lt;/p&gt;
+&lt;p&gt;I recently upgraded all 4 cards to &lt;a href="https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M"&gt;Samsung EVO Plus 32GB&lt;/a&gt; SD Cards. I found a good deal for a 5 pack on Amazon and started the process of prepping. Here is the basic steps that I took. This is not a full &amp;quot;how-to&amp;quot;. It is meant to be general guidance. If you decide to use any of the commands or steps please be &lt;strong&gt;very careful&lt;/strong&gt; since you could mess up and modify the wrong partition or device.&lt;/p&gt;
+&lt;p&gt;The first issue that I had was the fact that I had setup each card using &lt;a href="https://www.raspberrypi.org/downloads/noobs/"&gt;Noobs&lt;/a&gt;. This meant that after I cloned the SD cards I couldn't simply use &amp;quot;raspi config&amp;quot; to expand the file system since that is not supported on &lt;a href="https://www.raspberrypi.org/downloads/noobs/"&gt;Noobs&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;So after some research this is the method that I used. &lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Note:&lt;/strong&gt; I used Linux for this process.&lt;/em&gt;&lt;/p&gt;
+&lt;h2&gt;Step 1:&lt;/h2&gt;
+&lt;p&gt;First I shutdown the Pi that I planned to upgrade via SSH.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo shutdown now&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;After shutting down the Pi I unplugged the Pi and removed the SD card. I then put it into an adapter so that I could insert it into my laptop. If your laptop doesn't have an SD card slot you would need to use an SD card reader.&lt;/p&gt;
+&lt;p&gt;Since my laptop auto mounts SD cards I unmounted the partitions before proceeding. &lt;/p&gt;
+&lt;p&gt;I then ran the following command on to create an image of the SD card.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;dd if=/dev/mmcblk0 of=~/pi.img bs=4M status=progress&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The following command can help locate the correct device for your SD card.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;lsblk&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;Step 2:&lt;/h2&gt;
+&lt;p&gt;Next I removed the SD card and inserted the new larger SD card.&lt;/p&gt;
+&lt;p&gt;I then ran the following command to copy the image to the new SD card.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;dd if=~/pi.img of=/dev/mmcblk0 bs=4M conv=fsync status=progress&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Once this was done I had a working bootable SD card cloned from the original. However, the file system still needed to be expanded to take full advantage of the card.&lt;/p&gt;
+&lt;h2&gt;Step 3:&lt;/h2&gt;
+&lt;p&gt;Finally I used Gparted to resize partitions on the SD card to fully expand the file system.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Here are the basic steps.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Select partition labeled &lt;strong&gt;SETTINGS&lt;/strong&gt; – Right Click- Resize/Move, At Resize/Move – Drag the Bar from Left to Right – Click Resize/Move.&lt;/p&gt;
+&lt;p&gt;&lt;a href="bl-content/uploads/pages/c103fd8b6b8961f33b54a7c4b3aa152a/move-settings-to-end.png" data-lightbox="move-settings-to-end" data-title="Move 'SETTINGS' partition to the end."&gt;&lt;img src="bl-content/uploads/pages/c103fd8b6b8961f33b54a7c4b3aa152a/move-settings-to-end.png" class="plugin-thumb"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Select &lt;strong&gt;extended&lt;/strong&gt; File System (Cyan Color) – Click Resize/Move, At Resize/Move – Expand the Bar From Left to Right – Click Resize/Move.&lt;/p&gt;
+&lt;p&gt;&lt;a href="bl-content/uploads/pages/c103fd8b6b8961f33b54a7c4b3aa152a/expand-extended.png" data-lightbox="expand-extended" data-title="Expand 'extended' partition."&gt;&lt;img src="bl-content/uploads/pages/c103fd8b6b8961f33b54a7c4b3aa152a/expand-extended.png" class="plugin-thumb"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Select partition labeled &lt;strong&gt;root&lt;/strong&gt; – Right Click – Resize/Move, At Resize/Move – Expand the Bar From Left to Right – Click Resize/Move.&lt;/p&gt;
+&lt;p&gt;&lt;a href="bl-content/uploads/pages/c103fd8b6b8961f33b54a7c4b3aa152a/expand-root.png" data-lightbox="expand-root" data-title="Expand 'root' partition."&gt;&lt;img src="bl-content/uploads/pages/c103fd8b6b8961f33b54a7c4b3aa152a/expand-root.png" class="plugin-thumb"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Select parition labeled &lt;strong&gt;SETTINGS&lt;/strong&gt; – Right Click – Resize/Move, At Resize/Move – Expand the Bar from Right to Left – Click Resize/Move.&lt;/p&gt;
+&lt;p&gt;&lt;a href="bl-content/uploads/pages/c103fd8b6b8961f33b54a7c4b3aa152a/put-settings-back.png" data-lightbox="put-settings-back" data-title="Put 'SETTINGS' partition back in place."&gt;&lt;img src="bl-content/uploads/pages/c103fd8b6b8961f33b54a7c4b3aa152a/put-settings-back.png" class="plugin-thumb"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Click &lt;strong&gt;Apply All Operations&lt;/strong&gt; at taskbar to Apply the changes.&lt;/p&gt;
+&lt;p&gt;I then repeated this process for each card. Since Pi Lab is setup behind a load balancer the Pi Lab site remained online while upgrading each web node's SD card. When it was time to upgrade the load balancer's SD card I simply had to change the port forward on my network to route port 80 and 443 to one of the nodes that had already been completed. This way Pi Lab never had to go offline.&lt;/p&gt;</description>
+      <pubDate>Sun, 23 Jun 2019 20:46:56 -0500</pubDate>
+      <guid isPermaLink="false">c103fd8b6b8961f33b54a7c4b3aa152a</guid>
+    </item>
     <item>
       <title>Bludit API PHP Example</title>
       <link>https://pilab.dev/bludit-api-php-example</link>
@@ -760,20 +798,6 @@ echo "Promote Complete\n"&lt;/code&gt;&lt;/pre&gt;
 &lt;/blockquote&gt;</description>
       <pubDate>Tue, 28 May 2019 21:06:25 -0500</pubDate>
       <guid isPermaLink="false">75985f8036100bd2c1f9c4ca271e499f</guid>
-    </item>
-    <item>
-      <title>First CMS Upgrade</title>
-      <link>https://pilab.dev/first-cms-upgrade</link>
-      <description>&lt;p&gt;Pi Lab has survived the first upgrade to the latest version of &lt;a href="https://www.bludit.com/"&gt;Bludit&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;I was concerned how this would go since I had things running so smoothly.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;It worked perfectly! &lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Pi Lab is now setup to have a &amp;quot;source copy&amp;quot; on the main node that allows me to work on that version without affecting the live site. Once I have it working I simply run a script that I wrote to &amp;quot;promote&amp;quot; this &amp;quot;source copy&amp;quot; to all of the nodes. It also creates a backup on &lt;a href="https://github.com"&gt;GitHub&lt;/a&gt;. This gives me full redundancy and a keeps a historical record of any changes that I make.&lt;/p&gt;
-&lt;p&gt;The upgrade was as simple as copying the new version over my &amp;quot;source copy&amp;quot; of Pi Lab and then running my &amp;quot;promote&amp;quot; script. &lt;/p&gt;
-&lt;p&gt;I am working on getting a post together to give more information on how I have setup Pi Lab.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt;
-Checkout the &lt;a href="pi-lab-setup"&gt;Pi Lab Setup&lt;/a&gt; for more information.&lt;/p&gt;</description>
-      <pubDate>Mon, 27 May 2019 21:14:23 -0500</pubDate>
-      <guid isPermaLink="false">6bef1d6939b8b0d64ff01d308792dccf</guid>
     </item>
   </channel>
 </rss>
