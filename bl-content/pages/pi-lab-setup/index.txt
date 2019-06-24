@@ -219,6 +219,8 @@ I hope this helps someone looking to run [Bludit](https://bludit.com) on a Raspb
 
 > Checkout the plugins that I built specifically for Pi Lab: [Plugins](plugins)
 
+> I have upgraded the SD cards for Pi Lab. [Pi Lab SD Card Upgrade](pi-lab-sd-card-upgrade)
+
 
 
 
