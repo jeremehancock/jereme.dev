@@ -4,7 +4,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Sun, 23 Jun 2019 12:43:51 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 23 Jun 2019 20:26:05 -0500</lastBuildDate>
     <item>
       <title>Bludit API PHP Example</title>
       <link>https://pilab.dev/bludit-api-php-example</link>
@@ -769,7 +769,9 @@ echo "Promote Complete\n"&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;It worked perfectly! &lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Pi Lab is now setup to have a &amp;quot;source copy&amp;quot; on the main node that allows me to work on that version without affecting the live site. Once I have it working I simply run a script that I wrote to &amp;quot;promote&amp;quot; this &amp;quot;source copy&amp;quot; to all of the nodes. It also creates a backup on &lt;a href="https://github.com"&gt;GitHub&lt;/a&gt;. This gives me full redundancy and a keeps a historical record of any changes that I make.&lt;/p&gt;
 &lt;p&gt;The upgrade was as simple as copying the new version over my &amp;quot;source copy&amp;quot; of Pi Lab and then running my &amp;quot;promote&amp;quot; script. &lt;/p&gt;
-&lt;p&gt;I am working on getting a post together to give more information on how I have setup Pi Lab.&lt;/p&gt;</description>
+&lt;p&gt;I am working on getting a post together to give more information on how I have setup Pi Lab.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt;
+Checkout the &lt;a href="pi-lab-setup"&gt;Pi Lab Setup&lt;/a&gt; for more information.&lt;/p&gt;</description>
       <pubDate>Mon, 27 May 2019 21:14:23 -0500</pubDate>
       <guid isPermaLink="false">6bef1d6939b8b0d64ff01d308792dccf</guid>
     </item>
