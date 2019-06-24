@@ -262,4 +262,8 @@ pre {
         font-size: .8em;
         top: 3px;
     }
+
+    .plugin-thumb {
+        display: none;
+    }
 }
