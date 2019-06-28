@@ -200,6 +200,8 @@ So what is this script doing?
 
 * Update permissions of the "/var/www/dev" directory to "pi:www-data". This ensures that the script doesn't run into any issues with perms on the "dev" copy.
 * Modify the "/var/www/dev/bl-content/databases/site.php" file with the production url.
+* Modify the "/var/www/dev/bl-content/workspaces/rss/rss.xml" file with the production url.
+* Modify the "/var/www/dev/bl-content/workspaces/sitemap/sitemap.xml" file with the production url.
 * Copy the "dev" copy to the "prod" directory of the  "primary" web node
 * Syncronize the "primary" web node to the second web node. This includes some temporary permission changes.
 * Syncronize the "primary" web node to the third web node. This includes some temporary permission changes.
