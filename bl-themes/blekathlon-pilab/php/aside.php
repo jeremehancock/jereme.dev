@@ -45,6 +45,11 @@
                             </a>
                         </li>
                         <?php endforeach ?>
+                        <li class="menu-item">
+                            <a href="https://twitter.com/pilabdev">
+                                Twitter Bot
+                            </a>
+                        </li>
                     </ul>
                 </section>
             </div>
