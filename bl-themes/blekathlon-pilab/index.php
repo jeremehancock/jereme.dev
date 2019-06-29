@@ -21,6 +21,8 @@
 
     <?php echo Theme::javascript('js/bundle.min.js'); ?>
 
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
     <?php Theme::plugins('siteBodyEnd'); ?>
 
 </body>
