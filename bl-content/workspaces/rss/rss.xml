@@ -4,7 +4,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Sun, 30 Jun 2019 21:26:34 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 30 Jun 2019 21:35:36 -0500</lastBuildDate>
     <item>
       <title>Pi Lab Twitter Bot</title>
       <link>https://pilab.dev/pi-lab-twitter-bot</link>
@@ -90,7 +90,7 @@ api.update_status(status='Uptime: '+uptime()+ '\nCPU temperature: '+temp+'C')&lt
 &lt;pre&gt;&lt;code&gt;sudo crontab -e&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;*/60 * * * * python /home/pi/twitterbot/TwitterBot.py&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;That's it! You should now have a Twitter Bot setup and posting to Twitter every hour. &lt;/p&gt;
-&lt;p&gt;I have also setup the Pi Lab Twitter Bot to update when I push the Pi Lab Dev Node to Production.&lt;/p&gt;</description>
+&lt;p&gt;I have also setup the Pi Lab Twitter Bot to post when I promote the Pi Lab Dev Node to Production.&lt;/p&gt;</description>
       <pubDate>Sun, 30 Jun 2019 21:08:14 -0500</pubDate>
       <guid isPermaLink="false">d128e01386b48d8dcb7a6b8e253fc513</guid>
     </item>

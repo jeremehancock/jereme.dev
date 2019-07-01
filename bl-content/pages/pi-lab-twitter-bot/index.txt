@@ -100,7 +100,7 @@ sudo crontab -e
 
 That's it! You should now have a Twitter Bot setup and posting to Twitter every hour. 
 
-I have also setup the Pi Lab Twitter Bot to update when I push the Pi Lab Dev Node to Production.
+I have also setup the Pi Lab Twitter Bot to post when I promote the Pi Lab Dev Node to Production.
 
 
 
