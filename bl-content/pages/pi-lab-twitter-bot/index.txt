@@ -1,0 +1,108 @@
+Checkout the new [Pi Lab Twitter Bot](https://twitter.com/pilabdev)!
+
+I have setup the bot to post the current uptime and temperature of each node including the [SETI@home Node](pi-lab-seti-home-node) every 30 minutes. 
+
+There are tons of articles covering how to create a Twitter Bot so I will not completely recreate the wheel here. I used an article from [PiMyLifeUp](https://pimylifeup.com/raspberry-pi-twitter-bot/). I did notice that  Twitter has changed a few things since the article was created, but I was able to get past the differences pretty easily.
+
+Once you have the [Twitter Developer Account](https://developer.twitter.com/en/apply-for-access.html) and app created here are the basic steps to get the bot running.
+
+## Step 1:
+Make sure everything is up to date.
+```
+sudo apt-get update
+sudo apt-get upgrade
+```
+## Step 2:
+Install the necessary packages.
+```
+sudo apt-get install python-setuptools
+sudo easy_install pip
+sudo pip install twython
+```
+## Step 3:
+Create the Twitter Bot.
+```
+mkdir ~/twitterbot
+cd ~/twitterbot
+sudo nano TwitterBot.py
+```
+## Step 4:
+This is a slightly modified version of my current bot code that you can use.
+```
+#!/usr/bin/env python
+import os
+from twython import Twython
+
+#Define our constant variables, this is all the data we wrote down in the first part of the tutorial.
+CONSUMER_KEY = '***************YOUR DATA*****************'
+CONSUMER_SECRET = '***************YOUR DATA*****************'
+ACCESS_KEY = '***************YOUR DATA*****************'
+ACCESS_SECRET = '***************YOUR DATA*****************'
+
+#Create a copy of the Twython object with all our keys and secrets to allow easy commands.
+api = Twython(CONSUMER_KEY,CONSUMER_SECRET,ACCESS_KEY,ACCESS_SECRET) 
+
+#----------------------------------------
+# Gives a human-readable uptime string
+def uptime():
+ 
+     try:
+         f = open( "/proc/uptime" )
+         contents = f.read().split()
+         f.close()
+     except:
+        return "Cannot open uptime file: /proc/uptime"
+ 
+     total_seconds = float(contents[0])
+ 
+     # Helper vars:
+     MINUTE  = 60
+     HOUR    = MINUTE * 60
+     DAY     = HOUR * 24
+ 
+     # Get the days, hours, etc:
+     days    = int( total_seconds / DAY )
+     hours   = int( ( total_seconds % DAY ) / HOUR )
+     minutes = int( ( total_seconds % HOUR ) / MINUTE )
+     seconds = int( total_seconds % MINUTE )
+ 
+     # Build up the pretty string (like this: "N days, N hours, N minutes, N seconds")
+     string = ""
+     if days > 0:
+         string += str(days) + " " + (days == 1 and "day" or "days" ) + ", "
+     if len(string) > 0 or hours > 0:
+         string += str(hours) + " " + (hours == 1 and "hour" or "hours" ) + ", "
+     if len(string) > 0 or minutes > 0:
+         string += str(minutes) + " " + (minutes == 1 and "minute" or "minutes" ) + ", "
+     string += str(seconds) + " " + (seconds == 1 and "second" or "seconds" )
+ 
+     return string;
+
+#Using our newly created object, utilize the update_status to send in the text passed in through CMD
+cmd = '/opt/vc/bin/vcgencmd measure_temp'
+line = os.popen(cmd).readline().strip()
+temp = line.split('=')[1].split("'")[0]
+api.update_status(status='Uptime: '+uptime()+ '\nCPU temperature: '+temp+'C')
+```
+## Step 5:
+Ensure that the Twitter Bot is executable.
+```
+sudo chmod +x TwitterBot.py
+```
+## Step 6:
+Automate the Twitter Bot.
+```
+sudo crontab -e
+```
+```
+*/60 * * * * python /home/pi/twitterbot/TwitterBot.py
+```
+
+That's it! You should now have a Twitter Bot setup and posting to Twitter every hour. 
+
+I have also setup the Pi Lab Twitter Bot to update when I push the Pi Lab Dev Node to Production.
+
+
+
+
+
