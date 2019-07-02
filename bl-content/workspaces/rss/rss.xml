@@ -4,7 +4,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Sun, 30 Jun 2019 21:35:36 -0500</lastBuildDate>
+    <lastBuildDate>Tue, 02 Jul 2019 13:20:47 -0500</lastBuildDate>
     <item>
       <title>Pi Lab Twitter Bot</title>
       <link>https://pilab.dev/pi-lab-twitter-bot</link>
@@ -114,8 +114,15 @@ sudo apt-get upgrade&lt;/code&gt;&lt;/pre&gt;
 &lt;h2&gt;Step 4: Attach the BOINC Client program to your SETI@Home account&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;boinccmd --project_attach http://setiathome.berkeley.edu &amp;lt;your_account_key&amp;gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;h3&gt;That's it. You should now be up and running!&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;h2&gt;Do more with BOINC:&lt;/h2&gt;
 &lt;h4&gt;Check your tasks:&lt;/h4&gt;
 &lt;pre&gt;&lt;code&gt;boinccmd --get_tasks&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;Install boinctui:&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt-get install boinctui&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;Run boinctui:&lt;/h4&gt;
+&lt;p&gt;This will give you a nice text interface for BOINC.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;boinctui&lt;/code&gt;&lt;/pre&gt;
 &lt;h4&gt;Configure BOINC Client:&lt;/h4&gt;
 &lt;pre&gt;&lt;code&gt;sudo nano /var/lib/boinc-client/cc_config.xml&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;Note:&lt;/em&gt;&lt;/strong&gt; &lt;em&gt;If you make changes to the configuration be sure to run the following command. Configuration options can be found &lt;a href="https://boinc.berkeley.edu/wiki/Client_configuration"&gt;here&lt;/a&gt;. &lt;/em&gt;&lt;/p&gt;

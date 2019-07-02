@@ -34,9 +34,24 @@ boinccmd --project_attach http://setiathome.berkeley.edu <your_account_key>
 
 ### That's it. You should now be up and running!
 
+-----
+
+## Do more with BOINC:
+
 #### Check your tasks:
 ```
 boinccmd --get_tasks
+```
+
+#### Install boinctui:
+```
+sudo apt-get install boinctui
+```
+
+#### Run boinctui:
+This will give you a nice text interface for BOINC.
+```
+boinctui
 ```
 
 #### Configure BOINC Client:
