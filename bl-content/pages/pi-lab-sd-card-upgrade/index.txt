@@ -19,7 +19,7 @@ After shutting down the Pi I unplugged the Pi and removed the SD card. I then pu
 
 Since my laptop auto mounts SD cards I unmounted the partitions before proceeding. 
 
-I then ran the following command on to create an image of the SD card.
+I then ran the following command to create an image of the SD card.
 
 ```
 dd if=/dev/mmcblk0 of=~/pi.img bs=4M status=progress

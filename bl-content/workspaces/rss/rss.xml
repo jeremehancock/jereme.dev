@@ -4,7 +4,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Tue, 02 Jul 2019 13:20:47 -0500</lastBuildDate>
+    <lastBuildDate>Tue, 02 Jul 2019 20:46:26 -0500</lastBuildDate>
     <item>
       <title>Pi Lab Twitter Bot</title>
       <link>https://pilab.dev/pi-lab-twitter-bot</link>
@@ -143,7 +143,7 @@ sudo apt-get upgrade&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;sudo shutdown now&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;After shutting down the Pi I unplugged the Pi and removed the SD card. I then put it into an adapter so that I could insert it into my laptop. If your laptop doesn't have an SD card slot you would need to use an SD card reader.&lt;/p&gt;
 &lt;p&gt;Since my laptop auto mounts SD cards I unmounted the partitions before proceeding. &lt;/p&gt;
-&lt;p&gt;I then ran the following command on to create an image of the SD card.&lt;/p&gt;
+&lt;p&gt;I then ran the following command to create an image of the SD card.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;dd if=/dev/mmcblk0 of=~/pi.img bs=4M status=progress&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;The following command can help locate the correct device for your SD card.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;lsblk&lt;/code&gt;&lt;/pre&gt;
