@@ -52,6 +52,7 @@ http {
    server {
       listen 443 ssl;
       server_name production-domain.com;
+      root /var/www/html;
       ssl_certificate /etc/letsencrypt/live/production-domain.com/fullchain.pem;
       ssl_certificate_key /etc/letsencrypt/live/production-domain.com/privkey.pem;
       ssl_session_cache shared:SSL:10m;
@@ -71,7 +72,7 @@ http {
       location ^~ /bl-content/workspaces/ { deny all; }
       location ^~ /bl-content/pages/ { deny all; }
       location ^~ /bl-kernel/*.php { deny all; }
-
+      location ~ /.well-known { allow all; }
       gzip on;
       gzip_vary on;
       gzip_min_length 10240;
@@ -222,6 +223,8 @@ I hope this helps someone looking to run [Bludit](https://bludit.com) on a Raspb
 > Checkout the plugins that I built specifically for Pi Lab: [Plugins](plugins)
 
 > I have upgraded the SD cards for Pi Lab. [Pi Lab SD Card Upgrade](pi-lab-sd-card-upgrade)
+
+>I have updated the nginx.conf file. I had issues with Let's Encrypt auto renewal. The updates should allow auto renewal to work with the cluster setup.
 
 
 
