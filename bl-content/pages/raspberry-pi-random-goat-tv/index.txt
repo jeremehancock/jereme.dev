@@ -1,0 +1,8 @@
+Checkout my latest ridiculous project!
+
+I took a Raspberry Pi 3b+ added a screen and crammed it in an old broken Christmas ornament that looks like a retro TV. 
+
+## Voila! Raspberry Pi Random Goat TV!
+<p>
+<blockquote class="twitter-tweet  tw-align-center"><p lang="in" dir="ltr">Raspberry Pi Random Goat TV!<a href="https://twitter.com/hashtag/RaspberryPi?src=hash&amp;ref_src=twsrc%5Etfw">#RaspberryPi</a> <a href="https://twitter.com/hashtag/randomgoat?src=hash&amp;ref_src=twsrc%5Etfw">#randomgoat</a> <a href="https://t.co/yCMAk0AZjy">pic.twitter.com/yCMAk0AZjy</a></p>&mdash; Pi Lab (@pilabdev) <a href="https://twitter.com/pilabdev/status/1164382675173556226?ref_src=twsrc%5Etfw">August 22, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</p>
