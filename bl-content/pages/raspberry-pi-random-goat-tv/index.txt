@@ -1,6 +1,6 @@
 Checkout my latest ridiculous project!
 
-I took a Raspberry Pi 3 b+ added a screen and crammed it in an old broken Christmas ornament that looks like a retro TV. Once that was done I just opened a browser full screen to one of my other crazy projects [Random Goat](randomgoat).
+I took a Raspberry Pi 3 B+ added a screen and crammed it in an old broken Christmas ornament that looks like a retro TV. Once that was done I just opened a browser full screen to one of my other crazy projects [Random Goat](randomgoat).
 
 ## Voila! Raspberry Pi Random Goat TV!
 <p>
