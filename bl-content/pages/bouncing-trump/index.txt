@@ -7,4 +7,8 @@ This is a silly site that I put together.
 <div style="float:right;">
 	<a href="https://bouncingtrump.com" target="_blank">Go to the Bouncing Trump site</a>
 </div>
-<br><br><br>
+<br><br>
+Embed Bouncing Trump on your site:
+```
+<iframe src='//bouncingtrump.com/' width='100%' height='700' frameBorder='0' id='bouncing-trump-embed' class="iframe-border" allowFullScreen></iframe>
+```
