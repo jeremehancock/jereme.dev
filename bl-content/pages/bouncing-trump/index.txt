@@ -1,0 +1,10 @@
+This is a silly site that I put together. 
+
+<div class="centered">
+<iframe src='//bouncingtrump.com/' width='100%' height='700' frameBorder='0' id='random-goat-embed' class="iframe-border" allowFullScreen></iframe>
+</div>
+
+<div style="float:right;">
+	<a href="https://bouncingtrump.com" target="_blank">Go to the Bouncing Trump site</a>
+</div>
+<br><br><br>

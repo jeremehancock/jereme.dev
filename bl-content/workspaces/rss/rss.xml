@@ -4,7 +4,21 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Sat, 07 Sep 2019 20:07:56 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 07 Sep 2019 21:21:47 -0500</lastBuildDate>
+    <item>
+      <title>Bouncing Trump!</title>
+      <link>https://pilab.dev/bouncing-trump</link>
+      <description>&lt;p&gt;This is a silly site that I put together. &lt;/p&gt;
+&lt;div class="centered"&gt;
+&lt;iframe src='//bouncingtrump.com/' width='100%' height='700' frameBorder='0' id='random-goat-embed' class="iframe-border" allowFullScreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;div style="float:right;"&gt;
+    &lt;a href="https://bouncingtrump.com" target="_blank"&gt;Go to the Bouncing Trump site&lt;/a&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;</description>
+      <pubDate>Sat, 07 Sep 2019 21:08:21 -0500</pubDate>
+      <guid isPermaLink="false">50f6c83ff27271e2a59a3ae144479710</guid>
+    </item>
     <item>
       <title>Raspberry Pi Random Goat TV</title>
       <link>https://pilab.dev/raspberry-pi-random-goat-tv</link>
@@ -179,105 +193,6 @@ sudo apt-get upgrade&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;I then repeated this process for each card. Since Pi Lab is setup behind a load balancer the Pi Lab site remained online while upgrading each web node's SD card. When it was time to upgrade the load balancer's SD card I simply had to change the port forward on my network to route port 80 and 443 to one of the nodes that had already been completed. This way Pi Lab never had to go offline.&lt;/p&gt;</description>
       <pubDate>Sun, 23 Jun 2019 20:46:56 -0500</pubDate>
       <guid isPermaLink="false">c103fd8b6b8961f33b54a7c4b3aa152a</guid>
-    </item>
-    <item>
-      <title>Bludit API PHP Example</title>
-      <link>https://pilab.dev/bludit-api-php-example</link>
-      <description>&lt;p&gt;The Bludit API (Application Programming Interface) is a plugin to provide an easy integration with Bludit. With this plugin, you can retrieve or update data from the database with just an HTTP request.&lt;/p&gt;
-&lt;p&gt;This is a really awesome feature that will hopefully continue to be expanded.&lt;/p&gt;
-&lt;p&gt;Check out the &lt;a href="https://docs.bludit.com/en/api/introduction"&gt;Bludit API Documentation&lt;/a&gt;.&lt;/p&gt;
-&lt;h2&gt;PHP code example:&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;!DOCTYPE html&amp;gt;
-&amp;lt;html&amp;gt;
-&amp;lt;head&amp;gt;
-
-    &amp;lt;link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700|Roboto:400,400i,700" rel="stylesheet"/&amp;gt;
-
-    &amp;lt;style&amp;gt;
-        .grid-container {
-            display: grid;
-            grid-template-columns: auto auto auto;
-            background-color: rgb(55, 55, 55);
-            padding: 2px;
-        }
-
-        .grid-item {
-            background-color: rgb(242, 242, 242);
-            border: 1px solid rgba(0, 0, 0, 0.8);
-            padding: 12px;
-            font-size: 30px;
-            text-align: center;
-        }
-
-        .page-thumb {
-            width: 100px;
-            border-radius: .5em;
-            border: 5px solid rgb(242, 242, 242);
-            background-color: rgb(242, 242, 242);
-            transition: all 0.3s ease 0s;
-            box-shadow: rgba(0, 0, 0, 0.25) 3px 4px 5px;
-        }
-
-        .page-thumb:hover {
-            transition: all 0.3s ease 0s;
-            transform: scale(1.04);
-        }
-
-        h2 {
-            font-family: "Lora", Palatino, Georgia, Times, serif;
-            font-style: italic;
-            font-size: 2.0em;
-            margin-bottom: 5px;
-        }
-
-        @media only screen and (max-width: 500px) {
-            .grid-container {
-                display: flow-root;
-                padding: 2px;
-                text-align: center;
-            }
-            .page-thumb {
-                width: 200px;
-            }
-        }
-    &amp;lt;/style&amp;gt;
-&amp;lt;/head&amp;gt;
-&amp;lt;body&amp;gt;
-
-&amp;lt;h2&amp;gt;Latest from Pi Lab:&amp;lt;/h2&amp;gt;
-&amp;lt;div class="grid-container"&amp;gt;
-
-    &amp;lt;?php
-
-    $API_KEY = "redacted";
-
-    $json = file_get_contents("https://pilab.dev/api/pages?token=$API_KEY");
-
-    $json = json_decode($json, true);
-
-    foreach ($json as $item) {
-        // This allows you to limit the results. This example shows the first 9 pages in the array
-        $a = array_slice($item, 0, 9);
-        foreach ($a as $val) {
-            if ($val{"type"} == "published") {
-                echo "&amp;lt;div class='grid-item'&amp;gt;" . "&amp;lt;a href=" . $val{"permalink"} . " target='_blank'&amp;gt;&amp;lt;img src='" . $val{"coverImage"} . "' title='" . $val{"title"} . "' class='page-thumb'/&amp;gt;&amp;lt;/a&amp;gt;" . "&amp;lt;/div&amp;gt;";
-            }
-        }
-    }
-
-    ?&amp;gt;
-
-&amp;lt;/div&amp;gt;
-&amp;lt;/body&amp;gt;
-&amp;lt;/html&amp;gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h2&gt;Results:&lt;/h2&gt;
-&lt;iframe  width="100%" height="550"  src="embed_example.php" frameborder="0" class="iframe-border"&gt;&lt;/iframe&gt;
-&lt;h2&gt;Example use on website:&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt; Checkout &lt;a href="https://jereme.dev/#pilab"&gt;Jereme.dev&lt;/a&gt;!&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-      <pubDate>Tue, 11 Jun 2019 22:32:04 -0500</pubDate>
-      <guid isPermaLink="false">521564befbfb99c2e9a16f6e2e4ce421</guid>
     </item>
   </channel>
 </rss>
