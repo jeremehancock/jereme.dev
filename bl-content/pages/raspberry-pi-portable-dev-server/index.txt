@@ -6,6 +6,8 @@ This may be the coolest thing that I have ever built. As a web developer one of 
 
 The Pi Zero was the perfect solution!
 
+> ***Note**: This is NOT a copy paste how-to. It is an overview. I will include reference articles thoughout that I used during the setup.*
+
 I have converted the Pi Zero into a mini dongle computer. I got the inspiration for this project by watching this [video](https://www.youtube.com/watch?v=qbWYUFgLhSU).
 
 I really didn't want to mess with soldering so I went to Amazon and found everything I needed.

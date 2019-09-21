@@ -4,7 +4,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Sat, 21 Sep 2019 17:37:10 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 21 Sep 2019 17:59:30 -0500</lastBuildDate>
     <item>
       <title>RPi Portable Dev Server</title>
       <link>https://pilab.dev/raspberry-pi-portable-dev-server</link>
@@ -13,6 +13,9 @@
 &lt;/div&gt;
 &lt;p&gt;This may be the coolest thing that I have ever built. As a web developer one of the most challenging things can be getting a nice dev environment setup. I have a local dev environement setup on my laptop using &lt;a href="https://www.vagrantup.com/"&gt;Vagrant&lt;/a&gt; and it is nice. However, I wanted to have something that I could use anywhere even if I didn't have access to my laptop.&lt;/p&gt;
 &lt;p&gt;The Pi Zero was the perfect solution!&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Note&lt;/strong&gt;: This is NOT a copy paste how-to. It is an overview. I will include reference articles thoughout that I used during the setup.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;I have converted the Pi Zero into a mini dongle computer. I got the inspiration for this project by watching this &lt;a href="https://www.youtube.com/watch?v=qbWYUFgLhSU"&gt;video&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;I really didn't want to mess with soldering so I went to Amazon and found everything I needed.&lt;/p&gt;
 &lt;h3&gt;Parts List:&lt;/h3&gt;
