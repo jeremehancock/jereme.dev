@@ -4,6 +4,11 @@
     <loc>https://pilab.dev</loc>
   </url>
   <url>
+    <loc>https://pilab.dev/raspberry-pi-portable-dev-server</loc>
+    <lastmod>2019-09-20</lastmod>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
     <loc>https://pilab.dev/bouncing-trump</loc>
     <lastmod>2019-09-07</lastmod>
     <changefreq>daily</changefreq>

@@ -1,0 +1,44 @@
+<div class="centered">
+    <img src="/bl-content/uploads/pages/726f105976d23905b8de01992f54c3a4/pizero-big.png" class="image-border" /><br><br>
+</div>
+
+This may be the coolest thing that I have ever built. As a web developer one of the most challenging things can be getting a nice dev environment setup. I have a local dev environement setup on my laptop using [Vagrant](https://www.vagrantup.com/) and it is nice. However, I wanted to have something that I could use anywhere even if I didn't have access to my laptop.
+
+The Pi Zero was the perfect solution!
+
+I have converted the Pi Zero into a minu dongle computer. I got the inspiration for this project by watching this [video](https://www.youtube.com/watch?v=qbWYUFgLhSU).
+
+I really didn't want to mess with soldering so I went to Amazon and found everything I needed.
+
+### Parts List:
+* [Pi Zero W](https://www.amazon.com/gp/product/B06XFZC3BX)
+* [Pi Zero W USB-A Add-on Board](https://www.amazon.com/gp/product/B07DBL3WYQ)
+* [Samsung 32GB Micro SD Card](https://www.amazon.com/gp/product/B06XWN9Q99)
+
+### Setup:
+* Install Raspbian Buster to SD card
+* Assemble Add-on board/case
+* Insert SD card 
+* Plug into laptop
+
+Depending on whether you are on Windows, Mac, or Linux you may have to install drivers. Since I am on Linux I only had to tweak the USB Ethernet settings to "Link-Only" and I was up and running. I haven't been able to get the setup to use the laptop's internet connection so I also had to enable Wi-Fi on the Pi Zero.
+
+At this point I had a mini dongle computer that I can SSH into using the following command.
+
+```
+ssh pi@raspberrypi.local
+```
+
+For the dev environment I simply installed a basic LAMP stack. I didn't want to mess with any "/etc/hosts" settings so I put all of my web projects into directoires inside the "/var/www/html" directory. Now I can visit each site using the following URL structure where "My-Awesome-Site" is the website's directory inside "/var/www/html".
+
+```
+http://raspberrypi.local/My-Awesome-Site
+```
+
+I took things one step further and created a custom "project list" page so I could easily access all of my projects from a single page as well as many other tools that I use during development.
+
+<div class="centered">
+    <img src="/bl-content/uploads/pages/726f105976d23905b8de01992f54c3a4/project-list-pizero.png" class="image-border" /><br><br>
+</div>
+
+Since all the projects are setup in [GitHub](https://github.com/mhancoc7?tab=repositories) this is truly a portable dev environment. 
