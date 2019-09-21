@@ -22,7 +22,7 @@ I really didn't want to mess with soldering so I went to Amazon and found everyt
 * Insert SD card 
 * Plug into laptop
 
-Depending on whether you are on Windows, Mac, or Linux you may have to install drivers. Since I am on Linux I only had to tweak the USB Ethernet settings to "Link-Only" and I was up and running. I haven't been able to get the setup to use the laptop's internet connection so I also had to enable Wi-Fi on the Pi Zero.
+Depending on whether you are on Windows, Mac, or Linux you may have to install drivers. Since I am on Linux I only had to tweak the USB Ethernet settings to "Link-Only" and I was up and running. I haven't been able to get the setup to use the host machine's internet connection so I also had to enable Wi-Fi on the Pi Zero.
 
 At this point I had a mini dongle computer that I can SSH into using the following command.
 
@@ -30,7 +30,7 @@ At this point I had a mini dongle computer that I can SSH into using the followi
 ssh pi@raspberrypi.local
 ```
 
-For the dev environment I simply installed a basic LAMP stack. I didn't want to mess with any "/etc/hosts" settings so I put all of my web projects into directoires inside the "/var/www/html" directory. Now I can visit each site using the following URL structure where "My-Awesome-Site" is the website's directory inside "/var/www/html".
+For the dev environment I simply installed a basic LAMP stack. I didn't want to mess with any "/etc/hosts" settings so I put all of my web projects into directories inside the "/var/www/html" directory. Now I can visit each site using the following URL structure where "My-Awesome-Site" is the website's directory inside "/var/www/html". Check out this tutorial on installing a LAMP stack on a Raspberry Pi. [Build a LAMP Web Server with WordPress](https://projects.raspberrypi.org/en/projects/lamp-web-server-with-wordpress) Just skip the WordPress specific stuff unless you would like to set that up as well.
 
 ```
 http://raspberrypi.local/My-Awesome-Site
@@ -42,4 +42,4 @@ I took things one step further and created a custom "project list" page so I cou
     <img src="/bl-content/uploads/pages/726f105976d23905b8de01992f54c3a4/project-list-pizero.png" class="image-border" /><br><br>
 </div>
 
-Since all the projects are setup in [GitHub](https://github.com/mhancoc7?tab=repositories) this is truly a portable dev environment. 
+Since all the projects are setup in [GitHub](https://github.com/mhancoc7?tab=repositories) this is truly a portable dev environment. I can just plug it into any computer and I have a full dev environment on the go.
