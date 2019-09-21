@@ -30,7 +30,7 @@ At this point I had a mini dongle computer that I can SSH into using the followi
 ssh pi@raspberrypi.local
 ```
 
-For the dev environment I simply installed a basic LAMP stack. I didn't want to mess with any "/etc/hosts" settings so I put all of my web projects into directories inside the "/var/www/html" directory. Now I can visit each site using the following URL structure where "My-Awesome-Site" is the website's directory inside "/var/www/html". Check out this tutorial on installing a LAMP stack on a Raspberry Pi. [Build a LAMP Web Server with WordPress](https://projects.raspberrypi.org/en/projects/lamp-web-server-with-wordpress) Just skip the WordPress specific stuff unless you would like to set that up as well.
+For the dev environment I simply installed a basic LAMP stack. I didn't want to mess with any "/etc/hosts" settings so I put all of my web projects into directories inside the "/var/www/html" directory. Now I can visit each site using the following URL structure where "My-Awesome-Site" is the website's directory inside "/var/www/html". Check out this tutorial on installing a LAMP stack on a Raspberry Pi.  ([Build a LAMP Web Server with WordPress](https://projects.raspberrypi.org/en/projects/lamp-web-server-with-wordpress)) Just skip the WordPress specific stuff unless you would like to set that up as well.
 
 ```
 http://raspberrypi.local/My-Awesome-Site

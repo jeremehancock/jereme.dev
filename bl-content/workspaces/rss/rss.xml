@@ -4,7 +4,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Sat, 21 Sep 2019 17:35:19 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 21 Sep 2019 17:37:10 -0500</lastBuildDate>
     <item>
       <title>RPi Portable Dev Server</title>
       <link>https://pilab.dev/raspberry-pi-portable-dev-server</link>
@@ -32,7 +32,7 @@
 &lt;p&gt;Depending on whether you are on Windows, Mac, or Linux you may have to install drivers. Since I am on Linux I only had to tweak the USB Ethernet settings to &amp;quot;Link-Only&amp;quot; and I was up and running. I haven't been able to get the setup to use the host machine's internet connection so I also had to enable Wi-Fi on the Pi Zero.&lt;/p&gt;
 &lt;p&gt;At this point I had a mini dongle computer that I can SSH into using the following command.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;ssh pi@raspberrypi.local&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;For the dev environment I simply installed a basic LAMP stack. I didn't want to mess with any &amp;quot;/etc/hosts&amp;quot; settings so I put all of my web projects into directories inside the &amp;quot;/var/www/html&amp;quot; directory. Now I can visit each site using the following URL structure where &amp;quot;My-Awesome-Site&amp;quot; is the website's directory inside &amp;quot;/var/www/html&amp;quot;. Check out this tutorial on installing a LAMP stack on a Raspberry Pi. &lt;a href="https://projects.raspberrypi.org/en/projects/lamp-web-server-with-wordpress"&gt;Build a LAMP Web Server with WordPress&lt;/a&gt; Just skip the WordPress specific stuff unless you would like to set that up as well.&lt;/p&gt;
+&lt;p&gt;For the dev environment I simply installed a basic LAMP stack. I didn't want to mess with any &amp;quot;/etc/hosts&amp;quot; settings so I put all of my web projects into directories inside the &amp;quot;/var/www/html&amp;quot; directory. Now I can visit each site using the following URL structure where &amp;quot;My-Awesome-Site&amp;quot; is the website's directory inside &amp;quot;/var/www/html&amp;quot;. Check out this tutorial on installing a LAMP stack on a Raspberry Pi.  (&lt;a href="https://projects.raspberrypi.org/en/projects/lamp-web-server-with-wordpress"&gt;Build a LAMP Web Server with WordPress&lt;/a&gt;) Just skip the WordPress specific stuff unless you would like to set that up as well.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;http://raspberrypi.local/My-Awesome-Site&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;I took things one step further and created a custom &amp;quot;project list&amp;quot; page so I could easily access all of my projects from a single page as well as many other tools that I use during development.&lt;/p&gt;
 &lt;div class="centered"&gt;
