@@ -17,6 +17,7 @@ I really didn't want to mess with soldering so I went to Amazon and found everyt
 
 ### Setup:
 * Install Raspbian Buster to SD card
+*  Follow the steps 3-4 on this [video](https://www.youtube.com/watch?v=qbWYUFgLhSU).
 * Assemble Add-on board/case
 * Insert SD card 
 * Plug into laptop

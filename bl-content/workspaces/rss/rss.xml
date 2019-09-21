@@ -4,7 +4,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Fri, 20 Sep 2019 20:11:25 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 21 Sep 2019 07:39:31 -0500</lastBuildDate>
     <item>
       <title>RPi Portable Dev Server</title>
       <link>https://pilab.dev/raspberry-pi-portable-dev-server</link>
@@ -24,6 +24,7 @@
 &lt;h3&gt;Setup:&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Install Raspbian Buster to SD card&lt;/li&gt;
+&lt;li&gt;Follow the steps 3-4 on this &lt;a href="https://www.youtube.com/watch?v=qbWYUFgLhSU"&gt;video&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;Assemble Add-on board/case&lt;/li&gt;
 &lt;li&gt;Insert SD card &lt;/li&gt;
 &lt;li&gt;Plug into laptop&lt;/li&gt;
