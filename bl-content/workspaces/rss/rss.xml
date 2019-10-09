@@ -4,7 +4,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Mon, 23 Sep 2019 18:45:24 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 09 Oct 2019 11:38:11 -0500</lastBuildDate>
     <item>
       <title>RPi Portable Dev Server</title>
       <link>https://pilab.dev/raspberry-pi-portable-dev-server</link>
@@ -39,7 +39,7 @@
 &lt;pre&gt;&lt;code&gt;http://raspberrypi.local/My-Awesome-Site&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;I took things one step further and created a custom &amp;quot;project list&amp;quot; page so I could easily access all of my projects from a single page as well as many other tools that I use during development.&lt;/p&gt;
 &lt;div class="centered"&gt;
-    &lt;img src="/bl-content/uploads/pages/726f105976d23905b8de01992f54c3a4/project-list-pizero.png" class="image-border" /&gt;&lt;br&gt;&lt;br&gt;
+    &lt;img src="/bl-content/uploads/pages/726f105976d23905b8de01992f54c3a4/pizero-dashboard.png" class="image-border" /&gt;&lt;br&gt;&lt;br&gt;
 &lt;/div&gt;
 &lt;p&gt;Since all the projects are setup in &lt;a href="https://github.com/mhancoc7?tab=repositories"&gt;GitHub&lt;/a&gt; this is truly a portable dev environment. I can just plug it into any computer and I have a full dev environment on the go.&lt;/p&gt;</description>
       <pubDate>Fri, 20 Sep 2019 18:36:44 -0500</pubDate>
