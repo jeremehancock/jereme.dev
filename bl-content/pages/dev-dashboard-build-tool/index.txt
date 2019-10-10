@@ -2,7 +2,7 @@
     <img src="/bl-content/uploads/pages/e7452072631a01dcade0155ff1add7d1/pizero-dashboard.png" class="image-border" /><br><br>
 </div>
 
-I recently posted about a project that I started to create a [Raspberry Pi powered portable dev server](raspberry-pi-portable-dev-server). 
+I recently posted about a project that I started to create a [Raspberry Pi Powered Portable Dev Server](raspberry-pi-portable-dev-server). 
 
 I have really enjoyed that project and I have expanded it into a build tool so other's can create the same thing more easily. I actually setup the build tool to configure a local dev environment in two different ways.
 
