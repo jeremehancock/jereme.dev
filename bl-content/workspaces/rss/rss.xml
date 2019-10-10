@@ -4,7 +4,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Wed, 09 Oct 2019 21:51:34 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 09 Oct 2019 22:13:44 -0500</lastBuildDate>
     <item>
       <title>Dev Dashboard Build Tool</title>
       <link>https://pilab.dev/dev-dashboard-build-tool</link>
@@ -55,7 +55,10 @@
 &lt;div class="centered"&gt;
     &lt;img src="/bl-content/uploads/pages/726f105976d23905b8de01992f54c3a4/pizero-dashboard.png" class="image-border" /&gt;&lt;br&gt;&lt;br&gt;
 &lt;/div&gt;
-&lt;p&gt;Since all the projects are setup in &lt;a href="https://github.com/mhancoc7?tab=repositories"&gt;GitHub&lt;/a&gt; this is truly a portable dev environment. I can just plug it into any computer and I have a full dev environment on the go.&lt;/p&gt;</description>
+&lt;p&gt;Since all the projects are setup in &lt;a href="https://github.com/mhancoc7?tab=repositories"&gt;GitHub&lt;/a&gt; this is truly a portable dev environment. I can just plug it into any computer and I have a full dev environment on the go.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Update&lt;/strong&gt;: I have created a new Dev-Dashboard build tool for setting up a RPI Powered Portable Dev Server. It can also be used to create a similar setup using Vagrant. Check it out here: &lt;a href="dev-dashboard-build-tool"&gt;Dev Dashboard Build Tool&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</description>
       <pubDate>Fri, 20 Sep 2019 18:36:44 -0500</pubDate>
       <guid isPermaLink="false">726f105976d23905b8de01992f54c3a4</guid>
     </item>
