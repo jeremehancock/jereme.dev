@@ -10,4 +10,4 @@ The first method uses Vagrant. So if you run the tool on your computer it will u
 
 The second method converts a Pi Zero that has been setup as a USB dongle into a portable dev server with the same "dashboard" setup.
 
-[Check out the Dev-Dashboard build tool on GitHub](https://github.com/mhancoc7/Dev-Dashboard/blob/master/README.md)
+[<img src="/images/check-it-out-on-github.png" alt="Get it on GitHub" class="on-github" />](https://github.com/mhancoc7/Dev-Dashboard/blob/master/README.md)

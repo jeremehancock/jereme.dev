@@ -212,6 +212,10 @@ table td {
     box-shadow: rgba(0, 0, 0, 0.25) 3px 4px 5px;
 }
 
+.on-github {
+    width: 300px;
+    height: auto;
+
 pre {
     border-radius: .5em;
     border: 5px solid #f2f2f2;

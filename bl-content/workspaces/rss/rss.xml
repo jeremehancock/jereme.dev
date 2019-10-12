@@ -4,7 +4,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Thu, 10 Oct 2019 06:44:31 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 11 Oct 2019 20:57:03 -0500</lastBuildDate>
     <item>
       <title>Dev Dashboard Build Tool</title>
       <link>https://pilab.dev/dev-dashboard-build-tool</link>
@@ -15,7 +15,7 @@
 &lt;p&gt;I have really enjoyed that project and I have expanded it into a build tool so other's can create the same thing more easily. I actually setup the build tool to configure a local dev environment in two different ways.&lt;/p&gt;
 &lt;p&gt;The first method uses Vagrant. So if you run the tool on your computer it will use Vagrant to build a local dev server, clone your repos, and provide a browser based &amp;quot;dashboard&amp;quot; for easy access to your projects.&lt;/p&gt;
 &lt;p&gt;The second method converts a Pi Zero that has been setup as a USB dongle into a portable dev server with the same &amp;quot;dashboard&amp;quot; setup.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://github.com/mhancoc7/Dev-Dashboard/blob/master/README.md"&gt;Check out the Dev-Dashboard build tool on GitHub&lt;/a&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href="https://github.com/mhancoc7/Dev-Dashboard/blob/master/README.md"&gt;&lt;img src="/images/check-it-out-on-github.png" alt="Get it on GitHub" class="on-github" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
       <pubDate>Wed, 09 Oct 2019 21:32:47 -0500</pubDate>
       <guid isPermaLink="false">e7452072631a01dcade0155ff1add7d1</guid>
     </item>

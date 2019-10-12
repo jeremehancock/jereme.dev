@@ -93,7 +93,3 @@ Check out the [Bludit API Documentation](https://docs.bludit.com/en/api/introduc
 ```
 ## Results:
 <iframe  width="100%" height="550"  src="embed_example.php" frameborder="0" class="iframe-border"></iframe>
-
-## Example use on website:
-
->** Checkout [Jereme.dev](https://jereme.dev/#pilab)!**
