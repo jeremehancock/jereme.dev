@@ -25,6 +25,10 @@ My Free Live TV addon for [ Kodi](https://kodi.tv/) has something for everyone. 
         <td>Aljazeera</td>
         <td>News</td>
     </tr>
+    <tr>
+        <td>American Classics</td>
+        <td>Retro</td>
+    </tr>
 		<tr>
         <td>Antenna TV</td>
         <td>Retro</td>
@@ -78,6 +82,14 @@ My Free Live TV addon for [ Kodi](https://kodi.tv/) has something for everyone. 
         <td>Crime, 24-7</td>
     </tr>
     <tr>
+        <td>CombatGo</td>
+        <td>Sports</td>
+    </tr>
+    <tr>
+        <td>Comedy Dynamics</td>
+        <td>Comedy</td>
+    </tr>
+    <tr>
         <td>Comet</td>
         <td>Sci-Fi</td>
     </tr>
@@ -96,6 +108,10 @@ My Free Live TV addon for [ Kodi](https://kodi.tv/) has something for everyone. 
     <tr>
         <td>Crime Network</td>
         <td>Crime</td>
+    </tr>
+    <tr>
+        <td>Docurama</td>
+        <td>Curiosity, Documentary</td>
     </tr>
     <tr>
         <td>DocuTV</td>
@@ -120,6 +136,14 @@ My Free Live TV addon for [ Kodi](https://kodi.tv/) has something for everyone. 
     <tr>
         <td>Fight</td>
         <td>Sports</td>
+    </tr>
+    <tr>
+        <td>FilmRise Classic TV</td>
+        <td>Retro</td>
+    </tr>
+    <tr>
+        <td>FilmRise Free Movies</td>
+        <td>Movies</td>
     </tr>
     <tr>
         <td>Flicks of Fury</td>
@@ -150,6 +174,10 @@ My Free Live TV addon for [ Kodi](https://kodi.tv/) has something for everyone. 
         <td>Curiosity, Special Interest</td>
     </tr>
     <tr>
+        <td>Glewed TV</td>
+        <td>Lifestyle</td>
+    </tr>
+    <tr>
         <td>GLORY Kickboxing</td>
         <td>Sports</td>
     </tr>
@@ -160,6 +188,14 @@ My Free Live TV addon for [ Kodi](https://kodi.tv/) has something for everyone. 
     <tr>
         <td>Gusto</td>
         <td>Lifestyle</td>
+    </tr>
+    <tr>
+        <td>Hallypop</td>
+        <td>Music</td>
+    </tr>
+    <tr>
+        <td>Hell's Kitche</td>
+        <td>24-7</td>
     </tr>
     <tr>
         <td>HSN</td>
@@ -174,8 +210,16 @@ My Free Live TV addon for [ Kodi](https://kodi.tv/) has something for everyone. 
         <td>Shopping</td>
     </tr>
     <tr>
+        <td>Kitchen Nightmares</td>
+        <td>24-7</td>
+    </tr>
+    <tr>
         <td>Live Music Replay</td>
         <td>Music</td>
+    </tr>
+    <tr>
+        <td>Made in Hollywood</td>
+        <td>Celebrity</td>
     </tr>
     <tr>
         <td>Mobcrush</td>
@@ -188,6 +232,10 @@ My Free Live TV addon for [ Kodi](https://kodi.tv/) has something for everyone. 
     <tr>
         <td>MST3K</td>
         <td>Comedy, 24-7</td>
+    </tr>
+    <tr>
+        <td>Music Baeble</td>
+        <td>Music</td>
     </tr>
     <tr>
         <td>NASA TV</td>
@@ -206,12 +254,24 @@ My Free Live TV addon for [ Kodi](https://kodi.tv/) has something for everyone. 
         <td>News</td>
     </tr>
     <tr>
+        <td>Newsy</td>
+        <td>News</td>
+    </tr>
+    <tr>
         <td>Outdoor America</td>
+        <td>Lifestyle</td>
+    </tr>
+    <tr>
+        <td>Outside TV</td>
         <td>Lifestyle</td>
     </tr>
     <tr>
         <td>PBS Kids</td>
         <td>Kids</td>
+    </tr>
+    <tr>
+        <td>PeopleTV</td>
+        <td>Celebrity</td>
     </tr>
     <tr>
         <td>Pluto TV Animals</td>
@@ -290,6 +350,10 @@ My Free Live TV addon for [ Kodi](https://kodi.tv/) has something for everyone. 
         <td>News</td>
     </tr>
     <tr>
+        <td>Shout TV</td>
+        <td>Retro</td>
+    </tr>
+    <tr>
         <td>Sky News</td>
         <td>News</td>
     </tr>
@@ -310,7 +374,31 @@ My Free Live TV addon for [ Kodi](https://kodi.tv/) has something for everyone. 
         <td>Comedy</td>
     </tr>
     <tr>
-        <td>Stirr Life</td>
+        <td>Stirr Action</td>
+        <td>Movies, Action</td>
+    </tr>
+    <tr>
+        <td>Stirr Biographies</td>
+        <td>Biography</td>
+    </tr>
+    <tr>
+        <td>Stirr Black Cinema</td>
+        <td>Movies</td>
+    </tr>
+    <tr>
+        <td>Stirr Classics</td>
+        <td>Movies, Retro</td>
+    </tr>
+    <tr>
+        <td>Stirr Comedy</td>
+        <td>Movies, Comedy</td>
+    </tr>
+    <tr>
+        <td>Stirr Drama</td>
+        <td>Movies</td>
+    </tr>
+    <tr>
+        <td>Stirr Lifestyle</td>
         <td>Lifestyle</td>
     </tr>
     <tr>
@@ -318,8 +406,16 @@ My Free Live TV addon for [ Kodi](https://kodi.tv/) has something for everyone. 
         <td>Movies</td>
     </tr>
     <tr>
+        <td>Stirr Music</td>
+        <td>Music</td>
+    </tr>
+    <tr>
         <td>Stirr Sports</td>
         <td>Sports</td>
+    </tr>
+    <tr>
+        <td>Stirr Travel</td>
+        <td>Lifestyle</td>
     </tr>
     <tr>
         <td>TBD</td>
@@ -336,6 +432,10 @@ My Free Live TV addon for [ Kodi](https://kodi.tv/) has something for everyone. 
     <tr>
         <td>The Country Network</td>
         <td>Music</td>
+    </tr>
+    <tr>
+        <td>The Film Detectives</td>
+        <td>Movies, Retro</td>
     </tr>
     <tr>
         <td>The New Detectives</td>
