@@ -4,7 +4,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Mon, 21 Oct 2019 12:15:25 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 21 Oct 2019 12:53:32 -0500</lastBuildDate>
     <item>
       <title>Bludit Vagrant</title>
       <link>https://pilab.dev/bludit-vagrant</link>
@@ -22,7 +22,7 @@
 &lt;/ol&gt;
 &lt;h3&gt;Installation Instructions&lt;/h3&gt;
 &lt;ol&gt;
-&lt;li&gt;Find a directory on your computer that you'd like to install this repo&lt;/li&gt;
+&lt;li&gt;Find a directory on your computer where you'd like to install this repo&lt;/li&gt;
 &lt;li&gt;Run 
 &lt;pre&gt;&lt;code&gt;git clone git@github.com:mhancoc7/Bludit-Vagrant.git&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;li&gt;Run 
