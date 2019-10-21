@@ -4,6 +4,11 @@
     <loc>https://pilab.dev</loc>
   </url>
   <url>
+    <loc>https://pilab.dev/bludit-vagrant</loc>
+    <lastmod>2019-10-21</lastmod>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
     <loc>https://pilab.dev/dev-dashboard-build-tool</loc>
     <lastmod>2019-10-09</lastmod>
     <changefreq>daily</changefreq>
