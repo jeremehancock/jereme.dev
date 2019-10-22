@@ -4,7 +4,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Mon, 21 Oct 2019 20:01:57 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 21 Oct 2019 20:10:49 -0500</lastBuildDate>
     <item>
       <title>Bludit Vagrant</title>
       <link>https://pilab.dev/bludit-vagrant</link>
@@ -45,11 +45,9 @@
 &lt;li&gt;If you are ready to delete your Bludit virtual machine from your local machine &lt;/li&gt;
 &lt;/ol&gt;
 &lt;pre&gt;&lt;code&gt;vagrant destroy -f&lt;/code&gt;&lt;/pre&gt;
-&lt;blockquote&gt;
-&lt;h4&gt;&lt;code&gt;Note: All code is provided as-is without any warranty. Use at your own risk.&lt;/code&gt;&lt;/h4&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;br&gt;
-&lt;a href="https://github.com/mhancoc7/Bludit-Vagrant/"&gt;&lt;img src="/images/check-it-out-on-github.png" alt="Get it on GitHub" class="on-github" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+&lt;h2&gt;Disclaimer&lt;/h2&gt;
+&lt;p&gt;All code is provided as-is without any warranty. Use at your own risk.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/mhancoc7/Bludit-Vagrant/"&gt;&lt;img src="/images/check-it-out-on-github.png" alt="Get it on GitHub" class="on-github" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
       <pubDate>Mon, 21 Oct 2019 12:02:12 -0500</pubDate>
       <guid isPermaLink="false">48e9af50afbf5dbdd07597bfc0c79204</guid>
     </item>
