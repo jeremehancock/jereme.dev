@@ -41,4 +41,7 @@ vagrant ssh
 vagrant destroy -f
 ```
 
+> #### `Note: All code is provided as-is without any warranty. Use at your own risk.`
+
+<br>
 [<img src="/images/check-it-out-on-github.png" alt="Get it on GitHub" class="on-github" />](https://github.com/mhancoc7/Bludit-Vagrant/)
