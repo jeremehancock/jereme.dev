@@ -4,7 +4,48 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Mon, 21 Oct 2019 20:10:49 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 21 Oct 2019 20:33:34 -0500</lastBuildDate>
+    <item>
+      <title>Bludit Pi</title>
+      <link>https://pilab.dev/bludit-pi</link>
+      <description>&lt;p&gt;The goal of this project is to create an easy way to configure and install Bludit on a Raspberry Pi. &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;This build script should not be used on a Raspberry Pi that has previously had a webserver configured. This script will overwrite the &amp;quot;/var/www/html&amp;quot; directory!&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The following technologies are automatically installed for you:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Apache&lt;/li&gt;
+&lt;li&gt;PHP&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.bludit.com/"&gt;Bludit v3.10.0 &amp;quot;Mateo&amp;quot;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Pre-Installation&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Raspberry Pi with &lt;a href="https://www.raspberrypi.org/downloads/raspbian/"&gt;Raspbian&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Git installed &lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt-get install git&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;Installation Instructions&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Add your Pi's SSH key to GitHub. &lt;a href="https://help.github.com/en/articles/about-ssh"&gt;More info...&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Find a directory on your Pi where you'd like to install this repo&lt;/li&gt;
+&lt;li&gt;Run 
+&lt;pre&gt;&lt;code&gt;git clone git@github.com:mhancoc7/Bludit-Pi.git&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;Run 
+&lt;pre&gt;&lt;code&gt;cd Bludit-Pi&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;Run 
+&lt;pre&gt;&lt;code&gt;bash build.sh&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Usage&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Make sure the configuration process is completed&lt;/li&gt;
+&lt;li&gt;Point your web browser to &lt;a href="http://raspberrypi.local"&gt;http://raspberrypi.local&lt;/a&gt; (or whatever your Pi's hostname is set to) to view your Bludit site&lt;/li&gt;
+&lt;li&gt;Follow the steps to complete the Bludit installation&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Disclaimer&lt;/h2&gt;
+&lt;p&gt;All code is provided as-is without any warranty. Use at your own risk.&lt;/p&gt;</description>
+      <pubDate>Mon, 21 Oct 2019 20:29:33 -0500</pubDate>
+      <guid isPermaLink="false">4f233e670b86b100f116ec687154246e</guid>
+    </item>
     <item>
       <title>Bludit Vagrant</title>
       <link>https://pilab.dev/bludit-vagrant</link>
@@ -123,18 +164,6 @@ Embed Bouncing Trump on your site:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;&amp;lt;iframe src='//bouncingtrump.com/' width='100%' height='700' frameBorder='0' id='bouncing-trump-embed' class="iframe-border" allowFullScreen&amp;gt;&amp;lt;/iframe&amp;gt;&lt;/code&gt;&lt;/pre&gt;</description>
       <pubDate>Sat, 07 Sep 2019 21:08:21 -0500</pubDate>
       <guid isPermaLink="false">50f6c83ff27271e2a59a3ae144479710</guid>
-    </item>
-    <item>
-      <title>Raspberry Pi Random Goat TV</title>
-      <link>https://pilab.dev/raspberry-pi-random-goat-tv</link>
-      <description>&lt;p&gt;Checkout my latest ridiculous project!&lt;/p&gt;
-&lt;p&gt;I took a Raspberry Pi 3 B+ added a screen and crammed it in an old broken Christmas ornament that looks like a retro TV. Once that was done I just opened a browser full screen to one of my other crazy projects &lt;a href="randomgoat"&gt;Random Goat&lt;/a&gt;.&lt;/p&gt;
-&lt;h2&gt;Voila! Raspberry Pi Random Goat TV!&lt;/h2&gt;
-&lt;p&gt;
-&lt;blockquote class="twitter-tweet  tw-align-center"&gt;&lt;p lang="in" dir="ltr"&gt;Raspberry Pi Random Goat TV!&lt;a href="https://twitter.com/hashtag/RaspberryPi?src=hash&amp;amp;ref_src=twsrc%5Etfw"&gt;#RaspberryPi&lt;/a&gt; &lt;a href="https://twitter.com/hashtag/randomgoat?src=hash&amp;amp;ref_src=twsrc%5Etfw"&gt;#randomgoat&lt;/a&gt; &lt;a href="https://t.co/yCMAk0AZjy"&gt;pic.twitter.com/yCMAk0AZjy&lt;/a&gt;&lt;/p&gt;&amp;mdash; Pi Lab (@pilabdev) &lt;a href="https://twitter.com/pilabdev/status/1164382675173556226?ref_src=twsrc%5Etfw"&gt;August 22, 2019&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
-&lt;/p&gt;</description>
-      <pubDate>Wed, 21 Aug 2019 22:38:49 -0500</pubDate>
-      <guid isPermaLink="false">06e1767e9fdfae7f01149a0eb2e17441</guid>
     </item>
   </channel>
 </rss>
