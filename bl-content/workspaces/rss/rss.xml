@@ -4,7 +4,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Tue, 22 Oct 2019 22:22:06 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 23 Oct 2019 07:27:28 -0500</lastBuildDate>
     <item>
       <title>Bludit Pi</title>
       <link>https://pilab.dev/bludit-pi</link>
@@ -48,6 +48,8 @@
 &lt;li&gt;Point your web browser to &lt;a href="http://raspberrypi.local"&gt;http://raspberrypi.local&lt;/a&gt; (or whatever your Pi's hostname is set to) to view your Bludit site&lt;/li&gt;
 &lt;li&gt;Follow the steps to complete the Bludit installation&lt;/li&gt;
 &lt;/ol&gt;
+&lt;h2&gt;Note&lt;/h2&gt;
+&lt;p&gt;If you receive an error message when loading Bludit in your web browser it could be that a step in the build process failed for some reason. It is safe to re-run the build.&lt;/p&gt;
 &lt;h2&gt;Disclaimer&lt;/h2&gt;
 &lt;p&gt;All code is provided as-is without any warranty. Use at your own risk.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://github.com/mhancoc7/Bludit-Pi/"&gt;&lt;img src="/images/check-it-out-on-github.png" alt="Get it on GitHub" class="on-github" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
