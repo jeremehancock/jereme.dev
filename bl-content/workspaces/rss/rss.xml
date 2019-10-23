@@ -4,7 +4,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Tue, 22 Oct 2019 18:56:04 -0500</lastBuildDate>
+    <lastBuildDate>Tue, 22 Oct 2019 22:22:06 -0500</lastBuildDate>
     <item>
       <title>Bludit Pi</title>
       <link>https://pilab.dev/bludit-pi</link>
@@ -26,13 +26,21 @@
 &lt;pre&gt;&lt;code&gt;sudo apt-get install git&lt;/code&gt;&lt;/pre&gt;
 &lt;h2&gt;Installation Instructions&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;Find a directory on your Pi where you'd like to install this repo&lt;/li&gt;
-&lt;li&gt;Run 
-&lt;pre&gt;&lt;code&gt;git clone https://github.com/mhancoc7/Bludit-Pi.git&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;li&gt;Run 
-&lt;pre&gt;&lt;code&gt;cd Bludit-Pi&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;li&gt;Run 
-&lt;pre&gt;&lt;code&gt;bash build.sh&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Find a directory on your Pi where you'd like to install this repo&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Run &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git clone https://github.com/mhancoc7/Bludit-Pi.git&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Run &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cd Bludit-Pi&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Run &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;bash build.sh&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2&gt;Usage&lt;/h2&gt;
 &lt;ol&gt;
@@ -63,13 +71,21 @@
 &lt;/ol&gt;
 &lt;h3&gt;Installation Instructions&lt;/h3&gt;
 &lt;ol&gt;
-&lt;li&gt;Find a directory on your computer where you'd like to install this repo&lt;/li&gt;
-&lt;li&gt;Run 
-&lt;pre&gt;&lt;code&gt;git clone https://github.com/mhancoc7/Bludit-Vagrant.git&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;li&gt;Run 
-&lt;pre&gt;&lt;code&gt;cd Bludit-Vagrant&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;li&gt;Run 
-&lt;pre&gt;&lt;code&gt;vagrant up&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Find a directory on your computer where you'd like to install this repo&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Run &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git clone https://github.com/mhancoc7/Bludit-Vagrant.git&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Run &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cd Bludit-Vagrant&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Run &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;vagrant up&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3&gt;Usage&lt;/h3&gt;
 &lt;ol&gt;
