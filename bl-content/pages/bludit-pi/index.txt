@@ -5,7 +5,7 @@ The goal of this project is to create an easy way to configure and install Bludi
 The following technologies are automatically installed for you:
 * Apache
 * PHP
-* [Bludit v3.10.0 "Mateo"](https://www.bludit.com/)
+* [Bludit](https://www.bludit.com/)
 
 ## Pre-Installation
 1. Raspberry Pi with [Raspbian](https://www.raspberrypi.org/downloads/raspbian/)
@@ -41,5 +41,7 @@ If you receive an error message when loading Bludit in your web browser it could
 
 ## Disclaimer
 All code is provided as-is without any warranty. Use at your own risk.
+
+---
 
 [<img src="/images/check-it-out-on-github.png" alt="Get it on GitHub" class="on-github" />](https://github.com/mhancoc7/Bludit-Pi/)

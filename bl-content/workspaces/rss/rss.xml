@@ -4,7 +4,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Wed, 23 Oct 2019 07:27:28 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 23 Oct 2019 07:40:24 -0500</lastBuildDate>
     <item>
       <title>Bludit Pi</title>
       <link>https://pilab.dev/bludit-pi</link>
@@ -16,7 +16,7 @@
 &lt;ul&gt;
 &lt;li&gt;Apache&lt;/li&gt;
 &lt;li&gt;PHP&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.bludit.com/"&gt;Bludit v3.10.0 &amp;quot;Mateo&amp;quot;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.bludit.com/"&gt;Bludit&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Pre-Installation&lt;/h2&gt;
 &lt;ol&gt;
@@ -52,6 +52,7 @@
 &lt;p&gt;If you receive an error message when loading Bludit in your web browser it could be that a step in the build process failed for some reason. It is safe to re-run the build.&lt;/p&gt;
 &lt;h2&gt;Disclaimer&lt;/h2&gt;
 &lt;p&gt;All code is provided as-is without any warranty. Use at your own risk.&lt;/p&gt;
+&lt;hr /&gt;
 &lt;p&gt;&lt;a href="https://github.com/mhancoc7/Bludit-Pi/"&gt;&lt;img src="/images/check-it-out-on-github.png" alt="Get it on GitHub" class="on-github" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
       <pubDate>Mon, 21 Oct 2019 20:29:33 -0500</pubDate>
       <guid isPermaLink="false">4f233e670b86b100f116ec687154246e</guid>
@@ -64,7 +65,7 @@
 &lt;li&gt;Ubuntu Bionic (18.04)&lt;/li&gt;
 &lt;li&gt;Apache&lt;/li&gt;
 &lt;li&gt;PHP&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.bludit.com/"&gt;Bludit v3.10.0 &amp;quot;Mateo&amp;quot;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.bludit.com/"&gt;Bludit&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Pre-Installation&lt;/h3&gt;
 &lt;ol&gt;
@@ -105,6 +106,7 @@
 &lt;pre&gt;&lt;code&gt;vagrant destroy -f&lt;/code&gt;&lt;/pre&gt;
 &lt;h2&gt;Disclaimer&lt;/h2&gt;
 &lt;p&gt;All code is provided as-is without any warranty. Use at your own risk.&lt;/p&gt;
+&lt;hr /&gt;
 &lt;p&gt;&lt;a href="https://github.com/mhancoc7/Bludit-Vagrant/"&gt;&lt;img src="/images/check-it-out-on-github.png" alt="Get it on GitHub" class="on-github" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
       <pubDate>Mon, 21 Oct 2019 12:02:12 -0500</pubDate>
       <guid isPermaLink="false">48e9af50afbf5dbdd07597bfc0c79204</guid>
