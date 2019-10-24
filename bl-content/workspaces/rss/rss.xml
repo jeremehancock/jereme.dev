@@ -4,7 +4,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Thu, 24 Oct 2019 17:26:24 -0500</lastBuildDate>
+    <lastBuildDate>Thu, 24 Oct 2019 18:20:11 -0500</lastBuildDate>
     <item>
       <title>Bludit Pi</title>
       <link>https://pilab.dev/bludit-pi</link>
@@ -101,9 +101,9 @@
 &lt;/ol&gt;
 &lt;h3&gt;Upgrade&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;If vagrant is up run: 
+&lt;li&gt;If vagrant is up run
 &lt;pre&gt;&lt;code&gt;vagrant provision&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;li&gt;If vagrant has been halted run: 
+&lt;li&gt;If vagrant has been halted run
 &lt;pre&gt;&lt;code&gt;vagrant up --provision&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;blockquote&gt;
@@ -111,7 +111,7 @@
 &lt;/blockquote&gt;
 &lt;h3&gt;Cleanup&lt;/h3&gt;
 &lt;ol&gt;
-&lt;li&gt;If you are ready to delete your Bludit virtual machine from your local machine &lt;/li&gt;
+&lt;li&gt;If you are ready to delete your Bludit virtual machine from your local machine run&lt;/li&gt;
 &lt;/ol&gt;
 &lt;pre&gt;&lt;code&gt;vagrant destroy -f&lt;/code&gt;&lt;/pre&gt;
 &lt;h2&gt;Disclaimer&lt;/h2&gt;
