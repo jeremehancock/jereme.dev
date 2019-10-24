@@ -4,7 +4,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Thu, 24 Oct 2019 18:20:11 -0500</lastBuildDate>
+    <lastBuildDate>Thu, 24 Oct 2019 18:26:47 -0500</lastBuildDate>
     <item>
       <title>Bludit Pi</title>
       <link>https://pilab.dev/bludit-pi</link>
@@ -60,7 +60,7 @@
     <item>
       <title>Bludit Vagrant</title>
       <link>https://pilab.dev/bludit-vagrant</link>
-      <description>&lt;p&gt;The goal of this project is to create a quick virtual machine setup with a Bludit installation for testing and development purposes. The following technologies are automatically installed for you:&lt;/p&gt;
+      <description>&lt;p&gt;The goal of this project is to create a quick virtual machine setup with a Bludit installation for testing and development purposes. The following technologies are automatically installed for you.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Ubuntu Bionic (18.04)&lt;/li&gt;
 &lt;li&gt;Apache&lt;/li&gt;
