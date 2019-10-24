@@ -4,7 +4,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Thu, 24 Oct 2019 16:37:48 -0500</lastBuildDate>
+    <lastBuildDate>Thu, 24 Oct 2019 17:26:24 -0500</lastBuildDate>
     <item>
       <title>Bludit Pi</title>
       <link>https://pilab.dev/bludit-pi</link>
@@ -65,7 +65,7 @@
 &lt;li&gt;Ubuntu Bionic (18.04)&lt;/li&gt;
 &lt;li&gt;Apache&lt;/li&gt;
 &lt;li&gt;PHP&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.bludit.com/"&gt;Bludit&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.bludit.com/"&gt;Bludit&lt;/a&gt; (Latest Version)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Pre-Installation&lt;/h3&gt;
 &lt;ol&gt;
