@@ -34,6 +34,18 @@ vagrant ssh
 ```
 5. Bludit files are located in `"localhost/www/html"` on your local machine and are syncronized with `"/var/www/html"` on your virtual machine
 
+### Upgrade
+* If vagrant is up run: 
+```
+vagrant provision
+```
+* If vagrant has been halted run: 
+```
+vagrant up --provision
+```
+
+>  ***Keep in mind upgrading will remove any custom modifications that you have made to Bludit. It will not overwrite the content or settings that you have applied in the Bludit admin panel.***
+
 ### Cleanup
 1. If you are ready to delete your Bludit virtual machine from your local machine 
 
