@@ -6,27 +6,27 @@ There are tons of articles covering how to create a Twitter Bot so I will not co
 
 Once you have the [Twitter Developer Account](https://developer.twitter.com/en/apply-for-access.html) and app created here are the basic steps to get the bot running.
 
-## Step 1:
+### Step 1:
 Make sure everything is up to date.
 ```
 sudo apt-get update
 sudo apt-get upgrade
 ```
-## Step 2:
+### Step 2:
 Install the necessary packages.
 ```
 sudo apt-get install python-setuptools
 sudo easy_install pip
 sudo pip install twython
 ```
-## Step 3:
+### Step 3:
 Create the Twitter Bot.
 ```
 mkdir ~/twitterbot
 cd ~/twitterbot
 sudo nano TwitterBot.py
 ```
-## Step 4:
+### Step 4:
 This is a slightly modified version of my current bot code that you can use.
 ```
 #!/usr/bin/env python
@@ -84,12 +84,12 @@ line = os.popen(cmd).readline().strip()
 temp = line.split('=')[1].split("'")[0]
 api.update_status(status='Uptime: '+uptime()+ '\nCPU temperature: '+temp+'C')
 ```
-## Step 5:
+### Step 5:
 Ensure that the Twitter Bot is executable.
 ```
 sudo chmod +x TwitterBot.py
 ```
-## Step 6:
+### Step 6:
 Automate the Twitter Bot.
 ```
 sudo crontab -e

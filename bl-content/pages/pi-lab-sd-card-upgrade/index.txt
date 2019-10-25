@@ -8,7 +8,7 @@ So after some research this is the method that I used.
 
 ***Note:** I used Linux for this process.*
 
-## Step 1:
+### Step 1:
 First I shutdown the Pi that I planned to upgrade via SSH.
 
 ```
@@ -31,7 +31,7 @@ The following command can help locate the correct device for your SD card.
 lsblk
 ```
 
-## Step 2:
+### Step 2:
 Next I removed the SD card and inserted the new larger SD card.
 
 I then ran the following command to copy the image to the new SD card.
@@ -42,7 +42,7 @@ dd if=~/pi.img of=/dev/mmcblk0 bs=4M conv=fsync status=progress
 
 Once this was done I had a working bootable SD card cloned from the original. However, the file system still needed to be expanded to take full advantage of the card.
 
-## Step 3:
+### Step 3:
 Finally I used Gparted to resize partitions on the SD card to fully expand the file system.
 
 **Here are the basic steps.**
