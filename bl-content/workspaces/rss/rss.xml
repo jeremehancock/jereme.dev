@@ -4,7 +4,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Thu, 24 Oct 2019 18:26:47 -0500</lastBuildDate>
+    <lastBuildDate>Thu, 24 Oct 2019 18:57:49 -0500</lastBuildDate>
     <item>
       <title>Bludit Pi</title>
       <link>https://pilab.dev/bludit-pi</link>
@@ -12,19 +12,19 @@
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;This build script should not be used on a Raspberry Pi that has previously had a webserver configured. This script will overwrite the &amp;quot;/var/www/html&amp;quot; directory!&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;The following technologies are automatically installed for you:&lt;/p&gt;
+&lt;p&gt;The following technologies are automatically installed for you.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Apache&lt;/li&gt;
 &lt;li&gt;PHP&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.bludit.com/"&gt;Bludit&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.bludit.com/"&gt;Bludit&lt;/a&gt; (Latest Version)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Pre-Installation&lt;/h2&gt;
+&lt;h3&gt;Pre-Installation&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;Raspberry Pi with &lt;a href="https://www.raspberrypi.org/downloads/raspbian/"&gt;Raspbian&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Git installed &lt;/li&gt;
 &lt;/ol&gt;
 &lt;pre&gt;&lt;code&gt;sudo apt-get install git&lt;/code&gt;&lt;/pre&gt;
-&lt;h2&gt;Installation Instructions&lt;/h2&gt;
+&lt;h3&gt;Installation Instructions&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Find a directory on your Pi where you'd like to install this repo&lt;/p&gt;
@@ -42,15 +42,21 @@
 &lt;pre&gt;&lt;code&gt;bash build.sh&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2&gt;Usage&lt;/h2&gt;
+&lt;h3&gt;Usage&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;Make sure the configuration process is completed&lt;/li&gt;
 &lt;li&gt;Point your web browser to &lt;a href="http://raspberrypi.local"&gt;http://raspberrypi.local&lt;/a&gt; (or whatever your Pi's hostname is set to) to view your Bludit site&lt;/li&gt;
 &lt;li&gt;Follow the steps to complete the Bludit installation&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2&gt;Note&lt;/h2&gt;
+&lt;h3&gt;Upgrade&lt;/h3&gt;
+&lt;p&gt;Run &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;bash build.sh&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Keep in mind upgrading will remove any custom modifications that you have made to Bludit. It will not overwrite the content or settings that you have applied in the Bludit admin panel. &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;Note&lt;/h3&gt;
 &lt;p&gt;If you receive an error message when loading Bludit in your web browser it could be that a step in the build process failed for some reason. It is safe to re-run the build.&lt;/p&gt;
-&lt;h2&gt;Disclaimer&lt;/h2&gt;
+&lt;h3&gt;Disclaimer&lt;/h3&gt;
 &lt;p&gt;All code is provided as-is without any warranty. Use at your own risk.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;&lt;a href="https://github.com/mhancoc7/Bludit-Pi/"&gt;&lt;img src="/images/check-it-out-on-github.png" alt="Get it on GitHub" class="on-github" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
