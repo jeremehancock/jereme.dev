@@ -4,7 +4,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Thu, 24 Oct 2019 19:10:35 -0500</lastBuildDate>
+    <lastBuildDate>Thu, 24 Oct 2019 22:40:41 -0500</lastBuildDate>
     <item>
       <title>Bludit Pi</title>
       <link>https://pilab.dev/bludit-pi</link>
@@ -52,7 +52,7 @@
 &lt;p&gt;Run &lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;bash build.sh&lt;/code&gt;&lt;/pre&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Keep in mind upgrading will remove any custom modifications that you have made to Bludit. It will not overwrite the content or settings that you have applied in the Bludit admin panel. &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Keep in mind upgrading will remove any custom modifications that you have made to Bludit. It will not overwrite the content or settings that you have applied in the Bludit admin panel.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3&gt;Note&lt;/h3&gt;
 &lt;p&gt;If you receive an error message when loading Bludit in your web browser it could be that a step in the build process failed for some reason. It is safe to re-run the build.&lt;/p&gt;
