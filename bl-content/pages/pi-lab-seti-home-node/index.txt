@@ -8,18 +8,21 @@ Checkout the Pi Lab [SETI@home](https://setiathome.berkeley.edu/) node at work [
 
 Here are the basic steps that I used to create a headless SETI@home node.
 
-### Step 1: Make sure everything is up to date
+### Step 1: 
+Make sure everything is up to date
 ```
 sudo apt-get update
 sudo apt-get upgrade
 ```
 
-### Step 2: Install the BOINC Client
+### Step 2: 
+Install the BOINC Client
 ```
 sudo apt-get install boinc-client
 ```
 
-### Step 3: Get Account Key
+### Step 3: 
+Get Account Key
 ```
 boinccmd --lookup_account http://setiathome.berkeley.edu <your_email> <your_password>
 ```
@@ -27,7 +30,8 @@ boinccmd --lookup_account http://setiathome.berkeley.edu <your_email> <your_pass
 ***Note:*** 
 *I already had a [ SETI@home](https://setiathome.berkeley.edu/) account. If you don't have one you can create one [here](https://setiathome.berkeley.edu/signup.php).*
 
-### Step 4: Attach the BOINC Client program to your SETI@Home account
+### Step 4: 
+Attach the BOINC Client program to your SETI@Home account
 ```
 boinccmd --project_attach http://setiathome.berkeley.edu <your_account_key>
 ```
