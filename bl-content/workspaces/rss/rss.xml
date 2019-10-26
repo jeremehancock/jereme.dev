@@ -4,13 +4,13 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Fri, 25 Oct 2019 11:52:21 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 26 Oct 2019 15:50:36 -0500</lastBuildDate>
     <item>
       <title>Bludit Pi</title>
       <link>https://pilab.dev/bludit-pi</link>
       <description>&lt;p&gt;The goal of this project is to create an easy way to configure and install Bludit on a Raspberry Pi. &lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;This build script should not be used on a Raspberry Pi that has previously had a webserver configured. This script will overwrite the &amp;quot;/var/www/html&amp;quot; directory!&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;It is not recommended to run this script on a Raspberry Pi that has already had a webserver installed and configured!&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;The following technologies are automatically installed for you.&lt;/p&gt;
 &lt;ul&gt;
