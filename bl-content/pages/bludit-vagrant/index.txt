@@ -32,7 +32,7 @@ vagrant up
 ```
 vagrant ssh
 ```
-5. Bludit files are located in `"localhost/www/html"` on your local machine and are syncronized with `"/var/www/html"` on your virtual machine
+5. Bludit files are located in `"localhost/www/html/bludit"` on your local machine and are syncronized with `"/var/www/html/bludit"` on your virtual machine
 
 ### Upgrade
 * If vagrant is up run

@@ -4,7 +4,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Sat, 26 Oct 2019 15:50:36 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 26 Oct 2019 16:09:25 -0500</lastBuildDate>
     <item>
       <title>Bludit Pi</title>
       <link>https://pilab.dev/bludit-pi</link>
@@ -103,7 +103,7 @@
 &lt;li&gt;Follow the steps to complete the Bludit installation&lt;/li&gt;
 &lt;li&gt;If you'd like to login into your virtual machine run
 &lt;pre&gt;&lt;code&gt;vagrant ssh&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;li&gt;Bludit files are located in &lt;code&gt;"localhost/www/html"&lt;/code&gt; on your local machine and are syncronized with &lt;code&gt;"/var/www/html"&lt;/code&gt; on your virtual machine&lt;/li&gt;
+&lt;li&gt;Bludit files are located in &lt;code&gt;"localhost/www/html/bludit"&lt;/code&gt; on your local machine and are syncronized with &lt;code&gt;"/var/www/html/bludit"&lt;/code&gt; on your virtual machine&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3&gt;Upgrade&lt;/h3&gt;
 &lt;ul&gt;
