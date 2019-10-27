@@ -19,7 +19,8 @@
 		<a class="nav-item nav-link" id="nav-social-tab" data-toggle="tab" href="#social" role="tab" aria-controls="nav-social" aria-selected="false"><?php $L->p('Social Networks') ?></a>
 		<a class="nav-item nav-link" id="nav-images-tab" data-toggle="tab" href="#images" role="tab" aria-controls="nav-images" aria-selected="false"><?php $L->p('Images') ?></a>
 		<a class="nav-item nav-link" id="nav-language-tab" data-toggle="tab" href="#language" role="tab" aria-controls="nav-language" aria-selected="false"><?php $L->p('Language') ?></a>
-		<a class="nav-item nav-link" id="nav-language-tab" data-toggle="tab" href="#logo" role="tab" aria-controls="nav-logo" aria-selected="false"><?php $L->p('Logo') ?></a>
+		<a class="nav-item nav-link" id="nav-custom-fields-tab" data-toggle="tab" href="#custom-fields" role="tab" aria-controls="nav-custom-fields" aria-selected="false"><?php $L->p('Custom fields') ?></a>
+		<a class="nav-item nav-link" id="nav-logo-tab" data-toggle="tab" href="#logo" role="tab" aria-controls="nav-logo" aria-selected="false"><?php $L->p('Logo') ?></a>
 	</div>
 </nav>
 
@@ -29,22 +30,11 @@
 		'name'=>'tokenCSRF',
 		'value'=>$security->getTokenCSRF()
 	));
-
-	// Homepage
-	echo Bootstrap::formInputHidden(array(
-		'name'=>'homepage',
-		'value'=>$site->homepage()
-	));
-
-	// Page not found
-	echo Bootstrap::formInputHidden(array(
-		'name'=>'pageNotFound',
-		'value'=>$site->pageNotFound()
-	));
 ?>
 
 	<!-- General tab -->
-	<div class="tab-pane show active" id="general" role="tabpanel" aria-labelledby="general-tab">
+	<div class="tab-pane fade show active" id="general" role="tabpanel" aria-labelledby="general-tab">
+
 	<?php
 		echo Bootstrap::formTitle(array('title'=>$L->g('Site')));
 
@@ -87,7 +77,7 @@
 	</div>
 
 	<!-- Advanced tab -->
-	<div class="tab-pane" id="advanced" role="tabpanel" aria-labelledby="advanced-tab">
+	<div class="tab-pane fade" id="advanced" role="tabpanel" aria-labelledby="advanced-tab">
 	<?php
 		echo Bootstrap::formTitle(array('title'=>$L->g('Content')));
 
@@ -113,38 +103,95 @@
 
 		// Homepage
 		try {
+			$options = array();
 			$homeKey = $site->homepage();
-			$home = new Page($homeKey);
-			$homeValue = $home->title();
+			if (!empty($homeKey)) {
+				$home = new Page($homeKey);
+				$options = array($homeKey=>$home->title());
+			}
 		} catch (Exception $e) {
-			$homeValue = '';
+			// continue
 		}
-		echo Bootstrap::formInputText(array(
-			'name'=>'homepageTMP',
+		echo Bootstrap::formSelect(array(
+			'name'=>'homepage',
 			'label'=>$L->g('Homepage'),
-			'value'=>$homeValue,
+			'options'=>$options,
+			'selected'=>false,
 			'class'=>'',
-			'placeholder'=>$L->g('Start typing a page title to see a list of suggestions.'),
 			'tip'=>$L->g('Returning page for the main page')
 		));
+	?>
+		<script>
+		$(document).ready(function() {
+			var homepage = $("#jshomepage").select2({
+				placeholder: "<?php $L->p('Start typing to see a list of suggestions.') ?>",
+				allowClear: true,
+				theme: "bootstrap4",
+				minimumInputLength: 2,
+				ajax: {
+					url: HTML_PATH_ADMIN_ROOT+"ajax/get-published",
+					data: function (params) {
+						var query = { query: params.term }
+						return query;
+					},
+					processResults: function (data) {
+						return data;
+					}
+				},
+				escapeMarkup: function(markup) {
+					return markup;
+				}
+			});
+		});
+		</script>
 
+	<?php
 		// Page not found 404
 		try {
+			$options = array();
 			$pageNotFoundKey = $site->pageNotFound();
-			$pageNotFound = new Page($pageNotFoundKey);
-			$pageNotFoundValue = $pageNotFound->title();
+			if (!empty($pageNotFoundKey)) {
+				$pageNotFound = new Page($pageNotFoundKey);
+				$options = array($pageNotFoundKey=>$pageNotFound->title());
+			}
 		} catch (Exception $e) {
-			$pageNotFoundValue = '';
+			// continue
 		}
-		echo Bootstrap::formInputText(array(
-			'name'=>'pageNotFoundTMP',
+		echo Bootstrap::formSelect(array(
+			'name'=>'pageNotFound',
 			'label'=>$L->g('Page not found'),
-			'value'=>$pageNotFoundValue,
+			'options'=>$options,
+			'selected'=>false,
 			'class'=>'',
-			'placeholder'=>$L->g('Start typing a page title to see a list of suggestions.'),
 			'tip'=>$L->g('Returning page when the page doesnt exist')
 		));
+	?>
 
+		<script>
+		$(document).ready(function() {
+			var homepage = $("#jspageNotFound").select2({
+				placeholder: "<?php $L->p('Start typing to see a list of suggestions.') ?>",
+				allowClear: true,
+				theme: "bootstrap4",
+				minimumInputLength: 2,
+				ajax: {
+					url: HTML_PATH_ADMIN_ROOT+"ajax/get-published",
+					data: function (params) {
+						var query = { query: params.term }
+						return query;
+					},
+					processResults: function (data) {
+						return data;
+					}
+				},
+				escapeMarkup: function(markup) {
+					return markup;
+				}
+			});
+		});
+		</script>
+
+	<?php
 		echo Bootstrap::formTitle(array('title'=>$L->g('Email account settings')));
 
 		echo Bootstrap::formInputText(array(
@@ -232,7 +279,7 @@
 	</div>
 
 	<!-- SEO tab -->
-	<div class="tab-pane" id="seo" role="tabpanel" aria-labelledby="seo-tab">
+	<div class="tab-pane fade" id="seo" role="tabpanel" aria-labelledby="seo-tab">
 	<?php
 		echo Bootstrap::formTitle(array('title'=>$L->g('Extreme friendly URL')));
 
@@ -288,79 +335,9 @@
 		));
 	?>
 	</div>
-	<script>
-	$(document).ready(function() {
-
-		// Homepage autocomplete
-		var homepageXHR;
-		var homepageList; // Keep the parent list returned to get the key by the title page
-		$("#jshomepageTMP").autoComplete({
-			minChars: 1,
-			source: function(term, response) {
-				// Prevent call inmediatly another ajax request
-				try { homepageXHR.abort(); } catch(e){}
-				homepageXHR = $.getJSON(HTML_PATH_ADMIN_ROOT+"ajax/get-published", {query: term},
-					function(data) {
-						homepageList = data;
-						term = term.toLowerCase();
-						var matches = [];
-						for (var title in data) {
-							if (~title.toLowerCase().indexOf(term))
-								matches.push(title);
-						}
-						response(matches);
-				});
-			},
-			onSelect: function(e, term, item) {
-				// homepageList = array( pageTitle => pageKey )
-				var key = homepageList[term];
-				$("#jshomepage").attr("value", key);
-			}
-		});
-
-		$("#jshomepageTMP").change(function() {
-			if ($(this).val()) {
-				$("#jsuriBlog").removeAttr('disabled');
-				$("#jsuriBlog").attr('value', '/blog/');
-			} else {
-				$("#jsuriBlog").attr('value', '');
-				$("#jsuriBlog").attr('disabled', 'disabled');
-				$("#jshomepage").attr("value", '');
-			}
-		});
-
-		// pageNotFound autocomplete
-		var pageNotFoundXHR;
-		var pageNotFoundList; // Keep the parent list returned to get the key by the title page
-		$("#jspageNotFoundTMP").autoComplete({
-			minChars: 1,
-			source: function(term, response) {
-				// Prevent call inmediatly another ajax request
-				try { pageNotFoundXHR.abort(); } catch(e){}
-					pageNotFoundXHR = $.getJSON(HTML_PATH_ADMIN_ROOT+"ajax/get-published", {query: term},
-					function(data) {
-						pageNotFoundList = data;
-						term = term.toLowerCase();
-						var matches = [];
-						for (var title in data) {
-							if (~title.toLowerCase().indexOf(term))
-								matches.push(title);
-						}
-						response(matches);
-				});
-			},
-			onSelect: function(e, term, item) {
-				// pageNotFoundList = array( pageTitle => pageKey )
-				var key = pageNotFoundList[term];
-				$("#jspageNotFound").attr("value", key);
-			}
-		});
-
-	});
-	</script>
 
 	<!-- Social Network tab -->
-	<div class="tab-pane" id="social" role="tabpanel" aria-labelledby="social-tab">
+	<div class="tab-pane fade" id="social" role="tabpanel" aria-labelledby="social-tab">
 	<?php
 		echo Bootstrap::formInputText(array(
 			'name'=>'twitter',
@@ -433,11 +410,20 @@
 			'placeholder'=>'',
 			'tip'=>''
 		));
+
+		echo Bootstrap::formInputText(array(
+			'name'=>'dribbble',
+			'label'=>'Dribbble',
+			'value'=>$site->dribbble(),
+			'class'=>'',
+			'placeholder'=>'',
+			'tip'=>''
+		));
 	?>
 	</div>
 
 	<!-- Images tab -->
-	<div class="tab-pane" id="images" role="tabpanel" aria-labelledby="images-tab">
+	<div class="tab-pane fade" id="images" role="tabpanel" aria-labelledby="images-tab">
 	<?php
 		echo Bootstrap::formTitle(array('title'=>$L->g('Thumbnails')));
 
@@ -471,7 +457,7 @@
 	</div>
 
 	<!-- Timezone and language tab -->
-	<div class="tab-pane" id="language" role="tabpanel" aria-labelledby="language-tab">
+	<div class="tab-pane fade" id="language" role="tabpanel" aria-labelledby="language-tab">
 	<?php
 		echo Bootstrap::formTitle(array('title'=>$L->g('Language and timezone')));
 
@@ -515,8 +501,25 @@
 	?>
 	</div>
 
+	<!-- Custom fields -->
+	<div class="tab-pane fade" id="custom-fields" role="tabpanel" aria-labelledby="custom-fields-tab">
+	<?php
+		echo Bootstrap::formTitle(array('title'=>$L->g('Custom fields')));
+
+		echo Bootstrap::formTextarea(array(
+			'name'=>'customFields',
+			'label'=>'JSON Format',
+			'value'=>json_encode($site->customFields(), JSON_PRETTY_PRINT),
+			'class'=>'',
+			'placeholder'=>'',
+			'tip'=>$L->g('define-custom-fields-for-the-content'),
+			'rows'=>15
+		));
+	?>
+	</div>
+
 	<!-- Site logo tab -->
-	<div class="tab-pane" id="logo" role="tabpanel" aria-labelledby="logo-tab">
+	<div class="tab-pane fade" id="logo" role="tabpanel" aria-labelledby="logo-tab">
 	<?php
 		echo Bootstrap::formTitle(array('title'=>$L->g('Site logo')));
 	?>
@@ -552,9 +555,12 @@
 				cache: false,
 				contentType: false,
 				processData: false
-			}).done(function(json) {
-				console.log(json);
-				$("#jssiteLogoPreview").attr('src',json.absoluteURL+"?time="+Math.random());
+			}).done(function(data) {
+				if (data.status==0) {
+					$("#jssiteLogoPreview").attr('src',data.absoluteURL+"?time="+Math.random());
+				} else {
+					showAlert(data.message);
+				}
 			});
 		});
 		</script>
@@ -563,7 +569,15 @@
 <?php echo Bootstrap::formClose(); ?>
 
 <script>
-	// Open the tab defined in the URL
-	const anchor = window.location.hash;
-	$(`a[href="${anchor}"]`).tab('show');
+	// Open current tab after refresh page
+	$(function() {
+		$('a[data-toggle="tab"]').on('click', function(e) {
+			window.localStorage.setItem('activeTab', $(e.target).attr('href'));
+		});
+		var activeTab = window.localStorage.getItem('activeTab');
+		if (activeTab) {
+			$('#nav-tab a[href="' + activeTab + '"]').tab('show');
+			//window.localStorage.removeItem("activeTab");
+		}
+	});
 </script>

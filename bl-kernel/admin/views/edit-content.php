@@ -14,12 +14,6 @@ echo Bootstrap::formOpen(array(
 		'value'=>$security->getTokenCSRF()
 	));
 
-	// Parent
-	echo Bootstrap::formInputHidden(array(
-		'name'=>'parent',
-		'value'=>$page->parent()
-	));
-
 	// UUID
 	// The UUID is generated in the controller
 	echo Bootstrap::formInputHidden(array(
@@ -53,7 +47,7 @@ echo Bootstrap::formOpen(array(
 ?>
 
 <!-- TOOLBAR -->
-<div id="jseditorToolbar">
+<div id="jseditorToolbar" class="mb-1">
 	<div id="jseditorToolbarRight" class="btn-group btn-group-sm float-right" role="group" aria-label="Toolbar right">
 		<button type="button" class="btn btn-light" id="jsmediaManagerOpenModal" data-toggle="modal" data-target="#jsmediaManagerModal"><span class="fa fa-image"></span> <?php $L->p('Images') ?></button>
 		<button type="button" class="btn btn-light" id="jsoptionsSidebar" style="z-index:30"><span class="fa fa-cog"></span> <?php $L->p('Options') ?></button>
@@ -89,6 +83,9 @@ echo Bootstrap::formOpen(array(
 		<div class="nav nav-tabs" id="nav-tab" role="tablist">
 			<a class="nav-link active show" id="nav-general-tab"  data-toggle="tab" href="#nav-general"  role="tab" aria-controls="general"><?php $L->p('General') ?></a>
 			<a class="nav-link" id="nav-advanced-tab" data-toggle="tab" href="#nav-advanced" role="tab" aria-controls="advanced"><?php $L->p('Advanced') ?></a>
+			<?php if (!empty($site->customFields())): ?>
+			<a class="nav-link" id="nav-custom-tab" data-toggle="tab" href="#nav-custom" role="tab" aria-controls="custom"><?php $L->p('Custom') ?></a>
+			<?php endif ?>
 			<a class="nav-link" id="nav-seo-tab" data-toggle="tab" href="#nav-seo" role="tab" aria-controls="seo"><?php $L->p('SEO') ?></a>
 		</div>
 	</nav>
@@ -195,19 +192,61 @@ echo Bootstrap::formOpen(array(
 
 				// Parent
 				try {
+					$options = array();
 					$parentKey = $page->parent();
-					$parent = new Page($parentKey);
-					$parentValue = $parent->title();
+					if (!empty($parentKey)) {
+						$parent = new Page($parentKey);
+						$options = array($parentKey=>$parent->title());
+					}
 				} catch (Exception $e) {
-					$parentValue = '';
+					// continue
 				}
-				echo Bootstrap::formInputTextBlock(array(
-					'name'=>'parentTMP',
+				echo Bootstrap::formSelectBlock(array(
+					'name'=>'parent',
 					'label'=>$L->g('Parent'),
-					'placeholder'=>'',
+					'options'=>$options,
+					'selected'=>false,
+					'class'=>'',
 					'tip'=>$L->g('Start typing a page title to see a list of suggestions.'),
-					'value'=>$parentValue
 				));
+
+			?>
+
+			<script>
+			$(document).ready(function() {
+				var parent = $("#jsparent").select2({
+					placeholder: "",
+					allowClear: true,
+					theme: "bootstrap4",
+					minimumInputLength: 2,
+					ajax: {
+						url: HTML_PATH_ADMIN_ROOT+"ajax/get-published",
+						data: function (params) {
+							var query = {
+								checkIsParent: true,
+								query: params.term
+							}
+							return query;
+						},
+						processResults: function (data) {
+							return data;
+						}
+					},
+					escapeMarkup: function(markup) {
+						return markup;
+					},
+					templateResult: function(data) {
+						var html = data.text
+						if (data.type=="static") {
+							html += '<span class="badge badge-pill badge-light">'+data.type+'</span>';
+						}
+						return html;
+					}
+				});
+			});
+			</script>
+
+			<?php
 
 				// Template
 				echo Bootstrap::formInputTextBlock(array(
@@ -277,13 +316,44 @@ echo Bootstrap::formOpen(array(
 					},
 					onSelect: function(event, term, item) {
 						// parentsList = array( pageTitle => pageKey )
-						var parentKey = parentsList[term];
+						var parentKey = parentsList[sanitizeHTML(term)];
 						$("#jsparent").attr("value", parentKey);
 					}
 				});
 			});
 			</script>
 		</div>
+
+		<?php if (!empty($site->customFields())): ?>
+		<div id="nav-custom" class="tab-pane fade" role="tabpanel" aria-labelledby="custom-tab">
+		<?php
+			$customFields = $site->customFields();
+			foreach ($customFields as $field=>$options) {
+				if ( !isset($options['position']) ) {
+					if ($options['type']=="string") {
+						echo Bootstrap::formInputTextBlock(array(
+							'name'=>'custom['.$field.']',
+							'value'=>(isset($options['default'])?$options['default']:''),
+							'tip'=>(isset($options['tip'])?$options['tip']:''),
+							'label'=>(isset($options['label'])?$options['label']:''),
+							'placeholder'=>(isset($options['placeholder'])?$options['placeholder']:''),
+							'value'=>$page->custom($field)
+						));
+					} elseif ($options['type']=="bool") {
+						echo Bootstrap::formCheckbox(array(
+							'name'=>'custom['.$field.']',
+							'label'=>(isset($options['label'])?$options['label']:''),
+							'placeholder'=>(isset($options['placeholder'])?$options['placeholder']:''),
+							'checked'=>$page->custom($field),
+							'labelForCheckbox'=>(isset($options['tip'])?$options['tip']:'')
+						));
+					}
+				}
+			}
+		?>
+		</div>
+		<?php endif ?>
+
 		<div id="nav-seo" class="tab-pane fade" role="tabpanel" aria-labelledby="seo-tab">
 			<?php
 				// Friendly URL
@@ -329,13 +399,75 @@ echo Bootstrap::formOpen(array(
 	</div>
 </div>
 
+<!-- Custom fields: TOP -->
+<?php
+	$customFields = $site->customFields();
+	foreach ($customFields as $field=>$options) {
+		if ( isset($options['position']) && ($options['position']=='top') ) {
+			if ($options['type']=="string") {
+				echo Bootstrap::formInputTextBlock(array(
+					'name'=>'custom['.$field.']',
+					'label'=>(isset($options['label'])?$options['label']:''),
+					'value'=>$page->custom($field),
+					'tip'=>(isset($options['tip'])?$options['tip']:''),
+					'placeholder'=>(isset($options['placeholder'])?$options['placeholder']:''),
+					'class'=>'mb-2',
+					'labelClass'=>'mb-2 pb-2 border-bottom text-uppercase w-100'
+
+				));
+			} elseif ($options['type']=="bool") {
+				echo Bootstrap::formCheckbox(array(
+					'name'=>'custom['.$field.']',
+					'label'=>(isset($options['label'])?$options['label']:''),
+					'placeholder'=>(isset($options['placeholder'])?$options['placeholder']:''),
+					'checked'=>$page->custom($field),
+					'labelForCheckbox'=>(isset($options['tip'])?$options['tip']:''),
+					'class'=>'mb-2',
+					'labelClass'=>'mb-2 pb-2 border-bottom text-uppercase w-100'
+				));
+			}
+		}
+	}
+?>
+
 <!-- Title -->
-<div class="form-group mt-1 mb-1">
+<div class="form-group mb-1">
 	<input id="jstitle" name="title" type="text" class="form-control form-control-lg rounded-0" value="<?php echo $page->title() ?>" placeholder="<?php $L->p('Enter title') ?>">
 </div>
 
 <!-- Editor -->
 <textarea id="jseditor" class="editable h-100" style=""><?php echo $page->contentRaw(true) ?></textarea>
+
+<!-- Custom fields: BOTTOM -->
+<?php
+	$customFields = $site->customFields();
+	foreach ($customFields as $field=>$options) {
+		if ( isset($options['position']) && ($options['position']=='bottom') ) {
+			if ($options['type']=="string") {
+				echo Bootstrap::formInputTextBlock(array(
+					'name'=>'custom['.$field.']',
+					'label'=>(isset($options['label'])?$options['label']:''),
+					'value'=>$page->custom($field),
+					'tip'=>(isset($options['tip'])?$options['tip']:''),
+					'placeholder'=>(isset($options['placeholder'])?$options['placeholder']:''),
+					'class'=>'mt-2',
+					'labelClass'=>'mb-2 pb-2 border-bottom text-uppercase w-100'
+
+				));
+			} elseif ($options['type']=="bool") {
+				echo Bootstrap::formCheckbox(array(
+					'name'=>'custom['.$field.']',
+					'label'=>(isset($options['label'])?$options['label']:''),
+					'placeholder'=>(isset($options['placeholder'])?$options['placeholder']:''),
+					'checked'=>$page->custom($field),
+					'labelForCheckbox'=>(isset($options['tip'])?$options['tip']:''),
+					'class'=>'mt-2',
+					'labelClass'=>'mb-2 pb-2 border-bottom text-uppercase w-100'
+				));
+			}
+		}
+	}
+?>
 
 </form>
 

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
+    <atom:link href="https://pilab.dev/rss.xml" rel="self" type="application/rss+xml"/>
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Sat, 26 Oct 2019 16:09:25 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 27 Oct 2019 17:37:36 -0500</lastBuildDate>
     <item>
       <title>Bludit Pi</title>
       <link>https://pilab.dev/bludit-pi</link>

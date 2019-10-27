@@ -1,2 +1,2 @@
 <?php defined('BLUDIT') or die('Bludit CMS.'); ?>
-{"head":"&lt;style&gt;\r\n.centered {\r\n   text-align: center;\r\n}\r\n&lt;\/style&gt;","header":"","footer":"","adminHead":"","adminHeader":"","adminFooter":"","position":1}
+{"head":"&lt;style&gt;\r\n.centered {\r\n   text-align: center;\r\n}\r\n&lt;\/style&gt;","header":"","footer":"","adminHead":"&lt;style&gt;\r\n@media (max-width : 575px) {\r\n\t.select2-search__field {\r\n\t\tdisplay: none;\r\n\t}\r\n\t.select2-search--dropdown {\r\n\t    display: none;\r\n}\r\n&lt;\/style&gt;","adminHeader":"","adminFooter":"","position":1}

@@ -3,7 +3,7 @@
         "native": "Deutsch (Deutschland)",
         "english-name": "German",
         "locale": "de, de_DE",
-        "last-update": "2018-05-30",
+        "last-update": "2018-10-07",
         "authors": [
             "Clickwork https:\/\/clickwork.ch",
             "blog2read https:\/\/github.com\/blog2read",
@@ -117,7 +117,7 @@
     "add": "Hinzufügen",
     "status": "Status",
     "published": "Veröffentlicht",
-    "draft": "Entwürfe",
+    "draft": "Entwurf",
     "empty-title": "Kein Titel",
     "empty": "Kein Inhalt",
     "date": "Datum",
@@ -167,7 +167,7 @@
     "delete": "Löschen",
     "password": "Passwort",
     "confirm-password": "Passwort wiederholen",
-    "editor": "Editor",
+    "editor": "Mitarbeiter",
     "administrator": "Administrator",
     "edit-user": "Benutzer bearbeiten",
     "edit-content": "Inhalt bearbeiten",
@@ -285,7 +285,7 @@
     "example-page-1-content": "Veröffentliche deine eigenen Inhalte oder passe die vorhandenen deinen Bedürfnissen an. Um Inhalte zu veröffentlichen, zu bearbeiten oder zu löschen, musst du dich im [Administrationsbereich](.\/admin) anmelden (mit dem Benutzernamen `admin` und dem Passwort, das Du bei der Installation eingegeben hast).",
     "example-page-2-slug": "richte-deine-website-ein",
     "example-page-2-title": "Richte deine Website ein",
-    "example-page-2-content": "Passe die Einstellungen deiner Website im [Administrationsbereich](.\/admin) an. Unter [Einstellungen > Allgemein](.\/admin\/settings-general) kannst Du beispielsweise den Titel und die Beschreibung der Website ändern oder Links zu sozialen Netzwerken eingeben.",
+    "example-page-2-content": "Passe die Einstellungen deiner Website im [Administrationsbereich](.\/admin) an. Unter [Einstellungen > Allgemein](.\/admin\/settings) kannst Du beispielsweise den Titel und die Beschreibung der Website ändern oder Links zu sozialen Netzwerken eingeben.",
     "example-page-3-slug": "folge-bludit",
     "example-page-3-title": "Folge Bludit",
     "example-page-3-content": "Halte dich auf dem Laufenden über neue Versionen, Themes und Plugins in den sozialen Netzwerken <a href=\"https:\/\/www.facebook.com\/bluditcms\/\" target=\"_blank\">Facebook<\/a>, <a href=\"https:\/\/www.twitter.com\/bludit\/\" target=\"_blank\">Twitter<\/a> und <a href=\"https:\/\/www.youtube.com\/c\/Bluditcms\" target=\"_blank\">YouTube<\/a>, über den <a href=\"https:\/\/blog.bludit.com\" target=\"_blank\">Blog<\/a> oder indem du den <a href=\"https:\/\/clickwork.ch\/bludit-newsletter\" target=\"_blank\">deutschsprachigen Newsletter<\/a> abonnierst.",
@@ -388,5 +388,9 @@
     "disabled-plugins": "Deaktivierte Plugins",
     "remove-logo": "Logo entfernen",
     "preview": "Vorschau",
-    "author-can-write-and-edit-their-own-content": "Autor: Kann Inhalte erstellen und bearbeiten. Editor: Kann Inhalte erstellen und eigene sowie fremde Inhalte bearbeiten."
+    "author-can-write-and-edit-their-own-content": "Autor: Kann Inhalte erstellen und seine eigenen bearbeiten. Mitatbeiter: Kann Inhalte erstellen und seine eigenen und die anderer bearbeiten.",
+    "custom-fields": "Eigene Felder",
+    "define-custom-fields-for-the-content": "Eigene Felder für Inhalte anlegen. Informationen darüber sind in der <a href='https:\/\/docs.bludit.com\/en\/content\/custom-fields'>Dokumentation<\/a> zu finden.",
+    "start-typing-to-see-a-list-of-suggestions": "Beginne mit dem Tippen für eine Liste mit Vorschlägen.",
+    "view": "Anschauen"
 }

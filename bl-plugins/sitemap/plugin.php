@@ -66,7 +66,6 @@ class pluginSitemap extends Plugin {
 					$xml .= '<url>';
 					$xml .= '<loc>'.$page->permalink().'</loc>';
 					$xml .= '<lastmod>'.$page->date(SITEMAP_DATE_FORMAT).'</lastmod>';
-					$xml .= '<changefreq>daily</changefreq>';
 					$xml .= '</url>';
 				}
 			} catch (Exception $e) {
@@ -86,12 +85,12 @@ class pluginSitemap extends Plugin {
 	private function ping()
 	{
 		if ($this->getValue('pingGoogle')) {
-			$url = 'https://www.google.com/webmasters/sitemaps/ping?sitemap='.Theme::sitemapUrl();
+			$url = 'https://www.google.com/ping?sitemap='.Theme::sitemapUrl();
 			TCP::http($url, 'GET', true, 3);
 		}
 
 		if ($this->getValue('pingBing')) {
-			$url = 'https://www.bing.com/webmaster/ping.aspx?sitemap='.Theme::sitemapUrl();
+			$url = 'https://www.bing.com/ping?sitemap='.Theme::sitemapUrl();
 			TCP::http($url, 'GET', true, 3);
 		}
 	}

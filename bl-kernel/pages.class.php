@@ -64,6 +64,19 @@ class Pages extends dbJSON {
 					$tags = $args['tags'];
 				}
 				$finalValue = $this->generateTags($tags);
+			} elseif ($field=='custom') {
+				if (isset($args['custom'])) {
+					global $site;
+					$customFields = $site->customFields();
+					foreach ($args['custom'] as $customField=>$customValue) {
+						$html = Sanitize::html($customValue);
+						// Store the custom field as defined type
+						settype($html, $customFields[$customField]['type']);
+						$row['custom'][$customField]['value'] = $html;
+					}
+					unset($args['custom']);
+					continue;
+				}
 			} elseif (isset($args[$field])) {
 				// Sanitize if will be stored on database
 				$finalValue = Sanitize::html($args[$field]);
@@ -71,6 +84,7 @@ class Pages extends dbJSON {
 				// Default value for the field if not defined
 				$finalValue = $value;
 			}
+			// Store the value as defined type
 			settype($finalValue, gettype($value));
 			$row[$field] = $finalValue;
 		}
@@ -168,6 +182,19 @@ class Pages extends dbJSON {
 		foreach ($this->dbFields as $field=>$value) {
 			if ( ($field=='tags') && isset($args['tags'])) {
 				$finalValue = $this->generateTags($args['tags']);
+			} elseif ($field=='custom') {
+				if (isset($args['custom'])) {
+					global $site;
+					$customFields = $site->customFields();
+					foreach ($args['custom'] as $customField=>$customValue) {
+						$html = Sanitize::html($customValue);
+						// Store the custom field as defined type
+						settype($html, $customFields[$customField]['type']);
+						$row['custom'][$customField]['value'] = $html;
+					}
+					unset($args['custom']);
+					continue;
+				}
 			} elseif (isset($args[$field])) {
 				// Sanitize if will be stored on database
 				$finalValue = Sanitize::html($args[$field]);
@@ -205,11 +232,8 @@ class Pages extends dbJSON {
 		// This variable is not belong to the database so is not defined in $row
 		$newKey = $this->generateKey($slug, $parent, false, $key);
 
-		// If the page is draft then the created date is the current
-		if ($row['type']=='draft') {
-			$row['date'] = Date::current(DB_DATE_FORMAT);
-		} elseif (!Valid::date($row['date'], DB_DATE_FORMAT)) {
-			// if the date in the arguments is not valid, take the value from the old row
+		// if the date in the arguments is not valid, take the value from the old row
+		if (!Valid::date($row['date'], DB_DATE_FORMAT)) {
 			$row['date'] = $this->db[$key]['date'];
 		}
 
@@ -581,8 +605,6 @@ class Pages extends dbJSON {
 		return $list;
 	}
 
-
-
 	public function sortBy()
 	{
 		if (ORDER_BY=='date') {
@@ -771,5 +793,31 @@ class Pages extends dbJSON {
 		}
 		return $this->save();
 	}
+
+	// Insert custom fields to all the pages in the database
+	// The structure for the custom fields need to be a valid JSON format
+	// The custom fields are incremental, this means the custom fields are never deleted
+	// The pages only store the value of the custom field, the structure of the custom fields are in the database site.php
+	public function setCustomFields($fields)
+	{
+		$customFields = json_decode($fields, true);
+		if (json_last_error() != JSON_ERROR_NONE) {
+			return false;
+		}
+		foreach ($this->db as $pageKey=>$pageFields) {
+			foreach ($customFields as $customField=>$customValues) {
+				if (!isset($pageFields['custom'][$customField])) {
+					$defaultValue = '';
+					if (isset($customValues['default'])) {
+						$defaultValue = $customValues['default'];
+					}
+					$this->db[$pageKey]['custom'][$customField]['value'] = $defaultValue;
+				}
+			}
+		}
+
+		return $this->save();
+	}
+
 
 }

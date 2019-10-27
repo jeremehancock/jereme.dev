@@ -72,9 +72,7 @@ class pluginStaticPages extends Plugin {
 			$html .= '<a href="' . $page->permalink() . '">' . $page->title() . '</a>';
 			$html .= '</li>';
 		}
-        $html .= '<li>';
-        $html .= '<a href="https://twitter.com/pilabdev">Twitter Bot</a>';
-        $html .= '</li>';
+
 		$html .= '</ul>';
  		$html .= '</div>';
  		$html .= '</div>';
