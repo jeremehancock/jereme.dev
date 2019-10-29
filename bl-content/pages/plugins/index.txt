@@ -72,3 +72,13 @@ Show the current version on the sidebar of the admin panel, and check periodical
 <a href="https://github.com/mhancoc7/version-pilab">
 	<button type="button" class="btn btn-md btn-success" id="download-target">Download</button>
 </a>
+
+## Navigation - Pi Lab
+Display the most recent posts in the sidebar with thumbnails.
+
+> <a href="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/navigation-pilab.png" data-lightbox="navigation-pilab" data-title="Navigation - Pi Lab">
+> <img src="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/navigation-pilab.png" class="plugin-thumb"></a>
+
+<a href="https://github.com/mhancoc7/navigation-pilab">
+	<button type="button" class="btn btn-md btn-success" id="download-target">Download</button>
+</a>

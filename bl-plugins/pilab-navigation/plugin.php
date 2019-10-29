@@ -1,6 +1,6 @@
 <?php
 
-class pluginNavigation extends Plugin {
+class pluginPiLabNavigation extends Plugin {
 
 	public function init()
 	{
@@ -107,8 +107,8 @@ class pluginNavigation extends Plugin {
 				try {
 					$page = new Page($pageKey);
 					$html .= '<li>';
-					$html .= '<a href="' . $page->permalink() . '">' . $page->title() . '</a>';
-					$html .= '</li>';
+					$html .= '<a href="' . $page->permalink() . '"><img style="width: 35px;height:auto;margin-right:7px;vertical-align: middle;" src="' . $page->coverImage() .'" />' . $page->title() . '</a>';
+                    $html .= '</li>';
 				} catch (Exception $e) {
 					// Continue
 				}
