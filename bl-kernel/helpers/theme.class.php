@@ -199,7 +199,7 @@ class Theme {
 
 		$links = '';
 		foreach($files as $file) {
-			$links .= '<link rel="stylesheet" type="text/css" href="'.$base.$file.'?version='.BLUDIT_VERSION.'">'.PHP_EOL;
+			$links .= '<link rel="stylesheet" type="text/css" href="'.$base.$file.'?version='.BLUDIT_VERSION.'&time=' . time() . '">'.PHP_EOL;
 		}
 
 		return $links;
@@ -213,7 +213,7 @@ class Theme {
 
 		$scripts = '';
 		foreach($files as $file) {
-			$scripts .= '<script src="'.$base.$file.'?version='.BLUDIT_VERSION.'"></script>'.PHP_EOL;
+			$scripts .= '<script src="'.$base.$file.'?version='.BLUDIT_VERSION.'&time=' . time() . '"></script>'.PHP_EOL;
 		}
 
 		return $scripts;
