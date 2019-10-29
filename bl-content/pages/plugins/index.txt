@@ -73,6 +73,8 @@ Show the current version on the sidebar of the admin panel, and check periodical
 	<button type="button" class="btn btn-md btn-success" id="download-target">Download</button>
 </a>
 
+-----
+
 ## Navigation - Pi Lab
 Display the most recent posts in the sidebar with thumbnails.
 
