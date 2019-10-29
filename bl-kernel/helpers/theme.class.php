@@ -213,7 +213,7 @@ class Theme {
 
 		$scripts = '';
 		foreach($files as $file) {
-			$scripts .= '<script src="'.$base.$file.'?version='.BLUDIT_VERSION.'&time=' . time() . '"></script>'.PHP_EOL;
+			$scripts .= '<script src="'.$base.$file.'?version='.BLUDIT_VERSION.'"></script>'.PHP_EOL;
 		}
 
 		return $scripts;
