@@ -10,7 +10,7 @@ I am using four Raspberry Pi 2 Model Bs. One is used as the Load Balancer and th
 
 [Setting up an NGINX web server on a Raspberry Pi](https://www.raspberrypi.org/documentation/remote-access/web-server/nginx.md)
 
-Once each node was setup with NGINX and/or php-fpm I setup the load balancing. This is done on the Load Balancing Node. 
+Once each node was setup with NGINX and php-fpm I setup the load balancing. This is done on the Load Balancing Node. 
 
 > ***Tip**: I recommend setting up the hostnames for each Pi so that it is easy to remember which Pi is which. I chose pi0, pi1, pi2, and pi3. pi0 being the Load Balancer*
 
