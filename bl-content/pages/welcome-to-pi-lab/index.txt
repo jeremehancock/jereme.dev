@@ -11,6 +11,9 @@
 *  **Prod Nodes**
     *    2 Raspberry Pi 2 Model Bs 
 						* [Samsung EVO Plus 32GB](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M) SD Cards
+*  **Testing Node**
+    *    1 Raspberry Pi 4 4GB Model B 
+						* [Samsung EVO Plus 32GB](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M) SD Card
 *   **SETI@home Node**
     *    1 Raspberry Pi Model B (256MB)
 				* [Details](pi-lab-seti-home-node)
