@@ -1,0 +1,2 @@
+<?php defined('BLUDIT') or die('Bludit CMS.'); ?>
+{"label":"Links","jsondb":"{&quot;Random Goat&quot;:&quot;https:\\\/\\\/randomgoat.com&quot;,&quot;m7kodi&quot;:&quot;https:\\\/\\\/m7kodi.dev\\\/&quot;,&quot;Resum\\u00e9&quot;:&quot;https:\\\/\\\/jeremehancock.com&quot;}","position":"3"}

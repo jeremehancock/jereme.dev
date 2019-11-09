@@ -1,0 +1,68 @@
+I have added a new node to the Pi Lab setup to  run [SETI@home](https://setiathome.berkeley.edu/). 
+
+I used my first Raspberry Pi. It is a [Raspberry Pi Model B (256MB)](https://wikidevi.com/wiki/RPF_Raspberry_Pi_Model_B_(256MB)).
+
+[SETI@home](https://setiathome.berkeley.edu/) ("SETI at home") is an Internet-based public volunteer computing project employing the BOINC software platform created by the Berkeley SETI Research Center and is hosted by the Space Sciences Laboratory, at the University of California, Berkeley. Its purpose is to analyze radio signals, searching for signs of extraterrestrial intelligence, and as such is one of many activities undertaken as part of the worldwide SETI effort. <sub> [Source](https://en.wikipedia.org/wiki/SETI@home)</sub>
+
+Checkout the Pi Lab [SETI@home](https://setiathome.berkeley.edu/) node at work [here](https://setiathome.berkeley.edu/show_host_detail.php?hostid=8740651). 
+
+Here are the basic steps that I used to create a headless SETI@home node.
+
+### Step 1: 
+Make sure everything is up to date
+```
+sudo apt-get update
+sudo apt-get upgrade
+```
+
+### Step 2: 
+Install the BOINC Client
+```
+sudo apt-get install boinc-client
+```
+
+### Step 3: 
+Get Account Key
+```
+boinccmd --lookup_account http://setiathome.berkeley.edu <your_email> <your_password>
+```
+
+***Note:*** 
+*I already had a [ SETI@home](https://setiathome.berkeley.edu/) account. If you don't have one you can create one [here](https://setiathome.berkeley.edu/signup.php).*
+
+### Step 4: 
+Attach the BOINC Client program to your SETI@Home account
+```
+boinccmd --project_attach http://setiathome.berkeley.edu <your_account_key>
+```
+
+#### That's it. You should now be up and running!
+
+-----
+
+### Do more with BOINC:
+
+#### Check your tasks:
+```
+boinccmd --get_tasks
+```
+
+#### Install boinctui:
+```
+sudo apt-get install boinctui
+```
+
+#### Run boinctui:
+This will give you a nice text interface for BOINC.
+```
+boinctui
+```
+
+#### Configure BOINC Client:
+```
+sudo nano /var/lib/boinc-client/cc_config.xml
+```
+***Note:*** *If you make changes to the configuration be sure to run the following command. Configuration options can be found [here](https://boinc.berkeley.edu/wiki/Client_configuration). *
+```
+boinccmd --read_cc_config
+```

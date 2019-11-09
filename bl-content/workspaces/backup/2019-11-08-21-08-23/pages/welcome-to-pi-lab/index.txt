@@ -1,0 +1,35 @@
+<div class="centered">
+    <img src="/bl-content/uploads/pages/ae6baedd36be1d5b3fa9ec0d872cc735/picluster.jpg" class="image-border" />
+</div>
+
+*   **Load Balancer**
+    *   1 Raspberry Pi 2 Model B
+				* [Samsung EVO Plus 32GB](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M) SD Card
+*   **Dev/Prod Node**
+    *    1 Raspberry Pi 2 Model B
+				* [Samsung EVO Plus 32GB](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M) SD Card
+*  **Prod Nodes**
+    *    2 Raspberry Pi 2 Model Bs 
+						* [Samsung EVO Plus 32GB](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M) SD Cards
+*  **Testing Node**
+    *    1 Raspberry Pi 4 4GB Model B 
+						* [Samsung EVO Plus 32GB](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M) SD Card
+*   **SETI@home Node**
+    *    1 Raspberry Pi Model B (256MB)
+				* [Details](pi-lab-seti-home-node)
+*    **Operating System:** [Raspbian](https://www.raspbian.org/)
+*    **Webserver/Load Balancer:** [Nginx](https://nginx.org/)
+*    **SSL:** [Let's Encrypt](https://letsencrypt.org/)
+*   **CMS:** [Bludit - v3.10.0](https://www.bludit.com/) PRO
+*    **Theme:** [Blekathlon](https://blthemes.pp.ua/) (Pi Lab Version)
+*    **Plugins:** [Pi Lab Plugins](plugins)
+*    **Network** 
+    *    [Linksys WRT1900AC](https://www.linksys.com/us/support-product?pid=01t80000003KdJ7AAK)
+    *    [Netgear ProSAFE GS105](https://www.netgear.com/support/product/GS105v5)
+*    **Power:** [CyberPower EC850LCD](https://www.cyberpowersystems.com/product/ups/ec850lcd/)
+
+<style>
+	.page-content, .entry-header, .entry-content {
+    max-width: 740px;
+}
+</style>

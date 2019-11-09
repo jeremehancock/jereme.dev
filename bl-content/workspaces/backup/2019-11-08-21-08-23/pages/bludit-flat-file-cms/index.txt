@@ -1,0 +1,9 @@
+Pi Lab is powered by [Bludit](https://www.bludit.com).
+
+Bludit is an amazing Flat File CMS. There is no database to configure!
+
+With a full featured plugin and theme system the ability to fully customize your setup is truly amazing. It is SEO friendly. It supports Markdown and HTML for your content and includes a Markdown Editor and WYSIWYG Editor.
+
+If you are looking for a powerful and lean CMS I highly recommend Bludit.
+
+### [Checkout Bludit](https://www.bludit.com)

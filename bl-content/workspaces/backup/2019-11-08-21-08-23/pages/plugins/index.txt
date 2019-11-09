@@ -1,0 +1,86 @@
+These are plugins built specifically for Pi Lab.
+
+## Show Node - Pi Lab
+This plugin displays the current node in the sidebar of a [Bludit](https://bludit.com) installation on a server cluster. 
+
+For more information on a setup that this plugin is intended for checkout [Pi Lab Setup](pi-lab-setup).
+
+> <a href="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/show-node-plugin.png" data-lightbox="show-node" data-title="Show Node - Pi Lab">
+> <img src="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/show-node-plugin.png" class="plugin-thumb"></a>
+
+<a href="https://github.com/mhancoc7/show-node-pilab">
+	<button type="button" class="btn btn-md btn-success" id="download-show-node">Download</button>
+</a>
+
+-----
+
+## Robots - Pi Lab
+This plugin is a customized version of the  [Bludit](https://bludit.com) Robots plugin. It allows for adding a port to deny all for. This is useful when you have a special "dev" node setup on a different port.
+
+> <a href="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/robots-pilab.png" data-lightbox="robots" data-title="Robots - Pi Lab">
+> <img src="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/robots-pilab.png" class="plugin-thumb"></a>
+
+<a href="https://github.com/mhancoc7/robots-pilab">
+	<button type="button" class="btn btn-md btn-success" id="download-robots">Download</button>
+</a>
+
+-----
+
+## Site Redirect - Pi Lab
+This plugin allows you to temporarily redirect your site to another URL. The [Bludit](https://bludit.com) admin panel is still available. The frontend is also still accessible for administrators or editors.
+
+> <a href="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/redirect.png" data-lightbox="redirect" data-title="Site Redirect - Pi Lab">
+> <img src="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/redirect.png" class="plugin-thumb"></a>
+
+<a href="https://github.com/mhancoc7/site-redirect-pilab">
+	<button type="button" class="btn btn-md btn-success" id="download-redirect">Download</button>
+</a>
+
+-----
+
+## Web Stats - Pi Lab
+Add your favorite web stats code (ex: [Statcounter](https://statcounter.com) to your website. You can also assign a port for your "dev" node so the stats code will not be used.
+
+
+> <a href="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/web-stats-pilab.png" data-lightbox="webstats" data-title="Web Stats - Pi Lab">
+> <img src="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/web-stats-pilab.png" class="plugin-thumb"></a>
+
+<a href="https://github.com/mhancoc7/web-stats-pilab">
+	<button type="button" class="btn btn-md btn-success" id="download-webstatus">Download</button>
+</a>
+
+-----
+
+## target='_blank' - Pi Lab
+This plugin forces all external links on pages to open in new tabs.
+
+> <a href="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/target-blank.png" data-lightbox="target-blank" data-title="target='_blank' - Pi Lab">
+> <img src="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/target-blank.png" class="plugin-thumb"></a>
+
+<a href="https://github.com/mhancoc7/open-links-new-tab-pilab">
+	<button type="button" class="btn btn-md btn-success" id="download-target">Download</button>
+</a>
+
+-----
+
+## Version - Pi Lab
+Show the current version on the sidebar of the admin panel, and check periodically for new Bludit releases. If there is a new release a link to the Bludit site will be displayed. If you are a Bludit PRO user a link to Bludit's Patreon page will be displayed.
+
+> <a href="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/version-pilab.png" data-lightbox="version-pilab" data-title="Version - Pi Lab">
+> <img src="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/version-pilab.png" class="plugin-thumb"></a>
+
+<a href="https://github.com/mhancoc7/version-pilab">
+	<button type="button" class="btn btn-md btn-success" id="download-target">Download</button>
+</a>
+
+-----
+
+## Navigation - Pi Lab
+Display the most recent posts in the sidebar with thumbnails.
+
+> <a href="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/navigation-pilab.png" data-lightbox="navigation-pilab" data-title="Navigation - Pi Lab">
+> <img src="bl-content/uploads/pages/c3b759b0f699f31b9bbf641efcf6cbe5/navigation-pilab.png" class="plugin-thumb"></a>
+
+<a href="https://github.com/mhancoc7/navigation-pilab">
+	<button type="button" class="btn btn-md btn-success" id="download-target">Download</button>
+</a>
