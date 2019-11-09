@@ -1,2 +1,0 @@
-<?php defined('BLUDIT') or die('Bludit CMS.'); ?>
-{"devport":"8080","devnode":"Dev Node","jsondb":"{&quot;Node 1&quot;:&quot;192.186.86.200&quot;,&quot;Node 2&quot;:&quot;192.186.86.201&quot;}","position":1}
