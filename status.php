@@ -1,6 +1,5 @@
 <html>
 <head>
-    <meta http-equiv="refresh" content="5">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700|Roboto:400,400i,700" rel="stylesheet" />
@@ -33,46 +32,35 @@
 
 <script>
     $(window).ready( function() {
-
         var time = 5;
-
         setInterval( function() {
-
             time--;
-
             $('#time').html(time);
-
             if (time === 0) {
-
                 location.reload()
             }
-
-
         }, 1000 );
-
     });
 </script>
 
 <?php
-    $server = $_SERVER['SERVER_ADDR'];
+    $ip = $_SERVER['SERVER_ADDR'];
 
     $uptime = exec("uptime -p | sed 's/\up//g'");
+    
+    $hostname = gethostname();
 
-    if ($server == '192.168.86.140') {
-        if ($_SERVER['HTTP_HOST'] == "velvethotdog.com:8080") {
-            echo "<b>Node:</b> 1 (Dev Mode)";
-        } else {
-            echo "<b>Node:</b> 1";
-        }
+    $node = substr($hostname, -1) - 1;
 
-    } else if ($server == '192.168.86.141') {
-        echo "<b>Node:</b> 2";
-    } else if ($server == '192.168.86.142') {
-        echo "<b>Node:</b> 3";
+    if ($hostname == 'pi1') {
+        echo "<b>Dev Mode</b>";
+    }
+    else {
+        echo "<b>Node: $node</b>";
     }
     echo "</br>";
 
-    echo "<b>IP:</b> " . $server;
+    echo "<b>IP:</b> " . $ip;
 
     echo "</br>";
 
