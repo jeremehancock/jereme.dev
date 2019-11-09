@@ -21,7 +21,7 @@
 *    **Theme:** [Blekathlon](https://blthemes.pp.ua/) (Pi Lab Version)
 *    **Plugins:** [Pi Lab Plugins](plugins)
 *    **Network** 
-    *    [Linksys WRT1900AC](https://www.linksys.com/us/support-product?pid=01t80000003KdJ7AAK)
+    *    [Linksys WRT1900AC](https://www.linksys.com/us/support-product?pid=01t80000003KdJ7AAK) - Bridge Mode
     *    [Netgear ProSAFE GS105](https://www.netgear.com/support/product/GS105v5)
 *    **Power:** [CyberPower EC850LCD](https://www.cyberpowersystems.com/product/ups/ec850lcd/)
 
