@@ -50,14 +50,10 @@
     
     $hostname = gethostname();
 
-    $node = substr($hostname, -1) - 1;
+    $node = substr($hostname, -1);
 
-    if ($hostname == 'pi1') {
-        echo "<b>Dev Mode</b>";
-    }
-    else {
-        echo "<b>Node: $node</b>";
-    }
+    echo "<b>Node: $node</b>";
+    
     echo "</br>";
 
     echo "<b>IP:</b> " . $ip;

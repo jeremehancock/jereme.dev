@@ -1,11 +1,11 @@
 <div class="centered">
-    <img src="/bl-content/uploads/pages/ae6baedd36be1d5b3fa9ec0d872cc735/picluster.jpg" class="image-border" />
+    <img src="/bl-content/uploads/pages/ae6baedd36be1d5b3fa9ec0d872cc735/picluster-v2.jpg" class="image-border" />
 </div>
 
 *   **Load Balancer**
     *   1 Raspberry Pi 2 Model B
 				* [Samsung EVO Plus 32GB](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M) SD Card
-*   **Dev Node**
+*   **Dev/Prod Node**
     *    1 Raspberry Pi 2 Model B
 				* [Samsung EVO Plus 32GB](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M) SD Card
 *  **Prod Nodes**
