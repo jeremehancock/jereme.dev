@@ -5,7 +5,27 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Sun, 10 Nov 2019 21:50:06 -0600</lastBuildDate>
+    <lastBuildDate>Sun, 10 Nov 2019 22:08:33 -0600</lastBuildDate>
+    <item>
+      <title>Quick Wordpress</title>
+      <link>https://pilab.dev/quick-wordpress</link>
+      <description>&lt;p&gt;If you want an easy way to test and or develop using WordPress you should be sure to check out &lt;a href="https://github.com/russellmacshane/quick-wordpress"&gt;Quick Wordpress&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The following technologies are automatically installed for you by &lt;a href="https://github.com/russellmacshane/quick-wordpress"&gt;Quick Wordpress&lt;/a&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Ubuntu Bionic (18.04)&lt;/li&gt;
+&lt;li&gt;Apache&lt;/li&gt;
+&lt;li&gt;MariaDB&lt;/li&gt;
+&lt;li&gt;PHP&lt;/li&gt;
+&lt;li&gt;phpMyAdmin&lt;/li&gt;
+&lt;li&gt;WPCli&lt;/li&gt;
+&lt;li&gt;WordPress&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This project has the goal of providing an easy way to backup and restore the WordPress installation as well. This could be used to build out a WordPress site locally and then easily prepare the installation for deployment to the host of your choice. &lt;/p&gt;
+&lt;p&gt;This is still a work in progress, but I will definitely be watching it closely.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/russellmacshane/quick-wordpress"&gt;&lt;img src="/images/check-it-out-on-github.png" alt="Get it on GitHub" class="on-github" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+      <pubDate>Sun, 10 Nov 2019 22:00:04 -0600</pubDate>
+      <guid isPermaLink="false">3fd45a5ffc8202fb27925d085a5d08b6</guid>
+    </item>
     <item>
       <title>Bludit Pi</title>
       <link>https://pilab.dev/bludit-pi</link>
@@ -184,22 +204,6 @@
 &lt;/blockquote&gt;</description>
       <pubDate>Fri, 20 Sep 2019 18:36:44 -0500</pubDate>
       <guid isPermaLink="false">726f105976d23905b8de01992f54c3a4</guid>
-    </item>
-    <item>
-      <title>Bouncing Trump!</title>
-      <link>https://pilab.dev/bouncing-trump</link>
-      <description>&lt;p&gt;This is a silly site that I put together. &lt;/p&gt;
-&lt;div class="centered"&gt;
-&lt;iframe src='//bouncingtrump.com/' width='100%' height='700' frameBorder='0' id='random-goat-embed' class="iframe-border" allowFullScreen&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-&lt;div style="float:right;"&gt;
-    &lt;a href="https://bouncingtrump.com" target="_blank"&gt;Go to the Bouncing Trump site&lt;/a&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;br&gt;&lt;br&gt;
-Embed Bouncing Trump on your site:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;iframe src='//bouncingtrump.com/' width='100%' height='700' frameBorder='0' id='bouncing-trump-embed' class="iframe-border" allowFullScreen&amp;gt;&amp;lt;/iframe&amp;gt;&lt;/code&gt;&lt;/pre&gt;</description>
-      <pubDate>Sat, 07 Sep 2019 21:08:21 -0500</pubDate>
-      <guid isPermaLink="false">50f6c83ff27271e2a59a3ae144479710</guid>
     </item>
   </channel>
 </rss>

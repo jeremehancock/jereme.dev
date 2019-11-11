@@ -1,0 +1,17 @@
+If you want an easy way to test and or develop using WordPress you should be sure to check out [Quick Wordpress](https://github.com/russellmacshane/quick-wordpress).
+
+The following technologies are automatically installed for you by [Quick Wordpress](https://github.com/russellmacshane/quick-wordpress):
+
+* Ubuntu Bionic (18.04)
+* Apache
+* MariaDB
+* PHP
+* phpMyAdmin
+* WPCli
+* WordPress
+
+This project has the goal of providing an easy way to backup and restore the WordPress installation as well. This could be used to build out a WordPress site locally and then easily prepare the installation for deployment to the host of your choice. 
+
+This is still a work in progress, but I will definitely be watching it closely.
+
+[<img src="/images/check-it-out-on-github.png" alt="Get it on GitHub" class="on-github" />](https://github.com/russellmacshane/quick-wordpress)
