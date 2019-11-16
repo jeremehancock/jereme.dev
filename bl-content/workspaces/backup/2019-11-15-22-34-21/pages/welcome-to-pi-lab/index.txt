@@ -2,7 +2,7 @@
     <img src="/bl-content/uploads/pages/ae6baedd36be1d5b3fa9ec0d872cc735/picluster-v3.jpg" class="image-border"  style="margin-bottom:15px;"/>
 </div>
 
-Pi Lab is a collection of Raspberry Pis setup for various purposes throughout my home. 
+*Pi Lab is a collection of Raspberry Pis setup for various purposes throughout my home. *
 
 ## Pi Lab Web Cluster:
 
