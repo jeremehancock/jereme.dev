@@ -40,6 +40,7 @@ Pi Lab is a collection of Raspberry Pis setup for various purposes throughout my
 				* [Samsung EVO Plus 32GB](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M) SD Card
 *   **SETI@home Node**
     *    1 Raspberry Pi Model B (256MB)
+				* 8GB generic SD card
 				* [Details](pi-lab-seti-home-node)
 *   **Pihole/OpenVPN Node**
     *   1 Raspberry Pi 3 Model B
