@@ -8,7 +8,7 @@ Need a simple and cheap web server? The Pi Zero W combined with a few simple par
 
 - [Pi Zero W](https://www.amazon.com/gp/product/B06XFZC3BX)
 - [USB-A Add-on Board](https://www.amazon.com/gp/product/B07DBL3WYQ)
-- [Samsung EVO Plus 32GB SD Card](https://www.amazon.com/gp/product/B06XWN9Q99)
+- [Samsung EVO Plus 32GB SD Card](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
 - [Short Angled USB Cable](https://www.amazon.com/gp/product/B00UMZN47Y) - *Optional*
 - [Cell Phone Charger](https://www.amazon.com/Pantom-Adaptive-Charging-Compatible-Smartphones/dp/B07R25P249)
 
