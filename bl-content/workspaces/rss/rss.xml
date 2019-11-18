@@ -5,7 +5,64 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Fri, 15 Nov 2019 22:34:17 -0600</lastBuildDate>
+    <lastBuildDate>Sun, 17 Nov 2019 20:59:10 -0600</lastBuildDate>
+    <item>
+      <title>Pi Zero Wall Plug Web Server</title>
+      <link>https://pilab.dev/pi-zero-wall-plug-web-server</link>
+      <description>&lt;div class="centered"&gt;
+    &lt;img src="/bl-content/uploads/pages/11dd47063b35a63a109bb462a9f0ef92/pizero-server-2.png" class="image-border" /&gt;&lt;br&gt;&lt;br&gt;
+&lt;/div&gt;
+&lt;p&gt;Need a simple and cheap web server? The Pi Zero W combined with a few simple parts can provide just that.&lt;/p&gt;
+&lt;h3&gt;Parts List:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.amazon.com/gp/product/B06XFZC3BX"&gt;Pi Zero W&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.amazon.com/gp/product/B07DBL3WYQ"&gt;USB-A Add-on Board&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.amazon.com/gp/product/B06XWN9Q99"&gt;Samsung EVO Plus 32GB SD Card&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.amazon.com/gp/product/B00UMZN47Y"&gt;Short Angled USB Cable&lt;/a&gt; - &lt;em&gt;Optional&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.amazon.com/Pantom-Adaptive-Charging-Compatible-Smartphones/dp/B07R25P249"&gt;Cell Phone Charger&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Step 1:&lt;/h3&gt;
+&lt;p&gt;Assemble the USB-A Add-on Board using the instructions provided. It is pretty self explanatory.&lt;/p&gt;
+&lt;h3&gt;Step 2:&lt;/h3&gt;
+&lt;p&gt;Use &lt;a href="https://www.balena.io/etcher/"&gt;Etcher&lt;/a&gt; to flash &lt;a href="https://www.raspberrypi.org/downloads/raspbian/"&gt;Raspbian Lite&lt;/a&gt; to the SD card.&lt;/p&gt;
+&lt;h3&gt;Step 3:&lt;/h3&gt;
+&lt;p&gt;After flashing the SD card eject and re-insert into your computer to re-mount. &lt;/p&gt;
+&lt;h3&gt;Step 4:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Open the &lt;code&gt;boot&lt;/code&gt; directory.
+&lt;ul&gt;
+&lt;li&gt;Create an empty file named &lt;code&gt;ssh&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Create a file named &lt;code&gt;wpa_supplicant.conf&lt;/code&gt; &lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Open the &lt;code&gt;wpa_supplicant.conf&lt;/code&gt; file in the text editor of your choice and enter the following. Modify with your WiFi creds.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;country=US
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+
+network={
+ssid="Network-Name"
+scan_ssid=1
+psk="password"
+key_mgmt=WPA-PSK
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;Step 5:&lt;/h3&gt;
+&lt;p&gt;Unmount the SD card and insert it into the Pi Zero.&lt;/p&gt;
+&lt;h3&gt;Step 6:&lt;/h3&gt;
+&lt;p&gt;Plug the Pi Zero into the cell phone charger directly or use the optional short USB extension to allow the Pi Zero to be attached to the charger. This is how I set mine up. See picture above.&lt;/p&gt;
+&lt;h3&gt;Step 7:&lt;/h3&gt;
+&lt;p&gt;Plug the cell phone charger into a wall outlet.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;Once the Pi Zero boots it should connect to your WiFi that you previously configured. Now you should be able to SSH into the Pi Zero using the default Raspberry Pi password (&lt;em&gt;raspberry&lt;/em&gt;).&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ssh pi@raspberrypi&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now you can install the web server of your choice. If you would like to get a web server up and running fast with the &lt;a href="https://www.bludit.com/"&gt;Bludit&lt;/a&gt; flat file CMS installed automatically use the command below after SSHing into the Pi Zero.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;curl -sSL https://pilab.dev/install-bluditpi | bash&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This command will setup Apache/PHP and install the latest version of &lt;a href="https://www.bludit.com/"&gt;Bludit&lt;/a&gt;. Once this process is complete you can access your site by visiting &lt;code&gt;http://raspberrypi&lt;/code&gt; in your web browser. Just follow the prompts to setup &lt;a href="https://www.bludit.com/"&gt;Bludit&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;If you are concerned about running a command like this without knowing what it is doing just check it out before running it by opening &lt;a href="https://pilab.dev/install-bluditpi"&gt;https://pilab.dev/install-bluditpi&lt;/a&gt; in your web browser.&lt;/p&gt;
+&lt;p&gt;Now you should have a fully functional web server that you can use for a personal website or blog. If you decide to open up your network to allow the site to be accessible from outside your network I highly recommend that you use &lt;a href="https://www.fail2ban.org/"&gt;Fail2ban&lt;/a&gt; to protect your network.&lt;/p&gt;</description>
+      <pubDate>Sun, 17 Nov 2019 20:21:08 -0600</pubDate>
+      <guid isPermaLink="false">11dd47063b35a63a109bb462a9f0ef92</guid>
+    </item>
     <item>
       <title>Quick WordPress</title>
       <link>https://pilab.dev/quick-wordpress</link>
@@ -161,49 +218,6 @@
 &lt;p&gt;&lt;a href="https://github.com/mhancoc7/Dev-Dashboard/blob/master/README.md"&gt;&lt;img src="/images/check-it-out-on-github.png" alt="Get it on GitHub" class="on-github" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
       <pubDate>Wed, 09 Oct 2019 21:32:47 -0500</pubDate>
       <guid isPermaLink="false">e7452072631a01dcade0155ff1add7d1</guid>
-    </item>
-    <item>
-      <title>RPi Portable Dev Server</title>
-      <link>https://pilab.dev/raspberry-pi-portable-dev-server</link>
-      <description>&lt;div class="centered"&gt;
-    &lt;img src="/bl-content/uploads/pages/726f105976d23905b8de01992f54c3a4/pizero-big.png" class="image-border" /&gt;&lt;br&gt;&lt;br&gt;
-&lt;/div&gt;
-&lt;p&gt;This may be the coolest thing that I have ever built. As a web developer one of the most challenging things can be getting a nice dev environment setup. I have a local dev environment setup on my laptop using &lt;a href="https://www.vagrantup.com/"&gt;Vagrant&lt;/a&gt; and it is nice. However, I wanted to have something that I could use anywhere even if I didn't have access to my laptop.&lt;/p&gt;
-&lt;p&gt;The Pi Zero was the perfect solution!&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;&lt;strong&gt;Note&lt;/strong&gt;: This is NOT a copy paste how-to. It is an overview. I will include reference articles thoughout that I used during the setup.&lt;/em&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;I have converted the Pi Zero into a mini dongle computer. I got the inspiration for this project by watching this &lt;a href="https://www.youtube.com/watch?v=qbWYUFgLhSU"&gt;video&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;I really didn't want to mess with soldering so I went to Amazon and found everything I needed.&lt;/p&gt;
-&lt;h3&gt;Parts List:&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://www.amazon.com/gp/product/B06XFZC3BX"&gt;Pi Zero W&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.amazon.com/gp/product/B07DBL3WYQ"&gt;Pi Zero W USB-A Add-on Board&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.amazon.com/gp/product/B06XWN9Q99"&gt;Samsung 32GB Micro SD Card&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Setup:&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Install Raspbian Buster to SD card&lt;/li&gt;
-&lt;li&gt;Follow the steps 3-4 on this &lt;a href="https://www.youtube.com/watch?v=qbWYUFgLhSU"&gt;video&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Assemble Add-on board/case&lt;/li&gt;
-&lt;li&gt;Insert SD card &lt;/li&gt;
-&lt;li&gt;Plug into laptop&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Depending on whether you are on Windows, Mac, or Linux you may have to install drivers. Since I am on Linux I only had to tweak the USB Ethernet settings to &amp;quot;Link-Only&amp;quot; and I was up and running. I haven't been able to get the setup to use the host machine's internet connection so I also had to enable Wi-Fi on the Pi Zero.&lt;/p&gt;
-&lt;p&gt;At this point I had a mini dongle computer that I can SSH into using the following command.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;ssh pi@raspberrypi.local&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;For the dev environment I simply installed a basic LAMP stack. I didn't want to deal with any &amp;quot;/etc/hosts&amp;quot; settings so I put all of my web projects into directories inside the &amp;quot;/var/www/html&amp;quot; directory. Now I can visit each site using the following URL structure where &amp;quot;My-Awesome-Site&amp;quot; is the website's directory inside &amp;quot;/var/www/html&amp;quot;. Check out this tutorial on installing a LAMP stack on a Raspberry Pi.  (&lt;a href="https://projects.raspberrypi.org/en/projects/lamp-web-server-with-wordpress"&gt;Build a LAMP Web Server with WordPress&lt;/a&gt;) Just skip the WordPress specific stuff unless you would like to set that up as well.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;http://raspberrypi.local/My-Awesome-Site&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;I took things one step further and created a custom &amp;quot;project list&amp;quot; page so I could easily access all of my projects from a single page as well as many other tools that I use during development.&lt;/p&gt;
-&lt;div class="centered"&gt;
-    &lt;img src="/bl-content/uploads/pages/726f105976d23905b8de01992f54c3a4/pizero-dashboard.png" class="image-border" /&gt;&lt;br&gt;&lt;br&gt;
-&lt;/div&gt;
-&lt;p&gt;Since all the projects are setup in &lt;a href="https://github.com/mhancoc7?tab=repositories"&gt;GitHub&lt;/a&gt; this is truly a portable dev environment. I can just plug it into any computer and I have a full dev environment on the go.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;&lt;strong&gt;Update&lt;/strong&gt;: I have created a new Dev-Dashboard build tool for setting up a RPI Powered Portable Dev Server. It can also be used to create a similar setup using Vagrant. Check it out here: &lt;a href="dev-dashboard-build-tool"&gt;Dev Dashboard Build Tool&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-      <pubDate>Fri, 20 Sep 2019 18:36:44 -0500</pubDate>
-      <guid isPermaLink="false">726f105976d23905b8de01992f54c3a4</guid>
     </item>
   </channel>
 </rss>
