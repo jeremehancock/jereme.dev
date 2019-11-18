@@ -38,6 +38,7 @@
 				* [Samsung EVO Plus 32GB](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M) SD Card
     *    1 Raspberry Pi Zero W
 				* [Samsung EVO Plus 32GB](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M) SD Card
+				* [Details](pi-zero-wall-plug-web-server)
 *   **SETI@home Node**
     *    1 Raspberry Pi Model B (256MB)
 				* 8GB generic SD card
