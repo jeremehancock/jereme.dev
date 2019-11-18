@@ -42,20 +42,12 @@
 
 			<footer class="entry-footer clear">
 				<div class="share-buttons">
-					<a href="http://twitter.com/intent/tweet?url=<?php echo urlencode ($page->permalink()) ?>&amp;text=<?php echo urlencode($page->description()) ?>"
-						rel="noopener noreferrer external nofollow" class="c-btn-share  c-btn-twitter" target="_blank">
-						<svg class="c-share-icon  c-share-icon-twitter">
-							<use xlink:href="#icon-twitter"></use>
-						</svg>
-						Tweet
-					</a>
-					<a href="https://www.facebook.com/sharer.php?u=<?php echo urlencode ($page->permalink()) ?>&amp;t=<?php echo urlencode($page->description()) ?>"
-						rel="noopener noreferrer external nofollow" class="c-btn-share  c-btn-facebook" target="_blank">
-						<svg class="c-share-icon  c-share-icon-facebook">
-							<use xlink:href="#icon-facebook"></use>
-						</svg>
-						Share
-					</a>
+                    <div class="a2a_kit a2a_kit_size_48 a2a_default_style" style="float:right;">
+                        <a class="a2a_button_facebook"></a>
+                        <a class="a2a_button_twitter"></a>
+                        <a class="a2a_button_reddit"></a>
+                    </div>
+                    <script src="https://static.addtoany.com/menu/page.js"></script>
 				</div>
 				<?php if ($page->category()): ?>
 				<div class="entry-terms-wrapper entry-categories-wrapper clear">
