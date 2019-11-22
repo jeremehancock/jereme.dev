@@ -5,7 +5,31 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Tue, 19 Nov 2019 20:18:56 -0600</lastBuildDate>
+    <lastBuildDate>Thu, 21 Nov 2019 21:17:02 -0600</lastBuildDate>
+    <item>
+      <title>RaspController Android App</title>
+      <link>https://pilab.dev/raspcontroller-android-app</link>
+      <description>&lt;div class="centered"&gt;
+    &lt;img src="/bl-content/uploads/pages/47f17725790d2c6f040eb40ec8456bfb/RaspController.png" class="image-border" /&gt;&lt;br&gt;&lt;br&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;a href="https://play.google.com/store/apps/details?id=it.Ettore.raspcontroller&amp;amp;hl=en_US"&gt;RaspController&lt;/a&gt; is one of the many tools that I use for managing Pi Lab. &lt;/p&gt;
+&lt;h3&gt;My Favorite Features:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;File manager&lt;/li&gt;
+&lt;li&gt;Shell SSH &lt;/li&gt;
+&lt;li&gt;Cpu, Ram, Disk monitoring&lt;/li&gt;
+&lt;li&gt;Info Raspberry PI &lt;/li&gt;
+&lt;li&gt;Shutdown&lt;/li&gt;
+&lt;li&gt;Reboot&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I really find it useful for monitoring Pi Lab when I am away from home. I can check temperatures, system load, and even SSH into each device.&lt;/p&gt;
+&lt;p&gt;If you have a Raspberry Pi and want to manage it remotely from your phone I highly recommend &lt;a href="https://play.google.com/store/apps/details?id=it.Ettore.raspcontroller&amp;amp;hl=en_US"&gt;RaspController&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;The &lt;a href="https://play.google.com/store/apps/details?id=it.Ettore.raspcontrollerProKey&amp;amp;hl=en_US"&gt;RaspController PRO Key&lt;/a&gt; is only $2.99 and is totally worth it to support the development of this fantastic app!&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;a href="https://play.google.com/store/apps/details?id=it.Ettore.raspcontroller&amp;amp;hl=en_US"&gt;&lt;img src="/images/get-it-on-google-play.png" alt="Get it on Google Play" class="on-google-play" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+      <pubDate>Thu, 21 Nov 2019 20:43:21 -0600</pubDate>
+      <guid isPermaLink="false">47f17725790d2c6f040eb40ec8456bfb</guid>
+    </item>
     <item>
       <title>Pi Zero Web Server</title>
       <link>https://pilab.dev/pi-zero-wall-plug-web-server</link>
@@ -204,20 +228,6 @@ key_mgmt=WPA-PSK
 &lt;p&gt;&lt;a href="https://github.com/mhancoc7/Bludit-Vagrant/"&gt;&lt;img src="/images/check-it-out-on-github.png" alt="Get it on GitHub" class="on-github" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
       <pubDate>Mon, 21 Oct 2019 12:02:12 -0500</pubDate>
       <guid isPermaLink="false">48e9af50afbf5dbdd07597bfc0c79204</guid>
-    </item>
-    <item>
-      <title>Dev Dashboard Build Tool</title>
-      <link>https://pilab.dev/dev-dashboard-build-tool</link>
-      <description>&lt;div class="centered"&gt;
-    &lt;img src="/bl-content/uploads/pages/e7452072631a01dcade0155ff1add7d1/pizero-dashboard.png" class="image-border" /&gt;&lt;br&gt;&lt;br&gt;
-&lt;/div&gt;
-&lt;p&gt;I recently posted about a project that I started to create a &lt;a href="raspberry-pi-portable-dev-server"&gt;Raspberry Pi Powered Portable Dev Server&lt;/a&gt;. &lt;/p&gt;
-&lt;p&gt;I have really enjoyed that project and I have expanded it into a build tool so other's can create the same thing more easily. I actually setup the build tool to configure a local dev environment in two different ways.&lt;/p&gt;
-&lt;p&gt;The first method uses Vagrant. So if you run the tool on your computer it will use Vagrant to build a local dev server, clone your repos, and provide a browser based &amp;quot;dashboard&amp;quot; for easy access to your projects.&lt;/p&gt;
-&lt;p&gt;The second method converts a Pi Zero that has been setup as a USB dongle into a portable dev server with the same &amp;quot;dashboard&amp;quot; setup.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://github.com/mhancoc7/Dev-Dashboard/blob/master/README.md"&gt;&lt;img src="/images/check-it-out-on-github.png" alt="Get it on GitHub" class="on-github" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
-      <pubDate>Wed, 09 Oct 2019 21:32:47 -0500</pubDate>
-      <guid isPermaLink="false">e7452072631a01dcade0155ff1add7d1</guid>
     </item>
   </channel>
 </rss>
