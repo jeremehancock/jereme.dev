@@ -16,7 +16,7 @@ I really find it useful for monitoring Pi Lab when I am away from home. I can ch
 
 If you have a Raspberry Pi and want to manage it remotely from your phone I highly recommend [RaspController](https://play.google.com/store/apps/details?id=it.Ettore.raspcontroller&hl=en_US). 
 
-> ***Note**: The Raspberry Pi will need to be accessible remotely either via port forwarding or by having a VPN setup on your network.*
+> ***Note**: For remote access the Raspberry Pi(s) will need to be accessible either via port forwarding or by having a VPN setup on your network.*
 
 The [RaspController PRO Key](https://play.google.com/store/apps/details?id=it.Ettore.raspcontrollerProKey&hl=en_US) is only $2.99 and is totally worth it to support the development of this fantastic app!
 
