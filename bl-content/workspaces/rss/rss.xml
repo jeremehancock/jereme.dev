@@ -5,7 +5,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Thu, 21 Nov 2019 21:33:20 -0600</lastBuildDate>
+    <lastBuildDate>Fri, 22 Nov 2019 05:59:26 -0600</lastBuildDate>
     <item>
       <title>RaspController Android</title>
       <link>https://pilab.dev/raspcontroller-android-app</link>
@@ -24,6 +24,9 @@
 &lt;/ul&gt;
 &lt;p&gt;I really find it useful for monitoring Pi Lab when I am away from home. I can check temperatures, system load, and even SSH into each device.&lt;/p&gt;
 &lt;p&gt;If you have a Raspberry Pi and want to manage it remotely from your phone I highly recommend &lt;a href="https://play.google.com/store/apps/details?id=it.Ettore.raspcontroller&amp;amp;hl=en_US"&gt;RaspController&lt;/a&gt;. &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Note&lt;/strong&gt;: The Raspberry Pi will need to be accessible remotely either via port forwarding or by having a VPN setup on your network.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;The &lt;a href="https://play.google.com/store/apps/details?id=it.Ettore.raspcontrollerProKey&amp;amp;hl=en_US"&gt;RaspController PRO Key&lt;/a&gt; is only $2.99 and is totally worth it to support the development of this fantastic app!&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;&lt;a href="https://play.google.com/store/apps/details?id=it.Ettore.raspcontroller&amp;amp;hl=en_US"&gt;&lt;img src="/images/get-it-on-google-play.png" alt="Get it on Google Play" class="on-google-play" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
