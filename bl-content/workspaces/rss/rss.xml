@@ -5,7 +5,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Sat, 23 Nov 2019 17:24:58 -0600</lastBuildDate>
+    <lastBuildDate>Sat, 23 Nov 2019 17:43:25 -0600</lastBuildDate>
     <item>
       <title>RaspController Android</title>
       <link>https://pilab.dev/raspcontroller-android-app</link>
@@ -85,7 +85,10 @@ key_mgmt=WPA-PSK
 &lt;pre&gt;&lt;code&gt;curl -sSL https://pilab.dev/install-bluditpi | bash&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;This command will setup Apache/PHP and install the latest version of &lt;a href="https://www.bludit.com/"&gt;Bludit&lt;/a&gt;. Once this process is complete you can access your site by visiting &lt;code&gt;http://raspberrypi&lt;/code&gt; in your web browser. Just follow the prompts to setup &lt;a href="https://www.bludit.com/"&gt;Bludit&lt;/a&gt;. &lt;/p&gt;
 &lt;p&gt;If you are concerned about running a command like this without knowing what it is doing just check it out before running it by opening &lt;a href="https://pilab.dev/install-bluditpi"&gt;https://pilab.dev/install-bluditpi&lt;/a&gt; in your web browser.&lt;/p&gt;
-&lt;p&gt;Now you should have a fully functional web server that you can use for a personal website or blog. If you decide to open up your network to allow the site to be accessible from outside your network I highly recommend that you use &lt;a href="https://www.fail2ban.org/"&gt;Fail2ban&lt;/a&gt; to protect your network.&lt;/p&gt;</description>
+&lt;p&gt;Now you should have a fully functional web server that you can use for a personal website or blog. If you decide to open up your network to allow the site to be accessible from outside your network I highly recommend that you use &lt;a href="https://www.fail2ban.org/"&gt;Fail2ban&lt;/a&gt; to protect your network.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Update&lt;/strong&gt;: I have updated the instructions in this post to use the &lt;a href="https://www.walmart.com/ip/Onn-Universal-Wall-Charger-Black/620837164"&gt;Onn Universal Wall Charger&lt;/a&gt; which provides my originally intended configuration.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</description>
       <pubDate>Sun, 17 Nov 2019 20:21:08 -0600</pubDate>
       <guid isPermaLink="false">11dd47063b35a63a109bb462a9f0ef92</guid>
     </item>

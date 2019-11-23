@@ -74,3 +74,5 @@ This command will setup Apache/PHP and install the latest version of [Bludit](ht
 If you are concerned about running a command like this without knowing what it is doing just check it out before running it by opening [https://pilab.dev/install-bluditpi](https://pilab.dev/install-bluditpi) in your web browser.
 
 Now you should have a fully functional web server that you can use for a personal website or blog. If you decide to open up your network to allow the site to be accessible from outside your network I highly recommend that you use [Fail2ban](https://www.fail2ban.org/) to protect your network.
+
+> ***Update**: I have updated the instructions in this post to use the [Onn Universal Wall Charger](https://www.walmart.com/ip/Onn-Universal-Wall-Charger-Black/620837164) which provides my originally intended configuration.*
