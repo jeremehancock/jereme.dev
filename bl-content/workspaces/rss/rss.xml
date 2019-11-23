@@ -5,7 +5,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Fri, 22 Nov 2019 06:23:40 -0600</lastBuildDate>
+    <lastBuildDate>Sat, 23 Nov 2019 17:24:58 -0600</lastBuildDate>
     <item>
       <title>RaspController Android</title>
       <link>https://pilab.dev/raspcontroller-android-app</link>
@@ -37,7 +37,7 @@
       <title>Pi Zero Web Server</title>
       <link>https://pilab.dev/pi-zero-wall-plug-web-server</link>
       <description>&lt;div class="centered"&gt;
-    &lt;img src="/bl-content/uploads/pages/11dd47063b35a63a109bb462a9f0ef92/pizero-server-2.png" class="image-border" /&gt;&lt;br&gt;&lt;br&gt;
+    &lt;img src="/bl-content/uploads/pages/11dd47063b35a63a109bb462a9f0ef92/pizero-webserver-v2-large.png" class="image-border" /&gt;&lt;br&gt;&lt;br&gt;
 &lt;/div&gt;
 &lt;p&gt;Need a simple and cheap web server? The Pi Zero W combined with a few simple parts can provide just that.&lt;/p&gt;
 &lt;h3&gt;Parts List:&lt;/h3&gt;
@@ -45,8 +45,7 @@
 &lt;li&gt;&lt;a href="https://www.amazon.com/gp/product/B06XFZC3BX"&gt;Pi Zero W&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.amazon.com/gp/product/B07DBL3WYQ"&gt;USB-A Add-on Board&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M"&gt;Samsung EVO Plus 32GB SD Card&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.amazon.com/gp/product/B00UMZN47Y"&gt;Short Angled USB Cable&lt;/a&gt; - &lt;em&gt;Optional&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.amazon.com/Pantom-Adaptive-Charging-Compatible-Smartphones/dp/B07R25P249"&gt;Cell Phone Charger&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.walmart.com/ip/Onn-Universal-Wall-Charger-Black/620837164"&gt;Onn Universal Wall Charger&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Step 1:&lt;/h3&gt;
 &lt;p&gt;Assemble the USB-A Add-on Board using the instructions provided. It is pretty self explanatory.&lt;/p&gt;
@@ -76,9 +75,9 @@ key_mgmt=WPA-PSK
 &lt;h3&gt;Step 5:&lt;/h3&gt;
 &lt;p&gt;Unmount the SD card and insert it into the Pi Zero.&lt;/p&gt;
 &lt;h3&gt;Step 6:&lt;/h3&gt;
-&lt;p&gt;Plug the Pi Zero into the cell phone charger directly or use the optional short USB extension to allow the Pi Zero to be attached to the charger. This is how I set mine up. See picture above.&lt;/p&gt;
+&lt;p&gt;Plug the Pi Zero into the charger.&lt;/p&gt;
 &lt;h3&gt;Step 7:&lt;/h3&gt;
-&lt;p&gt;Plug the cell phone charger into a wall outlet.&lt;/p&gt;
+&lt;p&gt;Plug the charger into a wall outlet.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;Once the Pi Zero boots it should connect to your WiFi that you previously configured. Now you should be able to SSH into the Pi Zero using the default Raspberry Pi password (&lt;em&gt;raspberry&lt;/em&gt;).&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;ssh pi@raspberrypi&lt;/code&gt;&lt;/pre&gt;

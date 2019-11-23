@@ -1,5 +1,5 @@
 <div class="centered">
-    <img src="/bl-content/uploads/pages/11dd47063b35a63a109bb462a9f0ef92/pizero-server-2.png" class="image-border" /><br><br>
+    <img src="/bl-content/uploads/pages/11dd47063b35a63a109bb462a9f0ef92/pizero-webserver-v2-large.png" class="image-border" /><br><br>
 </div>
 
 Need a simple and cheap web server? The Pi Zero W combined with a few simple parts can provide just that.
@@ -9,8 +9,7 @@ Need a simple and cheap web server? The Pi Zero W combined with a few simple par
 - [Pi Zero W](https://www.amazon.com/gp/product/B06XFZC3BX)
 - [USB-A Add-on Board](https://www.amazon.com/gp/product/B07DBL3WYQ)
 - [Samsung EVO Plus 32GB SD Card](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
-- [Short Angled USB Cable](https://www.amazon.com/gp/product/B00UMZN47Y) - *Optional*
-- [Cell Phone Charger](https://www.amazon.com/Pantom-Adaptive-Charging-Compatible-Smartphones/dp/B07R25P249)
+- [Onn Universal Wall Charger](https://www.walmart.com/ip/Onn-Universal-Wall-Charger-Black/620837164)
 
 ### Step 1:
 
@@ -50,11 +49,11 @@ Unmount the SD card and insert it into the Pi Zero.
 
 ### Step 6:
 
-Plug the Pi Zero into the cell phone charger directly or use the optional short USB extension to allow the Pi Zero to be attached to the charger. This is how I set mine up. See picture above.
+Plug the Pi Zero into the charger.
 
 ### Step 7: 
 
-Plug the cell phone charger into a wall outlet.
+Plug the charger into a wall outlet.
 
 ---
 
