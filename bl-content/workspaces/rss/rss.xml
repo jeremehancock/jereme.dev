@@ -5,7 +5,31 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Sat, 23 Nov 2019 17:43:25 -0600</lastBuildDate>
+    <lastBuildDate>Sat, 23 Nov 2019 21:54:49 -0600</lastBuildDate>
+    <item>
+      <title>Resources</title>
+      <link>https://pilab.dev/resources</link>
+      <description>&lt;p&gt;This is a list of various resources that I have found to be useful.&lt;/p&gt;
+&lt;h4&gt;Raspberry Pi&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.raspberrypi.org/"&gt;Raspberry Pi Foundation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://pimylifeup.com/"&gt;Pi My Life Up&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.raspberrypi-spy.co.uk/"&gt;Raspberry Pi Spy&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://raspberrywebserver.com/"&gt;Raspberry Pi Web Server&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://pi-hole.net/"&gt;Pi-hole&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.pivpn.io/"&gt;PiVPN&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Bludit&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.bludit.com/"&gt;Bludit&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://themes.bludit.com/"&gt;Bludit Themes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.bludit.com/"&gt;Bludit Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://forum.bludit.org/"&gt;Bludit Forums&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://bludit-showcase.com/"&gt;Bludit Showcase&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <pubDate>Sat, 23 Nov 2019 21:13:28 -0600</pubDate>
+      <guid isPermaLink="false">219aae05a3dcc7dbe11d1df5596c15e4</guid>
+    </item>
     <item>
       <title>RaspController Android</title>
       <link>https://pilab.dev/raspcontroller-android-app</link>
@@ -169,70 +193,6 @@ key_mgmt=WPA-PSK
 &lt;p&gt;&lt;a href="https://github.com/mhancoc7/Bludit-Pi/"&gt;&lt;img src="/images/check-it-out-on-github.png" alt="Get it on GitHub" class="on-github" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
       <pubDate>Mon, 21 Oct 2019 20:29:33 -0500</pubDate>
       <guid isPermaLink="false">4f233e670b86b100f116ec687154246e</guid>
-    </item>
-    <item>
-      <title>Bludit Vagrant</title>
-      <link>https://pilab.dev/bludit-vagrant</link>
-      <description>&lt;p&gt;The goal of this project is to create a quick virtual machine setup with a Bludit installation for testing and development purposes. The following technologies are automatically installed for you.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Ubuntu Bionic (18.04)&lt;/li&gt;
-&lt;li&gt;Apache&lt;/li&gt;
-&lt;li&gt;PHP&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.bludit.com/"&gt;Bludit&lt;/a&gt; (Latest Version)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Pre-Installation&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;Install &lt;a href="https://www.vagrantup.com/"&gt;Vagrant&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Install &lt;a href="https://www.virtualbox.org/"&gt;Virtual Box&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3&gt;Installation Instructions&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;Find a directory on your computer where you'd like to install this repo&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Run &lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;git clone https://github.com/mhancoc7/Bludit-Vagrant.git&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Run &lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;cd Bludit-Vagrant&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Run &lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;vagrant up&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3&gt;Usage&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;Make sure the vagrant process is completed and your virtual machine is ready&lt;/li&gt;
-&lt;li&gt;Point your web browser to &lt;a href="http://localhost:8080"&gt;http://localhost:8080&lt;/a&gt; to view your Bludit site&lt;/li&gt;
-&lt;li&gt;Follow the steps to complete the Bludit installation&lt;/li&gt;
-&lt;li&gt;If you'd like to login into your virtual machine run
-&lt;pre&gt;&lt;code&gt;vagrant ssh&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;li&gt;Bludit files are located in &lt;code&gt;"localhost/www/html/bludit"&lt;/code&gt; on your local machine and are syncronized with &lt;code&gt;"/var/www/html/bludit"&lt;/code&gt; on your virtual machine&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3&gt;Upgrade&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;If vagrant is up run
-&lt;pre&gt;&lt;code&gt;vagrant provision&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;li&gt;If vagrant has been halted run
-&lt;pre&gt;&lt;code&gt;vagrant up --provision&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Keep in mind upgrading will remove any custom modifications that you have made to Bludit. It will not overwrite the content or settings that you have applied in the Bludit admin panel.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3&gt;Cleanup&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;If you are ready to delete your Bludit virtual machine from your local machine run&lt;/li&gt;
-&lt;/ol&gt;
-&lt;pre&gt;&lt;code&gt;vagrant destroy -f&lt;/code&gt;&lt;/pre&gt;
-&lt;h3&gt;Disclaimer&lt;/h3&gt;
-&lt;p&gt;All code is provided as-is without any warranty. Use at your own risk.&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;&lt;a href="https://github.com/mhancoc7/Bludit-Vagrant/"&gt;&lt;img src="/images/check-it-out-on-github.png" alt="Get it on GitHub" class="on-github" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
-      <pubDate>Mon, 21 Oct 2019 12:02:12 -0500</pubDate>
-      <guid isPermaLink="false">48e9af50afbf5dbdd07597bfc0c79204</guid>
     </item>
   </channel>
 </rss>

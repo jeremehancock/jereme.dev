@@ -1,0 +1,16 @@
+This is a list of various resources that I have found to be useful.
+
+#### Raspberry Pi
+* [Raspberry Pi Foundation](https://www.raspberrypi.org/)
+* [Pi My Life Up](https://pimylifeup.com/)
+* [Raspberry Pi Spy](https://www.raspberrypi-spy.co.uk/)
+* [Raspberry Pi Web Server](http://raspberrywebserver.com/)
+* [Pi-hole](https://pi-hole.net/)
+* [PiVPN](http://www.pivpn.io/)
+
+#### Bludit
+* [Bludit](https://www.bludit.com/)
+* [Bludit Themes](https://themes.bludit.com/)
+* [Bludit Documentation](https://docs.bludit.com/)
+* [Bludit Forums](https://forum.bludit.org/)
+* [Bludit Showcase](https://bludit-showcase.com/)
