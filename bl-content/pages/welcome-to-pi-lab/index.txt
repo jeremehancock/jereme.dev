@@ -33,9 +33,11 @@
 
 ## Pi Lab Misc:
 
-*  **Testing Nodes**
+*  **Monitoring/Metrics Node**
     *    1 Raspberry Pi 2 Model B
+				*  Prometheus/Grafana  
 				* [Samsung EVO Plus 32GB](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M) SD Card
+*  **Testing Node**
     *    1 Raspberry Pi Zero W
 				* [Samsung EVO Plus 32GB](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M) SD Card
 				* [Details](pi-zero-wall-plug-web-server)
