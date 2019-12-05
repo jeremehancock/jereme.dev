@@ -4,6 +4,10 @@
     <loc>https://pilab.dev</loc>
   </url>
   <url>
+    <loc>https://pilab.dev/prometheus-grafana</loc>
+    <lastmod>2019-12-04</lastmod>
+  </url>
+  <url>
     <loc>https://pilab.dev/resources</loc>
     <lastmod>2019-11-23</lastmod>
   </url>
