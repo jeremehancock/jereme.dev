@@ -5,7 +5,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Wed, 04 Dec 2019 22:48:41 -0600</lastBuildDate>
+    <lastBuildDate>Thu, 05 Dec 2019 06:45:45 -0600</lastBuildDate>
     <item>
       <title>Prometheus &amp; Grafana</title>
       <link>https://pilab.dev/prometheus-grafana</link>
@@ -15,7 +15,9 @@
 &lt;p&gt;If you are interested in how I set this up check out this GitHub repo.
 &lt;a href="https://github.com/bhemar/raspberry-metrics"&gt;https://github.com/bhemar/raspberry-metrics&lt;/a&gt;.&lt;/p&gt;
 &lt;h4&gt;Example (Load Balancer)&lt;/h4&gt;
-&lt;iframe width="100%" height="360" src="https://pilab.dev/metrics/d/wc_mbnZRz/pi-lab-metrics?orgId=1&amp;refresh=10s&amp;var-instance=pi0&amp;kiosk" frameborder="0" class="iframe-border"&gt;&lt;/iframe&gt;</description>
+&lt;iframe width="100%" height="360" src="https://pilab.dev/metrics/d/wc_mbnZRz/pi-lab-metrics?orgId=1&amp;refresh=10s&amp;var-instance=pi0&amp;kiosk" frameborder="0" class="iframe-border"&gt;&lt;/iframe&gt;
+&lt;p&gt;&lt;a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&amp;refresh=10s&amp;var-instance=pi0" target="_blank" style="float:right;"&gt;View Full Dashboard&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;</description>
       <pubDate>Wed, 04 Dec 2019 22:27:38 -0600</pubDate>
       <guid isPermaLink="false">fb278e888106a04975f6062d82165f52</guid>
     </item>
