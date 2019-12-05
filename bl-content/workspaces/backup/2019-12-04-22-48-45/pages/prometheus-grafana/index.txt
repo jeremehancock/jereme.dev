@@ -2,7 +2,7 @@ I have been wanting to track more data related to the Pi Lab nodes. After a lot 
 
 The results are really awesome!
 
-I have update the [Pi Lab Stats](/pi-lab-stats) page to incorporate these dashboards. 
+I have updated the [Pi Lab Stats](/pi-lab-stats) page to incorporate these dashboards. 
 
 If you are interested in how I set this up check out this GitHub repo.
 https://github.com/bhemar/raspberry-metrics.
