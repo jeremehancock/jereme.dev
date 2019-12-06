@@ -28,7 +28,7 @@
     *    [Netgear ProSAFE GS105](https://www.netgear.com/support/product/GS105v5)
 *    **Power:** [CyberPower EC850LCD](https://www.cyberpowersystems.com/product/ups/ec850lcd/)
 *    **Cooling:** [AC Infinity MULTIFAN S4](https://www.amazon.com/gp/product/B00MWH4FL4)
-
+* [More Details](pi-lab-setup)
 --- 
 
 ## Pi Lab Misc:
@@ -40,18 +40,19 @@
 				* [Prometheus](https://prometheus.io/) - Collect and store metrics (v2.14.0)
 				* [Grafana](https://grafana.com/) - Metrics visualization (v6.5.1)
 				* [Samsung EVO Plus 32GB](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M) SD Card
+				* [More Details](prometheus-grafana)
 *  **Testing Node**
     *    1 Raspberry Pi Zero W
 				* [Samsung EVO Plus 32GB](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M) SD Card
-				* [Details](pi-zero-wall-plug-web-server)
+				* [More Details](pi-zero-wall-plug-web-server)
 *   **SETI@home Node**
     *    1 Raspberry Pi Model B (256MB)
 				* 8GB generic SD card
-				* [Details](pi-lab-seti-home-node)
+				* [More Details](pi-lab-seti-home-node)
 *   **Pi-hole/OpenVPN Node**
     *   1 Raspberry Pi 3 Model B
 				* [Samsung EVO Plus 32GB](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M) SD Card
-
+				* [More Details](pi-hole-is-amazing)
 <style>
 	.page-content, .entry-header, .entry-content {
     max-width: 740px;

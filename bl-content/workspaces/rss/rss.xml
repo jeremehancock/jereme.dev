@@ -5,7 +5,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Thu, 05 Dec 2019 06:45:45 -0600</lastBuildDate>
+    <lastBuildDate>Fri, 06 Dec 2019 12:11:17 -0600</lastBuildDate>
     <item>
       <title>Prometheus &amp; Grafana</title>
       <link>https://pilab.dev/prometheus-grafana</link>
@@ -24,23 +24,33 @@
     <item>
       <title>Resources</title>
       <link>https://pilab.dev/resources</link>
-      <description>&lt;p&gt;This is a list of various resources that I have found to be useful.&lt;/p&gt;
+      <description>&lt;h3&gt;&lt;em&gt;This is a list of various resources that I have found to be useful.&lt;/em&gt;&lt;/h3&gt;
+&lt;hr /&gt;
 &lt;h4&gt;Raspberry Pi&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://www.raspberrypi.org/"&gt;Raspberry Pi Foundation&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://pimylifeup.com/"&gt;Pi My Life Up&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.raspberrypi-spy.co.uk/"&gt;Raspberry Pi Spy&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://raspberrywebserver.com/"&gt;Raspberry Pi Web Server&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://pi-hole.net/"&gt;Pi-hole&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://www.pivpn.io/"&gt;PiVPN&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.raspberrypi.org/"&gt;Raspberry Pi Foundation&lt;/a&gt; -- The Official Raspberry Pi site.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://pimylifeup.com/"&gt;Pi My Life Up&lt;/a&gt; -- Tons of great tutorials.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.raspberrypi-spy.co.uk/"&gt;Raspberry Pi Spy&lt;/a&gt; -- Great resources for all things Raspberry Pi.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://raspberrywebserver.com/"&gt;Raspberry Pi Web Server&lt;/a&gt; -- Information on running a Raspberry Pi web server.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://pi-hole.net/"&gt;Pi-hole&lt;/a&gt; -- No more ads!&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.pivpn.io/"&gt;PiVPN&lt;/a&gt; -- Securely access your Pi from anywhere.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://magpi.raspberrypi.org/books"&gt;The MagPi&lt;/a&gt; -- Free digital book downloads.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4&gt;Bludit&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://www.bludit.com/"&gt;Bludit&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://themes.bludit.com/"&gt;Bludit Themes&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://docs.bludit.com/"&gt;Bludit Documentation&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://forum.bludit.org/"&gt;Bludit Forums&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://bludit-showcase.com/"&gt;Bludit Showcase&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.bludit.com/"&gt;Bludit&lt;/a&gt; -- Awesome flat file CMS!&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://themes.bludit.com/"&gt;Bludit Themes&lt;/a&gt; -- Official Bludit themes.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.bludit.com/"&gt;Bludit Documentation&lt;/a&gt; -- Everything you need to know about Bludit.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://forum.bludit.org/"&gt;Bludit Forums&lt;/a&gt; -- Bludit community.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://bludit-showcase.com/"&gt;Bludit Showcase&lt;/a&gt; -- Real world Bludit sites in action.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Misc. Development&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com"&gt;GitHub&lt;/a&gt; -- Version control. Must have for all developers.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.vagrantup.com/"&gt;Vagrant&lt;/a&gt; -- Virtualized local development.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.ansible.com/"&gt;Ansible&lt;/a&gt; -- Automate, automate, automate.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://prometheus.io"&gt;Prometheus&lt;/a&gt; -- Gather and track server metrics.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://grafana.com/"&gt;Grafana&lt;/a&gt; -- Create awesome dashboards to visualize your metrics.&lt;/li&gt;
 &lt;/ul&gt;</description>
       <pubDate>Sat, 23 Nov 2019 21:13:28 -0600</pubDate>
       <guid isPermaLink="false">219aae05a3dcc7dbe11d1df5596c15e4</guid>
