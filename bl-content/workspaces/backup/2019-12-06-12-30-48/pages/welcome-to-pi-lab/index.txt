@@ -8,20 +8,20 @@
 
 *   **Load Balancer**
     *   1 Raspberry Pi 3 Model B
-				* [Samsung EVO Plus 32GB](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M) SD Card
+				* [Samsung EVO Plus 32GB SD Card](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
 *   **Dev/Prod Node**
     *    1 Raspberry Pi 2 Model B
-				* [Samsung EVO Plus 32GB](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M) SD Card
+				* [Samsung EVO Plus 32GB SD Card](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
 *  **Prod Nodes**
     *    2 Raspberry Pi 2 Model B
-				* [Samsung EVO Plus 32GB](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M) SD Cards
+				* [Samsung EVO Plus 32GB SD Cards](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
     *    2 Raspberry Pi 4 4GB Model Bs 
-						* [Samsung EVO Plus 32GB](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M) SD Cards
+						* [Samsung EVO Plus 32GB SD Cards](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
 *    **Operating System:** [Raspbian](https://www.raspbian.org/)
 *    **Webserver/Load Balancer:** [Nginx](https://nginx.org/)
 *    **SSL:** [Let's Encrypt](https://letsencrypt.org/)
-*   **CMS:** [Bludit - v3.10.0](https://www.bludit.com/) PRO
-*    **Theme:** [Blekathlon](https://blthemes.pp.ua/) (Pi Lab Version)
+*   **CMS:** [Bludit - v3.10.0 PRO](https://www.bludit.com/)
+*    **Theme:** [Blekathlon](https://blthemes.pp.ua/) - Customized
 *    **Plugins:** [Pi Lab Plugins](plugins)
 *    **Network** 
     *    [Linksys WRT1900AC](https://www.linksys.com/us/support-product?pid=01t80000003KdJ7AAK) - Bridge Mode
@@ -39,11 +39,11 @@
 				* [RPi Exporter](https://github.com/lukasmalkmus/rpi_exporter) - Expose Raspberry Pi metrics (v0.6.0)
 				* [Prometheus](https://prometheus.io/) - Collect and store metrics (v2.14.0)
 				* [Grafana](https://grafana.com/) - Metrics visualization (v6.5.1)
-				* [Samsung EVO Plus 32GB](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M) SD Card
+				* [Samsung EVO Plus 32GB SD Card](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
 				* [More Details](prometheus-grafana)
 *  **Testing Node**
     *    1 Raspberry Pi Zero W
-				* [Samsung EVO Plus 32GB](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M) SD Card
+				* [Samsung EVO Plus 32GB SD Card](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
 				* [More Details](pi-zero-wall-plug-web-server)
 *   **SETI@home Node**
     *    1 Raspberry Pi Model B (256MB)
@@ -51,7 +51,7 @@
 				* [More Details](pi-lab-seti-home-node)
 *   **Pi-hole/OpenVPN Node**
     *   1 Raspberry Pi 3 Model B
-				* [Samsung EVO Plus 32GB](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M) SD Card
+				* [Samsung EVO Plus 32GB SD Card](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
 				* [More Details](pi-hole-is-amazing)
 <style>
 	.page-content, .entry-header, .entry-content {
