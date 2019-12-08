@@ -5,7 +5,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Fri, 06 Dec 2019 12:29:16 -0600</lastBuildDate>
+    <lastBuildDate>Sun, 08 Dec 2019 10:24:47 -0600</lastBuildDate>
     <item>
       <title>Prometheus &amp; Grafana</title>
       <link>https://pilab.dev/prometheus-grafana</link>
@@ -24,7 +24,7 @@
     <item>
       <title>Resources</title>
       <link>https://pilab.dev/resources</link>
-      <description>&lt;h3&gt;&lt;em&gt;This is a list of various resources that I have found to be useful.&lt;/em&gt;&lt;/h3&gt;
+      <description>&lt;p&gt;&lt;strong&gt;&lt;em&gt;This is a list of various resources that I have found to be useful.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h4&gt;Raspberry Pi&lt;/h4&gt;
 &lt;ul&gt;
