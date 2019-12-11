@@ -148,6 +148,14 @@ table td {
     float: left;
 }
 
+.site-logo {
+	transition: all .2s ease-in-out;
+}
+
+.site-logo:hover {
+    transform: scale(1.05);
+}
+
 .site-footer a{
     border-bottom: none;
     text-transform: none;
