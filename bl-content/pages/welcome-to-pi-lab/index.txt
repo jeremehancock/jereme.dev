@@ -24,7 +24,7 @@
 *    **Theme:** [Blekathlon](https://blthemes.pp.ua/) - Customized
 *    **Plugins:** [Pi Lab Plugins](plugins)
 *    **Network** 
-    *    [Linksys WRT1900AC](https://www.linksys.com/us/support-product?pid=01t80000003KdJ7AAK) - Bridge Mode
+    *    [Tenda 8-Port Gigabit Ethernet Desktop Switch (SG108)](https://www.amazon.com/gp/product/B01M9FJ2R2)
     *    [Netgear ProSAFE GS105](https://www.netgear.com/support/product/GS105v5)
 *    **Power:** [CyberPower EC850LCD](https://www.cyberpowersystems.com/product/ups/ec850lcd/)
 *    **Cooling:** [AC Infinity MULTIFAN S4](https://www.amazon.com/gp/product/B00MWH4FL4)
