@@ -28,9 +28,6 @@ require_once(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'device.php');
     </script>
     <style type="text/css">
         .label {color: #999999; font-size: 100%; font-weight: bolder;}
-        .container {
-            width: 80%;
-        }
     </style>
 </head>
 <body>
