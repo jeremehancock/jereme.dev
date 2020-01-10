@@ -14,6 +14,7 @@ require_once(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'device.php');
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script-->
     <link href="assets/bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="../bl-themes/blekathlon-pilab/img/favicon.ico" type="image/png">
     <script src="assets/jquery-3.1.1.min.js"></script>
     <script src="assets/highcharts.js"></script>
     <script src="assets/highcharts-more.js"></script>
