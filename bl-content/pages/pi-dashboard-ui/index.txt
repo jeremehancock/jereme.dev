@@ -1,0 +1,13 @@
+<div class="centered">
+    <img src="/bl-content/uploads/pages/519ce125498e432461bb1b7403f15f28/pi-dashboard-medium-narrow.png" class="image-border" /><br><br>
+</div>
+
+If you are looking for an easy way to display your Raspberry Pi's metrics in real time look no further. 
+
+The installation couldn't be simpler. If you already have a webserver and PHP configured on your Raspberry Pi you simply have to put the files in a sub-directory of your website and it just works!
+
+I have installed it on the 5 production nodes of Pi Lab. Check it out here: <a href="https://pilab.dev/pi1" target="_blank">https://pilab.dev/pi1</a>
+
+The project is available on GitHub and is definitely worth a look.
+
+[<img src="/images/check-it-out-on-github.png" alt="Get it on GitHub" class="on-github" />](https://github.com/YuanGao-NAU/Pi-Utility)

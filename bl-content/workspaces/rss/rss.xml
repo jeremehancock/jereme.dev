@@ -5,7 +5,21 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Sun, 05 Jan 2020 19:53:01 -0600</lastBuildDate>
+    <lastBuildDate>Fri, 10 Jan 2020 21:57:33 -0600</lastBuildDate>
+    <item>
+      <title>Pi Dashboard</title>
+      <link>https://pilab.dev/pi-dashboard-ui</link>
+      <description>&lt;div class="centered"&gt;
+    &lt;img src="/bl-content/uploads/pages/519ce125498e432461bb1b7403f15f28/pi-dashboard-medium-narrow.png" class="image-border" /&gt;&lt;br&gt;&lt;br&gt;
+&lt;/div&gt;
+&lt;p&gt;If you are looking for an easy way to display your Raspberry Pi's metrics in real time look no further. &lt;/p&gt;
+&lt;p&gt;The installation couldn't be simpler. If you already have a webserver and PHP configured on your Raspberry Pi you simply have to put the files in a sub-directory of your website and it just works!&lt;/p&gt;
+&lt;p&gt;I have installed it on the 5 production nodes of Pi Lab. Check it out here: &lt;a href="https://pilab.dev/pi1" target="_blank"&gt;&lt;a href="https://pilab.dev/pi1"&gt;https://pilab.dev/pi1&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The project is available on GitHub and is definitely worth a look.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/YuanGao-NAU/Pi-Utility"&gt;&lt;img src="/images/check-it-out-on-github.png" alt="Get it on GitHub" class="on-github" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+      <pubDate>Fri, 10 Jan 2020 21:37:56 -0600</pubDate>
+      <guid isPermaLink="false">519ce125498e432461bb1b7403f15f28</guid>
+    </item>
     <item>
       <title>Prometheus &amp; Grafana</title>
       <link>https://pilab.dev/prometheus-grafana</link>
@@ -140,26 +154,6 @@ key_mgmt=WPA-PSK
 &lt;/blockquote&gt;</description>
       <pubDate>Sun, 17 Nov 2019 20:21:08 -0600</pubDate>
       <guid isPermaLink="false">11dd47063b35a63a109bb462a9f0ef92</guid>
-    </item>
-    <item>
-      <title>Quick WordPress</title>
-      <link>https://pilab.dev/quick-wordpress</link>
-      <description>&lt;p&gt;If you want an easy way to test and or develop using WordPress you should be sure to check out &lt;a href="https://github.com/russellmacshane/quick-wordpress"&gt;Quick WordPress&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;The following technologies are automatically installed for you by &lt;a href="https://github.com/russellmacshane/quick-wordpress"&gt;Quick WordPress&lt;/a&gt;:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Ubuntu Bionic (18.04)&lt;/li&gt;
-&lt;li&gt;Apache&lt;/li&gt;
-&lt;li&gt;MariaDB&lt;/li&gt;
-&lt;li&gt;PHP&lt;/li&gt;
-&lt;li&gt;phpMyAdmin&lt;/li&gt;
-&lt;li&gt;WPCli&lt;/li&gt;
-&lt;li&gt;WordPress&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;This project has the goal of providing an easy way to backup and restore the WordPress installation as well. This could be used to build out a WordPress site locally and then easily prepare the installation for deployment to the host of your choice. &lt;/p&gt;
-&lt;p&gt;This is still a work in progress, but I will definitely be watching it closely.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://github.com/russellmacshane/quick-wordpress"&gt;&lt;img src="/images/check-it-out-on-github.png" alt="Get it on GitHub" class="on-github" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
-      <pubDate>Sun, 10 Nov 2019 22:00:04 -0600</pubDate>
-      <guid isPermaLink="false">3fd45a5ffc8202fb27925d085a5d08b6</guid>
     </item>
   </channel>
 </rss>
