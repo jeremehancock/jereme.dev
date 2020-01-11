@@ -5,7 +5,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Fri, 10 Jan 2020 21:59:20 -0600</lastBuildDate>
+    <lastBuildDate>Fri, 10 Jan 2020 22:09:34 -0600</lastBuildDate>
     <item>
       <title>Pi Dashboard</title>
       <link>https://pilab.dev/pi-dashboard-ui</link>
@@ -14,7 +14,7 @@
 &lt;/div&gt;
 &lt;p&gt;If you are looking for an easy way to display your Raspberry Pi's metrics in real time look no further. &lt;/p&gt;
 &lt;p&gt;The installation couldn't be simpler. If you already have a webserver and PHP configured on your Raspberry Pi you simply have to put the files in a sub-directory of your website and it just works!&lt;/p&gt;
-&lt;p&gt;I have installed it on the 5 production nodes of Pi Lab. Check it out here: &lt;a href="https://pilab.dev/pi1" target="_blank"&gt;&lt;a href="https://pilab.dev/pi1"&gt;https://pilab.dev/pi1&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I have installed it on the 5 production nodes of Pi Lab. Check it out here: &lt;a href="https://pilab.dev/pi1" target="_blank"&gt;pilab.dev/pi1&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;The project is available on GitHub and is definitely worth a look.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://github.com/YuanGao-NAU/Pi-Utility"&gt;&lt;img src="/images/check-it-out-on-github.png" alt="Get it on GitHub" class="on-github" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
       <pubDate>Fri, 10 Jan 2020 21:37:56 -0600</pubDate>
