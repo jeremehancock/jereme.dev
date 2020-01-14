@@ -152,16 +152,16 @@ class pluginShowNodePiLab extends Plugin
                 $html = "No Nodes Specified - Check Show Node Settings!";
             }
             else {
-                $html = '<a href="'. $site->url() . '/admin/" target="_blank">' . $this->getValue('devnode'). '</a>';
+                $html = '<a href="'. $site->url() . '/admin/" target="_blank">' . $this->getValue('devnode') . '</a>';
             }
         }
         else {
             foreach ($nodes as $name => $ip) {
                 if ($_SERVER['SERVER_PORT'] == $this->getValue('devport')) {
-                    $html = '<a href="'. $site->url() . '/admin/" target="_blank">' . $this->getValue('devnode'). '</a>';
+                    $html = '<a href="'. $site->url() . '/admin/" target="_blank">' . $this->getValue('devnode') . '</a>';
                 }
                 elseif ($_SERVER['SERVER_ADDR'] == $ip) {
-                    $html = $name;
+                    $html = '<a href="'. $site->url() . '/' . str_replace(' ', '-', $name) .'/" target="_blank">' . $this->getValue('devnode') . '</a>';
                 }
             }
         }
