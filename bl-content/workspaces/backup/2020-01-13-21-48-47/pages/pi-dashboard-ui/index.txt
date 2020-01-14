@@ -10,4 +10,7 @@ I have installed it on the 5 production nodes of Pi Lab. Check it out here: <a h
 
 The project is available on GitHub and is definitely worth a look.
 
+> ***Update**: I have the Node Name in the footer of Pi Lab to link to the Pi Dashboard that has been setup for each node.*
+
+<br>
 [<img src="/images/check-it-out-on-github.png" alt="Get it on GitHub" class="on-github" />](https://github.com/YuanGao-NAU/Pi-Utility)
