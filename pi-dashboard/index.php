@@ -28,6 +28,7 @@ require_once(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'device.php');
     </script>
     <style type="text/css">
         .label {color: #999999; font-size: 100%; font-weight: bolder;}
+        .wlan0, .lo {display: none !important;}
     </style>
 </head>
 <body>
@@ -186,7 +187,7 @@ require_once(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'device.php');
                         for($i = 0; $i<$D['net']['count'];$i++)
                         {
                             ?>
-                            <div class="row" style="margin: 0;">
+                            <div class="row <?php echo($D['net']['interfaces'][$i]['name']) ?>" style="margin: 0;">
                                 <div class="col-md-10 col-sm-10 col-xs-10" style="padding: 0;">
                                     <div id="container-net-interface-<?php echo($i+1) ?>" style="min-width: 100%; height: 150px; margin: 20 auto"></div>
                                 </div>
