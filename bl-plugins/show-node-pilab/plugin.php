@@ -162,7 +162,7 @@ class pluginShowNodePiLab extends Plugin
                 }
                 elseif ($_SERVER['SERVER_ADDR'] == $ip) {
                     if (strpos($site->url(), 'pilab.dev') !== false) {
-                        $html = '<a href="'. $site->url() . '/' . str_replace(' ', '-', $name) .'/" target="_blank">' . $name . '</a>';
+                        $html = '<a href="'. $site->url() . '/' . str_replace(' ', '-', $name) .'/" target="_blank" title="View '. $name . ' Dashboard">' . $name . '</a>';
                     }
                     else {
                         $html = $name;
