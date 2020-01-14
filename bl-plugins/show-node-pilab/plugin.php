@@ -7,9 +7,7 @@ class pluginShowNodePiLab extends Plugin
     {
         // JSON database
         $jsondb = json_encode(array(
-            'nodeName' => 'Node 1',
-            'nodeIP' => '127.0.0.1',
-            'nodeLink' => 'pi1'
+            'Node 1' => '127.0.0.1',
         ));
 
         // Fields and default values for the database of this plugin
@@ -45,7 +43,6 @@ class pluginShowNodePiLab extends Plugin
             // Values from $_POST
             $name = $_POST['nodeName'];
             $ip = $_POST['nodeIP'];
-            $link = $_POST['nodeLink'];
 
             // Check empty string
             if (empty($name)) {
@@ -114,12 +111,6 @@ class pluginShowNodePiLab extends Plugin
         $html .= '</div>';
 
         $html .= '<div>';
-        $html .= '<div>&nbsp;</div>';
-        $html .= '<input name="nodeLink" type="text" class="form-control" value="" placeholder="pi1">';
-        $html .= '<span style="color: #303030; font-style: italic;">' . $L->get('ip tip') . '</span>';
-        $html .= '</div>';
-
-        $html .= '<div>';
         $html .= '<button name="addNode" class="btn btn-primary my-2" type="submit">' . $L->get('Add') . '</button>';
         $html .= '</div>';
         $html .= '</div>';
@@ -170,7 +161,7 @@ class pluginShowNodePiLab extends Plugin
                     $html = '<a href="'. $site->url() . '/admin/" target="_blank">' . $this->getValue('devnode'). '</a>';
                 }
                 elseif ($_SERVER['SERVER_ADDR'] == $ip) {
-                    $html = '<a href="'. $site->url() . '/'.$name.'" target="_blank">' . $name. '</a>';
+                    $html = $name;
                 }
             }
         }
