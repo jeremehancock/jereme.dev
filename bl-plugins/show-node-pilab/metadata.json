@@ -2,8 +2,8 @@
 	"author": "Pi Lab",
 	"email": "",
 	"website": "https://pilab.dev",
-	"version": "1.0.2",
-	"releaseDate": "2019-05-30",
+	"version": "1.0.3",
+	"releaseDate": "2020-01-13",
 	"license": "MIT",
 	"compatible": "3.9.x",
 	"notes": ""

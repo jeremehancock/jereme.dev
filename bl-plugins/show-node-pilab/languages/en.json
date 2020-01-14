@@ -7,13 +7,9 @@
 	"add-a-new-node": "Add Node",
 	"add-a-dev-port": "Dev Node Port",
 	"add-a-dev-name": "Dev Node Name",
-	"enable-link": "Enable Links",
 	"add-node-tip": "This is what will display when viewing this node.",
 	"ip-tip": "This is the IP of the node.",
 	"dev-port-tip": "This is the port for the 'dev' node. For example: devnode.com:8000",
 	"dev-name-tip": "This is what will display when viewing your 'dev' node.",
-	"enable-link-tip": "This will create links for the Node displayed. So if you put 'Node 1' for the Node Name the link will be http(s)://yoursite.com/Node-1. This is useful if you have metrics dashboards setup for each Node.",
-	"show-admin": "Include Admin Link",
-	"links-enabled": "Enabled",
-	"links-disabled": "Disabled"
+	"show-admin": "Include Admin Link"
 }
