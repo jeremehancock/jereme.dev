@@ -170,7 +170,7 @@ class pluginShowNodePiLab extends Plugin
                     $html = '<a href="'. $site->url() . '/admin/" target="_blank">' . $this->getValue('devnode'). '</a>';
                 }
                 elseif ($_SERVER['SERVER_ADDR'] == $ip) {
-                    $html = '<a href="'. $site->url() . '/ . $link ." target="_blank">' . $this->getValue('devnode'). '</a>';
+                    $html = '<a href="' . $site->url() . '/ . $link . target="_blank">' . $name. '</a>';
                 }
             }
         }
