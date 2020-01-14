@@ -161,7 +161,7 @@ class pluginShowNodePiLab extends Plugin
                     $html = '<a href="'. $site->url() . '/admin/" target="_blank">' . $this->getValue('devnode') . '</a>';
                 }
                 elseif ($_SERVER['SERVER_ADDR'] == $ip) {
-                    if (strpos($site->url(), 'pilab.dev') !== false) {
+                    if (strpos($site->url(), 'pilab.dev') === false) {
                         $html = '<a href="'. $site->url() . '/' . str_replace(' ', '-', $name) .'/" target="_blank">' . $name . '</a>';
                     }
                     else {
