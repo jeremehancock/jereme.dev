@@ -38,7 +38,7 @@ require_once(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'device.php');
     <div class="container">
         <div class="row">
             <div class="col-md-3">
-                <div style="text-align: center; padding: 20px 0;"><img style="max-width: 130px;" src="../bl-content/uploads/Pi%20Lab.png" /></div>
+                <div style="text-align: center; padding: 20px 0;"><a href="https://pilab.dev"><img style="max-width: 130px;" src="../bl-content/uploads/Pi%20Lab.png" /></a></div>
                 <div style="background-color: #E0E0E0; padding: 5px; border-radius: 3px;">
                     <div class="text-center" style="margin:20px; padding: 10px 0 10px 0; background-color:#FAFAFA; border-radius: 3px;"><div class="label">HOSTNAME</div><div id="hostname" style="font-size: 110%; font-weight: bolder;"><?php echo($D['hostname']); ?></div></div>
                     <div class="text-center" style="margin:20px; padding: 10px 0 10px 0; background-color:#CEFCA3; border-radius: 3px;"><div class="label">IP</div><div id="hostip" style="font-size: 150%; font-weight: bolder;"><?php echo($D['hostip']); ?></div></div>
