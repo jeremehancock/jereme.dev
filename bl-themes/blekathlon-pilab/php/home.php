@@ -75,7 +75,10 @@
 
 				<?php if (Paginator::showPrev()):?>
 				<a class="prev page-numbers" href="<?php echo Paginator::previousPageUrl() ?>" tabindex="-1">
-					<?php echo $L->get('Previous'); ?>
+<!--					--><?php //echo $L->get('Previous'); ?>
+                    <svg class="icon icon-arrow-circle-left" aria-hidden="true" role="img" viewBox="0 0 27 32">
+                        <path d="M23 17v-2q0 0 0-1t-1 0h-9l3-3q0 0 0-1t0-1l-2-2q0 0-1 0t-1 0l-8 8q0 0 0 1t0 1l8 8q0 0 1 0t1 0l2-2q0 0 0-1t0-1l-3-3h9q0 0 1 0t0-1zM27 16q0 4-2 7t-5 5-7 2-7-2-5-5-2-7 2-7 5-5 7-2 7 2 5 5 2 7z"></path>
+                    </svg>
 				</a>
 				<?php endif ?>
 
@@ -98,7 +101,10 @@
 
 				<?php if (Paginator::showNext()):?>
 				<a class="next page-numbers" href="<?php echo Paginator::nextPageUrl() ?>">
-					<?php echo $L->get('Next'); ?>
+<!--					--><?php //echo $L->get('Next'); ?>
+                    <svg class="icon icon-arrow-circle-right" aria-hidden="true" role="img" viewBox="0 0 27 32">
+                        <path d="M23 16q0 0 0-1l-8-8q0 0-1 0t-1 0l-2 2q0 0 0 1t0 1l3 3h-9q0 0-1 0t0 1v2q0 0 0 1t1 0h9l-3 3q0 0 0 1t0 1l2 2q0 0 1 0t1 0l8-8q0 0 0-1zM27 16q0 4-2 7t-5 5-7 2-7-2-5-5-2-7 2-7 5-5 7-2 7 2 5 5 2 7z"></path>
+                    </svg>
 				</a>
 				<?php endif ?>
 
