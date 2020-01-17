@@ -28,7 +28,7 @@ require_once(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'device.php');
     </script>
     <style type="text/css">
         .label {color: #999999; font-size: 100%; font-weight: bolder;}
-        .wlan0, .lo {display: none !important;}
+        .eth0, .wlan0, .lo {display: none !important;}
     </style>
 </head>
 <body>
