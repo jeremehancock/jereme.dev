@@ -234,3 +234,11 @@ pre {
     transition: all 0.3s ease 0s;
     box-shadow: rgba(0, 0, 0, 0.25) 3px 4px 5px;
 }
+
+#mobile-arrows {
+    display: none;
+}
+
+#mobile-text {
+    display: block;
+}
