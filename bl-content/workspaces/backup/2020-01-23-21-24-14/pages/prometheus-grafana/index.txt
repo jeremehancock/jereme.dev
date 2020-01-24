@@ -7,9 +7,9 @@ I have updated the [Pi Lab Stats](/pi-lab-stats) page to incorporate these dashb
 If you are interested in how I set this up check out this GitHub repo.
 https://github.com/bhemar/raspberry-metrics.
 
-#### Example (SETI@home Node)
-<iframe width="100%" height="360" src="https://pilab.dev/metrics/d/wc_mbnZRz/pi-lab-metrics?orgId=1&refresh=30s&var-instance=setipi&kiosk" frameborder="0" class="iframe-border"></iframe>
+#### Example (Load Balancer Node)
+<iframe width="100%" height="360" src="https://pilab.dev/metrics/d/wc_mbnZRz/pi-lab-metrics?orgId=1&refresh=30s&var-instance=pi0&kiosk" frameborder="0" class="iframe-border"></iframe>
 
-<a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=setipi" target="_blank" style="float:right;">View Full Dashboard</a>
+<a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=pi0" target="_blank" style="float:right;">View Full Dashboard</a>
 
 <br>
