@@ -1,2 +1,2 @@
 <?php defined('BLUDIT') or die('Bludit CMS.'); ?>
-{"label":"Links","jsondb":"{&quot;Resum\\u00e9&quot;:&quot;https:\\\/\\\/jeremehancock.com&quot;,&quot;Github&quot;:&quot;https:\\\/\\\/jereme.dev&quot;,&quot;m7kodi&quot;:&quot;https:\\\/\\\/m7kodi.dev&quot;,&quot;Random Goat&quot;:&quot;https:\\\/\\\/randomgoat.com&quot;}","position":"3"}
+{"label":"Links","jsondb":"{&quot;Resum\\u00e9&quot;:&quot;https:\\\/\\\/jeremehancock.com&quot;,&quot;Github&quot;:&quot;https:\\\/\\\/jereme.dev&quot;,&quot;m7kodi&quot;:&quot;https:\\\/\\\/m7kodi.dev&quot;}","position":"3"}
