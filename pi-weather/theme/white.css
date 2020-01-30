@@ -1,5 +1,5 @@
 ﻿body {
-    //background-color: #fff;
+    background-color: #F2F2F2;
     color: #000000;
 }
 
@@ -40,4 +40,9 @@
 #alerts {
     background-color: red;
     color: white;
+}
+@media (max-width: 979px) {
+    .currentDateTime {
+        display: none;
+    }
 }

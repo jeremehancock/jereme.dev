@@ -1,0 +1,16 @@
+Setting up a Weather Dashboard is a common project on the Raspberry Pi. There are many ways to accomplish this.
+
+I have recently found a very nice project that makes it very simple to display detailed weather information.
+
+The setup allows for tons of configuration and is also very simple to customize since it is just HTML/JS/CSS.
+
+Here is an example that I have setup to demonstrate.
+
+### Pi Lab's Current Weather Conditions
+<iframe width="100%" height="370" src="/pi-weather" frameborder="0" class="iframe-border"></iframe>
+<br>
+
+If you are looking to setup a Weather Dashboard this project is definitely worth a look.
+
+<br>
+[<img src="/images/check-it-out-on-github.png" alt="Get it on GitHub" class="on-github" />](https://github.com/vlaine/Weather-Forecast-Dashboard)
