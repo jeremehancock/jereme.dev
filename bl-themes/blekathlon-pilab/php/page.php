@@ -5,20 +5,22 @@
 			<header class="entry-header page-header text-center">
 				<h1 class="entry-title title-font text-italic">
 					<?php echo $page->title(); ?>
-                    <a href="<?php echo HTML_PATH_ADMIN_ROOT.'edit-content/'.$page->slug() ?>" style="float:right;font-size:.6em;" target="_blank">
-                        <svg class="icon" viewBox="0 0 32 32">
-                            <use xlink:href="#icon-pencil"></use>
-                        </svg>
-                    </a>
+                    <?php if($login->isLogged()) if($canEdit = checkRole(array('admin', 'editor'))):?>
+                        <a href="<?php echo HTML_PATH_ADMIN_ROOT.'edit-content/'.$page->slug() ?>" style="float:right;font-size:.6em;" target="_blank">
+                            <svg class="icon" viewBox="0 0 32 32">
+                                <use xlink:href="#icon-pencil"></use>
+                            </svg>
+                        </a>
+                    <?php endif; ?>
 				</h1>
-				<?php if($login->isLogged()) if($canEdit = checkRole(array('admin', 'editor'))):?>
+<!--				--><?php //if($login->isLogged()) if($canEdit = checkRole(array('admin', 'editor'))):?>
 <!--				<a href="--><?php //echo HTML_PATH_ADMIN_ROOT.'edit-content/'.$page->slug() ?><!--" style="float:right" target="_blank">-->
 <!--					<svg class="icon" viewBox="0 0 32 32">-->
 <!--						<use xlink:href="#icon-pencil"></use>-->
 <!--					</svg>-->
 <!--					<span>Edit</span>-->
 <!--				</a>-->
-				<?php endif; ?>
+<!--				--><?php //endif; ?>
 			</header>
 <!--			--><?php //if ($page->coverImage()): ?>
 <!--			<div class="entry-media post-thumbnail post-thumbnail-singular">-->
