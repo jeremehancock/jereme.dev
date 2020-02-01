@@ -1,5 +1,5 @@
 <div class="centered">
-    <img src="/bl-content/uploads/pages/519ce125498e432461bb1b7403f15f28/pi-dashboard-medium-narrow.png" class="image-border" /><br><br>
+    <img src="/bl-content/uploads/pages/519ce125498e432461bb1b7403f15f28/pi-dashboard-medium-narrow-compressed.png" class="image-border" /><br><br>
 </div>
 
 If you are looking for an easy way to display your Raspberry Pi's metrics in real time look no further. 
