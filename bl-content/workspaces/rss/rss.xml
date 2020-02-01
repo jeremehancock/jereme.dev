@@ -5,7 +5,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Thu, 30 Jan 2020 22:38:11 -0600</lastBuildDate>
+    <lastBuildDate>Fri, 31 Jan 2020 21:14:54 -0600</lastBuildDate>
     <item>
       <title>Weather Dashboard</title>
       <link>https://pilab.dev/weather-dashboard</link>
@@ -26,7 +26,7 @@
       <title>Pi Dashboard</title>
       <link>https://pilab.dev/pi-dashboard-ui</link>
       <description>&lt;div class="centered"&gt;
-    &lt;img src="/bl-content/uploads/pages/519ce125498e432461bb1b7403f15f28/pi-dashboard-medium-narrow.png" class="image-border" /&gt;&lt;br&gt;&lt;br&gt;
+    &lt;img src="/bl-content/uploads/pages/519ce125498e432461bb1b7403f15f28/pi-dashboard-medium-narrow-compressed.png" class="image-border" /&gt;&lt;br&gt;&lt;br&gt;
 &lt;/div&gt;
 &lt;p&gt;If you are looking for an easy way to display your Raspberry Pi's metrics in real time look no further. &lt;/p&gt;
 &lt;p&gt;The installation couldn't be simpler. If you already have a webserver and PHP configured on your Raspberry Pi you simply have to put the files in a sub-directory of your website and it just works!&lt;/p&gt;
