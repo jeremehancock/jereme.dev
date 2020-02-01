@@ -248,3 +248,7 @@ pre {
         padding-bottom: 1rem;
     }
 }
+
+.custom-margin-bottom {
+    margin-bottom: 30px;
+}

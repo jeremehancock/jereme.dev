@@ -9,7 +9,7 @@
 			</h1>
 			<?php endif ?>
 			<?php if ($site->description()): ?>
-			<p class="site-description no-margin-bottom text-center">
+			<p class="site-description custom-margin-bottom text-center">
 				<?php echo $helper->description(); ?>
 			</p>
 			<?php endif ?>
