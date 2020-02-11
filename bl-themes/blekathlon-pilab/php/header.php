@@ -1,4 +1,4 @@
-<header class="site-header main-padding sticky-header">
+<header class="site-header main-padding sticky-header" id="navbar">
 	<input class="search-toggle" type="checkbox" id="search-toggle" />
 	<div class="wrapper main-width search-header">
 		<div class="site-branding">

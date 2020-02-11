@@ -1,4 +1,4 @@
-er<footer class="site-footer main-padding smaller-font-size">
+<footer class="site-footer main-padding smaller-font-size" id="footbar">
     <div class="site-info main-width">
         <div class="copyright text-white text-uppercase">
             <?php echo $site->footer(); ?>
