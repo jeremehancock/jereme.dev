@@ -6,13 +6,19 @@
     z-index: 999;
 }
 
+.main-navigation  {
+    overscroll-behavior: contain;
+}
+
 .centered {
     text-align: center;
 }
+
 #navbar {
     top: 0;
     transition: top 0.5s;
 }
+
 #footbar {
     bottom: 0;
     transition: bottom 0.5s;
