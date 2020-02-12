@@ -13,7 +13,8 @@ class Theme {
 			'instagram'=>'Instagram',
 			'codepen'=>'Codepen',
 			'linkedin'=>'Linkedin',
-			'mastodon'=>'Mastodon'
+			'mastodon'=>'Mastodon',
+			'vk'=>'VK'
 		);
 
 		foreach ($socialNetworks as $key=>$label) {
@@ -198,6 +199,9 @@ class Theme {
 		}
 
 		$links = '';
+//		foreach($files as $file) {
+//			$links .= '<link rel="stylesheet" type="text/css" href="'.$base.$file.'?version='.BLUDIT_VERSION.'">'.PHP_EOL;
+//		}
 		foreach($files as $file) {
 			$links .= '<link rel="stylesheet" type="text/css" href="'.$base.$file.'?version='.BLUDIT_VERSION.'&time=' . time() . '">'.PHP_EOL;
 		}
@@ -234,7 +238,7 @@ class Theme {
 
 	public static function favicon($file='favicon.png', $typeIcon='image/png')
 	{
-		return '<link rel="shortcut icon" href="'.DOMAIN_THEME.$file.'" type="'.$typeIcon.'">'.PHP_EOL;
+		return '<link rel="icon" href="'.DOMAIN_THEME.$file.'" type="'.$typeIcon.'">'.PHP_EOL;
 	}
 
 	public static function keywords($keywords)

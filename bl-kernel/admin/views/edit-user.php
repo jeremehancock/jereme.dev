@@ -134,9 +134,8 @@
 				contentType: false,
 				processData: false
 			}).done(function(data) {
-				console.log(data);
 				if (data.status==0) {
-					$("#jsprofilePicturePreview").attr('src',json.absoluteURL+"?time="+Math.random());
+					$("#jsprofilePicturePreview").attr('src',data.absoluteURL+"?time="+Math.random());
 				} else {
 					showAlert(data.message);
 				}
@@ -264,6 +263,15 @@
 			'name'=>'mastodon',
 			'label'=>'Mastodon',
 			'value'=>$user->mastodon(),
+			'class'=>'',
+			'placeholder'=>'',
+			'tip'=>''
+		));
+
+		echo Bootstrap::formInputText(array(
+			'name'=>'vk',
+			'label'=>'VK',
+			'value'=>$user->vk(),
 			'class'=>'',
 			'placeholder'=>'',
 			'tip'=>''
