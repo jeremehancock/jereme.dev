@@ -1,5 +1,5 @@
 <div class="centered">
-    <img src="https://pilab.dev/live-stream/" class="iframe-border"  style="margin-bottom:15px;"/>
+    <img src="https://pilab.dev/live-stream/" class="image-border"  style="margin-bottom:15px;"/>
 </div>
 
 *Pi Lab is a collection of Raspberry Pis used for various purposes including hosting this blog. *
