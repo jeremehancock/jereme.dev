@@ -5,7 +5,18 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Mon, 16 Mar 2020 16:01:05 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 16 Mar 2020 16:29:33 -0500</lastBuildDate>
+    <item>
+      <title>Pi Lab Live Stream</title>
+      <link>https://pilab.dev/pi-lab-live-stream</link>
+      <description>&lt;h3&gt;Checkout out the live stream of Pi Lab!&lt;/h3&gt;
+&lt;div class="centered"&gt;
+    &lt;img src="https://pilab.dev/live-stream/" class="iframe-border"  style="margin-bottom:15px;"/&gt;
+&lt;/div&gt;
+&lt;p&gt;This live stream is utilizing a re-purposed AT&amp;amp;T Digital Life security camera. There is really no practical purpose for this. I just thought it would be a fun way to use left over tech. I have also updated the &lt;a href="/welcome-to-pi-lab"&gt;Specs&lt;/a&gt; page to use this stream so that you can always see the latest state of Pi Lab.&lt;/p&gt;</description>
+      <pubDate>Mon, 16 Mar 2020 16:24:40 -0500</pubDate>
+      <guid isPermaLink="false">f14bc4982bac069cdc5685de35ad1be4</guid>
+    </item>
     <item>
       <title>Weather Dashboard</title>
       <link>https://pilab.dev/weather-dashboard</link>
@@ -88,33 +99,6 @@
 &lt;/ul&gt;</description>
       <pubDate>Sat, 23 Nov 2019 21:13:28 -0600</pubDate>
       <guid isPermaLink="false">219aae05a3dcc7dbe11d1df5596c15e4</guid>
-    </item>
-    <item>
-      <title>RaspController Android</title>
-      <link>https://pilab.dev/raspcontroller-android-app</link>
-      <description>&lt;div class="centered"&gt;
-    &lt;img src="/bl-content/uploads/pages/47f17725790d2c6f040eb40ec8456bfb/RaspController.png" class="image-border" /&gt;&lt;br&gt;&lt;br&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;a href="https://play.google.com/store/apps/details?id=it.Ettore.raspcontroller&amp;amp;hl=en_US"&gt;RaspController&lt;/a&gt; is one of the many tools that I use for managing Pi Lab. &lt;/p&gt;
-&lt;h3&gt;My Favorite Features:&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;File manager&lt;/li&gt;
-&lt;li&gt;Shell SSH &lt;/li&gt;
-&lt;li&gt;Cpu, Ram, Disk monitoring&lt;/li&gt;
-&lt;li&gt;Info Raspberry PI &lt;/li&gt;
-&lt;li&gt;Shutdown&lt;/li&gt;
-&lt;li&gt;Reboot&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;I really find it useful for monitoring Pi Lab when I am away from home. I can check temperatures, system load, and even SSH into each device.&lt;/p&gt;
-&lt;p&gt;If you have a Raspberry Pi and want to manage it remotely from your phone I highly recommend &lt;a href="https://play.google.com/store/apps/details?id=it.Ettore.raspcontroller&amp;amp;hl=en_US"&gt;RaspController&lt;/a&gt;. &lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;&lt;strong&gt;Note&lt;/strong&gt;: For remote access the Raspberry Pi(s) will need to be accessible either via port forwarding or by having a VPN setup on your network.&lt;/em&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;The &lt;a href="https://play.google.com/store/apps/details?id=it.Ettore.raspcontrollerProKey&amp;amp;hl=en_US"&gt;RaspController PRO Key&lt;/a&gt; is only $2.99 and is totally worth it to support the development of this fantastic app!&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;&lt;a href="https://play.google.com/store/apps/details?id=it.Ettore.raspcontroller&amp;amp;hl=en_US"&gt;&lt;img src="/images/get-it-on-google-play.png" alt="Get it on Google Play" class="on-google-play" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
-      <pubDate>Thu, 21 Nov 2019 20:43:21 -0600</pubDate>
-      <guid isPermaLink="false">47f17725790d2c6f040eb40ec8456bfb</guid>
     </item>
   </channel>
 </rss>
