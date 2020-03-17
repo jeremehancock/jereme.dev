@@ -15,7 +15,7 @@ class pluginLightbox extends Plugin {
 
 	public function siteHead(){
 
-		$html  = '<link href="'.HTML_PATH_PLUGINS.'lightbox/css/lightbox.css" rel="stylesheet">';
+		$html  = '<link async href="'.HTML_PATH_PLUGINS.'lightbox/css/lightbox.css" rel="stylesheet">';
 		return $html;
 
     }
@@ -23,7 +23,7 @@ class pluginLightbox extends Plugin {
  	public function siteBodyEnd()
  	{
 
- 		$html  = PHP_EOL.'<script src="'.HTML_PATH_PLUGINS.'lightbox/js/lightbox.js"></script>'.PHP_EOL;
+ 		$html  = PHP_EOL.'<script async src="'.HTML_PATH_PLUGINS.'lightbox/js/lightbox.js"></script>'.PHP_EOL;
  		return $html;
 	}
 
