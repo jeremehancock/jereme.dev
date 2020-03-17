@@ -13,4 +13,4 @@
 <?php echo Theme::css('css/pilab.css'); ?>
 <?php Theme::plugins('siteHead'); ?>
 
-<link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700|Roboto:400,400i,700" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700|Roboto:400,400i,700&display=swap" rel="stylesheet" />
