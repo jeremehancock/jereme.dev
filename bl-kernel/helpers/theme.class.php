@@ -203,7 +203,7 @@ class Theme {
 //			$links .= '<link rel="stylesheet" type="text/css" href="'.$base.$file.'?version='.BLUDIT_VERSION.'">'.PHP_EOL;
 //		}
 		foreach($files as $file) {
-			$links .= '<link async rel="stylesheet" type="text/css" href="'.$base.$file.'?version='.BLUDIT_VERSION.'&time=' . time() . '">'.PHP_EOL;
+			$links .= '<link rel="stylesheet" type="text/css" href="'.$base.$file.'?version='.BLUDIT_VERSION.'&time=' . time() . '">'.PHP_EOL;
 		}
 
 		return $links;
