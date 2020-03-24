@@ -1,3 +1,48 @@
+pre {
+    isolation: isolate;
+}
+
+.darkmode--activated .site-logo {
+    filter: invert(100%);
+}
+
+.darkmode--activated .site-header {
+    background: #000;
+}
+
+.darkmode--activated .main-navigation  {
+    background: #303030;
+    color: #fff;
+}
+
+.darkmode--activated .main-navigation a:hover  {
+    color: #fff;
+}
+
+.darkmode--activated .content-area  {
+    background: #ccc;
+}
+
+.darkmode--activated .site-content  {
+    background: #ccc;
+}
+
+.darkmode--activated  .entry-inner {
+    background: #ddd;
+}
+
+.darkmode--activated  .site-footer {
+    background: #000;
+}
+
+.darkmode--activated  .svg-menu-toggle {
+    color: #fff;
+}
+
+.darkmode--activated  .svg-search {
+    color: #fff;
+}
+
 .dark-toggle {
     cursor: pointer;
     display: inline-block;
@@ -15,9 +60,11 @@
     transition: background 0.25s;
     top: -2px;
 }
+
 .dark-toggle-switch:before, .dark-toggle-switch:after {
     content: "";
 }
+
 .dark-toggle-switch:before {
     display: block;
     background: linear-gradient(to bottom, #fff 0%, #eee 100%);
@@ -30,13 +77,16 @@
     left: 4px;
     transition: left 0.25s;
 }
+
 .dark-toggle:hover .dark-toggle-switch:before {
     background: linear-gradient(to bottom, #fff 0%, #fff 100%);
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
 }
+
 .dark-toggle-checkbox:checked + .dark-toggle-switch {
-    background: #000000;
+    background: #4c4b52;
 }
+
 .dark-toggle-checkbox:checked + .dark-toggle-switch:before {
     left: 30px;
 }
@@ -50,6 +100,7 @@
     margin-left: 5px;
     position: relative;
 }
+
 .sticky-header {
     position: fixed;
     box-shadow: 0 2px 2px -2px gray;
@@ -271,6 +322,7 @@ table td {
     padding: 5px;
     transition: all 0.3s ease 0s;
     box-shadow: rgba(0, 0, 0, 0.25) 3px 4px 5px;
+    isolation: isolate;
 }
 
 .iframe-border {
@@ -281,6 +333,7 @@ table td {
     padding: 5px;
     transition: all 0.3s ease 0s;
     box-shadow: rgba(0, 0, 0, 0.25) 3px 4px 5px;
+    isolation: isolate;
 }
 
 .stats-border {
@@ -290,6 +343,7 @@ table td {
     padding: 5px;
     transition: all 0.3s ease 0s;
     box-shadow: rgba(0, 0, 0, 0.25) 3px 4px 5px;
+    isolation: isolate;
 }
 
 .on-google-play,

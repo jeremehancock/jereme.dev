@@ -1,4 +1,4 @@
-<aside class="footer-widgets-wrapper footer-widgets main-padding" role="complementary">
+<aside class="footer-widgets-wrapper footer-widgets main-padding" role="complementary" style="isolation: isolate;">
     <div class="wrapper main-width">
         <div class="grid-wrapper">
             <div>
