@@ -76,6 +76,7 @@ class pluginRobotsPiLab extends Plugin {
                 echo "User-agent: *\nDisallow: /";
             }
             else {
+                header('Content-type: text/plain');
                 // Include link to sitemap in robots.txt if the plugin is enabled
                 if (pluginActivated('pluginSitemap')) {
                     echo 'Sitemap: '.DOMAIN_BASE.'sitemap.xml'.PHP_EOL;
