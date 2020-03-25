@@ -69,6 +69,8 @@ pre {
 
 .darkmode--activated #disqus_thread {
     isolation: isolate;
+    background: #ccc;
+    padding: 30px;
 }
 
 .darkmode-background {
