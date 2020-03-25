@@ -75,7 +75,7 @@ pre {
 }
 
 .darkmode-background {
-    background: #F8F8F8 !important;
+    background: transparent !important;
 }
 
 .dark-toggle {
