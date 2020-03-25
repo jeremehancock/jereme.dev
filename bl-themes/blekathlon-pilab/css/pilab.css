@@ -63,6 +63,10 @@ pre {
     color: #fff;
 }
 
+.darkmode--activated #disqus_thread {
+    isolation: isolate;
+}
+
 .darkmode-background {
     background: #F8F8F8 !important;
 }
