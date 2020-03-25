@@ -10,6 +10,18 @@ pre {
     background: #000;
 }
 
+.darkmode--activated .search-result {
+    background: #333;
+}
+
+.darkmode--activated .search-scrollwrap {
+    box-shadow: none;
+}
+
+.darkmode--activated .search-result-list h2, .darkmode--activated .search-result-list p, .darkmode--activated .search-result-meta {
+    color: #FFF;
+}
+
 .darkmode--activated .main-navigation  {
     background: #303030;
     color: #fff;
