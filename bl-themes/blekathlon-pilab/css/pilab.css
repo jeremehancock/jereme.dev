@@ -37,8 +37,7 @@ pre {
 .darkmode--activated .main-navigation  {
     background: #303030;
     color: #fff;
-    // Work around for ghost lines
-    transition: none;
+    transition: none !important;
 }
 }
 
