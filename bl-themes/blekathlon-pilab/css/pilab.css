@@ -7,7 +7,7 @@ pre {
 }
 
 .darkmode--activated .entry-header-bg {
-    border-right: none !important;
+    border-right: .1mm solid #333 !important;
 }
 
 .darkmode--activated .site-logo {
