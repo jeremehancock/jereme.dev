@@ -30,6 +30,10 @@ pre {
     color: #FFF;
 }
 
+.darkmode--activated .search-result-list li {
+    box-shadow: 0 -0.1rem 0 #777;
+}
+
 .darkmode--activated .main-navigation  {
     background: #303030;
     color: #fff;
@@ -211,7 +215,6 @@ pre {
 }
 
 .search-result-list {
-
     margin: 0;
     padding: 0;
     border-top: .1rem solid rgba(0,0,0,.07);
