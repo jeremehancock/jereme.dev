@@ -37,6 +37,9 @@ pre {
 .darkmode--activated .main-navigation  {
     background: #303030;
     color: #fff;
+    // Work around for ghost lines
+    transition: none;
+}
 }
 
 .darkmode--activated .main-navigation a:hover  {
@@ -51,19 +54,19 @@ pre {
     background: #ccc;
 }
 
-.darkmode--activated  .entry-inner {
+.darkmode--activated .entry-inner {
     background: #ddd;
 }
 
-.darkmode--activated  .site-footer {
+.darkmode--activated .site-footer {
     background: #000;
 }
 
-.darkmode--activated  .svg-menu-toggle {
+.darkmode--activated .svg-menu-toggle {
     color: #fff;
 }
 
-.darkmode--activated  .svg-search {
+.darkmode--activated .svg-search {
     color: #fff;
 }
 
