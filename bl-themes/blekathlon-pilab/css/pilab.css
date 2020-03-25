@@ -61,6 +61,10 @@ pre {
     padding: 30px;
 }
 
+.darkmode-background {
+    background: #F8F8F8 !important;
+}
+
 .dark-toggle {
     cursor: pointer;
     display: inline-block;
