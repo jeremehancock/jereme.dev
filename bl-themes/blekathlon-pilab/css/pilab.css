@@ -395,6 +395,9 @@ pre {
     margin-bottom: 30px;
 }
 
+.entry-header-bg {
+    border-right: .1mm solid #d4d3d3 !important;
+}
 
 @media screen and (min-width: 62.875em) {
     .page-header, .site-main .post-navigation {
