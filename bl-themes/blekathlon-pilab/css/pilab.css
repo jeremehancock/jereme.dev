@@ -55,6 +55,12 @@ pre {
     color: #fff;
 }
 
+.darkmode--activated #disqus_thread {
+    isolation: isolate;
+    background: #ccc;
+    padding: 30px;
+}
+
 .dark-toggle {
     cursor: pointer;
     display: inline-block;
