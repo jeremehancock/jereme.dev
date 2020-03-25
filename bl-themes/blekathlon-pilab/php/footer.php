@@ -16,7 +16,7 @@
     </div>
 </footer>
 <script>
-	var uploadsFolder = '<?php echo HTML_PATH_UPLOADS; ?>';
+	var uploadsFolder = '<?php echo HTML_PATH_UPLOADS; ?>', siteRoot = '<?php echo rtrim($site->url(), '/') . '/'; //site url with trailing slash ?>';
 </script>
 
 <script src="../bl-themes/blekathlon-pilab/js/darkmode-js.min.js"></script>
