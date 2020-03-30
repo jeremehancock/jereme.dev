@@ -25,10 +25,10 @@ This page provides various stats for Pi Lab.
 <iframe width="100%" height="360" src="https://pilab.dev/metrics/d/wc_mbnZRz/pi-lab-metrics?orgId=1&refresh=30s&var-instance=pi5&kiosk" frameborder="0" class="iframe-border"></iframe>
 
 <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=pi5" target="_blank" style="float:right;">View Full Dashboard</a>
-## SETI@home Node
-<iframe width="100%" height="360" src="https://pilab.dev/metrics/d/wc_mbnZRz/pi-lab-metrics?orgId=1&refresh=30s&var-instance=setipi&kiosk" frameborder="0" class="iframe-border"></iframe>
+## BOINC Node
+<iframe width="100%" height="360" src="https://pilab.dev/metrics/d/wc_mbnZRz/pi-lab-metrics?orgId=1&refresh=30s&var-instance=boinc&kiosk" frameborder="0" class="iframe-border"></iframe>
 
-<a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=setipi" target="_blank" style="float:right;">View Full Dashboard</a>
+<a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=boinc" target="_blank" style="float:right;">View Full Dashboard</a>
 ## Test Node
 <iframe width="100%" height="360" src="https://pilab.dev/metrics/d/wc_mbnZRz/pi-lab-metrics?orgId=1&refresh=30s&var-instance=testpi&kiosk" frameborder="0" class="iframe-border"></iframe>
 
