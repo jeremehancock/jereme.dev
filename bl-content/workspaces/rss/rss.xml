@@ -5,11 +5,12 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Mon, 30 Mar 2020 22:07:01 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 30 Mar 2020 22:12:07 -0500</lastBuildDate>
     <item>
       <title>404 Not Found</title>
       <link>https://pilab.dev/404</link>
-      <description>&lt;p&gt;&lt;img src="https://pilab.dev/bl-content/uploads/pages/e4bec191d6976004c6edf1ff05699bae/pilab-404.png" alt="Image description" /&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;img src="https://pilab.dev/bl-content/uploads/pages/e4bec191d6976004c6edf1ff05699bae/pilab-404.png" alt="Image description" /&gt;&lt;/p&gt;
+&lt;meta http-equiv="content-language" content="en" /&gt;</description>
       <pubDate>Mon, 30 Mar 2020 21:39:12 -0500</pubDate>
       <guid isPermaLink="false">e4bec191d6976004c6edf1ff05699bae</guid>
     </item>
