@@ -4,7 +4,11 @@
 			<?php Theme::plugins('pageBegin'); ?>
 			<header class="entry-header page-header text-center">
 				<h1 class="entry-title title-font text-italic">
-					<?php echo $page->title(); ?>
+					<?php
+                        if ($page->title() != "404") {
+                            echo $page->title();
+                        }
+                    ?>
                     <?php if($login->isLogged()) if($canEdit = checkRole(array('admin', 'editor'))):?>
                         <a href="<?php echo HTML_PATH_ADMIN_ROOT.'edit-content/'.$page->slug() ?>" style="float:right;font-size:.6em;" target="_blank">
                             <svg class="icon" viewBox="0 0 32 32">

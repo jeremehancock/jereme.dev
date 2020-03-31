@@ -5,7 +5,14 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Mon, 30 Mar 2020 21:26:06 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 30 Mar 2020 22:03:02 -0500</lastBuildDate>
+    <item>
+      <title>404</title>
+      <link>https://pilab.dev/404</link>
+      <description>&lt;p&gt;&lt;img src="https://pilab.dev/bl-content/uploads/pages/e4bec191d6976004c6edf1ff05699bae/pilab-404.png" alt="Image description" /&gt;&lt;/p&gt;</description>
+      <pubDate>Mon, 30 Mar 2020 21:39:12 -0500</pubDate>
+      <guid isPermaLink="false">e4bec191d6976004c6edf1ff05699bae</guid>
+    </item>
     <item>
       <title>SETI@home Hibernation</title>
       <link>https://pilab.dev/seti-home-hibernation</link>
@@ -68,21 +75,6 @@
 &lt;a href="https://github.com/YuanGao-NAU/Pi-Utility"&gt;&lt;img src="/images/check-it-out-on-github.png" alt="Get it on GitHub" class="on-github" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
       <pubDate>Fri, 10 Jan 2020 21:37:56 -0600</pubDate>
       <guid isPermaLink="false">519ce125498e432461bb1b7403f15f28</guid>
-    </item>
-    <item>
-      <title>Prometheus &amp; Grafana</title>
-      <link>https://pilab.dev/prometheus-grafana</link>
-      <description>&lt;p&gt;I have been wanting to track more data related to the Pi Lab nodes. After a lot of research I decided to use &lt;a href="https://prometheus.io/"&gt;Prometheus&lt;/a&gt; and &lt;a href="https://grafana.com/"&gt;Grafana&lt;/a&gt;. &lt;/p&gt;
-&lt;p&gt;The results are really awesome!&lt;/p&gt;
-&lt;p&gt;I have updated the &lt;a href="/pi-lab-stats"&gt;Pi Lab Stats&lt;/a&gt; page to incorporate these dashboards. &lt;/p&gt;
-&lt;p&gt;If you are interested in how I set this up check out this GitHub repo.
-&lt;a href="https://github.com/bhemar/raspberry-metrics"&gt;https://github.com/bhemar/raspberry-metrics&lt;/a&gt;.&lt;/p&gt;
-&lt;h4&gt;Example (Load Balancer Node)&lt;/h4&gt;
-&lt;iframe width="100%" height="360" src="https://pilab.dev/metrics/d/wc_mbnZRz/pi-lab-metrics?orgId=1&amp;refresh=30s&amp;var-instance=pi0&amp;kiosk" frameborder="0" class="iframe-border"&gt;&lt;/iframe&gt;
-&lt;p&gt;&lt;a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&amp;refresh=30s&amp;var-instance=pi0" target="_blank" style="float:right;"&gt;View Full Dashboard&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;</description>
-      <pubDate>Wed, 04 Dec 2019 22:27:38 -0600</pubDate>
-      <guid isPermaLink="false">fb278e888106a04975f6062d82165f52</guid>
     </item>
   </channel>
 </rss>
