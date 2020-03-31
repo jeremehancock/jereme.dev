@@ -70,4 +70,4 @@ boinccmd --read_cc_config
 **Updates:**
 > I have updated the SETI@home Node to the BOINC Node to make the node generic for running [BOINC](https://boinc.berkeley.edu/) projects.
 
-> I am also not running [Einstein@home](https://einsteinathome.org/) on the BOINC Node since [SETI@home](https://setiathome.berkeley.edu/) has gone into hibernation. [Read more...](seti-home-no-more)
+> I am also not running [Einstein@home](https://einsteinathome.org/) on the BOINC Node since [SETI@home](https://setiathome.berkeley.edu/) has gone into hibernation. [Read more...](seti-home-hibernation)
