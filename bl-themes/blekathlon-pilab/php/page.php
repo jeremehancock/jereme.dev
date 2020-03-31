@@ -5,7 +5,7 @@
 			<header class="entry-header page-header text-center">
 				<h1 class="entry-title title-font text-italic">
 					<?php
-                        if ($page->title() != "404") {
+                        if ($page->title() != "404 Not Found") {
                             echo $page->title();
                         }
                     ?>
