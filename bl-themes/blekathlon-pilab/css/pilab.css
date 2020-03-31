@@ -1,3 +1,7 @@
+.darkmode--activated .dark-enabled {
+    filter: invert(100%);
+}
+
 pre {
     isolation: isolate;
 }
