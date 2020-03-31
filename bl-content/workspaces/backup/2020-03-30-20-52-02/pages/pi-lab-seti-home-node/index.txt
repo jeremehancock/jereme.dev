@@ -4,7 +4,7 @@ I used my first Raspberry Pi. It is a [Raspberry Pi Model B (256MB)](https://wik
 
 [SETI@home](https://setiathome.berkeley.edu/) ("SETI at home") is an Internet-based public volunteer computing project employing the BOINC software platform created by the Berkeley SETI Research Center and is hosted by the Space Sciences Laboratory, at the University of California, Berkeley. Its purpose is to analyze radio signals, searching for signs of extraterrestrial intelligence, and as such is one of many activities undertaken as part of the worldwide SETI effort. <sub> [Source](https://en.wikipedia.org/wiki/SETI@home)</sub>
 
-Checkout the Pi Lab [SETI@home](https://setiathome.berkeley.edu/) node at work [here](https://setiathome.berkeley.edu/show_host_detail.php?hostid=8740651). 
+Checkout the Pi Lab [SETI@home](https://setiathome.berkeley.edu/) Node at work [here](https://setiathome.berkeley.edu/show_host_detail.php?hostid=8740651). 
 
 Here are the basic steps that I used to create a headless SETI@home node.
 
@@ -66,3 +66,8 @@ sudo nano /var/lib/boinc-client/cc_config.xml
 ```
 boinccmd --read_cc_config
 ```
+
+**Updates:**
+> I have updated the SETI@home Node to the BOINC Node to make the node generic for running [BOINC](https://boinc.berkeley.edu/) projects.
+
+> I am also not running [Einstein@home](https://einsteinathome.org/) on the BOINC Node since [SETI@home](https://setiathome.berkeley.edu/) has gone into hibernation. [Read more...](seti-home-no-more)

@@ -5,7 +5,25 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Mon, 30 Mar 2020 16:56:43 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 30 Mar 2020 20:51:10 -0500</lastBuildDate>
+    <item>
+      <title>SETI@home Hibernation</title>
+      <link>https://pilab.dev/seti-home-hibernation</link>
+      <description>&lt;p&gt;I have been a fan of the &lt;a href="https://setiathome.berkeley.edu/"&gt;SETI@home&lt;/a&gt; project for a number of years. I was sad to hear that the project is going into &amp;quot;hibernation&amp;quot;.&lt;/p&gt;
+&lt;h2&gt;&lt;em&gt;From &lt;a href="https://seti.org"&gt;seti.org&lt;/a&gt;:&lt;/em&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;UC Berkeley has announced that the volunteer computing part of SETI@home will stop distributing work and go into hibernation on March 31. Two reasons were cited for this action:&lt;/p&gt;
+&lt;p&gt;1) Scientifically, they have reached point of diminishing returns; basically, they analyzed all the data they need for now.&lt;/p&gt;
+&lt;p&gt;2) Managing the distributed processing of data is labor intensive. The priority now is to focus on completing the back-end analysis of the results they already have, and writing this up in a scientific journal paper.&lt;/p&gt;
+&lt;p&gt;It’s important to note that SETI@home is not disappearing. The web site and message boards will continue to operate.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;&lt;a href="https://seti.org/setihome-going-hibernation"&gt;Read more...&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Pi Lab has had a &lt;a href="pi-lab-seti-home-node"&gt;SETI@home Node&lt;/a&gt; running since I started this project. I have decided to keep &lt;a href="https://setiathome.berkeley.edu/"&gt;SETI@home&lt;/a&gt; installed and available in case the project comes back online. In the mean time I am going to be running &lt;a href="insteinathome.org"&gt;Einstein@home&lt;/a&gt; instead. &lt;/p&gt;
+&lt;p&gt;I have also updated the &lt;a href="pi-lab-seti-home-node"&gt;SETI@home Node&lt;/a&gt; to the BOINC Node so that the node is more obviously dedicated to &lt;a href="https://boinc.berkeley.edu/"&gt;BOINC&lt;/a&gt; projects.&lt;/p&gt;
+&lt;p&gt;I wanted to shift gears and run &lt;a href="https://boinc.bakerlab.org/rosetta/"&gt;Rosetta@home&lt;/a&gt; to help with the Covid-19 reasearch. However, &lt;a href="https://boinc.bakerlab.org/rosetta/"&gt;Rosetta@home&lt;/a&gt; will not run on a Raspberry Pi. So I have set that project up on an old Dell laptop that I have. It is not officially part of Pi Lab, but I wanted to do what I could to help with the research either way.&lt;/p&gt;</description>
+      <pubDate>Mon, 30 Mar 2020 17:13:38 -0500</pubDate>
+      <guid isPermaLink="false">368d6e3f2b9f117cdf337cf85bccc288</guid>
+    </item>
     <item>
       <title>Pi Lab Live Stream</title>
       <link>https://pilab.dev/pi-lab-live-stream</link>
@@ -65,40 +83,6 @@
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;</description>
       <pubDate>Wed, 04 Dec 2019 22:27:38 -0600</pubDate>
       <guid isPermaLink="false">fb278e888106a04975f6062d82165f52</guid>
-    </item>
-    <item>
-      <title>Resources</title>
-      <link>https://pilab.dev/resources</link>
-      <description>&lt;p&gt;&lt;strong&gt;&lt;em&gt;This is a list of various resources that I have found to be useful.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;hr /&gt;
-&lt;h4&gt;Raspberry Pi&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://www.raspberrypi.org/"&gt;Raspberry Pi Foundation&lt;/a&gt; -- The Official Raspberry Pi site.&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://pimylifeup.com/"&gt;Pi My Life Up&lt;/a&gt; -- Tons of great tutorials.&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.raspberrypi-spy.co.uk/"&gt;Raspberry Pi Spy&lt;/a&gt; -- Great resources for all things Raspberry Pi.&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://raspberrywebserver.com/"&gt;Raspberry Pi Web Server&lt;/a&gt; -- Information on running a Raspberry Pi web server.&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://pi-hole.net/"&gt;Pi-hole&lt;/a&gt; -- No more ads!&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://www.pivpn.io/"&gt;PiVPN&lt;/a&gt; -- Securely access your Pi from anywhere.&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://magpi.raspberrypi.org/books"&gt;The MagPi&lt;/a&gt; -- Free digital book downloads.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4&gt;Bludit&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://www.bludit.com/"&gt;Bludit&lt;/a&gt; -- Awesome flat file CMS!&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://themes.bludit.com/"&gt;Bludit Themes&lt;/a&gt; -- Official Bludit themes.&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://docs.bludit.com/"&gt;Bludit Documentation&lt;/a&gt; -- Everything you need to know about Bludit.&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://forum.bludit.org/"&gt;Bludit Forums&lt;/a&gt; -- Bludit community.&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://bludit-showcase.com/"&gt;Bludit Showcase&lt;/a&gt; -- Real world Bludit sites in action.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4&gt;Misc. Development&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://github.com"&gt;GitHub&lt;/a&gt; -- Version control. Must have for all developers.&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.vagrantup.com/"&gt;Vagrant&lt;/a&gt; -- Virtualized local development.&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.ansible.com/"&gt;Ansible&lt;/a&gt; -- Automate, automate, automate.&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://prometheus.io"&gt;Prometheus&lt;/a&gt; -- Gather and track server metrics.&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://grafana.com/"&gt;Grafana&lt;/a&gt; -- Create awesome dashboards to visualize your metrics.&lt;/li&gt;
-&lt;/ul&gt;</description>
-      <pubDate>Sat, 23 Nov 2019 21:13:28 -0600</pubDate>
-      <guid isPermaLink="false">219aae05a3dcc7dbe11d1df5596c15e4</guid>
     </item>
   </channel>
 </rss>
