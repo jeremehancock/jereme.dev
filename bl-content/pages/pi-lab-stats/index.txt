@@ -26,9 +26,9 @@ This page provides various stats for Pi Lab.
 
 <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=pi5" target="_blank" style="float:right;">View Full Dashboard</a>
 ## BOINC Node
-<iframe width="100%" height="360" src="https://pilab.dev/metrics/d/wc_mbnZRz/pi-lab-metrics?orgId=1&refresh=30s&var-instance=boinc&kiosk" frameborder="0" class="iframe-border"></iframe>
+<iframe width="100%" height="360" src="https://pilab.dev/metrics/d/wc_mbnZRz/pi-lab-metrics?orgId=1&refresh=30s&var-instance=boincpi&kiosk" frameborder="0" class="iframe-border"></iframe>
 
-<a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=boinc" target="_blank" style="float:right;">View Full Dashboard</a>
+<a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=boincpi" target="_blank" style="float:right;">View Full Dashboard</a>
 ## Test Node
 <iframe width="100%" height="360" src="https://pilab.dev/metrics/d/wc_mbnZRz/pi-lab-metrics?orgId=1&refresh=30s&var-instance=testpi&kiosk" frameborder="0" class="iframe-border"></iframe>
 
