@@ -1,4 +1,3 @@
-<link rel="preload" href="https://pilab.dev/metrics/d/wc_mbnZRz/pi-lab-metrics?orgId=1&refresh=30s&var-instance=pi0&kiosk" as="document">
 I have been wanting to track more data related to the Pi Lab nodes. After a lot of research I decided to use [Prometheus](https://prometheus.io/) and [Grafana](https://grafana.com/). 
 
 The results are really awesome!
