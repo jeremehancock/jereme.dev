@@ -5,7 +5,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Wed, 01 Apr 2020 13:33:15 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 01 Apr 2020 13:35:03 -0500</lastBuildDate>
     <item>
       <title>404 Not Found</title>
       <link>https://pilab.dev/404</link>
@@ -46,7 +46,8 @@
     <item>
       <title>Weather Dashboard</title>
       <link>https://pilab.dev/weather-dashboard</link>
-      <description>&lt;p&gt;Setting up a Weather Dashboard is a common project on the Raspberry Pi. There are many ways to accomplish this.&lt;/p&gt;
+      <description>&lt;link rel="preload" href="/pi-weather" as="document"&gt;
+&lt;p&gt;Setting up a Weather Dashboard is a common project on the Raspberry Pi. There are many ways to accomplish this.&lt;/p&gt;
 &lt;p&gt;I have recently found a very nice project that makes it very simple to display detailed weather information.&lt;/p&gt;
 &lt;p&gt;The setup allows for tons of configuration and is also very simple to customize since it is just HTML/JS/CSS.&lt;/p&gt;
 &lt;p&gt;Here is an example that I have setup to demonstrate.&lt;/p&gt;

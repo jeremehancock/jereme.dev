@@ -1,3 +1,4 @@
+<link rel="preload" href="/pi-weather" as="document">
 Setting up a Weather Dashboard is a common project on the Raspberry Pi. There are many ways to accomplish this.
 
 I have recently found a very nice project that makes it very simple to display detailed weather information.
