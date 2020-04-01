@@ -2,6 +2,14 @@
     filter: invert(100%);
 }
 
+.darkmode--activated .table-border {
+    isolation: isolate;
+}
+
+.darkmode--activated .table-wrapper {
+    mix-blend-mode: difference;
+}
+
 pre {
     isolation: isolate;
 }
