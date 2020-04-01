@@ -54,7 +54,7 @@
 			<footer class="entry-footer clear">
 				<div class="share-buttons">
                     <div class="a2a_kit a2a_kit_size_48 a2a_default_style" style="float:right; isolation: isolate;">
-                        <a class="a2a_button_facebook"></a>
+                        <!--<a class="a2a_button_facebook"></a>-->
                         <a class="a2a_button_twitter"></a>
                         <a class="a2a_button_reddit"></a>
                     </div>
