@@ -11,7 +11,7 @@
             </label>
         </div>
         <div class="backer">
-                <a href="https://www.patreon.com/bludit">Bludit Backer <img class="lozad" data-src="../bl-themes/blekathlon-pilab/img/patreon.png" class="backer-logo"/></a>
+                <a href="https://www.patreon.com/bludit">Bludit Backer <img class="patreon lozad" data-src="../bl-themes/blekathlon-pilab/img/patreon.png" class="backer-logo"/></a>
         </div>
     </div>
 </footer>
