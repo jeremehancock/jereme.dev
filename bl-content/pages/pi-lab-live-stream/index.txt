@@ -1,7 +1,7 @@
 ### Checkout out the live stream of Pi Lab!
 
 <div class="centered">
-    <img src="https://pilab.dev/live-stream/" class="image-border"  style="margin-bottom:15px;"/>
+    <img src="https://pilab.dev/live-stream/" class="image-border" style="margin-bottom:15px;"/>
 </div>
 
 This live stream is utilizing a re-purposed AT&T Digital Life security camera. There is really no practical purpose for this. I just thought it would be a fun way to use left over tech. I have also updated the [Specs](/welcome-to-pi-lab) page to use this stream so that you can always see the latest state of Pi Lab.
