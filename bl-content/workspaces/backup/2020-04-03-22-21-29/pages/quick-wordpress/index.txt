@@ -14,4 +14,4 @@ This project has the goal of providing an easy way to backup and restore the Wor
 
 This is still a work in progress, but I will definitely be watching it closely.
 
-[<img src="/images/check-it-out-on-github.png" alt="Get it on GitHub" class="on-github" />](https://github.com/russellmacshane/quick-wordpress)
+[<img data-src="/images/check-it-out-on-github.png" alt="Get it on GitHub" class="on-github lozad" />](https://github.com/russellmacshane/quick-wordpress)

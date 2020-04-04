@@ -22,4 +22,4 @@ The [RaspController PRO Key](https://play.google.com/store/apps/details?id=it.Et
 
 ---
 
-[<img src="/images/get-it-on-google-play.png" alt="Get it on Google Play" class="on-google-play" />](https://play.google.com/store/apps/details?id=it.Ettore.raspcontroller&hl=en_US)
+[<img data-src="/images/get-it-on-google-play.png" alt="Get it on Google Play" class="on-google-play lozad" />](https://play.google.com/store/apps/details?id=it.Ettore.raspcontroller&hl=en_US)

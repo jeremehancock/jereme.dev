@@ -41,7 +41,7 @@ http://raspberrypi.local/My-Awesome-Site
 I took things one step further and created a custom "project list" page so I could easily access all of my projects from a single page as well as many other tools that I use during development.
 
 <div class="centered">
-    <img src="/bl-content/uploads/pages/726f105976d23905b8de01992f54c3a4/pizero-dashboard.png" class="image-border" /><br><br>
+    <img data-src="/bl-content/uploads/pages/726f105976d23905b8de01992f54c3a4/pizero-dashboard.png" class="image-border lozad" /><br><br>
 </div>
 
 Since all the projects are setup in [GitHub](https://github.com/mhancoc7?tab=repositories) this is truly a portable dev environment. I can just plug it into any computer and I have a full dev environment on the go.

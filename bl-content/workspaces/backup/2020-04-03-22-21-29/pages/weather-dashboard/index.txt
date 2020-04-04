@@ -13,4 +13,4 @@ Here is an example that I have setup to demonstrate.
 If you are looking to setup a Weather Dashboard this project is definitely worth a look.
 
 <br>
-[<img src="/images/check-it-out-on-github.png" alt="Get it on GitHub" class="on-github" />](https://github.com/vlaine/Weather-Forecast-Dashboard)
+[<img data-src="/images/check-it-out-on-github.png" alt="Get it on GitHub" class="on-github lozad" />](https://github.com/vlaine/Weather-Forecast-Dashboard)

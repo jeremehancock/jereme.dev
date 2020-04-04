@@ -5,7 +5,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Fri, 03 Apr 2020 21:45:27 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 03 Apr 2020 22:20:02 -0500</lastBuildDate>
     <item>
       <title>404 Not Found</title>
       <link>https://pilab.dev/404</link>
@@ -55,7 +55,7 @@
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 &lt;p&gt;If you are looking to setup a Weather Dashboard this project is definitely worth a look.&lt;/p&gt;
 &lt;p&gt;&lt;br&gt;
-&lt;a href="https://github.com/vlaine/Weather-Forecast-Dashboard"&gt;&lt;img src="/images/check-it-out-on-github.png" alt="Get it on GitHub" class="on-github" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+&lt;a href="https://github.com/vlaine/Weather-Forecast-Dashboard"&gt;&lt;img data-src="/images/check-it-out-on-github.png" alt="Get it on GitHub" class="on-github lozad" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
       <pubDate>Wed, 29 Jan 2020 21:56:59 -0600</pubDate>
       <guid isPermaLink="false">b9abbd96c3524243ca17d09abdeaddf9</guid>
     </item>
@@ -73,7 +73,7 @@
 &lt;p&gt;&lt;em&gt;&lt;strong&gt;Update&lt;/strong&gt;: I have updated the Node Name in the footer of Pi Lab to link to the Pi Dashboard that has been setup for each node.&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;br&gt;
-&lt;a href="https://github.com/YuanGao-NAU/Pi-Utility"&gt;&lt;img src="/images/check-it-out-on-github.png" alt="Get it on GitHub" class="on-github" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+&lt;a href="https://github.com/YuanGao-NAU/Pi-Utility"&gt;&lt;img data-src="/images/check-it-out-on-github.png" alt="Get it on GitHub" class="on-github lozad" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
       <pubDate>Fri, 10 Jan 2020 21:37:56 -0600</pubDate>
       <guid isPermaLink="false">519ce125498e432461bb1b7403f15f28</guid>
     </item>
