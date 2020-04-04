@@ -178,6 +178,36 @@ pre {
     margin-top: 100px;
 }
 
+.rel-item {
+    background-color: #F5F5F5;
+}
+
+.rel-item__title {
+    font-size: 22px;
+    height: 140px;
+}
+
+.rel-item:before {
+    display: none;
+}
+
+.rel-item__icon {
+    width: 78px;
+    height: 78px;
+    right: -10px;
+}
+
+.rel-item__icon img {
+    width: 80px;
+    height: 80px;
+}
+
+@media only screen and (max-width: 768px) {
+    .rel-item {
+        margin: 0 0 25px;
+    }
+}
+
 .italic-link {
     font-style: italic;
 }

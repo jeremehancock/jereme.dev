@@ -255,7 +255,7 @@ class Helper
 	 * @param mixed $similar
 	 * @return array[]|string
 	 */
-    public function getRelated($max = 3, $similar = true)
+    public function getRelated($max = 4, $similar = false)
     {
         global $WHERE_AM_I;
         global $page;

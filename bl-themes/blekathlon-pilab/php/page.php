@@ -143,7 +143,7 @@
 				</div>
 			</nav>
 			<?php endif?>
-			<?php			
+			<?php
 			if($related = $helper->getRelated()):?>
 			<div class="related-items">
 				<h3><?php echo $L->get('Related posts'); ?></h3>
@@ -153,7 +153,7 @@
 					<?php if($relpage->thumbCoverImage()): ?>
 					<div class="rel-item__icon">
 						<img src="<?php echo $helper->cdn_cover_image( $relpage->thumbCoverImage(),60,60); ?>" />
-					</div>					
+					</div>
 					<?php endif ?>
 					<div class="rel-item__title">
 						<?php echo $relpage->title() ?>
