@@ -2,6 +2,7 @@
 <html>
 <head>
     <?php include(THEME_DIR_PHP.'head.php'); ?>
+    <script src="../bl-themes/blekathlon-pilab/js/lozad.min.js"></script>
 </head>
 <body>
 	<?php Theme::plugins('siteBodyBegin'); ?>
@@ -21,8 +22,6 @@
 
     <?php echo Theme::javascript('js/bundle.min.js'); ?>
 
-    <script src="../bl-themes/blekathlon-pilab/js/lozad.min.js"></script>
-    
     <script>
         const observer = lozad(); // lazy loads elements with default selector as '.lozad'
         observer.observe();
