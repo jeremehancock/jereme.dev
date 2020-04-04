@@ -450,10 +450,6 @@ pre {
     margin-bottom: 30px;
 }
 
-body {
-    background: transparent !important;
-}
-
 @media screen and (min-width: 62.875em) {
     .page-header, .site-main .post-navigation {
         padding-bottom: 1rem;
