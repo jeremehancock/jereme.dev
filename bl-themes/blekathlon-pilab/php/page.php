@@ -152,7 +152,7 @@
 					<a href="<?php echo $relpage->permalink(); ?>"></a>
 					<?php if($relpage->thumbCoverImage()): ?>
 					<div class="rel-item__icon">
-						<img src="<?php echo $helper->cdn_cover_image( $relpage->thumbCoverImage(),60,60); ?>" />
+						<img class="lozad" data-src="<?php echo $helper->cdn_cover_image( $relpage->thumbCoverImage(),60,60); ?>" />
 					</div>
 					<?php endif ?>
 					<div class="rel-item__title">
