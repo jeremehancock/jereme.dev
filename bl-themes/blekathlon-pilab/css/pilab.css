@@ -180,11 +180,12 @@ pre {
 
 .rel-item {
     background-color: #F5F5F5;
+    width: 350px;
 }
 
 .rel-item__title {
-    font-size: 22px;
-    height: 140px;
+    font-size: 21px;
+    height: 170px;
 }
 
 .rel-item:before {
