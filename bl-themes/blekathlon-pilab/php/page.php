@@ -53,12 +53,8 @@
 
 			<footer class="entry-footer clear">
 				<div class="share-buttons">
-                    <div class="a2a_kit a2a_kit_size_48 a2a_default_style" style="float:right; isolation: isolate;">
-                        <!--<a class="a2a_button_facebook"></a>-->
-                        <a class="a2a_button_twitter"></a>
-                        <a class="a2a_button_reddit"></a>
-                    </div>
-                    <script src="https://static.addtoany.com/menu/page.js"></script>
+                    <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=5e8909dff35dc9001954b8a5&product=inline-share-buttons" async="async"></script>
+                    <div class="sharethis-inline-share-buttons"></div>
 				</div>
 				<?php if ($page->category()): ?>
 				<div class="entry-terms-wrapper entry-categories-wrapper clear">

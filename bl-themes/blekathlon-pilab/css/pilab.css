@@ -315,7 +315,7 @@ div.table-wrapper {
   width: 100%;
   overflow-y: auto;
 }
- 
+
 table {
   width: 100%;
 }
@@ -331,7 +331,7 @@ table thead tr th {
 
 table td {
   padding-left:10px !important;
-} 
+}
 
 .table-border {
     border-radius: .5em;
@@ -460,7 +460,7 @@ pre {
     .body-padding {
         margin-top: 12px;
     }
-    
+
     .darkmode--activated .entry-header-bg {
         border-bottom: 1px solid #333 !important;
     }
