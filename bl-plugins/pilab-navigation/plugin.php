@@ -106,7 +106,7 @@ class pluginPiLabNavigation extends Plugin {
 			foreach ($publishedPages as $pageKey) {
 				try {
 					$page = new Page($pageKey);
-					$html .= '<li>';
+					$html .= '<li style="margin-bottom: 8px;">';
 					$html .= '<a href="' . $page->permalink(FALSE) . '"><img style="width: 35px;height:auto;margin-right:7px;vertical-align: middle;" src="' . $page->coverImage() .'" />' . $page->title() . '</a>';
                     $html .= '</li>';
 				} catch (Exception $e) {
