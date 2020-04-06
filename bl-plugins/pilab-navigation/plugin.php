@@ -79,7 +79,7 @@ class pluginPiLabNavigation extends Plugin {
 			$parents = buildParentPages();
 			foreach ($parents as $parent) {
 				$html .= '<li class="parent">';
-				$html .= '<a href="' . $parent->permalink() . '">' . $parent->title() . '</a>';
+				$html .= '<a href="' . $parent->permalink(FALSE) . '">' . $parent->title() . '</a>';
 
 				if ($parent->hasChildren()) {
 					// Get children
@@ -87,7 +87,7 @@ class pluginPiLabNavigation extends Plugin {
 					$html .= '<ul class="child">';
 					foreach ($children as $child) {
 						$html .= '<li class="child">';
-						$html .= '<a class="child" href="' . $child->permalink() . '">' . $child->title() . '</a>';
+						$html .= '<a class="child" href="' . $child->permalink(FALSE) . '">' . $child->title() . '</a>';
 						$html .= '</li>';
 					}
 					$html .= '</ul>';
@@ -107,7 +107,7 @@ class pluginPiLabNavigation extends Plugin {
 				try {
 					$page = new Page($pageKey);
 					$html .= '<li>';
-					$html .= '<a href="' . $page->permalink() . '"><img style="width: 35px;height:auto;margin-right:7px;vertical-align: middle;" src="' . $page->coverImage() .'" />' . $page->title() . '</a>';
+					$html .= '<a href="' . $page->permalink(FALSE) . '"><img style="width: 35px;height:auto;margin-right:7px;vertical-align: middle;" src="' . $page->coverImage() .'" />' . $page->title() . '</a>';
                     $html .= '</li>';
 				} catch (Exception $e) {
 					// Continue
