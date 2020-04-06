@@ -20,7 +20,7 @@
 
     <?php include(THEME_DIR_PHP.'footer.php'); ?>
 
-    <?php echo Theme::javascript('js/bundle.min.js'); ?>
+    <?php echo Theme::javascript('js/bundle.min.js', HTML_PATH_THEME); ?>
 
     <script>
         const observer = lozad(); // lazy loads elements with default selector as '.lozad'
