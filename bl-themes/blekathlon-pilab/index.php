@@ -2,7 +2,7 @@
 <html>
 <head>
     <?php include(THEME_DIR_PHP.'head.php'); ?>
-    <script src="../bl-themes/blekathlon-pilab/js/lozad.min.js"></script>
+    <?php echo Theme::javascript('js/lozad.min.js', HTML_PATH_THEME, null); ?>
 </head>
 <body>
 	<?php Theme::plugins('siteBodyBegin'); ?>

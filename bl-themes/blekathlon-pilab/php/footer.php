@@ -11,7 +11,7 @@
             </label>
         </div>
         <div class="backer">
-            <a href="https://www.patreon.com/bludit">Bludit Backer <img data-src="../bl-themes/blekathlon-pilab/img/patreon.png" class="backer-logo lozad"/></a>
+            <a href="https://www.patreon.com/bludit">Bludit Backer <img data-src="<?php echo HTML_PATH_THEME; ?>img/patreon.png" class="backer-logo lozad"/></a>
         </div>
     </div>
 </footer>
@@ -19,7 +19,7 @@
 	var uploadsFolder = '<?php echo HTML_PATH_UPLOADS; ?>', siteRoot = '<?php echo rtrim($site->url(), '/') . '/'; //site url with trailing slash ?>';
 </script>
 
-<script src="../bl-themes/blekathlon-pilab/js/darkmode-js.min.js"></script>
+<?php echo Theme::javascript('js/darkmode-js.min.js', HTML_PATH_THEME, null); ?>
 
 <script>
 const darkmode =  new Darkmode();
