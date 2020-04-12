@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <atom:link href="https://pilab.dev/zerotv/rss.xml" rel="self" type="application/rss+xml"/>
+    <title>Zero TV</title>
+    <link>https://pilab.dev/zerotv</link>
+    <description>Zero TV</description>
+    <lastBuildDate>Sun, 12 Apr 2020 08:15:58 -0500</lastBuildDate>
+    <item>
+      <title>24/7 Retro</title>
+      <link>https://pilab.dev/zerotv/24-7-retro</link>
+      <description/>
+      <pubDate>Fri, 10 Apr 2020 12:09:42 -0500</pubDate>
+      <guid isPermaLink="false">c2da8d5f2610a3ab840c061165f26e90</guid>
+    </item>
+    <item>
+      <title>Buzzr</title>
+      <link>https://pilab.dev/zerotv/buzzr</link>
+      <description/>
+      <pubDate>Fri, 10 Apr 2020 12:10:09 -0500</pubDate>
+      <guid isPermaLink="false">e80f7b12ea0f5d924ecc1e123a8b2668</guid>
+    </item>
+    <item>
+      <title>About</title>
+      <link>https://pilab.dev/zerotv/about</link>
+      <description>&lt;p&gt;About goes here...&lt;/p&gt;</description>
+      <pubDate>Fri, 10 Apr 2020 21:42:22 -0500</pubDate>
+      <guid isPermaLink="false">a223a67607aeab876ccba01cc9556e08</guid>
+    </item>
+    <item>
+      <title>Cheddar News</title>
+      <link>https://pilab.dev/zerotv/cheddar-news</link>
+      <description/>
+      <pubDate>Fri, 10 Apr 2020 23:12:37 -0500</pubDate>
+      <guid isPermaLink="false">10dbf4c24893ff02b3c4002f82e954c9</guid>
+    </item>
+    <item>
+      <title>Dove</title>
+      <link>https://pilab.dev/zerotv/dove</link>
+      <description/>
+      <pubDate>Fri, 10 Apr 2020 23:13:22 -0500</pubDate>
+      <guid isPermaLink="false">af1d9a38e2eda3b1f27eb666decc1cd2</guid>
+    </item>
+  </channel>
+</rss>
