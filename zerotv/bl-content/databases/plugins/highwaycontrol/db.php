@@ -1,2 +1,0 @@
-<?php defined('BLUDIT') or die('Bludit CMS.'); ?>
-{"categories_section_visible":"","categories_feed_amount":"","thumbnails_pattern":"s s s s s s s s","footer_section_visible":"","footer_section_title1":"","footer_section1":"","footer_section_title2":"","footer_section2":"","footer_section_title3":"","footer_section3":"","position":1}
