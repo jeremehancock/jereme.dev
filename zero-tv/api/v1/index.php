@@ -14,7 +14,7 @@ if (isset($id)) {
         $channel = "24/7 Retro";
         $channel_id = $id;
         $url = "https://www.247retro.com/";
-        $poster = "https://pilab.dev/zerotv/api/v1/assets/posters/$channel_id.png";
+        $poster = "https://pilab.dev/zero-tv/api/v1/assets/posters/$channel_id.png";
         $source = file_get_contents_curl($url);
         $stream = str_replace("http", "https", extract_unit($source, "src:  \"", "\""));
     }
@@ -373,7 +373,7 @@ if (isset($id)) {
         $channel = "24/7 Retro";
         $channel_id = "24-7-retro";
         $url = "https://www.247retro.com/";
-        $poster = "https://pilab.dev/zerotv/api/v1/posters/$channel_id.png";
+        $poster = "https://pilab.dev/zero-tv/api/v1/posters/$channel_id.png";
         $source = file_get_contents_curl($url);
         $stream = str_replace("http", "https", extract_unit($source, "src:  \"", "\""));
     }

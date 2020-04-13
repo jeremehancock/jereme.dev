@@ -10,10 +10,10 @@
         $image_only = $_GET["image-only"];
 
         if (isset($id)) {
-            $api = file_get_contents_curl("https://pilab.dev/zerotv/api/v1?id=$id");
+            $api = file_get_contents_curl("https://pilab.dev/zero-tv/api/v1?id=$id");
         }
         else {
-            $api = file_get_contents_curl("https://pilab.dev/zerotv/api/v1?id=24-7-retro");
+            $api = file_get_contents_curl("https://pilab.dev/zero-tv/api/v1?id=24-7-retro");
         }
 
         $response = json_decode($api);
