@@ -391,9 +391,9 @@ else {
 
     echo '{"available_ids": [';
     foreach ($channels as $value) {
-        $items .= '{"Channel": "'.$value.'", "API-URL": "https://'.$_SERVER["HTTP_HOST"].''.$_SERVER["REQUEST_URI"].'?id='.$value.'"
-        , "Player-URL": "https://'.$_SERVER["HTTP_HOST"].''.$_SERVER["REQUEST_URI"].'player?id='.$value.'"
-        , "Poster-URL": "https://'.$_SERVER["HTTP_HOST"].''.$_SERVER["REQUEST_URI"].'player?id='.$value.'&image-only"},';
+        $items .= '{"Channel": "'.$value.'", "API-URL": "https://pilab.dev/'.$_SERVER["REQUEST_URI"].'?id='.$value.'"
+        , "Player-URL": "https://pilab.dev/'.$_SERVER["REQUEST_URI"].'player?id='.$value.'"
+        , "Poster-URL": "https://pilab.dev/'.$_SERVER["REQUEST_URI"].'player?id='.$value.'&image-only"},';
     }
 
     echo substr_replace($items, "", -1);
