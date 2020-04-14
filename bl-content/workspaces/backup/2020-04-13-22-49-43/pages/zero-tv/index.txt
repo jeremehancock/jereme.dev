@@ -6,7 +6,7 @@ I have been working on my [Kodi addons](check-out-my-kodi-addons) for a number o
 
 My [Free Live TV](free-live-tv) addon has been one of my favorites to work on. I have been thinking about creating a web based version for quite some time. I have decided it would make a great addition to Pi Lab.
 
-Zero TV is running on a Rasberry Pi Zero! See full specs [here](welcome-to-pi-lab).
+Zero TV is running on a Raspberry Pi Zero! See full specs [here](welcome-to-pi-lab).
 
 The site uses [Bludit](https://www.bludit.com/) and a customized version of the [Highway](https://jellyio.com/shop/bludit/highway) theme from [Jellyio](https://jellyio.com). All content is pulled from freely available legal sources online.
 

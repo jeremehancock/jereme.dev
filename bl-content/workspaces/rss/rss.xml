@@ -5,7 +5,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Mon, 13 Apr 2020 22:47:40 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 13 Apr 2020 22:49:38 -0500</lastBuildDate>
     <item>
       <title>Zero TV</title>
       <link>https://pilab.dev/zero-tv</link>
@@ -14,7 +14,7 @@
 &lt;/div&gt;
 &lt;p&gt;I have been working on my &lt;a href="check-out-my-kodi-addons"&gt;Kodi addons&lt;/a&gt; for a number of years now.&lt;/p&gt;
 &lt;p&gt;My &lt;a href="free-live-tv"&gt;Free Live TV&lt;/a&gt; addon has been one of my favorites to work on. I have been thinking about creating a web based version for quite some time. I have decided it would make a great addition to Pi Lab.&lt;/p&gt;
-&lt;p&gt;Zero TV is running on a Rasberry Pi Zero! See full specs &lt;a href="welcome-to-pi-lab"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Zero TV is running on a Raspberry Pi Zero! See full specs &lt;a href="welcome-to-pi-lab"&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The site uses &lt;a href="https://www.bludit.com/"&gt;Bludit&lt;/a&gt; and a customized version of the &lt;a href="https://jellyio.com/shop/bludit/highway"&gt;Highway&lt;/a&gt; theme from &lt;a href="https://jellyio.com"&gt;Jellyio&lt;/a&gt;. All content is pulled from freely available legal sources online.&lt;/p&gt;
 &lt;h3&gt;Check it out at &lt;a href="https://zerotv.pilab.dev"&gt;zerotv.pilab.dev&lt;/a&gt;!&lt;/h3&gt;</description>
       <pubDate>Mon, 13 Apr 2020 22:11:59 -0500</pubDate>
