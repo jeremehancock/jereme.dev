@@ -5,7 +5,21 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Fri, 03 Apr 2020 23:28:11 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 13 Apr 2020 22:47:40 -0500</lastBuildDate>
+    <item>
+      <title>Zero TV</title>
+      <link>https://pilab.dev/zero-tv</link>
+      <description>&lt;div class="centered"&gt;
+    &lt;img src="/bl-content/uploads/pages/e5cc099cec19476d9ea5bc92a4f113ae/zerotv-large.png" class="image-border" /&gt;&lt;br&gt;&lt;br&gt;
+&lt;/div&gt;
+&lt;p&gt;I have been working on my &lt;a href="check-out-my-kodi-addons"&gt;Kodi addons&lt;/a&gt; for a number of years now.&lt;/p&gt;
+&lt;p&gt;My &lt;a href="free-live-tv"&gt;Free Live TV&lt;/a&gt; addon has been one of my favorites to work on. I have been thinking about creating a web based version for quite some time. I have decided it would make a great addition to Pi Lab.&lt;/p&gt;
+&lt;p&gt;Zero TV is running on a Rasberry Pi Zero! See full specs &lt;a href="welcome-to-pi-lab"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The site uses &lt;a href="https://www.bludit.com/"&gt;Bludit&lt;/a&gt; and a customized version of the &lt;a href="https://jellyio.com/shop/bludit/highway"&gt;Highway&lt;/a&gt; theme from &lt;a href="https://jellyio.com"&gt;Jellyio&lt;/a&gt;. All content is pulled from freely available legal sources online.&lt;/p&gt;
+&lt;h3&gt;Check it out at &lt;a href="https://zerotv.pilab.dev"&gt;zerotv.pilab.dev&lt;/a&gt;!&lt;/h3&gt;</description>
+      <pubDate>Mon, 13 Apr 2020 22:11:59 -0500</pubDate>
+      <guid isPermaLink="false">e5cc099cec19476d9ea5bc92a4f113ae</guid>
+    </item>
     <item>
       <title>404 Not Found</title>
       <link>https://pilab.dev/404</link>
@@ -58,24 +72,6 @@
 &lt;a href="https://github.com/vlaine/Weather-Forecast-Dashboard"&gt;&lt;img data-src="/images/check-it-out-on-github.png" alt="Get it on GitHub" class="on-github lozad" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
       <pubDate>Wed, 29 Jan 2020 21:56:59 -0600</pubDate>
       <guid isPermaLink="false">b9abbd96c3524243ca17d09abdeaddf9</guid>
-    </item>
-    <item>
-      <title>Pi Dashboard</title>
-      <link>https://pilab.dev/pi-dashboard-ui</link>
-      <description>&lt;div class="centered"&gt;
-    &lt;img src="/bl-content/uploads/pages/519ce125498e432461bb1b7403f15f28/pi-dashboard-medium-narrow-compressed.png" class="image-border" /&gt;&lt;br&gt;&lt;br&gt;
-&lt;/div&gt;
-&lt;p&gt;If you are looking for an easy way to display your Raspberry Pi's metrics in real time look no further. &lt;/p&gt;
-&lt;p&gt;The installation couldn't be simpler. If you already have a webserver and PHP configured on your Raspberry Pi you simply have to put the files in a sub-directory of your website and it just works!&lt;/p&gt;
-&lt;p&gt;I have installed it on the 5 production nodes of Pi Lab. Check it out here: &lt;a href="https://pilab.dev/Node-1" target="_blank"&gt;pilab.dev/Node-1&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;The project is available on GitHub and is definitely worth a look.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;&lt;strong&gt;Update&lt;/strong&gt;: I have updated the Node Name in the footer of Pi Lab to link to the Pi Dashboard that has been setup for each node.&lt;/em&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;br&gt;
-&lt;a href="https://github.com/YuanGao-NAU/Pi-Utility"&gt;&lt;img data-src="/images/check-it-out-on-github.png" alt="Get it on GitHub" class="on-github lozad" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
-      <pubDate>Fri, 10 Jan 2020 21:37:56 -0600</pubDate>
-      <guid isPermaLink="false">519ce125498e432461bb1b7403f15f28</guid>
     </item>
   </channel>
 </rss>

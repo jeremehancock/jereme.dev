@@ -17,48 +17,56 @@
 				* [Samsung EVO Plus 32GB SD Cards](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
     *    2 Raspberry Pi 4 4GB Model Bs 
 						* [Samsung EVO Plus 32GB SD Cards](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
-*    **Operating System:** [Raspbian](https://www.raspbian.org/)
-*    **Webserver/Load Balancer:** [Nginx](https://nginx.org/)
-*    **SSL:** [Let's Encrypt](https://letsencrypt.org/)
+*   **Operating System:** [Raspbian](https://www.raspbian.org/)
+*   **Webserver/Load Balancer:** [Nginx](https://nginx.org/)
+*   **SSL:** [Let's Encrypt](https://letsencrypt.org/)
 *   **CMS:** [Bludit - v3.12.0 PRO](https://www.bludit.com/)
-*    **Theme:** [Blekathlon](https://blthemes.pp.ua/) - Customized
-*    **Plugins:** [Pi Lab Plugins](plugins)
-*    **Network** 
+*   **Theme:** [Blekathlon](https://blthemes.pp.ua/) - Customized
+*   **Plugins:** [Pi Lab Plugins](plugins)
+*   **Network** 
     *    [Tenda 8-Port Gigabit Ethernet Desktop Switch SG108](https://www.amazon.com/gp/product/B01M9FJ2R2)
     *    [Netgear ProSAFE GS105](https://www.netgear.com/support/product/GS105v5)
     *    [Linksys WRT1900AC AC1900 Dual-Band Wi-Fi Router (Bridge Mode)](https://www.linksys.com/ca/p/P-WRT1900AC/)
 *   **Live Stream:** [AT&T Sercomm OC432](https://forums.att.com/conversations/device-troubleshooting/repurposing-digital-life-camera/5deff480bad5f2f6065cc3e0?commentId=5df01789bad5f2f606b01161)
-*    **Power:**
+*   **Power:**
 		*    [CyberPower EC850LCD](https://www.cyberpowersystems.com/product/ups/ec850lcd/)
 		*    [Anker 60W 10-Port USB Wall Charger](https://www.amazon.com/dp/B00YRYS4T4)
 *    **Cooling:** [AC Infinity MULTIFAN S4](https://www.amazon.com/gp/product/B00MWH4FL4)
 * [More Details](pi-lab-setup)
 --- 
 
+## Zero TV:
+
+*  **Production Node**
+    *    1 Raspberry Pi Zero W
+				* [Samsung EVO Plus 32GB SD Card](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
+	* [USB-A Add-on Board](https://www.amazon.com/gp/product/B07DBL3WYQ)
+	* [Onn Universal Wall Charger](https://www.walmart.com/ip/Onn-Universal-Wall-Charger-Black/620837164)
+*   **CMS:** [Bludit - v3.12.0](https://www.bludit.com/)
+*   **Theme:** [Highway](https://jellyio.com/shop/bludit/highway) - Customized
+* [More Details](zero-tv)
+--- 
+
 ## Pi Lab Misc:
 
 *  **Monitoring/Metrics Node**
-    *    1 Raspberry Pi 2 Model B
+	*  1 Raspberry Pi 2 Model B
 				* [Node Exporter](https://github.com/prometheus/node_exporter) - Expose Linux metrics (v0.18.1)
 				* [RPi Exporter](https://github.com/lukasmalkmus/rpi_exporter) - Expose Raspberry Pi metrics (v0.6.0)
 				* [Prometheus](https://prometheus.io/) - Collect and store metrics (v2.17.1)
 				* [Grafana](https://grafana.com/) - Metrics visualization (v6.7.1)
 				* [Samsung EVO Plus 32GB SD Card](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
-	* [More Details](prometheus-grafana)
-*  **Testing Node**
-    *    1 Raspberry Pi Zero W
-				* [Samsung EVO Plus 32GB SD Card](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
-	* [USB-A Add-on Board](https://www.amazon.com/gp/product/B07DBL3WYQ)
-	* [Onn Universal Wall Charger](https://www.walmart.com/ip/Onn-Universal-Wall-Charger-Black/620837164)
-	* [More Details](pi-zero-wall-plug-web-server)
+				* [More Details](prometheus-grafana)		
 *   **BOINC Node**
-    *    1 Raspberry Pi Model B (256MB)
+    *  1 Raspberry Pi Model B (256MB)
 				* 8GB generic SD card
-	* [More Details](pi-lab-seti-home-node)
+				* [More Details](pi-lab-seti-home-node)
 *   **Pi-hole/OpenVPN Node**
     *   1 Raspberry Pi 3 Model B
 				* [Samsung EVO Plus 32GB SD Card](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
-	* [More Details](pi-hole-is-amazing)
+				* [More Details](pi-hole-is-amazing)
+				
+				
 <style>
 	.page-content, .entry-header, .entry-content {
     max-width: 740px;
