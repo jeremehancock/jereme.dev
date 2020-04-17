@@ -40,8 +40,7 @@
 *  **Production Node**
     *    1 Raspberry Pi Zero W
 				* [Samsung EVO Plus 32GB SD Card](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
-	* [USB-A Add-on Board](https://www.amazon.com/gp/product/B07DBL3WYQ)
-	* [Onn Universal Wall Charger](https://www.walmart.com/ip/Onn-Universal-Wall-Charger-Black/620837164)
+				* [Vilros Raspberry Pi Zero W Basic Starter Kit- Black Case Edition](https://www.amazon.com/gp/product/B0748MPQT4/)
 *   **CMS:** [Bludit - v3.12.0](https://www.bludit.com/)
 *   **Theme:** [Highway](https://jellyio.com/shop/bludit/highway) - Customized
 * [More Details](zero-tv)
@@ -56,7 +55,13 @@
 				* [Prometheus](https://prometheus.io/) - Collect and store metrics (v2.17.1)
 				* [Grafana](https://grafana.com/) - Metrics visualization (v6.7.1)
 				* [Samsung EVO Plus 32GB SD Card](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
-				* [More Details](prometheus-grafana)		
+				* [More Details](prometheus-grafana)
+*   **Test Node**
+    *   1 Raspberry Pi Zero W
+				* [Samsung EVO Plus 32GB SD Card](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
+				* [USB-A Add-on Board](https://www.amazon.com/gp/product/B07DBL3WYQ)
+				* [Onn Universal Wall Charger](https://www.walmart.com/ip/Onn-Universal-Wall-Charger-Black/620837164)
+				* [More Details](pi-zero-wall-plug-web-server)	
 *   **BOINC Node**
     *  1 Raspberry Pi Model B (256MB)
 				* 8GB generic SD card
