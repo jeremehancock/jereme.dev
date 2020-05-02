@@ -5,8 +5,8 @@
 <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700|Roboto:400,400i,700&display=swap" rel="stylesheet" />
 </head>
 <body>
-<div class="table-border1"	>
-<div class="table-wrapper" style="height: 100%">
+<div class="table-border">
+<div class="table-wrapper">
 <table>
     <thead>
     <tr>
