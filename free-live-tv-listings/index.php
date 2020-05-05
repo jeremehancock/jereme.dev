@@ -11,7 +11,7 @@
     <thead>
     <tr>
         <th>Channel</th>
-        <th>Genre</th>
+        <th>Watch</th>
     </tr>
     </thead>
     <tbody>
@@ -43,9 +43,10 @@ $api = "https://m7lib.dev/api/v1/channels/";
 $json = get_json($api);
 
 foreach ($json as $key => $values) {
+    $player = $values[endpoints][player];
 	echo '<tr>';
 	echo "<td>$values[name]</td>";
-	echo "<td>$values[genre]</td>";
+	echo "<td><a href=\"$player\">Watch Now</a></td>";
 	echo '</tr>';
 }
 	
