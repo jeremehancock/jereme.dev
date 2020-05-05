@@ -1,5 +1,5 @@
 <div class="centered">
-    <img src="/bl-content/uploads/pages/e5cc099cec19476d9ea5bc92a4f113ae/zerotv-large.png" class="image-border" /><br><br>
+    <img src="/bl-content/uploads/pages/e5cc099cec19476d9ea5bc92a4f113ae/zerotv-large-new.png" class="image-border" /><br><br>
 </div>
 
 I have been working on my [Kodi addons](check-out-my-kodi-addons) for a number of years now.
