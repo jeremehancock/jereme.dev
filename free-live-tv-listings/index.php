@@ -38,7 +38,7 @@ $json = get_json($api);
     <tr>
         <th>Channel</th>
         <th></th>
-        <th>Total Channels: <?php echo count($json); ?></th>
+        <th>Total: <?php echo count($json); ?></th>
     </tr>
     </thead>
     <tbody>
