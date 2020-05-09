@@ -49,7 +49,7 @@ foreach ($json as $key => $values) {
 	echo '<tr>';
 	echo "<td>$values[name]</td>";
 	echo "<td></td>";
-	echo "<td><a href=\"$player\">Watch Now</a></td>";
+	echo "<td><a href=\"$player&back-button=true\">Watch Now</a></td>";
 	echo '</tr>';
 }
 	
