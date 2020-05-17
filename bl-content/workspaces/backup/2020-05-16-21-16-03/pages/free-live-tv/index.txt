@@ -5,7 +5,7 @@ My Free Live TV addon for [ Kodi](https://kodi.tv/) has something for everyone. 
 ## Current Channel Lineup:
 
 <div class="centered">
-<iframe src='free-live-tv-listings' width='100%' height='500' frameBorder='0' id='random-goat-embed' class="iframe-border" allowFullScreen></iframe>
+<iframe src='free-live-tv-listings' width='100%' height='500' frameBorder='0' id='free-live-tv-embed' class="iframe-border" allowFullScreen></iframe>
 </div>
 																																																	 																																														 
 ### Check it out at [m7kodi.dev](https://m7kodi.dev/)!
