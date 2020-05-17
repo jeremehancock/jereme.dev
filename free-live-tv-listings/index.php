@@ -28,7 +28,7 @@ function get_json($url) {
     return json_decode($source, true);
 }
 
-$api = "https://m7lib.dev/api/v1/channels/";
+$api = "https://m7lib.dev/api/v1/json/";
 $json = get_json($api);
 ?>
 <div class="table-border">
@@ -44,10 +44,10 @@ $json = get_json($api);
     <tbody>
 <?php
 
-foreach ($json as $key => $values) {
-    $player = $values[endpoints][player];
+foreach ($json as $key => $value) {
+    $player = $value[endpoints][player];
 	echo '<tr>';
-	echo "<td>$values[name]</td>";
+	echo "<td>$value[name]</td>";
 	echo "<td></td>";
 	echo "<td><a href=\"$player&back-button=true\">Watch Now</a></td>";
 	echo '</tr>';
