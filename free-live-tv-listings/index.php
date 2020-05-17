@@ -28,7 +28,7 @@ function get_json($url) {
     return json_decode($source, true);
 }
 
-$api = "https://m7lib.dev/api/v1/json/";
+$api = "https://m7lib.dev/api/v1/channels/index.json";
 $json = get_json($api);
 ?>
 <div class="table-border">
@@ -45,7 +45,7 @@ $json = get_json($api);
 <?php
 
 foreach ($json as $key => $value) {
-    $player = $value[endpoints][player];
+    $player = "https://m7lib.dev/api/v1/channels/player/?slug=$value[slug]";
 	echo '<tr>';
 	echo "<td>$value[name]</td>";
 	echo "<td></td>";
