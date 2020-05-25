@@ -28,7 +28,8 @@ function get_json($url) {
     return json_decode($source, true);
 }
 
-$api = "https://m7lib.dev/api/v1/channels/index.json";
+//$api = "https://m7lib.dev/api/v1/channels/index.json";
+$api = "https://m7lib.dev/api/v1/channels?token=WeinerWhistle";
 $json = get_json($api);
 ?>
 <div class="table-border">
