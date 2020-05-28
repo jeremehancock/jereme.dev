@@ -44,7 +44,7 @@ $json = get_json($api);
     </thead>
     <tbody>
 <?php
-
+sort($json);
 foreach ($json as $key => $value) {
     $player = "https://m7lib.dev/api/v1/channels/player/?slug=$value[slug]";
 	echo '<tr>';
