@@ -1,3 +1,7 @@
+img:not([src]) {
+  visibility: hidden;
+}
+
 .darkmode--activated .dark-enabled {
     filter: invert(100%);
 }
