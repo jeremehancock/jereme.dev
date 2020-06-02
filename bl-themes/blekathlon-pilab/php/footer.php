@@ -19,6 +19,13 @@
 	var uploadsFolder = '<?php echo HTML_PATH_UPLOADS; ?>', siteRoot = '<?php echo rtrim($site->url(), '/') . '/'; //site url with trailing slash ?>';
 </script>
 
+<?php echo Theme::jquery(); ?>
+
+<?php echo Theme::css('css/style.min.css', HTML_PATH_THEME); ?>
+<?php echo Theme::css('css/pilab.css', HTML_PATH_THEME); ?>
+
+<link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700|Roboto:400,400i,700&display=swap" rel="stylesheet" />
+
 <?php echo Theme::javascript('js/darkmode-js.min.js', HTML_PATH_THEME, null); ?>
 
 <script>
