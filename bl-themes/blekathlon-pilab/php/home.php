@@ -17,7 +17,7 @@
 		<?php foreach ($content as $page): ?>
 		<article class="home-page hentry hentry-border">
 			<?php $coverImage = $helper->get_thumb();?>
-			<div class="entry-header-bg" <?php if(!empty($coverImage)) echo "style=\"background-image:url(".$coverImage .")\""?>>
+			<div class="entry-header-bg lozad" <?php if(!empty($coverImage)) echo "data-background-image=\"$coverImage\""?>>
 				<a class="entry-header-bg-link" href="<?php echo $page->permalink(FALSE) ?>" rel="bookmark">
 					<?php if(empty($coverImage)):?>
 					<svg class="icon icon-pencil" aria-hidden="true" role="img">
