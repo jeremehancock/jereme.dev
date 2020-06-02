@@ -7,6 +7,10 @@
 
 <?php echo Theme::favicon('img/favicon.ico', HTML_PATH_THEME); ?>
 
+<?php echo Theme::jquery(); ?>
 
+<?php echo Theme::css('css/style.min.css', HTML_PATH_THEME); ?>
+<?php echo Theme::css('css/pilab.css', HTML_PATH_THEME); ?>
 <?php Theme::plugins('siteHead'); ?>
 
+<link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700|Roboto:400,400i,700&display=swap" rel="stylesheet" />
