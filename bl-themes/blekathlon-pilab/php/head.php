@@ -7,7 +7,7 @@
 
 <?php echo Theme::favicon('img/favicon.ico', HTML_PATH_THEME); ?>
 
-<!--<?php echo Theme::jquery(); ?>-->
+<?php echo Theme::jquery(); ?>
 
 <?php echo Theme::css('css/style.min.css', HTML_PATH_THEME); ?>
 <?php echo Theme::css('css/pilab.css', HTML_PATH_THEME); ?>
