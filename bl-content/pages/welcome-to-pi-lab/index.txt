@@ -13,7 +13,7 @@
     *    1 Raspberry Pi 2 Model B
 				* [Samsung EVO Plus 32GB SD Card](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
 *  **Prod Nodes**
-    *    2 Raspberry Pi 2 Model B
+    *    2 Raspberry Pi 2 Model Bs
 				* [Samsung EVO Plus 32GB SD Cards](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
     *    2 Raspberry Pi 4 4GB Model Bs 
 						* [Samsung EVO Plus 32GB SD Cards](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
@@ -24,11 +24,12 @@
 *   **Theme:** [Blekathlon](https://blthemes.pp.ua/) - Customized
 *   **Plugins:** [Pi Lab Plugins](plugins)
 *   **Network** 
-    *    [TP-Link 16 Port Gigabit Ethernet Network Switch (TL-SG116)](https://www.amazon.com/gp/product/B07GR9S6FN)
+    * [Google WiFi Mesh 4 Pack](https://www.amazon.com/gp/product/B07H7RQHF7)
+    * [TP-Link 16 Port Gigabit Ethernet Network Switch (TL-SG116)](https://www.amazon.com/gp/product/B07GR9S6FN)
 *   **Live Stream:** [AT&T Sercomm OC432](https://forums.att.com/conversations/device-troubleshooting/repurposing-digital-life-camera/5deff480bad5f2f6065cc3e0?commentId=5df01789bad5f2f606b01161)
 *   **Power:**
-		*    [CyberPower EC850LCD](https://www.cyberpowersystems.com/product/ups/ec850lcd/)
-		*    [Anker 60W 10-Port USB Wall Charger](https://www.amazon.com/dp/B00YRYS4T4)
+		* [CyberPower EC850LCD](https://www.cyberpowersystems.com/product/ups/ec850lcd/)
+		* [Anker 60W 10-Port USB Wall Charger](https://www.amazon.com/dp/B00YRYS4T4)
 *    **Cooling:** [AC Infinity MULTIFAN S4](https://www.amazon.com/gp/product/B00MWH4FL4)
 * [More Details](pi-lab-setup)
 --- 
