@@ -15,7 +15,7 @@
 </div>
 
 *Pi Lab is a collection of Raspberry Pis used for various purposes including hosting this blog. *
-
+	
 ## Pi Lab Web Cluster:
 
 *   **Load Balancer**
@@ -81,11 +81,10 @@
 *   **Pi-hole/OpenVPN Node**
     *   1 Raspberry Pi 3 Model B
 				* [Samsung EVO Plus 32GB SD Card](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
-				* [More Details](pi-hole-is-amazing)
-				
+				* [More Details](pi-hole-is-amazing)			
 				
 <style>
 	.page-content, .entry-header, .entry-content {
-    max-width: 740px;
+    //max-width: 740px;
 }
 </style>
