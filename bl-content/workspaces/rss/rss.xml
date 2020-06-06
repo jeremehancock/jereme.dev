@@ -5,7 +5,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Thu, 04 Jun 2020 17:10:33 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 06 Jun 2020 12:01:51 -0500</lastBuildDate>
     <item>
       <title>Zero TV</title>
       <link>https://pilab.dev/zero-tv</link>
@@ -51,7 +51,19 @@
       <link>https://pilab.dev/pi-lab-live-stream</link>
       <description>&lt;h3&gt;Checkout out the live stream of Pi Lab!&lt;/h3&gt;
 &lt;div class="centered"&gt;
-    &lt;img src="https://pilab.dev/live-stream/" class="image-border" style="margin-bottom:15px;"/&gt;
+    &lt;!--&lt;img src="https://pilab.dev/live-stream/" class="image-border" style="margin-bottom:15px;"/&gt;--&gt;
+        &lt;script&gt;
+            function startStream() {
+                setInterval(updateStream, 60 * 1000);
+            }
+
+            function updateStream() {
+                document.getElementById('liveStream').src='https://pilab.dev/live-stream?i=' + Math.floor(Math.random() * 1001);
+            }
+
+            startStream();
+&lt;/script&gt;
+    &lt;img id="liveStream" src="https://pilab.dev/live-stream" class="image-border" style="margin-bottom:15px;" /&gt;
 &lt;/div&gt;
 &lt;p&gt;This live stream is utilizing a re-purposed AT&amp;amp;T Digital Life security camera. There is really no practical purpose for this. I just thought it would be a fun way to use left over tech. I have also updated the &lt;a href="/welcome-to-pi-lab"&gt;Specs&lt;/a&gt; page to use this stream so that you can always see the latest state of Pi Lab.&lt;/p&gt;</description>
       <pubDate>Mon, 16 Mar 2020 16:24:40 -0500</pubDate>
