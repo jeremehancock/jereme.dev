@@ -1,16 +1,5 @@
 <div class="centered">
     <!--<img src="https://pilab.dev/live-stream/" class="image-border" style="margin-bottom:15px;"/>-->
-		<script>
-			function startStream() {
-				setInterval(updateStream, 60 * 1000);
-			}
-          
-			function updateStream() {
-				document.getElementById('liveStream').src='https://pilab.dev/live-stream?i=' + Math.floor(Math.random() * 1001);
-			}
-			
-			startStream();
-</script>
     <img id="liveStream" src="https://pilab.dev/live-stream" class="image-border" style="margin-bottom:15px;" />
 </div>
 
@@ -88,3 +77,15 @@
     //max-width: 740px;
 }
 </style>
+
+<script>
+			function startStream() {
+				setInterval(updateStream, 60 * 1000);
+			}
+          
+			function updateStream() {
+				document.getElementById('liveStream').src='https://pilab.dev/live-stream?i=' + Math.floor(Math.random() * 1001);
+			}
+			
+			startStream();
+</script>

@@ -5,7 +5,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Sat, 06 Jun 2020 12:34:21 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 08 Jun 2020 14:05:04 -0500</lastBuildDate>
     <item>
       <title>Zero TV</title>
       <link>https://pilab.dev/zero-tv</link>
@@ -52,7 +52,14 @@
       <description>&lt;h3&gt;Checkout out the live stream of Pi Lab!&lt;/h3&gt;
 &lt;div class="centered"&gt;
     &lt;!--&lt;img src="https://pilab.dev/live-stream/" class="image-border" style="margin-bottom:15px;"/&gt;--&gt;
-        &lt;script&gt;
+    &lt;img id="liveStream" src="https://pilab.dev/live-stream" class="image-border" style="margin-bottom:15px;" /&gt;
+&lt;/div&gt;
+&lt;p&gt;This live stream is utilizing a re-purposed AT&amp;amp;T Digital Life security camera. There is really no practical purpose for this. I just thought it would be a fun way to use left over tech. I have also updated the &lt;a href="/welcome-to-pi-lab"&gt;Specs&lt;/a&gt; page to use this stream so that you can always see the latest state of Pi Lab.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Update&lt;/strong&gt;: After a &lt;a href="https://www.reddit.com/r/raspberry_pi/comments/gwbqyq/the_latest_pi_lab_setup/?utm_source=share&amp;amp;utm_medium=web2x"&gt;Reddit post&lt;/a&gt; received a lot of attention I noticed that the Pi Lab Load Balancer Node was getting huge spikes in CPU usage. Eventually with help from a friend I was able to figure out that the issue was the Live Stream. The process of pushing the Live Stream through SSL was the issue. This also caused huge spikes in my network's bandwidth. &lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;I have updated the Pi Lab Live Stream to a snapshot model. So when the stream is loaded it is a JPEG at that moment in time. The snapshot is updated once a minute. This should reduce both CPU usage and network bandwidth while still providing a &amp;quot;stream&amp;quot; of the latest Pi Lab setup. &lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;script&gt;
             function startStream() {
                 setInterval(updateStream, 60 * 1000);
             }
@@ -62,14 +69,7 @@
             }
 
             startStream();
-&lt;/script&gt;
-    &lt;img id="liveStream" src="https://pilab.dev/live-stream" class="image-border" style="margin-bottom:15px;" /&gt;
-&lt;/div&gt;
-&lt;p&gt;This live stream is utilizing a re-purposed AT&amp;amp;T Digital Life security camera. There is really no practical purpose for this. I just thought it would be a fun way to use left over tech. I have also updated the &lt;a href="/welcome-to-pi-lab"&gt;Specs&lt;/a&gt; page to use this stream so that you can always see the latest state of Pi Lab.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;&lt;strong&gt;Update&lt;/strong&gt;: After a &lt;a href="https://www.reddit.com/r/raspberry_pi/comments/gwbqyq/the_latest_pi_lab_setup/?utm_source=share&amp;amp;utm_medium=web2x"&gt;Reddit post&lt;/a&gt; received a lot of attention I noticed that the Pi Lab Load Balancer Node was getting huge spikes in CPU usage. Eventually with help from a friend I was able to figure out that the issue was the Live Stream. The process of pushing the Live Stream through SSL was the issue. This also caused huge spikes in my network's bandwidth. &lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;I have updated the Pi Lab Live Stream to a snapshot model. So when the stream is loaded it is a JPEG at that moment in time. The snapshot is updated once a minute. This should reduce both CPU usage and network bandwidth while still providing a &amp;quot;stream&amp;quot; of the latest Pi Lab setup. &lt;/em&gt;&lt;/p&gt;
-&lt;/blockquote&gt;</description>
+&lt;/script&gt;</description>
       <pubDate>Mon, 16 Mar 2020 16:24:40 -0500</pubDate>
       <guid isPermaLink="false">f14bc4982bac069cdc5685de35ad1be4</guid>
     </item>
