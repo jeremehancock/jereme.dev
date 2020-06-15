@@ -64,9 +64,9 @@
 				* [GLCON Power Strip Tower](https://www.amazon.com/gp/product/B01G6PPTH6)
 				* [More Details](pi-zero-wall-plug-web-server)	
 *   **BOINC Node**
-    *  1 Raspberry Pi Model B (256MB)
-				* 8GB generic SD card
-				* [More Details](pi-lab-seti-home-node)
+    *  1 Raspberry Pi 4 4GB Model B
+				*  [Samsung EVO Plus 32GB SD Card](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
+				* [More Details](fold-for-covid)
 *   **Pi-hole/OpenVPN Node**
     *   1 Raspberry Pi 3 Model B
 				* [Samsung EVO Plus 32GB SD Card](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
