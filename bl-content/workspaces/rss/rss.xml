@@ -5,10 +5,10 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Sun, 14 Jun 2020 23:36:00 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 15 Jun 2020 07:10:22 -0500</lastBuildDate>
     <item>
-      <title>BOINC Node Upgrade</title>
-      <link>https://pilab.dev/boinc-node-upgrade</link>
+      <title>Fold For Covid</title>
+      <link>https://pilab.dev/fold-for-covid</link>
       <description>&lt;p&gt;I have upgraded the BOINC Node to a &lt;a href="https://deviwiki.com/wiki/RPF_Raspberry_Pi_4_Model_B_2GB"&gt;Raspberry Pi 4 Model B (2GB)&lt;/a&gt;. This is a nice upgrade from the old &lt;a href="https://deviwiki.com/wiki/RPF_Raspberry_Pi_Model_B_(256MB)"&gt;Raspberry Pi Model B (256MB)&lt;/a&gt; that I had previously been running.&lt;/p&gt;
 &lt;p&gt;I have kept &lt;a href="https://setiathome.berkeley.edu/"&gt;SETI@home&lt;/a&gt; setup just in case it starts sending out jobs again. However, the primary purpose of the BOINC node for now is to run &lt;a href="https://boinc.bakerlab.org/"&gt;Rosetta@home&lt;/a&gt; to help with COVID-19 research.&lt;/p&gt;
 &lt;p&gt;Checkout the Pi Lab BOINC Node at work &lt;a href="https://boinc.bakerlab.org/rosetta/show_host_detail.php?hostid=4617346"&gt;here&lt;/a&gt;. &lt;/p&gt;
@@ -40,6 +40,9 @@ sudo apt-get upgrade&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Attach the BOINC Client program to your &lt;a href="https://boinc.bakerlab.org/"&gt;Rosetta@home&lt;/a&gt; account&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;boinccmd --project_attach https://boinc.bakerlab.org/rosetta &amp;lt;your_account_key&amp;gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;h4&gt;That's it. You should now be up and running!&lt;/h4&gt;
+&lt;hr /&gt;
+&lt;p&gt;Consider joining the &lt;a href="https://boinc.bakerlab.org/rosetta/team_display.php?teamid=18832"&gt;Fold For Covid&lt;/a&gt; team.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Note:&lt;/em&gt;&lt;/strong&gt; &lt;em&gt;There is a simpler seetup available at &lt;a href="https://foldforcovid.io/#get-started"&gt;Fold For Covid&lt;/a&gt;. I decided to go with this setup since I am very familiar with Ubuntu.&lt;/em&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h3&gt;Do more with BOINC:&lt;/h3&gt;
 &lt;h4&gt;Check your tasks:&lt;/h4&gt;
