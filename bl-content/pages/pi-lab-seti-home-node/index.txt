@@ -72,4 +72,4 @@ boinccmd --read_cc_config
 
 > Sadly  [SETI@home](https://setiathome.berkeley.edu/) is now in hibernation. Read more [here](seti-home-hibernation).
 
-> I have retired the [Raspberry Pi Model B (256MB)](https://deviwiki.com/wiki/RPF_Raspberry_Pi_Model_B_(256MB)) that had been used as Pi Lab's BOINC node. I have replaced it with a [Raspberry Pi 4 Model B (2GB)](https://deviwiki.com/wiki/RPF_Raspberry_Pi_4_Model_B_2GB). It is still configured for [SETI@home](https://setiathome.berkeley.edu/) just in case, but is now primarily running  [Rosetta@home](https://boinc.bakerlab.org/) to help with COVID-19 research. Read more [here](boinc-node-upgrade).
+> I have retired the [Raspberry Pi Model B (256MB)](https://deviwiki.com/wiki/RPF_Raspberry_Pi_Model_B_(256MB)) that had been used as Pi Lab's BOINC node. I have replaced it with a [Raspberry Pi 4 Model B (2GB)](https://deviwiki.com/wiki/RPF_Raspberry_Pi_4_Model_B_2GB). It is still configured for [SETI@home](https://setiathome.berkeley.edu/) just in case, but is now primarily running  [Rosetta@home](https://boinc.bakerlab.org/) to help with COVID-19 research. Read more [here](fold-for-covid).

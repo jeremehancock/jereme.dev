@@ -5,7 +5,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Mon, 15 Jun 2020 07:10:22 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 15 Jun 2020 07:12:17 -0500</lastBuildDate>
     <item>
       <title>Fold For Covid</title>
       <link>https://pilab.dev/fold-for-covid</link>
@@ -96,7 +96,7 @@ sudo apt-get upgrade&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Pi Lab has had a &lt;a href="pi-lab-seti-home-node"&gt;SETI@home Node&lt;/a&gt; running since I started this project. I have decided to keep &lt;a href="https://setiathome.berkeley.edu/"&gt;SETI@home&lt;/a&gt; installed and available in case the project comes back online. &lt;/p&gt;
 &lt;p&gt;I have also updated the &lt;a href="pi-lab-seti-home-node"&gt;SETI@home Node&lt;/a&gt; to the BOINC Node so that the node is more obviously dedicated to &lt;a href="https://boinc.berkeley.edu/"&gt;BOINC&lt;/a&gt; projects.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;&lt;strong&gt;Update&lt;/strong&gt;: I have updated the BOINC Node to run &lt;a href="https://boinc.bakerlab.org/"&gt;Rosetta@home&lt;/a&gt; to help with COVID-19 research. Read more &lt;a href="boinc-node-upgrade"&gt;here&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Update&lt;/strong&gt;: I have updated the BOINC Node to run &lt;a href="https://boinc.bakerlab.org/"&gt;Rosetta@home&lt;/a&gt; to help with COVID-19 research. Read more &lt;a href="fold-for-covid"&gt;here&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;</description>
       <pubDate>Mon, 30 Mar 2020 17:13:38 -0500</pubDate>
       <guid isPermaLink="false">368d6e3f2b9f117cdf337cf85bccc288</guid>

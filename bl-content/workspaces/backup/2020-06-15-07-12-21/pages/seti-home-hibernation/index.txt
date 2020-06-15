@@ -15,4 +15,4 @@ Pi Lab has had a [SETI@home Node](pi-lab-seti-home-node) running since I started
 
 I have also updated the [SETI@home Node](pi-lab-seti-home-node) to the BOINC Node so that the node is more obviously dedicated to [BOINC](https://boinc.berkeley.edu/) projects.
 
-> ***Update**: I have updated the BOINC Node to run [Rosetta@home](https://boinc.bakerlab.org/) to help with COVID-19 research. Read more [here](boinc-node-upgrade).*
+> ***Update**: I have updated the BOINC Node to run [Rosetta@home](https://boinc.bakerlab.org/) to help with COVID-19 research. Read more [here](fold-for-covid).*
