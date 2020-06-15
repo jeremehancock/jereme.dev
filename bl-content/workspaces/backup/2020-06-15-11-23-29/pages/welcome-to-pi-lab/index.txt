@@ -35,42 +35,60 @@
 * [More Details](pi-lab-setup)
 --- 
 
-## Zero TV:
+## BOINC Node:
 
 *  **Production Node**
-    *    1 Raspberry Pi Zero W
+	*  1 Raspberry Pi 4 2GB Model B
+				* [Samsung EVO Plus 32GB SD Card](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
+*   **Operating System:** [Ubuntu Server 64-bit](https://ubuntu.com/download/raspberry-pi)
+* [More Details](fold-for-covid)
+--- 
+
+## Zero TV Node:
+
+*  **Production Node**
+	 *  1 Raspberry Pi Zero W
 				* [Samsung EVO Plus 32GB SD Card](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
 				* [Vilros Raspberry Pi Zero W Basic Starter Kit- Black Case Edition](https://www.amazon.com/gp/product/B0748MPQT4/)
+*   **Operating System:** [Raspbian](https://www.raspbian.org/)
 *   **CMS:** [Bludit - v3.12.0](https://www.bludit.com/)
 *   **Theme:** [Highway](https://jellyio.com/shop/bludit/highway) - Customized
 * [More Details](zero-tv)
 --- 
 
-## Pi Lab Misc:
+## Test Node:
 
-*  **Monitoring/Metrics Node**
-	*  1 Raspberry Pi 2 Model B
+*  **Production Node**
+	 *  1 Raspberry Pi Zero W
+				* [Samsung EVO Plus 32GB SD Card](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
+				* [USB-A Add-on Board](https://www.amazon.com/gp/product/B07DBL3WYQ)
+				* [Onn Universal Wall Charger](https://www.walmart.com/ip/Onn-Universal-Wall-Charger-Black/620837164)
+				* [GLCON Power Strip Tower](https://www.amazon.com/gp/product/B01G6PPTH6)
+*   **Operating System:** [Raspbian](https://www.raspbian.org/)
+* [More Details](pi-zero-wall-plug-web-server)
+--- 
+
+## Metrics Node:
+
+*  **Production Node**
+	 *  1 Raspberry Pi 2 Model B
 				* [Node Exporter](https://github.com/prometheus/node_exporter) - Expose Linux metrics (v0.18.1)
 				* [RPi Exporter](https://github.com/lukasmalkmus/rpi_exporter) - Expose Raspberry Pi metrics (v0.6.0)
 				* [Prometheus](https://prometheus.io/) - Collect and store metrics (v2.17.1)
 				* [Grafana](https://grafana.com/) - Metrics visualization (v6.7.1)
 				* [Samsung EVO Plus 32GB SD Card](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
-				* [More Details](prometheus-grafana)
-*   **Test Node**
-    *   1 Raspberry Pi Zero W
+*   **Operating System:** [Raspbian](https://www.raspbian.org/)
+* [More Details](prometheus-grafana)
+--- 
+
+## Pi-hole/OpenVPN:
+
+*  **Production Node**
+	 *  1 Raspberry Pi 3 Model B
 				* [Samsung EVO Plus 32GB SD Card](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
-				* [USB-A Add-on Board](https://www.amazon.com/gp/product/B07DBL3WYQ)
-				* [Onn Universal Wall Charger](https://www.walmart.com/ip/Onn-Universal-Wall-Charger-Black/620837164)
-				* [GLCON Power Strip Tower](https://www.amazon.com/gp/product/B01G6PPTH6)
-				* [More Details](pi-zero-wall-plug-web-server)	
-*   **BOINC Node**
-    *  1 Raspberry Pi 4 2GB Model B
-				*  [Samsung EVO Plus 32GB SD Card](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
-				* [More Details](fold-for-covid)
-*   **Pi-hole/OpenVPN Node**
-    *   1 Raspberry Pi 3 Model B
-				* [Samsung EVO Plus 32GB SD Card](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
-				* [More Details](pi-hole-is-amazing)			
+*   **Operating System:** [Raspbian](https://www.raspbian.org/)
+* [More Details](pi-hole-is-amazing)
+--- 		
 				
 <style>
 	.page-content, .entry-header, .entry-content {
