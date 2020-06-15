@@ -1,6 +1,6 @@
 I have added a new node to the Pi Lab setup to  run [SETI@home](https://setiathome.berkeley.edu/). 
 
-I used my first Raspberry Pi. It is a [Raspberry Pi Model B (256MB)](https://wikidevi.com/wiki/RPF_Raspberry_Pi_Model_B_(256MB)).
+I used my first Raspberry Pi. It is a [Raspberry Pi Model B (256MB)](https://deviwiki.com/wiki/RPF_Raspberry_Pi_Model_B_(256MB)).
 
 [SETI@home](https://setiathome.berkeley.edu/) ("SETI at home") is an Internet-based public volunteer computing project employing the BOINC software platform created by the Berkeley SETI Research Center and is hosted by the Space Sciences Laboratory, at the University of California, Berkeley. Its purpose is to analyze radio signals, searching for signs of extraterrestrial intelligence, and as such is one of many activities undertaken as part of the worldwide SETI effort. <sub> [Source](https://en.wikipedia.org/wiki/SETI@home)</sub>
 
@@ -28,10 +28,10 @@ boinccmd --lookup_account http://setiathome.berkeley.edu <your_email> <your_pass
 ```
 
 ***Note:*** 
-*I already had a [ SETI@home](https://setiathome.berkeley.edu/) account. If you don't have one you can create one [here](https://setiathome.berkeley.edu/signup.php).*
+*I already had a [SETI@home](https://setiathome.berkeley.edu/) account. If you don't have one you can create one [here](https://setiathome.berkeley.edu/signup.php).*
 
 ### Step 4: 
-Attach the BOINC Client program to your SETI@Home account
+Attach the BOINC Client program to your [SETI@home](https://setiathome.berkeley.edu/) account
 ```
 boinccmd --project_attach http://setiathome.berkeley.edu <your_account_key>
 ```
@@ -68,6 +68,8 @@ boinccmd --read_cc_config
 ```
 
 **Updates:**
-> I have updated the SETI@home Node to the BOINC Node to make the node generic for running [BOINC](https://boinc.berkeley.edu/) projects.
+> I have updated the  [SETI@home](https://setiathome.berkeley.edu/) Node to the BOINC Node to make the node generic for running [BOINC](https://boinc.berkeley.edu/) projects.
 
-> I am also running [Einstein@home](https://einsteinathome.org/) on the BOINC Node since [SETI@home](https://setiathome.berkeley.edu/) has gone into hibernation. [Read more...](seti-home-hibernation)
+> Sadly  [SETI@home](https://setiathome.berkeley.edu/) is now in hibernation. Read more [here](seti-home-hibernation).
+
+> I have retired the [Raspberry Pi Model B (256MB)](https://deviwiki.com/wiki/RPF_Raspberry_Pi_Model_B_(256MB)) that had been used as Pi Lab's BOINC node. I have replaced it with a [Raspberry Pi 4 Model B (2GB)](https://deviwiki.com/wiki/RPF_Raspberry_Pi_4_Model_B_2GB). It is still configured for [SETI@home](https://setiathome.berkeley.edu/) just in case, but is now primarily running  [Rosetta@home](https://boinc.bakerlab.org/) to help with COVID-19 research. Read more [here](boinc-node-upgrade).

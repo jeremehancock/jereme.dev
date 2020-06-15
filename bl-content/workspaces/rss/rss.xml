@@ -5,7 +5,57 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Mon, 08 Jun 2020 14:05:04 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 14 Jun 2020 23:36:00 -0500</lastBuildDate>
+    <item>
+      <title>BOINC Node Upgrade</title>
+      <link>https://pilab.dev/boinc-node-upgrade</link>
+      <description>&lt;p&gt;I have upgraded the BOINC Node to a &lt;a href="https://deviwiki.com/wiki/RPF_Raspberry_Pi_4_Model_B_2GB"&gt;Raspberry Pi 4 Model B (2GB)&lt;/a&gt;. This is a nice upgrade from the old &lt;a href="https://deviwiki.com/wiki/RPF_Raspberry_Pi_Model_B_(256MB)"&gt;Raspberry Pi Model B (256MB)&lt;/a&gt; that I had previously been running.&lt;/p&gt;
+&lt;p&gt;I have kept &lt;a href="https://setiathome.berkeley.edu/"&gt;SETI@home&lt;/a&gt; setup just in case it starts sending out jobs again. However, the primary purpose of the BOINC node for now is to run &lt;a href="https://boinc.bakerlab.org/"&gt;Rosetta@home&lt;/a&gt; to help with COVID-19 research.&lt;/p&gt;
+&lt;p&gt;Checkout the Pi Lab BOINC Node at work &lt;a href="https://boinc.bakerlab.org/rosetta/show_host_detail.php?hostid=4617346"&gt;here&lt;/a&gt;. &lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;Here are the basic steps that I used to setup &lt;a href="https://boinc.bakerlab.org/"&gt;Rosetta@home&lt;/a&gt; on the BOINC node.&lt;/p&gt;
+&lt;h3&gt;Step 1:&lt;/h3&gt;
+&lt;p&gt;Download &lt;a href="https://ubuntu.com/download/raspberry-pi"&gt;Ubuntu Server for Raspberry Pi (64-bit)&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;Step 2:&lt;/h3&gt;
+&lt;p&gt;Flash image to SD card&lt;/p&gt;
+&lt;p&gt;The easiest way to do this is to use &lt;a href="https://www.balena.io/etcher/"&gt;balenaEtcher&lt;/a&gt;. It is super simple and they have great instructions.&lt;/p&gt;
+&lt;h3&gt;Step 3:&lt;/h3&gt;
+&lt;p&gt;SSH into the Pi&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ssh ubuntu@&amp;lt;the_ip_assigned_to_the_pi&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Note:&lt;/em&gt;&lt;/strong&gt;
+&lt;em&gt;The default password is &lt;code&gt;ubuntu&lt;/code&gt; You will be prompted to change it.&lt;/em&gt;&lt;/p&gt;
+&lt;h3&gt;Step 4:&lt;/h3&gt;
+&lt;p&gt;Make sure everything is up to date&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt-get update
+sudo apt-get upgrade&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;Step 5:&lt;/h3&gt;
+&lt;p&gt;Install the BOINC Client&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt-get install boinc-client&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;Step 6:&lt;/h3&gt;
+&lt;p&gt;Get Account Key&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;boinccmd --lookup_account boinccmd --lookup_account https://boinc.bakerlab.org/rosetta &amp;lt;your_email&amp;gt; &amp;lt;your_password&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Note:&lt;/em&gt;&lt;/strong&gt;
+&lt;em&gt;I already had a &lt;a href="https://boinc.bakerlab.org/"&gt;Rosetta@home&lt;/a&gt; account. If you don't have one you can create one &lt;a href="https://boinc.bakerlab.org/rosetta/create_account_form.php"&gt;here&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+&lt;h3&gt;Step 7:&lt;/h3&gt;
+&lt;p&gt;Attach the BOINC Client program to your &lt;a href="https://boinc.bakerlab.org/"&gt;Rosetta@home&lt;/a&gt; account&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;boinccmd --project_attach https://boinc.bakerlab.org/rosetta &amp;lt;your_account_key&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;That's it. You should now be up and running!&lt;/h4&gt;
+&lt;hr /&gt;
+&lt;h3&gt;Do more with BOINC:&lt;/h3&gt;
+&lt;h4&gt;Check your tasks:&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;boinccmd --get_tasks&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;Install boinctui:&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt-get install boinctui&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;Run boinctui:&lt;/h4&gt;
+&lt;p&gt;This will give you a nice text interface for BOINC.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;boinctui&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;Configure BOINC Client:&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;sudo nano /var/lib/boinc-client/cc_config.xml&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Note:&lt;/em&gt;&lt;/strong&gt; &lt;em&gt;If you make changes to the configuration be sure to run the following command. Configuration options can be found &lt;a href="https://boinc.berkeley.edu/wiki/Client_configuration"&gt;here&lt;/a&gt;. &lt;/em&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;boinccmd --read_cc_config&lt;/code&gt;&lt;/pre&gt;</description>
+      <pubDate>Sun, 14 Jun 2020 22:43:08 -0500</pubDate>
+      <guid isPermaLink="false">f7a9f3c988752b64b891403e01748dde</guid>
+    </item>
     <item>
       <title>Zero TV</title>
       <link>https://pilab.dev/zero-tv</link>
@@ -40,9 +90,11 @@
 &lt;p&gt;It’s important to note that SETI@home is not disappearing. The web site and message boards will continue to operate.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;em&gt;&lt;a href="https://seti.org/setihome-going-hibernation"&gt;Read more...&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Pi Lab has had a &lt;a href="pi-lab-seti-home-node"&gt;SETI@home Node&lt;/a&gt; running since I started this project. I have decided to keep &lt;a href="https://setiathome.berkeley.edu/"&gt;SETI@home&lt;/a&gt; installed and available in case the project comes back online. In the mean time I am going to be running &lt;a href="insteinathome.org"&gt;Einstein@home&lt;/a&gt; instead. &lt;/p&gt;
+&lt;p&gt;Pi Lab has had a &lt;a href="pi-lab-seti-home-node"&gt;SETI@home Node&lt;/a&gt; running since I started this project. I have decided to keep &lt;a href="https://setiathome.berkeley.edu/"&gt;SETI@home&lt;/a&gt; installed and available in case the project comes back online. &lt;/p&gt;
 &lt;p&gt;I have also updated the &lt;a href="pi-lab-seti-home-node"&gt;SETI@home Node&lt;/a&gt; to the BOINC Node so that the node is more obviously dedicated to &lt;a href="https://boinc.berkeley.edu/"&gt;BOINC&lt;/a&gt; projects.&lt;/p&gt;
-&lt;p&gt;I wanted to shift gears and run &lt;a href="https://boinc.bakerlab.org/rosetta/"&gt;Rosetta@home&lt;/a&gt; to help with the Covid-19 reasearch. However, &lt;a href="https://boinc.bakerlab.org/rosetta/"&gt;Rosetta@home&lt;/a&gt; will not run on a Raspberry Pi. So I have set that project up on an old Dell laptop that I have. It is not officially part of Pi Lab, but I wanted to do what I could to help with the research either way.&lt;/p&gt;</description>
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Update&lt;/strong&gt;: I have updated the BOINC Node to run &lt;a href="https://boinc.bakerlab.org/"&gt;Rosetta@home&lt;/a&gt; to help with COVID-19 research. Read more &lt;a href="boinc-node-upgrade"&gt;here&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</description>
       <pubDate>Mon, 30 Mar 2020 17:13:38 -0500</pubDate>
       <guid isPermaLink="false">368d6e3f2b9f117cdf337cf85bccc288</guid>
     </item>
@@ -72,22 +124,6 @@
 &lt;/script&gt;</description>
       <pubDate>Mon, 16 Mar 2020 16:24:40 -0500</pubDate>
       <guid isPermaLink="false">f14bc4982bac069cdc5685de35ad1be4</guid>
-    </item>
-    <item>
-      <title>Weather Dashboard</title>
-      <link>https://pilab.dev/weather-dashboard</link>
-      <description>&lt;p&gt;Setting up a Weather Dashboard is a common project on the Raspberry Pi. There are many ways to accomplish this.&lt;/p&gt;
-&lt;p&gt;I have recently found a very nice project that makes it very simple to display detailed weather information.&lt;/p&gt;
-&lt;p&gt;The setup allows for tons of configuration and is also very simple to customize since it is just HTML/JS/CSS.&lt;/p&gt;
-&lt;p&gt;Here is an example that I have setup to demonstrate.&lt;/p&gt;
-&lt;h3&gt;Pi Lab's Current Weather Conditions&lt;/h3&gt;
-&lt;iframe width="100%" height="370" src="/pi-weather" frameborder="0" class="iframe-border iframe-weather"&gt;&lt;/iframe&gt;
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-&lt;p&gt;If you are looking to setup a Weather Dashboard this project is definitely worth a look.&lt;/p&gt;
-&lt;p&gt;&lt;br&gt;
-&lt;a href="https://github.com/vlaine/Weather-Forecast-Dashboard"&gt;&lt;img data-src="/images/check-it-out-on-github.png" alt="Get it on GitHub" class="on-github lozad" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
-      <pubDate>Wed, 29 Jan 2020 21:56:59 -0600</pubDate>
-      <guid isPermaLink="false">b9abbd96c3524243ca17d09abdeaddf9</guid>
     </item>
   </channel>
 </rss>

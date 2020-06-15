@@ -1,0 +1,85 @@
+I have upgraded the BOINC Node to a [Raspberry Pi 4 Model B (2GB)](https://deviwiki.com/wiki/RPF_Raspberry_Pi_4_Model_B_2GB). This is a nice upgrade from the old [Raspberry Pi Model B (256MB)](https://deviwiki.com/wiki/RPF_Raspberry_Pi_Model_B_(256MB)) that I had previously been running.
+ 
+I have kept [SETI@home](https://setiathome.berkeley.edu/) setup just in case it starts sending out jobs again. However, the primary purpose of the BOINC node for now is to run [Rosetta@home](https://boinc.bakerlab.org/) to help with COVID-19 research.
+
+Checkout the Pi Lab BOINC Node at work [here](https://boinc.bakerlab.org/rosetta/show_host_detail.php?hostid=4617346). 
+
+-----
+
+Here are the basic steps that I used to setup [Rosetta@home](https://boinc.bakerlab.org/) on the BOINC node.
+
+### Step 1: 
+Download [Ubuntu Server for Raspberry Pi (64-bit)](https://ubuntu.com/download/raspberry-pi)
+
+### Step 2: 
+Flash image to SD card
+
+The easiest way to do this is to use [balenaEtcher](https://www.balena.io/etcher/). It is super simple and they have great instructions.
+
+### Step 3: 
+SSH into the Pi
+```
+ssh ubuntu@<the_ip_assigned_to_the_pi>
+```
+
+***Note:*** 
+*The default password is `ubuntu` You will be prompted to change it.*
+
+### Step 4: 
+Make sure everything is up to date
+```
+sudo apt-get update
+sudo apt-get upgrade
+```
+
+### Step 5: 
+Install the BOINC Client
+```
+sudo apt-get install boinc-client
+```
+
+### Step 6: 
+Get Account Key
+```
+boinccmd --lookup_account boinccmd --lookup_account https://boinc.bakerlab.org/rosetta <your_email> <your_password>
+```
+
+***Note:*** 
+*I already had a [Rosetta@home](https://boinc.bakerlab.org/) account. If you don't have one you can create one [here](https://boinc.bakerlab.org/rosetta/create_account_form.php).*
+
+### Step 7: 
+Attach the BOINC Client program to your [Rosetta@home](https://boinc.bakerlab.org/) account
+```
+boinccmd --project_attach https://boinc.bakerlab.org/rosetta <your_account_key>
+```
+
+#### That's it. You should now be up and running!
+
+-----
+
+### Do more with BOINC:
+
+#### Check your tasks:
+```
+boinccmd --get_tasks
+```
+
+#### Install boinctui:
+```
+sudo apt-get install boinctui
+```
+
+#### Run boinctui:
+This will give you a nice text interface for BOINC.
+```
+boinctui
+```
+
+#### Configure BOINC Client:
+```
+sudo nano /var/lib/boinc-client/cc_config.xml
+```
+***Note:*** *If you make changes to the configuration be sure to run the following command. Configuration options can be found [here](https://boinc.berkeley.edu/wiki/Client_configuration). *
+```
+boinccmd --read_cc_config
+```
