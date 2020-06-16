@@ -25,7 +25,7 @@ ssh ubuntu@<the_ip_assigned_to_the_pi>
 ```
 
 ***Note:*** 
-*The default password is `ubuntu` You will be prompted to change it.*
+*The default password is `ubuntu`. You will be prompted to change it.*
 
 ### Step 4: 
 Make sure everything is up to date

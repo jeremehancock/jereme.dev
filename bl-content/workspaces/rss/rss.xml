@@ -5,7 +5,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Mon, 15 Jun 2020 23:17:08 -0500</lastBuildDate>
+    <lastBuildDate>Tue, 16 Jun 2020 09:02:45 -0500</lastBuildDate>
     <item>
       <title>Fold For Covid</title>
       <link>https://pilab.dev/fold-for-covid</link>
@@ -24,7 +24,7 @@
 &lt;p&gt;SSH into the Pi&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;ssh ubuntu@&amp;lt;the_ip_assigned_to_the_pi&amp;gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;Note:&lt;/em&gt;&lt;/strong&gt;
-&lt;em&gt;The default password is &lt;code&gt;ubuntu&lt;/code&gt; You will be prompted to change it.&lt;/em&gt;&lt;/p&gt;
+&lt;em&gt;The default password is &lt;code&gt;ubuntu&lt;/code&gt;. You will be prompted to change it.&lt;/em&gt;&lt;/p&gt;
 &lt;h3&gt;Step 4:&lt;/h3&gt;
 &lt;p&gt;Make sure everything is up to date&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;sudo apt-get update
