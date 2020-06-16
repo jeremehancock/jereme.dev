@@ -51,7 +51,7 @@ $title = extract_unit($card, "<br/>", "<br/>") . " <b>Stats:</b>";
 
 $header = extract_unit($card, "<p>", "<br/>");
 
-$timestamp = "Time:" . extract_unit($card, "<br/>Time:", "<br/>");
+$timestamp = extract_unit($card, "<br/>Time:", "<br/>");
 
 $usercredits = "User " . extract_unit($card, "<br/>User", "<br/>Team:");
 
