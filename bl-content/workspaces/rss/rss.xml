@@ -5,7 +5,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Tue, 16 Jun 2020 09:02:45 -0500</lastBuildDate>
+    <lastBuildDate>Tue, 16 Jun 2020 09:05:23 -0500</lastBuildDate>
     <item>
       <title>Fold For Covid</title>
       <link>https://pilab.dev/fold-for-covid</link>
@@ -42,7 +42,7 @@ sudo apt-get upgrade&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;boinccmd --project_attach https://boinc.bakerlab.org/rosetta &amp;lt;your_account_key&amp;gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;h4&gt;That's it. You should now be up and running!&lt;/h4&gt;
 &lt;hr /&gt;
-&lt;p&gt;Consider joining the &lt;a href="https://boinc.bakerlab.org/rosetta/team_display.php?teamid=18832"&gt;Fold For Covid&lt;/a&gt; team.&lt;/p&gt;
+&lt;p&gt;Consider joining the &lt;a href="https://boinc.bakerlab.org/rosetta/team_display.php?teamid=18832"&gt;Fold or Covid&lt;/a&gt; team.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;Note:&lt;/em&gt;&lt;/strong&gt; &lt;em&gt;There is a simpler setup available at &lt;a href="https://foldforcovid.io/#get-started"&gt;Fold For Covid&lt;/a&gt;. I decided to go with this setup since I am very familiar with Ubuntu.&lt;/em&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h3&gt;Do more with BOINC:&lt;/h3&gt;

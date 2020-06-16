@@ -59,7 +59,7 @@ boinccmd --project_attach https://boinc.bakerlab.org/rosetta <your_account_key>
 
 -----
 
-Consider joining the [Fold For Covid](https://boinc.bakerlab.org/rosetta/team_display.php?teamid=18832) team.
+Consider joining the [Fold or Covid](https://boinc.bakerlab.org/rosetta/team_display.php?teamid=18832) team.
 
 ***Note:*** *There is a simpler setup available at [Fold For Covid](https://foldforcovid.io/#get-started). I decided to go with this setup since I am very familiar with Ubuntu.*
 
