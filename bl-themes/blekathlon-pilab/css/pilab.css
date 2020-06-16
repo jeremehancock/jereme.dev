@@ -418,11 +418,24 @@ table td {
     isolation: isolate;
 }
 
+.iframe-no-border-no-isolate {
+    background: url(/images/loader.gif) center center no-repeat;
+    background-color: transparent;
+    padding: 5px;
+    transition: all 0.3s ease 0s;
+}
+
 .iframe-no-border-no-padding {
     background: url(/images/loader.gif) center center no-repeat;
     background-color: transparent;
     transition: all 0.3s ease 0s;
     isolation: isolate;
+}
+
+.iframe-no-border-no-padding-no-isolate {
+    background: url(/images/loader.gif) center center no-repeat;
+    background-color: transparent;
+    transition: all 0.3s ease 0s;
 }
 
 .stats-border {

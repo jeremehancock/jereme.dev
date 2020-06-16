@@ -5,14 +5,14 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Mon, 15 Jun 2020 23:11:29 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 15 Jun 2020 23:13:37 -0500</lastBuildDate>
     <item>
       <title>Fold For Covid</title>
       <link>https://pilab.dev/fold-for-covid</link>
       <description>&lt;p&gt;I have upgraded the BOINC Node to a &lt;a href="https://deviwiki.com/wiki/RPF_Raspberry_Pi_4_Model_B_2GB"&gt;Raspberry Pi 4 Model B (2GB)&lt;/a&gt;. This is a nice upgrade from the old &lt;a href="https://deviwiki.com/wiki/RPF_Raspberry_Pi_Model_B_(256MB)"&gt;Raspberry Pi Model B (256MB)&lt;/a&gt; that I had previously been running.&lt;/p&gt;
 &lt;p&gt;I have kept &lt;a href="https://setiathome.berkeley.edu/"&gt;SETI@home&lt;/a&gt; setup just in case it starts sending out jobs again. However, the primary purpose of the BOINC node for now is to run &lt;a href="https://boinc.bakerlab.org/"&gt;Rosetta@home&lt;/a&gt; to help with COVID-19 research.&lt;/p&gt;
 &lt;h5&gt;Checkout Pi Lab's BOINC Node progress.&lt;/h5&gt;
-&lt;iframe width="100%" height="350" data-src="boincpi" frameborder="0" class="iframe-no-border-no-padding lozad" scrolling="no"&gt;&lt;/iframe&gt;
+&lt;iframe width="100%" height="350" data-src="boincpi" frameborder="0" class="iframe-no-border-no-padding-no-isolate lozad" scrolling="no"&gt;&lt;/iframe&gt;
 &lt;hr /&gt;
 &lt;p&gt;Here are the basic steps that I used to setup &lt;a href="https://boinc.bakerlab.org/"&gt;Rosetta@home&lt;/a&gt; on the BOINC node.&lt;/p&gt;
 &lt;h3&gt;Step 1:&lt;/h3&gt;
