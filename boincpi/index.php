@@ -60,7 +60,7 @@ $teamcredits = extract_unit($card, "<br/>Team: ", "</p>");
 
 ?>
 <!-- Card -->
-<div class="card border-dark m-3" style="max-width: 20rem;">
+<div class="card border-dark m-3 mx-auto" style="max-width: 20rem;">
     <h4 class="card-header"><?php echo $header; ?></h4>
     <div class="card-body text-dark">
         <h6 class="card-title"><?php echo $timestamp; ?></h6>
