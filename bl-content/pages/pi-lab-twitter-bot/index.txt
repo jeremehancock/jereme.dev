@@ -113,6 +113,8 @@ That's it! You should now have a Twitter Bot setup and posting to Twitter every 
 I have also setup the Pi Lab Twitter Bot to post when I promote the Pi Lab Dev Node to Production.
 
 > ***Update**: I have updated the instructions/setup to work with Python 2.7 and Python 3. These steps should also work for Raspbian as well as Ubuntu Server on a Raspberry Pi. *
+> 
+> *I have updated the Pi Lab Twitter Bot to a new Node-Red setup. Check it out [here](node-red-twitter-bot).*
 
 
 
