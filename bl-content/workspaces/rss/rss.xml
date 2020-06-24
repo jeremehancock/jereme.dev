@@ -5,7 +5,21 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Tue, 16 Jun 2020 23:00:54 -0500</lastBuildDate>
+    <lastBuildDate>Tue, 23 Jun 2020 21:40:15 -0500</lastBuildDate>
+    <item>
+      <title>Node-Red Twitter Bot</title>
+      <link>https://pilab.dev/node-red-twitter-bot</link>
+      <description>&lt;p&gt;I have setup a new &lt;a href="https://nodered.org/"&gt;Node-Red&lt;/a&gt; Twitter Bot. This is powered by a &lt;a href="https://deviwiki.com/wiki/RPF_Raspberry_Pi_4_Model_B_2GB"&gt;Raspberry Pi 4 Model B (2GB)&lt;/a&gt; that I have setup as the new Pi Lab Node Red Node.&lt;/p&gt;
+&lt;p&gt;The &lt;a href="https://nodered.org/"&gt;Node-Red&lt;/a&gt; flow is setup to provide a URL endpoint that accepts a minimal number of query parameters (e.g. hostname). The flow then makes http requests to the &lt;a href="prometheus-grafana"&gt;Pi Lab Metric's Node&lt;/a&gt; that is powered by &lt;a href="https://prometheus.io/"&gt;Prometheus&lt;/a&gt; to retrieve the metrics. The metrics are then formatted and pushed directly to the &lt;a href="https://twitter.com/pilabdev"&gt;Pi Lab Twitter feed&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Below is a screenshot of the flow.&lt;/p&gt;
+&lt;div class="centered"&gt;
+    &lt;img src="/bl-content/uploads/pages/b3c9f34aa0cb8225b2ce75d480025d36/pi-lab-node-red-twitter-bot.png" class="image-border" /&gt;&lt;br&gt;&lt;br&gt;
+&lt;/div&gt;
+&lt;p&gt;I am very impressed with &lt;a href="https://nodered.org/"&gt;Node-Red&lt;/a&gt;. I definitely recommend it for anyone who enjoys coding and automation.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/node-red"&gt;&lt;img data-src="/images/check-it-out-on-github.png" alt="Get it on GitHub" class="on-github lozad" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+      <pubDate>Tue, 23 Jun 2020 20:52:42 -0500</pubDate>
+      <guid isPermaLink="false">b3c9f34aa0cb8225b2ce75d480025d36</guid>
+    </item>
     <item>
       <title>Fold For Covid</title>
       <link>https://pilab.dev/fold-for-covid</link>
@@ -101,33 +115,6 @@ sudo apt-get upgrade&lt;/code&gt;&lt;/pre&gt;
 &lt;/blockquote&gt;</description>
       <pubDate>Mon, 30 Mar 2020 17:13:38 -0500</pubDate>
       <guid isPermaLink="false">368d6e3f2b9f117cdf337cf85bccc288</guid>
-    </item>
-    <item>
-      <title>Pi Lab Live Stream</title>
-      <link>https://pilab.dev/pi-lab-live-stream</link>
-      <description>&lt;h3&gt;Checkout out the live stream of Pi Lab!&lt;/h3&gt;
-&lt;div class="centered"&gt;
-    &lt;!--&lt;img src="https://pilab.dev/live-stream/" class="image-border" style="margin-bottom:15px;"/&gt;--&gt;
-    &lt;img id="liveStream" src="https://pilab.dev/live-stream" class="image-border" style="margin-bottom:15px;" /&gt;
-&lt;/div&gt;
-&lt;p&gt;This live stream is utilizing a re-purposed AT&amp;amp;T Digital Life security camera. There is really no practical purpose for this. I just thought it would be a fun way to use left over tech. I have also updated the &lt;a href="/welcome-to-pi-lab"&gt;Specs&lt;/a&gt; page to use this stream so that you can always see the latest state of Pi Lab.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;&lt;strong&gt;Update&lt;/strong&gt;: After a &lt;a href="https://www.reddit.com/r/raspberry_pi/comments/gwbqyq/the_latest_pi_lab_setup/?utm_source=share&amp;amp;utm_medium=web2x"&gt;Reddit post&lt;/a&gt; received a lot of attention I noticed that the Pi Lab Load Balancer Node was getting huge spikes in CPU usage. Eventually with help from a friend I was able to figure out that the issue was the Live Stream. The process of pushing the Live Stream through SSL was the issue. This also caused huge spikes in my network's bandwidth. &lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;I have updated the Pi Lab Live Stream to a snapshot model. So when the stream is loaded it is a JPEG at that moment in time. The snapshot is updated once a minute. This should reduce both CPU usage and network bandwidth while still providing a &amp;quot;stream&amp;quot; of the latest Pi Lab setup. &lt;/em&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;script&gt;
-            function startStream() {
-                setInterval(updateStream, 60 * 1000);
-            }
-
-            function updateStream() {
-                document.getElementById('liveStream').src='https://pilab.dev/live-stream?i=' + Math.floor(Math.random() * 1001);
-            }
-
-            startStream();
-&lt;/script&gt;</description>
-      <pubDate>Mon, 16 Mar 2020 16:24:40 -0500</pubDate>
-      <guid isPermaLink="false">f14bc4982bac069cdc5685de35ad1be4</guid>
     </item>
   </channel>
 </rss>

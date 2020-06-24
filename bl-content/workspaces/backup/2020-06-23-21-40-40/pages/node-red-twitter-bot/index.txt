@@ -1,0 +1,16 @@
+I have setup a new [Node-Red](https://nodered.org/) Twitter Bot. This is powered by a [Raspberry Pi 4 Model B (2GB)](https://deviwiki.com/wiki/RPF_Raspberry_Pi_4_Model_B_2GB) that I have setup as the new Pi Lab Node Red Node.
+
+The [Node-Red](https://nodered.org/) flow is setup to provide a URL endpoint that accepts a minimal number of query parameters (e.g. hostname). The flow then makes http requests to the [Pi Lab Metric's Node](prometheus-grafana) that is powered by [Prometheus](https://prometheus.io/) to retrieve the metrics. The metrics are then formatted and pushed directly to the [Pi Lab Twitter feed](https://twitter.com/pilabdev).
+
+Below is a screenshot of the flow.
+
+<div class="centered">
+    <img src="/bl-content/uploads/pages/b3c9f34aa0cb8225b2ce75d480025d36/pi-lab-node-red-twitter-bot.png" class="image-border" /><br><br>
+</div>
+
+I am very impressed with [Node-Red](https://nodered.org/). I definitely recommend it for anyone who enjoys coding and automation.
+
+[<img data-src="/images/check-it-out-on-github.png" alt="Get it on GitHub" class="on-github lozad" />](https://github.com/node-red)
+
+
+
