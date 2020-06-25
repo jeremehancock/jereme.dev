@@ -45,15 +45,20 @@ $card = str_replace("Pi Lab", "<b>Pi Lab</b>", $card);
 $card = str_replace("Fold for Covid", "<b>Fold for Covid Stats:</b>", $card);
 
 $usercredits = "User " . extract_unit($card, "<br/>User", "<br/>Team:");
-
-$total = extract_unit($usercredits, "User Total Credit: ", "<br/>");
-$average = extract_unit($usercredits, "User Average Credit: ", "<br/>");
-
 $teamcredits = extract_unit($card, "<br/>Team: ", "</p>");
 
+$usertotal = extract_unit($usercredits, "User Total Credit: ", "<br/>");
+$useraverage = extract_unit($usercredits, "User Average Credit: ", "<br/>");
+
+$teamtotal = extract_unit($teamcredits, "Team Total Credit: ", "<br/>");
+$teamaverage = extract_unit($teamcredits, "Team Average Credit: ", "<br/>");
+
+
 echo '{';
-echo '"total": "'.$total.'",';
-echo '"average": "'.$average.'"';
+echo '"usertotal": "'.$usertotal.'",';
+echo '"useraverage": "'.$useraverage.'",';
+echo '"teamtotal": "'.$teamtotal.'",';
+echo '"teamaverage": "'.$teamaverage.'"';
 echo '}';
 
 ?>
