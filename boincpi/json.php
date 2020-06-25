@@ -52,16 +52,8 @@ $average = extract_unit($usercredits, "User Average Credit: ", "<br/>");
 $teamcredits = extract_unit($card, "<br/>Team: ", "</p>");
 
 echo '{';
-echo '   "status": "success",';
-echo '"data": {';
-echo '"result": [';
-echo '{';
-echo '"value": [';
-echo '    "'.$total.'"';
-echo ']';
-echo '}';
-echo ']';
-echo '}';
+echo '"total": "'.$total.'",';
+echo '"average": "'.$average.'"';
 echo '}';
 
 ?>
