@@ -58,7 +58,7 @@ echo '    "resultType": "vector",';
 echo '"result": [';
 echo '{';
 echo '"metric": {';
-echo '    "__name__": "null",';
+echo '    "__name__": "boinc_stats",';
 echo '"instance": "null",';
 echo '"job": "null"';
 echo '},';
