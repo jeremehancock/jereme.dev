@@ -67,10 +67,10 @@ $teamcredits = extract_unit($card, "<br/>Team: ", "</p>");
         <hr/>
         <p class="card-text">
             <?php echo $title; ?><br/>
-            <?php echo $usercredits; ?>
+            <span class="pilab-stats"><?php echo $usercredits; ?></span>
         </p>
         <hr/>
-        <p class="card-text"><?php echo $teamcredits; ?></p>
+        <p class="card-text"><span class="team-stats"><?php echo $teamcredits; ?></span></p>
     </div>
 </div>
 <!-- Card -->
