@@ -5,21 +5,24 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Wed, 24 Jun 2020 22:13:53 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 26 Jun 2020 14:20:58 -0500</lastBuildDate>
     <item>
       <title>Node-Red Twitter Bot</title>
       <link>https://pilab.dev/node-red-twitter-bot</link>
       <description>&lt;p&gt;I have setup a new &lt;a href="https://nodered.org/"&gt;Node-Red&lt;/a&gt; Twitter Bot. This is powered by a &lt;a href="https://deviwiki.com/wiki/RPF_Raspberry_Pi_4_Model_B_2GB"&gt;Raspberry Pi 4 Model B (2GB)&lt;/a&gt; that I have setup as the new Pi Lab Node Red Node.&lt;/p&gt;
-&lt;p&gt;The &lt;a href="https://nodered.org/"&gt;Node-Red&lt;/a&gt; flow is setup to provide a URL endpoint that accepts a minimal number of query parameters (e.g. hostname). The flow then makes http requests to the &lt;a href="prometheus-grafana"&gt;Pi Lab Metric's Node&lt;/a&gt; that is powered by &lt;a href="https://prometheus.io/"&gt;Prometheus&lt;/a&gt; to retrieve the metrics. The metrics are then formatted and pushed directly to the &lt;a href="https://twitter.com/pilabdev"&gt;Pi Lab Twitter feed&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The &lt;a href="https://nodered.org/"&gt;Node-Red&lt;/a&gt; flow was originally setup to provide a URL endpoint that accepts a minimal number of query parameters (e.g. hostname). The flow would then make http requests to the &lt;a href="prometheus-grafana"&gt;Pi Lab Metric's Node&lt;/a&gt; that is powered by &lt;a href="https://prometheus.io/"&gt;Prometheus&lt;/a&gt; to retrieve the metrics. The metrics were then formatted and pushed directly to the &lt;a href="https://twitter.com/pilabdev"&gt;Pi Lab Twitter feed&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I am now on version 4 of the flow. The latest iteration is completely self contained inside &lt;a href="https://nodered.org/"&gt;Node-Red&lt;/a&gt;. The flow runs every 30 minutes and does &lt;code&gt;ping&lt;/code&gt; checks to ensure that the nodes are online before gathering the metrics for each node and sending out tweets. This allows me to reduce the overhead for each of the nodes in the Pi Lab cluster and have things more centralized. &lt;/p&gt;
+&lt;p&gt;I have also added an SMS alert node that, after a failed &lt;code&gt;ping&lt;/code&gt; check,  sends an email that is then forwarded via text message to my mobile phone using this &lt;a href="https://www.att.com/support/article/wireless/KM1061254/"&gt;AT&amp;amp;T feature&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Below is a screenshot of the flow.&lt;/p&gt;
 &lt;div class="centered"&gt;
-    &lt;img src="/bl-content/uploads/pages/b3c9f34aa0cb8225b2ce75d480025d36/pi-lab-node-red-twitter-bot-flow-v3.png" class="image-border" /&gt;&lt;br&gt;&lt;br&gt;
+    &lt;img src="/bl-content/uploads/pages/b3c9f34aa0cb8225b2ce75d480025d36/pi-lab-node-red-twitter-bot-v4.png" class="image-border" /&gt;&lt;br&gt;&lt;br&gt;
 &lt;/div&gt;
 &lt;p&gt;I am very impressed with &lt;a href="https://nodered.org/"&gt;Node-Red&lt;/a&gt;. I definitely recommend it for anyone who enjoys coding and automation.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://github.com/node-red"&gt;&lt;img data-src="/images/check-it-out-on-github.png" alt="Get it on GitHub" class="on-github lozad" /&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;em&gt;&lt;strong&gt;Update&lt;/strong&gt;: Thanks to some great feedback from &lt;a href="https://www.reddit.com/r/nodered/comments/hetcu6/my_first_nodered_flow/"&gt;r/nodered&lt;/a&gt; I have re-factored the flow to use the &lt;code&gt;join&lt;/code&gt; node so I can remove the use of flow variables. This should fix the issues I was seeing when a request to the flow would occur before the previous request had completed.  &lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;I have added a new flow that Tweets the current BOINC Node Rosetta@home stats. This flow is setup to be completely powered by &lt;a href="https://nodered.org/"&gt;Node-Red&lt;/a&gt; and is run on a 30 minute interval.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;I have updated this blog post with the latest information on this project.&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;</description>
       <pubDate>Tue, 23 Jun 2020 20:52:42 -0500</pubDate>
       <guid isPermaLink="false">b3c9f34aa0cb8225b2ce75d480025d36</guid>
