@@ -64,6 +64,7 @@
 				* [USB-A Add-on Board](https://www.amazon.com/gp/product/B07DBL3WYQ)
 				* [Onn Universal Wall Charger](https://www.walmart.com/ip/Onn-Universal-Wall-Charger-Black/620837164)
 				* [GLCON Power Strip Tower](https://www.amazon.com/gp/product/B01G6PPTH6)
+				* [Gosund Smart Plug](https://www.amazon.com/Outlet-Required-Gosund-Upgraded-Version/dp/B07GRLQV47/)
 *   **Operating System:** [Raspbian](https://www.raspbian.org/)
 * [More Details](pi-zero-wall-plug-web-server)
 --- 

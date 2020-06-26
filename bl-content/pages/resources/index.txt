@@ -25,3 +25,4 @@
 * [Prometheus](https://prometheus.io) -- Gather and track server metrics.
 * [Grafana](https://grafana.com/) -- Create awesome dashboards to visualize your metrics.
 * [Darkmode.js](https://darkmodejs.learn.uno/) -- Add "dark mode" to your site easily.
+* [Node-Red](https://nodered.org/) -- Automate all the things!
