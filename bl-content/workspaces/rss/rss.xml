@@ -5,7 +5,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Sun, 28 Jun 2020 14:00:26 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 28 Jun 2020 14:17:10 -0500</lastBuildDate>
     <item>
       <title>Node-Red Twitter Bot</title>
       <link>https://pilab.dev/node-red-twitter-bot</link>
@@ -15,7 +15,7 @@
 &lt;p&gt;I have also added an SMS alert node that, after a failed &lt;code&gt;ping&lt;/code&gt; check,  sends an email that is then forwarded via text message to my mobile phone using this &lt;a href="https://www.att.com/support/article/wireless/KM1061254/"&gt;AT&amp;amp;T feature&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Below is a screenshot of the flow.&lt;/p&gt;
 &lt;div class="centered"&gt;
-    &lt;img src="/bl-content/uploads/pages/b3c9f34aa0cb8225b2ce75d480025d36/pi-lab-node-red-twitter-bot-current.png" class="image-border" /&gt;&lt;br&gt;&lt;br&gt;
+    &lt;img src="/bl-content/uploads/pages/b3c9f34aa0cb8225b2ce75d480025d36/pi-lab-node-red-twitter-bot-current-2.png" class="image-border" /&gt;&lt;br&gt;&lt;br&gt;
 &lt;/div&gt;
 &lt;p&gt;I am very impressed with &lt;a href="https://nodered.org/"&gt;Node-Red&lt;/a&gt;. I definitely recommend it for anyone who enjoys coding and automation.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://github.com/node-red"&gt;&lt;img data-src="/images/check-it-out-on-github.png" alt="Get it on GitHub" class="on-github lozad" /&gt;&lt;/a&gt;&lt;/p&gt;
