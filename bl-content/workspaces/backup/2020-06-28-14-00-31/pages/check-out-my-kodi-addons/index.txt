@@ -1,0 +1,10 @@
+If you are familiar with the [Kodi Media Center](https://kodi.tv/) you might be interested in my [Kodi](https://kodi.tv/) addons.
+
+* **Animal TV**
+    * Live streams of animals powered by [explore.org](https://explore.org)
+* **Free Live TV**
+    * Tons of free live TV that is freely available online.
+* **Tubi**
+    * All the best content from [tubitv.com](https://tubitv.com/)
+
+### Check them out at [m7kodi.dev](https://m7kodi.dev/)!

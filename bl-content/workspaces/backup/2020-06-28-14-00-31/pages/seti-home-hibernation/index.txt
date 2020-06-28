@@ -1,0 +1,18 @@
+I have been a fan of the [SETI@home](https://setiathome.berkeley.edu/) project for a number of years. I was sad to hear that the project is going into "hibernation".
+
+## *From [seti.org](https://seti.org):*
+> UC Berkeley has announced that the volunteer computing part of SETI@home will stop distributing work and go into hibernation on March 31. Two reasons were cited for this action:
+
+> 1) Scientifically, they have reached point of diminishing returns; basically, they analyzed all the data they need for now.
+
+> 2) Managing the distributed processing of data is labor intensive. The priority now is to focus on completing the back-end analysis of the results they already have, and writing this up in a scientific journal paper.
+
+> It’s important to note that SETI@home is not disappearing. The web site and message boards will continue to operate.
+
+*[Read more...](https://seti.org/setihome-going-hibernation)*
+
+Pi Lab has had a [SETI@home Node](pi-lab-seti-home-node) running since I started this project. I have decided to keep [SETI@home](https://setiathome.berkeley.edu/) installed and available in case the project comes back online. 
+
+I have also updated the [SETI@home Node](pi-lab-seti-home-node) to the BOINC Node so that the node is more obviously dedicated to [BOINC](https://boinc.berkeley.edu/) projects.
+
+> ***Update**: I have updated the BOINC Node to run [Rosetta@home](https://boinc.bakerlab.org/) to help with COVID-19 research. Read more [here](fold-for-covid).*
