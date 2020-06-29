@@ -1,0 +1,13 @@
+<div class="centered">
+    <img src="/bl-content/uploads/pages/e5cc099cec19476d9ea5bc92a4f113ae/zerotv-large-new.png" class="image-border" /><br><br>
+</div>
+
+I have been working on my [Kodi addons](check-out-my-kodi-addons) for a number of years now.
+
+My [Free Live TV](free-live-tv) addon has been one of my favorites to work on. I have been thinking about creating a web based version for quite some time. I have decided it would make a great addition to Pi Lab.
+
+Zero TV is running on a Raspberry Pi Zero! See full specs [here](welcome-to-pi-lab).
+
+The site uses [Bludit](https://www.bludit.com/) and a customized version of the [Highway](https://jellyio.com/shop/bludit/highway) theme from [Jellyio](https://jellyio.com). All content is pulled from freely available legal sources online.
+
+### Check it out at [zerotv.pilab.dev](https://zerotv.pilab.dev)!

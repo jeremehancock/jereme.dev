@@ -1,0 +1,18 @@
+<blockquote class="twitter-tweet  tw-align-center"><p lang="en" dir="ltr">Look at this beauty! <a href="https://twitter.com/hashtag/RaspberryLover?src=hash&amp;ref_src=twsrc%5Etfw">#RaspberryLover</a> <a href="https://twitter.com/hashtag/RaspberryPi?src=hash&amp;ref_src=twsrc%5Etfw">#RaspberryPi</a> <a href="https://twitter.com/hashtag/cluster?src=hash&amp;ref_src=twsrc%5Etfw">#cluster</a><br> <a href="https://t.co/zc78hpu0Sz">https://t.co/zc78hpu0Sz</a></p>&mdash; Bludit (@bludit) <a href="https://twitter.com/bludit/status/1196090071927214081?ref_src=twsrc%5Etfw">November 17, 2019</a></blockquote>
+
+<br>
+<div style="text-align: center;"><iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fbluditcms%2Fposts%2F2214378161943656&width=500" width="500" height="354" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe></div>
+
+<br>
+<blockquote class="twitter-tweet  tw-align-center" data-lang="en"><p lang="en" dir="ltr">Do you have a few <a href="https://twitter.com/hashtag/RaspberryPi?src=hash&amp;ref_src=twsrc%5Etfw">#RaspberryPi</a>, you can create a cluster and runs Bludit on it with this project. <a href="https://t.co/C9zewsb1FT">https://t.co/C9zewsb1FT</a> <a href="https://t.co/kTTfqM5iDl">pic.twitter.com/kTTfqM5iDl</a></p>&mdash; Bludit (@bludit) <a href="https://twitter.com/bludit/status/1136189692175687680?ref_src=twsrc%5Etfw">June 5, 2019</a></blockquote>
+
+<br>
+<blockquote class="twitter-tweet tw-align-center" data-lang="en"><p lang="en" dir="ltr">Two small giants together - <a href="https://twitter.com/hashtag/RaspberryPi?src=hash&amp;ref_src=twsrc%5Etfw">#RaspberryPi</a>  and <a href="https://twitter.com/hashtag/Bludit?src=hash&amp;ref_src=twsrc%5Etfw">#Bludit</a> <a href="https://t.co/NqUNdcR52l">https://t.co/NqUNdcR52l</a></p>&mdash; Dimo Belov (@DimoBelov) <a href="https://twitter.com/DimoBelov/status/1136259362769559552?ref_src=twsrc%5Etfw">June 5, 2019</a></blockquote>
+
+<br>
+<blockquote class="twitter-tweet  tw-align-center" data-lang="en"><p lang="en" dir="ltr">Nice article with details how to setup <a href="https://twitter.com/bludit?ref_src=twsrc%5Etfw">@Bludit</a> on  Raspberry PI. Also cover some advanced aspects such as auto replication of dev server to production with bash, load balancing with nginx.<a href="https://t.co/464jq9gGXs">https://t.co/464jq9gGXs</a></p>&mdash; Dimo Belov (@DimoBelov) <a href="https://twitter.com/DimoBelov/status/1134318134448365568?ref_src=twsrc%5Etfw">May 31, 2019</a></blockquote>
+
+<br>
+<blockquote class="twitter-tweet tw-align-center" data-lang="en"><p lang="en" dir="ltr">Bludit is so lightweight and performant that it can easily be hosted on Raspberry Pi 2<br>Live demo and stack <a href="https://t.co/A4oyUd66CQ">https://t.co/A4oyUd66CQ</a><a href="https://twitter.com/hashtag/bludit?src=hash&ref_src=twsrc%5Etfw">#bludit</a></p>— Dimo Belov (@DimoBelov) <a href="https://twitter.com/DimoBelov/status/1127111766046064640?ref_src=twsrc%5Etfw">May 11, 2019</a></blockquote>
+
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
