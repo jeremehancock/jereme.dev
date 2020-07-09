@@ -5,7 +5,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Wed, 08 Jul 2020 21:12:03 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 08 Jul 2020 21:21:29 -0500</lastBuildDate>
     <item>
       <title>New Pi Lab Media Nodes</title>
       <link>https://pilab.dev/new-pi-lab-media-nodes</link>
@@ -20,7 +20,7 @@
 &lt;p&gt;I added 32GB SD cards to each device which gives me 64GBs on each drive. One really cool thing is these devices can actually host static HTML/JS sites. That is what the web interface was using.&lt;/p&gt;
 &lt;p&gt;I have setup a GitHub repo to document the steps I took to set things up. Check it out &lt;a href="https://github.com/mhancoc7/sandisk-media-drive-32gb-mods"&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;I am not sure what I plan to use them for, but I have setup a simple &amp;quot;application&amp;quot; that I think is fun. I have another project called the &lt;a href="https://roadside-america.dumbprojects.com/"&gt;Roadside America API&lt;/a&gt;. It provides a simple API to retrieve images and metadata from the &lt;a href="https://www.loc.gov/free-to-use/john-margolies-roadside-america-photograph-archive"&gt;John Margolies Roadside America Photograph Archive&lt;/a&gt;. &lt;/p&gt;
-&lt;p&gt;I used the API to download all of the images to one of the media drives. Then I setup a simple &amp;quot;application&amp;quot; that provides access to a random image from the collection.&lt;/p&gt;
+&lt;p&gt;I used the API to download all of the images to one of the media drives. Then I setup a webpage that redirects to a random image from the collection.&lt;/p&gt;
 &lt;h3&gt;Usage&lt;/h3&gt;
 &lt;pre&gt;&lt;code&gt;https://pilab.dev/roadside-america-collection?size=large&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;https://pilab.dev/roadside-america-collection?size=medium&lt;/code&gt;&lt;/pre&gt;

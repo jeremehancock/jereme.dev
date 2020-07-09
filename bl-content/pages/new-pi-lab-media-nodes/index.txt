@@ -18,7 +18,7 @@ I have setup a GitHub repo to document the steps I took to set things up. Check 
 
 I am not sure what I plan to use them for, but I have setup a simple "application" that I think is fun. I have another project called the [Roadside America API](https://roadside-america.dumbprojects.com/). It provides a simple API to retrieve images and metadata from the [John Margolies Roadside America Photograph Archive](https://www.loc.gov/free-to-use/john-margolies-roadside-america-photograph-archive). 
 
-I used the API to download all of the images to one of the media drives. Then I setup a simple "application" that provides access to a random image from the collection.
+I used the API to download all of the images to one of the media drives. Then I setup a webpage that redirects to a random image from the collection.
 
 ### Usage
 
