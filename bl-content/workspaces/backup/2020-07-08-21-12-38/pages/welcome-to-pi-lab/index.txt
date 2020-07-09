@@ -90,6 +90,13 @@
 				* [Node-Red](https://nodered.org/docs/getting-started/raspberrypi)
 *   **Operating System:** [Raspbian](https://www.raspbian.org/)
 * [More Details](node-red-twitter-bot)
+
+## Media Nodes:
+
+*  **Production Nodes**
+	*  2 SanDisk 32GB Media Drives
+				* [Samsung EVO Plus 32GB SD Cards](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
+* [More Details](new-pi-lab-media-nodes)
 --- 
 
 ## Pi-hole/OpenVPN:
