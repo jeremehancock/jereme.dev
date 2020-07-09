@@ -5,7 +5,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Wed, 08 Jul 2020 21:21:29 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 08 Jul 2020 21:24:58 -0500</lastBuildDate>
     <item>
       <title>New Pi Lab Media Nodes</title>
       <link>https://pilab.dev/new-pi-lab-media-nodes</link>
@@ -25,7 +25,7 @@
 &lt;pre&gt;&lt;code&gt;https://pilab.dev/roadside-america-collection?size=large&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;https://pilab.dev/roadside-america-collection?size=medium&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;https://pilab.dev/roadside-america-collection?size=small&lt;/code&gt;&lt;/pre&gt;
-&lt;h3&gt;Try it: &lt;a href="https://pilab.dev/roadside-america-collection"&gt;Click Here&lt;/a&gt;&lt;/h3&gt;
+&lt;h3&gt;Try it: &lt;a href="https://pilab.dev/roadside-america-collection" target="_blank"&gt;Click Here&lt;/a&gt;&lt;/h3&gt;
 &lt;hr /&gt;
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;Note:&lt;/em&gt;&lt;/strong&gt; &lt;em&gt;If you don't provide a size, it will default to large.&lt;/em&gt;&lt;/p&gt;</description>
       <pubDate>Wed, 08 Jul 2020 17:15:09 -0500</pubDate>

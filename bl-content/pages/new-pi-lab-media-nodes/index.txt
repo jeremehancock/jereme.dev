@@ -34,7 +34,7 @@ https://pilab.dev/roadside-america-collection?size=medium
 https://pilab.dev/roadside-america-collection?size=small
 ```
 
-### Try it: [Click Here](https://pilab.dev/roadside-america-collection)
+### Try it: <a href="https://pilab.dev/roadside-america-collection" target="_blank">Click Here</a>
 
 ---
 
