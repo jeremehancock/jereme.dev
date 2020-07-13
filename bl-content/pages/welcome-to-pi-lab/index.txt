@@ -73,10 +73,10 @@
 
 *  **Production Node**
 	 *  1 Raspberry Pi 2 Model B
-				* [Node Exporter](https://github.com/prometheus/node_exporter) - Expose Linux metrics (v0.18.1)
-				* [RPi Exporter](https://github.com/lukasmalkmus/rpi_exporter) - Expose Raspberry Pi metrics (v0.6.0)
-				* [Prometheus](https://prometheus.io/) - Collect and store metrics (v2.17.1)
-				* [Grafana](https://grafana.com/) - Metrics visualization (v6.7.1)
+				* [Node Exporter](https://github.com/prometheus/node_exporter) - Expose Linux metrics (v1.0.1): Installed to each node.
+				* [RPi Exporter](https://github.com/lukasmalkmus/rpi_exporter) - Expose Raspberry Pi metrics (v0.6.0): Installed to each node.
+				* [Prometheus](https://prometheus.io/) - Collect and store metrics (v2.19.2)
+				* [Grafana](https://grafana.com/) - Metrics visualization (v7.0.6)
 				* [Samsung EVO Plus 32GB microSDHC Memory Card](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
 *   **Operating System:** [Raspbian](https://www.raspbian.org/)
 * [More Details](prometheus-grafana)
