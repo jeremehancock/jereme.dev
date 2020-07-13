@@ -5,13 +5,13 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Sun, 12 Jul 2020 22:00:49 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 12 Jul 2020 22:06:41 -0500</lastBuildDate>
     <item>
       <title>Pi Lab Monitor Node</title>
       <link>https://pilab.dev/pi-lab-monitor-node</link>
       <description>&lt;p&gt;I have added a new node to Pi Lab to provide a screen. I have it setup to cycle through the &lt;a href="https://grafana.com/"&gt;Grafana&lt;/a&gt; interface from the &lt;a href="prometheus-grafana"&gt;Prometheus Node&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;I had an older &lt;a href="https://wiki.52pi.com/index.php/5-Inch-800x480-HDMI-GPIO-Touch-Screen_SKU:EP-0072"&gt;LCD screen&lt;/a&gt; that I bought several years ago. I haven't been able to get the touch screen working yet, but not sure I really need it.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Check it out!&lt;/strong&gt;&lt;/p&gt;
+&lt;h3&gt;Check it out!&lt;/h3&gt;
 &lt;div class="centered"&gt;
     &lt;img src="/bl-content/uploads/pages/afc7a527f2b1d3dac643a3a2567b279f/pi-lab-monitor-large.png" class="image-border" /&gt;&lt;br&gt;&lt;br&gt;
 &lt;/div&gt;</description>
