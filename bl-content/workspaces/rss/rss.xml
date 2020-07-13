@@ -5,7 +5,19 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Sat, 11 Jul 2020 18:48:06 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 12 Jul 2020 21:11:43 -0500</lastBuildDate>
+    <item>
+      <title>Pi Lab Monitor Node</title>
+      <link>https://pilab.dev/pi-lab-monitor-node</link>
+      <description>&lt;p&gt;I have added a new node to Pi Lab to provide a screen. I have it setup to cycle through the &lt;a href="https://grafana.com/"&gt;Grafana&lt;/a&gt; interface from the &lt;a href="prometheus-grafana"&gt;Prometheus Node&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I had an older &lt;a href="https://wiki.52pi.com/index.php/5-Inch-800x480-HDMI-GPIO-Touch-Screen_SKU:EP-0072"&gt;LCD screen&lt;/a&gt; that I bought several years ago. I haven't been able to get the touch screen working yet, but not sure I really need it.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Check it out!&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="centered"&gt;
+    &lt;img src="/bl-content/uploads/pages/afc7a527f2b1d3dac643a3a2567b279f/pi-lab-monitor-large.png" class="image-border" /&gt;&lt;br&gt;&lt;br&gt;
+&lt;/div&gt;</description>
+      <pubDate>Sun, 12 Jul 2020 20:46:50 -0500</pubDate>
+      <guid isPermaLink="false">afc7a527f2b1d3dac643a3a2567b279f</guid>
+    </item>
     <item>
       <title>New Pi Lab Media Nodes</title>
       <link>https://pilab.dev/new-pi-lab-media-nodes</link>
@@ -124,14 +136,6 @@ sudo apt-get upgrade&lt;/code&gt;&lt;/pre&gt;
 &lt;h3&gt;Check it out at &lt;a href="https://zerotv.pilab.dev"&gt;zerotv.pilab.dev&lt;/a&gt;!&lt;/h3&gt;</description>
       <pubDate>Mon, 13 Apr 2020 22:11:59 -0500</pubDate>
       <guid isPermaLink="false">e5cc099cec19476d9ea5bc92a4f113ae</guid>
-    </item>
-    <item>
-      <title>404 Not Found</title>
-      <link>https://pilab.dev/404</link>
-      <description>&lt;img class="dark-enabled" src="bl-content/uploads/pages/e4bec191d6976004c6edf1ff05699bae/pilab-404.png" /&gt;
-&lt;meta http-equiv="content-language" content="en" /&gt;</description>
-      <pubDate>Mon, 30 Mar 2020 21:39:12 -0500</pubDate>
-      <guid isPermaLink="false">e4bec191d6976004c6edf1ff05699bae</guid>
     </item>
   </channel>
 </rss>

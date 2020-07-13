@@ -9,15 +9,15 @@
 
 *   **Load Balancer**
     *   1 Raspberry Pi 3 Model B
-				* [Samsung EVO Plus 32GB SD Card](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
+				* [Samsung EVO Plus 32GB microSDHC Memory Card](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
 *   **Dev/Prod Node**
     *    1 Raspberry Pi 2 Model B
-				* [Samsung EVO Plus 32GB SD Card](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
+				* [Samsung EVO Plus 32GB microSDHC Memory Card](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
 *  **Prod Nodes**
     *    2 Raspberry Pi 2 Model Bs
-				* [Samsung EVO Plus 32GB SD Cards](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
+				* [Samsung EVO Plus 32GB microSDHC Memory Cards](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
     *    2 Raspberry Pi 4 4GB Model Bs 
-						* [Samsung EVO Plus 32GB SD Cards](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
+						* [Samsung EVO Plus 32GB microSDHC Memory Cards](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
 *   **Operating System:** [Raspbian](https://www.raspbian.org/)
 *   **Webserver/Load Balancer:** [Nginx](https://nginx.org/)
 *   **SSL:** [Let's Encrypt](https://letsencrypt.org/)
@@ -39,7 +39,7 @@
 
 *  **Production Node**
 	*  1 Raspberry Pi 4 2GB Model B
-				* [Samsung EVO Plus 32GB SD Card](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
+				* [Samsung EVO Plus 32GB microSDHC Memory Card](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
 *   **Operating System:** [Ubuntu Server 64-bit](https://ubuntu.com/download/raspberry-pi)
 * [More Details](fold-for-covid)
 --- 
@@ -48,7 +48,7 @@
 
 *  **Production Node**
 	 *  1 Raspberry Pi Zero W
-				* [Samsung EVO Plus 32GB SD Card](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
+				* [Samsung EVO Plus 32GB microSDHC Memory Card](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
 				* [Vilros Raspberry Pi Zero W Basic Starter Kit- Black Case Edition](https://www.amazon.com/gp/product/B0748MPQT4/)
 *   **Operating System:** [Raspbian](https://www.raspbian.org/)
 *   **CMS:** [Bludit - v3.12.0](https://www.bludit.com/)
@@ -60,7 +60,7 @@
 
 *  **Production Node**
 	 *  1 Raspberry Pi Zero W
-				* [Samsung EVO Plus 32GB SD Card](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
+				* [Samsung EVO Plus 32GB microSDHC Memory Card](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
 				* [USB-A Add-on Board](https://www.amazon.com/gp/product/B07DBL3WYQ)
 				* [Onn Universal Wall Charger](https://www.walmart.com/ip/Onn-Universal-Wall-Charger-Black/620837164)
 				* [GLCON Power Strip Tower](https://www.amazon.com/gp/product/B01G6PPTH6)
@@ -77,7 +77,7 @@
 				* [RPi Exporter](https://github.com/lukasmalkmus/rpi_exporter) - Expose Raspberry Pi metrics (v0.6.0)
 				* [Prometheus](https://prometheus.io/) - Collect and store metrics (v2.17.1)
 				* [Grafana](https://grafana.com/) - Metrics visualization (v6.7.1)
-				* [Samsung EVO Plus 32GB SD Card](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
+				* [Samsung EVO Plus 32GB microSDHC Memory Card](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
 *   **Operating System:** [Raspbian](https://www.raspbian.org/)
 * [More Details](prometheus-grafana)
 --- 
@@ -86,16 +86,25 @@
 
 *  **Production Node**
 	*  1 Raspberry Pi 4 2GB Model B
-				* [Samsung EVO Plus 32GB SD Card](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
+				* [Samsung EVO Plus 32GB microSDHC Memory Card](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
 				* [Node-Red](https://nodered.org/docs/getting-started/raspberrypi)
 *   **Operating System:** [Raspbian](https://www.raspbian.org/)
 * [More Details](node-red-twitter-bot)
+
+## Monitor Node:
+
+*  **Production Node**
+	*  1 Raspberry Pi 3 Model B+
+				* [SanDisk 8GB microSDHC Memory Card](https://www.filmtools.com/sandisk-camera-ultra-8gb-microsdhc-memory-card-read-30mb-s-sd-sdsdqui-008g-a46.html)
+				* [5-Inch-800x480-HDMI-GPIO-Touch-Screen](https://wiki.52pi.com/index.php/5-Inch-800x480-HDMI-GPIO-Touch-Screen_SKU:EP-0072)
+*   **Operating System:** [Raspbian](https://www.raspbian.org/)
+* [More Details](pi-lab-monitor-node)
 
 ## Media Nodes:
 
 *  **Production Nodes**
 	*  2 SanDisk 32GB Media Drives
-				* [Samsung EVO Plus 32GB SD Cards](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
+				* [Samsung EVO Plus 32GB microSDHC Memory Cards](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
 * [More Details](new-pi-lab-media-nodes)
 --- 
 
@@ -103,7 +112,7 @@
 
 *  **Production Node**
 	 *  1 Raspberry Pi 3 Model B
-				* [Samsung EVO Plus 32GB SD Card](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
+				* [Samsung EVO Plus 32GB microSDHC Memory Card](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
 *   **Operating System:** [Raspbian](https://www.raspbian.org/)
 * [More Details](pi-hole-is-amazing)
 --- 		
