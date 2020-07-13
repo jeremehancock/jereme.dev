@@ -90,7 +90,7 @@
 				* [Node-Red](https://nodered.org/docs/getting-started/raspberrypi)
 *   **Operating System:** [Raspbian](https://www.raspbian.org/)
 * [More Details](node-red-twitter-bot)
----
+--- 
 
 ## Monitor Node:
 
@@ -100,7 +100,7 @@
 				* [5-Inch-800x480-HDMI-GPIO-Touch-Screen](https://wiki.52pi.com/index.php/5-Inch-800x480-HDMI-GPIO-Touch-Screen_SKU:EP-0072)
 *   **Operating System:** [Raspbian](https://www.raspbian.org/)
 * [More Details](pi-lab-monitor-node)
----
+--- 
 
 ## Media Nodes:
 
