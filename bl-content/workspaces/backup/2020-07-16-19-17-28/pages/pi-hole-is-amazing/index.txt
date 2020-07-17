@@ -1,11 +1,11 @@
 If you are tired of being bombarded by all of the internet advertisements online then you should give Pi-hole a try.
 
-It is super simple to setup and get running. It not only blocks advertisements but also many sites that you might prefer your kids not see. With the ability to white-list or black-lists sites you can really fine tune things to your needs.
+It is super simple to setup and get running. It not only blocks advertisements but also many sites that you might prefer your kids not see. 
 
 Since the blocking is done at the network level you are able to even block in-app advertising. 
 
 I recommend setting things up to cover your entire network. This requires a minor change in your router to point your DNS to the IP of the Pi-hole. It is nice to know that your entire network is instantly covered.
 
-So far I haven't seen any negative effects or running Pi-hole. Our connection speeds have not suffered and no one in our home has had any issues with things getting blocked that shouldn't.
+So far I haven't seen any negative effects of running Pi-hole. Our connection speeds have not suffered and no one in our home has had any issues with things getting blocked that shouldn't.
 
 ### [Checkout Pi-hole](https://pi-hole.net)
