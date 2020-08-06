@@ -34,7 +34,7 @@ function buildErrorPage() {
 
 // This function is only used from the rule 69.pages.php, DO NOT use this function!
 // This function generate a particular page from the current slug of the url
-// If the slug has not a page associacted returns FALSE and set not-found as true
+// If the slug has not a page associated returns FALSE and set not-found as true
 function buildThePage() {
 	global $url;
 
@@ -311,7 +311,7 @@ function createPage($args) {
 		}
 	}
 
-	// The user is always the one loggued
+	// The user is always the one logged
 	$args['username'] = Session::get('username');
 	if (empty($args['username'])) {
 		Log::set('Function createPage()'.LOG_SEP.'Empty username.', LOG_TYPE_ERROR);
@@ -321,7 +321,7 @@ function createPage($args) {
 	$key = $pages->add($args);
 	if ($key) {
 		// Call the plugins after page created
-		Theme::plugins('afterPageCreate');
+		Theme::plugins('afterPageCreate', array($key));
 
 		reindexCategories();
 		reindexTags();
@@ -371,7 +371,7 @@ function editPage($args) {
 	$key = $pages->edit($args);
 	if ($key) {
 		// Call the plugins after page modified
-		Theme::plugins('afterPageModify');
+		Theme::plugins('afterPageModify', array($key));
 
 		reindexCategories();
 		reindexTags();
@@ -395,7 +395,7 @@ function deletePage($key) {
 
 	if ($pages->delete($key)) {
 		// Call the plugins after page deleted
-		Theme::plugins('afterPageDelete');
+		Theme::plugins('afterPageDelete', array($key));
 
 		reindexCategories();
 		reindexTags();
@@ -575,7 +575,9 @@ function editSettings($args) {
 
 	if (empty($args['homepage'])) {
 		$args['homepage'] = '';
+		$args['uriBlog'] = '';
 	}
+
 	if (empty($args['pageNotFound'])) {
 		$args['pageNotFound'] = '';
 	}
@@ -592,10 +594,14 @@ function editSettings($args) {
 		$args['uriCategory'] = Text::addSlashes($args['uriCategory']);
 	}
 
-	if (isset($args['uriBlog'])) {
+	if (!empty($args['uriBlog'])) {
 		$args['uriBlog'] = Text::addSlashes($args['uriBlog']);
 	} else {
-		$args['uriBlog'] = '';
+		if (!empty($args['homepage']) && empty($args['uriBlog'])) {
+			$args['uriBlog'] = '/blog/';
+		} else {
+			$args['uriBlog'] = '';
+		}
 	}
 
 	if (isset($args['extremeFriendly'])) {
@@ -671,7 +677,7 @@ function changeUserPassword($args) {
 	return false;
 }
 
-// Returns true if the user is allowed to procceded
+// Returns true if the user is allowed to proceed
 function checkRole($allowRoles, $redirect=true) {
 	global $login;
 	global $L;

@@ -206,7 +206,7 @@ class Theme {
 		return $links;
 	}
 
-	public static function javascript($files, $base=DOMAIN_THEME, $attributes="async")
+	public static function javascript($files, $base=DOMAIN_THEME, $attributes='')
 	{
 		if( !is_array($files) ) {
 			$files = array($files);
@@ -220,22 +220,22 @@ class Theme {
 		return $scripts;
 	}
 
-	public static function js($files, $base=DOMAIN_THEME, $attributes="async")
+	public static function js($files, $base=DOMAIN_THEME, $attributes='')
 	{
 		return self::javascript($files, $base, $attributes);
 	}
 
-	public static function plugins($type)
+	public static function plugins($type, $args = array())
 	{
 		global $plugins;
 		foreach ($plugins[$type] as $plugin) {
-			echo call_user_func(array($plugin, $type));
+			echo call_user_func_array(array($plugin, $type), $args);
 		}
 	}
 
 	public static function favicon($file='favicon.png', $typeIcon='image/png')
 	{
-		return '<link rel="icon" href="'.HTML_PATH_THEME.$file.'" type="'.$typeIcon.'">'.PHP_EOL;
+		return '<link rel="icon" href="'.DOMAIN_THEME.$file.'" type="'.$typeIcon.'">'.PHP_EOL;
 	}
 
 	public static function keywords($keywords)
@@ -248,28 +248,28 @@ class Theme {
 
 	public static function jquery()
 	{
-		return '<script src="'.HTML_PATH_CORE_JS.'jquery.min.js?version='.BLUDIT_VERSION.'"></script>'.PHP_EOL;
+		return '<script src="'.DOMAIN_CORE_JS.'jquery.min.js?version='.BLUDIT_VERSION.'"></script>'.PHP_EOL;
 	}
 
-	public static function jsBootstrap()
+	public static function jsBootstrap($attributes='')
 	{
-		return '<script async src="'.HTML_PATH_CORE_JS.'bootstrap.bundle.min.js?version='.BLUDIT_VERSION.'"></script>'.PHP_EOL;
+		return '<script '.$attributes.' src="'.DOMAIN_CORE_JS.'bootstrap.bundle.min.js?version='.BLUDIT_VERSION.'"></script>'.PHP_EOL;
 	}
 
 	public static function cssBootstrap()
 	{
-		return '<link rel="stylesheet" type="text/css" href="'.HTML_PATH_CORE_CSS.'bootstrap.min.css?version='.BLUDIT_VERSION.'">'.PHP_EOL;
+		return '<link rel="stylesheet" type="text/css" href="'.DOMAIN_CORE_CSS.'bootstrap.min.css?version='.BLUDIT_VERSION.'">'.PHP_EOL;
 	}
 
 	public static function cssLineAwesome()
 	{
-		return '<link rel="stylesheet" type="text/css" href="'.HTML_PATH_CORE_CSS.'line-awesome/css/line-awesome-font-awesome.min.css?version='.BLUDIT_VERSION.'">'.PHP_EOL;
+		return '<link rel="stylesheet" type="text/css" href="'.DOMAIN_CORE_CSS.'line-awesome/css/line-awesome-font-awesome.min.css?version='.BLUDIT_VERSION.'">'.PHP_EOL;
 	}
 
-	public static function jsSortable()
+	public static function jsSortable($attributes='')
 	{
 		// https://github.com/psfpro/bootstrap-html5sortable
-		return '<script async src="'.HTML_PATH_CORE_JS.'jquery.sortable.min.js?version='.BLUDIT_VERSION.'"></script>'.PHP_EOL;
+		return '<script '.$attributes.' src="'.DOMAIN_CORE_JS.'jquery.sortable.min.js?version='.BLUDIT_VERSION.'"></script>'.PHP_EOL;
 	}
 
 }

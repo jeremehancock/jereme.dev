@@ -89,7 +89,7 @@ class Paginator {
 	{
 		global $url;
 
-		$domain = trim("/",'/');
+		$domain = trim(DOMAIN_BASE,'/');
 		$filter = trim($url->activeFilter(), '/');
 
 		if(empty($filter)) {

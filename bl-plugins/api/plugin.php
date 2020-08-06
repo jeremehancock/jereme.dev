@@ -136,6 +136,9 @@ class pluginAPI extends Plugin {
 		// (GET) /api/pages/<key>
 		elseif ( ($method==='GET') && ($parameters[0]==='pages') && !empty($parameters[1]) ) {
 			$pageKey = $parameters[1];
+			if (isset($parameters[2])) {
+				$pageKey = $parameters[1].'/'.$parameters[2];
+			}
 			$data = $this->getPage($pageKey);
 		}
 		// (PUT) /api/pages/<key>
@@ -461,15 +464,15 @@ class pluginAPI extends Plugin {
 	}
 
 	/*
-	 | Upload an image and generate the thumbnails
-	 | Returns the image and thumbnail URL
-         |
-         | @inputs		array
-	 | @inputs['uuid']	string	Page UUID
-	 | @_FILE		array	https://www.php.net/manual/en/reserved.variables.files.php
-	 |
-	 | @return		array
-         */
+	| Upload an image and generate the thumbnails
+	| Returns the image and thumbnail URL
+	|
+	| @inputs		array
+	| @inputs['uuid']	string	Page UUID
+	| @_FILE		array	https://www.php.net/manual/en/reserved.variables.files.php
+	|
+	| @return		array
+	*/
 	private function uploadImage($inputs)
 	{
 		// Set upload directory
