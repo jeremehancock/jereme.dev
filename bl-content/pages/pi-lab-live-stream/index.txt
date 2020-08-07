@@ -13,7 +13,7 @@ This live stream is utilizing a re-purposed AT&T Digital Life security camera. T
 >  
 > *I have updated the Live Stream to use [Restreamer](https://datarhei.github.io/restreamer/) to push the stream live to [YouTube](https://www.youtube.com/channel/UCKhoDT8RPKPNUI-a1D2BRuA).*
 		
-<script>
+<!-- <script>
 			function startStream() {
 				setInterval(updateStream, 60 * 1000);
 			}
@@ -23,4 +23,4 @@ This live stream is utilizing a re-purposed AT&T Digital Life security camera. T
 			}
 			
 			startStream();
-</script>
+</script> -->
