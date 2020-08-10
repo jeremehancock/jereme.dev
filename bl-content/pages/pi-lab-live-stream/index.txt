@@ -39,7 +39,7 @@ This live stream is utilizing a re-purposed AT&T Digital Life security camera. T
 > 
 >  ~~*I have updated the Pi Lab Live Stream to a snapshot model. So when the stream is loaded it is a JPEG at that moment in time. The snapshot is updated once a minute. This should reduce both CPU usage and network bandwidth while still providing a "stream" of the latest Pi Lab setup.*~~
 >  
-> *I have updated the Live Stream to use [Restreamer](https://datarhei.github.io/restreamer/) to push the stream live to [YouTube](https://www.youtube.com/channel/UCKhoDT8RPKPNUI-a1D2BRuA).*
+> *I have updated the Live Stream to use [Restreamer](https://datarhei.github.io/restreamer/) to push the stream live to [YouTube](https://www.youtube.com/channel/UCKhoDT8RPKPNUI-a1D2BRuA). -- [More details...](restreamer)*
 		
 <!-- <script>
 			function startStream() {
