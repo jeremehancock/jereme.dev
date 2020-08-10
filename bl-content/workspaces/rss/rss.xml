@@ -5,7 +5,41 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Sun, 09 Aug 2020 08:55:46 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 09 Aug 2020 23:29:39 -0500</lastBuildDate>
+    <item>
+      <title>Restreamer Node</title>
+      <link>https://pilab.dev/restreamer</link>
+      <description>&lt;p&gt;Recently I have been working on setting up a live stream for my son's pet Leopard Gecko. We originally set it up a year or so ago using an old Android phone using &lt;a href="https://www.youtube.com/live"&gt;YouTube live streaming&lt;/a&gt;. However, YouTube changed the requirements for this method. They now require that your channel has over 1000 subscribers. After that change we attempted to use &lt;a href="https://play.google.com/store/apps/details?id=com.pas.webcam.pro&amp;amp;hl=en_US"&gt;IP Web Cam Pro&lt;/a&gt; also on an old Android phone. This worked pretty well, however, the phone's battery would die after a few hours even though it was plugged in.&lt;/p&gt;
+&lt;p&gt;I finally decided to purchase some low end IP cameras and give those a shot. I found a two pack of &lt;a href="https://www.amazon.com/Wyze-Indoor-Wireless-Camera-Vision/dp/B07G2YR23M/"&gt;Wyze Cams&lt;/a&gt;. I was hoping that they would have the ability to view the steam via a browser on my local network. I could then simply setup a reverse proxy on the Pi Lab load balancer and share it. Unfortunately that was not the case. &lt;/p&gt;
+&lt;p&gt;After some research I found that &lt;a href="https://wyze.com/"&gt;Wyze&lt;/a&gt; has a &lt;a href="https://support.wyzecam.com/hc/en-us/articles/360026245231-Wyze-Cam-RTSP"&gt;beta firmware&lt;/a&gt; that provides the ability to stream via RTSP. The installation is fairly straight forward. Simply have to copy a file to an SD card and follow a few steps. This gives an extra advanced option to create an RTSP URL to allow streaming outside the app.&lt;/p&gt;
+&lt;p&gt;Now that I had that I needed a way to use that stream to embed the streams on a website which was the original goal for my son's Gecko stream.&lt;/p&gt;
+&lt;p&gt;This is where the new Pi Lab Restreamer Node comes in. I have setup a Raspberry Pi 4 Model B 2GB with &lt;a href="https://datarhei.github.io/restreamer/"&gt;Restreamer&lt;/a&gt;. Restreamer is a software which allows for free real-time video streaming, e.g. transferring video signals of webcams or other video-inputs directly to your website. &lt;/p&gt;
+&lt;p&gt;The setup for this was so easy! It allowed me to setup local stream URLs that I can use with a reverse proxy entry on the Pi Lab Load Balancer. It also allows me to easily push the streams to &lt;a href="https://www.youtube.com/"&gt;YouTube&lt;/a&gt; and/or &lt;a href="https://www.twitch.tv/"&gt;Twitch&lt;/a&gt; which is what I have elected to do. &lt;/p&gt;
+&lt;div class="centered"&gt;
+    &lt;img src="/bl-content/uploads/pages/241c4852179f57be27536866df35d4ae/restreamer.png" class="image-border" /&gt;&lt;br&gt;&lt;br&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Here are the streams that we have setup so far.&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Pi Lab Live Stream
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/user/mhancoc7/videos?view=2&amp;amp;flow=grid"&gt;YouTube&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Flash Cam (Russian Tortoise)
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/user/mhancoc7/videos?view=2&amp;amp;flow=grid"&gt;YouTube&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.twitch.tv/bozodev"&gt;Twitch&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Artemis Cam (Leopard Gecko)
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/channel/UCamTOva73hhM_paTQC0LY7Q/videos?view=2&amp;amp;flow=grid"&gt;YouTube&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So far things are working very well. I have all the streams setup to not do any additional encoding in &lt;a href="https://datarhei.github.io/restreamer/"&gt;Restreamer&lt;/a&gt;. I found that this was not very helpful with my lower end cameras and was only causing high CPU usage. I am seeing about 3-4 Mbps upload usage on my network which I am going to keep a close eye on.&lt;/p&gt;
+&lt;p&gt;The main issue that I have had is with &lt;a href="https://www.youtube.com/"&gt;YouTube&lt;/a&gt; stopping the streams after 12 hours. This is mainly frustrating because it breaks the embed codes for the streams since the stream URL will change when I re-establish the stream. It is even odder that the &lt;a href="pi-lab-live-stream"&gt;Pi Lab Live Stream&lt;/a&gt; hasn't stopped after over 2 days of streaming, but the others stop everyday right at 12 hours. I am not sure if the AT&amp;amp;T Digital Life security camera that is used for the &lt;a href="pi-lab-live-stream"&gt;Pi Lab Live Stream&lt;/a&gt; somehow has an affect. I am waiting to see how the &lt;a href="https://www.twitch.tv/"&gt;Twitch&lt;/a&gt; stream works out. It might be a better option for embedding if it will last longer than 12 hours.&lt;/p&gt;
+&lt;p&gt;If you are looking to get into running a live stream for something like a pet definitely take a look at &lt;a href="https://datarhei.github.io/restreamer/"&gt;Restreamer&lt;/a&gt;!&lt;/p&gt;</description>
+      <pubDate>Sun, 09 Aug 2020 22:43:14 -0500</pubDate>
+      <guid isPermaLink="false">241c4852179f57be27536866df35d4ae</guid>
+    </item>
     <item>
       <title>Pi Lab Monitor Node</title>
       <link>https://pilab.dev/pi-lab-monitor-node</link>
@@ -122,20 +156,6 @@ sudo apt-get upgrade&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;boinccmd --read_cc_config&lt;/code&gt;&lt;/pre&gt;</description>
       <pubDate>Sun, 14 Jun 2020 22:43:08 -0500</pubDate>
       <guid isPermaLink="false">f7a9f3c988752b64b891403e01748dde</guid>
-    </item>
-    <item>
-      <title>Zero TV</title>
-      <link>https://pilab.dev/zero-tv</link>
-      <description>&lt;div class="centered"&gt;
-    &lt;img src="/bl-content/uploads/pages/e5cc099cec19476d9ea5bc92a4f113ae/zerotv-large-new.png" class="image-border" /&gt;&lt;br&gt;&lt;br&gt;
-&lt;/div&gt;
-&lt;p&gt;I have been working on my &lt;a href="check-out-my-kodi-addons"&gt;Kodi addons&lt;/a&gt; for a number of years now.&lt;/p&gt;
-&lt;p&gt;My &lt;a href="free-live-tv"&gt;Free Live TV&lt;/a&gt; addon has been one of my favorites to work on. I have been thinking about creating a web based version for quite some time. I have decided it would make a great addition to Pi Lab.&lt;/p&gt;
-&lt;p&gt;Zero TV is running on a Raspberry Pi Zero! See full specs &lt;a href="welcome-to-pi-lab"&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;The site uses &lt;a href="https://www.bludit.com/"&gt;Bludit&lt;/a&gt; and a customized version of the &lt;a href="https://jellyio.com/shop/bludit/highway"&gt;Highway&lt;/a&gt; theme from &lt;a href="https://jellyio.com"&gt;Jellyio&lt;/a&gt;. All content is pulled from freely available legal sources online.&lt;/p&gt;
-&lt;h3&gt;Check it out at &lt;a href="https://zerotv.pilab.dev"&gt;zerotv.pilab.dev&lt;/a&gt;!&lt;/h3&gt;</description>
-      <pubDate>Mon, 13 Apr 2020 22:11:59 -0500</pubDate>
-      <guid isPermaLink="false">e5cc099cec19476d9ea5bc92a4f113ae</guid>
     </item>
   </channel>
 </rss>

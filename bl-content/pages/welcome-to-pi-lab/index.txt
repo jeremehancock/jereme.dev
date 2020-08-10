@@ -121,6 +121,16 @@
 * [More Details](node-red-twitter-bot)
 --- 
 
+## Restreamer Node:
+
+*  **Production Node**
+	*  1 Raspberry Pi 4 2GB Model B
+				* [Samsung EVO Plus 32GB microSDHC Memory Card](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
+				* [Restreamer](https://datarhei.github.io/restreamer/)
+*   **Operating System:** [Raspbian](https://www.raspbian.org/)
+* [More Details](restreamer)
+--- 
+
 ## Monitor Node:
 
 *  **Production Node**
@@ -135,7 +145,7 @@
 
 *  **Production Nodes**
 	*  2 SanDisk 32GB Media Drives
-				* [Samsung EVO Plus 32GB microSDHC Memory Cards](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
+				* 1 [Samsung EVO Plus 32GB microSDHC Memory Card](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
 * [More Details](new-pi-lab-media-nodes)
 --- 
 

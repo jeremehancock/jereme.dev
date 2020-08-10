@@ -1,0 +1,31 @@
+Recently I have been working on setting up a live stream for my son's pet Leopard Gecko. We originally set it up a year or so ago using an old Android phone using [YouTube live streaming](https://www.youtube.com/live). However, YouTube changed the requirements for this method. They now require that your channel has over 1000 subscribers. After that change we attempted to use [IP Web Cam Pro](https://play.google.com/store/apps/details?id=com.pas.webcam.pro&hl=en_US) also on an old Android phone. This worked pretty well, however, the phone's battery would die after a few hours even though it was plugged in.
+
+I finally decided to purchase some low end IP cameras and give those a shot. I found a two pack of [Wyze Cams](https://www.amazon.com/Wyze-Indoor-Wireless-Camera-Vision/dp/B07G2YR23M/). I was hoping that they would have the ability to view the steam via a browser on my local network. I could then simply setup a reverse proxy on the Pi Lab load balancer and share it. Unfortunately that was not the case. 
+
+After some research I found that [Wyze](https://wyze.com/) has a [beta firmware](https://support.wyzecam.com/hc/en-us/articles/360026245231-Wyze-Cam-RTSP) that provides the ability to stream via RTSP. The installation is fairly straight forward. Simply have to copy a file to an SD card and follow a few steps. This gives an extra advanced option to create an RTSP URL to allow streaming outside the app.
+
+Now that I had that I needed a way to use that stream to embed the streams on a website which was the original goal for my son's Gecko stream.
+
+This is where the new Pi Lab Restreamer Node comes in. I have setup a Raspberry Pi 4 Model B 2GB with [Restreamer](https://datarhei.github.io/restreamer/). Restreamer is a software which allows for free real-time video streaming, e.g. transferring video signals of webcams or other video-inputs directly to your website. 
+
+The setup for this was so easy! It allowed me to setup local stream URLs that I can use with a reverse proxy entry on the Pi Lab Load Balancer. It also allows me to easily push the streams to [YouTube](https://www.youtube.com/) and/or [Twitch](https://www.twitch.tv/) which is what I have elected to do. 
+
+<div class="centered">
+    <img src="/bl-content/uploads/pages/241c4852179f57be27536866df35d4ae/restreamer.png" class="image-border" /><br><br>
+</div>
+
+**Here are the streams that we have setup so far.**
+
+* Pi Lab Live Stream
+	* [YouTube](https://www.youtube.com/user/mhancoc7/videos?view=2&flow=grid)
+* Flash Cam (Russian Tortoise)
+	* [YouTube](https://www.youtube.com/user/mhancoc7/videos?view=2&flow=grid)
+	* [Twitch](https://www.twitch.tv/bozodev)
+* Artemis Cam (Leopard Gecko)
+	* [YouTube](https://www.youtube.com/channel/UCamTOva73hhM_paTQC0LY7Q/videos?view=2&flow=grid)
+
+So far things are working very well. I have all the streams setup to not do any additional encoding in [Restreamer](https://datarhei.github.io/restreamer/). I found that this was not very helpful with my lower end cameras and was only causing high CPU usage. I am seeing about 3-4 Mbps upload usage on my network which I am going to keep a close eye on.
+
+The main issue that I have had is with [YouTube](https://www.youtube.com/) stopping the streams after 12 hours. This is mainly frustrating because it breaks the embed codes for the streams since the stream URL will change when I re-establish the stream. It is even odder that the [Pi Lab Live Stream](pi-lab-live-stream) hasn't stopped after over 2 days of streaming, but the others stop everyday right at 12 hours. I am not sure if the AT&T Digital Life security camera that is used for the [Pi Lab Live Stream](pi-lab-live-stream) somehow has an affect. I am waiting to see how the [Twitch](https://www.twitch.tv/) stream works out. It might be a better option for embedding if it will last longer than 12 hours.
+
+If you are looking to get into running a live stream for something like a pet definitely take a look at [Restreamer](https://datarhei.github.io/restreamer/)!
