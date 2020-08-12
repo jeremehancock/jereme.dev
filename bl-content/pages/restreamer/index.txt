@@ -17,7 +17,7 @@ The setup for this was so easy! It allowed me to setup local stream URLs that I 
 **Here are the streams that we have setup so far.**
 
 * [Pi Lab Live Stream](https://www.youtube.com/watch?v=hn_3fYmSo0A)
-* [Tortoise Cam (Russian Tortoise)](https://www.youtube.com/watch?v=I1rCU3pvgsQ)
+* [Tortoise Cam (Russian Tortoise)](https://tortoisecam.com)
 * [Artemis Cam (Leopard Gecko)](https://www.youtube.com/watch?v=TbbCYauIZZA)
 
 So far things are working very well. I have all the streams setup to not do any additional encoding in [Restreamer](https://datarhei.github.io/restreamer/). I found that this was not very helpful with my lower end cameras and was only causing high CPU usage. I am seeing about 3-4 Mbps upload usage on my network which I am going to keep a close eye on.
@@ -27,3 +27,5 @@ The main issue that I have had is with [YouTube](https://www.youtube.com/) stopp
 If you are looking to get into running a live stream for something like a pet definitely take a look at [Restreamer](https://datarhei.github.io/restreamer/)!
 
 > ***Update**: I have managed to get the [YouTube](https://www.youtube.com/) live streams to not stop after 12 hours. Apparently if you use the "Schedule Stream" option it allows you to stream past the 12 hour mark. The [Pi Lab Live Stream](pi-lab-live-stream) was setup this way during the initial setup which is why it hadn't stopped. I have now set them all up this way.*
+> 
+> *I have updated my tortoise cam with its own URL, [TortoiseCam.com.](https://tortoisecam.com) It is setup to point to a stream at [EarthCam](https://www.earthcam.com/) which it turns out [Restreamer](https://datarhei.github.io/restreamer/) also works with.*
