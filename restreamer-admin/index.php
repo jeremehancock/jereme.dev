@@ -1,0 +1,93 @@
+<html>
+	<head>
+	    <title>Restreamer Admin</title>
+		<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+		<link href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css">
+		<style>
+			html {
+				font-size:10px;
+			}
+
+			.iframetab {
+				width:100%;
+				height:100vh;
+				border:0px;
+				margin:0px;
+				background:url("images/iframeno.png");
+				background-size: fit;                
+    			background-repeat: no-repeat;
+    			background-position: center center;
+				position:relative;
+				top:-13px;
+			}
+
+			.ui-tabs-panel {
+				padding:5px !important;
+			}
+			
+			.ui-tabs {
+				font-size: 1.7rem;
+			}
+
+			.openout {
+				float:right;
+				position:relative;
+				top:-38px;
+				left:-5px;
+			}
+		</style>
+		<script>
+			$(document).ready(function() {
+				var $tabs = $('#tabs').tabs();
+
+				//get selected tab
+				function getSelectedTabIndex() {
+					return $tabs.tabs('option', 'active');
+				}
+
+				//get tab contents
+				beginTab = $("#tabs ul li:eq(" + getSelectedTabIndex() + ")").find("a");
+
+				loadTabFrame($(beginTab).attr("href"),$(beginTab).attr("rel"));
+
+				$("a.tabref").click(function() {
+					loadTabFrame($(this).attr("href"),$(this).attr("rel"));
+				});
+
+				//tab switching function
+				function loadTabFrame(tab, url) {
+					if ($(tab).find("iframe").length == 0) {
+						var html = [];
+						html.push('<div class="openout"><a href="' + url + '" target="_blank"><img src="images/world.png" height="18px" border="0" alt="New Tab" title="New Tab" /></a></div>');
+						html.push('<div class="tabIframeWrapper">');
+						html.push('<iframe class="iframetab" src="' + url + '">Load Failed?</iframe>');
+						html.push('</div>');
+						$(tab).append(html.join(""));
+						$(tab).find("iframe").height($(window).height()-80);
+					}
+					return false;
+				}
+			});
+		</script>
+	</head>
+	<body>
+
+		<div id="tabs">
+			<ul>
+				<li><a class="tabref" href="#tabs-1" rel="http://restreamerpi:9002">Artemis Cam</a></li>
+				<li><a class="tabref" href="#tabs-2" rel="http://restreamerpi:9010">Flash Cam (Twitch)</a></li>
+				<li><a class="tabref" href="#tabs-3" rel="http://restreamerpi:9000">Flash Cam (YouTube)</a></li>
+				<li><a class="tabref" href="#tabs-4" rel="http://restreamerpi:9001">Pi Lab Live Stream</a></li>
+			</ul>
+			<div id="tabs-1" class="tabMain"></div>
+
+			<div id="tabs-2"></div>
+
+			<div id="tabs-3"></div>
+			
+			<div id="tabs-4"></div>
+		</div> 
+
+	</body>
+</html>
