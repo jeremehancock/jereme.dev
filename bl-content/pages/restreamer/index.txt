@@ -8,7 +8,7 @@ Now that I had that I needed a way to use that stream to embed the streams on a 
 
 This is where the new Pi Lab Restreamer Node comes in. I have setup a Raspberry Pi 4 Model B 2GB with [Restreamer](https://datarhei.github.io/restreamer/). Restreamer is a software which allows for free real-time video streaming, e.g. transferring video signals of webcams or other video-inputs directly to your website. 
 
-The setup for this was so easy! It allowed me to setup local stream URLs that I can use with a reverse proxy entry on the Pi Lab Load Balancer. It also allows me to easily push the streams to [YouTube](https://www.youtube.com/) and/or [Twitch](https://www.twitch.tv/) which is what I have elected to do. 
+The setup for this was so easy! It allowed me to setup local stream URLs that I can use with a reverse proxy entry on the Pi Lab Load Balancer. It also allows me to easily push the streams to [YouTube](https://www.youtube.com/) which is what I have elected to do. 
 
 <div class="centered">
     <img src="/bl-content/uploads/pages/241c4852179f57be27536866df35d4ae/restreamer.png" class="image-border" /><br><br>
@@ -16,17 +16,13 @@ The setup for this was so easy! It allowed me to setup local stream URLs that I 
 
 **Here are the streams that we have setup so far.**
 
-* Pi Lab Live Stream
-	* [YouTube](https://www.youtube.com/watch?v=hn_3fYmSo0A)
-* Flash Cam (Russian Tortoise)
-	* [YouTube](https://www.youtube.com/watch?v=I1rCU3pvgsQ)
-	* [Twitch](https://www.twitch.tv/bozodev)
-* Artemis Cam (Leopard Gecko)
-	* [YouTube](https://www.youtube.com/watch?v=TbbCYauIZZA)
+* [Pi Lab Live Stream](https://www.youtube.com/watch?v=hn_3fYmSo0A)
+* [Flash Cam (Russian Tortoise)](https://www.youtube.com/watch?v=I1rCU3pvgsQ)
+* [Artemis Cam (Leopard Gecko)](https://www.youtube.com/watch?v=TbbCYauIZZA)
 
 So far things are working very well. I have all the streams setup to not do any additional encoding in [Restreamer](https://datarhei.github.io/restreamer/). I found that this was not very helpful with my lower end cameras and was only causing high CPU usage. I am seeing about 3-4 Mbps upload usage on my network which I am going to keep a close eye on.
 
-The main issue that I have had is with [YouTube](https://www.youtube.com/) stopping the streams after 12 hours. This is mainly frustrating because it breaks the embed codes for the streams since the stream URL will change when I re-establish the stream. It is even odder that the [Pi Lab Live Stream](pi-lab-live-stream) hasn't stopped after over 2 days of streaming, but the others stop everyday right at 12 hours. I am not sure if the AT&T Digital Life security camera that is used for the [Pi Lab Live Stream](pi-lab-live-stream) somehow has an affect. I am waiting to see how the [Twitch](https://www.twitch.tv/) stream works out. It might be a better option for embedding if it will last longer than 12 hours.
+The main issue that I have had is with [YouTube](https://www.youtube.com/) stopping the streams after 12 hours. This is mainly frustrating because it breaks the embed codes for the streams since the stream URL will change when I re-establish the stream. It is even odder that the [Pi Lab Live Stream](pi-lab-live-stream) hasn't stopped after over 2 days of streaming, but the others stop everyday right at 12 hours. I am not sure if the AT&T Digital Life security camera that is used for the [Pi Lab Live Stream](pi-lab-live-stream) somehow has an affect. 
 
 If you are looking to get into running a live stream for something like a pet definitely take a look at [Restreamer](https://datarhei.github.io/restreamer/)!
 
