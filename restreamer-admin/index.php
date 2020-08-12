@@ -82,10 +82,10 @@
 
 		<div id="tabs">
 			<ul>
-				<li><a class="tabref" href="#tabs-1" rel="https://pilab.dev/artemiscam">Artemis Cam</a></li>
-				<li><a class="tabref" href="#tabs-2" rel="https://pilab.dev/flashcam-twitch">Flash Cam (Twitch)</a></li>
-				<li><a class="tabref" href="#tabs-3" rel="https://pilab.dev/flashcam-youtube">Flash Cam (YouTube)</a></li>
-				<li><a class="tabref" href="#tabs-4" rel="https://pilab.dev/pilabstream">Pi Lab Live Stream</a></li>
+				<li><a class="tabref" href="#tabs-1" rel="https://pilab.dev/artemiscam">Artemis</a></li>
+				<li><a class="tabref" href="#tabs-2" rel="https://pilab.dev/flashcam-twitch">Flash (Twitch)</a></li>
+				<li><a class="tabref" href="#tabs-3" rel="https://pilab.dev/flashcam-youtube">Flash (YouTube)</a></li>
+				<li><a class="tabref" href="#tabs-4" rel="https://pilab.dev/pilabstream">Pi Lab</a></li>
 			</ul>
 			<div id="tabs-1" class="tabMain"></div>
 
