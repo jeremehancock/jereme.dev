@@ -40,7 +40,10 @@
 			
 			@media only screen and (max-width: 767px) {
 				.ui-tabs {
-					font-size: 1rem;
+					font-size: 1.3rem;
+				}
+				.openout {
+					top:-28px;
 				}
 			}
 		</style>
