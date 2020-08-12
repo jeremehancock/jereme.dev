@@ -69,7 +69,7 @@
 				function loadTabFrame(tab, url) {
 					if ($(tab).find("iframe").length == 0) {
 						var html = [];
-						html.push('<div class="openout"><a href="' + url + '" target="_blank"><img src="images/world.png" height="18px" border="0" alt="New Tab" title="New Tab" /></a></div>');
+						//html.push('<div class="openout"><a href="' + url + '" target="_blank"><img src="images/world.png" height="18px" border="0" alt="New Tab" title="New Tab" /></a></div>');
 						html.push('<div class="tabIframeWrapper">');
 						html.push('<iframe class="iframetab" src="' + url + '">Load Failed?</iframe>');
 						html.push('</div>');
