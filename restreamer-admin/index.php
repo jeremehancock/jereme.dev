@@ -75,10 +75,10 @@
 
 		<div id="tabs">
 			<ul>
-				<li><a class="tabref" href="#tabs-1" rel="//restreamerpi:9002">Artemis Cam</a></li>
-				<li><a class="tabref" href="#tabs-2" rel="//restreamerpi:9010">Flash Cam (Twitch)</a></li>
-				<li><a class="tabref" href="#tabs-3" rel="//restreamerpi:9000">Flash Cam (YouTube)</a></li>
-				<li><a class="tabref" href="#tabs-4" rel="//restreamerpi:9001">Pi Lab Live Stream</a></li>
+				<li><a class="tabref" href="#tabs-1" rel="https://restreamerpi:9002">Artemis Cam</a></li>
+				<li><a class="tabref" href="#tabs-2" rel="https://restreamerpi:9010">Flash Cam (Twitch)</a></li>
+				<li><a class="tabref" href="#tabs-3" rel="https://restreamerpi:9000">Flash Cam (YouTube)</a></li>
+				<li><a class="tabref" href="#tabs-4" rel="https://restreamerpi:9001">Pi Lab Live Stream</a></li>
 			</ul>
 			<div id="tabs-1" class="tabMain"></div>
 
