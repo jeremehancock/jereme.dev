@@ -37,6 +37,12 @@
 				top:-38px;
 				left:-5px;
 			}
+			
+			@media only screen and (max-width: 767px) {
+				.ui-tabs {
+					font-size: 1rem;
+				}
+			}
 		</style>
 		<script>
 			$(document).ready(function() {
