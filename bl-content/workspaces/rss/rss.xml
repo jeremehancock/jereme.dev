@@ -5,7 +5,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Tue, 11 Aug 2020 22:34:36 -0500</lastBuildDate>
+    <lastBuildDate>Tue, 11 Aug 2020 22:48:54 -0500</lastBuildDate>
     <item>
       <title>Restreamer Node</title>
       <link>https://pilab.dev/restreamer</link>
@@ -22,16 +22,16 @@
 &lt;ul&gt;
 &lt;li&gt;Pi Lab Live Stream
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://www.youtube.com/user/mhancoc7/videos?view=2&amp;amp;flow=grid"&gt;YouTube&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=hn_3fYmSo0A"&gt;YouTube&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;Flash Cam (Russian Tortoise)
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://www.youtube.com/user/mhancoc7/videos?view=2&amp;amp;flow=grid"&gt;YouTube&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=I1rCU3pvgsQ"&gt;YouTube&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.twitch.tv/bozodev"&gt;Twitch&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;Artemis Cam (Leopard Gecko)
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://www.youtube.com/channel/UCamTOva73hhM_paTQC0LY7Q/videos?view=2&amp;amp;flow=grid"&gt;YouTube&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=TbbCYauIZZA"&gt;YouTube&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;So far things are working very well. I have all the streams setup to not do any additional encoding in &lt;a href="https://datarhei.github.io/restreamer/"&gt;Restreamer&lt;/a&gt;. I found that this was not very helpful with my lower end cameras and was only causing high CPU usage. I am seeing about 3-4 Mbps upload usage on my network which I am going to keep a close eye on.&lt;/p&gt;

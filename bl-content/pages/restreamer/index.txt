@@ -17,12 +17,12 @@ The setup for this was so easy! It allowed me to setup local stream URLs that I 
 **Here are the streams that we have setup so far.**
 
 * Pi Lab Live Stream
-	* [YouTube](https://www.youtube.com/user/mhancoc7/videos?view=2&flow=grid)
+	* [YouTube](https://www.youtube.com/watch?v=hn_3fYmSo0A)
 * Flash Cam (Russian Tortoise)
-	* [YouTube](https://www.youtube.com/user/mhancoc7/videos?view=2&flow=grid)
+	* [YouTube](https://www.youtube.com/watch?v=I1rCU3pvgsQ)
 	* [Twitch](https://www.twitch.tv/bozodev)
 * Artemis Cam (Leopard Gecko)
-	* [YouTube](https://www.youtube.com/channel/UCamTOva73hhM_paTQC0LY7Q/videos?view=2&flow=grid)
+	* [YouTube](https://www.youtube.com/watch?v=TbbCYauIZZA)
 
 So far things are working very well. I have all the streams setup to not do any additional encoding in [Restreamer](https://datarhei.github.io/restreamer/). I found that this was not very helpful with my lower end cameras and was only causing high CPU usage. I am seeing about 3-4 Mbps upload usage on my network which I am going to keep a close eye on.
 
