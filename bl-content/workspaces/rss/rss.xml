@@ -5,7 +5,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Tue, 11 Aug 2020 22:48:54 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 12 Aug 2020 08:30:30 -0500</lastBuildDate>
     <item>
       <title>Restreamer Node</title>
       <link>https://pilab.dev/restreamer</link>
@@ -36,7 +36,10 @@
 &lt;/ul&gt;
 &lt;p&gt;So far things are working very well. I have all the streams setup to not do any additional encoding in &lt;a href="https://datarhei.github.io/restreamer/"&gt;Restreamer&lt;/a&gt;. I found that this was not very helpful with my lower end cameras and was only causing high CPU usage. I am seeing about 3-4 Mbps upload usage on my network which I am going to keep a close eye on.&lt;/p&gt;
 &lt;p&gt;The main issue that I have had is with &lt;a href="https://www.youtube.com/"&gt;YouTube&lt;/a&gt; stopping the streams after 12 hours. This is mainly frustrating because it breaks the embed codes for the streams since the stream URL will change when I re-establish the stream. It is even odder that the &lt;a href="pi-lab-live-stream"&gt;Pi Lab Live Stream&lt;/a&gt; hasn't stopped after over 2 days of streaming, but the others stop everyday right at 12 hours. I am not sure if the AT&amp;amp;T Digital Life security camera that is used for the &lt;a href="pi-lab-live-stream"&gt;Pi Lab Live Stream&lt;/a&gt; somehow has an affect. I am waiting to see how the &lt;a href="https://www.twitch.tv/"&gt;Twitch&lt;/a&gt; stream works out. It might be a better option for embedding if it will last longer than 12 hours.&lt;/p&gt;
-&lt;p&gt;If you are looking to get into running a live stream for something like a pet definitely take a look at &lt;a href="https://datarhei.github.io/restreamer/"&gt;Restreamer&lt;/a&gt;!&lt;/p&gt;</description>
+&lt;p&gt;If you are looking to get into running a live stream for something like a pet definitely take a look at &lt;a href="https://datarhei.github.io/restreamer/"&gt;Restreamer&lt;/a&gt;!&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Update&lt;/strong&gt;: I have managed to get the &lt;a href="https://www.youtube.com/"&gt;YouTube&lt;/a&gt; live streams to not stop after 12 hours. Apparently if you use the &amp;quot;Schedule Stream&amp;quot; option it allows you to stream past the 12 hour mark. The &lt;a href="pi-lab-live-stream"&gt;Pi Lab Live Stream&lt;/a&gt; was setup this way during the initial setup which is why it hadn't stopped. I have now set them all up this way.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</description>
       <pubDate>Sun, 09 Aug 2020 22:43:14 -0500</pubDate>
       <guid isPermaLink="false">241c4852179f57be27536866df35d4ae</guid>
     </item>
