@@ -35,7 +35,8 @@
 
 This live stream is utilizing a re-purposed AT&T Digital Life security camera. There is really no practical purpose for this. I just thought it would be a fun way to use left over tech. I have also updated the [Specs](/welcome-to-pi-lab) page to use this stream so that you can always see the latest state of Pi Lab.
 
-> ***Update**: After a [Reddit post](https://www.reddit.com/r/raspberry_pi/comments/gwbqyq/the_latest_pi_lab_setup/?utm_source=share&utm_medium=web2x) received a lot of attention I noticed that the Pi Lab Load Balancer Node was getting huge spikes in CPU usage. Eventually with help from a friend I was able to figure out that the issue was the Live Stream. The process of pushing the Live Stream through SSL was the issue. This also caused huge spikes in my network's bandwidth. *
+**Updates:**
+> *After a [Reddit post](https://www.reddit.com/r/raspberry_pi/comments/gwbqyq/the_latest_pi_lab_setup/?utm_source=share&utm_medium=web2x) received a lot of attention I noticed that the Pi Lab Load Balancer Node was getting huge spikes in CPU usage. Eventually with help from a friend I was able to figure out that the issue was the Live Stream. The process of pushing the Live Stream through SSL was the issue. This also caused huge spikes in my network's bandwidth. *
 > 
 >  ~~*I have updated the Pi Lab Live Stream to a snapshot model. So when the stream is loaded it is a JPEG at that moment in time. The snapshot is updated once a minute. This should reduce both CPU usage and network bandwidth while still providing a "stream" of the latest Pi Lab setup.*~~
 >  

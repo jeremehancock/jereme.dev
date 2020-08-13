@@ -46,4 +46,5 @@ I took things one step further and created a custom "project list" page so I cou
 
 Since all the projects are setup in [GitHub](https://github.com/mhancoc7?tab=repositories) this is truly a portable dev environment. I can just plug it into any computer and I have a full dev environment on the go.
 
-> ***Update**: I have created a new Dev-Dashboard build tool for setting up a RPI Powered Portable Dev Server. It can also be used to create a similar setup using Vagrant. Check it out here: [Dev Dashboard Build Tool](dev-dashboard-build-tool)*
+**Updates:**
+> *I have created a new Dev-Dashboard build tool for setting up a RPI Powered Portable Dev Server. It can also be used to create a similar setup using Vagrant. Check it out here: [Dev Dashboard Build Tool](dev-dashboard-build-tool)*

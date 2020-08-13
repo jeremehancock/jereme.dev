@@ -5,7 +5,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Wed, 12 Aug 2020 22:14:00 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 12 Aug 2020 23:06:31 -0500</lastBuildDate>
     <item>
       <title>Restreamer Node</title>
       <link>https://pilab.dev/restreamer</link>
@@ -27,8 +27,9 @@
 &lt;p&gt;So far things are working very well. I have all the streams setup to not do any additional encoding in &lt;a href="https://datarhei.github.io/restreamer/"&gt;Restreamer&lt;/a&gt;. I found that this was not very helpful with my lower end cameras and was only causing high CPU usage. I am seeing about 3-4 Mbps upload usage on my network which I am going to keep a close eye on.&lt;/p&gt;
 &lt;p&gt;The main issue that I have had is with &lt;a href="https://www.youtube.com/"&gt;YouTube&lt;/a&gt; stopping the streams after 12 hours. This is mainly frustrating because it breaks the embed codes for the streams since the stream URL will change when I re-establish the stream. It is even odder that the &lt;a href="pi-lab-live-stream"&gt;Pi Lab Live Stream&lt;/a&gt; hasn't stopped after over 2 days of streaming, but the others stop everyday right at 12 hours. I am not sure if the AT&amp;amp;T Digital Life security camera that is used for the &lt;a href="pi-lab-live-stream"&gt;Pi Lab Live Stream&lt;/a&gt; somehow has an affect. &lt;/p&gt;
 &lt;p&gt;If you are looking to get into running a live stream for something like a pet definitely take a look at &lt;a href="https://datarhei.github.io/restreamer/"&gt;Restreamer&lt;/a&gt;!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Updates:&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;&lt;strong&gt;Update&lt;/strong&gt;: I have managed to get the &lt;a href="https://www.youtube.com/"&gt;YouTube&lt;/a&gt; live streams to not stop after 12 hours. Apparently if you use the &amp;quot;Schedule Stream&amp;quot; option it allows you to stream past the 12 hour mark. The &lt;a href="pi-lab-live-stream"&gt;Pi Lab Live Stream&lt;/a&gt; was setup this way during the initial setup which is why it hadn't stopped. I have now set them all up this way.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;I have managed to get the &lt;a href="https://www.youtube.com/"&gt;YouTube&lt;/a&gt; live streams to not stop after 12 hours. Apparently if you use the &amp;quot;Schedule Stream&amp;quot; option it allows you to stream past the 12 hour mark. The &lt;a href="pi-lab-live-stream"&gt;Pi Lab Live Stream&lt;/a&gt; was setup this way during the initial setup which is why it hadn't stopped. I have now set them all up this way.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;I have updated my tortoise cam with its own URL, &lt;a href="https://tortoisecam.com"&gt;TortoiseCam.com&lt;/a&gt;. &lt;del&gt;It is setup to use &lt;a href="https://www.earthcam.com/"&gt;EarthCam&lt;/a&gt; which it turns out &lt;a href="https://datarhei.github.io/restreamer/"&gt;Restreamer&lt;/a&gt; also works with.&lt;/del&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;I have updated the  &lt;a href="https://tortoisecam.com"&gt;TortoiseCam.com&lt;/a&gt; site to use &lt;a href="https://www.youtube.com/"&gt;YouTube&lt;/a&gt; since I noticed &lt;a href="https://www.earthcam.com/"&gt;EarthCam&lt;/a&gt; uses ugly ads that seemed sketchy.&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;</description>
@@ -85,8 +86,9 @@
 &lt;/div&gt;
 &lt;p&gt;I am very impressed with &lt;a href="https://nodered.org/"&gt;Node-Red&lt;/a&gt;. I definitely recommend it for anyone who enjoys coding and automation.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://github.com/node-red"&gt;&lt;img data-src="/images/check-it-out-on-github.png" alt="Get it on GitHub" class="on-github lozad" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Updates:&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;&lt;strong&gt;Update&lt;/strong&gt;: Thanks to some great feedback from &lt;a href="https://www.reddit.com/r/nodered/comments/hetcu6/my_first_nodered_flow/"&gt;r/nodered&lt;/a&gt; I have re-factored the flow to use the &lt;code&gt;join&lt;/code&gt; node so I can remove the use of flow variables. This should fix the issues I was seeing when a request to the flow would occur before the previous request had completed.  &lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Thanks to some great feedback from &lt;a href="https://www.reddit.com/r/nodered/comments/hetcu6/my_first_nodered_flow/"&gt;r/nodered&lt;/a&gt; I have re-factored the flow to use the &lt;code&gt;join&lt;/code&gt; node so I can remove the use of flow variables. This should fix the issues I was seeing when a request to the flow would occur before the previous request had completed.  &lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;I have added a new flow that tweets the current BOINC Node Rosetta@home stats. This flow is setup to be completely powered by &lt;a href="https://nodered.org/"&gt;Node-Red&lt;/a&gt; and is run on a 30 minute interval.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;I have updated this blog post with the latest information on this project.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;I have added Node CPU temperature checks to alert me if a node has exceeded a configurable threshold.&lt;/em&gt;&lt;/p&gt;

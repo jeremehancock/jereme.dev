@@ -16,7 +16,8 @@ I am very impressed with [Node-Red](https://nodered.org/). I definitely recommen
 
 [<img data-src="/images/check-it-out-on-github.png" alt="Get it on GitHub" class="on-github lozad" />](https://github.com/node-red)
 
-> ***Update**: Thanks to some great feedback from [r/nodered](https://www.reddit.com/r/nodered/comments/hetcu6/my_first_nodered_flow/) I have re-factored the flow to use the `join` node so I can remove the use of flow variables. This should fix the issues I was seeing when a request to the flow would occur before the previous request had completed.  *
+**Updates:**
+> *Thanks to some great feedback from [r/nodered](https://www.reddit.com/r/nodered/comments/hetcu6/my_first_nodered_flow/) I have re-factored the flow to use the `join` node so I can remove the use of flow variables. This should fix the issues I was seeing when a request to the flow would occur before the previous request had completed.  *
 > 
 > *I have added a new flow that tweets the current BOINC Node Rosetta@home stats. This flow is setup to be completely powered by [Node-Red](https://nodered.org/) and is run on a 30 minute interval.*
 >

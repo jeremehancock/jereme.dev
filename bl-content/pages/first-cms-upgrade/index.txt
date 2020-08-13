@@ -8,7 +8,4 @@ Pi Lab is now setup to have a "source copy" on the main node that allows me to w
 
 The upgrade was as simple as copying the new version over my "source copy" of Pi Lab and then running my "promote" script. 
 
-I am working on getting a post together to give more information on how I have setup Pi Lab.
-
-**Update:**
 Checkout the [Pi Lab Setup](pi-lab-setup) for more information.

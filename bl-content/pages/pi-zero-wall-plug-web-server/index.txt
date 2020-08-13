@@ -75,6 +75,7 @@ If you are concerned about running a command like this without knowing what it i
 
 Now you should have a fully functional web server that you can use for a personal website or blog. If you decide to open up your network to allow the site to be accessible from outside your network I highly recommend that you use [Fail2ban](https://www.fail2ban.org/) to protect your network.
 
-> ***Update**: I have updated the instructions in this post to use the [Onn Universal Wall Charger](https://www.walmart.com/ip/Onn-Universal-Wall-Charger-Black/620837164) which provides my originally intended configuration.*
+**Updates:**
+> *I have updated the instructions in this post to use the [Onn Universal Wall Charger](https://www.walmart.com/ip/Onn-Universal-Wall-Charger-Black/620837164) which provides my originally intended configuration.*
 > 
 > *I have added a [Gosund Smart Plug](https://www.amazon.com/Outlet-Required-Gosund-Upgraded-Version/dp/B07GRLQV47/) to my setup so I can easily restart the server in the event that it crashes and I can't SSH into it to reboot.*
