@@ -5,7 +5,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Wed, 12 Aug 2020 23:06:31 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 21 Aug 2020 22:08:17 -0500</lastBuildDate>
     <item>
       <title>Restreamer Node</title>
       <link>https://pilab.dev/restreamer</link>
@@ -22,7 +22,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=hn_3fYmSo0A"&gt;Pi Lab Live Stream&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://tortoisecam.com"&gt;Tortoise Cam (Russian Tortoise)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=TbbCYauIZZA"&gt;Artemis Cam (Leopard Gecko)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/channel/UCamTOva73hhM_paTQC0LY7Q/live"&gt;Artemis Cam (Leopard Gecko)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;So far things are working very well. I have all the streams setup to not do any additional encoding in &lt;a href="https://datarhei.github.io/restreamer/"&gt;Restreamer&lt;/a&gt;. I found that this was not very helpful with my lower end cameras and was only causing high CPU usage. I am seeing about 3-4 Mbps upload usage on my network which I am going to keep a close eye on.&lt;/p&gt;
 &lt;p&gt;The main issue that I have had is with &lt;a href="https://www.youtube.com/"&gt;YouTube&lt;/a&gt; stopping the streams after 12 hours. This is mainly frustrating because it breaks the embed codes for the streams since the stream URL will change when I re-establish the stream. It is even odder that the &lt;a href="pi-lab-live-stream"&gt;Pi Lab Live Stream&lt;/a&gt; hasn't stopped after over 2 days of streaming, but the others stop everyday right at 12 hours. I am not sure if the AT&amp;amp;T Digital Life security camera that is used for the &lt;a href="pi-lab-live-stream"&gt;Pi Lab Live Stream&lt;/a&gt; somehow has an affect. &lt;/p&gt;
