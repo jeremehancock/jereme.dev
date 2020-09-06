@@ -136,7 +136,7 @@
 *  **Production Node**
 	*  1 Raspberry Pi 3 Model B+
 				* [SanDisk 8GB microSDHC Memory Card](https://www.filmtools.com/sandisk-camera-ultra-8gb-microsdhc-memory-card-read-30mb-s-sd-sdsdqui-008g-a46.html)
-				* [5-Inch-800x480-HDMI-GPIO-Touch-Screen](https://wiki.52pi.com/index.php/5-Inch-800x480-HDMI-GPIO-Touch-Screen_SKU:EP-0072)
+				* Dell 22 inch Monitor
 *   **Operating System:** [Raspbian](https://www.raspbian.org/)
 * [More Details](pi-lab-monitor-node)
 --- 
