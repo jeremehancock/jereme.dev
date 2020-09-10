@@ -5,7 +5,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Wed, 09 Sep 2020 21:33:04 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 09 Sep 2020 21:35:16 -0500</lastBuildDate>
     <item>
       <title>Restreamer Node</title>
       <link>https://pilab.dev/restreamer</link>
@@ -44,7 +44,11 @@
 &lt;h3&gt;Check it out!&lt;/h3&gt;
 &lt;div class="centered"&gt;
     &lt;img src="/bl-content/uploads/pages/afc7a527f2b1d3dac643a3a2567b279f/pi-lab-monitor-large.png" class="image-border" /&gt;&lt;br&gt;&lt;br&gt;
-&lt;/div&gt;</description>
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Updates:&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;I started having issues with the resolution of the LCD screen.  I have updated the screen to an old 22 inch Dell monitor. &lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</description>
       <pubDate>Sun, 12 Jul 2020 20:46:50 -0500</pubDate>
       <guid isPermaLink="false">afc7a527f2b1d3dac643a3a2567b279f</guid>
     </item>

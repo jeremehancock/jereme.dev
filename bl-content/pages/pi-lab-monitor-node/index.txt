@@ -7,3 +7,6 @@ I had an older [LCD screen](https://wiki.52pi.com/index.php/5-Inch-800x480-HDMI-
 <div class="centered">
     <img src="/bl-content/uploads/pages/afc7a527f2b1d3dac643a3a2567b279f/pi-lab-monitor-large.png" class="image-border" /><br><br>
 </div>
+
+**Updates:**
+> *I started having issues with the resolution of the LCD screen.  I have updated the screen to an old 22 inch Dell monitor. *
