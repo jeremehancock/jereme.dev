@@ -1,0 +1,2 @@
+<?php defined('BLUDIT') or die('Bludit CMS.'); ?>
+{"force-https":false,"https-status":301,"allow-external":false,"redirects":{"\/pi-lab-stats":["\/stats",301],"\/welcome-to-pi-lab":["\/specs",301]},"position":1}

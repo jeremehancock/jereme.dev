@@ -1,0 +1,32 @@
+{
+    "plugin-data": {
+        "name": "Redirects",
+        "description": "Forward URLs permanently or temporarily to other ones. Useful if you change the content slug of a page."
+    },
+    "s18n-cbd8ca3e9d1308f03b181b890a9cccb5": "Force HTTPs",
+    "s18n-01bf45994da66835885df4b31510f76b": "Force HTTPs everywhere",
+    "s18n-8dde0c7ac4ad81b94ce2b41a29df6590": "Please check if SSL is activated on your domain BEFORE you enable this option.",
+    "s18n-11366e1dd8e237a4df6c74387769ae9b": "Your site URL does currently not start with",
+    "s18n-f63e02a7651d05bd5b08a39fa8a40f44": "Change it here",
+    "s18n-634b7acd92087df96371ddb5beab80a7": "HTTPs Status",
+    "s18n-c9dd3f005de171299e3a66c2ee7f459f": "Moved Permanently",
+    "s18n-ff3ed598bc03c50ea815006ffbe68570": "Moved Temporary",
+    "s18n-c0d66c2e80e586de6786a2078d2e6502": "A permanently HTTP Status should be used for the most cases.",
+    "s18n-8f29b619629cb9827799492ff3b9ce12": "External Redirects",
+    "s18n-bccea8db690522b93559616ceab7215f": "Allow external Redirects",
+    "s18n-5195da67b54f07238d2a87be7b4bac27": "Pay attention to where you are forwarding.",
+    "s18n-2d8413ae32cda5259e93d4f3666f1235": "Redirects",
+    "s18n-f4479ba294e49605218b3f7950f5c7c5": "Permanently",
+    "s18n-d5197d93c063a2b1e22d1630a39b7aef": "Temporary",
+    "s18n-1ccf83b3fd7b7b5289891d98512178f2": "Add Redirect",
+    "s18n-e168a28d5880fb2643934b8d87b79c2c": "You just need to write the slug, the part after your site URL.",
+    "s18n-811a551fe8a89df17923bba91af4d778": "The redirect rule has been added, but don't forget to save the page!",
+    "s18n-47b670179e31680cbacd2f5f8606adb3": "Active Redirects",
+    "s18n-893b261b8481641dc8d318d68bbbde40": "The current slug must be just the page slug of your own website.",
+    "s18n-a290212e6aa44d1072ee5a72d43835ca": "The current slug field cannot be empty.",
+    "s18n-23f932c25fddee24e839cb57c1396121": "A forward rule for the current slug does already exist.",
+    "s18n-31d993a4e89ff5059105dcdcf52a9094": "The forward slug field cannot be empty.",
+    "s18n-942d74a5ad70f0dcf617191db7cd3051": "The forward slug must be just the page slug of your own website.",
+    "s18n-2a52f82226409861a85037a92b2b33d2": "The current and forward slug cannot be the same.",
+    "s18n-d859bba565027478a6aee8a765935f2f": "The passed HTTP status is invalid."
+}
