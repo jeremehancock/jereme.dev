@@ -226,7 +226,7 @@ I hope this helps someone looking to run [Bludit](https://bludit.com) on a Raspb
 
 >I have updated the nginx.conf file. I had issues with Let's Encrypt auto renewal. The updates should allow auto renewal to work with the cluster setup.
 
->I have upgraded Pi Lab with new Prod Nodes including 2 Raspberry Pi 4 4GB nodes. [Current Specs](https://pilab.dev/welcome-to-pi-lab)
+>I have upgraded Pi Lab with new Prod Nodes including 2 Raspberry Pi 4 4GB nodes. [Current Specs](specs)
 
 
 
