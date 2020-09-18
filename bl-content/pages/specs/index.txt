@@ -73,7 +73,7 @@
 
 *  1 Raspberry Pi 4 2GB Model B
 			* [Samsung EVO Plus 32GB microSDHC Memory Card](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
-					*   **Operating System:** [Ubuntu Server 64-bit](https://ubuntu.com/download/raspberry-pi)
+			*   **Operating System:** [Ubuntu Server 64-bit](https://ubuntu.com/download/raspberry-pi)
 * [More Details](fold-for-covid)
 
 --- 
@@ -82,9 +82,9 @@
 
  *  1 Raspberry Pi Zero W
 			* [Samsung EVO Plus 32GB microSDHC Memory Card](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
-					*   **Operating System:** [Raspbian](https://www.raspbian.org/)
-					*   **CMS:** [Bludit - v3.12.0](https://www.bludit.com/)  - Customized
-					*   **Theme:** [Highway](https://jellyio.com/shop/bludit/highway) - Customized
+			*   **Operating System:** [Raspbian](https://www.raspbian.org/)
+			*   **CMS:** [Bludit - v3.12.0](https://www.bludit.com/)  - Customized
+			*   **Theme:** [Highway](https://jellyio.com/shop/bludit/highway) - Customized
 			* [Vilros Raspberry Pi Zero W Basic Starter Kit- Black Case Edition](https://www.amazon.com/gp/product/B0748MPQT4/)
  *  [More Details](zero-tv)
  
@@ -94,7 +94,7 @@
 
  *  1 Raspberry Pi Zero W
 			* [Samsung EVO Plus 32GB microSDHC Memory Card](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
-					*   **Operating System:** [Raspbian](https://www.raspbian.org/)
+			*   **Operating System:** [Raspbian](https://www.raspbian.org/)
 			* [USB-A Add-on Board](https://www.amazon.com/gp/product/B07DBL3WYQ)
 			* [Onn Universal Wall Charger](https://www.walmart.com/ip/Onn-Universal-Wall-Charger-Black/620837164)
 			* [GLCON Power Strip Tower](https://www.amazon.com/gp/product/B01G6PPTH6)
@@ -107,7 +107,7 @@
 
  *  1 Raspberry Pi 1 Model B (256MB)
 			* Generic 8GB SD Card
-					*   **Operating System:** [Raspbian](https://www.raspbian.org/)
+			*   **Operating System:** [Raspbian](https://www.raspbian.org/)
 
 --- 
 
@@ -115,11 +115,11 @@
 
  *  1 Raspberry Pi 2 Model B
 			* [Samsung EVO Plus 32GB microSDHC Memory Card](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
-					*   **Operating System:** [Raspbian](https://www.raspbian.org/)
-					* [Node Exporter](https://github.com/prometheus/node_exporter) - Expose Linux metrics (v1.0.1): Installed to each node.
-					* [RPi Exporter](https://github.com/lukasmalkmus/rpi_exporter) - Expose Raspberry Pi metrics (v0.6.0): Installed to each node.
-					* [Prometheus](https://prometheus.io/) - Collect and store metrics (v2.19.2)
-					* [Grafana](https://grafana.com/) - Metrics visualization (v7.0.6)
+			*   **Operating System:** [Raspbian](https://www.raspbian.org/)
+			* [Node Exporter](https://github.com/prometheus/node_exporter) - Expose Linux metrics (v1.0.1): Installed to each node.
+			* [RPi Exporter](https://github.com/lukasmalkmus/rpi_exporter) - Expose Raspberry Pi metrics (v0.6.0): Installed to each node.
+			* [Prometheus](https://prometheus.io/) - Collect and store metrics (v2.19.2)
+			* [Grafana](https://grafana.com/) - Metrics visualization (v7.0.6)
  * [More Details](prometheus-grafana)
 
 --- 
@@ -128,8 +128,8 @@
 
 *  1 Raspberry Pi 4 2GB Model B
 			* [Samsung EVO Plus 32GB microSDHC Memory Card](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
-					*   **Operating System:** [Raspbian](https://www.raspbian.org/)
-					* [Node-Red](https://nodered.org/docs/getting-started/raspberrypi)
+			*   **Operating System:** [Raspbian](https://www.raspbian.org/)
+			* [Node-Red](https://nodered.org/docs/getting-started/raspberrypi)
 * [More Details](node-red-twitter-bot)
 
 --- 
@@ -138,8 +138,8 @@
 
 *  1 Raspberry Pi 4 2GB Model B
 			* [Samsung EVO Plus 32GB microSDHC Memory Card](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
-					*   **Operating System:** [Raspbian](https://www.raspbian.org/)
-					* [Restreamer](https://datarhei.github.io/restreamer/)
+			*   **Operating System:** [Raspbian](https://www.raspbian.org/)
+			* [Restreamer](https://datarhei.github.io/restreamer/)
 * [More Details](restreamer)
 
 --- 
@@ -166,7 +166,7 @@
 
  *  1 Raspberry Pi 3 Model B
 			* [Samsung EVO Plus 32GB microSDHC Memory Card](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
-					*   **Operating System:** [Raspbian](https://www.raspbian.org/)
+			*   **Operating System:** [Raspbian](https://www.raspbian.org/)
  * [More Details](pi-hole-is-amazing)
 
 --- 		
