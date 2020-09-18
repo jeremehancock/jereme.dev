@@ -33,10 +33,14 @@ This page provides various stats for Pi Lab.
 <iframe width="100%" height="350" data-src="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=zerotv&kiosk" frameborder="0" class="iframe-border lozad"></iframe>
 
 <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=zerotv" target="_blank" style="float:right;">View Fullscreen</a>
-## Test Node
-<iframe width="100%" height="350" data-src="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=testpi&kiosk" frameborder="0" class="iframe-border lozad"></iframe>
+## Test Node 1
+<iframe width="100%" height="350" data-src="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=testpi1&kiosk" frameborder="0" class="iframe-border lozad"></iframe>
 
-<a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=testpi" target="_blank" style="float:right;">View Fullscreen</a>
+<a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=testpi1" target="_blank" style="float:right;">View Fullscreen</a>
+## Test Node 2
+<iframe width="100%" height="350" data-src="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=testpi2&kiosk" frameborder="0" class="iframe-border lozad"></iframe>
+
+<a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=testpi2" target="_blank" style="float:right;">View Fullscreen</a>
 ## Metrics Node
 <iframe width="100%" height="350" data-src="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=prometheus&kiosk" frameborder="0" class="iframe-border lozad"></iframe>
 
