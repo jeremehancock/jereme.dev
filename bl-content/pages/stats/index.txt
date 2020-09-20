@@ -1,6 +1,9 @@
-This page provides various stats for Pi Lab.
+## Pi Lab Metrics Playlist
+<iframe width="100%" height="750" data-src="https://pilab.dev/metrics/playlists/play/2?kiosk=tv" frameborder="0" class="iframe-border lozad"></iframe>
 
-## Load Balancer Node
+<a href="https://pilab.dev/metrics/playlists/play/2?kiosk=tv" target="_blank" style="float:right;">View Fullscreen</a>
+
+<!-- ## Load Balancer Node
 <iframe width="100%" height="350" data-src="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=pi0&kiosk" frameborder="0" class="iframe-border lozad"></iframe>
 
 <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=pi0" target="_blank" style="float:right;">View Fullscreen</a>
@@ -60,7 +63,7 @@ This page provides various stats for Pi Lab.
 ## Pi-hole/OpenVPN Node
 <iframe width="100%" height="350" data-src="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=thanospi&kiosk" frameborder="0" class="iframe-border lozad"></iframe>
 
-<a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=thanospi" target="_blank" style="float:right;">View Fullscreen</a>
+<a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=thanospi" target="_blank" style="float:right;">View Fullscreen</a> -->
 
 <!-- <iframe  width="100%" height="255"  data-src="status.php" frameborder="0" class="stats-border lozad"></iframe> -->
 

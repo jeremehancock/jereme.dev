@@ -7,10 +7,12 @@ I have updated the [Pi Lab Stats](/pi-lab-stats) page to incorporate these dashb
 If you are interested in how I set this up check out this GitHub repo.
 https://github.com/bhemar/raspberry-metrics.
 
-#### Example (Load Balancer Node)
-<iframe width="100%" height="350" src="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=pi0&kiosk" frameborder="0" class="iframe-border"></iframe>
+#### Pi Lab Metrics Playlist
+<iframe width="100%" height="750" data-src="https://pilab.dev/metrics/playlists/play/2?kiosk=tv" frameborder="0" class="iframe-border lozad"></iframe>
 
-<a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=pi0" target="_blank" style="float:right;">View Fullscreen</a>
+<a href="https://pilab.dev/metrics/playlists/play/2?kiosk=tv" target="_blank" style="float:right;">View Fullscreen</a>
 
 **Updates:**
 > *I have made some updates to the Pi Lab Metrics dashboard to include more graphs. I have also finally added the Pi-hole/OpenVPN Node to the dashboard.*
+
+> *I have created a [Grafana](https://grafana.com/) Playlist to cycle through each node in Pi Lab.*
