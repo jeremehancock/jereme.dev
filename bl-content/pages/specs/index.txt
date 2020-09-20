@@ -43,14 +43,22 @@
 *   **Load Balancer**
     *   1 Raspberry Pi 3 Model B
 				* [Samsung EVO Plus 32GB microSDHC Memory Card](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
+				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=pi0" target="_blank">Metrics Dashboard</a>
 *   **Dev/Prod Node**
     *    1 Raspberry Pi 2 Model B
 				* [Samsung EVO Plus 32GB microSDHC Memory Card](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
+				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=pi1" target="_blank">Metrics Dashboard</a>
 *  **Prod Nodes**
     *    2 Raspberry Pi 2 Model Bs
 				* [Samsung EVO Plus 32GB microSDHC Memory Cards](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
+				* **Metrics Dashboards:**
+					* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=pi2" target="_blank">Node 2</a>
+					* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=pi3" target="_blank">Node 3</a>
     *    2 Raspberry Pi 4 4GB Model Bs 
 						* [Samsung EVO Plus 32GB microSDHC Memory Cards](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
+						* **Metrics Dashboards:**
+					* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=pi4" target="_blank">Node 4</a>
+					* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=pi5" target="_blank">Node 5</a>
 *   **Operating System:** [Raspbian](https://www.raspbian.org/)
 *   **Webserver/Load Balancer:** [Nginx](https://nginx.org/)
 *   **SSL:** [Let's Encrypt](https://letsencrypt.org/)
@@ -74,6 +82,7 @@
 *  1 Raspberry Pi 4 2GB Model B
 			* [Samsung EVO Plus 32GB microSDHC Memory Card](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
 			*   **Operating System:** [Ubuntu Server 64-bit](https://ubuntu.com/download/raspberry-pi)
+			*   <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=boincpi" target="_blank">Metrics Dashboard</a>
 * [More Details](fold-for-covid)
 
 --- 
@@ -85,7 +94,7 @@
 			*   **Operating System:** [Raspbian](https://www.raspbian.org/)
 			*   **CMS:** [Bludit - v3.12.0](https://www.bludit.com/)  - Customized
 			*   **Theme:** [Highway](https://jellyio.com/shop/bludit/highway) - Customized
-			* [Vilros Raspberry Pi Zero W Basic Starter Kit- Black Case Edition](https://www.amazon.com/gp/product/B0748MPQT4/)
+			* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=zerotv" target="_blank">Metrics Dashboard</a>
  *  [More Details](zero-tv)
  
 --- 
@@ -99,6 +108,7 @@
 			* [Onn Universal Wall Charger](https://www.walmart.com/ip/Onn-Universal-Wall-Charger-Black/620837164)
 			* [GLCON Power Strip Tower](https://www.amazon.com/gp/product/B01G6PPTH6)
 			* [Gosund Smart Plug](https://www.amazon.com/Outlet-Required-Gosund-Upgraded-Version/dp/B07GRLQV47/)
+			* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=testpi1" target="_blank">Metrics Dashboard</a>
  * [More Details](pi-zero-wall-plug-web-server)
 
 --- 
@@ -108,6 +118,7 @@
  *  1 Raspberry Pi 1 Model B (256MB)
 			* Generic 8GB SD Card
 			*   **Operating System:** [Raspbian](https://www.raspbian.org/)
+			*   <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=testpi2" target="_blank">Metrics Dashboard</a>
 
 --- 
 
@@ -120,6 +131,7 @@
 			* [RPi Exporter](https://github.com/lukasmalkmus/rpi_exporter) - Expose Raspberry Pi metrics (v0.6.0): Installed to each node.
 			* [Prometheus](https://prometheus.io/) - Collect and store metrics (v2.19.2)
 			* [Grafana](https://grafana.com/) - Metrics visualization (v7.0.6)
+			* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=prometheus" target="_blank">Metrics Dashboard</a>
  * [More Details](prometheus-grafana)
 
 --- 
@@ -130,6 +142,7 @@
 			* [Samsung EVO Plus 32GB microSDHC Memory Card](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
 			*   **Operating System:** [Raspbian](https://www.raspbian.org/)
 			* [Node-Red](https://nodered.org/docs/getting-started/raspberrypi)
+			* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=noderedpi" target="_blank">Metrics Dashboard</a>
 * [More Details](node-red-twitter-bot)
 
 --- 
@@ -140,6 +153,7 @@
 			* [Samsung EVO Plus 32GB microSDHC Memory Card](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
 			*   **Operating System:** [Raspbian](https://www.raspbian.org/)
 			* [Restreamer](https://datarhei.github.io/restreamer/)
+			* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=restreamerpi" target="_blank">Metrics Dashboard</a>
 * [More Details](restreamer)
 
 --- 
@@ -150,6 +164,7 @@
 			* [SanDisk 8GB microSDHC Memory Card](https://www.filmtools.com/sandisk-camera-ultra-8gb-microsdhc-memory-card-read-30mb-s-sd-sdsdqui-008g-a46.html)
 			*  **Operating System:** [Raspbian](https://www.raspbian.org/)
 			* Dell 22 inch Monitor
+			* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=pimonitor" target="_blank">Metrics Dashboard</a>
 * [More Details](pi-lab-monitor-node)
 
 --- 
@@ -167,6 +182,7 @@
  *  1 Raspberry Pi 3 Model B
 			* [Samsung EVO Plus 32GB microSDHC Memory Card](https://www.amazon.com/Samsung-Micro-Memory-Adapter-MB-MC64GA/dp/B073S49S8M)
 			*   **Operating System:** [Raspbian](https://www.raspbian.org/)
+			*   <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=thanospi" target="_blank">Metrics Dashboard</a>
  * [More Details](pi-hole-is-amazing)
 
 --- 		
