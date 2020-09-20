@@ -12,4 +12,5 @@ https://github.com/bhemar/raspberry-metrics.
 
 <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=pi0" target="_blank" style="float:right;">View Fullscreen</a>
 
-<br>
+**Updates:**
+> *I have made some updates to the Pi Lab Metrics dashboard to include more graphs. I have also finally added the Pi-hole/OpenVPN Node to the dashboard.*
