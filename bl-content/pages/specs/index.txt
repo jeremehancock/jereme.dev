@@ -115,8 +115,8 @@
 
 ## Test Node 2:
 
- *  1 Raspberry Pi 1 Model B (256MB)
-			* Generic 8GB SD Card
+ *  1 Raspberry Pi 1 Model B (256MB) - Overclocked to 800GHz
+			* [Transcend SD Card 8 GB Class 10](https://www.amazon.com/Transcend-Sd-card-GB-Class/dp/B07FDNFMP6)
 			*   **Operating System:** [Raspbian](https://www.raspbian.org/)
 			*   <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=testpi2" target="_blank">Metrics Dashboard</a>
 
