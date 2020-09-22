@@ -31,6 +31,8 @@ If you are looking to get into running a live stream for something like a pet de
 > 
 > *I have updated my tortoise cam with its own URL, [TortoiseCam.com](https://tortoisecam.com). ~~It is setup to use [EarthCam](https://www.earthcam.com/) which it turns out [Restreamer](https://datarhei.github.io/restreamer/) also works with.~~*
 >
-> *I have updated the  [TortoiseCam.com](https://tortoisecam.com) site to use [YouTube](https://www.youtube.com/) since I noticed [EarthCam](https://www.earthcam.com/) uses ugly ads that seemed sketchy.*
+> *I have updated the [TortoiseCam.com](https://tortoisecam.com) site to use [YouTube](https://www.youtube.com/) since I noticed [EarthCam](https://www.earthcam.com/) uses ugly ads that seemed sketchy.*
+>
+> *I have continued to have issues with [YouTube](https://www.youtube.com/) ending the tortoise cam stream. So I have gone back to [EarthCam](https://www.earthcam.com/). To get around the sketchy ads in the [EarthCam](https://www.earthcam.com/) embed I have setup a scraper to grab the m3u8 file directly for [TortoiseCam.com](https://tortoisecam.com).*
 
 

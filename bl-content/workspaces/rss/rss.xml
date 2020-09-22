@@ -5,7 +5,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Mon, 21 Sep 2020 21:23:37 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 21 Sep 2020 22:53:08 -0500</lastBuildDate>
     <item>
       <title>Restreamer Node</title>
       <link>https://pilab.dev/restreamer</link>
@@ -31,7 +31,8 @@
 &lt;blockquote&gt;
 &lt;p&gt;&lt;em&gt;I have managed to get the &lt;a href="https://www.youtube.com/"&gt;YouTube&lt;/a&gt; live streams to not stop after 12 hours. Apparently if you use the &amp;quot;Schedule Stream&amp;quot; option it allows you to stream past the 12 hour mark. The &lt;a href="pi-lab-live-stream"&gt;Pi Lab Live Stream&lt;/a&gt; was setup this way during the initial setup which is why it hadn't stopped. I have now set them all up this way.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;I have updated my tortoise cam with its own URL, &lt;a href="https://tortoisecam.com"&gt;TortoiseCam.com&lt;/a&gt;. &lt;del&gt;It is setup to use &lt;a href="https://www.earthcam.com/"&gt;EarthCam&lt;/a&gt; which it turns out &lt;a href="https://datarhei.github.io/restreamer/"&gt;Restreamer&lt;/a&gt; also works with.&lt;/del&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;I have updated the  &lt;a href="https://tortoisecam.com"&gt;TortoiseCam.com&lt;/a&gt; site to use &lt;a href="https://www.youtube.com/"&gt;YouTube&lt;/a&gt; since I noticed &lt;a href="https://www.earthcam.com/"&gt;EarthCam&lt;/a&gt; uses ugly ads that seemed sketchy.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;I have updated the &lt;a href="https://tortoisecam.com"&gt;TortoiseCam.com&lt;/a&gt; site to use &lt;a href="https://www.youtube.com/"&gt;YouTube&lt;/a&gt; since I noticed &lt;a href="https://www.earthcam.com/"&gt;EarthCam&lt;/a&gt; uses ugly ads that seemed sketchy.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;I have continued to have issues with &lt;a href="https://www.youtube.com/"&gt;YouTube&lt;/a&gt; ending the tortoise cam stream. So I have gone back to &lt;a href="https://www.earthcam.com/"&gt;EarthCam&lt;/a&gt;. To get around the sketchy ads in the &lt;a href="https://www.earthcam.com/"&gt;EarthCam&lt;/a&gt; embed I have setup a scraper to grab the m3u8 file directly for &lt;a href="https://tortoisecam.com"&gt;TortoiseCam.com&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;</description>
       <pubDate>Sun, 09 Aug 2020 22:43:14 -0500</pubDate>
       <guid isPermaLink="false">241c4852179f57be27536866df35d4ae</guid>
