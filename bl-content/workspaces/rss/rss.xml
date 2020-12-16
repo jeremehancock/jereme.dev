@@ -5,7 +5,18 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Mon, 21 Sep 2020 22:53:08 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 16 Dec 2020 17:01:50 -0600</lastBuildDate>
+    <item>
+      <title>Roadside America</title>
+      <link>https://pilab.dev/roadside-america</link>
+      <description>&lt;p&gt;A little over a year ago I saw a Reddit post about the &lt;a href="https://www.loc.gov/free-to-use/john-margolies-roadside-america-photograph-archive"&gt;John Margolies Roadside America Photograph Archive&lt;/a&gt;. The photos were taken between 1968 and 2008 and feature various roadside attractions in the United States. &lt;/p&gt;
+&lt;p&gt;My first thought was I should build some sort of API to allow someone to easily use these photos on a website. So I built out a very simple API of sorts and set it up here, &lt;a href="https://roadside-america.dumbprojects.com/"&gt;Roadside America API&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I started tweeting the pictures on my personal Twitter account and people seemed to like them. So I have setup a Roadside America Twitter account and new site to allow people to get a random picture from the archive wiith its description every hour.&lt;/p&gt;
+&lt;p&gt;Check it out here:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://twitter.com/RdSd_America_US"&gt;@RdSd_America_US&lt;/a&gt; &amp;amp; &lt;a href="https://roadsideamerica.us/"&gt;RoadsideAmerica.us&lt;/a&gt;&lt;/p&gt;</description>
+      <pubDate>Wed, 16 Dec 2020 12:41:21 -0600</pubDate>
+      <guid isPermaLink="false">autosave-6968c1c0dfc10df31f7685952c0cf488</guid>
+    </item>
     <item>
       <title>Restreamer Node</title>
       <link>https://pilab.dev/restreamer</link>
@@ -104,60 +115,6 @@
 &lt;/blockquote&gt;</description>
       <pubDate>Tue, 23 Jun 2020 20:52:42 -0500</pubDate>
       <guid isPermaLink="false">b3c9f34aa0cb8225b2ce75d480025d36</guid>
-    </item>
-    <item>
-      <title>Fold For Covid</title>
-      <link>https://pilab.dev/fold-for-covid</link>
-      <description>&lt;p&gt;I have upgraded the BOINC Node to a &lt;a href="https://deviwiki.com/wiki/RPF_Raspberry_Pi_4_Model_B_2GB"&gt;Raspberry Pi 4 Model B (2GB)&lt;/a&gt;. This is a nice upgrade from the old &lt;a href="https://deviwiki.com/wiki/RPF_Raspberry_Pi_Model_B_(256MB)"&gt;Raspberry Pi Model B (256MB)&lt;/a&gt; that I had previously been running.&lt;/p&gt;
-&lt;p&gt;I have kept &lt;a href="https://setiathome.berkeley.edu/"&gt;SETI@home&lt;/a&gt; setup just in case it starts sending out jobs again. However, the primary purpose of the BOINC node for now is to run &lt;a href="https://boinc.bakerlab.org/"&gt;Rosetta@home&lt;/a&gt; to help with COVID-19 research.&lt;/p&gt;
-&lt;h5&gt;Checkout Pi Lab's BOINC Node progress.&lt;/h5&gt;
-&lt;iframe width="100%" height="360" data-src="boincpi" frameborder="0" class="iframe-no-border-no-padding-no-isolate lozad" scrolling="no"&gt;&lt;/iframe&gt;
-&lt;hr /&gt;
-&lt;p&gt;Here are the basic steps that I used to setup &lt;a href="https://boinc.bakerlab.org/"&gt;Rosetta@home&lt;/a&gt; on the BOINC node.&lt;/p&gt;
-&lt;h3&gt;Step 1:&lt;/h3&gt;
-&lt;p&gt;Download &lt;a href="https://ubuntu.com/download/raspberry-pi"&gt;Ubuntu Server for Raspberry Pi (64-bit)&lt;/a&gt;&lt;/p&gt;
-&lt;h3&gt;Step 2:&lt;/h3&gt;
-&lt;p&gt;Flash image to SD card&lt;/p&gt;
-&lt;p&gt;The easiest way to do this is to use &lt;a href="https://www.balena.io/etcher/"&gt;balenaEtcher&lt;/a&gt;. It is super simple and they have great instructions.&lt;/p&gt;
-&lt;h3&gt;Step 3:&lt;/h3&gt;
-&lt;p&gt;SSH into the Pi&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;ssh ubuntu@&amp;lt;the_ip_assigned_to_the_pi&amp;gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Note:&lt;/em&gt;&lt;/strong&gt;
-&lt;em&gt;The default password is &lt;code&gt;ubuntu&lt;/code&gt;. You will be prompted to change it.&lt;/em&gt;&lt;/p&gt;
-&lt;h3&gt;Step 4:&lt;/h3&gt;
-&lt;p&gt;Make sure everything is up to date&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;sudo apt-get update
-sudo apt-get upgrade&lt;/code&gt;&lt;/pre&gt;
-&lt;h3&gt;Step 5:&lt;/h3&gt;
-&lt;p&gt;Install the BOINC Client&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;sudo apt-get install boinc-client&lt;/code&gt;&lt;/pre&gt;
-&lt;h3&gt;Step 6:&lt;/h3&gt;
-&lt;p&gt;Get Account Key&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;boinccmd --lookup_account boinccmd --lookup_account https://boinc.bakerlab.org/rosetta &amp;lt;your_email&amp;gt; &amp;lt;your_password&amp;gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Note:&lt;/em&gt;&lt;/strong&gt;
-&lt;em&gt;I already had a &lt;a href="https://boinc.bakerlab.org/"&gt;Rosetta@home&lt;/a&gt; account. If you don't have one you can create one &lt;a href="https://boinc.bakerlab.org/rosetta/create_account_form.php"&gt;here&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
-&lt;h3&gt;Step 7:&lt;/h3&gt;
-&lt;p&gt;Attach the BOINC Client program to your &lt;a href="https://boinc.bakerlab.org/"&gt;Rosetta@home&lt;/a&gt; account&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;boinccmd --project_attach https://boinc.bakerlab.org/rosetta &amp;lt;your_account_key&amp;gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h4&gt;That's it. You should now be up and running!&lt;/h4&gt;
-&lt;hr /&gt;
-&lt;p&gt;Consider joining the &lt;a href="https://boinc.bakerlab.org/rosetta/team_display.php?teamid=18832"&gt;Fold for Covid&lt;/a&gt; team.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Note:&lt;/em&gt;&lt;/strong&gt; &lt;em&gt;There is a simpler setup available at &lt;a href="https://foldforcovid.io/#get-started"&gt;Fold for Covid&lt;/a&gt;. I decided to go with this setup since I am very familiar with Ubuntu.&lt;/em&gt;&lt;/p&gt;
-&lt;hr /&gt;
-&lt;h3&gt;Do more with BOINC:&lt;/h3&gt;
-&lt;h4&gt;Check your tasks:&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;boinccmd --get_tasks&lt;/code&gt;&lt;/pre&gt;
-&lt;h4&gt;Install boinctui:&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;sudo apt-get install boinctui&lt;/code&gt;&lt;/pre&gt;
-&lt;h4&gt;Run boinctui:&lt;/h4&gt;
-&lt;p&gt;This will give you a nice text interface for BOINC.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;boinctui&lt;/code&gt;&lt;/pre&gt;
-&lt;h4&gt;Configure BOINC Client:&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;sudo nano /var/lib/boinc-client/cc_config.xml&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Note:&lt;/em&gt;&lt;/strong&gt; &lt;em&gt;If you make changes to the configuration be sure to run the following command. Configuration options can be found &lt;a href="https://boinc.berkeley.edu/wiki/Client_configuration"&gt;here&lt;/a&gt;. &lt;/em&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;boinccmd --read_cc_config&lt;/code&gt;&lt;/pre&gt;</description>
-      <pubDate>Sun, 14 Jun 2020 22:43:08 -0500</pubDate>
-      <guid isPermaLink="false">f7a9f3c988752b64b891403e01748dde</guid>
     </item>
   </channel>
 </rss>
