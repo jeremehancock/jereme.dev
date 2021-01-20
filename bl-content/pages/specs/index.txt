@@ -1,5 +1,5 @@
 <div class="centered">
-		<div style="display:none;">Pi Lab is a collection of Raspberry Pis used for various purposes including hosting this blog. 
+		<div style="display:none;">Pi Lab is my homelab that consists primarily of Raspberry Pis. This blog is hosted on the Raspberry Pi cluster that started it all.
 			&nbsp;&nbsp;&nbsp;
 	  </div>
 
@@ -36,7 +36,7 @@
 		</script>
 </div>
 
-*Pi Lab is a collection of Raspberry Pis used for various purposes including hosting this blog. *
+*Pi Lab is my homelab that consists primarily of Raspberry Pis. This blog is hosted on the Raspberry Pi cluster that started it all. *
 	
 ## Pi Lab Web Cluster:
 
@@ -170,14 +170,6 @@
 
 --- 
 
-## Media Nodes:
-
-*  2 SanDisk 32GB Media Drives
-			* 1 Samsung EVO Plus 32GB microSDHC Memory Card
-* [More Details](new-pi-lab-media-nodes)
-
---- 
-
 ## Pi-hole/OpenVPN:
 
  *  1 Raspberry Pi 3 Model B
@@ -186,7 +178,46 @@
 			*   <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=thanospi" target="_blank">Metrics Dashboard</a>
  * [More Details](pi-hole-is-amazing)
 
---- 		
+---
+
+## Media Nodes:
+
+*  2 SanDisk 32GB Media Drives
+			* 1 Samsung EVO Plus 32GB microSDHC Memory Card
+* [More Details](new-pi-lab-media-nodes)
+
+---
+
+## Plex Server:
+
+*  Dell Latitude E6530
+			* 4x Intel Core i5-3320M CPU @ 2.60GHz
+			*   **Operating System:** [Ubuntu 20.04.1 LTS](https://ubuntu.com/download/desktop)
+			* 8GB DDR3 SDRAM 1600MHz
+			* OCZ ARC 100 240 GB SSD
+			* Intel SSDSA2CW120G3 120 GB SSD
+			* WD_Black 5TB P10-Game Drive
+			* [Plex Media Server](https://www.plex.tv/)
+			* [Radarr](https://hub.docker.com/r/linuxserver/radarr) (Docker)
+			* [Sonarr](https://hub.docker.com/r/linuxserver/sonarr) (Docker)
+			* [Jackett](https://hub.docker.com/r/linuxserver/jackett) (Docker)
+			* [qBittorent](https://www.qbittorrent.org/)
+			* [Cockpit](https://cockpit-project.org/)
+			
+---
+
+## Nextcloud Server:
+
+*  Dell Latitude E7470
+			* 4x Intel Core i7-6600U CPU @ 2.60GHz
+			*   **Operating System:** [Ubuntu Server 20.04.1 LTS](https://ubuntu.com/download/server)
+			* 16GB DDR4 SDRAM 2133 MT/s
+			* SanDisk X400 M.2 512 GB
+			* [Nextcloud](https://snapcraft.io/install/nextcloud/ubuntu) (Snap)
+			* [Heimdall](https://hub.docker.com/r/linuxserver/heimdall) (Docker)
+			* [Cockpit](https://cockpit-project.org/)
+			
+---
 				
 <style>
 	.page-content, .entry-header, .entry-content {
