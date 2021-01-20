@@ -170,6 +170,14 @@
 
 --- 
 
+## Media Nodes:
+
+*  2 SanDisk 32GB Media Drives
+			* 1 Samsung EVO Plus 32GB microSDHC Memory Card
+* [More Details](new-pi-lab-media-nodes)
+
+---
+
 ## Pi-hole/OpenVPN:
 
  *  1 Raspberry Pi 3 Model B
@@ -177,14 +185,6 @@
 			*   **Operating System:** [Raspbian](https://www.raspbian.org/)
 			*   <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=thanospi" target="_blank">Metrics Dashboard</a>
  * [More Details](pi-hole-is-amazing)
-
----
-
-## Media Nodes:
-
-*  2 SanDisk 32GB Media Drives
-			* 1 Samsung EVO Plus 32GB microSDHC Memory Card
-* [More Details](new-pi-lab-media-nodes)
 
 ---
 
