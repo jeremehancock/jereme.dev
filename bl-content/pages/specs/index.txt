@@ -201,7 +201,7 @@
 			* [Radarr](https://hub.docker.com/r/linuxserver/radarr) (Docker)
 			* [Sonarr](https://hub.docker.com/r/linuxserver/sonarr) (Docker)
 			* [Jackett](https://hub.docker.com/r/linuxserver/jackett) (Docker)
-			* [qBittorent](https://www.qbittorrent.org/)
+			* [Transmission / OpenVPN](https://haugene.github.io/docker-transmission-openvpn/) (Docker)
 			* [Cockpit](https://cockpit-project.org/)
 			
 ---

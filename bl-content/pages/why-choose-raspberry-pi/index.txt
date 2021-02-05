@@ -1,0 +1,18 @@
+I often see this question posed in comment threads. Someone will post a picture of their latest Raspberry Pi project and almost immediately someone will respond with something like, "Why! An old PC would be much better for that.". It isn't the question the bothers me. I mean it is true that the Raspberry Pi is not the perfect choice for every project. However, I do believe that there are a lot of people who just don't get the appeal. So I decided to create this post to at least share my perspective.
+
+I have decided to focus on four reasons to choose a Raspberry Pi for your project. Cost, SIze, Community, and Fun.
+
+### Cost:
+When starting any project cost is always a big factor. Raspberry Pis range in cost from as low $5 to $75. Of course you will need purchase a power supply and possibly a case depending on your project. Even with these possible costs a Raspberry Pi is still very cost effective. 
+
+There is also the cost of power consumption. A Raspberry PI will use much less power than let's say an old PC.
+
+### Size:
+One great thing about the Raspberry Pi is its physical size. I remember when I first became interested in running my own servers. At the time there were no options like the Raspberry Pi. I always envisioned needing a server room or closet. Nowadays, I am able to run a fun homelab on my office desk. This to me is a huge advantage over many other options.
+
+### Community:
+Having a large community is a huge bonus when it comes to the Raspberry Pi. There are seemingly endless posts and tutorials online for all sorts of Raspberry Pi projects. This is especially nice for anyone who is getting started. Many people's first exposure to Linux is from setting up a Raspberry Pi project. 
+
+### Fun:
+This one is my favorite reasons to use a Raspberry Pi. It is also the one that many of the people who don't seem to understand the draw of the Raspberry Pi will never get. I find the Raspberry Pi to one of those products that just feels right. They are very well built and just have something about them that make them fun to work with.
+
