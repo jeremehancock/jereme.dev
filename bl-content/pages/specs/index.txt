@@ -198,6 +198,7 @@
 			* Intel SSDSA2CW120G3 120 GB SSD
 			* WD_Black 5TB P10-Game Drive
 			* [Plex Media Server](https://www.plex.tv/)
+			* [Tautulli](https://tautulli.com/) (Docker)
 			* [Radarr](https://hub.docker.com/r/linuxserver/radarr) (Docker)
 			* [Sonarr](https://hub.docker.com/r/linuxserver/sonarr) (Docker)
 			* [Jackett](https://hub.docker.com/r/linuxserver/jackett) (Docker)
