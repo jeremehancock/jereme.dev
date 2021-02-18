@@ -5,7 +5,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Thu, 18 Feb 2021 11:45:38 -0600</lastBuildDate>
+    <lastBuildDate>Thu, 18 Feb 2021 15:35:31 -0600</lastBuildDate>
     <item>
       <title>Roadside America</title>
       <link>https://pilab.dev/roadside-america</link>
@@ -60,6 +60,7 @@
 &lt;p&gt;&lt;strong&gt;Updates:&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;em&gt;I started having issues with the resolution of the LCD screen.  I have updated the screen to an old 22 inch Dell monitor. &lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;I have re-purposed the Monitor Node into the OctoPrint Node. I now have my dashbard displayed using my Plex Node. &lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;</description>
       <pubDate>Sun, 12 Jul 2020 20:46:50 -0500</pubDate>
       <guid isPermaLink="false">afc7a527f2b1d3dac643a3a2567b279f</guid>

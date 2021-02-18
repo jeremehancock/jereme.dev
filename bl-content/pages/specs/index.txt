@@ -59,7 +59,7 @@
 						* **Metrics Dashboards:**
 					* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=pi4" target="_blank">Node 4</a>
 					* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=pi5" target="_blank">Node 5</a>
-*   **Operating System:** [Raspbian](https://www.raspbian.org/)
+*   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
 *   **Webserver/Load Balancer:** [Nginx](https://nginx.org/)
 *   **SSL:** [Let's Encrypt](https://letsencrypt.org/)
 *   **CMS:** [Bludit - v3.13.1 PRO](https://www.bludit.com/)
@@ -92,7 +92,7 @@
 
  *  1 Raspberry Pi Zero W
 			* Samsung EVO Plus 32GB microSDHC Memory Card
-			*   **Operating System:** [Raspbian](https://www.raspbian.org/)
+			*   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
 			*   **CMS:** [Bludit - v3.12.0](https://www.bludit.com/)  - Customized
 			*   **Theme:** [Highway](https://jellyio.com/shop/bludit/highway) - Customized
 			* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=zerotv" target="_blank">Metrics Dashboard</a>
@@ -100,13 +100,12 @@
  
 --- 
 
-## Test Node 1:
+## Test Node:
 
  *  1 Raspberry Pi Zero W
 			* Samsung EVO Plus 32GB microSDHC Memory Card
-			*   **Operating System:** [Raspbian](https://www.raspbian.org/)
+			*   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
 			* [USB-A Add-on Board](https://www.amazon.com/gp/product/B07DBL3WYQ)
-			* [Onn Universal Wall Charger](https://www.walmart.com/ip/Onn-Universal-Wall-Charger-Black/620837164)
 			* [GLCON Power Strip Tower](https://www.amazon.com/gp/product/B01G6PPTH6)
 			* [Gosund Smart Plug](https://www.amazon.com/Outlet-Required-Gosund-Upgraded-Version/dp/B07GRLQV47/)
 			* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=testpi1" target="_blank">Metrics Dashboard</a>
@@ -114,20 +113,11 @@
 
 --- 
 
-## Test Node 2:
-
- *  1 Raspberry Pi 1 Model B (256MB) - Overclocked to 800MHz
-			* Transcend SD Card 8 GB Class 10
-			*   **Operating System:** [Raspbian](https://www.raspbian.org/)
-			*   <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=testpi2" target="_blank">Metrics Dashboard</a>
-
---- 
-
 ## Metrics Node:
 
  *  1 Raspberry Pi 2 Model B
 			* Samsung EVO Plus 32GB microSDHC Memory Card
-			*   **Operating System:** [Raspbian](https://www.raspbian.org/)
+			*   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
 			* [Node Exporter](https://github.com/prometheus/node_exporter) - Expose Linux metrics (v1.0.1): Installed to each node.
 			* [RPi Exporter](https://github.com/lukasmalkmus/rpi_exporter) - Expose Raspberry Pi metrics (v0.6.0): Installed to each node.
 			* [Prometheus](https://prometheus.io/) - Collect and store metrics (v2.19.2)
@@ -141,7 +131,7 @@
 
 *  1 Raspberry Pi 4 2GB Model B
 			* Samsung EVO Plus 32GB microSDHC Memory Card
-			*   **Operating System:** [Raspbian](https://www.raspbian.org/)
+			*   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
 			* [Node-Red](https://nodered.org/docs/getting-started/raspberrypi)
 			* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=noderedpi" target="_blank">Metrics Dashboard</a>
 * [More Details](node-red-twitter-bot)
@@ -152,22 +142,23 @@
 
 *  1 Raspberry Pi 4 2GB Model B
 			* Samsung EVO Plus 32GB microSDHC Memory Card
-			*   **Operating System:** [Raspbian](https://www.raspbian.org/)
+			*   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
 			* [Restreamer](https://datarhei.github.io/restreamer/)
 			* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=restreamerpi" target="_blank">Metrics Dashboard</a>
 * [More Details](restreamer)
 
 --- 
 
-## Monitor Node:
+## OctoPrint Node:
 
 *  1 Raspberry Pi 3 Model B+
 			* SanDisk 8GB microSDHC Memory Card
-			*  **Operating System:** [Raspbian](https://www.raspbian.org/)
-			* Dell 22 inch Monitor
-			* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=pimonitor" target="_blank">Metrics Dashboard</a>
-* [More Details](pi-lab-monitor-node)
-
+			*   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
+			* [Onn Universal Wall Charger](https://www.walmart.com/ip/Onn-Universal-Wall-Charger-Black/620837164)
+			* [Gosund Smart Plug](https://www.amazon.com/Outlet-Required-Gosund-Upgraded-Version/dp/B07GRLQV47/)
+			* [Ender 3 Pro](https://creality3d.shop/collections/3d-printer/products/creality3d-ender-3-pro-high-precision-3d-printer)
+			* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=octopi" target="_blank">Metrics Dashboard</a>
+			
 --- 
 
 ## Media Nodes:
@@ -182,7 +173,7 @@
 
  *  1 Raspberry Pi 3 Model B
 			* Sandisk Extreme 16GB microSD Card
-			*   **Operating System:** [Raspbian](https://www.raspbian.org/)
+			*   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
 			*   <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=thanospi" target="_blank">Metrics Dashboard</a>
  * [More Details](pi-hole-is-amazing)
 
