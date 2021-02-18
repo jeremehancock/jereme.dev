@@ -152,7 +152,7 @@
 ## OctoPrint Node:
 
 *  1 Raspberry Pi 3 Model B+
-			* SanDisk 8GB microSDHC Memory Card
+			* Samsung EVO Plus 32GB microSDHC Memory Card
 			*   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
 			* [Onn Universal Wall Charger](https://www.walmart.com/ip/Onn-Universal-Wall-Charger-Black/620837164)
 			* [Gosund Smart Plug](https://www.amazon.com/Outlet-Required-Gosund-Upgraded-Version/dp/B07GRLQV47/)
@@ -188,6 +188,7 @@
 			* OCZ ARC 100 240 GB SSD
 			* Intel SSDSA2CW120G3 120 GB SSD
 			* WD_Black 5TB P10-Game Drive
+			* Dell 22 Inch Monitor
 			* [Plex Media Server](https://www.plex.tv/)
 			* [Tautulli](https://tautulli.com/) (Docker)
 			* [Radarr](https://hub.docker.com/r/linuxserver/radarr) (Docker)
