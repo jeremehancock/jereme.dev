@@ -5,7 +5,27 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Thu, 18 Feb 2021 15:52:41 -0600</lastBuildDate>
+    <lastBuildDate>Wed, 24 Feb 2021 19:55:15 -0600</lastBuildDate>
+    <item>
+      <title>OctoPrint Node</title>
+      <link>https://pilab.dev/octoprint-node</link>
+      <description>&lt;p&gt;My wife and kids got me a new 3D printer for my Birthday! I have been wanting one for quite some time. It is an &lt;a href="https://creality3d.shop/collections/3d-printer/products/creality3d-ender-3-pro-high-precision-3d-printer"&gt;Ender 3 Pro&lt;/a&gt;. I am really just getting into using it but one of the first things I was told to do was check out &lt;a href="https://octoprint.org/"&gt;OctoPrint&lt;/a&gt;. &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;So what is OctoPrint?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;It is described as &lt;em&gt;&amp;quot;The snappy web interface for your 3D printer.&amp;quot;&lt;/em&gt;.  That doesn't begin to explain how great I think it is. It definitely does provide a web interface for your 3D printer, but it does so much more. It also provides the ability to run manual commands and even select from a very nice selection of plugins for a variety of tasks. It truly made a nice 3D printer a much more enjoyable piece of equipment.&lt;/p&gt;
+&lt;p&gt;I have re-purposed my &lt;a href="pi-lab-monitor-node"&gt;Monitor Node&lt;/a&gt; into my new OctoPi Node. &lt;/p&gt;
+&lt;div class="centered"&gt;
+    &lt;img src="/bl-content/uploads/pages/b488323d86f5d481bf4bac8f975a2ca3/octoprint-node.png" class="image-border" /&gt;&lt;br&gt;&lt;br&gt;
+&lt;/div&gt;
+&lt;p&gt;So far I have mostly printed &lt;a href="http://www.3dbenchy.com/"&gt;3DBenchies&lt;/a&gt; trying to really get my print quality dialed in. I have one functional print under my belt that I am very happy with. I have had issues with my Roomba getting stuck under our coach. So I went looking on &lt;a href="https://www.thingiverse.com"&gt;Thingverse&lt;/a&gt; and I found this &lt;a href="https://www.thingiverse.com/thing:1756175"&gt;Bumper Extension for Roomba&lt;/a&gt;. It was for a different model and I had to do some scaling to make it large enough to keep my Roomba from going under the couch. So far it is working great!&lt;/p&gt;
+&lt;div class="centered"&gt;
+    &lt;img src="/bl-content/uploads/pages/b488323d86f5d481bf4bac8f975a2ca3/roomba-mod.png" class="image-border" /&gt;&lt;br&gt;&lt;br&gt;
+&lt;/div&gt;
+&lt;p&gt;I have added a new &lt;a href="category/3d-printing"&gt;3D Printing&lt;/a&gt; category to the blog and I hope to be posting many more prints very soon.&lt;/p&gt;</description>
+      <pubDate>Wed, 24 Feb 2021 19:17:06 -0600</pubDate>
+      <guid isPermaLink="false">b488323d86f5d481bf4bac8f975a2ca3</guid>
+    </item>
     <item>
       <title>Roadside America</title>
       <link>https://pilab.dev/roadside-america</link>
@@ -60,7 +80,7 @@
 &lt;p&gt;&lt;strong&gt;Updates:&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;em&gt;I started having issues with the resolution of the LCD screen.  I have updated the screen to an old 22 inch Dell monitor. &lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;I have re-purposed the Monitor Node into the OctoPrint Node. I now have my dashbard displayed using my Plex Node. &lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;I have re-purposed the Monitor Node into the &lt;a href="octoprint-node"&gt;OctoPrint Node&lt;/a&gt;. I now have my dashbard displayed using my Plex Node. &lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;</description>
       <pubDate>Sun, 12 Jul 2020 20:46:50 -0500</pubDate>
       <guid isPermaLink="false">afc7a527f2b1d3dac643a3a2567b279f</guid>
@@ -89,33 +109,6 @@
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;Note:&lt;/em&gt;&lt;/strong&gt; &lt;em&gt;If you don't provide a size, it will default to large.&lt;/em&gt;&lt;/p&gt;</description>
       <pubDate>Wed, 08 Jul 2020 17:15:09 -0500</pubDate>
       <guid isPermaLink="false">63d64ed2633a1938cd79e877208f471f</guid>
-    </item>
-    <item>
-      <title>Node-Red Twitter Bot</title>
-      <link>https://pilab.dev/node-red-twitter-bot</link>
-      <description>&lt;p&gt;I have setup a new &lt;a href="https://nodered.org/"&gt;Node-Red&lt;/a&gt; Twitter Bot. This is powered by a &lt;a href="https://deviwiki.com/wiki/RPF_Raspberry_Pi_4_Model_B_2GB"&gt;Raspberry Pi 4 Model B (2GB)&lt;/a&gt; that I have setup as the new Pi Lab Node Red Node.&lt;/p&gt;
-&lt;p&gt;The &lt;a href="https://nodered.org/"&gt;Node-Red&lt;/a&gt; flow was originally setup to provide a URL endpoint that accepts a minimal number of query parameters (e.g. hostname). The flow would then make http requests to the &lt;a href="prometheus-grafana"&gt;Pi Lab Metric's Node&lt;/a&gt; that is powered by &lt;a href="https://prometheus.io/"&gt;Prometheus&lt;/a&gt; to retrieve the metrics. The metrics were then formatted and pushed directly to the &lt;a href="https://twitter.com/pilabdev"&gt;Pi Lab Twitter feed&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;I am now on version 4 of the flow. The latest iteration is completely self contained inside &lt;a href="https://nodered.org/"&gt;Node-Red&lt;/a&gt;. The flow runs every 30 minutes and does &lt;code&gt;ping&lt;/code&gt; checks to ensure that the nodes are online before gathering the metrics for each node and sending out tweets. This allows me to reduce the overhead for each of the nodes in the Pi Lab cluster and have things more centralized. &lt;/p&gt;
-&lt;p&gt;I have also added an SMS alert node that, after a failed &lt;code&gt;ping&lt;/code&gt; check,  sends an email that is then forwarded via text message to my mobile phone using this &lt;a href="https://www.att.com/support/article/wireless/KM1061254/"&gt;AT&amp;amp;T feature&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Below is a screenshot of the flow.&lt;/p&gt;
-&lt;div class="centered"&gt;
-    &lt;img src="/bl-content/uploads/pages/b3c9f34aa0cb8225b2ce75d480025d36/pi-lab-node-red-twitter-bot-v6.png" class="image-border" /&gt;&lt;br&gt;&lt;br&gt;
-&lt;/div&gt;
-&lt;p&gt;I am very impressed with &lt;a href="https://nodered.org/"&gt;Node-Red&lt;/a&gt;. I definitely recommend it for anyone who enjoys coding and automation.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://github.com/node-red"&gt;&lt;img data-src="/images/check-it-out-on-github.png" alt="Get it on GitHub" class="on-github lozad" /&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Updates:&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;Thanks to some great feedback from &lt;a href="https://www.reddit.com/r/nodered/comments/hetcu6/my_first_nodered_flow/"&gt;r/nodered&lt;/a&gt; I have re-factored the flow to use the &lt;code&gt;join&lt;/code&gt; node so I can remove the use of flow variables. This should fix the issues I was seeing when a request to the flow would occur before the previous request had completed.  &lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;I have added a new flow that tweets the current BOINC Node Rosetta@home stats. This flow is setup to be completely powered by &lt;a href="https://nodered.org/"&gt;Node-Red&lt;/a&gt; and is run on a 30 minute interval.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;I have updated this blog post with the latest information on this project.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;I have added Node CPU temperature checks to alert me if a node has exceeded a configurable threshold.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;I have added a new flow that tweets the current average web stats from the &lt;a href="https://statcounter.com/p12007932/summary/?account_id=324824&amp;amp;login_id=1&amp;amp;code=8be480ebcbd8fbe290785aac26c3ab68&amp;amp;guest_login=1"&gt;Pi Lab Statcounter account&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;I have updated the flow to have better formatting of the message payload.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;I have added a new flow that tweets a JPEG snapshot of the &lt;a href="pi-lab-live-stream"&gt;Pi Lab Live Stream&lt;/a&gt; every 30 minutes.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;I have added a Current Date/Time node to ensure that the Tweets are unique.&lt;/em&gt;&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-      <pubDate>Tue, 23 Jun 2020 20:52:42 -0500</pubDate>
-      <guid isPermaLink="false">b3c9f34aa0cb8225b2ce75d480025d36</guid>
     </item>
   </channel>
 </rss>

@@ -158,6 +158,7 @@
 			* [Gosund Smart Plug](https://www.amazon.com/Outlet-Required-Gosund-Upgraded-Version/dp/B07GRLQV47/)
 			* [Ender 3 Pro](https://creality3d.shop/collections/3d-printer/products/creality3d-ender-3-pro-high-precision-3d-printer)
 			* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=octopi" target="_blank">Metrics Dashboard</a>
+* [More Details](octoprint-node)
 			
 --- 
 
