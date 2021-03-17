@@ -186,9 +186,10 @@
 			* 4x Intel Core i5-3320M CPU @ 2.60GHz
 			*   **Operating System:** [Ubuntu 20.04.1 LTS](https://ubuntu.com/download/desktop)
 			* 8GB DDR3 SDRAM 1600MHz
-			* OCZ ARC 100 240 GB SSD
-			* Intel SSDSA2CW120G3 120 GB SSD
-			* WD_Black 5TB P10-Game Drive
+			* OCZ ARC 100 240GB SSD (OS)
+			* Intel 120GB SSD (Extra Storage)
+			* Iomega 1.5TB Drive (Downloads)
+			* WD_Black 5TB P10-Game Drive (Media)
 			* Dell 22 Inch Monitor
 			* [Plex Media Server](https://www.plex.tv/)
 			* [Tautulli](https://tautulli.com/) (Docker)
@@ -206,7 +207,7 @@
 			* 4x Intel Core i7-6600U CPU @ 2.60GHz
 			*   **Operating System:** [Ubuntu Server 20.04.1 LTS](https://ubuntu.com/download/server)
 			* 16GB DDR4 SDRAM 2133 MT/s
-			* SanDisk X400 M.2 512 GB
+			* SanDisk X400 M.2 512GB
 			* [Nextcloud](https://snapcraft.io/install/nextcloud/ubuntu) (Snap)
 			* [Heimdall](https://hub.docker.com/r/linuxserver/heimdall) (Docker)
 			* [Cockpit](https://cockpit-project.org/)
