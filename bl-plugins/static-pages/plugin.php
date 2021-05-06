@@ -74,7 +74,11 @@ class pluginStaticPages extends Plugin {
                 } else {
                     $html .= '<li class="subpage" style="margin-left: 10px">';
                 }
-                $html .= '<a href="' . $page->permalink() . '">' . $page->title() . '</a>';
+                if ($page->title() === "Status") {
+				    $html .= '<a href="' . $page->permalink() . '" target="_blank">' . $page->title() . '</a>';
+                } else {
+                	$html .= '<a href="' . $page->permalink() . '">' . $page->title() . '</a>';
+                }
                 $html .= '</li>';
 		    }
 		}

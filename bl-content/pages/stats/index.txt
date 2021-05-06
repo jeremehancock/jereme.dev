@@ -71,7 +71,7 @@
 <iframe width="100%" height="550" data-src="https://statcounter.com/p12007932/summary/?account_id=324824&login_id=1&code=8be480ebcbd8fbe290785aac26c3ab68&guest_login=1" frameborder="0" class="iframe-border lozad"></iframe>
 
 <a href="https://statcounter.com/p12007932/summary/?account_id=324824&login_id=1&code=8be480ebcbd8fbe290785aac26c3ab68&guest_login=1" style="float:right;">View Fullscreen</a>
-## Uptime Stats
-<iframe width="100%" height="550" data-src="https://status.pilab.dev" frameborder="0" class="iframe-border lozad"></iframe>
+<!--## Uptime Stats-->
+<!--<iframe width="100%" height="550" data-src="https://stats.uptimerobot.com/YMAv7t4gK" frameborder="0" class="iframe-border lozad"></iframe>
 
-<a href="https://status.pilab.dev" style="float:right;">View Fullscreen</a>
+<a href="https://stats.uptimerobot.com/YMAv7t4gK" style="float:right;">View Fullscreen</a>-->

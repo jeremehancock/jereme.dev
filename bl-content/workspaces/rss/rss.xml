@@ -5,7 +5,14 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Tue, 06 Apr 2021 13:09:20 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 05 May 2021 22:06:00 -0500</lastBuildDate>
+    <item>
+      <title>Status</title>
+      <link>https://pilab.dev/status</link>
+      <description>&lt;p&gt;Redirects to: &lt;a href="https://stats.uptimerobot.com/YMAv7t4gK/782645566"&gt;https://stats.uptimerobot.com/YMAv7t4gK/782645566&lt;/a&gt;&lt;/p&gt;</description>
+      <pubDate>Wed, 05 May 2021 21:51:21 -0500</pubDate>
+      <guid isPermaLink="false">d8549719cdc039f008479d2c6fac483c</guid>
+    </item>
     <item>
       <title>OctoPrint Node</title>
       <link>https://pilab.dev/octoprint-node</link>
@@ -84,31 +91,6 @@
 &lt;/blockquote&gt;</description>
       <pubDate>Sun, 12 Jul 2020 20:46:50 -0500</pubDate>
       <guid isPermaLink="false">afc7a527f2b1d3dac643a3a2567b279f</guid>
-    </item>
-    <item>
-      <title>New Pi Lab Media Nodes</title>
-      <link>https://pilab.dev/new-pi-lab-media-nodes</link>
-      <description>&lt;div class="centered"&gt;
-    &lt;img src="/bl-content/uploads/pages/63d64ed2633a1938cd79e877208f471f/media-nodes-stacked.png" class="image-border" /&gt;&lt;br&gt;&lt;br&gt;
-&lt;/div&gt;
-&lt;p&gt;I was recently going through a box of old tech that I have held on to over the years. I am across two &lt;a href="https://www.amazon.com/SanDisk-Wireless-Smartphones-Tablets-SDWS1-032G-A57/dp/B00DR8LBAK"&gt;SanDisk Media Drives&lt;/a&gt; that I purchased for next to nothing on a clearance aisle at Target many years back. I had previously used these for their intended purpose. While traveling I would set them up with movies so we could watch when we otherwise didn't have easy access to streaming. Like I said I have had them for a while.&lt;/p&gt;
-&lt;p&gt;I have always wondered if I could use them for something more. So I plugged them in and got to looking. I quickly realized that I could access the files via the device's IP address. This meant that I could easily setup a reverse proxy using the Pi Lab load balancer to serve the content on these devices outside my local network. &lt;/p&gt;
-&lt;p&gt;As I began to look more closely at the devices I found a few snags. First off the FTP access to the devices was completely open. So anyone on my network could anonymously FTP into the device and have full read/write access to the files that I would be serving. The devices also had a web interface that allowed that same level of access.&lt;/p&gt;
-&lt;p&gt;After some digging I found a few posts online that discussed these very issues. As it turns out the devices run an embedded Linux OS. They do not provide &lt;code&gt;SSH&lt;/code&gt; access, but they do provide &lt;code&gt;telnet&lt;/code&gt; access. Which gave me enough access to get started. I was able to find the &lt;code&gt;root&lt;/code&gt; password on one of the forum posts. The person who posted it had used &lt;a href="https://www.openwall.com/john/"&gt;John the Ripper&lt;/a&gt; password cracker to crack the password. &lt;/p&gt;
-&lt;p&gt;Now I was able to update the &lt;code&gt;root&lt;/code&gt; password and gain write access to the entire device. I was able to track down the needed changes to not allow anonymous FTP access and I completely removed the web interface as I will not be using it. I also made backups of all the files used when setting up the WiFi creds for the devices. That way in the future I will not even need to use the SanDisk app for setting that up.&lt;/p&gt;
-&lt;p&gt;I added 32GB SD cards to each device which gives me 64GBs on each drive. One really cool thing is these devices can actually host static HTML/JS sites. That is what the web interface was using.&lt;/p&gt;
-&lt;p&gt;I have setup a GitHub repo to document the steps I took to set things up. Check it out &lt;a href="https://github.com/mhancoc7/sandisk-media-drive-32gb-mods"&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;I am not sure what I plan to use them for, but I have setup a simple &amp;quot;application&amp;quot; that I think is fun. I have another project called the &lt;a href="https://roadside-america.dumbprojects.com/"&gt;Roadside America API&lt;/a&gt;. It provides a simple API to retrieve images and metadata from the &lt;a href="https://www.loc.gov/free-to-use/john-margolies-roadside-america-photograph-archive"&gt;John Margolies Roadside America Photograph Archive&lt;/a&gt;. &lt;/p&gt;
-&lt;p&gt;I used the API to download all of the images to one of the media drives. Then I setup a webpage that redirects to a random image from the collection.&lt;/p&gt;
-&lt;h3&gt;Usage&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;https://pilab.dev/roadside-america-collection?size=large&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;https://pilab.dev/roadside-america-collection?size=medium&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;https://pilab.dev/roadside-america-collection?size=small&lt;/code&gt;&lt;/pre&gt;
-&lt;h3&gt;Try it: &lt;a href="https://pilab.dev/roadside-america-collection" target="_blank"&gt;Click Here&lt;/a&gt;&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Note:&lt;/em&gt;&lt;/strong&gt; &lt;em&gt;If you don't provide a size, it will default to large.&lt;/em&gt;&lt;/p&gt;</description>
-      <pubDate>Wed, 08 Jul 2020 17:15:09 -0500</pubDate>
-      <guid isPermaLink="false">63d64ed2633a1938cd79e877208f471f</guid>
     </item>
   </channel>
 </rss>
