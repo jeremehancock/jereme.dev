@@ -258,7 +258,7 @@ declare(strict_types=1);
                     }
 
                     // Sanitize TO
-                    $to = rtrim(trim(strtolower($to)), "/");
+                    $to = rtrim(trim($to), "/");
                     if(stripos($to, DOMAIN_BASE)) {
                         $to = str_replace(DOMAIN_BASE, "", $to);
                     } else if(stripos($to, DOMAIN)) {
@@ -362,7 +362,7 @@ declare(strict_types=1);
                         }
 
                         // Sanitize TO
-                        var to_value = to.val().replace(/\/$/, "").trim().toLowerCase();
+                        var to_value = to.val().replace(/\/$/, "").trim();
                         if(to_value.startsWith(DOMAIN_BASE)) {
                             to_value = to_value.replace(DOMAIN_BASE, "");
                         } else if(to_value.startsWith(DOMAIN)) {
