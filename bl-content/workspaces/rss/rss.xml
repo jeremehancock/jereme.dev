@@ -5,11 +5,11 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Thu, 06 May 2021 08:15:03 -0500</lastBuildDate>
+    <lastBuildDate>Thu, 06 May 2021 08:16:16 -0500</lastBuildDate>
     <item>
       <title>Status</title>
       <link>https://pilab.dev/status</link>
-      <description/>
+      <description>&lt;p&gt;Pi Lab Service status&lt;/p&gt;</description>
       <pubDate>Wed, 05 May 2021 21:51:21 -0500</pubDate>
       <guid isPermaLink="false">d8549719cdc039f008479d2c6fac483c</guid>
     </item>
