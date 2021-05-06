@@ -15,7 +15,7 @@
                     <ul class="menu">
                         <?php
 
-                        $listOfKeys = $pages->getList(1, 4);
+                        $listOfKeys = $pages->getList(1, 5);
 
                         if ($listOfKeys) :
                             foreach ($listOfKeys as $key) :
