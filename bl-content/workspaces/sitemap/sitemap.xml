@@ -4,10 +4,6 @@
     <loc>https://pilab.dev</loc>
   </url>
   <url>
-    <loc>https://pilab.dev/status</loc>
-    <lastmod>2021-05-05</lastmod>
-  </url>
-  <url>
     <loc>https://pilab.dev/octoprint-node</loc>
     <lastmod>2021-02-24</lastmod>
   </url>
