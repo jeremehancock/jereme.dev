@@ -1,0 +1,17 @@
+Introducing the new **`gatsby-source-bludit`** npm package for [Gatsby](https://www.gatsbyjs.com/)!
+
+[Gatsby](https://www.gatsbyjs.com/), is an open-source static website generator (SSG) that is based on the frontend development framework React and makes use of Webpack and GraphQL technology. It can be used to build static sites that are progressive web apps, follow the latest web standards, and optimized for speed and security.
+
+One of the really cool things about [Gatsby](https://www.gatsbyjs.com/) is the ability to utilize external APIs to pull in data. To allow this for [Bludit](https://bludit.com) I have created a new "source" plugin to allow anyone to easily pull in content from their [Bludit](https://bludit.com) site with ease.
+
+This requires the use of the [Bludit API](https://docs.bludit.com/en/api/introduction) to be activated.
+
+I have put together a very basic demo. It is pulling data from Pi Lab. 
+
+[![demo](https://img.shields.io/badge/Gatsby%20%2B%20Bludit-Demo-green?style=for-the-badge)](https://dumbprojects.com/bludit/)
+
+Try it out!
+
+[![npm](https://img.shields.io/npm/v/gatsby-source-bludit?label=NPM%20PACKAGE&style=for-the-badge)](https://www.npmjs.com/package/gatsby-source-bludit)
+
+

@@ -4,6 +4,10 @@
     <loc>https://pilab.dev</loc>
   </url>
   <url>
+    <loc>https://pilab.dev/gatsby-bludit</loc>
+    <lastmod>2021-05-13</lastmod>
+  </url>
+  <url>
     <loc>https://pilab.dev/octoprint-node</loc>
     <lastmod>2021-02-24</lastmod>
   </url>
