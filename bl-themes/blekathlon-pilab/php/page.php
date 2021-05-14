@@ -102,7 +102,7 @@
                     $prevPage = new Page($prevKey);
                     ?>
 					<div class="nav-previous">
-						<a href="<?php echo  $prevPage->permalink() ?>" rel="prev">
+						<a href="<?php echo  $prevPage->permalink(FALSE) ?>" rel="prev">
 							<span class="meta-nav" aria-hidden="true">
 								<svg class="icon icon-arrow-circle-left" aria-hidden="true" role="img" viewBox="0 0 27 32">
 									<path d="M23 17v-2q0 0 0-1t-1 0h-9l3-3q0 0 0-1t0-1l-2-2q0 0-1 0t-1 0l-8 8q0 0 0 1t0 1l8 8q0 0 1 0t1 0l2-2q0 0 0-1t0-1l-3-3h9q0 0 1 0t0-1zM27 16q0 4-2 7t-5 5-7 2-7-2-5-5-2-7 2-7 5-5 7-2 7 2 5 5 2 7z"></path>
@@ -122,7 +122,7 @@
 
                     ?>
 					<div class="nav-next">
-						<a href="<?php echo $nextPage->permalink() ?>" rel="next">
+						<a href="<?php echo $nextPage->permalink(FALSE) ?>" rel="next">
 							<span class="meta-nav" aria-hidden="true">
 								Next
 								<svg class="icon icon-arrow-circle-right" aria-hidden="true" role="img" viewBox="0 0 27 32">
@@ -145,7 +145,7 @@
 				<h3><?php echo $L->get('Related posts'); ?></h3>
 				<?php foreach($related as $relpage): ?>
 				<div class="rel-item">
-					<a href="<?php echo $relpage->permalink(); ?>"></a>
+					<a href="<?php echo $relpage->permalink(FALSE); ?>"></a>
 					<?php if($relpage->thumbCoverImage()): ?>
 					<div class="rel-item__icon">
 						<img class="lozad" data-src="<?php echo $helper->cdn_cover_image( $relpage->thumbCoverImage(),60,60); ?>" />

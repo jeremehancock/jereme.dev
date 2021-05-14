@@ -18,7 +18,7 @@
 		<article class="home-page hentry hentry-border">
 			<?php $coverImage = $helper->get_thumb();?>
 			<div class="entry-header-bg lozad" <?php if(!empty($coverImage)) echo "data-background-image=\"$coverImage\""?>>
-				<a class="entry-header-bg-link" href="<?php echo $page->permalink() ?>" rel="bookmark">
+				<a class="entry-header-bg-link" href="<?php echo $page->permalink(FALSE) ?>" rel="bookmark">
 					<?php if(empty($coverImage)):?>
 					<svg class="icon icon-pencil" aria-hidden="true" role="img">
 						<use xlink:href="#icon-pencil"></use>
@@ -42,7 +42,7 @@
 						</span>
 					</div>
 					<h2 class="entry-title title-font text-italic">
-						<a href="<?php echo $page->permalink() ?>" rel="bookmark">
+						<a href="<?php echo $page->permalink(FALSE) ?>" rel="bookmark">
 							<?php echo $page->title() ?>
 						</a>
 					</h2>
@@ -59,7 +59,7 @@
 				</div>
 
 				<div class="entry-comment grid-same-line">
-					<a class="more-link underline-link medium-font-weight italic-link" href="<?php echo $page->permalink() ?>" role="button">
+					<a class="more-link underline-link medium-font-weight italic-link" href="<?php echo $page->permalink(FALSE) ?>" role="button">
 						<?php echo $L->get('Read more'); ?>
 					</a>
 				</div>
