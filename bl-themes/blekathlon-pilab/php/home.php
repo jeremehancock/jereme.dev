@@ -18,7 +18,7 @@
 		<article class="home-page hentry hentry-border">
 			<?php $coverImage = $helper->get_thumb();?>
 			<div class="entry-header-bg lozad" <?php if(!empty($coverImage)) echo "data-background-image=\"$coverImage\""?>>
-				<a class="entry-header-bg-link" href="<?php echo $page->permalink(FALSE) ?>" rel="bookmark">
+				<a class="entry-header-bg-link" href="<?php echo $page->permalink() ?>" rel="bookmark">
 					<?php if(empty($coverImage)):?>
 					<svg class="icon icon-pencil" aria-hidden="true" role="img">
 						<use xlink:href="#icon-pencil"></use>
@@ -42,7 +42,7 @@
 						</span>
 					</div>
 					<h2 class="entry-title title-font text-italic">
-						<a href="<?php echo $page->permalink(FALSE) ?>" rel="bookmark">
+						<a href="<?php echo $page->permalink() ?>" rel="bookmark">
 							<?php echo $page->title() ?>
 						</a>
 					</h2>

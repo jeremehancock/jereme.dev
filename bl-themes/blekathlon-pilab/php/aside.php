@@ -22,7 +22,7 @@
                             $lPage = new Page($key);
                         ?>
                         <li class="menu-item">
-                            <a href="<?php echo $lPage->permalink(FALSE) ?>">
+                            <a href="<?php echo $lPage->permalink() ?>">
                                 <?php echo $lPage->title() ?>
                             </a>
                         </li>
@@ -40,7 +40,7 @@
 						 if(Text::stringContains($staticPage->key(),'404')) continue;
 						?>
                         <li class="menu-item">
-                            <a href="<?php echo $staticPage->permalink(FALSE); ?>" <?php if($staticPage->title() === 'Status') echo 'target=_blank'?>>
+                            <a href="<?php echo $staticPage->permalink(); ?>" <?php if($staticPage->title() === 'Status') echo 'target=_blank'?>>
                                 <?php echo $staticPage->title(); ?>
                             </a>
                         </li>
