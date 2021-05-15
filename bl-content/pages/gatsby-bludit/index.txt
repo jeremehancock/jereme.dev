@@ -6,12 +6,12 @@ One of the really cool things about [Gatsby](https://www.gatsbyjs.com/) is the a
 
 This requires the use of the [Bludit API](https://docs.bludit.com/en/api/introduction) to be activated.
 
-I have put together a very basic demo. It is pulling data from Pi Lab. 
+Hopefully this will be helpful to someone looking to leverage the power of Gatsby and Bludit.
 
+[![GitHub license](https://img.shields.io/github/license/mhancoc7/gatsby-source-bludit?color=orange&style=for-the-badge)](https://github.com/mhancoc7/gatsby-source-bludit/blob/main/LICENSE)
 [![demo](https://img.shields.io/badge/Gatsby%20%2B%20Bludit-Demo-green?style=for-the-badge)](https://dumbprojects.com/bludit/)
-
-Try it out!
-
 [![npm](https://img.shields.io/npm/v/gatsby-source-bludit?label=NPM%20PACKAGE&style=for-the-badge)](https://www.npmjs.com/package/gatsby-source-bludit)
+[![gatsby](https://img.shields.io/static/v1?label=TRY&message=GATSBY&color=blueviolet&style=for-the-badge)](https://www.gatsbyjs.com/)
+[![bludit](https://img.shields.io/static/v1?label=TRY&message=BLUDIT&color=black&style=for-the-badge)](https://www.bludit.com)
 
 
