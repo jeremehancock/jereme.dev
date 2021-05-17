@@ -15,6 +15,6 @@ Hopefully this will be helpful to someone looking to leverage the power of Gatsb
 [![bludit](https://img.shields.io/static/v1?label=TRY&message=BLUDIT&color=black&style=for-the-badge)](https://www.bludit.com)
 
 **Updates:**
-> *I have made some improvements to the demo. It now has a much cleaner design and pulls more data including tags and a portion of the post content into the"preview" cards..*
+> *I have made some improvements to the demo. It now has a much cleaner design and pulls more data including tags and a portion of the post content into the"preview" cards.*
 
 

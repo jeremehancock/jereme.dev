@@ -5,7 +5,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Sun, 16 May 2021 14:03:44 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 16 May 2021 21:41:31 -0500</lastBuildDate>
     <item>
       <title>Gatsby + Bludit</title>
       <link>https://pilab.dev/gatsby-bludit</link>
@@ -21,7 +21,7 @@
 &lt;a href="https://www.bludit.com"&gt;&lt;img src="https://img.shields.io/static/v1?label=TRY&amp;amp;message=BLUDIT&amp;amp;color=black&amp;amp;style=for-the-badge" alt="bludit" /&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Updates:&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;I have made some improvements to the demo. It now has a much cleaner design and pulls more data including tags and a portion of the post content into the&amp;quot;preview&amp;quot; cards..&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;I have made some improvements to the demo. It now has a much cleaner design and pulls more data including tags and a portion of the post content into the&amp;quot;preview&amp;quot; cards.&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;</description>
       <pubDate>Thu, 13 May 2021 22:37:52 -0500</pubDate>
       <guid isPermaLink="false">a8ba2bb7e4c479cba0ff43de0c29f940</guid>
