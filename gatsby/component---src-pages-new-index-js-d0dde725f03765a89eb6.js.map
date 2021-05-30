@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack:///./src/pages/new/index.js"],"names":["Intro"],"mappings":"4FAAA,uBAEeA,YAAf","file":"component---src-pages-new-index-js-d0dde725f03765a89eb6.js","sourcesContent":["import Intro from \"./intro\";\n\nexport default Intro;\n"],"sourceRoot":""}
