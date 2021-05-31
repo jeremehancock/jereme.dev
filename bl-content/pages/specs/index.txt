@@ -110,6 +110,12 @@
 				* [Grafana](https://grafana.com/) - Metrics visualization
 				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=prometheus" target="_blank">Metrics Dashboard</a>
 	* [More Details](prometheus-grafana)
+*    **Cooling:** [AC Infinity MULTIFAN S4](https://www.amazon.com/gp/product/B00MWH4FL4)
+
+---
+
+## Pi Lab (Additional Nodes):
+
 *   **OctoPrint Node**
     *   1 Raspberry Pi 3 Model B+
 				* Samsung EVO Plus 32GB microSDHC Card
