@@ -38,24 +38,24 @@
 
 *Pi Lab is my homelab that consists primarily of Raspberry Pis. This blog is hosted on the Raspberry Pi cluster that started it all. *
 	
-## Pi Lab Web Cluster:
+## Pi Lab (Primary Nodes):
 
 *   **Load Balancer**
     *   1 Raspberry Pi 3 Model B
-				* Samsung EVO Plus 32GB microSDHC Memory Card
+				* Samsung EVO Plus 32GB microSDHC Card
 				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=pi0" target="_blank">Metrics Dashboard</a>
 *   **Dev/Prod Node**
     *    1 Raspberry Pi 2 Model B
-				* Samsung EVO Plus 32GB microSDHC Memory Card
+				* Samsung EVO Plus 32GB microSDHC Card
 				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=pi1" target="_blank">Metrics Dashboard</a>
 *  **Prod Nodes**
     *    2 Raspberry Pi 2 Model Bs
-				* Samsung EVO Plus 32GB microSDHC Memory Cards
+				* Samsung EVO Plus 32GB microSDHC Cards
 				* **Metrics Dashboards:**
 					* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=pi2" target="_blank">Node 2</a>
 					* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=pi3" target="_blank">Node 3</a>
     *    2 Raspberry Pi 4 4GB Model Bs 
-						* Samsung EVO Plus 32GB microSDHC Memory Cards
+						* Samsung EVO Plus 32GB microSDHC Cards
 						* **Metrics Dashboards:**
 					* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=pi4" target="_blank">Node 4</a>
 					* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=pi5" target="_blank">Node 5</a>
@@ -78,139 +78,113 @@
 
 --- 
 
-## BOINC Node:
+## Pi Lab (Ancillary Nodes):
 
-*  1 Raspberry Pi 4 2GB Model B
-			* Samsung EVO Plus 32GB microSDHC Memory Card
-			*   **Operating System:** [Ubuntu Server 64-bit](https://ubuntu.com/download/raspberry-pi)
-			*   <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=boincpi" target="_blank">Metrics Dashboard</a>
-* [More Details](fold-for-covid)
-
---- 
-
-## Node-Red Node:
-
-*  1 Raspberry Pi 4 2GB Model B
-			* Samsung EVO Plus 32GB microSDHC Memory Card
-			*   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
-			* [Node-Red](https://nodered.org/docs/getting-started/raspberrypi)
-			* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=noderedpi" target="_blank">Metrics Dashboard</a>
-* [More Details](node-red-twitter-bot)
-
---- 
-
-## Restreamer Node:
-
-*  1 Raspberry Pi 4 2GB Model B
-			* Samsung EVO Plus 32GB microSDHC Memory Card
-			*   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
-			* [Restreamer](https://datarhei.github.io/restreamer/)
-			* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=restreamerpi" target="_blank">Metrics Dashboard</a>
-* [More Details](restreamer)
-
---- 
-
-## OctoPrint Node:
-
-*  1 Raspberry Pi 3 Model B+
-			* Samsung EVO Plus 32GB microSDHC Memory Card
-			*   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
-			* [Onn Universal Wall Charger](https://www.walmart.com/ip/Onn-Universal-Wall-Charger-Black/620837164)
-			* [Gosund Smart Plug](https://www.amazon.com/Outlet-Required-Gosund-Upgraded-Version/dp/B07GRLQV47/)
-			* [Ender 3 Pro](https://creality3d.shop/collections/3d-printer/products/creality3d-ender-3-pro-high-precision-3d-printer)
-			* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=octopi" target="_blank">Metrics Dashboard</a>
-* [More Details](octoprint-node)
-			
---- 
-
-## Zero TV Node:
-
- *  1 Raspberry Pi Zero W
-			* Samsung EVO Plus 32GB microSDHC Memory Card
-			*   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
-			*   **CMS:** [Bludit - v3.12.0](https://www.bludit.com/)  - Customized
-			*   **Theme:** [Highway](https://jellyio.com/shop/bludit/highway) - Customized
-			* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=zerotv" target="_blank">Metrics Dashboard</a>
- *  [More Details](zero-tv)
+*   **BOINC Node**
+    *   1 Raspberry Pi 4 2GB Model B
+				* Samsung EVO Plus 32GB microSDHC Card
+				* **Operating System:** [Ubuntu Server 64-bit](https://ubuntu.com/download/raspberry-pi)
+				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=boincpi" target="_blank">Metrics Dashboard</a>
+	* [More Details](fold-for-covid)
+*   **Node-Red Node**
+    *   1 Raspberry Pi 4 2GB Model B
+				* Samsung EVO Plus 32GB microSDHC Card
+				*   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
+				* [Node-Red](https://nodered.org/docs/getting-started/raspberrypi)
+				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=noderedpi" target="_blank">Metrics Dashboard</a>
+	* [More Details](node-red-twitter-bot)
+*   **Restreamer Node**
+    *   1 Raspberry Pi 4 2GB Model B
+				* Samsung EVO Plus 32GB microSDHC Card
+				*   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
+				* [Restreamer](https://datarhei.github.io/restreamer/)
+				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=restreamerpi" target="_blank">Metrics Dashboard</a>
+	* [More Details](restreamer)
+*   **Metrics Node**
+    *    1 Raspberry Pi 2 Model B
+				*  Samsung EVO Plus 32GB microSDHC Card
+				*   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
+				* [Node Exporter](https://github.com/prometheus/node_exporter) - Expose Linux metrics (v1.0.1): Installed to each node.
+				* [RPi Exporter](https://github.com/lukasmalkmus/rpi_exporter) - Expose Raspberry Pi metrics (v0.6.0): Installed to each node.
+				* [Prometheus](https://prometheus.io/) - Collect and store metrics (v2.19.2)
+				* [Grafana](https://grafana.com/) - Metrics visualization (v7.0.6)
+				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=prometheus" target="_blank">Metrics Dashboard</a>
+	* [More Details](prometheus-grafana)
+*   **OctoPrint Node**
+    *   1 Raspberry Pi 3 Model B+
+				* Samsung EVO Plus 32GB microSDHC Card
+				*   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
+				* [Onn Universal Wall Charger](https://www.walmart.com/ip/Onn-Universal-Wall-Charger-Black/620837164)
+				* [Gosund Smart Plug](https://www.amazon.com/Outlet-Required-Gosund-Upgraded-Version/dp/B07GRLQV47/)
+				* [Ender 3 Pro](https://creality3d.shop/collections/3d-printer/products/creality3d-ender-3-pro-high-precision-3d-printer)
+				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=octopi" target="_blank">Metrics Dashboard</a>
+	* [More Details](octoprint-node)
+*   **Zero TV Node**
+    *    1 Raspberry Pi Zero W
+				* Samsung EVO Plus 32GB microSDHC Card
+				*   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
+				*   **CMS:** [Bludit - v3.12.0](https://www.bludit.com/)  - Customized
+				*   **Theme:** [Highway](https://jellyio.com/shop/bludit/highway) - Customized
+				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=zerotv" target="_blank">Metrics Dashboard</a>
+	*  [More Details](zero-tv)
+*   **Test Node**
+    *    1 Raspberry Pi Zero W
+				* Samsung EVO Plus 32GB microSDHC Card
+				*   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
+				* [USB-A Add-on Board](https://www.amazon.com/gp/product/B07DBL3WYQ)
+				* [GLCON Power Strip Tower](https://www.amazon.com/gp/product/B01G6PPTH6)
+				* [Gosund Smart Plug](https://www.amazon.com/Outlet-Required-Gosund-Upgraded-Version/dp/B07GRLQV47/)
+				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=testpi1" target="_blank">Metrics Dashboard</a>
+	* [More Details](pi-zero-wall-plug-web-server)
+*   **Pi-hole/OpenVPN Node**
+    *    1 Raspberry Pi 3 Model B
+				* Sandisk Extreme 16GB microSD Card
+				*   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
+				*   <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=thanospi" target="_blank">Metrics Dashboard</a>
+	* [More Details](pi-hole-is-amazing)
  
 --- 
 
-## Test Node:
+## Pi Lab (Non-Pi Nodes):
 
- *  1 Raspberry Pi Zero W
-			* Samsung EVO Plus 32GB microSDHC Memory Card
-			*   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
-			* [USB-A Add-on Board](https://www.amazon.com/gp/product/B07DBL3WYQ)
-			* [GLCON Power Strip Tower](https://www.amazon.com/gp/product/B01G6PPTH6)
-			* [Gosund Smart Plug](https://www.amazon.com/Outlet-Required-Gosund-Upgraded-Version/dp/B07GRLQV47/)
-			* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=testpi1" target="_blank">Metrics Dashboard</a>
- * [More Details](pi-zero-wall-plug-web-server)
-
---- 
-
-## Pi-hole/OpenVPN:
-
- *  1 Raspberry Pi 3 Model B
-			* Sandisk Extreme 16GB microSD Card
-			*   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
-			*   <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=thanospi" target="_blank">Metrics Dashboard</a>
- * [More Details](pi-hole-is-amazing)
-
----
-
-## Metrics Node:
-
- *  1 Raspberry Pi 2 Model B
-			* Samsung EVO Plus 32GB microSDHC Memory Card
-			*   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
-			* [Node Exporter](https://github.com/prometheus/node_exporter) - Expose Linux metrics (v1.0.1): Installed to each node.
-			* [RPi Exporter](https://github.com/lukasmalkmus/rpi_exporter) - Expose Raspberry Pi metrics (v0.6.0): Installed to each node.
-			* [Prometheus](https://prometheus.io/) - Collect and store metrics (v2.19.2)
-			* [Grafana](https://grafana.com/) - Metrics visualization (v7.0.6)
-			* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=prometheus" target="_blank">Metrics Dashboard</a>
- * [More Details](prometheus-grafana)
-
---- 
-
-## Media Nodes:
-
-*  2 SanDisk 32GB Media Drives
-			* 1 Samsung EVO Plus 32GB microSDHC Memory Card
+*   **Metrics Nodes**
+		*  2 SanDisk 32GB Media Drives
+					* 1 Samsung EVO Plus 32GB microSDHC Card
 * [More Details](new-pi-lab-media-nodes)
 
 ---
 
-## Plex Server:
+## Other Servers:
 
-*  Dell Latitude E6530
-			* 4x Intel Core i5-3320M CPU @ 2.60GHz
-			*   **Operating System:** [Ubuntu 20.04.1 LTS](https://ubuntu.com/download/desktop)
-			* 8GB DDR3 SDRAM 1600MHz
-			* OCZ ARC 100 240GB SSD (OS)
-			* Intel 120GB SSD (Extra Storage)
-			* Iomega 1.5TB Drive (Downloads)
-			* WD_Black 12TB P10-Game Drive (Media)
-			* Dell 22 Inch Monitor
-			* [Plex Media Server](https://www.plex.tv/)
-			* [Tautulli](https://tautulli.com/) (Docker)
-			* [Radarr](https://hub.docker.com/r/linuxserver/radarr) (Docker)
-			* [Sonarr](https://hub.docker.com/r/linuxserver/sonarr) (Docker)
-			* [Jackett](https://hub.docker.com/r/linuxserver/jackett) (Docker)
-			* [Transmission / OpenVPN](https://haugene.github.io/docker-transmission-openvpn/) (Docker)
-			* [Cockpit](https://cockpit-project.org/)
+*   **Plex Server**
+		*  Dell Latitude E6530
+					* 4x Intel Core i5-3320M CPU @ 2.60GHz
+					*   **Operating System:** [Ubuntu 20.04.1 LTS](https://ubuntu.com/download/desktop)
+					* 8GB DDR3 SDRAM 1600MHz
+					* OCZ ARC 100 240GB SSD (OS)
+					* Intel 120GB SSD (Extra Storage)
+					* Iomega 1.5TB Drive (Downloads)
+					* WD_Black 12TB P10-Game Drive (Media)
+					* Dell 22 Inch Monitor
+					* [Plex Media Server](https://www.plex.tv/)
+					* [Tautulli](https://tautulli.com/) (Docker)
+					* [Radarr](https://hub.docker.com/r/linuxserver/radarr) (Docker)
+					* [Sonarr](https://hub.docker.com/r/linuxserver/sonarr) (Docker)
+					* [Jackett](https://hub.docker.com/r/linuxserver/jackett) (Docker)
+					* [Transmission / OpenVPN](https://haugene.github.io/docker-transmission-openvpn/) (Docker)
+					* [Cockpit](https://cockpit-project.org/)
 			
 ---
 
-## Nextcloud Server:
-
-*  Dell Latitude E7470
-			* 4x Intel Core i7-6600U CPU @ 2.60GHz
-			*   **Operating System:** [Ubuntu Server 20.04.1 LTS](https://ubuntu.com/download/server)
-			* 16GB DDR4 SDRAM 2133 MT/s
-			* SanDisk X400 M.2 512GB
-			* [Nextcloud](https://snapcraft.io/install/nextcloud/ubuntu) (Snap)
-			* [Heimdall](https://hub.docker.com/r/linuxserver/heimdall) (Docker)
-			* [Cockpit](https://cockpit-project.org/)
+*   **Nextcloud Server**
+		*  Dell Latitude E7470
+					* 4x Intel Core i7-6600U CPU @ 2.60GHz
+					*   **Operating System:** [Ubuntu Server 20.04.1 LTS](https://ubuntu.com/download/server)
+					* 16GB DDR4 SDRAM 2133 MT/s
+					* SanDisk X400 M.2 512GB
+					* [Nextcloud](https://snapcraft.io/install/nextcloud/ubuntu) (Snap)
+					* [Heimdall](https://hub.docker.com/r/linuxserver/heimdall) (Docker)
+					* [Cockpit](https://cockpit-project.org/)
 			
 ---
 				
