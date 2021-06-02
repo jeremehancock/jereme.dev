@@ -111,6 +111,7 @@
 				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=prometheus" target="_blank">Metrics Dashboard</a>
 	* [More Details](prometheus-grafana)
 *    **Cooling:** [AC Infinity MULTIFAN S4](https://www.amazon.com/gp/product/B00MWH4FL4)
+*    **Power:** [XDCDHM USB Charger, 60 Watt 12A 6-Port High Speed Charer](https://www.amazon.com/gp/product/B075P22QC2)
 
 ---
 
