@@ -180,9 +180,6 @@
 					* [Jackett](https://hub.docker.com/r/linuxserver/jackett) (Docker)
 					* [Transmission / OpenVPN](https://haugene.github.io/docker-transmission-openvpn/) (Docker)
 					* [Cockpit](https://cockpit-project.org/)
-			
----
-
 *   **Nextcloud Server**
 		*  Dell Latitude E7470
 					* 4x Intel Core i7-6600U CPU @ 2.60GHz
