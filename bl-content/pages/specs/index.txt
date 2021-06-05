@@ -86,13 +86,6 @@
 				* **Operating System:** [Ubuntu Server 64-bit](https://ubuntu.com/download/raspberry-pi)
 				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=boincpi" target="_blank">Metrics Dashboard</a>
 	* [More Details](fold-for-covid)
-*   **Node-Red Node**
-    *   1 Raspberry Pi 4 2GB Model B
-				* Samsung EVO Plus 32GB microSDHC Card
-				*   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
-				* [Node-Red](https://nodered.org/docs/getting-started/raspberrypi)
-				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=noderedpi" target="_blank">Metrics Dashboard</a>
-	* [More Details](node-red-twitter-bot)
 *   **Restreamer Node**
     *   1 Raspberry Pi 4 2GB Model B
 				* Samsung EVO Plus 32GB microSDHC Card
@@ -100,6 +93,13 @@
 				* [Restreamer](https://datarhei.github.io/restreamer/)
 				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=restreamerpi" target="_blank">Metrics Dashboard</a>
 	* [More Details](restreamer)
+*   **Node-Red Node**
+    *   1 Raspberry Pi 4 2GB Model B
+				* Samsung EVO Plus 32GB microSDHC Card
+				*   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
+				* [Node-Red](https://nodered.org/docs/getting-started/raspberrypi)
+				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=noderedpi" target="_blank">Metrics Dashboard</a>
+	* [More Details](node-red-twitter-bot)
 *   **Metrics Node**
     *    1 Raspberry Pi 2 Model B
 				*  Samsung EVO Plus 32GB microSDHC Card
