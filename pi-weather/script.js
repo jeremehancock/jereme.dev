@@ -60,7 +60,7 @@ function setParamValues() {
         labels = labelsDict[lang];
     }
 
-    url = 'http://api.openweathermap.org/data/2.5/onecall?lat=' + latitude + '&lon=' + longitude + '&units=' + units + '&lang=' + lang + '&APPID=' + apiKey;
+    url = 'https://api.openweathermap.org/data/2.5/onecall?lat=' + latitude + '&lon=' + longitude + '&units=' + units + '&lang=' + lang + '&APPID=' + apiKey;
 
 }
 
