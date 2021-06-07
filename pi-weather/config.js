@@ -1,12 +1,15 @@
-﻿var apiKey = "5ad157ae89dbcf93bf7a27585be177b8"; // darksky.net api key
-var latitude = "29.481137"; // Showing Montreal.  search your city on google map and look at the url to get your latitude and longitude
+﻿// Most of the params can also be set in the query string
+// ex: http://{yourdomain}/index.html?apikey=00000000000000000000000000000000&latitude=45.4973&longitude=-73.5707&lang=en&theme=black
+
+var apiKey = "64c3c73a2207f72e4feee42c199bd08b"; // OpenWeatherMap api key
+var latitude = "29.481137"; // search your city on google map and look at the url to get your latitude and longitude
 var longitude = "-98.7945945";
-var lang = "en"; // too many options.  check here https://darksky.net/dev/docs/forecast
-var units = "us"; // auto, ca, uk2, us, si
+var lang = "en"; // too many options.  check here https://openweathermap.org/api/one-call-api#multi
+var units = "imperial"; // metric (Celsius), imperial (Fahrenheit), standard (Kelvin)
 var degreeSymbol = "F"; // C or F
 var rainPrecUnit = "in";
 var snowPrecUnit = "in";
-var windUnit = "km/h"
+var windUnit = "km/h";
 var forecastNbOfDays = 3; // 0 to 8
 var hourlyNbOfHours = 0; // 0-49
 var theme = "white"; // "blue", "black", "white"
@@ -14,9 +17,9 @@ var theme = "white"; // "blue", "black", "white"
 var showScrollingAlerts = false;
 var showCurrentWeather = true;
 var showCurrentIcon = true;
-var showCurrentSummary = false;
+var showCurrentSummary = true;
 var showCurrentWind = false;
-var showCurrentWindBearing = false;
+var showCurrentWindBearing = true;
 var showCurrentHumidity = false;
 var showCurrentDate = true;
 var showCurrentTime = true;
@@ -24,9 +27,9 @@ var showCurrentTime = true;
 var showHourlyIcon = true;
 var showHourlyWind = false;
 var showHourlyWindBearing = false;
-var showHourlyAccumulation = false;
+var showHourlyAccumulation = true;
 var showHourlyHumidity = false;
-var showHourlyProbability = false;
+var showHourlyProbability = true;
 
 var showForecastIcon = true;
 var showForecastSummary = true;
@@ -37,24 +40,26 @@ var showForecastHumidity = false;
 var showForecastAccumulation = false;
 var showForecastProbability = false;
 
-
-var showDarkSkyLink = true; // set to true if you have a free darksky api key.  
-
 var debugging = false; // will allow showing forecast for past days.  Usefull when playing with sample data
 
-// Set for your language
-// English
-var todayLabel = "Today";
-var windLabel = "wind";
-var apparentTempLabel = "feels like";
-var week = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-var month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+// Add your language if missing
+var labelsDict =
+{
+    "default": {
+        todayLabel: "Today",
+        windLabel: "wind",
+        apparentTempLabel: "feeling",
+        week: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+        month: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+    },
+    "fr": {
+        todayLabel: "Aujourd'hui",
+        windLabel: "vent",
+        apparentTempLabel: "ressentie",
+        week: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
+        month: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre']
+    }
+};
 
-// French
-//var todayLabel = "Aujourd'hui";
-//var windLabel = "vent";
-//var apparentTempLabel = "ressentie";
-//var week = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'];
-//var month = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
-
-var url = 'https://api.darksky.net/forecast/' + apiKey + '/' + latitude + ',' + longitude + '?lang=' + lang + '&units=' + units;
+var labels;
+var url;

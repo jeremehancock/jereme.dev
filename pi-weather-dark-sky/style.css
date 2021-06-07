@@ -88,10 +88,8 @@ body {
 #currentSummary {
     width: 100%;
     vertical-align: top;
-    padding-top: 25px;
-    font-size: 20px;
-    text-align: center;
-    text-transform: capitalize;
+    padding-top:25px;
+    font-size:20px;
 }
 
 #currentIcon {
@@ -167,7 +165,6 @@ body {
 
 #forecast 
 {
-	width: 100%;
     border-spacing: 5px 0;
     margin: 20px 5px 0 5px;
 }
@@ -319,8 +316,5 @@ body {
 .icon-thunderstormnight  { background: url(icons/tstorms.svg), linear-gradient(transparent, transparent); }
 .icon-windnight  { background: url(icons/wind.svg), linear-gradient(transparent, transparent); }
 .icon-unknownnight  { background: url(icons/unknown.svg), linear-gradient(transparent, transparent); }
-
-
-
 
 
