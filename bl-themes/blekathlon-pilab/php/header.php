@@ -1,3 +1,15 @@
+<?php echo Theme::javascript('js/darkmode-js.min.js', HTML_PATH_THEME, null); ?>
+
+<script>
+	const darkmode =  new Darkmode();
+	if (darkmode.isActivated()) {
+		document.getElementById("dark-toggle").checked = true;
+	}
+	else {
+		document.getElementById("dark-toggle").checked = false;
+	}
+</script>
+
 <header class="site-header main-padding sticky-header" id="navbar">
 	<input class="search-toggle" type="checkbox" id="search-toggle" />
 	<div class="wrapper main-width search-header">

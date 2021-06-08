@@ -18,15 +18,3 @@
 <script>
 	var uploadsFolder = '<?php echo HTML_PATH_UPLOADS; ?>', siteRoot = '<?php echo rtrim($site->url(), '/') . '/'; //site url with trailing slash ?>';
 </script>
-
-<?php echo Theme::javascript('js/darkmode-js.min.js', HTML_PATH_THEME, null); ?>
-
-<script>
-const darkmode =  new Darkmode();
-if (darkmode.isActivated()) {
-document.getElementById("dark-toggle").checked = true;
-}
-else {
-document.getElementById("dark-toggle").checked = false;
-}
-</script>
