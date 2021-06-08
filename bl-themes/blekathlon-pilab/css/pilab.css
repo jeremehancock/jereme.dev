@@ -1,11 +1,3 @@
-body {
-  height: 100vh;
-}
-
-html {
-  height: 100vh;
-}
-
 img:not([src]) {
   visibility: hidden;
 }
