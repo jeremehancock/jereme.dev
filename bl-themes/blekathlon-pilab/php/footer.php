@@ -17,4 +17,12 @@
 </footer>
 <script>
 	var uploadsFolder = '<?php echo HTML_PATH_UPLOADS; ?>', siteRoot = '<?php echo rtrim($site->url(), '/') . '/'; //site url with trailing slash ?>';
+	
+	if (darkmode.isActivated()) {
+		document.getElementById("dark-toggle").checked = true;
+	}
+	else {
+		document.getElementById("dark-toggle").checked = false;
+	}
 </script>
+
