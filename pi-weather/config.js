@@ -17,7 +17,7 @@ var theme = "white"; // "blue", "black", "white"
 var showScrollingAlerts = false;
 var showCurrentWeather = true;
 var showCurrentIcon = true;
-var showCurrentSummary = true;
+var showCurrentSummary = false;
 var showCurrentWind = false;
 var showCurrentWindBearing = true;
 var showCurrentHumidity = false;
@@ -32,7 +32,7 @@ var showHourlyHumidity = false;
 var showHourlyProbability = true;
 
 var showForecastIcon = true;
-var showForecastSummary = true;
+var showForecastSummary = false;
 var showForecastMinTemp = true;
 var showForecastWind = false;
 var showForecastWindBearing = false;
