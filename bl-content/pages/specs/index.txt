@@ -40,25 +40,22 @@
 	
 ## Pi Lab (Primary Nodes):
 
-*   **Load Balancer**
-    *   1 Raspberry Pi 3 Model B
+*   **Load Balancer Node**
+    *   1 Raspberry Pi 4 2GB Model B
 				* Samsung EVO Plus 32GB microSDHC Card
-				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=pi0" target="_blank">Metrics Dashboard</a>
-*   **Dev/Prod Node**
+				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=pi0" target="_blank">Metrics Dashboard</a> (pi0)
+*   **Development Node**
     *    1 Raspberry Pi 2 Model B
 				* Samsung EVO Plus 32GB microSDHC Card
-				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=pi1" target="_blank">Metrics Dashboard</a>
-*  **Prod Nodes**
-    *    2 Raspberry Pi 2 Model Bs
+				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=pi1" target="_blank">Metrics Dashboard</a> (pi1)
+*  **Production Nodes**
+    *    4 Raspberry Pi 4 2GB Model Bs
 				* Samsung EVO Plus 32GB microSDHC Cards
 				* **Metrics Dashboards:**
-					* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=pi2" target="_blank">Node 2</a>
-					* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=pi3" target="_blank">Node 3</a>
-    *    2 Raspberry Pi 4 4GB Model Bs 
-						* Samsung EVO Plus 32GB microSDHC Cards
-						* **Metrics Dashboards:**
-					* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=pi4" target="_blank">Node 4</a>
-					* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=pi5" target="_blank">Node 5</a>
+					* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=pi2" target="_blank">Node 1</a> (pi2)
+					* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=pi3" target="_blank">Node 2</a> (pi3)
+					* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=pi4" target="_blank">Node 3</a> (pi4)
+					* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=pi5" target="_blank">Node 4</a> (pi5)
 *   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
 *   **Webserver/Load Balancer:** [Nginx](https://nginx.org/)
 *   **SSL:** [Let's Encrypt](https://letsencrypt.org/)
@@ -81,20 +78,20 @@
 ## Pi Lab (Ancillary Nodes):
 
 *   **BOINC Node**
-    *   1 Raspberry Pi 4 2GB Model B
+    *   1 Raspberry Pi 4 4GB Model B
 				* Samsung EVO Plus 32GB microSDHC Card
 				* **Operating System:** [Ubuntu Server 64-bit](https://ubuntu.com/download/raspberry-pi)
 				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=boincpi" target="_blank">Metrics Dashboard</a>
 	* [More Details](fold-for-covid)
 *   **Restreamer Node**
-    *   1 Raspberry Pi 4 2GB Model B
+    *   1 Raspberry Pi 4 4GB Model B
 				* Samsung EVO Plus 32GB microSDHC Card
 				*   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
 				* [Restreamer](https://datarhei.github.io/restreamer/)
 				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=restreamerpi" target="_blank">Metrics Dashboard</a>
 	* [More Details](restreamer)
 *   **Node-Red Node**
-    *   1 Raspberry Pi 4 2GB Model B
+    *   1 Raspberry Pi 3 Model B
 				* Samsung EVO Plus 32GB microSDHC Card
 				*   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
 				* [Node-Red](https://nodered.org/docs/getting-started/raspberrypi)
