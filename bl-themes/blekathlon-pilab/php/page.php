@@ -52,10 +52,10 @@
 			</div>
 
 			<footer class="entry-footer clear">
-				<div class="share-buttons">
-                    <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=5e8909dff35dc9001954b8a5&product=inline-share-buttons" async="async"></script>
-                    <div class="sharethis-inline-share-buttons"></div>
-				</div>
+				<!-- <div class="share-buttons"> -->
+                <!-- <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=5e8909dff35dc9001954b8a5&product=inline-share-buttons" async="async"></script> -->
+                    <!-- <div class="sharethis-inline-share-buttons"></div> -->
+				<!-- </div> -->
 				<?php if ($page->category()): ?>
 				<div class="entry-terms-wrapper entry-categories-wrapper clear">
 					<span class="screen-reader-text">Categories: </span>
