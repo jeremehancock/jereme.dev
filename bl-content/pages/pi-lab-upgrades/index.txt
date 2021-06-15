@@ -16,4 +16,4 @@ sudo apt update && sudo apt upgrade -y
 
 Other than having to update some port forwards and what not for IP changes that was it. 
 
-For more details checkout the [Current Specs](/specs)
+For more details checkout the [Current Specs](/specs).

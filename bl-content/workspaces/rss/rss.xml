@@ -5,7 +5,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Mon, 14 Jun 2021 22:43:36 -0500</lastBuildDate>
+    <lastBuildDate>Tue, 15 Jun 2021 11:45:09 -0500</lastBuildDate>
     <item>
       <title>Pi Lab Upgrades</title>
       <link>https://pilab.dev/pi-lab-upgrades</link>
@@ -20,7 +20,7 @@
 &lt;p&gt;I was very excited at how easy it was to move things around. I simply ran the following on each node before moving the SD card to ensure everything was the latest and greatest.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;sudo apt update &amp;amp;&amp;amp; sudo apt upgrade -y&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Other than having to update some port forwards and what not for IP changes that was it. &lt;/p&gt;
-&lt;p&gt;For more details checkout the &lt;a href="/specs"&gt;Current Specs&lt;/a&gt;&lt;/p&gt;</description>
+&lt;p&gt;For more details checkout the &lt;a href="/specs"&gt;Current Specs&lt;/a&gt;.&lt;/p&gt;</description>
       <pubDate>Mon, 14 Jun 2021 22:01:02 -0500</pubDate>
       <guid isPermaLink="false">8a019b2df8ce1f9067ac6b5319cdd3fc</guid>
     </item>
