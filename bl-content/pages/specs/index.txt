@@ -81,21 +81,21 @@
     *   1 Raspberry Pi 4 4GB Model B
 				* Samsung EVO Plus 32GB microSDHC Card
 				* **Operating System:** [Ubuntu Server 64-bit](https://ubuntu.com/download/raspberry-pi)
-				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=boincpi" target="_blank">Metrics Dashboard</a>
+				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=boincpi" target="_blank">Metrics Dashboard</a> (boincpi)
 	* [More Details](fold-for-covid)
 *   **Restreamer Node**
     *   1 Raspberry Pi 4 4GB Model B
 				* Samsung EVO Plus 32GB microSDHC Card
 				*   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
 				* [Restreamer](https://datarhei.github.io/restreamer/)
-				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=restreamerpi" target="_blank">Metrics Dashboard</a>
+				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=restreamerpi" target="_blank">Metrics Dashboard</a> (restreamerpi)
 	* [More Details](restreamer)
 *   **Node-Red Node**
     *   1 Raspberry Pi 3 Model B
 				* Samsung EVO Plus 32GB microSDHC Card
 				*   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
 				* [Node-Red](https://nodered.org/docs/getting-started/raspberrypi)
-				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=noderedpi" target="_blank">Metrics Dashboard</a>
+				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=noderedpi" target="_blank">Metrics Dashboard</a> (noderedpi)
 	* [More Details](node-red-twitter-bot)
 *   **Metrics Node**
     *    1 Raspberry Pi 2 Model B
@@ -105,7 +105,7 @@
 				* [RPi Exporter](https://github.com/lukasmalkmus/rpi_exporter) - Expose Raspberry Pi metrics: Installed to each node.
 				* [Prometheus](https://prometheus.io/) - Collect and store metrics
 				* [Grafana](https://grafana.com/) - Metrics visualization
-				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=prometheus" target="_blank">Metrics Dashboard</a>
+				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=prometheus" target="_blank">Metrics Dashboard</a> (prometheus)
 	* [More Details](prometheus-grafana)
 *    **Cooling:** [AC Infinity MULTIFAN S4](https://www.amazon.com/gp/product/B00MWH4FL4)
 *    **Power:** [XDCDHM USB Charger, 60 Watt 12A 6-Port High Speed Charger](https://www.amazon.com/gp/product/B075P22QC2)
@@ -121,7 +121,7 @@
 				* [Onn Universal Wall Charger](https://www.walmart.com/ip/Onn-Universal-Wall-Charger-Black/620837164)
 				* [Gosund Smart Plug](https://www.amazon.com/Outlet-Required-Gosund-Upgraded-Version/dp/B07GRLQV47/)
 				* [Ender 3 Pro](https://creality3d.shop/collections/3d-printer/products/creality3d-ender-3-pro-high-precision-3d-printer)
-				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=octopi" target="_blank">Metrics Dashboard</a>
+				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=octopi" target="_blank">Metrics Dashboard</a> (octopi)
 	* [More Details](octoprint-node)
 *   **Zero TV Node**
     *    1 Raspberry Pi Zero W
@@ -129,7 +129,7 @@
 				*   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
 				*   **CMS:** [Bludit - v3.12.0](https://www.bludit.com/)  - Customized
 				*   **Theme:** [Highway](https://jellyio.com/shop/bludit/highway) - Customized
-				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=zerotv" target="_blank">Metrics Dashboard</a>
+				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=zerotv" target="_blank">Metrics Dashboard</a> (zerotv)
 	*  [More Details](zero-tv)
 *   **Test Node**
     *    1 Raspberry Pi Zero W
@@ -138,7 +138,7 @@
 				* [USB-A Add-on Board](https://www.amazon.com/gp/product/B07DBL3WYQ)
 				* [GLCON Power Strip Tower](https://www.amazon.com/gp/product/B01G6PPTH6)
 				* [Gosund Smart Plug](https://www.amazon.com/Outlet-Required-Gosund-Upgraded-Version/dp/B07GRLQV47/)
-				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=testpi1" target="_blank">Metrics Dashboard</a>
+				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=testpi1" target="_blank">Metrics Dashboard</a> (testpi1)
 	* [More Details](pi-zero-wall-plug-web-server)
 *   **Pi-hole/OpenVPN Node**
     *    1 Raspberry Pi 3 Model B

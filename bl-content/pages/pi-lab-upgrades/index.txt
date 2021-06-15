@@ -1,0 +1,19 @@
+It has been bothering me that the production nodes for Pi Lab were not the same specs so I have finally decided to do some upgrades. I also didn't like that the [BOINC Node](/fold-for-covid) only had 2GBs of RAM. So I also decided to re-orgianize things a bit.
+
+**So here is what has changed.**
+
+* The [Node-Red Node](/node-red-twitter-bot) switched with the Load Balancer Node in the Pi Lab Web Cluster
+* The two Pi 4 4GBs from the Pi Lab Web Cluster were swapped with the [BOINC Node](/fold-for-covid) and [Resteamer Node](/restreamer)
+* I purchased two new Pi 2GBs to replace two of the Pi 2s in the Pi Lab Web Cluster
+
+Now the Pi Lab Web Cluster is using all Pi 4 2GBs for the production nodes and a single Pi 2 for the development node. Eventually I plan to upgrade the development node as well and put it back into production rotation allowing it to do double duty. 
+
+I was very excited at how easy it was to move things around. I simply ran the following on each node before moving the SD card to ensure everything was the latest and greatest.
+
+```
+sudo apt update && sudo apt upgrade -y
+```
+
+Other than having to update some port forwards and what not for IP changes that was it. 
+
+For more details checkout the [Current Specs](/specs)

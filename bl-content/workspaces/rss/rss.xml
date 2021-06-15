@@ -5,7 +5,25 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Mon, 14 Jun 2021 17:11:30 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 14 Jun 2021 22:43:36 -0500</lastBuildDate>
+    <item>
+      <title>Pi Lab Upgrades</title>
+      <link>https://pilab.dev/pi-lab-upgrades</link>
+      <description>&lt;p&gt;It has been bothering me that the production nodes for Pi Lab were not the same specs so I have finally decided to do some upgrades. I also didn't like that the &lt;a href="/fold-for-covid"&gt;BOINC Node&lt;/a&gt; only had 2GBs of RAM. So I also decided to re-orgianize things a bit.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;So here is what has changed.&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The &lt;a href="/node-red-twitter-bot"&gt;Node-Red Node&lt;/a&gt; switched with the Load Balancer Node in the Pi Lab Web Cluster&lt;/li&gt;
+&lt;li&gt;The two Pi 4 4GBs from the Pi Lab Web Cluster were swapped with the &lt;a href="/fold-for-covid"&gt;BOINC Node&lt;/a&gt; and &lt;a href="/restreamer"&gt;Resteamer Node&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;I purchased two new Pi 2GBs to replace two of the Pi 2s in the Pi Lab Web Cluster&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Now the Pi Lab Web Cluster is using all Pi 4 2GBs for the production nodes and a single Pi 2 for the development node. Eventually I plan to upgrade the development node as well and put it back into production rotation allowing it to do double duty. &lt;/p&gt;
+&lt;p&gt;I was very excited at how easy it was to move things around. I simply ran the following on each node before moving the SD card to ensure everything was the latest and greatest.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt update &amp;amp;&amp;amp; sudo apt upgrade -y&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Other than having to update some port forwards and what not for IP changes that was it. &lt;/p&gt;
+&lt;p&gt;For more details checkout the &lt;a href="/specs"&gt;Current Specs&lt;/a&gt;&lt;/p&gt;</description>
+      <pubDate>Mon, 14 Jun 2021 22:01:02 -0500</pubDate>
+      <guid isPermaLink="false">8a019b2df8ce1f9067ac6b5319cdd3fc</guid>
+    </item>
     <item>
       <title>Gatsby + Bludit</title>
       <link>https://pilab.dev/gatsby-bludit</link>
@@ -64,36 +82,6 @@
 &lt;p&gt;&lt;a href="https://twitter.com/RdSd_America_US"&gt;@RdSd_America_US&lt;/a&gt; &amp;amp; &lt;a href="https://roadsideamerica.us/"&gt;RoadsideAmerica.us&lt;/a&gt;&lt;/p&gt;</description>
       <pubDate>Wed, 16 Dec 2020 12:41:21 -0600</pubDate>
       <guid isPermaLink="false">autosave-6968c1c0dfc10df31f7685952c0cf488</guid>
-    </item>
-    <item>
-      <title>Restreamer Node</title>
-      <link>https://pilab.dev/restreamer</link>
-      <description>&lt;p&gt;Recently I have been working on setting up a live stream for my son's pet Leopard Gecko. We originally set it up a year or so ago using an old Android phone using &lt;a href="https://www.youtube.com/live"&gt;YouTube live streaming&lt;/a&gt;. However, YouTube changed the requirements for this method. They now require that your channel has over 1000 subscribers. After that change we attempted to use &lt;a href="https://play.google.com/store/apps/details?id=com.pas.webcam.pro&amp;amp;hl=en_US"&gt;IP Web Cam Pro&lt;/a&gt; also on an old Android phone. This worked pretty well, however, the phone's battery would die after a few hours even though it was plugged in.&lt;/p&gt;
-&lt;p&gt;I finally decided to purchase some low end IP cameras and give those a shot. I found a two pack of &lt;a href="https://www.amazon.com/Wyze-Indoor-Wireless-Camera-Vision/dp/B07G2YR23M/"&gt;Wyze Cams&lt;/a&gt;. I was hoping that they would have the ability to view the steam via a browser on my local network. I could then simply setup a reverse proxy on the Pi Lab load balancer and share it. Unfortunately that was not the case. &lt;/p&gt;
-&lt;p&gt;After some research I found that &lt;a href="https://wyze.com/"&gt;Wyze&lt;/a&gt; has a &lt;a href="https://support.wyzecam.com/hc/en-us/articles/360026245231-Wyze-Cam-RTSP"&gt;beta firmware&lt;/a&gt; that provides the ability to stream via RTSP. The installation is fairly straight forward. Simply have to copy a file to an SD card and follow a few steps. This gives an extra advanced option to create an RTSP URL to allow streaming outside the app.&lt;/p&gt;
-&lt;p&gt;Now that I had that I needed a way to use that stream to embed the streams on a website which was the original goal for my son's Gecko stream.&lt;/p&gt;
-&lt;p&gt;This is where the new Pi Lab Restreamer Node comes in. I have setup a Raspberry Pi 4 Model B 2GB with &lt;a href="https://datarhei.github.io/restreamer/"&gt;Restreamer&lt;/a&gt;. Restreamer is a software which allows for free real-time video streaming, e.g. transferring video signals of webcams or other video-inputs directly to your website. &lt;/p&gt;
-&lt;p&gt;The setup for this was so easy! It allowed me to setup local stream URLs that I can use with a reverse proxy entry on the Pi Lab Load Balancer. It also allows me to easily push the streams to &lt;a href="https://www.youtube.com/"&gt;YouTube&lt;/a&gt; which is what I have elected to do. &lt;/p&gt;
-&lt;div class="centered"&gt;
-    &lt;img src="/bl-content/uploads/pages/241c4852179f57be27536866df35d4ae/restreamer.png" class="image-border" /&gt;&lt;br&gt;&lt;br&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;Here are the streams that we have setup so far.&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=hn_3fYmSo0A"&gt;Pi Lab Live Stream&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://tortoisecam.com"&gt;Tortoise Cam (Russian Tortoise)&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;So far things are working very well. I have all the streams setup to not do any additional encoding in &lt;a href="https://datarhei.github.io/restreamer/"&gt;Restreamer&lt;/a&gt;. I found that this was not very helpful with my lower end cameras and was only causing high CPU usage. I am seeing about 3-4 Mbps upload usage on my network which I am going to keep a close eye on.&lt;/p&gt;
-&lt;p&gt;The main issue that I have had is with &lt;a href="https://www.youtube.com/"&gt;YouTube&lt;/a&gt; stopping the streams after 12 hours. This is mainly frustrating because it breaks the embed codes for the streams since the stream URL will change when I re-establish the stream. It is even odder that the &lt;a href="pi-lab-live-stream"&gt;Pi Lab Live Stream&lt;/a&gt; hasn't stopped after over 2 days of streaming, but the others stop everyday right at 12 hours. I am not sure if the AT&amp;amp;T Digital Life security camera that is used for the &lt;a href="pi-lab-live-stream"&gt;Pi Lab Live Stream&lt;/a&gt; somehow has an affect. &lt;/p&gt;
-&lt;p&gt;If you are looking to get into running a live stream for something like a pet definitely take a look at &lt;a href="https://datarhei.github.io/restreamer/"&gt;Restreamer&lt;/a&gt;!&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Updates:&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;I have managed to get the &lt;a href="https://www.youtube.com/"&gt;YouTube&lt;/a&gt; live streams to not stop after 12 hours. Apparently if you use the &amp;quot;Schedule Stream&amp;quot; option it allows you to stream past the 12 hour mark. The &lt;a href="pi-lab-live-stream"&gt;Pi Lab Live Stream&lt;/a&gt; was setup this way during the initial setup which is why it hadn't stopped. I have now set them all up this way.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;I have updated my tortoise cam with its own URL, &lt;a href="https://tortoisecam.com"&gt;TortoiseCam.com&lt;/a&gt;. &lt;del&gt;It is setup to use &lt;a href="https://www.earthcam.com/"&gt;EarthCam&lt;/a&gt; which it turns out &lt;a href="https://datarhei.github.io/restreamer/"&gt;Restreamer&lt;/a&gt; also works with.&lt;/del&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;I have updated the &lt;a href="https://tortoisecam.com"&gt;TortoiseCam.com&lt;/a&gt; site to use &lt;a href="https://www.youtube.com/"&gt;YouTube&lt;/a&gt; since I noticed &lt;a href="https://www.earthcam.com/"&gt;EarthCam&lt;/a&gt; uses ugly ads that seemed sketchy.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;I have continued to have issues with &lt;a href="https://www.youtube.com/"&gt;YouTube&lt;/a&gt; ending the tortoise cam stream. So I have gone back to &lt;a href="https://www.earthcam.com/"&gt;EarthCam&lt;/a&gt;. To get around the sketchy ads in the &lt;a href="https://www.earthcam.com/"&gt;EarthCam&lt;/a&gt; embed I have setup a scraper to grab the m3u8 file directly for &lt;a href="https://tortoisecam.com"&gt;TortoiseCam.com&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-      <pubDate>Sun, 09 Aug 2020 22:43:14 -0500</pubDate>
-      <guid isPermaLink="false">241c4852179f57be27536866df35d4ae</guid>
     </item>
   </channel>
 </rss>
