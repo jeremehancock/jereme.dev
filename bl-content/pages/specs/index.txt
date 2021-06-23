@@ -65,7 +65,6 @@
 *   **Network** 
     * [Google WiFi Mesh 4 Pack](https://www.amazon.com/gp/product/B07H7RQHF7)
     * [TP-Link 16 Port Gigabit Ethernet Network Switch (TL-SG116)](https://www.amazon.com/gp/product/B07GR9S6FN)
-    * [Netgear 5 Port Gigabit Ethernet Network Switch (GS105v5)](https://www.netgear.com/support/product/GS105v5.aspx)
 *   **Live Stream:** [AT&T Sercomm OC432](https://forums.att.com/conversations/device-troubleshooting/repurposing-digital-life-camera/5deff480bad5f2f6065cc3e0?commentId=5df01789bad5f2f606b01161)
 *   **Power:**
 		* [CyberPower EC850LCD](https://www.cyberpowersystems.com/product/ups/ec850lcd/)
