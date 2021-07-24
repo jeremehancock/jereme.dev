@@ -5,7 +5,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Wed, 23 Jun 2021 09:21:42 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 24 Jul 2021 15:13:21 -0500</lastBuildDate>
     <item>
       <title>Pi Lab Upgrades</title>
       <link>https://pilab.dev/pi-lab-upgrades</link>
@@ -14,9 +14,9 @@
 &lt;ul&gt;
 &lt;li&gt;The &lt;a href="/node-red-twitter-bot"&gt;Node-Red Node&lt;/a&gt; switched with the Load Balancer Node in the Pi Lab Web Cluster&lt;/li&gt;
 &lt;li&gt;The two Pi 4 4GBs from the Pi Lab Web Cluster were swapped with the &lt;a href="/fold-for-covid"&gt;BOINC Node&lt;/a&gt; and &lt;a href="/restreamer"&gt;Resteamer Node&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;I purchased two new Pi 2GBs to replace two of the Pi 2s in the Pi Lab Web Cluster&lt;/li&gt;
+&lt;li&gt;I purchased three new Pi 2GBs to replace three of the Pi 2s in the Pi Lab Web Cluster&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Now the Pi Lab Web Cluster is using all Pi 4 2GBs for the production nodes and a single Pi 2 for the development node. Eventually I plan to upgrade the development node as well and put it back into production rotation allowing it to do double duty. &lt;/p&gt;
+&lt;p&gt;Now the Pi Lab Web Cluster is using all Pi 4 2GBs for all nodes&lt;/p&gt;
 &lt;p&gt;I was very excited at how easy it was to move things around. I simply ran the following on each node before moving the SD card to ensure everything was the latest and greatest.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;sudo apt update &amp;amp;&amp;amp; sudo apt upgrade -y&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Other than having to update some port forwards and what not for IP changes that was it. &lt;/p&gt;

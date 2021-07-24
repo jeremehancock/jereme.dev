@@ -4,9 +4,9 @@ It has been bothering me that the production nodes for Pi Lab were not the same 
 
 * The [Node-Red Node](/node-red-twitter-bot) switched with the Load Balancer Node in the Pi Lab Web Cluster
 * The two Pi 4 4GBs from the Pi Lab Web Cluster were swapped with the [BOINC Node](/fold-for-covid) and [Resteamer Node](/restreamer)
-* I purchased two new Pi 2GBs to replace two of the Pi 2s in the Pi Lab Web Cluster
+* I purchased three new Pi 2GBs to replace three of the Pi 2s in the Pi Lab Web Cluster
 
-Now the Pi Lab Web Cluster is using all Pi 4 2GBs for the production nodes and a single Pi 2 for the development node. Eventually I plan to upgrade the development node as well and put it back into production rotation allowing it to do double duty. 
+Now the Pi Lab Web Cluster is using all Pi 4 2GBs for all nodes
 
 I was very excited at how easy it was to move things around. I simply ran the following on each node before moving the SD card to ensure everything was the latest and greatest.
 

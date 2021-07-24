@@ -43,19 +43,19 @@
 *   **Load Balancer Node**
     *   1 Raspberry Pi 4 2GB Model B
 				* Samsung EVO Plus 32GB microSDHC Card
-				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=pi0" target="_blank">Metrics Dashboard</a> (pi0)
-*   **Development Node**
-    *    1 Raspberry Pi 2 Model B
+				* Metrics Dashboard <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=pi0" target="_blank">Node 0</a> (pi0)
+*   **Development/Production Node**
+    *    1 Raspberry Pi 4 2GB Model B
 				* Samsung EVO Plus 32GB microSDHC Card
-				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=pi1" target="_blank">Metrics Dashboard</a> (pi1)
+				* Metrics Dashboard <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=pi1" target="_blank">Node 1</a> (pi1)
 *  **Production Nodes**
     *    4 Raspberry Pi 4 2GB Model Bs
 				* Samsung EVO Plus 32GB microSDHC Cards
 				* **Metrics Dashboards:**
-					* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=pi2" target="_blank">Node 1</a> (pi2)
-					* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=pi3" target="_blank">Node 2</a> (pi3)
-					* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=pi4" target="_blank">Node 3</a> (pi4)
-					* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=pi5" target="_blank">Node 4</a> (pi5)
+					* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=pi2" target="_blank">Node 2</a> (pi2)
+					* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=pi3" target="_blank">Node 3</a> (pi3)
+					* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=pi4" target="_blank">Node 4</a> (pi4)
+					* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=pi5" target="_blank">Node 5</a> (pi5)
 *   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
 *   **Webserver/Load Balancer:** [Nginx](https://nginx.org/)
 *   **SSL:** [Let's Encrypt](https://letsencrypt.org/)
