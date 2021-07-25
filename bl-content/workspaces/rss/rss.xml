@@ -5,11 +5,11 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Sat, 24 Jul 2021 15:13:21 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 25 Jul 2021 00:39:47 -0500</lastBuildDate>
     <item>
       <title>Pi Lab Upgrades</title>
       <link>https://pilab.dev/pi-lab-upgrades</link>
-      <description>&lt;p&gt;It has been bothering me that the production nodes for Pi Lab were not the same specs so I have finally decided to do some upgrades. I also didn't like that the &lt;a href="/fold-for-covid"&gt;BOINC Node&lt;/a&gt; only had 2GBs of RAM. So I also decided to re-orgianize things a bit.&lt;/p&gt;
+      <description>&lt;p&gt;It has been bothering me that the production nodes for Pi Lab were not the same specs so I have finally decided to do some upgrades. I also didn't like that the &lt;a href="/fold-for-covid"&gt;BOINC Node&lt;/a&gt; only had 2GBs of RAM. So I also decided to re-organize things a bit.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;So here is what has changed.&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;The &lt;a href="/node-red-twitter-bot"&gt;Node-Red Node&lt;/a&gt; switched with the Load Balancer Node in the Pi Lab Web Cluster&lt;/li&gt;

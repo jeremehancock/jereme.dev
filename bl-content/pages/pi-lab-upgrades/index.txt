@@ -1,4 +1,4 @@
-It has been bothering me that the production nodes for Pi Lab were not the same specs so I have finally decided to do some upgrades. I also didn't like that the [BOINC Node](/fold-for-covid) only had 2GBs of RAM. So I also decided to re-orgianize things a bit.
+It has been bothering me that the production nodes for Pi Lab were not the same specs so I have finally decided to do some upgrades. I also didn't like that the [BOINC Node](/fold-for-covid) only had 2GBs of RAM. So I also decided to re-organize things a bit.
 
 **So here is what has changed.**
 
