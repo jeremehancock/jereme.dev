@@ -4,13 +4,13 @@
 
 In 2004 I created Ubuntu Christian Edition (UbuntuCE). It started as an idea that I got from a satire distro called Jesux. I liked the idea of creating a distro that was based on one of the most popular Linux distros and have it pre-configured with Christian software. 
 
-When I first started I had no idea what I was doing. In fact I was brand new to the world of Linux. However, I decided that to go for it. The initial release caused quite a stir. I received a ton of backlash from people. Most of the people who didn't like the project objected to the concept of a Christian Linux distro. They really failed to understand the underlying concept that I was going for. There was also a lot of praise for the project. UbuntuCE was mentioned in several Linux magazines and even a few non-Linux ones.
+When I first started I had no idea what I was doing. In fact I was brand new to the world of Linux. However, I decided to go for it. The initial release caused quite a stir. I received a ton of backlash from people. Most of the people who didn't like the project objected to the concept of a Christian Linux distro. They really failed to understand the underlying concept that I was going for. There was also a lot of praise for the project. UbuntuCE was mentioned in several Linux magazines and even a few non-Linux ones.
 
 One of the features of UbuntuCE that got the most praise was the fact that it came with web content filtering pre-configured. Setting up a safe system for families can be very challenging. UbuntuCE tried to solve that.
 
 After several years my time became more limited with other projects on my plate. A few other folks jumped in and helped take up the mantle for a while, but ultimately UbuntuCE went dormant. I never let the site go down and always hoped to come back to it.
 
-Finally, after many years I have "resurrected" UbuntuCE. The concept is the same. I have based the latest release, code named "Lazarus", on Ubuntu 20.04 LTS. I have added additional Bible Study software from the available repositories. I have also created an UbuntuCE Repository to house the UbuntuCE specific package that I have built. These include a welcome app, wallpapers, etc.
+Finally, after many years I have "resurrected" UbuntuCE. The concept is the same. I have based the latest release, code named "Lazarus", on Ubuntu 20.04 LTS. I have added additional Bible Study software from the available repositories. I have also created an UbuntuCE Repository to house the UbuntuCE specific packages that I have built. These include a welcome app, wallpapers, etc.
 
 The latest release still comes with web content filtering pre-configured. This time I have taken a different approach and am using a combination of [CleanBrowsing](https://cleanbrowsing.org/) DNS, and a new application that I built called [Host Minder](https://github.com/mhancoc7/hostminder#readme).
 

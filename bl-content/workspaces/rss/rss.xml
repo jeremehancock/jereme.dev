@@ -5,7 +5,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Thu, 12 Aug 2021 08:09:58 -0500</lastBuildDate>
+    <lastBuildDate>Thu, 12 Aug 2021 17:37:54 -0500</lastBuildDate>
     <item>
       <title>UbuntuCE Resurrected</title>
       <link>https://pilab.dev/ubuntuce-resurrected</link>
@@ -13,10 +13,10 @@
     &lt;img src="/bl-content/uploads/pages/ad9fa4c4897cf959012c3604fefeda53/ubuntuce-desktop.png" class="image-border" /&gt;&lt;br&gt;&lt;br&gt;
 &lt;/div&gt;
 &lt;p&gt;In 2004 I created Ubuntu Christian Edition (UbuntuCE). It started as an idea that I got from a satire distro called Jesux. I liked the idea of creating a distro that was based on one of the most popular Linux distros and have it pre-configured with Christian software. &lt;/p&gt;
-&lt;p&gt;When I first started I had no idea what I was doing. In fact I was brand new to the world of Linux. However, I decided that to go for it. The initial release caused quite a stir. I received a ton of backlash from people. Most of the people who didn't like the project objected to the concept of a Christian Linux distro. They really failed to understand the underlying concept that I was going for. There was also a lot of praise for the project. UbuntuCE was mentioned in several Linux magazines and even a few non-Linux ones.&lt;/p&gt;
+&lt;p&gt;When I first started I had no idea what I was doing. In fact I was brand new to the world of Linux. However, I decided to go for it. The initial release caused quite a stir. I received a ton of backlash from people. Most of the people who didn't like the project objected to the concept of a Christian Linux distro. They really failed to understand the underlying concept that I was going for. There was also a lot of praise for the project. UbuntuCE was mentioned in several Linux magazines and even a few non-Linux ones.&lt;/p&gt;
 &lt;p&gt;One of the features of UbuntuCE that got the most praise was the fact that it came with web content filtering pre-configured. Setting up a safe system for families can be very challenging. UbuntuCE tried to solve that.&lt;/p&gt;
 &lt;p&gt;After several years my time became more limited with other projects on my plate. A few other folks jumped in and helped take up the mantle for a while, but ultimately UbuntuCE went dormant. I never let the site go down and always hoped to come back to it.&lt;/p&gt;
-&lt;p&gt;Finally, after many years I have &amp;quot;resurrected&amp;quot; UbuntuCE. The concept is the same. I have based the latest release, code named &amp;quot;Lazarus&amp;quot;, on Ubuntu 20.04 LTS. I have added additional Bible Study software from the available repositories. I have also created an UbuntuCE Repository to house the UbuntuCE specific package that I have built. These include a welcome app, wallpapers, etc.&lt;/p&gt;
+&lt;p&gt;Finally, after many years I have &amp;quot;resurrected&amp;quot; UbuntuCE. The concept is the same. I have based the latest release, code named &amp;quot;Lazarus&amp;quot;, on Ubuntu 20.04 LTS. I have added additional Bible Study software from the available repositories. I have also created an UbuntuCE Repository to house the UbuntuCE specific packages that I have built. These include a welcome app, wallpapers, etc.&lt;/p&gt;
 &lt;p&gt;The latest release still comes with web content filtering pre-configured. This time I have taken a different approach and am using a combination of &lt;a href="https://cleanbrowsing.org/"&gt;CleanBrowsing&lt;/a&gt; DNS, and a new application that I built called &lt;a href="https://github.com/mhancoc7/hostminder#readme"&gt;Host Minder&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;If you are interested you can check it out at &lt;a href="https://ubuntuce.com"&gt;UbuntuCE.com&lt;/a&gt;&lt;/p&gt;</description>
       <pubDate>Thu, 12 Aug 2021 07:43:27 -0500</pubDate>
