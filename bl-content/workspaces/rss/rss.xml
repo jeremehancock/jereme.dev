@@ -5,7 +5,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Thu, 12 Aug 2021 17:37:54 -0500</lastBuildDate>
+    <lastBuildDate>Thu, 12 Aug 2021 23:28:06 -0500</lastBuildDate>
     <item>
       <title>UbuntuCE Resurrected</title>
       <link>https://pilab.dev/ubuntuce-resurrected</link>
@@ -48,7 +48,7 @@
 &lt;p&gt;One of the really cool things about &lt;a href="https://www.gatsbyjs.com/"&gt;Gatsby&lt;/a&gt; is the ability to utilize external APIs to pull in data. To allow this for &lt;a href="https://bludit.com"&gt;Bludit&lt;/a&gt; I have created a new &amp;quot;source&amp;quot; plugin to allow anyone to easily pull in content from their &lt;a href="https://bludit.com"&gt;Bludit&lt;/a&gt; site with ease.&lt;/p&gt;
 &lt;p&gt;This requires the use of the &lt;a href="https://docs.bludit.com/en/api/introduction"&gt;Bludit API&lt;/a&gt; to be activated.&lt;/p&gt;
 &lt;p&gt;Hopefully this will be helpful to someone looking to leverage the power of Gatsby and Bludit.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://github.com/mhancoc7/gatsby-source-bludit/blob/main/LICENSE"&gt;&lt;img src="https://img.shields.io/github/license/mhancoc7/gatsby-source-bludit?color=orange&amp;amp;style=for-the-badge" alt="GitHub license" /&gt;&lt;/a&gt;
+&lt;p&gt;&lt;a href="https://github.com/jeremehancock/gatsby-source-bludit/blob/main/LICENSE"&gt;&lt;img src="https://img.shields.io/github/license/jeremehancock/gatsby-source-bludit?color=orange&amp;amp;style=for-the-badge" alt="GitHub license" /&gt;&lt;/a&gt;
 &lt;a href="https://dumbprojects.com/bludit/"&gt;&lt;img src="https://img.shields.io/badge/Gatsby%20%2B%20Bludit-Demo-green?style=for-the-badge" alt="demo" /&gt;&lt;/a&gt;
 &lt;a href="https://www.npmjs.com/package/gatsby-source-bludit"&gt;&lt;img src="https://img.shields.io/npm/v/gatsby-source-bludit?label=NPM%20PACKAGE&amp;amp;style=for-the-badge" alt="npm" /&gt;&lt;/a&gt;
 &lt;a href="https://www.gatsbyjs.com/"&gt;&lt;img src="https://img.shields.io/static/v1?label=TRY&amp;amp;message=GATSBY&amp;amp;color=blueviolet&amp;amp;style=for-the-badge" alt="gatsby" /&gt;&lt;/a&gt;

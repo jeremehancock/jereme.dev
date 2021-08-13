@@ -13,7 +13,7 @@ The goal of this project is to create a quick virtual machine setup with a Bludi
 
 2. Run 
 ```
-git clone https://github.com/mhancoc7/Bludit-Vagrant.git
+git clone https://github.com/jeremehancock/Bludit-Vagrant.git
 ```
 3. Run 
 ```
@@ -58,4 +58,4 @@ All code is provided as-is without any warranty. Use at your own risk.
 
 ---
 
-[<img data-src="/images/check-it-out-on-github.png" alt="Get it on GitHub" class="on-github lozad" />](https://github.com/mhancoc7/Bludit-Vagrant/)
+[<img data-src="/images/check-it-out-on-github.png" alt="Get it on GitHub" class="on-github lozad" />](https://github.com/jeremehancock/Bludit-Vagrant/)

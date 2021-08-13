@@ -20,7 +20,7 @@ sudo apt-get install git
 
 2. Run 
 ```
-git clone https://github.com/mhancoc7/Bludit-Pi.git
+git clone https://github.com/jeremehancock/Bludit-Pi.git
 ```
 3. Run 
 ```
