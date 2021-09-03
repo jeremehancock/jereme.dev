@@ -63,6 +63,7 @@
 *   **Theme:** [Blekathlon](https://blthemes.pp.ua/) - Customized
 *   **Plugins:** [Pi Lab Plugins](plugins)
 *   **Network** 
+    * [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
     * [Google WiFi Mesh 4 Pack](https://www.amazon.com/gp/product/B07H7RQHF7)
     * [TP-Link 16 Port Gigabit Ethernet Network Switch (TL-SG116)](https://www.amazon.com/gp/product/B07GR9S6FN)
 *   **Live Stream:** [AT&T Sercomm OC432](https://forums.att.com/conversations/device-troubleshooting/repurposing-digital-life-camera/5deff480bad5f2f6065cc3e0?commentId=5df01789bad5f2f606b01161)
