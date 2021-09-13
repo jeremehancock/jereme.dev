@@ -168,7 +168,8 @@
 					* OCZ ARC 100 240GB SSD (OS)
 					* Intel 120GB SSD (Extra Storage)
 					* Iomega 1.5TB Drive (Downloads)
-					* WD_Black 12TB P10-Game Drive (Media)
+					* WD_Black 5TB P10-Game Drive (Movies)
+					* WD_Black 12TB P10-Game Drive (TV Shows)
 					* Dell 22 Inch Monitor
 					* [Plex Media Server](https://www.plex.tv/)
 					* [Tautulli](https://tautulli.com/) (Docker)
