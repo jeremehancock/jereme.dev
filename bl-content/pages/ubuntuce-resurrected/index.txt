@@ -1,5 +1,5 @@
 <div class="centered">
-    <img src="/bl-content/uploads/pages/ad9fa4c4897cf959012c3604fefeda53/ubuntuce-desktop.png" class="image-border" /><br><br>
+    <img src="/bl-content/uploads/pages/ad9fa4c4897cf959012c3604fefeda53/ubuntuce-welcome-tab2.png" class="image-border" /><br><br>
 </div>
 
 In 2004 I created Ubuntu Christian Edition (UbuntuCE). It started as an idea that I got from a satire distro called Jesux. I liked the idea of creating a distro that was based on one of the most popular Linux distros and have it pre-configured with Christian software. 
@@ -12,6 +12,6 @@ After several years my time became more limited with other projects on my plate.
 
 Finally, after many years I have "resurrected" UbuntuCE. The concept is the same. I have based the latest release, code named "Lazarus", on Ubuntu 20.04 LTS. I have added additional Bible Study software from the available repositories. I have also created an UbuntuCE Repository to house the UbuntuCE specific packages that I have built. These include a welcome app, wallpapers, etc.
 
-The latest release still comes with web content filtering pre-configured. This time I have taken a different approach and am using a combination of [CleanBrowsing](https://cleanbrowsing.org/) DNS, and a new application that I built called [Host Minder](https://github.com/mhancoc7/hostminder#readme).
+The latest release still comes with web content filtering pre-configured. This time I have taken a different approach and am using a combination of [CleanBrowsing](https://cleanbrowsing.org/) DNS or [OpenDNS Family Shield](https://www.opendns.com/setupguide/#familyshield) which can easily be configured using [DNS Minder](https://github.com/jeremehancock/dnsminder#readme), and a new application that I built called [Host Minder](https://github.com/mhancoc7/hostminder#readme) that automatically blocks websites based on your preferred Protection Level.
 
 If you are interested you can check it out at [UbuntuCE.com](https://ubuntuce.com)
