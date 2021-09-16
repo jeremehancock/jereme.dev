@@ -107,8 +107,10 @@
 				* [Grafana](https://grafana.com/) - Metrics visualization
 				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=prometheus" target="_blank">Metrics Dashboard</a> (prometheus)
 	* [More Details](prometheus-grafana)
+*   **Power:**
+		* [CyberPower CP1000PFCLCD PFC Sinewave UPS](https://www.amazon.com/gp/product/B00429N192)
+		* [XDCDHM USB Charger, 60 Watt 12A 6-Port High Speed Charger](https://www.amazon.com/gp/product/B075P22QC2)
 *    **Cooling:** [AC Infinity MULTIFAN S4](https://www.amazon.com/gp/product/B00MWH4FL4)
-*    **Power:** [XDCDHM USB Charger, 60 Watt 12A 6-Port High Speed Charger](https://www.amazon.com/gp/product/B075P22QC2)
 
 ---
 
@@ -151,7 +153,7 @@
 
 ## Pi Lab (Non-Pi Nodes):
 
-*   **Metrics Nodes**
+*   **Media Nodes**
 		*  2 SanDisk 32GB Media Drives
 					* 1 Samsung EVO Plus 32GB microSDHC Card
 		* [More Details](new-pi-lab-media-nodes)
