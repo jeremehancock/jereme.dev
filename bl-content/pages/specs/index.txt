@@ -68,7 +68,7 @@
     * [TP-Link 16 Port Gigabit Ethernet Network Switch (TL-SG116)](https://www.amazon.com/gp/product/B07GR9S6FN)
 *   **Live Stream:** [AT&T Sercomm OC432](https://forums.att.com/conversations/device-troubleshooting/repurposing-digital-life-camera/5deff480bad5f2f6065cc3e0?commentId=5df01789bad5f2f606b01161)
 *   **Power:**
-		* [CyberPower EC850LCD](https://www.cyberpowersystems.com/product/ups/ec850lcd/)
+		* [CyberPower CP1000PFCLCD PFC Sinewave UPS](https://www.amazon.com/gp/product/B00429N192)
 		* [Anker 60W 10-Port USB Wall Charger](https://www.amazon.com/dp/B00YRYS4T4)
 *    **Cooling:** [AC Infinity MULTIFAN S4](https://www.amazon.com/gp/product/B00MWH4FL4)
 * [More Details](pi-lab-setup)
@@ -168,9 +168,10 @@
 					* OCZ ARC 100 240GB SSD (OS)
 					* Intel 120GB SSD (Extra Storage)
 					* Iomega 1.5TB Drive (Downloads)
-					* WD_Black 5TB P10-Game Drive (Movies)
-					* WD_Black 12TB P10-Game Drive (TV Shows)
+					* [WD_Black 5TB P10-Game Drive](https://www.amazon.com/WD_Black-Drive-External-Compatible-WDBA3A0050BBK-WESN/dp/B07VNTFHD5) (Movies)
+					* [WD_Black 12TB P10-Game Drive](https://www.amazon.com/Black-12TB-Drive-External-WDBA5E0120HBKNESN/dp/B07XV8JN31) (TV Shows)
 					* Dell 22 Inch Monitor
+					* [Plugable USB 3.0 Universal Laptop Docking Station](https://www.amazon.com/Plugable-Universal-Docking-Station-Ethernet/dp/B00ECDM78E)
 					* [Plex Media Server](https://www.plex.tv/)
 					* [Tautulli](https://tautulli.com/) (Docker)
 					* [Radarr](https://hub.docker.com/r/linuxserver/radarr) (Docker)
