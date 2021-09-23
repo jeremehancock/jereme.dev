@@ -176,6 +176,7 @@
 					* [Plugable USB 3.0 Universal Laptop Docking Station](https://www.amazon.com/Plugable-Universal-Docking-Station-Ethernet/dp/B00ECDM78E)
 					* [Plex Media Server](https://www.plex.tv/)
 					* [Tautulli](https://tautulli.com/) (Docker)
+					* [Overseerr](https://overseerr.dev/) (Snap)
 					* [Radarr](https://hub.docker.com/r/linuxserver/radarr) (Docker)
 					* [Sonarr](https://hub.docker.com/r/linuxserver/sonarr) (Docker)
 					* [Jackett](https://hub.docker.com/r/linuxserver/jackett) (Docker)
