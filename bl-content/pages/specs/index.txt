@@ -181,6 +181,7 @@
 					* [Sonarr](https://hub.docker.com/r/linuxserver/sonarr) (Docker)
 					* [Jackett](https://hub.docker.com/r/linuxserver/jackett) (Docker)
 					* [Transmission / OpenVPN](https://haugene.github.io/docker-transmission-openvpn/) (Docker)
+					* [NZBGet](https://hub.docker.com/r/linuxserver/nzbget) (Docker)
 					* [Cockpit](https://cockpit-project.org/)
 *   **Nextcloud Server**
 		*  Dell Latitude E7470
