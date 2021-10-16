@@ -146,7 +146,7 @@
     *    1 Raspberry Pi 3 Model B
 				* Sandisk Extreme 16GB microSD Card
 				*   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
-				*   <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=thanospi" target="_blank">Metrics Dashboard</a>
+				*   <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=thanospi" target="_blank">Metrics Dashboard</a> (thanospi)
 	* [More Details](pi-hole-is-amazing)
  
 --- 
@@ -191,6 +191,7 @@
 					* SanDisk X400 M.2 512GB
 					* [Nextcloud](https://snapcraft.io/install/nextcloud/ubuntu) (Snap)
 					* [Heimdall](https://hub.docker.com/r/linuxserver/heimdall) (Docker)
+					* [Uptime Kuma](https://github.com/louislam/uptime-kuma) (Docker)
 					* [Cockpit](https://cockpit-project.org/)
 			
 ---
