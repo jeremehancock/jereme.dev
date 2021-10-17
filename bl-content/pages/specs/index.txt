@@ -191,7 +191,7 @@
 					* SanDisk X400 M.2 512GB
 					* [Nextcloud](https://snapcraft.io/install/nextcloud/ubuntu) (Snap)
 					* [Heimdall](https://hub.docker.com/r/linuxserver/heimdall) (Docker)
-					* [Uptime Kuma](https://github.com/louislam/uptime-kuma) (Docker)
+					* [Uptime Kuma](https://github.com/louislam/uptime-kuma) (Docker) with [IFTTT Notifications](https://ifttt.com/)
 					* [Cockpit](https://cockpit-project.org/)
 			
 ---
