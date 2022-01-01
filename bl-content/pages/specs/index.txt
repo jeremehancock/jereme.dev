@@ -178,8 +178,9 @@
 					* 16GB DDR4 SDRAM 2133 MT/s
 					* SanDisk X400 M.2 512GB
 					* Iomega 1.5TB Drive (Downloads)
-					* [WD_Black 5TB P10-Game Drive](https://www.amazon.com/WD_Black-Drive-External-Compatible-WDBA3A0050BBK-WESN/dp/B07VNTFHD5) (Movies)
-					* [WD_Black 12TB P10-Game Drive](https://www.amazon.com/Black-12TB-Drive-External-WDBA5E0120HBKNESN/dp/B07XV8JN31) (TV Shows)
+					* [WD_Black 12TB P10-Game Drive](https://www.amazon.com/Black-12TB-Drive-External-WDBA5E0120HBKNESN/dp/B07XV8JN31) (Movies)
+					* [WD_Black 5TB P10-Game Drive](https://www.amazon.com/WD_Black-Drive-External-Compatible-WDBA3A0050BBK-WESN/dp/B07VNTFHD5) (Movies 4k)
+					* [WD easystore 14TB 264D](https://www.bestbuy.com/site/wd-easystore-14tb-external-usb-3-0-hard-drive-black/6425303.p?skuId=6425303) (TV Shows)
 					* [Plugable USB 3.0 Universal Laptop Docking Station](https://www.amazon.com/Plugable-Universal-Docking-Station-Ethernet/dp/B00ECDM78E)
 					* [Plex Media Server](https://www.plex.tv/)
 					* [Tautulli](https://tautulli.com/) (Docker)
@@ -189,6 +190,7 @@
 					* [Jackett](https://hub.docker.com/r/linuxserver/jackett) (Docker)
 					* [Transmission / OpenVPN](https://haugene.github.io/docker-transmission-openvpn/) (Docker)
 					* [NZBGet](https://hub.docker.com/r/linuxserver/nzbget) (Docker)
+					* [Unpackerr](https://github.com/davidnewhall/unpackerr) (Docker)
 					* [Nextcloud](https://snapcraft.io/install/nextcloud/ubuntu) (Snap)
 					* [Heimdall](https://hub.docker.com/r/linuxserver/heimdall) (Docker)
 					* [Uptime Kuma](https://github.com/louislam/uptime-kuma) (Docker) with [IFTTT Notifications](https://ifttt.com/)
