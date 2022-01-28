@@ -191,6 +191,7 @@
 					* [Transmission / OpenVPN](https://haugene.github.io/docker-transmission-openvpn/) (Docker)
 					* [NZBGet](https://hub.docker.com/r/linuxserver/nzbget) (Docker)
 					* [Unpackerr](https://github.com/davidnewhall/unpackerr) (Docker)
+					* [PlexTraktSync](https://github.com/Taxel/PlexTraktSync) (Docker)
 					* [Nextcloud](https://snapcraft.io/install/nextcloud/ubuntu) (Snap)
 					* [Heimdall](https://hub.docker.com/r/linuxserver/heimdall) (Docker)
 					* [Uptime Kuma](https://github.com/louislam/uptime-kuma) (Docker) with [IFTTT Notifications](https://ifttt.com/)
