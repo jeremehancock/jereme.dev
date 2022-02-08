@@ -16,7 +16,8 @@ The setup for this was so easy! It allowed me to setup local stream URLs that I 
 
 **Here are the streams that we have setup so far.**
 
-* [Pi Lab Live Stream](https://www.youtube.com/watch?v=hn_3fYmSo0A)
+* [Pi Lab Live Stream](pi-lab-live-stream)
+* [OctoPrint Node Live Stream](octoprint-node-live-stream)
 * [Tortoise Cam (Russian Tortoise)](https://tortoisecam.com)
 
 So far things are working very well. I have all the streams setup to not do any additional encoding in [Restreamer](https://datarhei.github.io/restreamer/). I found that this was not very helpful with my lower end cameras and was only causing high CPU usage. I am seeing about 3-4 Mbps upload usage on my network which I am going to keep a close eye on.
@@ -35,5 +36,7 @@ If you are looking to get into running a live stream for something like a pet de
 > *I have continued to have issues with [YouTube](https://www.youtube.com/) ending the tortoise cam stream. So I have gone back to [EarthCam](https://www.earthcam.com/). To get around the sketchy ads in the [EarthCam](https://www.earthcam.com/) embed I have setup a scraper to grab the m3u8 file directly for [TortoiseCam.com](https://tortoisecam.com).*
 >
 > *I have upgraded the Restreamer Node to a [Raspberry Pi 4 Model B (4GB)](https://deviwiki.com/wiki/RPF_Raspberry_Pi_4_Model_B_4GB).*
+> 
+> *I have added the  [OctoPrint Node Live Stream](octoprint-node-live-stream).
 
 

@@ -5,7 +5,47 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Mon, 07 Feb 2022 20:48:08 -0600</lastBuildDate>
+    <lastBuildDate>Tue, 08 Feb 2022 07:44:27 -0600</lastBuildDate>
+    <item>
+      <title>OctoPrint Node Live Stream</title>
+      <link>https://pilab.dev/octoprint-node-live-stream</link>
+      <description>&lt;p&gt;I have finally gotten back to 3D Printing. Of course this means I need another live stream! &lt;/p&gt;
+&lt;div class="centered"&gt;
+    &lt;div style="display:none;"&gt;This live stream is utilizing a Wyze Pan Cam with the RTSP firmware. I use Restreamer to push to YouTube Live. This stream will run 24/7. I also have another Wyze Cam v2 setup directly with OctoPrint that I will be using for timelapses and monitoring prints. I plan to start publishing the timelapses to my YouTube channel once I get things dialed in a bit.
+    &lt;/div&gt;
+
+        &lt;div class="iframe-container" style="margin-bottom:25px;"&gt;
+            &lt;div id="player"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;script&gt;
+        var tag = document.createElement('script');
+
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        var player;
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                width: '100%',
+                videoId: 'eimz4M5-lMU',
+                playerVars: { 'autoplay': 1, 'playsinline': 1, 'rel': 0 },
+                events: {
+                    'onReady': onPlayerReady
+                }
+            });
+        }
+
+        function onPlayerReady(event) {
+             event.target.mute();
+            event.target.playVideo();
+        }
+    &lt;/script&gt;
+&lt;/div&gt;
+&lt;p&gt;This live stream is utilizing a Wyze Pan Cam with the RTSP firmware. I use &lt;a href="restreamer"&gt;Restreamer&lt;/a&gt; to push to YouTube Live. This stream will run 24/7. I also have another Wyze Cam v2 setup directly with OctoPrint that I will be using for timelapses and monitoring prints. I plan to start publishing the timelapses to my YouTube channel once I get things dialed in a bit.&lt;/p&gt;</description>
+      <pubDate>Tue, 08 Feb 2022 07:26:27 -0600</pubDate>
+      <guid isPermaLink="false">a6acaf597184568573ad9c2c2dcd35a0</guid>
+    </item>
     <item>
       <title>UbuntuCE Resurrected</title>
       <link>https://pilab.dev/ubuntuce-resurrected</link>
@@ -67,26 +107,6 @@
       <description>&lt;p&gt;Pi Lab Service status&lt;/p&gt;</description>
       <pubDate>Wed, 05 May 2021 21:51:21 -0500</pubDate>
       <guid isPermaLink="false">d8549719cdc039f008479d2c6fac483c</guid>
-    </item>
-    <item>
-      <title>OctoPrint Node</title>
-      <link>https://pilab.dev/octoprint-node</link>
-      <description>&lt;p&gt;My wife and kids got me a new 3D printer for my Birthday! I have been wanting one for quite some time. It is an &lt;a href="https://creality3d.shop/collections/3d-printer/products/creality3d-ender-3-pro-high-precision-3d-printer"&gt;Ender 3 Pro&lt;/a&gt;. I am really just getting into using it but one of the first things I was told to do was check out &lt;a href="https://octoprint.org/"&gt;OctoPrint&lt;/a&gt;. &lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;So what is OctoPrint?&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;It is described as &lt;em&gt;&amp;quot;The snappy web interface for your 3D printer.&amp;quot;&lt;/em&gt;.  That doesn't begin to explain how great I think it is. It definitely does provide a web interface for your 3D printer, but it does so much more. It also provides the ability to run manual commands and even select from a very nice selection of plugins for a variety of tasks. It truly made a nice 3D printer a much more enjoyable piece of equipment.&lt;/p&gt;
-&lt;p&gt;I have re-purposed my &lt;a href="pi-lab-monitor-node"&gt;Monitor Node&lt;/a&gt; into my new OctoPi Node. &lt;/p&gt;
-&lt;div class="centered"&gt;
-    &lt;img src="/bl-content/uploads/pages/b488323d86f5d481bf4bac8f975a2ca3/octoprint-node.png" class="image-border" /&gt;&lt;br&gt;&lt;br&gt;
-&lt;/div&gt;
-&lt;p&gt;So far I have mostly printed &lt;a href="http://www.3dbenchy.com/"&gt;3DBenchies&lt;/a&gt; trying to really get my print quality dialed in. I have one functional print under my belt that I am very happy with. I have had issues with my Roomba getting stuck under our coach. So I went looking on &lt;a href="https://www.thingiverse.com"&gt;Thingverse&lt;/a&gt; and I found this &lt;a href="https://www.thingiverse.com/thing:1756175"&gt;Bumper Extension for Roomba&lt;/a&gt;. It was for a different model and I had to do some scaling to make it large enough to keep my Roomba from going under the couch. So far it is working great!&lt;/p&gt;
-&lt;div class="centered"&gt;
-    &lt;img src="/bl-content/uploads/pages/b488323d86f5d481bf4bac8f975a2ca3/roomba-mod.png" class="image-border" /&gt;&lt;br&gt;&lt;br&gt;
-&lt;/div&gt;
-&lt;p&gt;I have added a new &lt;a href="category/3d-printing"&gt;3D Printing&lt;/a&gt; category to the blog and I hope to be posting many more prints very soon.&lt;/p&gt;</description>
-      <pubDate>Wed, 24 Feb 2021 19:17:06 -0600</pubDate>
-      <guid isPermaLink="false">b488323d86f5d481bf4bac8f975a2ca3</guid>
     </item>
   </channel>
 </rss>
