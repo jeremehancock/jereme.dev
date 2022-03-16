@@ -34,3 +34,5 @@ I am very impressed with [Node-Red](https://nodered.org/). I definitely recommen
 > *I have added a Current Date/Time node to ensure that the Tweets are unique.*
 >
 > *I have downgraded the Node-Red Node to a [Raspberry Pi 3 Model B](https://deviwiki.com/wiki/RPF_Raspberry_Pi_3_Model_B) and repurpsed the original Node-Red Node into a Pi Lab Web Cluster production node.*
+> 
+> *I have moved the `ping` checks to [Uptime Kuma](https://github.com/louislam/uptime-kuma) that I have setup on another server on my network. It uses [IFTTT](https://ifttt.com/) for the notifications which is much better than the AT&T SMS method. I have also updated the Twitter Bot to use [IFTTT](https://ifttt.com/) for the temperature checks.*
