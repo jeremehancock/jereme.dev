@@ -5,11 +5,11 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Mon, 28 Mar 2022 15:35:44 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 28 Mar 2022 18:20:54 -0500</lastBuildDate>
     <item>
       <title>Pi-hole Upgrades</title>
       <link>https://pilab.dev/pi-hole-upgrades</link>
-      <description>&lt;p&gt;I recently stumbled across a nice &lt;a href="https://pi-hole.net/"&gt;Pi-hole&lt;/a&gt; setup that provides an quick and easy way to deploy Pi-hole along with a &lt;a href="https://grafana.com/"&gt;Grafana&lt;/a&gt; dashboard to collect metrics on your network.&lt;/p&gt;
+      <description>&lt;p&gt;I recently stumbled across a nice &lt;a href="https://pi-hole.net/"&gt;Pi-hole&lt;/a&gt; setup that provides a quick and easy way to deploy Pi-hole along with a &lt;a href="https://grafana.com/"&gt;Grafana&lt;/a&gt; dashboard to collect metrics on your network.&lt;/p&gt;
 &lt;p&gt;The project is simply called &lt;a href="https://github.com/geerlingguy/internet-pi"&gt;Internet Pi&lt;/a&gt;. &lt;/p&gt;
 &lt;p&gt;The instructions provided with the project worked without any issues. Now I have Pi-hole setup on a Pi 4 and also have a nice dashboard to keep up with my network speeds.&lt;/p&gt;
 &lt;p&gt;I have also been playing with &lt;a href="https://tailscale.com/"&gt;Tailscale&lt;/a&gt;, which is a zero config VPN. I thought it would be super cool if I could set things up so that when I am connected to my Tailscale network I could also take advantage of the Pi-hole ad blocking.&lt;/p&gt;
@@ -26,7 +26,18 @@
     &lt;img src="/bl-content/uploads/pages/fcdb80d303d1fe7901dd6d939ebe87c3/tailscale-dns.png" class="image-border" /&gt;&lt;br&gt;&lt;br&gt;
 &lt;/div&gt;
 &lt;p&gt;Now I have a Tailscale VPN setup that uses my Pi-hole. &lt;/p&gt;
-&lt;p&gt;I installed the Tailscale Android app so now when I am away from my home network I can still access my servers as well as be protected from ads using my Pi-hole.&lt;/p&gt;</description>
+&lt;p&gt;I installed the Tailscale Android app so now when I am away from my home network I can still access my servers as well as be protected from ads using my Pi-hole.&lt;/p&gt;
+&lt;p&gt;I also like to use &lt;a href="https://github.com/pi-hole/PADD"&gt;PADD&lt;/a&gt; to display my Pi-hole status on a monitor in my office. However, I noticed that it wouldn't work with this new setup since is using &lt;a href="https://www.docker.com/"&gt;Docker&lt;/a&gt;. After a bit more research I found the answer. &lt;/p&gt;
+&lt;p&gt;On the Pi-hole I ran the following to setup PADD.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;mkdir -p /home/pi/padd &amp;amp;&amp;amp; cd padd &amp;amp;&amp;amp; wget -N https://raw.githubusercontent.com/pi-hole/PADD/master/padd.sh &amp;amp;&amp;amp; chmod +x padd.sh&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now that I had PADD setup I needed to update my Pi-hole configuration to use it.&lt;/p&gt;
+&lt;p&gt;I had to add the following volume to the &lt;code&gt;pi-hole-docker-compose.yml.j2&lt;/code&gt; file which is located at &lt;code&gt;/home/pi/internet-pi/templates/&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;- '${HOME}/padd:/padd'&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I then ran the following command from inside the &lt;code&gt;internet-pi&lt;/code&gt; directory per the project's instructions.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ansible-playbook main.yml&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Next I added the following alias to my &lt;code&gt;.bash_aliases&lt;/code&gt; file in the Pi-hole home directory.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;alias padd="docker exec -it pihole bash /padd/padd.sh"&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now I can use the &lt;code&gt;padd&lt;/code&gt; command to startup PADD.&lt;/p&gt;</description>
       <pubDate>Mon, 28 Mar 2022 13:54:42 -0500</pubDate>
       <guid isPermaLink="false">fcdb80d303d1fe7901dd6d939ebe87c3</guid>
     </item>

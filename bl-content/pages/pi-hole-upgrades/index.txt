@@ -1,4 +1,4 @@
-I recently stumbled across a nice [Pi-hole](https://pi-hole.net/) setup that provides an quick and easy way to deploy Pi-hole along with a [Grafana](https://grafana.com/) dashboard to collect metrics on your network.
+I recently stumbled across a nice [Pi-hole](https://pi-hole.net/) setup that provides a quick and easy way to deploy Pi-hole along with a [Grafana](https://grafana.com/) dashboard to collect metrics on your network.
 
 The project is simply called [Internet Pi](https://github.com/geerlingguy/internet-pi). 
 
@@ -31,3 +31,35 @@ Next I copied the Tailscale IP address for my Pi-hole and used it as the Nameser
 Now I have a Tailscale VPN setup that uses my Pi-hole. 
 
 I installed the Tailscale Android app so now when I am away from my home network I can still access my servers as well as be protected from ads using my Pi-hole.
+
+I also like to use [PADD](https://github.com/pi-hole/PADD) to display my Pi-hole status on a monitor in my office. However, I noticed that it wouldn't work with this new setup since is using [Docker](https://www.docker.com/). After a bit more research I found the answer. 
+
+On the Pi-hole I ran the following to setup PADD.
+
+```
+mkdir -p /home/pi/padd && cd padd && wget -N https://raw.githubusercontent.com/pi-hole/PADD/master/padd.sh && chmod +x padd.sh
+```
+
+Now that I had PADD setup I needed to update my Pi-hole configuration to use it.
+
+I had to add the following volume to the `pi-hole-docker-compose.yml.j2` file which is located at `/home/pi/internet-pi/templates/`.
+
+```
+- '${HOME}/padd:/padd'
+```
+
+I then ran the following command from inside the `internet-pi` directory per the project's instructions.
+
+```
+ansible-playbook main.yml
+```
+
+Next I added the following alias to my `.bash_aliases` file in the Pi-hole home directory.
+
+```
+alias padd="docker exec -it pihole bash /padd/padd.sh"
+```
+
+Now I can use the `padd` command to startup PADD.
+
+
