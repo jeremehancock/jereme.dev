@@ -5,7 +5,31 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Mon, 28 Mar 2022 13:50:47 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 28 Mar 2022 14:38:45 -0500</lastBuildDate>
+    <item>
+      <title>Pi-hole Upgrades</title>
+      <link>https://pilab.dev/pi-hole-upgrades</link>
+      <description>&lt;p&gt;I recently stumbled across a nice &lt;a href="https://pi-hole.net/"&gt;Pi-hole&lt;/a&gt; setup that provides an quick and easy way to deploy Pi-hole along with a &lt;a href="https://grafana.com/"&gt;Grafana&lt;/a&gt; dashboard to collect metrics on your network.&lt;/p&gt;
+&lt;p&gt;The project is simply called &lt;a href="https://github.com/geerlingguy/internet-pi"&gt;Internet Pi&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;The instructions provided with the project worked without any issues. Now I have Pi-hole setup on a Pi 4 and also have a nice dashboard to keep up with my network speeds.&lt;/p&gt;
+&lt;p&gt;I have also been playing with &lt;a href="https://tailscale.com/"&gt;Tailscale&lt;/a&gt;, which is a zero config VPN. I thought it would be super cool if I could set things up so that when I am connected to my Tailscale network I could also take advantage of the Pi-hole ad blocking.&lt;/p&gt;
+&lt;p&gt;After a bit of research I was able to get it all working.&lt;/p&gt;
+&lt;p&gt;Once I had Pi-hole setup I installed Tailscale to the Raspberry Pi running Pi-hole using their simple &lt;a href="https://tailscale.com/download"&gt;install command&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;After install I started up Tailscale with this command.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo tailscale up --advertise-exit-node --advertise-routes=192.168.1.0/24 --accept-dns=false&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then I logged into Tailscale and clicked the &amp;quot;three dots&amp;quot; menu next to the Machine entry for my Pi-hole and clicked &amp;quot;Edit route settings...&amp;quot;. Then I enabled both options. See image below.&lt;/p&gt;
+&lt;div class="centered"&gt;
+    &lt;img src="/bl-content/uploads/pages/fcdb80d303d1fe7901dd6d939ebe87c3/tailscale-settings.png" class="image-border" /&gt;&lt;br&gt;&lt;br&gt;
+&lt;/div&gt;
+&lt;p&gt;Next I copied the Tailscale IP address for my Pi-hole and used it as the Nameserver on the DNS tab. I set it to override local DNS. See image below.&lt;/p&gt;
+&lt;div class="centered"&gt;
+    &lt;img src="/bl-content/uploads/pages/fcdb80d303d1fe7901dd6d939ebe87c3/tailscale-dns.png" class="image-border" /&gt;&lt;br&gt;&lt;br&gt;
+&lt;/div&gt;
+&lt;p&gt;Now I have a Tailscale VPN setup that uses my Pi-hole. &lt;/p&gt;
+&lt;p&gt;I installed the Tailscale Android app so now when I am away from my home network I can still access my servers as well as be protected from ads using my Pi-hole.&lt;/p&gt;</description>
+      <pubDate>Mon, 28 Mar 2022 13:54:42 -0500</pubDate>
+      <guid isPermaLink="false">fcdb80d303d1fe7901dd6d939ebe87c3</guid>
+    </item>
     <item>
       <title>OctoPrint Node Live Stream</title>
       <link>https://pilab.dev/octoprint-node-live-stream</link>
@@ -100,13 +124,6 @@
 &lt;/blockquote&gt;</description>
       <pubDate>Thu, 13 May 2021 22:37:52 -0500</pubDate>
       <guid isPermaLink="false">a8ba2bb7e4c479cba0ff43de0c29f940</guid>
-    </item>
-    <item>
-      <title>Status</title>
-      <link>https://pilab.dev/status</link>
-      <description>&lt;p&gt;Pi Lab Service status&lt;/p&gt;</description>
-      <pubDate>Wed, 05 May 2021 21:51:21 -0500</pubDate>
-      <guid isPermaLink="false">d8549719cdc039f008479d2c6fac483c</guid>
     </item>
   </channel>
 </rss>
