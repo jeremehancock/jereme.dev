@@ -5,7 +5,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Mon, 28 Mar 2022 12:59:29 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 28 Mar 2022 13:50:47 -0500</lastBuildDate>
     <item>
       <title>OctoPrint Node Live Stream</title>
       <link>https://pilab.dev/octoprint-node-live-stream</link>
@@ -28,7 +28,7 @@
         function onYouTubeIframeAPIReady() {
             player = new YT.Player('player', {
                 width: '100%',
-                videoId: 'eimz4M5-lMU',
+                videoId: '4Zlclabx66c',
                 playerVars: { 'autoplay': 1, 'playsinline': 1, 'rel': 0 },
                 events: {
                     'onReady': onPlayerReady
