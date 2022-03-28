@@ -77,12 +77,6 @@
 
 ## Pi Lab (Ancillary Nodes):
 
-*   **BOINC Node**
-    *   1 Raspberry Pi 4 4GB Model B
-				* Samsung EVO Plus 32GB microSDHC Card
-				* **Operating System:** [Ubuntu Server 64-bit](https://ubuntu.com/download/raspberry-pi)
-				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=boincpi" target="_blank">Metrics Dashboard</a> (boincpi)
-	* [More Details](fold-for-covid)
 *   **Restreamer Node**
     *   1 Raspberry Pi 4 4GB Model B
 				* Samsung EVO Plus 32GB microSDHC Card
@@ -98,7 +92,7 @@
 				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=noderedpi" target="_blank">Metrics Dashboard</a> (noderedpi)
 	* [More Details](node-red-twitter-bot)
 *   **Metrics Node**
-    *    1 Raspberry Pi 2 Model B
+    *    1 Raspberry Pi 3 Model B
 				*  Samsung EVO Plus 32GB microSDHC Card
 				*   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
 				* [Node Exporter](https://github.com/prometheus/node_exporter) - Expose Linux metrics: Installed to each node.
@@ -107,6 +101,13 @@
 				* [Grafana](https://grafana.com/) - Metrics visualization
 				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=prometheus" target="_blank">Metrics Dashboard</a> (prometheus)
 	* [More Details](prometheus-grafana)
+*   **Pi-hole Node**
+    *    1 Raspberry Pi 4 4GB Model B
+				* Samsung EVO Plus 32GB microSDHC Card
+				*   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
+				*   [Internet Pi](https://github.com/geerlingguy/internet-pi)
+				*   <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=thanos" target="_blank">Metrics Dashboard</a> (thanos)
+	* [More Details](pi-hole-is-amazing)
 *   **Power:**
 		* [CyberPower CP1000PFCLCD PFC Sinewave UPS](https://www.amazon.com/gp/product/B00429N192)
 		* [XDCDHM USB Charger, 60 Watt 12A 6-Port High Speed Charger](https://www.amazon.com/gp/product/B075P22QC2)
@@ -144,12 +145,6 @@
 				* [Gosund Smart Plug](https://www.amazon.com/Outlet-Required-Gosund-Upgraded-Version/dp/B07GRLQV47/)
 				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=testpi1" target="_blank">Metrics Dashboard</a> (testpi1)
 	* [More Details](pi-zero-wall-plug-web-server)
-*   **Pi-hole/OpenVPN Node**
-    *    1 Raspberry Pi 3 Model B
-				* Sandisk Extreme 16GB microSD Card
-				*   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
-				*   <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=thanospi" target="_blank">Metrics Dashboard</a> (thanospi)
-	* [More Details](pi-hole-is-amazing)
  
 --- 
 

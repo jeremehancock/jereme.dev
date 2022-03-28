@@ -94,3 +94,5 @@ boinccmd --read_cc_config
 
 **Updates:**
 > *I have upgraded the BOINC Node to a [Raspberry Pi 4 Model B (4GB)](https://deviwiki.com/wiki/RPF_Raspberry_Pi_4_Model_B_4GB).*
+> 
+> *I have decided to shutdown the BOINC Node. It had not been getting tasks in quite some time. I have re-purposed it into a new more powerful Pi-Hole setup*
