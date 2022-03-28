@@ -91,6 +91,13 @@
 				* [Node-Red](https://nodered.org/docs/getting-started/raspberrypi)
 				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=noderedpi" target="_blank">Metrics Dashboard</a> (noderedpi)
 	* [More Details](node-red-twitter-bot)
+*   **Pi-hole Node**
+    *    1 Raspberry Pi 4 4GB Model B
+				* Samsung EVO Plus 32GB microSDHC Card
+				*   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
+				*   [Internet Pi](https://github.com/geerlingguy/internet-pi)
+				*   <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=thanos" target="_blank">Metrics Dashboard</a> (thanos)
+	* [More Details](pi-hole-upgrades)
 *   **Metrics Node**
     *    1 Raspberry Pi 3 Model B
 				*  Samsung EVO Plus 32GB microSDHC Card
@@ -101,13 +108,6 @@
 				* [Grafana](https://grafana.com/) - Metrics visualization
 				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=prometheus" target="_blank">Metrics Dashboard</a> (prometheus)
 	* [More Details](prometheus-grafana)
-*   **Pi-hole Node**
-    *    1 Raspberry Pi 4 4GB Model B
-				* Samsung EVO Plus 32GB microSDHC Card
-				*   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
-				*   [Internet Pi](https://github.com/geerlingguy/internet-pi)
-				*   <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=thanos" target="_blank">Metrics Dashboard</a> (thanos)
-	* [More Details](pi-hole-upgrades)
 *   **Power:**
 		* [CyberPower CP1000PFCLCD PFC Sinewave UPS](https://www.amazon.com/gp/product/B00429N192)
 		* [XDCDHM USB Charger, 60 Watt 12A 6-Port High Speed Charger](https://www.amazon.com/gp/product/B075P22QC2)
