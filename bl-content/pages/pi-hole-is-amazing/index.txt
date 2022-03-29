@@ -9,3 +9,7 @@ I recommend setting things up to cover your entire network. This requires a mino
 So far I haven't seen any negative effects of running Pi-hole. Our connection speeds have not suffered and no one in our home has had any issues with things getting blocked that shouldn't.
 
 ### [Checkout Pi-hole](https://pi-hole.net)
+
+<br/><br/>
+**Updates:**
+> *Checkout out the Pi Lab Pi-hole setup [here](pi-hole-upgrades).*
