@@ -16,7 +16,7 @@ After install I started up Tailscale with this command.
 sudo tailscale up --advertise-exit-node --advertise-routes=192.168.1.0/24 --accept-dns=false
 ```
 
-Then I logged into Tailscale and clicked the "three dots" menu next to the Machine entry for my Pi-hole and clicked "Edit route settings...". Then I enabled both options. See image below.
+Then I logged into Tailscale and clicked the "three dots" menu next to the Machine entry for my Pi-hole. I selected "Disable key expiry" from the drop-down. Since the Pi-hole is not directly exposed to the internet it is safe to not require re-authentication. Then I selected "Edit route settings..." from the same drop-down menu and enabled both options. See image below.
 
 <div class="centered">
     <img src="/bl-content/uploads/pages/fcdb80d303d1fe7901dd6d939ebe87c3/tailscale-settings.png" class="image-border" /><br><br>
