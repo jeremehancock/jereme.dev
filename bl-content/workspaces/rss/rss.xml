@@ -5,7 +5,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Mon, 28 Mar 2022 19:14:25 -0500</lastBuildDate>
+    <lastBuildDate>Tue, 29 Mar 2022 15:17:54 -0500</lastBuildDate>
     <item>
       <title>Pi-hole Upgrades</title>
       <link>https://pilab.dev/pi-hole-upgrades</link>
@@ -16,10 +16,11 @@
 &lt;p&gt;After a bit of research I was able to get it all working.&lt;/p&gt;
 &lt;p&gt;Once I had Pi-hole setup I installed Tailscale to the Raspberry Pi running Pi-hole using their simple &lt;a href="https://tailscale.com/download"&gt;install command&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;After install I started up Tailscale with this command.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;sudo tailscale up --advertise-exit-node --advertise-routes=192.168.1.0/24 --accept-dns=false&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;sudo tailscale up --advertise-exit-node --advertise-routes=192.168.86.0/24 --accept-dns=false&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; You will need to change the command to match your networks subnet.&lt;/p&gt;
 &lt;p&gt;Then I logged into Tailscale and clicked the &amp;quot;three dots&amp;quot; menu next to the Machine entry for my Pi-hole. I selected &amp;quot;Disable key expiry&amp;quot; from the drop-down. Since the Pi-hole is not directly exposed to the internet it is safe to not require re-authentication. Then I selected &amp;quot;Edit route settings...&amp;quot; from the same drop-down menu and enabled both options. See image below.&lt;/p&gt;
 &lt;div class="centered"&gt;
-    &lt;img src="/bl-content/uploads/pages/fcdb80d303d1fe7901dd6d939ebe87c3/tailscale-settings.png" class="image-border" /&gt;&lt;br&gt;&lt;br&gt;
+    &lt;img src="/bl-content/uploads/pages/fcdb80d303d1fe7901dd6d939ebe87c3/tailscale-route-settings.png" class="image-border" /&gt;&lt;br&gt;&lt;br&gt;
 &lt;/div&gt;
 &lt;p&gt;Next I copied the Tailscale IP address for my Pi-hole and used it as the Nameserver on the DNS tab. I set it to override local DNS. See image below.&lt;/p&gt;
 &lt;div class="centered"&gt;
