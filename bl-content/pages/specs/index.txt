@@ -96,6 +96,7 @@
 				* Samsung EVO Plus 32GB microSDHC Card
 				*   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
 				*   [Internet Pi](https://github.com/geerlingguy/internet-pi)
+				*   [Tailscale](https://tailscale.com/)
 				*   <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=thanos" target="_blank">Metrics Dashboard</a> (thanos)
 	* [More Details](pi-hole-upgrades)
 *   **Metrics Node**
