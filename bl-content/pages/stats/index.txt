@@ -7,7 +7,7 @@
 <iframe width="100%" height="750" data-src="https://pilab.dev/metrics/d/o9mIe_Aik/pi-lab-network-metrics?orgId=1&refresh=5m&kiosk" frameborder="0" class="iframe-border lozad"></iframe>
 
 ## Plex Metrics
-<iframe width="100%" height="450" data-src="https://pilab.dev/metrics/d/K5499Bh7z/plex?orgId=1&refresh=5m&from=now-5m&to=now&kiosk" frameborder="0" class="iframe-border lozad"></iframe>
+<iframe width="100%" height="750" data-src="https://pilab.dev/metrics/d/K5499Bh7z/plex?orgId=1&refresh=5m&from=now-5m&to=now&kiosk" frameborder="0" class="iframe-border lozad"></iframe>
 
 <a href="https://pilab.dev/metrics/d/K5499Bh7z/plex?orgId=1&refresh=5m&from=now-5m&to=now&kiosk" target="_blank" style="float:right;">View Fullscreen</a>
 
