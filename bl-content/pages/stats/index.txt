@@ -1,15 +1,15 @@
 ## Pi Lab Metrics Playlist
-<iframe width="100%" height="750" data-src="https://pilab.dev/metrics/playlists/play/2?kiosk=tv" frameborder="0" class="iframe-border lozad"></iframe>
+<iframe width="100%" height="1380" data-src="https://pilab.dev/metrics/playlists/play/2?kiosk=tv" frameborder="0" class="iframe-border lozad"></iframe>
 
 <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&kiosk" target="_blank" style="float:right;">View Fullscreen</a>
 
 ## Pi Lab Network Metrics
-<iframe width="100%" height="750" data-src="https://pilab.dev/metrics/d/o9mIe_Aik/pi-lab-network-metrics?orgId=1&refresh=5m&kiosk" frameborder="0" class="iframe-border lozad"></iframe>
+<iframe width="100%" height="1070" data-src="https://pilab.dev/metrics/d/o9mIe_Aik/pi-lab-network-metrics?orgId=1&refresh=5m&kiosk" frameborder="0" class="iframe-border lozad"></iframe>
 
 <a href="https://pilab.dev/metrics/d/o9mIe_Aik/pi-lab-network-metrics?orgId=1&refresh=5m&kiosk" target="_blank" style="float:right;">View Fullscreen</a>
 
 ## Pi-hole Metrics
-<iframe width="100%" height="750" data-src="https://pilab.dev/metrics/d/Pi-hole_Exporter/pi-hole-metrics?orgId=1&kiosk" frameborder="0" class="iframe-border lozad"></iframe>
+<iframe width="100%" height="870" data-src="https://pilab.dev/metrics/d/Pi-hole_Exporter/pi-hole-metrics?orgId=1&kiosk" frameborder="0" class="iframe-border lozad"></iframe>
 
 <a href="https://pilab.dev/metrics/d/Pi-hole_Exporter/pi-hole-metrics?orgId=1&kiosk" target="_blank" style="float:right;">View Fullscreen</a>
 
