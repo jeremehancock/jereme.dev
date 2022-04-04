@@ -18,3 +18,5 @@ https://github.com/bhemar/raspberry-metrics.
 > *I have created a [Grafana](https://grafana.com/) Playlist to cycle through each node in Pi Lab.*
 > 
 > *I have upgraded the Pi used for the Pi Lab Metrics node to a Raspberry Pi 3 Model B.*
+>
+> *I have added some additional dashboards to the [Pi Lab Stats](/pi-lab-stats) page. These new dashboards track the Pi Lab Network Metrics, Pi-hole Metrics, and Plex metrics.*

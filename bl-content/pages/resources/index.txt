@@ -6,8 +6,8 @@ This is a list of various resources that I have found to be useful.
 * [Raspberry Pi Foundation](https://www.raspberrypi.org/) -- The Official Raspberry Pi site.
 * [Pi My Life Up](https://pimylifeup.com/) -- Tons of great tutorials.
 * [Raspberry Pi Spy](https://www.raspberrypi-spy.co.uk/) -- Great resources for all things Raspberry Pi.
-* [Raspberry Pi Web Server](http://raspberrywebserver.com/) -- Information on running a Raspberry Pi web server.
 * [Pi-hole](https://pi-hole.net/) -- No more ads!
+* [Internet Pi](https://github.com/geerlingguy/internet-pi) - Pi-hole + Metrics Dashboards!
 * [PiVPN](http://www.pivpn.io/) -- Securely access your Pi from anywhere.
 * [The MagPi](https://magpi.raspberrypi.org/books) -- Free digital book downloads.
 
