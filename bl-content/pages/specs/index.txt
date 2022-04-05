@@ -43,14 +43,20 @@
 *   **Load Balancer Node**
     *   1 Raspberry Pi 4 2GB Model B
 				* Samsung EVO Plus 32GB microSDHC Card
+				* [Node Exporter](https://github.com/prometheus/node_exporter) - Expose Linux metrics: Installed to each node.
+				* [RPi Exporter](https://github.com/lukasmalkmus/rpi_exporter) - Expose Raspberry Pi metrics: Installed to each node.
 				* Metrics Dashboard <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=pi0" target="_blank">Node 0</a> (pi0)
 *   **Development/Production Node**
     *    1 Raspberry Pi 4 2GB Model B
 				* Samsung EVO Plus 32GB microSDHC Card
+				* [Node Exporter](https://github.com/prometheus/node_exporter) - Expose Linux metrics: Installed to each node.
+				* [RPi Exporter](https://github.com/lukasmalkmus/rpi_exporter) - Expose Raspberry Pi metrics: Installed to each node.
 				* Metrics Dashboard <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=pi1" target="_blank">Node 1</a> (pi1)
 *  **Production Nodes**
     *    4 Raspberry Pi 4 2GB Model Bs
 				* Samsung EVO Plus 32GB microSDHC Cards
+				* [Node Exporter](https://github.com/prometheus/node_exporter) - Expose Linux metrics: Installed to each node.
+				* [RPi Exporter](https://github.com/lukasmalkmus/rpi_exporter) - Expose Raspberry Pi metrics: Installed to each node.
 				* **Metrics Dashboards:**
 					* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=pi2" target="_blank">Node 2</a> (pi2)
 					* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=pi3" target="_blank">Node 3</a> (pi3)
@@ -81,6 +87,8 @@
     *    1 Raspberry Pi 4 4GB Model B
 				* Samsung EVO Plus 32GB microSDHC Card
 				*   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
+				* [Node Exporter](https://github.com/prometheus/node_exporter) - Expose Linux metrics: Installed to each node.
+				* [RPi Exporter](https://github.com/lukasmalkmus/rpi_exporter) - Expose Raspberry Pi metrics: Installed to each node.
 				*   [Internet Pi](https://github.com/geerlingguy/internet-pi)
 				*   [Tailscale](https://tailscale.com/)
 				*   <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=thanos" target="_blank">Metrics Dashboard</a> (thanos)
@@ -89,6 +97,8 @@
     *   1 Raspberry Pi 4 4GB Model B
 				* Samsung EVO Plus 32GB microSDHC Card
 				*   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
+				* [Node Exporter](https://github.com/prometheus/node_exporter) - Expose Linux metrics: Installed to each node.
+				* [RPi Exporter](https://github.com/lukasmalkmus/rpi_exporter) - Expose Raspberry Pi metrics: Installed to each node.
 				* [Restreamer](https://datarhei.github.io/restreamer/)
 				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=restreamerpi" target="_blank">Metrics Dashboard</a> (restreamerpi)
 	* [More Details](restreamer)
@@ -96,6 +106,8 @@
     *   1 Raspberry Pi 3 Model B
 				* Samsung EVO Plus 32GB microSDHC Card
 				*   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
+				* [Node Exporter](https://github.com/prometheus/node_exporter) - Expose Linux metrics: Installed to each node.
+				* [RPi Exporter](https://github.com/lukasmalkmus/rpi_exporter) - Expose Raspberry Pi metrics: Installed to each node.
 				* [Node-Red](https://nodered.org/docs/getting-started/raspberrypi)
 				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=noderedpi" target="_blank">Metrics Dashboard</a> (noderedpi)
 	* [More Details](node-red-twitter-bot)
@@ -122,6 +134,8 @@
     *   1 Raspberry Pi 3 Model B+
 				* Samsung EVO Plus 32GB microSDHC Card
 				*   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
+				* [Node Exporter](https://github.com/prometheus/node_exporter) - Expose Linux metrics: Installed to each node.
+				* [RPi Exporter](https://github.com/lukasmalkmus/rpi_exporter) - Expose Raspberry Pi metrics: Installed to each node.
 				*   OctoPrint
 				* [Onn Universal Wall Charger](https://www.walmart.com/ip/Onn-Universal-Wall-Charger-Black/620837164)
 				* [Gosund Smart Plug](https://www.amazon.com/Outlet-Required-Gosund-Upgraded-Version/dp/B07GRLQV47/)
@@ -133,6 +147,8 @@
     *    1 Raspberry Pi Zero W
 				* Samsung EVO Plus 32GB microSDHC Card
 				*   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
+				* [Node Exporter](https://github.com/prometheus/node_exporter) - Expose Linux metrics: Installed to each node.
+				* [RPi Exporter](https://github.com/lukasmalkmus/rpi_exporter) - Expose Raspberry Pi metrics: Installed to each node.
 				*   **CMS:** [Bludit - v3.12.0](https://www.bludit.com/)  - Customized
 				*   **Theme:** [Highway](https://jellyio.com/shop/bludit/highway) - Customized
 				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=zerotv" target="_blank">Metrics Dashboard</a> (zerotv)
@@ -141,6 +157,8 @@
     *    1 Raspberry Pi Zero W
 				* Samsung EVO Plus 32GB microSDHC Card
 				*   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
+				* [Node Exporter](https://github.com/prometheus/node_exporter) - Expose Linux metrics: Installed to each node.
+				* [RPi Exporter](https://github.com/lukasmalkmus/rpi_exporter) - Expose Raspberry Pi metrics: Installed to each node.
 				* [USB-A Add-on Board](https://www.amazon.com/gp/product/B07DBL3WYQ)
 				* [GLCON Power Strip Tower](https://www.amazon.com/gp/product/B01G6PPTH6)
 				* [Gosund Smart Plug](https://www.amazon.com/Outlet-Required-Gosund-Upgraded-Version/dp/B07GRLQV47/)
@@ -197,6 +215,8 @@
 					* [Heimdall](https://hub.docker.com/r/linuxserver/heimdall) (Docker)
 					* [Uptime Kuma](https://github.com/louislam/uptime-kuma) (Docker) with [IFTTT Notifications](https://ifttt.com/)
 					* [Speedtest Tracker](https://github.com/henrywhitaker3/Speedtest-Tracker) (Docker)
+					* [Prometheus](https://hub.docker.com/r/ubuntu/prometheus) (Docker)
+					* [Node Exporter](https://packages.ubuntu.com/focal/prometheus-node-exporter)
 					* [Cockpit](https://cockpit-project.org/)
 			
 ---
