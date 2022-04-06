@@ -14,9 +14,9 @@
 <a href="https://pilab.dev/metrics/d/Pi-hole_Exporter/pi-hole-metrics?orgId=1&refresh=5m&kiosk" target="_blank" style="float:right;">View Fullscreen</a>
 
 ## Plex Metrics
-<iframe width="100%" height="770" data-src="https://pilab.dev/metrics/d/K5499Bh7z/plex?orgId=1&refresh=5m&from=now-5m&to=now&kiosk" frameborder="0" class="iframe-border lozad"></iframe>
+<iframe width="100%" height="1000" data-src="https://pilab.dev/metrics/d/K5499Bh7z/plex?orgId=1&refresh=30s&kiosk" frameborder="0" class="iframe-border lozad"></iframe>
 
-<a href="https://pilab.dev/metrics/d/K5499Bh7z/plex?orgId=1&refresh=5m&from=now-5m&to=now&kiosk" target="_blank" style="float:right;">View Fullscreen</a>
+<a href="https://pilab.dev/metrics/d/K5499Bh7z/plex?orgId=1&refresh=30s&kiosk" target="_blank" style="float:right;">View Fullscreen</a>
 
 <!-- ## Load Balancer Node
 <iframe width="100%" height="350" data-src="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=pi0&kiosk" frameborder="0" class="iframe-border lozad"></iframe>
