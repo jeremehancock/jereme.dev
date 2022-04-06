@@ -217,6 +217,7 @@
 					* [Speedtest Tracker](https://github.com/henrywhitaker3/Speedtest-Tracker) (Docker)
 					* [Prometheus](https://hub.docker.com/r/ubuntu/prometheus) (Docker)
 					* [Node Exporter](https://packages.ubuntu.com/focal/prometheus-node-exporter)
+					* [Exportarr](https://github.com/onedr0p/exportarr) (Docker)
 					* [Cockpit](https://cockpit-project.org/)
 			
 ---
