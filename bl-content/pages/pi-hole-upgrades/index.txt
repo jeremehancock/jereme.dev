@@ -13,15 +13,15 @@ Once I had Pi-hole setup I installed Tailscale to the Raspberry Pi running Pi-ho
 After install I started up Tailscale with this command.
 
 ```
-sudo tailscale up --advertise-exit-node --advertise-routes=192.168.1.0/24 --accept-dns=false
+sudo tailscale up --advertise-routes=192.168.1.0/24 --accept-dns=false
 ```
 
 **Note:** You will need to change the command to match your networks subnet.
 
-Then I logged into Tailscale and clicked the "three dots" menu next to the Machine entry for my Pi-hole. I selected "Disable key expiry" from the drop-down. Since the Pi-hole is not directly exposed to the internet it is safe to not require re-authentication. Then I selected "Edit route settings..." from the same drop-down menu and enabled both options. See image below.
+Then I logged into Tailscale and clicked the "three dots" menu next to the Machine entry for my Pi-hole. I selected "Disable key expiry" from the drop-down. Since the Pi-hole is not directly exposed to the internet it is safe to not require re-authentication. Then I selected "Edit route settings..." from the same drop-down menu and enabled the first option. See image below.
 
 <div class="centered">
-    <img src="/bl-content/uploads/pages/fcdb80d303d1fe7901dd6d939ebe87c3/tailscale-settings-route.png" class="image-border" /><br><br>
+    <img src="/bl-content/uploads/pages/fcdb80d303d1fe7901dd6d939ebe87c3/tailscale-settings-route-updated-new.png" class="image-border" /><br><br>
 </div>
 
 Next I copied the Tailscale IP address for my Pi-hole and used it as the Nameserver on the DNS tab. I set it to override local DNS. See image below.
@@ -65,3 +65,6 @@ alias padd="docker exec -it pihole bash /padd/padd.sh"
 ```
 
 Now I can use the `padd` command to startup PADD.
+
+**Updates:**
+> *I originally had Tailscale setup to use Pi-hole as an Exit Node. I found that I was having issues resolving hostnames. I have updated the setup to not use the Pi-hole as the Exit Node. I still get the ad-blocking, and now the hostname resolution issues have been resolved.*
