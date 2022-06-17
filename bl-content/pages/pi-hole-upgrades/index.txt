@@ -36,7 +36,7 @@ Now I have a Tailscale VPN setup that uses my Pi-hole.
 
 I installed the Tailscale Android app so now when I am away from my home network I can still access my servers as well as be protected from ads using my Pi-hole.
 
-I also like to use [PADD](https://github.com/pi-hole/PADD) to display my Pi-hole status on a monitor in my office. However, I noticed that it wouldn't work with this new setup since is using [Docker](https://www.docker.com/). After a bit more research I found the answer. 
+I also like to use [PADD](https://github.com/pi-hole/PADD) to display my Pi-hole status on a monitor in my office. However, I noticed that it wouldn't work with this new setup. After a bit more research I found the answer. 
 
 On the Pi-hole I ran the following to setup PADD.
 

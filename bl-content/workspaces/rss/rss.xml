@@ -5,7 +5,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Wed, 15 Jun 2022 23:31:02 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 17 Jun 2022 08:04:52 -0500</lastBuildDate>
     <item>
       <title>Pi-hole Upgrades</title>
       <link>https://pilab.dev/pi-hole-upgrades</link>
@@ -29,7 +29,7 @@
 &lt;p&gt;I also turned on MagicDNS on the DNS tab so that my servers would be accessible via their hostnames when on the Tailscale network. This way the Pi-hole interface would work when I am on or off the Tailscale network if I use the Pi-hole's hostname.&lt;/p&gt;
 &lt;p&gt;Now I have a Tailscale VPN setup that uses my Pi-hole. &lt;/p&gt;
 &lt;p&gt;I installed the Tailscale Android app so now when I am away from my home network I can still access my servers as well as be protected from ads using my Pi-hole.&lt;/p&gt;
-&lt;p&gt;I also like to use &lt;a href="https://github.com/pi-hole/PADD"&gt;PADD&lt;/a&gt; to display my Pi-hole status on a monitor in my office. However, I noticed that it wouldn't work with this new setup since is using &lt;a href="https://www.docker.com/"&gt;Docker&lt;/a&gt;. After a bit more research I found the answer. &lt;/p&gt;
+&lt;p&gt;I also like to use &lt;a href="https://github.com/pi-hole/PADD"&gt;PADD&lt;/a&gt; to display my Pi-hole status on a monitor in my office. However, I noticed that it wouldn't work with this new setup. After a bit more research I found the answer. &lt;/p&gt;
 &lt;p&gt;On the Pi-hole I ran the following to setup PADD.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;mkdir -p /home/pi/padd &amp;amp;&amp;amp; cd padd &amp;amp;&amp;amp; wget -N https://raw.githubusercontent.com/pi-hole/PADD/master/padd.sh &amp;amp;&amp;amp; chmod +x padd.sh&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Now that I had PADD setup I needed to update my Pi-hole configuration to use it.&lt;/p&gt;
