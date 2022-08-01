@@ -5,7 +5,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Fri, 17 Jun 2022 08:04:52 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 01 Aug 2022 10:42:44 -0500</lastBuildDate>
     <item>
       <title>Pi-hole Upgrades</title>
       <link>https://pilab.dev/pi-hole-upgrades</link>
@@ -69,7 +69,7 @@
         function onYouTubeIframeAPIReady() {
             player = new YT.Player('player', {
                 width: '100%',
-                videoId: 'rQVOmfWkZXc',
+                videoId: 'Bg3NBl_CQQg',
                 playerVars: { 'autoplay': 1, 'playsinline': 1, 'rel': 0 },
                 events: {
                     'onReady': onPlayerReady

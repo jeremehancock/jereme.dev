@@ -1,8 +1,8 @@
-I have setup a new [Node-Red](https://nodered.org/) Twitter Bot. This is powered by a [Raspberry Pi 4 Model B (2GB)](https://deviwiki.com/wiki/RPF_Raspberry_Pi_4_Model_B_2GB) that I have setup as the new Pi Lab Node Red Node.
+I have setup a new [Node-RED](https://nodered.org/) Twitter Bot. This is powered by a [Raspberry Pi 4 Model B (2GB)](https://deviwiki.com/wiki/RPF_Raspberry_Pi_4_Model_B_2GB) that I have setup as the new Pi Lab Node Red Node.
 
-The [Node-Red](https://nodered.org/) flow was originally setup to provide a URL endpoint that accepts a minimal number of query parameters (e.g. hostname). The flow would then make http requests to the [Pi Lab Metric's Node](prometheus-grafana) that is powered by [Prometheus](https://prometheus.io/) to retrieve the metrics. The metrics were then formatted and pushed directly to the [Pi Lab Twitter feed](https://twitter.com/pilabdev).
+The [Node-RED](https://nodered.org/) flow was originally setup to provide a URL endpoint that accepts a minimal number of query parameters (e.g. hostname). The flow would then make http requests to the [Pi Lab Metric's Node](prometheus-grafana) that is powered by [Prometheus](https://prometheus.io/) to retrieve the metrics. The metrics were then formatted and pushed directly to the [Pi Lab Twitter feed](https://twitter.com/pilabdev).
 
-I am now on version 4 of the flow. The latest iteration is completely self contained inside [Node-Red](https://nodered.org/). The flow runs every 30 minutes and does `ping` checks to ensure that the nodes are online before gathering the metrics for each node and sending out tweets. This allows me to reduce the overhead for each of the nodes in the Pi Lab cluster and have things more centralized. 
+I am now on version 4 of the flow. The latest iteration is completely self contained inside [Node-RED](https://nodered.org/). The flow runs every 30 minutes and does `ping` checks to ensure that the nodes are online before gathering the metrics for each node and sending out tweets. This allows me to reduce the overhead for each of the nodes in the Pi Lab cluster and have things more centralized. 
 
 I have also added an SMS alert node that, after a failed `ping` check,  sends an email that is then forwarded via text message to my mobile phone using this [AT&T feature](https://www.att.com/support/article/wireless/KM1061254/).
 
@@ -12,14 +12,14 @@ Below is a screenshot of the flow.
     <img src="/bl-content/uploads/pages/b3c9f34aa0cb8225b2ce75d480025d36/pi-lab-node-red-twitter-bot-v6.png" class="image-border" /><br><br>
 </div>
 
-I am very impressed with [Node-Red](https://nodered.org/). I definitely recommend it for anyone who enjoys coding and automation.
+I am very impressed with [Node-RED](https://nodered.org/). I definitely recommend it for anyone who enjoys coding and automation.
 
 [<img data-src="/images/check-it-out-on-github.png" alt="Get it on GitHub" class="on-github lozad" />](https://github.com/node-red)
 
 **Updates:**
 > *Thanks to some great feedback from [r/nodered](https://www.reddit.com/r/nodered/comments/hetcu6/my_first_nodered_flow/) I have re-factored the flow to use the `join` node so I can remove the use of flow variables. This should fix the issues I was seeing when a request to the flow would occur before the previous request had completed.  *
 > 
-> *I have added a new flow that tweets the current [BOINC Node](/fold-for-covid) Rosetta@home stats. This flow is setup to be completely powered by [Node-Red](https://nodered.org/) and is run on a 30 minute interval.*
+> *I have added a new flow that tweets the current [BOINC Node](/fold-for-covid) Rosetta@home stats. This flow is setup to be completely powered by [Node-RED](https://nodered.org/) and is run on a 30 minute interval.*
 >
 > *I have updated this blog post with the latest information on this project.*
 >
@@ -33,6 +33,6 @@ I am very impressed with [Node-Red](https://nodered.org/). I definitely recommen
 > 
 > *I have added a Current Date/Time node to ensure that the Tweets are unique.*
 >
-> *I have downgraded the Node-Red Node to a [Raspberry Pi 3 Model B](https://deviwiki.com/wiki/RPF_Raspberry_Pi_3_Model_B) and repurpsed the original Node-Red Node into a Pi Lab Web Cluster production node.*
+> *I have downgraded the Node-RED Node to a [Raspberry Pi 3 Model B](https://deviwiki.com/wiki/RPF_Raspberry_Pi_3_Model_B) and repurpsed the original Node-RED Node into a Pi Lab Web Cluster production node.*
 > 
 > *I have moved the `ping` checks to [Uptime Kuma](https://github.com/louislam/uptime-kuma) that I have setup on another server on my network. It uses [IFTTT](https://ifttt.com/) for the notifications which is much better than the AT&T SMS method. I have also updated the Twitter Bot to use [IFTTT](https://ifttt.com/) for the temperature checks.*
