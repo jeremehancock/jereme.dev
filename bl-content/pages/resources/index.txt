@@ -16,7 +16,6 @@ This is a list of various resources that I have found to be useful.
 * [Bludit Themes](https://themes.bludit.com/) -- Official Bludit themes.
 * [Bludit Documentation](https://docs.bludit.com/) -- Everything you need to know about Bludit.
 * [Bludit Forums](https://forum.bludit.org/) -- Bludit community.
-* [Bludit Showcase](https://bludit-showcase.com/) -- Real world Bludit sites in action.
 
 #### Live Streaming
 * [Restreamer](https://datarhei.github.io/restreamer/) -- Live video streaming on your website without a streaming provider.
