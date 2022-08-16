@@ -234,6 +234,8 @@
 					* [WD_Black 5TB P10-Game Drive](https://www.amazon.com/WD_Black-Drive-External-Compatible-WDBA3A0050BBK-WESN/dp/B07VNTFHD5) (Movies 4k)
 					* [WD easystore 14TB 264D](https://www.bestbuy.com/site/wd-easystore-14tb-external-usb-3-0-hard-drive-black/6425303.p?skuId=6425303) (TV Shows)
 					* [Plugable USB 3.0 Universal Laptop Docking Station](https://www.amazon.com/Plugable-Universal-Docking-Station-Ethernet/dp/B00ECDM78E)
+					* [HDHomeRun DUAL](https://www.amazon.com/SiliconDust-HDHomeRun-Definition-Digital-HDHR3-US/dp/B004HO58SO)
+					* [PBD Outdoor Digital Amplified HDTV Antenna](https://www.amazon.com/dp/B07JN6FNZ4)
 					* [Plex Media Server](https://www.plex.tv/)
 					* [Jellyfin (Backup Media Server)](https://hub.docker.com/r/linuxserver/jellyfin) (Docker)
 					* [Tautulli](https://tautulli.com/) (Docker)
