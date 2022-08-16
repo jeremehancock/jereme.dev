@@ -1,3 +1,7 @@
+<div style="display:none;">The Bludit API (Application Programming Interface) is a plugin to provide an easy integration with Bludit. With this plugin, you can retrieve or update data from the database with just an HTTP request.
+			&nbsp;&nbsp;&nbsp;
+</div>
+
 The Bludit API (Application Programming Interface) is a plugin to provide an easy integration with Bludit. With this plugin, you can retrieve or update data from the database with just an HTTP request.
 
 This is a really awesome feature that will hopefully continue to be expanded.

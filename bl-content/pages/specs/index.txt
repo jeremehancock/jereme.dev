@@ -167,14 +167,14 @@
  
 --- 
 
-## Pi Lab (Non-Pi Nodes):
+<!-- ## Pi Lab (Non-Pi Nodes):
 
 *   **Media Nodes**
 		*  2 SanDisk 32GB Media Drives
 					* 1 Samsung EVO Plus 32GB microSDHC Card
 		* [More Details](new-pi-lab-media-nodes)
 
----
+--- -->
 
 ## Other Servers:
 

@@ -16,7 +16,7 @@ I added 32GB SD cards to each device which gives me 64GBs on each drive. One rea
 
 I have setup a GitHub repo to document the steps I took to set things up. Check it out [here](https://github.com/mhancoc7/sandisk-media-drive-32gb-mods).
 
-I am not sure what I plan to use them for, but I have setup a simple "application" that I think is fun. I have another project called the [Roadside America API](https://roadside-america.dumbprojects.com/). It provides a simple API to retrieve images and metadata from the [John Margolies Roadside America Photograph Archive](https://www.loc.gov/free-to-use/john-margolies-roadside-america-photograph-archive). 
+<!-- I am not sure what I plan to use them for, but I have setup a simple "application" that I think is fun. I have another project called the [Roadside America API](https://roadside-america.dumbprojects.com/). It provides a simple API to retrieve images and metadata from the [John Margolies Roadside America Photograph Archive](https://www.loc.gov/free-to-use/john-margolies-roadside-america-photograph-archive). 
 
 I used the API to download all of the images to one of the media drives. Then I setup a webpage that redirects to a random image from the collection.
 
@@ -37,5 +37,8 @@ https://pilab.dev/roadside-america-collection?size=small
 ### Try it: <a href="https://pilab.dev/roadside-america-collection" target="_blank">Click Here</a>
 
 ---
+ 
+***Note:*** *If you don't provide a size, it will default to large.* -->
 
-***Note:*** *If you don't provide a size, it will default to large.*
+**Updates:**
+> *Unfortunately I noticed that the batteries in these devices were starting to bulge. I have decided to retire these nodes. *
