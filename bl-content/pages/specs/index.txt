@@ -92,14 +92,14 @@
 		* [Internet Pi](https://github.com/geerlingguy/internet-pi)
 		* [Tailscale](https://tailscale.com/)
 		* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=thanos" target="_blank">Metrics Dashboard</a> (thanos)
-		*   **Network** 
-			* [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
-			* [Google WiFi Mesh 4 Pack](https://www.amazon.com/gp/product/B07H7RQHF7)
-			* [TP-Link 16 Port Gigabit Ethernet Network Switch (TL-SG116)](https://www.amazon.com/gp/product/B07GR9S6FN)
-		*   **Power:**
-			* [CyberPower CP1000PFCLCD PFC Sinewave UPS](https://www.amazon.com/gp/product/B00429N192)
-			* [XDCDHM USB Charger, 60 Watt 12A 6-Port High Speed Charger](https://www.amazon.com/gp/product/B075P22QC2)
-		*   **Cooling:** [AC Infinity MULTIFAN S4](https://www.amazon.com/gp/product/B00MWH4FL4)
+	*   **Network** 
+		* [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
+		* [Google WiFi Mesh 4 Pack](https://www.amazon.com/gp/product/B07H7RQHF7)
+		* [TP-Link 16 Port Gigabit Ethernet Network Switch (TL-SG116)](https://www.amazon.com/gp/product/B07GR9S6FN)
+	*   **Power:**
+		* [CyberPower CP1000PFCLCD PFC Sinewave UPS](https://www.amazon.com/gp/product/B00429N192)
+		* [XDCDHM USB Charger, 60 Watt 12A 6-Port High Speed Charger](https://www.amazon.com/gp/product/B075P22QC2)
+	*   **Cooling:** [AC Infinity MULTIFAN S4](https://www.amazon.com/gp/product/B00MWH4FL4)
   * [More Details](pi-hole-upgrades)
 *   **Restreamer Node**
     *  1 Raspberry Pi 4 4GB Model B
@@ -109,14 +109,14 @@
 				* [RPi Exporter](https://github.com/lukasmalkmus/rpi_exporter) - Expose Raspberry Pi metrics: Installed to each node.
 				* [Restreamer](https://datarhei.github.io/restreamer/)
 				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=restreamerpi" target="_blank">Metrics Dashboard</a> (restreamerpi)
-				*   **Network** 
-					* [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
-					* [Google WiFi Mesh 4 Pack](https://www.amazon.com/gp/product/B07H7RQHF7)
-					* [TP-Link 16 Port Gigabit Ethernet Network Switch (TL-SG116)](https://www.amazon.com/gp/product/B07GR9S6FN)
-				*   **Power:**
-					* [CyberPower CP1000PFCLCD PFC Sinewave UPS](https://www.amazon.com/gp/product/B00429N192)
-					* [XDCDHM USB Charger, 60 Watt 12A 6-Port High Speed Charger](https://www.amazon.com/gp/product/B075P22QC2)
-				*   **Cooling:** [AC Infinity MULTIFAN S4](https://www.amazon.com/gp/product/B00MWH4FL4)roduct/B075P22QC2)
+	* **Network** 
+				* [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
+				* [Google WiFi Mesh 4 Pack](https://www.amazon.com/gp/product/B07H7RQHF7)
+				* [TP-Link 16 Port Gigabit Ethernet Network Switch (TL-SG116)](https://www.amazon.com/gp/product/B07GR9S6FN)
+	*   **Power:**
+				* [CyberPower CP1000PFCLCD PFC Sinewave UPS](https://www.amazon.com/gp/product/B00429N192)
+				* [XDCDHM USB Charger, 60 Watt 12A 6-Port High Speed Charger](https://www.amazon.com/gp/product/B075P22QC2)
+	*   **Cooling:** [AC Infinity MULTIFAN S4](https://www.amazon.com/gp/product/B00MWH4FL4)roduct/B075P22QC2)
 	* [More Details](restreamer)
 *   **Node-Red Node**
     *   1 Raspberry Pi 3 Model B
@@ -126,14 +126,14 @@
 				* [RPi Exporter](https://github.com/lukasmalkmus/rpi_exporter) - Expose Raspberry Pi metrics: Installed to each node.
 				* [Node-Red](https://nodered.org/docs/getting-started/raspberrypi)
 				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=noderedpi" target="_blank">Metrics Dashboard</a> (noderedpi)
-				*  **Network** 
-					* [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
-					* [Google WiFi Mesh 4 Pack](https://www.amazon.com/gp/product/B07H7RQHF7)
-					* [TP-Link 16 Port Gigabit Ethernet Network Switch (TL-SG116)](https://www.amazon.com/gp/product/B07GR9S6FN)
-				*   **Power:**
-					* [CyberPower CP1000PFCLCD PFC Sinewave UPS](https://www.amazon.com/gp/product/B00429N192)
-					* [XDCDHM USB Charger, 60 Watt 12A 6-Port High Speed Charger](https://www.amazon.com/gp/product/B075P22QC2)
-				*   **Cooling:** [AC Infinity MULTIFAN S4](https://www.amazon.com/gp/product/B00MWH4FL4)
+	*  **Network** 
+		* [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
+		* [Google WiFi Mesh 4 Pack](https://www.amazon.com/gp/product/B07H7RQHF7)
+		* [TP-Link 16 Port Gigabit Ethernet Network Switch (TL-SG116)](https://www.amazon.com/gp/product/B07GR9S6FN)
+	*   **Power:**
+		* [CyberPower CP1000PFCLCD PFC Sinewave UPS](https://www.amazon.com/gp/product/B00429N192)
+		* [XDCDHM USB Charger, 60 Watt 12A 6-Port High Speed Charger](https://www.amazon.com/gp/product/B075P22QC2)
+	*   **Cooling:** [AC Infinity MULTIFAN S4](https://www.amazon.com/gp/product/B00MWH4FL4)
 	* [More Details](node-red-twitter-bot)
 *   **Metrics Node**
     *   1 Raspberry Pi 3 Model B
@@ -144,14 +144,14 @@
 				* [Prometheus](https://prometheus.io/) - Collect and store metrics
 				* [Grafana](https://grafana.com/) - Metrics visualization
 				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=prometheus" target="_blank">Metrics Dashboard</a> (prometheus)
-				* **Network** 
-					* [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
-					* [Google WiFi Mesh 4 Pack](https://www.amazon.com/gp/product/B07H7RQHF7)
-					* [TP-Link 16 Port Gigabit Ethernet Network Switch (TL-SG116)](https://www.amazon.com/gp/product/B07GR9S6FN)
-				*   **Power:**
-					* [CyberPower CP1000PFCLCD PFC Sinewave UPS](https://www.amazon.com/gp/product/B00429N192)
-					* [XDCDHM USB Charger, 60 Watt 12A 6-Port High Speed Charger](https://www.amazon.com/gp/product/B075P22QC2)
-				*   **Cooling:** [AC Infinity MULTIFAN S4](https://www.amazon.com/gp/product/B00MWH4FL4)
+	* **Network** 
+		* [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
+		* [Google WiFi Mesh 4 Pack](https://www.amazon.com/gp/product/B07H7RQHF7)
+		* [TP-Link 16 Port Gigabit Ethernet Network Switch (TL-SG116)](https://www.amazon.com/gp/product/B07GR9S6FN)
+	*   **Power:**
+		* [CyberPower CP1000PFCLCD PFC Sinewave UPS](https://www.amazon.com/gp/product/B00429N192)
+		* [XDCDHM USB Charger, 60 Watt 12A 6-Port High Speed Charger](https://www.amazon.com/gp/product/B075P22QC2)
+	*   **Cooling:** [AC Infinity MULTIFAN S4](https://www.amazon.com/gp/product/B00MWH4FL4)
 	* [More Details](prometheus-grafana)
 *   **OctoPrint Node**
     *   1 Raspberry Pi 3 Model B+
@@ -165,10 +165,10 @@
 				* [Ender 3 Pro](https://creality3d.shop/collections/3d-printer/products/creality3d-ender-3-pro-high-precision-3d-printer)
 				* [OctoPrint Node Live Stream](octoprint-node-live-stream)
 				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=octopi" target="_blank">Metrics Dashboard</a> (octopi)
-				*  **Network** 
-					* [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
-					* [Google WiFi Mesh 4 Pack](https://www.amazon.com/gp/product/B07H7RQHF7)
-					* [TP-Link 16 Port Gigabit Ethernet Network Switch (TL-SG116)](https://www.amazon.com/gp/product/B07GR9S6FN)
+	*  **Network** 
+		* [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
+		* [Google WiFi Mesh 4 Pack](https://www.amazon.com/gp/product/B07H7RQHF7)
+		* [TP-Link 16 Port Gigabit Ethernet Network Switch (TL-SG116)](https://www.amazon.com/gp/product/B07GR9S6FN)
 	* [More Details](octoprint-node)
 *   **Zero TV Node**
     *   1 Raspberry Pi Zero W
@@ -179,14 +179,14 @@
 				*   **CMS:** [Bludit - v3.12.0](https://www.bludit.com/)  - Customized
 				*   **Theme:** [Highway](https://jellyio.com/shop/bludit/highway) - Customized
 				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=zerotv" target="_blank">Metrics Dashboard</a> (zerotv)
-				*  **Network** 
-					* [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
-					* [Google WiFi Mesh 4 Pack](https://www.amazon.com/gp/product/B07H7RQHF7)
-					* [TP-Link 16 Port Gigabit Ethernet Network Switch (TL-SG116)](https://www.amazon.com/gp/product/B07GR9S6FN)
-				*   **Power:**
-					* [CyberPower CP1000PFCLCD PFC Sinewave UPS](https://www.amazon.com/gp/product/B00429N192)
-					* [XDCDHM USB Charger, 60 Watt 12A 6-Port High Speed Charger](https://www.amazon.com/gp/product/B075P22QC2)
-				*   **Cooling:** [AC Infinity MULTIFAN S4](https://www.amazon.com/gp/product/B00MWH4FL4)
+	*  **Network** 
+		* [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
+		* [Google WiFi Mesh 4 Pack](https://www.amazon.com/gp/product/B07H7RQHF7)
+		* [TP-Link 16 Port Gigabit Ethernet Network Switch (TL-SG116)](https://www.amazon.com/gp/product/B07GR9S6FN)
+	*   **Power:**
+		* [CyberPower CP1000PFCLCD PFC Sinewave UPS](https://www.amazon.com/gp/product/B00429N192)
+		* [XDCDHM USB Charger, 60 Watt 12A 6-Port High Speed Charger](https://www.amazon.com/gp/product/B075P22QC2)
+	*   **Cooling:** [AC Infinity MULTIFAN S4](https://www.amazon.com/gp/product/B00MWH4FL4)
 	*  [More Details](zero-tv)
 *   **Test Node**
     *   1 Raspberry Pi Zero W
@@ -198,10 +198,10 @@
 				* [GLCON Power Strip Tower](https://www.amazon.com/gp/product/B01G6PPTH6)
 				* [Gosund Smart Plug](https://www.amazon.com/Outlet-Required-Gosund-Upgraded-Version/dp/B07GRLQV47/)
 				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=testpi1" target="_blank">Metrics Dashboard</a> (testpi1)
-				* **Network** 
-					* [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
-					* [Google WiFi Mesh 4 Pack](https://www.amazon.com/gp/product/B07H7RQHF7)
-					* [TP-Link 16 Port Gigabit Ethernet Network Switch (TL-SG116)](https://www.amazon.com/gp/product/B07GR9S6FN)
+	* **Network** 
+		* [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
+		* [Google WiFi Mesh 4 Pack](https://www.amazon.com/gp/product/B07H7RQHF7)
+		* [TP-Link 16 Port Gigabit Ethernet Network Switch (TL-SG116)](https://www.amazon.com/gp/product/B07GR9S6FN)
 	* [More Details](pi-zero-wall-plug-web-server)
 	
 ---
@@ -217,11 +217,11 @@
 					* Intel 120GB SSD (Extra Storage)
 					* Dell 22 Inch Monitor
 					* [Cockpit](https://cockpit-project.org/)
-					*  **Network** 
-						* [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
-						* [Google WiFi Mesh 4 Pack](https://www.amazon.com/gp/product/B07H7RQHF7)
-						* [TP-Link 16 Port Gigabit Ethernet Network Switch (TL-SG116)](https://www.amazon.com/gp/product/B07GR9S6FN)
-					*    **Cooling:** [AC Infinity MULTIFAN S4](https://www.amazon.com/gp/product/B00MWH4FL4)
+		*  **Network** 
+			* [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
+			* [Google WiFi Mesh 4 Pack](https://www.amazon.com/gp/product/B07H7RQHF7)
+			* [TP-Link 16 Port Gigabit Ethernet Network Switch (TL-SG116)](https://www.amazon.com/gp/product/B07GR9S6FN)
+		* **Cooling:** [AC Infinity MULTIFAN S4](https://www.amazon.com/gp/product/B00MWH4FL4)
 *   **Plex Server**
 		*  Dell Latitude E7470
 					* 4x Intel Core i7-6600U CPU @ 2.60GHz
@@ -256,7 +256,7 @@
 					* [Node Exporter](https://packages.ubuntu.com/focal/prometheus-node-exporter)
 					* [Exportarr](https://github.com/onedr0p/exportarr) (Docker)
 					* [Cockpit](https://cockpit-project.org/)
-		*   **Network** 
+		* **Network** 
 			* [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
 			* [Google WiFi Mesh 4 Pack](https://www.amazon.com/gp/product/B07H7RQHF7)
 			* [TP-Link 16 Port Gigabit Ethernet Network Switch (TL-SG116)](https://www.amazon.com/gp/product/B07GR9S6FN)
