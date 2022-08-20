@@ -228,7 +228,7 @@
 					*   **Operating System:** [Ubuntu Server 20.04.1 LTS](https://ubuntu.com/download/server)
 					* 16GB DDR4 SDRAM 2133 MT/s
 					* SanDisk X400 M.2 512GB
-					* Iomega 1.5TB Drive (Downloads)
+					* Iomega 1.5TB Drive (Downloads & DVR)
 					* [WD_Black 12TB P10-Game Drive](https://www.amazon.com/Black-12TB-Drive-External-WDBA5E0120HBKNESN/dp/B07XV8JN31) (Movies)
 					* [WD Elements 14TB 25A3](https://www.amazon.com/14TB-Elements-Desktop-Drive-WDBWLG0140HBK-NESN/dp/B07YD3G568?th=1) (Movies 2)
 					* [WD_Black 5TB P10-Game Drive](https://www.amazon.com/WD_Black-Drive-External-Compatible-WDBA3A0050BBK-WESN/dp/B07VNTFHD5) (Movies 4k)
