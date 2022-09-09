@@ -13,6 +13,7 @@ class Theme {
 			'instagram'=>'Instagram',
 			'codepen'=>'Codepen',
 			'linkedin'=>'Linkedin',
+			'xing'=>'Xing',
 			'mastodon'=>'Mastodon',
 			'vk'=>'VK'
 		);
@@ -200,7 +201,7 @@ class Theme {
 
 		$links = '';
 		foreach($files as $file) {
-			$links .= '<link rel="stylesheet" type="text/css" href="'.$base.$file.'?version='.BLUDIT_VERSION.'&time=' . time() . '">'.PHP_EOL;
+			$links .= '<link rel="stylesheet" type="text/css" href="'.$base.$file.'?version='.BLUDIT_VERSION.'">'.PHP_EOL;
 		}
 
 		return $links;

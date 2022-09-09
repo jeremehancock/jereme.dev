@@ -393,6 +393,7 @@ function install($adminPassword, $timezone)
 		'instagram'=>'',
 		'gitlab'=>'',
 		'linkedin'=>'',
+		'xing'=>'',
 		'dateFormat'=>'F j, Y',
 		'extremeFriendly'=>true,
 		'autosaveInterval'=>2,
@@ -428,6 +429,7 @@ function install($adminPassword, $timezone)
 			'instagram'=>'',
 			'codepen'=>'',
 			'linkedin'=>'',
+			'xing'=>'',
 			'github'=>'',
 			'gitlab'=>''
 		)
@@ -463,11 +465,7 @@ function install($adminPassword, $timezone)
 	file_put_contents(PATH_DATABASES.'categories.php', $dataHead.json_encode($data, JSON_PRETTY_PRINT), LOCK_EX);
 
 	// File tags.php
-	$data = array(
-		'bludit'=>array('name'=>'Bludit', 'description'=>'', 'template'=>'', 'list'=>array('follow-bludit')),
-		'cms'=>array('name'=>'CMS', 'description'=>'', 'template'=>'', 'list'=>array('follow-bludit')),
-		'flat-files'=>array('name'=>'Flat files', 'description'=>'', 'template'=>'', 'list'=>array('follow-bludit'))
-	);
+	$data = array();
 	file_put_contents(PATH_DATABASES.'tags.php', $dataHead.json_encode($data, JSON_PRETTY_PRINT), LOCK_EX);
 
 	// File plugins/about/db.php

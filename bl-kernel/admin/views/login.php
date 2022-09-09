@@ -1,6 +1,6 @@
 <?php defined('BLUDIT') or die('Bludit CMS.');
 
-echo '<h1 class="text-center mb-5 mt-5 font-weight-normal" style="color: #555;">BLUDIT</h1>';
+echo '<h1 class="text-center mb-5 mt-5 font-weight-normal" style="color: #555;">'.$site->title().'</h1>';
 
 echo Bootstrap::formOpen(array());
 
@@ -11,7 +11,7 @@ echo Bootstrap::formOpen(array());
 
 	echo '
 	<div class="form-group">
-		<input type="text" value="'.(isset($_POST['username'])?$_POST['username']:'').'" class="form-control form-control-lg" id="jsusername" name="username" placeholder="'.$L->g('Username').'" autofocus>
+		<input type="text" value="'.(isset($_POST['username'])?Sanitize::html($_POST['username']):'').'" class="form-control form-control-lg" id="jsusername" name="username" placeholder="'.$L->g('Username').'" autofocus>
 	</div>
 	';
 
@@ -27,11 +27,13 @@ echo Bootstrap::formOpen(array());
 		<label class="form-check-label" for="jsremember">'.$L->g('Remember me').'</label>
 	</div>
 
-	<div class="form-group mt-4">
+	<div class="form-group mt-3">
 		<button type="submit" class="btn btn-primary btn-lg mr-2 w-100" name="save">'.$L->g('Login').'</button>
 	</div>
 	';
 
 echo '</form>';
+
+echo '<p class="mt-5 text-right">'.$L->g('Powered by Bludit').((defined('BLUDIT_PRO'))?' PRO':'').'</p>'
 
 ?>

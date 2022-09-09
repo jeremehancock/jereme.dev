@@ -30,6 +30,7 @@ class Site extends dbJSON {
 		'github'=>		'',
 		'gitlab'=>		'',
 		'linkedin'=>		'',
+		'xing'=>		'',
 		'mastodon'=>		'',
 		'dribbble'=>		'',
 		'vk'=>			'',
@@ -183,6 +184,11 @@ class Site extends dbJSON {
 		return $this->getField('linkedin');
 	}
 
+	public function xing()
+	{
+		return $this->getField('xing');
+	}
+
 	public function mastodon()
 	{
 		return $this->getField('mastodon');
@@ -333,6 +339,18 @@ class Site extends dbJSON {
 	{
 		return $this->getField('timezone');
 	}
+
+    public function urlPath()
+    {
+        $url = $this->getField('url');
+        return parse_url($url, PHP_URL_PATH);
+    }
+
+    public function isHTTPS()
+    {
+        $url = $this->getField('url');
+        return parse_url($url, PHP_URL_SCHEME) === 'https';
+    }
 
 	// Returns the current build / version of Bludit.
 	public function currentBuild()
