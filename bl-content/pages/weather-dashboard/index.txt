@@ -16,4 +16,4 @@ If you are looking to setup a Weather Dashboard this project is definitely worth
 [<img data-src="/images/check-it-out-on-github.png" alt="Get it on GitHub" class="on-github lozad" />](https://github.com/vlaine/Weather-Forecast-Dashboard)
 
 **Updates:**
-> *I have updated to use the OpenWeatherMap API since Dark Sky has closed. [Learn more](https://blog.darksky.net/)*
+> *I have updated the dashboard to use the OpenWeatherMap API since Dark Sky has closed. [Learn more](https://blog.darksky.net/)*
