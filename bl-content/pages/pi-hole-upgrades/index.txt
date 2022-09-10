@@ -18,6 +18,14 @@ sudo tailscale up --advertise-routes=192.168.1.0/24 --accept-dns=false
 
 **Note:** You will need to change the command to match your networks subnet.
 
+After I started Tailscale up I got an error referring to [IP forwarding](https://tailscale.com/kb/1019/subnets/#setting-up-a-subnet-router). I had to run the following commands to clear that up.
+
+```
+echo 'net.ipv4.ip_forward = 1' | sudo tee -a /etc/sysctl.conf
+echo 'net.ipv6.conf.all.forwarding = 1' | sudo tee -a /etc/sysctl.conf
+sudo sysctl -p /etc/sysctl.conf
+```
+
 Then I logged into Tailscale and clicked the "three dots" menu next to the Machine entry for my Pi-hole. I selected "Disable key expiry" from the drop-down. Since the Pi-hole is not directly exposed to the internet it is safe to not require re-authentication. Then I selected "Edit route settings..." from the same drop-down menu and enabled the first option. See image below.
 
 <div class="centered">
@@ -30,7 +38,7 @@ Next I copied the Tailscale IP address for my Pi-hole and used it as the Nameser
     <img src="/bl-content/uploads/pages/fcdb80d303d1fe7901dd6d939ebe87c3/tailscale-dns.png" class="image-border" /><br><br>
 </div>
 
-I also turned on MagicDNS on the DNS tab so that my servers would be accessible via their hostnames when on the Tailscale network. This way the Pi-hole interface would work when I am on or off the Tailscale network if I use the Pi-hole's hostname.
+I also turned on MagicDNS on the DNS tab so that my servers would be accessible via their hostnames when on the Tailscale network. This way the Pi-hole interface would work when I am on or off the Tailscale network when I use the Pi-hole's hostname.
 
 Now I have a Tailscale VPN setup that uses my Pi-hole. 
 
