@@ -5,7 +5,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Wed, 14 Sep 2022 13:21:39 -0500</lastBuildDate>
+    <lastBuildDate>Thu, 15 Sep 2022 19:48:12 -0500</lastBuildDate>
     <item>
       <title>Node-RED Upgrades (v3)</title>
       <link>https://pilab.dev/node-red-upgrades-v3</link>
@@ -75,7 +75,7 @@ sudo sysctl -p /etc/sysctl.conf&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;strong&gt;Updates:&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;em&gt;I originally had Tailscale setup to use Pi-hole as an Exit Node. I found that I was having issues resolving hostnames. I have updated the setup to not use the Pi-hole as the Exit Node. I still get the ad-blocking, and now the hostname resolution issues have been resolved.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;I started having odd issues where the internet speeds from the Pi 4 running Pi-hole would drop off significantly around 2am everyday. I believe the issue has to do with using the Pi-hole as the DNS nameserver. I have turned that off and things seem to be working well again. I just don't get the benefit of the Pi-hole while traveling.).&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;I started having odd issues where the internet speeds from the Pi 4 running Pi-hole would drop off significantly around 2am everyday. I think the issue is with Tailscale. So for now I have turned Tailscale off on the Pi-hole and updated the Tailscale DNS to just use Google Nameservers.&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;</description>
       <pubDate>Mon, 28 Mar 2022 13:54:42 -0500</pubDate>
       <guid isPermaLink="false">fcdb80d303d1fe7901dd6d939ebe87c3</guid>
