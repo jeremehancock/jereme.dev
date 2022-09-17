@@ -5,7 +5,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Fri, 16 Sep 2022 07:34:50 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 17 Sep 2022 01:58:07 -0500</lastBuildDate>
     <item>
       <title>Node-RED Upgrades (v3)</title>
       <link>https://pilab.dev/node-red-upgrades-v3</link>
@@ -103,7 +103,7 @@ sudo sysctl -p /etc/sysctl.conf&lt;/code&gt;&lt;/pre&gt;
         function onYouTubeIframeAPIReady() {
             player = new YT.Player('player', {
                 width: '100%',
-                videoId: 'Bg3NBl_CQQg',
+                videoId: 'LD-SZU6As1k',
                 playerVars: { 'autoplay': 1, 'playsinline': 1, 'rel': 0 },
                 events: {
                     'onReady': onPlayerReady
