@@ -5,7 +5,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Sat, 17 Sep 2022 01:58:07 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 17 Sep 2022 02:19:20 -0500</lastBuildDate>
     <item>
       <title>Node-RED Upgrades (v3)</title>
       <link>https://pilab.dev/node-red-upgrades-v3</link>
@@ -104,7 +104,7 @@ sudo sysctl -p /etc/sysctl.conf&lt;/code&gt;&lt;/pre&gt;
             player = new YT.Player('player', {
                 width: '100%',
                 videoId: 'LD-SZU6As1k',
-                playerVars: { 'autoplay': 1, 'playsinline': 1, 'rel': 0 },
+                playerVars: { 'autoplay': 1, 'playsinline': 1, 'rel': 0, 'modestbranding': 1 },
                 events: {
                     'onReady': onPlayerReady
                 }
