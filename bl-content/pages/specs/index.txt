@@ -226,12 +226,13 @@
 					* 4x Intel Core i7-6600U CPU @ 2.60GHz
 					*   **Operating System:** [Ubuntu Server 20.04.1 LTS](https://ubuntu.com/download/server)
 					* 16GB DDR4 SDRAM 2133 MT/s
-					* SanDisk X400 M.2 512GB
+					* SanDisk X400 M.2 512GB (OS)
 					* [Syba 8 Bay Hard Drive Enclosure](https://www.amazon.com/dp/B07MD2LNYX)
 					* [WD_Black 12TB P10-Game Drive](https://www.amazon.com/Black-12TB-Drive-External-WDBA5E0120HBKNESN/dp/B07XV8JN31) - Shucked(WD Ultrastar DC HC520) (Movies)
 					* [WD Elements 14TB 25A3](https://www.amazon.com/14TB-Elements-Desktop-Drive-WDBWLG0140HBK-NESN/dp/B07YD3G568?th=1) - Shucked(WD140EDGZ) (Movies)
 					* [WD easystore 14TB 264D](https://www.bestbuy.com/site/wd-easystore-14tb-external-usb-3-0-hard-drive-black/6425303.p?skuId=6425303) - ShuckedWD140EDGZ) (TV Shows)
-					* [WD_Black 5TB P10-Game Drive](https://www.amazon.com/WD_Black-Drive-External-Compatible-WDBA3A0050BBK-WESN/dp/B07VNTFHD5) (Downloads)
+					* SAMSUNG HD154UI 1.5TB Hard Drive (Downloads)
+					* [WD_Black 5TB P10-Game Drive](https://www.amazon.com/WD_Black-Drive-External-Compatible-WDBA3A0050BBK-WESN/dp/B07VNTFHD5) (Nextcloud Backups)
 					* [Plugable USB 3.0 Universal Laptop Docking Station](https://www.amazon.com/Plugable-Universal-Docking-Station-Ethernet/dp/B00ECDM78E)
 					* [HDHomeRun DUAL](https://www.amazon.com/SiliconDust-HDHomeRun-Definition-Digital-HDHR3-US/dp/B004HO58SO)
 					* [PBD Outdoor Digital Amplified HDTV Antenna](https://www.amazon.com/dp/B07JN6FNZ4)
@@ -259,6 +260,7 @@
 					* [Node Exporter](https://packages.ubuntu.com/focal/prometheus-node-exporter)
 					* [Exportarr](https://github.com/onedr0p/exportarr) (Docker)
 					* [Cockpit](https://cockpit-project.org/)
+					* [Portainer](https://www.portainer.io/) (Docker)
 		* **Network** 
 			* [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
 			* [Google WiFi Mesh 4 Pack](https://www.amazon.com/gp/product/B07H7RQHF7)
