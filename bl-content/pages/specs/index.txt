@@ -87,9 +87,10 @@
 	*  1 Raspberry Pi 4 4GB Model B
 		* Samsung EVO Plus 32GB microSDHC Card
 		* **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
+		* [Pi-hole](https://pi-hole.net/)
+		* [Gravity Sync](https://github.com/vmstan/gravity-sync)
 		* [Node Exporter](https://github.com/prometheus/node_exporter) - Expose Linux metrics: Installed to each node.
 		* [RPi Exporter](https://github.com/lukasmalkmus/rpi_exporter) - Expose Raspberry Pi metrics: Installed to each node.
-		* [Internet Pi](https://github.com/geerlingguy/internet-pi)
 		* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=thanos" target="_blank">Metrics Dashboard</a> (thanos)
 	*   **Network** 
 		* [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
@@ -100,13 +101,15 @@
 		* [XDCDHM USB Charger, 60 Watt 12A 6-Port High Speed Charger](https://www.amazon.com/gp/product/B075P22QC2)
 	*   **Cooling:** [AC Infinity MULTIFAN S4](https://www.amazon.com/gp/product/B00MWH4FL4)
   * [More Details](pi-hole-upgrades)
-*   **Restreamer Node**
+*   **Restreamer Node** (Secondary Pi-hole)
     *  1 Raspberry Pi 4 4GB Model B
 				* Samsung EVO Plus 32GB microSDHC Card
 				*   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
+				* [Restreamer](https://datarhei.github.io/restreamer/)
+				* [Pi-hole](https://pi-hole.net/)
+				* [Gravity Sync](https://github.com/vmstan/gravity-sync)
 				* [Node Exporter](https://github.com/prometheus/node_exporter) - Expose Linux metrics: Installed to each node.
 				* [RPi Exporter](https://github.com/lukasmalkmus/rpi_exporter) - Expose Raspberry Pi metrics: Installed to each node.
-				* [Restreamer](https://datarhei.github.io/restreamer/)
 				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=restreamerpi" target="_blank">Metrics Dashboard</a> (restreamerpi)
 	* **Network** 
 				* [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
