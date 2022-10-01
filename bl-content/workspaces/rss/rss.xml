@@ -5,7 +5,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Fri, 30 Sep 2022 22:39:50 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 30 Sep 2022 22:52:32 -0500</lastBuildDate>
     <item>
       <title>Dual Pi-hole + Tailscale</title>
       <link>https://pilab.dev/dual-pi-hole-tailscale</link>
@@ -23,7 +23,7 @@
 &lt;p&gt;Run the first &lt;a href="https://github.com/vmstan/gravity-sync"&gt;Gravity Sync&lt;/a&gt; from the Raspberry Pi that is fully configured with all your settings.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;gravity-sync push&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;strong&gt;Step 4:&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Setup &lt;a href="https://github.com/vmstan/gravity-sync"&gt;Gravity Sync&lt;/a&gt; automation on each Raspberry Pi.&lt;/p&gt;
+&lt;p&gt;Setup &lt;a href="https://github.com/vmstan/gravity-sync"&gt;Gravity Sync&lt;/a&gt; automation on both Raspberry Pis.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;gravity-sync auto&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;strong&gt;Step 5:&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Install &lt;a href="https://tailscale.com/"&gt;Tailscale&lt;/a&gt; on both Raspberry Pis.&lt;/p&gt;

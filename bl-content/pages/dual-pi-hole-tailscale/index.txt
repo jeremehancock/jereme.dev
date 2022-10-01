@@ -30,7 +30,7 @@ gravity-sync push
 
 **Step 4:**
 
-Setup [Gravity Sync](https://github.com/vmstan/gravity-sync) automation on each Raspberry Pi.
+Setup [Gravity Sync](https://github.com/vmstan/gravity-sync) automation on both Raspberry Pis.
 
 ```
 gravity-sync auto
