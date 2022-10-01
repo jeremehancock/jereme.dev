@@ -1,4 +1,4 @@
-This might be the perfect [Pi-hole](https://pi-hole.net/) setup yet!
+This might be the perfect [Pi-hole](https://pi-hole.net/) setup!
 
 With this new setup I have redundancy for my DNS as well as the simplest VPN setup ever. Now when I am on the go not only can I access my home network with ease I am also able to take advantage of the ad blocking of [Pi-hole](https://pi-hole.net/).
 

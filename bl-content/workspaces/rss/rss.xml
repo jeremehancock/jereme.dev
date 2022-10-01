@@ -5,12 +5,12 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Fri, 30 Sep 2022 22:33:04 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 30 Sep 2022 22:39:50 -0500</lastBuildDate>
     <item>
       <title>Dual Pi-hole + Tailscale</title>
       <link>https://pilab.dev/dual-pi-hole-tailscale</link>
       <image>https://pilab.dev/bl-content/uploads/pages/b2824f25debdfd4c320c3717545b05c8/dual-pi-holetailscale.png</image>
-      <description>&lt;p&gt;This might be the perfect &lt;a href="https://pi-hole.net/"&gt;Pi-hole&lt;/a&gt; setup yet!&lt;/p&gt;
+      <description>&lt;p&gt;This might be the perfect &lt;a href="https://pi-hole.net/"&gt;Pi-hole&lt;/a&gt; setup!&lt;/p&gt;
 &lt;p&gt;With this new setup I have redundancy for my DNS as well as the simplest VPN setup ever. Now when I am on the go not only can I access my home network with ease I am also able to take advantage of the ad blocking of &lt;a href="https://pi-hole.net/"&gt;Pi-hole&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Here are the basic steps to get things setup. There are more configuration steps available for each installation. Please check their websites for full details before proceeding.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Step 1:&lt;/strong&gt;&lt;/p&gt;
