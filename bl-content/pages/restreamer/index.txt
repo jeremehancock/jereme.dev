@@ -38,5 +38,7 @@ If you are looking to get into running a live stream for something like a pet de
 > *I have upgraded the Restreamer Node to a [Raspberry Pi 4 Model B (4GB)](https://deviwiki.com/wiki/RPF_Raspberry_Pi_4_Model_B_4GB).*
 > 
 > *I have added the  [OctoPrint Node Live Stream](octoprint-node-live-stream)*.
+>
+> *I have extended the Restreamer node to act as a secondary Pi-hole. Check out my new dual Pi-hole + Tailscale setup [here](dual-pi-hole-tailscale).
 
 

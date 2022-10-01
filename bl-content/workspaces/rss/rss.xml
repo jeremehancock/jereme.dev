@@ -5,7 +5,56 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Fri, 30 Sep 2022 10:42:11 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 30 Sep 2022 22:33:04 -0500</lastBuildDate>
+    <item>
+      <title>Dual Pi-hole + Tailscale</title>
+      <link>https://pilab.dev/dual-pi-hole-tailscale</link>
+      <image>https://pilab.dev/bl-content/uploads/pages/b2824f25debdfd4c320c3717545b05c8/dual-pi-holetailscale.png</image>
+      <description>&lt;p&gt;This might be the perfect &lt;a href="https://pi-hole.net/"&gt;Pi-hole&lt;/a&gt; setup yet!&lt;/p&gt;
+&lt;p&gt;With this new setup I have redundancy for my DNS as well as the simplest VPN setup ever. Now when I am on the go not only can I access my home network with ease I am also able to take advantage of the ad blocking of &lt;a href="https://pi-hole.net/"&gt;Pi-hole&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Here are the basic steps to get things setup. There are more configuration steps available for each installation. Please check their websites for full details before proceeding.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Step 1:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Install &lt;a href="https://pi-hole.net/"&gt;Pi-hole&lt;/a&gt; on two Raspberry Pis. &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;curl -sSL https://install.pi-hole.net | bash&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Step 2:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Install &lt;a href="https://github.com/vmstan/gravity-sync"&gt;Gravity Sync&lt;/a&gt; on both Raspberry Pis.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;curl -sSL https://gravity.vmstan.com | bash&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Step 3:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Run the first &lt;a href="https://github.com/vmstan/gravity-sync"&gt;Gravity Sync&lt;/a&gt; from the Raspberry Pi that is fully configured with all your settings.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;gravity-sync push&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Step 4:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Setup &lt;a href="https://github.com/vmstan/gravity-sync"&gt;Gravity Sync&lt;/a&gt; automation on each Raspberry Pi.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;gravity-sync auto&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Step 5:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Install &lt;a href="https://tailscale.com/"&gt;Tailscale&lt;/a&gt; on both Raspberry Pis.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;curl -fsSL https://tailscale.com/install.sh | sh&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Step 6:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Enable IPv6 forwarding on both Raspberry Pis.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;echo 'net.ipv4.ip_forward = 1' | sudo tee -a /etc/sysctl.conf
+echo 'net.ipv6.conf.all.forwarding = 1' | sudo tee -a /etc/sysctl.conf
+sudo sysctl -p /etc/sysctl.conf&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Step 7:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Start &lt;a href="https://tailscale.com/"&gt;Tailscale&lt;/a&gt; on both Raspberry Pis.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo tailscale up --advertise-exit-node --advertise-routes=192.168.1.0/24 --accept-dns=false&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Step 8:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Login to &lt;a href="https://tailscale.com/"&gt;Tailscale&lt;/a&gt; and click the &amp;quot;three dots&amp;quot; menu next to the Machine entry for each &lt;a href="https://pi-hole.net/"&gt;Pi-hole&lt;/a&gt;. Select &amp;quot;Disable key expiry&amp;quot; from the drop-down. Since the &lt;a href="https://pi-hole.net/"&gt;Pi-holes&lt;/a&gt; are not directly exposed to the internet it is safe to not require re-authentication. Then select &amp;quot;Edit route settings...&amp;quot; from the same drop-down menu and enable both options. See image below.&lt;/p&gt;
+&lt;div class="centered"&gt;
+    &lt;img src="/bl-content/uploads/pages/b2824f25debdfd4c320c3717545b05c8/tailscale-setup.png" class="image-border" /&gt;&lt;br&gt;&lt;br&gt;
+&lt;/div&gt;
+&lt;p&gt;Next copy the &lt;a href="https://tailscale.com/"&gt;Tailscale&lt;/a&gt; IP address for each &lt;a href="https://pi-hole.net/"&gt;Pi-hole&lt;/a&gt; and use them as the Global Nameservers on the DNS tab. Set them override local DNS. See image below.&lt;/p&gt;
+&lt;div class="centered"&gt;
+    &lt;img src="/bl-content/uploads/pages/b2824f25debdfd4c320c3717545b05c8/tailscale-dns.png" class="image-border" /&gt;&lt;br&gt;&lt;br&gt;
+&lt;/div&gt;
+&lt;p&gt;Turn on MagicDNS on the DNS tab. This way the &lt;a href="https://pi-hole.net/"&gt;Pi-hole's&lt;/a&gt; interfaces will work when on or off the Tailscale network using their hostnames.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Step 9:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Configure your router to use the &lt;a href="https://pi-hole.net/"&gt;Pi-hole's&lt;/a&gt; local IP addresses for your DNS.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Step 10:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Install &lt;a href="https://tailscale.com/"&gt;Tailscale&lt;/a&gt; on other devices such as your phone so you can connect to your &lt;a href="https://tailscale.com/"&gt;Tailscale&lt;/a&gt; network.&lt;/p&gt;
+&lt;p&gt;Thats it!&lt;/p&gt;
+&lt;p&gt;Now you should have all your devices setup with ad blocking and VPN. Now when you are connected to your &lt;a href="https://tailscale.com/"&gt;Tailscale&lt;/a&gt; network you will also get ad blocking even when you are not on your local network.&lt;/p&gt;</description>
+      <pubDate>Fri, 30 Sep 2022 21:28:01 -0500</pubDate>
+      <guid isPermaLink="false">b2824f25debdfd4c320c3717545b05c8</guid>
+    </item>
     <item>
       <title>Node-RED Upgrades (v3)</title>
       <link>https://pilab.dev/node-red-upgrades-v3</link>
@@ -76,6 +125,7 @@ sudo sysctl -p /etc/sysctl.conf&lt;/code&gt;&lt;/pre&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;em&gt;I originally had Tailscale setup to use Pi-hole as an Exit Node. I found that I was having issues resolving hostnames. I have updated the setup to not use the Pi-hole as the Exit Node. I still get the ad-blocking, and now the hostname resolution issues have been resolved.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;I started having odd issues where the internet speeds from the Pi 4 running Pi-hole would drop off significantly around 2am everyday. I have since moved back to Pi-hole's default installation.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;*Check out my new dual Pi-hole + Tailscale setup &lt;a href="dual-pi-hole-tailscale"&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;</description>
       <pubDate>Mon, 28 Mar 2022 13:54:42 -0500</pubDate>
       <guid isPermaLink="false">fcdb80d303d1fe7901dd6d939ebe87c3</guid>
@@ -137,25 +187,6 @@ sudo sysctl -p /etc/sysctl.conf&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;If you are interested you can check it out at &lt;a href="https://ubuntuce.com"&gt;UbuntuCE.com&lt;/a&gt;&lt;/p&gt;</description>
       <pubDate>Thu, 12 Aug 2021 07:43:27 -0500</pubDate>
       <guid isPermaLink="false">ad9fa4c4897cf959012c3604fefeda53</guid>
-    </item>
-    <item>
-      <title>Pi Lab Upgrades</title>
-      <link>https://pilab.dev/pi-lab-upgrades</link>
-      <image>https://pilab.dev/bl-content/uploads/pages/8a019b2df8ce1f9067ac6b5319cdd3fc/pi-lab-upgraded.png</image>
-      <description>&lt;p&gt;It has been bothering me that the production nodes for Pi Lab were not the same specs so I have finally decided to do some upgrades. I also didn't like that the &lt;a href="/fold-for-covid"&gt;BOINC Node&lt;/a&gt; only had 2GBs of RAM. So I also decided to re-organize things a bit.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;So here is what has changed.&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;The &lt;a href="/node-red-twitter-bot"&gt;Node-Red Node&lt;/a&gt; switched with the Load Balancer Node in the Pi Lab Web Cluster&lt;/li&gt;
-&lt;li&gt;The two Pi 4 4GBs from the Pi Lab Web Cluster were swapped with the &lt;a href="/fold-for-covid"&gt;BOINC Node&lt;/a&gt; and &lt;a href="/restreamer"&gt;Resteamer Node&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;I purchased three new Pi 2GBs to replace three of the Pi 2s in the Pi Lab Web Cluster&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Now the Pi Lab Web Cluster is using all Pi 4 2GBs for all nodes&lt;/p&gt;
-&lt;p&gt;I was very excited at how easy it was to move things around. I simply ran the following on each node before moving the SD card to ensure everything was the latest and greatest.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;sudo apt update &amp;amp;&amp;amp; sudo apt upgrade -y&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Other than having to update some port forwards and what not for IP changes that was it. &lt;/p&gt;
-&lt;p&gt;For more details checkout the &lt;a href="/specs"&gt;Current Specs&lt;/a&gt;.&lt;/p&gt;</description>
-      <pubDate>Mon, 14 Jun 2021 22:01:02 -0500</pubDate>
-      <guid isPermaLink="false">8a019b2df8ce1f9067ac6b5319cdd3fc</guid>
     </item>
   </channel>
 </rss>

@@ -1,0 +1,91 @@
+This might be the perfect [Pi-hole](https://pi-hole.net/) setup yet!
+
+With this new setup I have redundancy for my DNS as well as the simplest VPN setup ever. Now when I am on the go not only can I access my home network with ease I am also able to take advantage of the ad blocking of [Pi-hole](https://pi-hole.net/).
+
+Here are the basic steps to get things setup. There are more configuration steps available for each installation. Please check their websites for full details before proceeding.
+
+**Step 1:**
+
+Install [Pi-hole](https://pi-hole.net/) on two Raspberry Pis. 
+
+```
+curl -sSL https://install.pi-hole.net | bash
+```
+
+**Step 2:**
+
+Install [Gravity Sync](https://github.com/vmstan/gravity-sync) on both Raspberry Pis.
+
+```
+curl -sSL https://gravity.vmstan.com | bash
+```
+
+**Step 3:**
+
+Run the first [Gravity Sync](https://github.com/vmstan/gravity-sync) from the Raspberry Pi that is fully configured with all your settings.
+
+```
+gravity-sync push
+```
+
+**Step 4:**
+
+Setup [Gravity Sync](https://github.com/vmstan/gravity-sync) automation on each Raspberry Pi.
+
+```
+gravity-sync auto
+```
+
+**Step 5:**
+
+Install [Tailscale](https://tailscale.com/) on both Raspberry Pis.
+
+```
+curl -fsSL https://tailscale.com/install.sh | sh
+```
+
+**Step 6:**
+
+Enable IPv6 forwarding on both Raspberry Pis.
+
+```
+echo 'net.ipv4.ip_forward = 1' | sudo tee -a /etc/sysctl.conf
+echo 'net.ipv6.conf.all.forwarding = 1' | sudo tee -a /etc/sysctl.conf
+sudo sysctl -p /etc/sysctl.conf
+```
+
+**Step 7:**
+
+Start [Tailscale](https://tailscale.com/) on both Raspberry Pis.
+
+```
+sudo tailscale up --advertise-exit-node --advertise-routes=192.168.1.0/24 --accept-dns=false
+```
+
+**Step 8:**
+
+Login to [Tailscale](https://tailscale.com/) and click the "three dots" menu next to the Machine entry for each [Pi-hole](https://pi-hole.net/). Select "Disable key expiry" from the drop-down. Since the [Pi-holes](https://pi-hole.net/) are not directly exposed to the internet it is safe to not require re-authentication. Then select "Edit route settings..." from the same drop-down menu and enable both options. See image below.
+
+<div class="centered">
+    <img src="/bl-content/uploads/pages/b2824f25debdfd4c320c3717545b05c8/tailscale-setup.png" class="image-border" /><br><br>
+</div>
+
+Next copy the [Tailscale](https://tailscale.com/) IP address for each [Pi-hole](https://pi-hole.net/) and use them as the Global Nameservers on the DNS tab. Set them override local DNS. See image below.
+
+<div class="centered">
+    <img src="/bl-content/uploads/pages/b2824f25debdfd4c320c3717545b05c8/tailscale-dns.png" class="image-border" /><br><br>
+</div>
+
+Turn on MagicDNS on the DNS tab. This way the [Pi-hole's](https://pi-hole.net/) interfaces will work when on or off the Tailscale network using their hostnames.
+
+**Step 9:**
+
+Configure your router to use the [Pi-hole's](https://pi-hole.net/) local IP addresses for your DNS.
+
+**Step 10:**
+
+Install [Tailscale](https://tailscale.com/) on other devices such as your phone so you can connect to your [Tailscale](https://tailscale.com/) network.
+
+Thats it!
+
+Now you should have all your devices setup with ad blocking and VPN. Now when you are connected to your [Tailscale](https://tailscale.com/) network you will also get ad blocking even when you are not on your local network.
