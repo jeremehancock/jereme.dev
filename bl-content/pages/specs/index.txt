@@ -254,6 +254,7 @@
 					* [Posterr](https://github.com/petersem/posterr) (Docker)
 					* [PlexTraktSync](https://github.com/Taxel/PlexTraktSync) (Docker)
 					* [Nextcloud](https://snapcraft.io/install/nextcloud/ubuntu) (Snap)
+					* [SearXNG](https://github.com/searxng/searxng) (Docker)
 					* [Heimdall](https://hub.docker.com/r/linuxserver/heimdall) (Docker)
 					* [Homarr](https://github.com/ajnart/homarr) (Docker)
 					* [Uptime Kuma](https://github.com/louislam/uptime-kuma) (Docker) with [IFTTT Notifications](https://ifttt.com/)
