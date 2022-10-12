@@ -265,6 +265,7 @@
 					* [Exportarr](https://github.com/onedr0p/exportarr) (Docker)
 					* [Cockpit](https://cockpit-project.org/)
 					* [Portainer](https://www.portainer.io/) (Docker)
+					* [Watchtower](https://containrrr.dev/watchtower/) (Docker)
 		* **Network** 
 			* [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
 			* [Google WiFi Mesh 4 Pack](https://www.amazon.com/gp/product/B07H7RQHF7)
