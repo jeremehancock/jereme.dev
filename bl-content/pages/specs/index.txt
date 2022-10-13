@@ -210,21 +210,7 @@
 
 ## Pi Lab (Non-Pi Servers):
 
-*   **Lab Monitor Node**
-		*  Dell Latitude E6530
-					* 4x Intel Core i5-3320M CPU @ 2.60GHz
-					*   **Operating System:** [Ubuntu 20.04.1 LTS](https://ubuntu.com/download/desktop)
-					* 8GB DDR3 SDRAM 1600MHz
-					* OCZ ARC 100 240GB SSD (OS)
-					* Intel 120GB SSD (Extra Storage)
-					* Dell 22 Inch Monitor
-					* [Cockpit](https://cockpit-project.org/)
-		*  **Network** 
-			* [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
-			* [Google WiFi Mesh 4 Pack](https://www.amazon.com/gp/product/B07H7RQHF7)
-			* [TP-Link 16 Port Gigabit Ethernet Network Switch (TL-SG116)](https://www.amazon.com/gp/product/B07GR9S6FN)
-		* **Cooling:** [AC Infinity MULTIFAN S4](https://www.amazon.com/gp/product/B00MWH4FL4)
-*   **Plex Server**
+*   **Overseer Node**
 		*  Dell Latitude E7470
 					* 4x Intel Core i7-6600U CPU @ 2.60GHz
 					*   **Operating System:** [Ubuntu Server 20.04.1 LTS](https://ubuntu.com/download/server)
@@ -273,6 +259,20 @@
 		*   **Power:**
 			* [CyberPower CP1000PFCLCD PFC Sinewave UPS](https://www.amazon.com/gp/product/B00429N192)
 		*    **Cooling:** [AC Infinity MULTIFAN S4](https://www.amazon.com/gp/product/B00MWH4FL4)
+*   **Lab Monitor Node**
+		*  Dell Latitude E6530
+					* 4x Intel Core i5-3320M CPU @ 2.60GHz
+					*   **Operating System:** [Ubuntu 20.04.1 LTS](https://ubuntu.com/download/desktop)
+					* 8GB DDR3 SDRAM 1600MHz
+					* OCZ ARC 100 240GB SSD (OS)
+					* Intel 120GB SSD (Extra Storage)
+					* Dell 22 Inch Monitor
+					* [Cockpit](https://cockpit-project.org/)
+		*  **Network** 
+			* [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
+			* [Google WiFi Mesh 4 Pack](https://www.amazon.com/gp/product/B07H7RQHF7)
+			* [TP-Link 16 Port Gigabit Ethernet Network Switch (TL-SG116)](https://www.amazon.com/gp/product/B07GR9S6FN)
+		* **Cooling:** [AC Infinity MULTIFAN S4](https://www.amazon.com/gp/product/B00MWH4FL4)
 			
 ---
 				
