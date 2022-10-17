@@ -2,7 +2,7 @@ If you want an easy way to test and or develop using WordPress you should be sur
 
 The following technologies are automatically installed for you by [Quick WordPress](https://github.com/russellmacshane/quick-wordpress):
 
-* Ubuntu Bionic (18.04)
+* Ubuntu
 * Apache
 * MariaDB
 * PHP
