@@ -1,2 +1,2 @@
 <?php defined('BLUDIT') or die('Bludit CMS.'); ?>
-{"force-https":false,"https-status":301,"allow-external":true,"redirects":{"\/status":["https:\/\/stats.uptimerobot.com\/YMAv7t4gK\/782645566",301],"\/pi-lab-stats":["\/stats",301],"\/welcome-to-pi-lab":["\/specs",301]},"position":1}
+{"force-https":false,"https-status":301,"allow-external":true,"redirects":{"\/status":["https:\/\/status.pilab.dev\/status\/default",301],"\/pi-lab-stats":["\/stats",301],"\/welcome-to-pi-lab":["\/specs",301]},"position":1}
