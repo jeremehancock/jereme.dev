@@ -12,6 +12,11 @@ Install [Pi-hole](https://pi-hole.net/) on two Raspberry Pis.
 curl -sSL https://install.pi-hole.net | bash
 ```
 
+### Note:
+> In the [Pi-hole](https://pi-hole.net/) Admin page in Settings > DNS, make sure that Listen on all interfaces, permit all origins is selected.
+> 
+> Tailscale traffic comes in on the tailscale0 network interface, so this option is needed to allow your [Pi-hole](https://pi-hole.net/) to respond to Tailscale-based DNS traffic. When using this option, make sure your [Pi-hole](https://pi-hole.net/) is properly firewalled.
+
 **Step 2:**
 
 Install [Gravity Sync](https://github.com/vmstan/gravity-sync) on both Raspberry Pis.
@@ -89,3 +94,4 @@ Install [Tailscale](https://tailscale.com/) on other devices such as your phone 
 Thats it!
 
 Now you should have all your devices setup with ad blocking and VPN. Now when you are connected to your [Tailscale](https://tailscale.com/) network you will also get ad blocking even when you are not on your local network.
+

@@ -5,7 +5,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Sun, 16 Oct 2022 21:06:28 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 24 Oct 2022 16:42:36 -0500</lastBuildDate>
     <item>
       <title>Dual Pi-hole + Tailscale</title>
       <link>https://pilab.dev/dual-pi-hole-tailscale</link>
@@ -16,6 +16,11 @@
 &lt;p&gt;&lt;strong&gt;Step 1:&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Install &lt;a href="https://pi-hole.net/"&gt;Pi-hole&lt;/a&gt; on two Raspberry Pis. &lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;curl -sSL https://install.pi-hole.net | bash&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;Note:&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;In the &lt;a href="https://pi-hole.net/"&gt;Pi-hole&lt;/a&gt; Admin page in Settings &amp;gt; DNS, make sure that Listen on all interfaces, permit all origins is selected.&lt;/p&gt;
+&lt;p&gt;Tailscale traffic comes in on the tailscale0 network interface, so this option is needed to allow your &lt;a href="https://pi-hole.net/"&gt;Pi-hole&lt;/a&gt; to respond to Tailscale-based DNS traffic. When using this option, make sure your &lt;a href="https://pi-hole.net/"&gt;Pi-hole&lt;/a&gt; is properly firewalled.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Step 2:&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Install &lt;a href="https://github.com/vmstan/gravity-sync"&gt;Gravity Sync&lt;/a&gt; on both Raspberry Pis.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;curl -sSL https://gravity.vmstan.com | bash&lt;/code&gt;&lt;/pre&gt;
