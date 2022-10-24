@@ -219,7 +219,7 @@
 					* [Syba 8 Bay Hard Drive Enclosure](https://www.amazon.com/dp/B07MD2LNYX)
 					* [WD_Black 12TB P10-Game Drive](https://www.amazon.com/Black-12TB-Drive-External-WDBA5E0120HBKNESN/dp/B07XV8JN31) - Shucked(WD Ultrastar DC HC520) (Movies)
 					* [WD Elements 14TB 25A3](https://www.amazon.com/14TB-Elements-Desktop-Drive-WDBWLG0140HBK-NESN/dp/B07YD3G568?th=1) - Shucked(WD140EDGZ) (Movies)
-					* [WD easystore 14TB 264D](https://www.bestbuy.com/site/wd-easystore-14tb-external-usb-3-0-hard-drive-black/6425303.p?skuId=6425303) - ShuckedWD140EDGZ) (TV Shows)
+					* [WD easystore 14TB 264D](https://www.bestbuy.com/site/wd-easystore-14tb-external-usb-3-0-hard-drive-black/6425303.p?skuId=6425303) - Shucked (WD140EDGZ) (TV Shows)
 					* SAMSUNG HD154UI 1.5TB Hard Drive (Downloads)
 					* [WD_Black 5TB P10-Game Drive](https://www.amazon.com/WD_Black-Drive-External-Compatible-WDBA3A0050BBK-WESN/dp/B07VNTFHD5) (Nextcloud Backups)
 					* [Plugable USB 3.0 Universal Laptop Docking Station](https://www.amazon.com/Plugable-Universal-Docking-Station-Ethernet/dp/B00ECDM78E)
