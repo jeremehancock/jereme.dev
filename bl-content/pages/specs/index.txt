@@ -84,7 +84,7 @@
 ## Pi Lab (Ancillary Nodes):
 
 *  **Pi-hole Node**
-	*  1 Raspberry Pi 4 4GB Model B
+	*  1 Raspberry Pi 2 Model B
 		* Samsung EVO Plus 32GB microSDHC Card
 		* **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
 		* [Pi-hole](https://pi-hole.net/)

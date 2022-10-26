@@ -5,7 +5,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Mon, 24 Oct 2022 18:18:33 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 26 Oct 2022 13:29:18 -0500</lastBuildDate>
     <item>
       <title>Dual Pi-hole + Tailscale</title>
       <link>https://pilab.dev/dual-pi-hole-tailscale</link>
@@ -131,6 +131,7 @@ sudo sysctl -p /etc/sysctl.conf&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;em&gt;I originally had Tailscale setup to use Pi-hole as an Exit Node. I found that I was having issues resolving hostnames. I have updated the setup to not use the Pi-hole as the Exit Node. I still get the ad-blocking, and now the hostname resolution issues have been resolved.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;I started having odd issues where the internet speeds from the Pi 4 running Pi-hole would drop off significantly around 2am everyday. I have since moved back to Pi-hole's default installation.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;*Check out my new dual Pi-hole + Tailscale setup &lt;a href="dual-pi-hole-tailscale"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;*I have moved my Pi-hole setup to an older Pi 2 Model B so that I could free the Pi 4 up for some retro gaming.&lt;/p&gt;
 &lt;/blockquote&gt;</description>
       <pubDate>Mon, 28 Mar 2022 13:54:42 -0500</pubDate>
       <guid isPermaLink="false">fcdb80d303d1fe7901dd6d939ebe87c3</guid>
