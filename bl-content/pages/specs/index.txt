@@ -192,7 +192,7 @@
 	*  [More Details](zero-tv)
 *   **Test Node**
     *   1 Raspberry Pi Zero W
-				* Samsung EVO Plus 32GB microSDHC Card
+				* Sandisk Ultra 8GB microSDHC Card
 				*   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
 				* [Node Exporter](https://github.com/prometheus/node_exporter) - Expose Linux metrics: Installed to each node.
 				* [RPi Exporter](https://github.com/lukasmalkmus/rpi_exporter) - Expose Raspberry Pi metrics: Installed to each node.
