@@ -205,7 +205,18 @@
 		* [Google WiFi Mesh 4 Pack](https://www.amazon.com/gp/product/B07H7RQHF7)
 		* [TP-Link 16 Port Gigabit Ethernet Network Switch (TL-SG116)](https://www.amazon.com/gp/product/B07GR9S6FN)
 	* [More Details](pi-zero-wall-plug-web-server)
-	
+*   **RetroFlag GPi Case**
+    *   1 Raspberry Pi Zero W
+				* Samsung EVO Plus 32GB microSDHC Card
+				*   **Operating System:** [RetroPie](https://retropie.org.uk/)
+*   **RetroPie Node** 
+    *  1 Raspberry Pi 4 4GB Model B
+				* Samsung EVO Plus 32GB microSDHC Card
+				*   **Operating System:** [RetroPie](https://retropie.org.uk/)
+	* **Network** 
+				* [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
+				* [Google WiFi Mesh 4 Pack](https://www.amazon.com/gp/product/B07H7RQHF7)
+				
 ---
 
 ## Pi Lab (Non-Pi Servers):
