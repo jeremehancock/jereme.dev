@@ -259,7 +259,6 @@
 					* [Speedtest Tracker](https://github.com/henrywhitaker3/Speedtest-Tracker) (Docker)
 					* [Prometheus](https://hub.docker.com/r/ubuntu/prometheus) (Docker)
 					* [Plex Exporter](https://github.com/arnarg/plex_exporter) (Go)
-					* [Node Exporter](https://packages.ubuntu.com/focal/prometheus-node-exporter)
 					* [Exportarr](https://github.com/onedr0p/exportarr) (Docker)
 					* [Cockpit](https://cockpit-project.org/)
 					* [Portainer](https://www.portainer.io/) (Docker)
