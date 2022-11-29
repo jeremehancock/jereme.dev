@@ -246,7 +246,7 @@
 					* [Sonarr](https://hub.docker.com/r/linuxserver/sonarr) (Docker)
 					* [Jackett](https://hub.docker.com/r/linuxserver/jackett) (Docker)
 					* [FlareSolverr](https://github.com/FlareSolverr/FlareSolverr) (Docker)
-					* [Transmission / OpenVPN](https://haugene.github.io/docker-transmission-openvpn/) (Docker)
+					* [qBittorrent / WireGuard](https://hub.docker.com/r/dyonr/qbittorrentvpn/) (Docker)
 					* [NZBGet](https://hub.docker.com/r/linuxserver/nzbget) (Docker)
 					* [SABnzbd](https://hub.docker.com/r/linuxserver/sabnzbd) (Docker)
 					* [Unpackerr](https://github.com/davidnewhall/unpackerr) (Docker)
