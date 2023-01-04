@@ -255,7 +255,6 @@
 					* [PlexTraktSync](https://github.com/Taxel/PlexTraktSync) (Docker)
 					* [Nextcloud](https://snapcraft.io/install/nextcloud/ubuntu) (Snap)
 					* [Heimdall](https://hub.docker.com/r/linuxserver/heimdall) (Docker)
-					* [Homarr](https://github.com/ajnart/homarr) (Docker)
 					* [Uptime Kuma](https://github.com/louislam/uptime-kuma) (Docker) with [IFTTT Notifications](https://ifttt.com/)
 					* [Speedtest Tracker](https://github.com/henrywhitaker3/Speedtest-Tracker) (Docker)
 					* [Prometheus](https://hub.docker.com/r/ubuntu/prometheus) (Docker)
