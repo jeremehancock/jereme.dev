@@ -239,7 +239,6 @@
 					* [HDHomeRun DUAL](https://www.amazon.com/SiliconDust-HDHomeRun-Definition-Digital-HDHR3-US/dp/B004HO58SO)
 					* [PBD Outdoor Digital Amplified HDTV Antenna](https://www.amazon.com/dp/B07JN6FNZ4)
 					* [xTeVe](https://github.com/xteve-project/xTeVe) (Docker)
-					* [ErsatzTV](https://ersatztv.org/) (Docker)
 					* [Plex Media Server](https://www.plex.tv/)
 					* [Jellyfin (Backup Media Server)](https://hub.docker.com/r/linuxserver/jellyfin) (Docker)
 					* [Tautulli](https://tautulli.com/) (Docker)
