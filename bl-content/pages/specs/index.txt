@@ -232,7 +232,7 @@
 					* [WD Elements 14TB](https://www.amazon.com/14TB-Elements-Desktop-Drive-WDBWLG0140HBK-NESN/dp/B07YD3G568?th=1) - Shucked (WD140EDGZ) (Movies)
 					* [WD easystore 14TB](https://www.bestbuy.com/site/wd-easystore-14tb-external-usb-3-0-hard-drive-black/6425303.p?skuId=6425303) - Shucked (WD140EDGZ) (TV)
 					* [WD easystore 16TB](https://www.bestbuy.com/site/wd-easystore-16tb-external-usb-3-0-hard-drive-black/6427998.p?skuId=6427998) - Shucked (WD160EDGZ) (TV 2)
-					* SAMSUNG HD154UI 1.5TB Hard Drive (Downloads)
+					* [Seagate BarraCuda 2TB Internal Drive](https://www.amazon.com/dp/B07H2RR55Q) (Downloads)
 					* [WD_Black 5TB P10-Game Drive](https://www.amazon.com/WD_Black-Drive-External-Compatible-WDBA3A0050BBK-WESN/dp/B07VNTFHD5) (Backups)
 					* [Seagate Portable 1TB External Hard Drive](https://www.amazon.com/Seagate-Portable-External-Hard-Drive/dp/B07CRG7BBH) (Nextcloud)
 					* [Plugable USB 3.0 Universal Laptop Docking Station](https://www.amazon.com/Plugable-Universal-Docking-Station-Ethernet/dp/B00ECDM78E)
