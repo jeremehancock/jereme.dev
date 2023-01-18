@@ -2,9 +2,7 @@
     <img src="/bl-content/uploads/pages/e5cc099cec19476d9ea5bc92a4f113ae/zerotv-large-new.png" class="image-border" /><br><br>
 </div>
 
-I have been working on my [Kodi addons](check-out-my-kodi-addons) for a number of years now.
-
-My [Free Live TV](free-live-tv) addon has been one of my favorites to work on. I have been thinking about creating a web based version for quite some time. I have decided it would make a great addition to Pi Lab.
+Zero TV has something for everyone. Best of all it is 100% legal. Channels are pulled from freely available sources online.
 
 Zero TV is running on a Raspberry Pi Zero! See full specs [here](specs).
 

@@ -1,6 +1,6 @@
 Interested in watching Free Live TV?
 
-My Free Live TV addon for [ Kodi](https://kodi.tv/) has something for everyone. Best of all it is 100% legal. Channels are pulled from freely available sources online.
+Zero TV has something for everyone. Best of all it is 100% legal. Channels are pulled from freely available sources online.
 
 ## Current Channel Lineup:
 
@@ -8,4 +8,4 @@ My Free Live TV addon for [ Kodi](https://kodi.tv/) has something for everyone. 
 <iframe src='free-live-tv-listings' width='100%' height='500' frameBorder='0' id='free-live-tv-embed' class="iframe-border" allowFullScreen></iframe>
 </div>
 																																																	 																																														 
-### Check it out at [m7kodi.dev](https://m7kodi.dev/)!
+### Check it out at [zerotv.pilab.dev](https://zerotv.pilab.dev)!
