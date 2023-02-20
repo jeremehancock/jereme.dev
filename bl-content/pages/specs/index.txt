@@ -76,7 +76,7 @@
 *   **Power:**
 		* [CyberPower CP1000PFCLCD PFC Sinewave UPS](https://www.amazon.com/gp/product/B00429N192)
 		* [Anker 60W 10-Port USB Wall Charger](https://www.amazon.com/dp/B00YRYS4T4)
-*    **Cooling:** [AC Infinity MULTIFAN S4](https://www.amazon.com/gp/product/B00MWH4FL4)
+*    **Cooling:** [C4Labs Zebra Bramble Case](https://www.amazon.com/dp/B07VQKPZZT)
 * [More Details](pi-lab-setup)
 
 ---
