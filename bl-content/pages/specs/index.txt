@@ -239,7 +239,6 @@
 		* [Jellyfin (Backup Media Server)](https://hub.docker.com/r/linuxserver/jellyfin) (Docker)
 		* [Tautulli](https://tautulli.com/) (Docker)
 		* [Overseerr](https://overseerr.dev/) (Docker)
-		* [Organizr](https://hub.docker.com/r/organizr/organizr) (Docker)
 		* [Radarr](https://hub.docker.com/r/linuxserver/radarr) (Docker)
 		* [Sonarr](https://hub.docker.com/r/linuxserver/sonarr) (Docker)
 		* [Lidarr](https://hub.docker.com/r/linuxserver/lidarr) (Docker)
