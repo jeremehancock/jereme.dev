@@ -219,7 +219,7 @@
 ## Pi Lab (Non-Pi Servers):
 
 *   **Anansi Node**
-	*   Dell OptiPlex 3060
+	*   Dell OptiPlex 3060 Small Form Factor
 		* 4x Intel Core i3-8100 CPU @ 3.60GHz
 		*   **Operating System:** [Ubuntu Server 22.04.2 LTS](https://ubuntu.com/download/server)
 		* 16GB DDR4 SDRAM 2133 MT/s
