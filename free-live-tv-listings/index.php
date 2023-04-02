@@ -34,10 +34,10 @@ function get_json($url) {
 }
 
 if (isMobileDevice()) {
-	$api = "https://m7lib.dev/api/v1/channels/index.json";
+	$api = "https://tvtime.dev/m7lib/api/v1/channels/index.json";
 }
 else {
-	$api = "https://m7lib.dev/api/v1/channels/?token=WeinerWhistle";
+	$api = "https://tvtime.dev/m7lib/api/v1/channels/?token=WeinerWhistle";
 }
 $json = get_json($api);
 
@@ -56,7 +56,7 @@ $json = get_json($api);
 <?php
 sort($json);
 foreach ($json as $key => $value) {
-    $player = "https://m7lib.dev/api/v1/channels/player/?slug=$value[slug]";
+    $player = "https://tvtime.dev/m7lib/api/v1/channels/player/?slug=$value[slug]";
 	echo '<tr>';
 	echo "<td>$value[name]</td>";
 	echo "<td></td>";
