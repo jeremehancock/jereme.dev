@@ -8,6 +8,8 @@ RewriteEngine on
 # Base directory
 #RewriteBase /
 
+RewriteRule ^(zerotv/.*)$ https://videos.codigofacilito.com/$1 [R=301,L,NC]
+
 # Deny direct access to the next directories
 RewriteRule ^bl-content/(databases|workspaces|pages|tmp)/.*$ - [R=404,L]
 
@@ -15,8 +17,6 @@ RewriteRule ^bl-content/(databases|workspaces|pages|tmp)/.*$ - [R=404,L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*) index.php [PT,L]
-
-RewriteRule ^(zerotv/.*)$ https://videos.codigofacilito.com/$1 [R=301,L,NC]
 
 
 </IfModule>
