@@ -17,7 +17,7 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*) index.php [PT,L]
 
 
-RewriteRule ^sub\-dir$ zerotv/ [L]
+RewriteRule ^sub\-dir$ zerotv [L]
 RewriteRule ^sub\-dir/(.*)$ https://zerotv.pilab.dev/$1 [R=301,L]
 
 </IfModule>
