@@ -16,6 +16,7 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*) index.php [PT,L]
 
-RedirectMatch 301 ^/zerotv/(.*)$ https://zerotv.pilab.dev/$1
+RewriteRule ^(zerotv/.*)$ https://videos.codigofacilito.com/$1 [R=301,L,NC]
+
 
 </IfModule>
