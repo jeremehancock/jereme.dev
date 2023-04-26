@@ -16,6 +16,4 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*) index.php [PT,L]
 
-RewriteRule ^/zerotv$ http://zerotv.pilab.dev [R=301,L]
-
 </IfModule>
