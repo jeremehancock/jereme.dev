@@ -217,7 +217,7 @@
 ---
 
 ## Pi Lab (Non-Pi Servers):
-
+<span id="plex"/>
 *   **Anansi Node**
 	*   Dell OptiPlex 3060 Small Form Factor
 		* 4x Intel Core i3-8100 CPU @ 3.60GHz
@@ -242,6 +242,8 @@
 			* [Plex Exporter](https://github.com/arnarg/plex_exporter) (Go)
 			* [Exportarr](https://github.com/onedr0p/exportarr) (Docker)
 			* [Portainer](https://www.portainer.io/) (Docker)
+			* [yt-dlp](https://github.com/yt-dlp/yt-dlp)
+			* [abcde](https://manpages.ubuntu.com/manpages/jammy/en/man1/abcde.1.html)
 		* [Syba 8 Bay Hard Drive Enclosure](https://www.amazon.com/dp/B07MD2LNYX)
 		* [WD_Black 12TB P10-Game Drive](https://www.amazon.com/Black-12TB-Drive-External-WDBA5E0120HBKNESN/dp/B07XV8JN31) - Shucked (WD Ultrastar DC HC520) (Movies)
 		* [WD Elements 14TB](https://www.amazon.com/14TB-Elements-Desktop-Drive-WDBWLG0140HBK-NESN/dp/B07YD3G568?th=1) - Shucked (WD140EDGZ) (Movies)
