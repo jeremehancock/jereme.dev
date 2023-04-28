@@ -5,7 +5,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Thu, 27 Apr 2023 15:04:24 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 28 Apr 2023 10:04:19 -0500</lastBuildDate>
     <item>
       <title>Dual Pi-hole + Tailscale</title>
       <link>https://pilab.dev/dual-pi-hole-tailscale</link>
@@ -159,7 +159,7 @@ sudo sysctl -p /etc/sysctl.conf&lt;/code&gt;&lt;/pre&gt;
         function onYouTubeIframeAPIReady() {
             player = new YT.Player('player', {
                 width: '100%',
-                videoId: 'eveXU8Tm-xg',
+                videoId: 'sbWgn1EJWhY',
                 playerVars: { 'autoplay': 1, 'playsinline': 1, 'rel': 0, 'modestbranding': 1 },
                 events: {
                     'onReady': onPlayerReady
