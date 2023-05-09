@@ -220,7 +220,7 @@
 <span id="plex"/>
 *   **Anansi Node**
 	*   Dell OptiPlex 3060 Small Form Factor
-		* 4x Intel Core i3-8100 CPU @ 3.60GHz
+		* [Intel Core i3-8100 CPU @ 3.60GHz](https://ark.intel.com/content/www/us/en/ark/products/126688/intel-core-i38100-processor-6m-cache-3-60-ghz.html)
 		* 16GB DDR4 SDRAM 2133 MT/s
 		*   **Operating System:** [Ubuntu Server 22.04.2 LTS](https://ubuntu.com/download/server)
 		* OCZ-ARC100 240GB SSD (OS)
