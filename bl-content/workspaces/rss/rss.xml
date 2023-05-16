@@ -5,7 +5,31 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Tue, 09 May 2023 13:33:57 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 15 May 2023 20:09:18 -0500</lastBuildDate>
+    <item>
+      <title>MovieCLI</title>
+      <link>https://pilab.dev/moviecli</link>
+      <image>https://pilab.dev/bl-content/uploads/pages/94a28a727ba5e3fad78b2d7d5221b126/moviecli.png</image>
+      <description>&lt;p&gt;I recently stumbled across a &lt;a href="https://www.youtube.com/watch?v=-tKf3uV2kTc"&gt;YouTube video&lt;/a&gt;. They had created a simple bash script that allowed you to pull up a searchable list of movies and launch them from the terminal. I thought it was really cool. So I decided to extend that idea to allow me to do the same with the movies on my Plex server.&lt;/p&gt;
+&lt;p&gt;After a bit of tinkering and consulting with ChatGPT &amp;#128540;, I ended up with what I am calling MovieCLI.&lt;/p&gt;
+&lt;p&gt;It is not specific to Plex. It will work with any server that you have access to. By updating a few variables, the script will temporarily mount your server and list out the movies and allow you to watch them directly. Once you close out of the movie, the server is unmounted.&lt;/p&gt;
+&lt;p&gt;Here are the variables to configure:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# Local base path for mounting drives (Be sure to include trailing slash)
+LOCAL_BASE="/tmp/"
+
+# Full base path for movie directories (Be sure to include trailing slash)
+REMOTE_BASE="/home/username/plex/"
+
+# Remote movie directories located inside the path defined in REMOTE_BASE (Be sure to not include any slashes)
+MOVIE_DIRS=("movies" "movies-2")
+
+# Remote server ex: username@hostname
+SERVER="username@hostname"&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;em&gt;MovieCLI is best used when the machine that you are using it on is configured to connect to the remote server using SSH Keys.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/jeremehancock/moviecli#moviecli"&gt;&lt;img data-src="/images/check-it-out-on-github.png" alt="Get it on GitHub" class="on-github lozad" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+      <pubDate>Mon, 15 May 2023 19:38:40 -0500</pubDate>
+      <guid isPermaLink="false">94a28a727ba5e3fad78b2d7d5221b126</guid>
+    </item>
     <item>
       <title>Dual Pi-hole + Tailscale</title>
       <link>https://pilab.dev/dual-pi-hole-tailscale</link>
@@ -176,23 +200,6 @@ sudo sysctl -p /etc/sysctl.conf&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;This live stream is utilizing a Wyze Pan Cam with the RTSP firmware. I use &lt;a href="restreamer"&gt;Restreamer&lt;/a&gt; to push to YouTube Live. This stream will run 24/7. I also have another Wyze Cam v2 setup directly with OctoPrint that I will be using for timelapses and monitoring prints. I plan to start publishing the timelapses to my YouTube channel once I get things dialed in a bit.&lt;/p&gt;</description>
       <pubDate>Tue, 08 Feb 2022 07:26:27 -0600</pubDate>
       <guid isPermaLink="false">a6acaf597184568573ad9c2c2dcd35a0</guid>
-    </item>
-    <item>
-      <title>UbuntuCE Resurrected</title>
-      <link>https://pilab.dev/ubuntuce-resurrected</link>
-      <image>https://pilab.dev/bl-content/uploads/pages/ad9fa4c4897cf959012c3604fefeda53/ubuntuce.png</image>
-      <description>&lt;div class="centered"&gt;
-    &lt;img src="/bl-content/uploads/pages/ad9fa4c4897cf959012c3604fefeda53/ubuntuce-welcome-tab2.png" class="image-border" /&gt;&lt;br&gt;&lt;br&gt;
-&lt;/div&gt;
-&lt;p&gt;In 2004 I created Ubuntu Christian Edition (UbuntuCE). It started as an idea that I got from a satire distro called Jesux. I liked the idea of creating a distro that was based on one of the most popular Linux distros and have it pre-configured with Christian software. &lt;/p&gt;
-&lt;p&gt;When I first started I had no idea what I was doing. In fact I was brand new to the world of Linux. However, I decided to go for it. The initial release caused quite a stir. I received a ton of backlash from people. Most of the people who didn't like the project objected to the concept of a Christian Linux distro. They really failed to understand the underlying concept that I was going for. There was also a lot of praise for the project. UbuntuCE was mentioned in several Linux magazines and even a few non-Linux ones.&lt;/p&gt;
-&lt;p&gt;One of the features of UbuntuCE that got the most praise was the fact that it came with web content filtering pre-configured. Setting up a safe system for families can be very challenging. UbuntuCE tried to solve that.&lt;/p&gt;
-&lt;p&gt;After several years my time became more limited with other projects on my plate. A few other folks jumped in and helped take up the mantle for a while, but ultimately UbuntuCE went dormant. I never let the site go down and always hoped to come back to it.&lt;/p&gt;
-&lt;p&gt;Finally, after many years I have &amp;quot;resurrected&amp;quot; UbuntuCE. The concept is the same. I have based the latest release, code named &amp;quot;Lazarus&amp;quot;, on Ubuntu 20.04 LTS. I have added additional Bible Study software from the available repositories. I have also created an UbuntuCE Repository to house the UbuntuCE specific packages that I have built. These include a welcome app, wallpapers, etc.&lt;/p&gt;
-&lt;p&gt;The latest release still comes with web content filtering pre-configured. This time I have taken a different approach and am using a combination of &lt;a href="https://cleanbrowsing.org/"&gt;CleanBrowsing&lt;/a&gt; DNS or &lt;a href="https://www.opendns.com/setupguide/#familyshield"&gt;OpenDNS Family Shield&lt;/a&gt; which can easily be configured using &lt;a href="https://github.com/jeremehancock/dnsminder#readme"&gt;DNS Minder&lt;/a&gt;, and a new application that I built called &lt;a href="https://github.com/mhancoc7/hostminder#readme"&gt;Host Minder&lt;/a&gt; that automatically blocks websites based on your preferred Protection Level.&lt;/p&gt;
-&lt;p&gt;If you are interested you can check it out at &lt;a href="https://ubuntuce.com"&gt;UbuntuCE.com&lt;/a&gt;&lt;/p&gt;</description>
-      <pubDate>Thu, 12 Aug 2021 07:43:27 -0500</pubDate>
-      <guid isPermaLink="false">ad9fa4c4897cf959012c3604fefeda53</guid>
     </item>
   </channel>
 </rss>
