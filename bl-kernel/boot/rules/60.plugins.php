@@ -11,8 +11,6 @@ $plugins = array(
 	'siteSidebar'=>array(),
 	'beforeSiteLoad'=>array(),
 	'afterSiteLoad'=>array(),
-    //Custom for Pi Lab
-	'siteFooter'=>array(),
 
 	'pageBegin'=>array(),
 	'pageEnd'=>array(),
