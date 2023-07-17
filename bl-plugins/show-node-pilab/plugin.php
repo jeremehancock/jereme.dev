@@ -19,6 +19,10 @@ class pluginShowNodePiLab extends Plugin
 
         // Disable default Save and Cancel button
         $this->formButtons = false;
+        
+        $this->customHooks = array(
+            'siteShowNode'
+        );
     }
 
     // Method called when a POST request is sent
@@ -137,9 +141,9 @@ class pluginShowNodePiLab extends Plugin
         return $html;
     }
 
-    // Method called on the siteSidebar of the website
+    // Method called on the siteShowNode of the website
     // Customized for Pi Lab
-    public function siteFooter()
+    public function siteShowNode()
     {
         global $site;
 

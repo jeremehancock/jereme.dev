@@ -3,7 +3,7 @@
         <div class="copyright text-white text-uppercase">
             <?php echo $site->footer(); ?>
             <span class="sep"> | </span>
-            <?php Theme::plugins('siteFooter'); ?>
+            <?php Theme::plugins('siteShowNode'); ?>
             <label class="dark-toggle">
                 <input id="dark-toggle" class="dark-toggle-checkbox" type="checkbox" onclick="darkmode.toggle();">
                 <div class="dark-toggle-switch"></div>
