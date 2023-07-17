@@ -150,13 +150,8 @@ class pluginShowNodePiLab extends Plugin
         $jsondb = $this->getValue('jsondb', false);
         $nodes = json_decode($jsondb);
 
-        if(!empty($nodes)) {
-            if ($this->getValue('devport') == '' || $this->getValue('devnode') == '') {
-                $html = "Check Show Node Settings!";
-            }
-            else {
-                $html = '<a href="'. $site->url() . '/admin/" target="_blank">' . $this->getValue('devnode') . '</a>';
-            }
+        if(empty($nodes)) {
+            $html = '<a href="'. $site->url() . '/admin/" target="_blank">' . $this->getValue('devnode') . '</a>';
         }
         else {
             foreach ($nodes as $name => $ip) {
