@@ -330,7 +330,7 @@ declare(strict_types=1);
                         var ext = $("input#allow-external");
 
                         // Sanitize FROM
-                        var from_value = from.val().replace(/\/$/, "").trim().toLowerCase();
+                        var to_value = to.val().replace(/\/$/, "").trim();
                         if(from_value.startsWith(DOMAIN_BASE)) {
                             from_value = from_value.replace(DOMAIN_BASE, "");
                         } else if(from_value.startsWith(DOMAIN)) {
