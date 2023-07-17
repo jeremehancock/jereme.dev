@@ -151,7 +151,7 @@ class pluginShowNodePiLab extends Plugin
         $nodes = json_decode($jsondb);
 
         if(empty($nodes)) {
-            $html = '<a href="'. $site->url() . '/admin/" target="_blank">' . $this->getValue('devnode') . '</a>';
+            $html = 'No Nodes Specified: Check Show Node Settings!';
         }
         else {
             foreach ($nodes as $name => $ip) {

@@ -2,7 +2,7 @@
 	"plugin-data":
 	{
 		"name": "Pi Lab - Navigation",
-		"description": "Navigation menu with parent and child pages for the sidebar. This version displays thumbsnails and was built specifically for Pi Lab but could be useful for others."
+		"description": "Navigation menu with parent and child pages for the sidebar. This version displays thumbnails and was built specifically for Pi Lab but could be useful for others."
 	},
 	"home-link": "Home link",
 	"show-the-home-link-on-the-sidebar": "Show the home link on the sidebar.",
