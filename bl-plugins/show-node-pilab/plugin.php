@@ -80,14 +80,14 @@ class pluginShowNodePiLab extends Plugin
         $html .= '<h4 class="mt-3">' . $L->get('Add a dev port') . '</h4>';
 
         $html .= '<div>';
-        $html .= '<input name="devport" class="form-control" type="number" value="' . $this->getValue('devport') . '">';
+        $html .= '<input name="devport" class="form-control" type="number" value="' . $this->getValue('devport') . '" required>';
         $html .= '<span style="color: #303030; font-style: italic;">' . $L->get('dev port tip') . '</span>';
         $html .= '</div>';
 
         $html .= '<h4 class="mt-3">' . $L->get('add a dev name') . '</h4>';
 
         $html .= '<div>';
-        $html .= '<input name="devnode" class="form-control" type="text" value="' . $this->getValue('devnode') . '">';
+        $html .= '<input name="devnode" class="form-control" type="text" value="' . $this->getValue('devnode') . '" required>';
         $html .= '<span style="color: #303030; font-style: italic;">' . $L->get('dev name tip') . ' This will also link to ' .  $site->url(). '/admin/</span>';
         $html .= '</div>';
 
@@ -142,7 +142,6 @@ class pluginShowNodePiLab extends Plugin
     }
 
     // Method called on the siteShowNode of the website
-    // Customized for Pi Lab
     public function siteShowNode()
     {
         global $site;
@@ -151,9 +150,9 @@ class pluginShowNodePiLab extends Plugin
         $jsondb = $this->getValue('jsondb', false);
         $nodes = json_decode($jsondb);
 
-        if(empty($nodes)) {
+        if(!empty($nodes)) {
             if ($this->getValue('devport') == '' || $this->getValue('devnode') == '') {
-                $html = "No Nodes Specified - Check Show Node Settings!";
+                $html = "Check Show Node Settings!";
             }
             else {
                 $html = '<a href="'. $site->url() . '/admin/" target="_blank">' . $this->getValue('devnode') . '</a>';
