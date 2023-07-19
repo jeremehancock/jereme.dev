@@ -7,3 +7,6 @@ I started tweeting the pictures on my personal Twitter account and people seemed
 Check it out here:
 
 [@RdSd_America_US](https://twitter.com/RdSd_America_US) & [RoadsideAmerica.us](https://roadsideamerica.us/)
+
+**Updates:**
+> *Twitter has shutdown my API access so I have discontinued the Twitter bot that posted pictures from Roadside America. Thanks Elon. :(*
