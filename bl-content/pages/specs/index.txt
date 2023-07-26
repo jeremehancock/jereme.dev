@@ -277,8 +277,8 @@
 				* [Prometheus](https://hub.docker.com/r/ubuntu/prometheus) (Docker)
 				* [Portainer](https://www.portainer.io/) (Docker)
 				* [Watchtower](https://containrrr.dev/watchtower/) (Docker)
+		* [Samsung - T7 1TB External](https://www.bestbuy.com/site/samsung-t7-1tb-external-usb-3-2-gen-2-portable-ssd-with-hardware-encryption-titan-gray/6408299.p?skuId=6408299) (Nextcloud)
 		* [WD_Black 5TB P10-Game Drive](https://www.amazon.com/WD_Black-Drive-External-Compatible-WDBA3A0050BBK-WESN/dp/B07VNTFHD5) (Backups)
-		* [Seagate Portable 1TB External Hard Drive](https://www.amazon.com/Seagate-Portable-External-Hard-Drive/dp/B07CRG7BBH) (Nextcloud)
 		* [Plugable USB 3.0 Universal Laptop Docking Station](https://www.amazon.com/Plugable-Universal-Docking-Station-Ethernet/dp/B00ECDM78E)
 	* **Network** 
 		* [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
