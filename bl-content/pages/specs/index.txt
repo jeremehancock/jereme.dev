@@ -3,12 +3,12 @@
 			&nbsp;&nbsp;&nbsp;
 	  </div>
 
-    <!-- <img id="liveStream" src="https://pilab.dev/live-stream" class="image-border" style="margin-bottom:15px;" /> -->
+    <img id="liveStream" src="https://pilab.dev/live-stream" class="image-border" style="margin-bottom:15px;" />
 		<!--<iframe class="iframe-border" style="margin-bottom:15px;" width="100%" height="600" src="https://www.youtube.com/embed/ROEeJ2QYL3U?autoplay=1&rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
-		<div class="iframe-container" style="margin-bottom:25px;">
+		<!-- <div class="iframe-container" style="margin-bottom:25px;">
 			<div id="player"></div>
-		</div>
-			<script>
+		</div>-->
+			<!--<script>
 				var tag = document.createElement('script');
 
 				tag.src = "https://www.youtube.com/iframe_api";
@@ -33,7 +33,7 @@
 					 event.target.mute();
 					event.target.playVideo();
 				}
-		</script>
+		</script>-->
 </div>
 
 *Pi Lab is my homelab that consists primarily of Raspberry Pis. This blog is hosted on the Raspberry Pi cluster that started it all. *
@@ -308,7 +308,7 @@
 }
 </style>
 
-<!--<script>
+<script>
 			function startStream() {
 				setInterval(updateStream, 60 * 1000);
 			}
@@ -318,4 +318,4 @@
 			}
 			
 			startStream();
-</script>-->
+</script>
