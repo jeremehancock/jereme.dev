@@ -239,6 +239,7 @@
 			* [Unpackerr](https://github.com/davidnewhall/unpackerr) (Docker)
 			* [Posterr](https://github.com/petersem/posterr) (Docker)
 			* [PlexTraktSync](https://github.com/Taxel/PlexTraktSync) (Docker)
+			* [JellyPlex-Watched](https://github.com/luigi311/JellyPlex-Watched) (Docker)
 			* [Plex Exporter](https://github.com/arnarg/plex_exporter) (Go)
 			* [Exportarr](https://github.com/onedr0p/exportarr) (Docker)
 			* [Portainer](https://www.portainer.io/) (Docker)
