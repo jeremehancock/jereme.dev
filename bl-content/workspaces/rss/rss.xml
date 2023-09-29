@@ -5,14 +5,33 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Sun, 24 Sep 2023 17:29:30 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 29 Sep 2023 08:00:53 -0500</lastBuildDate>
+    <item>
+      <title>Jellyfin NowPlaying</title>
+      <link>https://pilab.dev/jellyfin-nowplaying</link>
+      <image>https://pilab.dev/bl-content/uploads/pages/b374f0cffd10282127faa3aad2061f6d/jellyfin-nowplaying-logo-bigger.png</image>
+      <description>&lt;p&gt;I have been working on getting my &lt;a href="https://jellyfin.org/"&gt;Jellyfin&lt;/a&gt; setup configured. I am not planning on switching from &lt;a href="https://www.plex.tv/"&gt;Plex&lt;/a&gt; just yet. I just wanted to be ready in case I needed to. It is also just fun to tinker with stuff. :)&lt;/p&gt;
+&lt;p&gt;One thing that I really like in my &lt;a href="https://www.plex.tv/"&gt;Plex&lt;/a&gt; setup is a script that I use to display what is currently playing on my server from the command line. I have it setup to run when I &lt;code&gt;ssh&lt;/code&gt; in to the server. The script is called &lt;a href="https://github.com/arcadellama/plex-nowplaying"&gt;Plex NowPlaying&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I decided to create a simplified version for &lt;a href="https://jellyfin.org/"&gt;Jellyfin&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;Here are the variables to configure:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# The Jellyfin server url.
+JELLYFIN_URL="http://YOUR-DOMAIN:8096"
+
+# THe Jellyfin API key.
+API_KEY=""
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src="/bl-content/uploads/pages/b374f0cffd10282127faa3aad2061f6d/jellyfin-nowplaying.png" alt="Image description" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/jeremehancock/Jellyfin-NowPlaying#jellyfin-nowplaying"&gt;&lt;img data-src="/images/check-it-out-on-github.png" alt="Get it on GitHub" class="on-github lozad" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
+      <pubDate>Fri, 29 Sep 2023 07:38:55 -0500</pubDate>
+      <guid isPermaLink="false">b374f0cffd10282127faa3aad2061f6d</guid>
+    </item>
     <item>
       <title>MovieCLI</title>
       <link>https://pilab.dev/moviecli</link>
       <image>https://pilab.dev/bl-content/uploads/pages/94a28a727ba5e3fad78b2d7d5221b126/moviecli.png</image>
-      <description>&lt;p&gt;I recently stumbled across a &lt;a href="https://www.youtube.com/watch?v=-tKf3uV2kTc"&gt;YouTube video&lt;/a&gt;. They had created a simple bash script that allowed you to pull up a searchable list of movies and launch them from the terminal. I thought it was really cool. So I decided to extend that idea to allow me to do the same with the movies on my Plex server.&lt;/p&gt;
+      <description>&lt;p&gt;I recently stumbled across a &lt;a href="https://www.youtube.com/watch?v=-tKf3uV2kTc"&gt;YouTube video&lt;/a&gt;. They had created a simple bash script that allowed you to pull up a searchable list of movies and launch them from the terminal. I thought it was really cool. So I decided to extend that idea to allow me to do the same with the movies on my &lt;a href="https://www.plex.tv/"&gt;Plex&lt;/a&gt; server.&lt;/p&gt;
 &lt;p&gt;After a bit of tinkering and consulting with ChatGPT &amp;#128540;, I ended up with what I am calling MovieCLI.&lt;/p&gt;
-&lt;p&gt;It is not specific to Plex. It will work with any server that you have access to. By updating a few variables, the script will temporarily mount your server and list out the movies and allow you to watch them directly. Once you close out of the movie, the server is unmounted.&lt;/p&gt;
+&lt;p&gt;It is not specific to &lt;a href="https://www.plex.tv/"&gt;Plex&lt;/a&gt;. It will work with any server that you have access to. By updating a few variables, the script will temporarily mount your server and list out the movies and allow you to watch them directly. Once you close out of the movie, the server is unmounted.&lt;/p&gt;
 &lt;p&gt;Here are the variables to configure:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;# Local base path for mounting drives (Be sure to include trailing slash)
 LOCAL_BASE="/tmp/"
@@ -159,47 +178,6 @@ sudo sysctl -p /etc/sysctl.conf&lt;/code&gt;&lt;/pre&gt;
 &lt;/blockquote&gt;</description>
       <pubDate>Mon, 28 Mar 2022 13:54:42 -0500</pubDate>
       <guid isPermaLink="false">fcdb80d303d1fe7901dd6d939ebe87c3</guid>
-    </item>
-    <item>
-      <title>OctoPrint Live Stream</title>
-      <link>https://pilab.dev/octoprint-node-live-stream</link>
-      <image>https://pilab.dev/bl-content/uploads/pages/a6acaf597184568573ad9c2c2dcd35a0/3dpinter.jpg</image>
-      <description>&lt;p&gt;I have finally gotten back to 3D Printing. Of course this means I need another live stream! &lt;/p&gt;
-&lt;!-- &lt;div class="centered"&gt;
-    &lt;div style="display:none;"&gt;This live stream is utilizing a Wyze Pan Cam with the RTSP firmware. I use Restreamer to push to YouTube Live. This stream will run 24/7. I also have another Wyze Cam v2 setup directly with OctoPrint that I will be using for timelapses and monitoring prints. I plan to start publishing the timelapses to my YouTube channel once I get things dialed in a bit.
-    &lt;/div&gt;
-        &lt;div class="iframe-container" style="margin-bottom:25px;"&gt;
-            &lt;div id="player"&gt;&lt;/div&gt;
-        &lt;/div&gt;
-        &lt;script&gt;
-        var tag = document.createElement('script');
-        tag.src = "https://www.youtube.com/iframe_api";
-        var firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-        var player;
-        function onYouTubeIframeAPIReady() {
-            player = new YT.Player('player', {
-                width: '100%',
-                videoId: 'sbWgn1EJWhY',
-                playerVars: { 'autoplay': 1, 'playsinline': 1, 'rel': 0, 'modestbranding': 1 },
-                events: {
-                    'onReady': onPlayerReady
-                }
-            });
-        }
-        function onPlayerReady(event) {
-             event.target.mute();
-            event.target.playVideo();
-        }
-    &lt;/script&gt;
-&lt;/div&gt; --&gt;
-&lt;p&gt;This live stream is utilizing a Wyze Pan Cam with the RTSP firmware. I use &lt;a href="restreamer"&gt;Restreamer&lt;/a&gt; to push to YouTube Live. This stream will run 24/7. I also have another Wyze Cam v2 setup directly with OctoPrint that I will be using for timelapses and monitoring prints. I plan to start publishing the timelapses to my YouTube channel once I get things dialed in a bit.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Updates:&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;I have shutdown this live stream due to some weird YouTube Copyright Infringement claims that make no sense.&lt;/em&gt;&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-      <pubDate>Tue, 08 Feb 2022 07:26:27 -0600</pubDate>
-      <guid isPermaLink="false">a6acaf597184568573ad9c2c2dcd35a0</guid>
     </item>
   </channel>
 </rss>
