@@ -241,6 +241,8 @@
 			* [PlexTraktSync](https://github.com/Taxel/PlexTraktSync) (Docker)
 			* [JellyPlex-Watched](https://github.com/luigi311/JellyPlex-Watched) (Docker)
 			* [Plex Exporter](https://github.com/arnarg/plex_exporter) (Go)
+			* [plex-nowplaying](https://github.com/arcadellama/plex-nowplaying) (Bash)
+			* [Jellyfin-NowPlaying](https://github.com/jeremehancock/Jellyfin-NowPlaying) (Bash)
 			* [Exportarr](https://github.com/onedr0p/exportarr) (Docker)
 			* [Portainer](https://www.portainer.io/) (Docker)
 			* [yt-dlp](https://github.com/yt-dlp/yt-dlp)
