@@ -5,11 +5,11 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Fri, 29 Sep 2023 08:00:53 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 29 Sep 2023 11:53:44 -0500</lastBuildDate>
     <item>
       <title>Jellyfin NowPlaying</title>
       <link>https://pilab.dev/jellyfin-nowplaying</link>
-      <image>https://pilab.dev/bl-content/uploads/pages/b374f0cffd10282127faa3aad2061f6d/jellyfin-nowplaying-logo-bigger.png</image>
+      <image>https://pilab.dev/bl-content/uploads/pages/b374f0cffd10282127faa3aad2061f6d/jellyfin-nowplaying-updated.png</image>
       <description>&lt;p&gt;I have been working on getting my &lt;a href="https://jellyfin.org/"&gt;Jellyfin&lt;/a&gt; setup configured. I am not planning on switching from &lt;a href="https://www.plex.tv/"&gt;Plex&lt;/a&gt; just yet. I just wanted to be ready in case I needed to. It is also just fun to tinker with stuff. :)&lt;/p&gt;
 &lt;p&gt;One thing that I really like in my &lt;a href="https://www.plex.tv/"&gt;Plex&lt;/a&gt; setup is a script that I use to display what is currently playing on my server from the command line. I have it setup to run when I &lt;code&gt;ssh&lt;/code&gt; in to the server. The script is called &lt;a href="https://github.com/arcadellama/plex-nowplaying"&gt;Plex NowPlaying&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;I decided to create a simplified version for &lt;a href="https://jellyfin.org/"&gt;Jellyfin&lt;/a&gt;. &lt;/p&gt;
@@ -20,7 +20,7 @@ JELLYFIN_URL="http://YOUR-DOMAIN:8096"
 # THe Jellyfin API key.
 API_KEY=""
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src="/bl-content/uploads/pages/b374f0cffd10282127faa3aad2061f6d/jellyfin-nowplaying.png" alt="Image description" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="/bl-content/uploads/pages/b374f0cffd10282127faa3aad2061f6d/jellyfin-nowplaying-terminal.png" alt="Image description" /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://github.com/jeremehancock/Jellyfin-NowPlaying#jellyfin-nowplaying"&gt;&lt;img data-src="/images/check-it-out-on-github.png" alt="Get it on GitHub" class="on-github lozad" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
       <pubDate>Fri, 29 Sep 2023 07:38:55 -0500</pubDate>
       <guid isPermaLink="false">b374f0cffd10282127faa3aad2061f6d</guid>

@@ -15,7 +15,7 @@ API_KEY=""
 
 ```
 
-![Image description](/bl-content/uploads/pages/b374f0cffd10282127faa3aad2061f6d/jellyfin-nowplaying.png)
+![Image description](/bl-content/uploads/pages/b374f0cffd10282127faa3aad2061f6d/jellyfin-nowplaying-terminal.png)
 
 [<img data-src="/images/check-it-out-on-github.png" alt="Get it on GitHub" class="on-github lozad" />](https://github.com/jeremehancock/Jellyfin-NowPlaying#jellyfin-nowplaying)
 
