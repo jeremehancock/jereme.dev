@@ -240,7 +240,7 @@
 			* [Posterr](https://github.com/petersem/posterr) (Docker)
 			* [PlexTraktSync](https://github.com/Taxel/PlexTraktSync) (Docker)
 			* [JellyPlex-Watched](https://github.com/luigi311/JellyPlex-Watched) (Docker)
-			* [Plex Exporter](https://github.com/arnarg/plex_exporter) (Go)
+			* [Plex Exporter](https://github.com/axsuul/plex-media-server-exporter) (Docker)
 			* [plex-nowplaying](https://github.com/arcadellama/plex-nowplaying) (Bash)
 			* [Jellyfin-NowPlaying](https://github.com/jeremehancock/Jellyfin-NowPlaying) (Bash)
 			* [Exportarr](https://github.com/onedr0p/exportarr) (Docker)
