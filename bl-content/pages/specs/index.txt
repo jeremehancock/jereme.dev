@@ -272,6 +272,7 @@
 		* SanDisk X400 M.2 512GB (OS)
 				* [Nginx Proxy Manager](https://github.com/NginxProxyManager/nginx-proxy-manager) (Docker)
 				* [Nextcloud](https://snapcraft.io/install/nextcloud/ubuntu) (Snap)
+				* [Homarr](https://homarr.dev) (Docker)
 				* [Heimdall](https://hub.docker.com/r/linuxserver/heimdall) (Docker)
 				* [Uptime Kuma](https://github.com/louislam/uptime-kuma) (Docker) with [IFTTT Notifications](https://ifttt.com/)
 				* [Speedtest Tracker](https://github.com/henrywhitaker3/Speedtest-Tracker) (Docker)
