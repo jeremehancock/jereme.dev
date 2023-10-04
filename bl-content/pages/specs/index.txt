@@ -222,7 +222,7 @@
 	*   Dell OptiPlex 3060 Small Form Factor
 		* [Intel Core i3-8100 CPU @ 3.60GHz](https://ark.intel.com/content/www/us/en/ark/products/126688/intel-core-i38100-processor-6m-cache-3-60-ghz.html)
 		* [32GB Corsair VENGEANCE LPX DDR4 3200MHz](https://www.amazon.com/Corsair-VENGEANCE-3200MHz-Compatible-Computer/dp/B07RS1G6XW)
-		*   **Operating System:** [Ubuntu Server 22.04.2 LTS](https://ubuntu.com/download/server)
+		*   **Operating System:** [Ubuntu Server 22.04.3 LTS](https://ubuntu.com/download/server)
 		* OCZ-ARC100 240GB SSD (OS)
 			* [xTeVe](https://github.com/xteve-project/xTeVe) (Docker)
 			* [Plex Media Server](https://www.plex.tv/)
@@ -267,7 +267,7 @@
 *   **Overseer Node**
 	*   Dell Latitude E7470
 		* 4x Intel Core i7-6600U CPU @ 2.60GHz
-		*   **Operating System:** [Ubuntu Server 20.04.1 LTS](https://ubuntu.com/download/server)
+		*   **Operating System:** [Ubuntu Server 22.04.3 LTS](https://ubuntu.com/download/server)
 		* 16GB DDR4 SDRAM 2133 MT/s
 		* SanDisk X400 M.2 512GB (OS)
 				* [Nginx Proxy Manager](https://github.com/NginxProxyManager/nginx-proxy-manager) (Docker)
@@ -293,7 +293,7 @@
 	*   Dell Latitude E6530
 		* 4x Intel Core i5-3320M CPU @ 2.60GHz
     * 8GB DDR3 SDRAM 1600MHz
-		*   **Operating System:** [Ubuntu 22.04.2LTS](https://ubuntu.com/download/desktop)
+		*   **Operating System:** [Ubuntu 22.04.3 LTS](https://ubuntu.com/download/desktop)
 		* Intel 120GB SSD (OS)
 		* Dell 22 Inch Monitor
 		* [KVM VGA Switch](https://www.amazon.com/dp/B08G8HVVDN)
