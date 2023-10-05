@@ -5,7 +5,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Thu, 05 Oct 2023 08:18:05 -0500</lastBuildDate>
+    <lastBuildDate>Thu, 05 Oct 2023 09:26:00 -0500</lastBuildDate>
     <item>
       <title>Jellyfin NowPlaying</title>
       <link>https://pilab.dev/jellyfin-nowplaying</link>
@@ -83,7 +83,7 @@ echo 'net.ipv6.conf.all.forwarding = 1' | sudo tee -a /etc/sysctl.conf
 sudo sysctl -p /etc/sysctl.conf&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;strong&gt;Step 7:&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Start &lt;a href="https://tailscale.com/"&gt;Tailscale&lt;/a&gt; on both Raspberry Pis.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;sudo tailscale up --advertise-exit-node --advertise-routes=192.168.1.0/24 --accept-dns=false&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;sudo tailscale up --advertise-exit-node --advertise-routes=192.168.1.0/24 --accept-dns=false --accept-routes=true&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;strong&gt;Step 8:&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Login to &lt;a href="https://tailscale.com/"&gt;Tailscale&lt;/a&gt; and click the &amp;quot;three dots&amp;quot; menu next to the Machine entry for each &lt;a href="https://pi-hole.net/"&gt;Pi-hole&lt;/a&gt;. Select &amp;quot;Disable key expiry&amp;quot; from the drop-down. Since the &lt;a href="https://pi-hole.net/"&gt;Pi-holes&lt;/a&gt; are not directly exposed to the internet it is safe to not require re-authentication. Then select &amp;quot;Edit route settings...&amp;quot; from the same drop-down menu and enable both options. See image below.&lt;/p&gt;
 &lt;div class="centered"&gt;
