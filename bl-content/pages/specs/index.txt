@@ -276,7 +276,7 @@
 				* [Heimdall](https://hub.docker.com/r/linuxserver/heimdall) (Docker)
 				* [Kasm Workspaces](https://kasmweb.com/) (Docker)
 				* [Uptime Kuma](https://github.com/louislam/uptime-kuma) (Docker) with [IFTTT Notifications](https://ifttt.com/)
-				* [Speedtest Tracker](https://github.com/henrywhitaker3/Speedtest-Tracker) (Docker)
+				* [Speedtest Tracker](https://docs.speedtest-tracker.dev/) (Docker)
 				* [Prometheus](https://hub.docker.com/r/ubuntu/prometheus) (Docker)
 				* [Portainer](https://www.portainer.io/) (Docker)
 				* [Watchtower](https://containrrr.dev/watchtower/) (Docker)
