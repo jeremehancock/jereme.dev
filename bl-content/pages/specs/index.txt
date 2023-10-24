@@ -253,7 +253,7 @@
 		* [WD Elements 14TB](https://www.amazon.com/14TB-Elements-Desktop-Drive-WDBWLG0140HBK-NESN/dp/B07YD3G568?th=1) - Shucked (WD140EDGZ) (Movies)
 		* [WD easystore 14TB](https://www.bestbuy.com/site/wd-easystore-14tb-external-usb-3-0-hard-drive-black/6425303.p?skuId=6425303) - Shucked (WD140EDGZ) (TV)
 		* [WD easystore 16TB](https://www.bestbuy.com/site/wd-easystore-16tb-external-usb-3-0-hard-drive-black/6427998.p?skuId=6427998) - Shucked (WD160EDGZ) (TV 2)
-		* [Seagate 4TB Internal Drive](https://www.amazon.com/dp/B07J46FXHK) - Renewed (ST4000DM000) (Music)
+		* [Seagate 2TB Internal Drive](https://www.amazon.com/Seagate-BarraCuda-Internal-Drive-3-5-Inch/dp/B07H2RR55Q) - Renewed (ST2000DM008-2FR102) (Music)
 		*  [WD Blue SN570 NVMe 1TB Solid State Drive](https://www.amazon.com/Western-Digital-SN570-Internal-Solid/dp/B09HKDQ1RN) - [SABRENT NVMe M.2 SSD to PCIe](https://www.amazon.com/dp/B084GDY2PW) (Downloads)
 		* [WD Blue SN570 NVMe 1TB Solid State Drive](https://www.amazon.com/Western-Digital-SN570-Internal-Solid/dp/B09HKDQ1RN) (Cache - Transcodes/Usenet)
 		* [HDHomeRun DUAL](https://www.amazon.com/SiliconDust-HDHomeRun-Definition-Digital-HDHR3-US/dp/B004HO58SO)
@@ -275,13 +275,11 @@
 				* [Nextcloud](https://snapcraft.io/install/nextcloud/ubuntu) (Snap)
 				* [Homarr](https://homarr.dev) (Docker)
 				* [Heimdall](https://hub.docker.com/r/linuxserver/heimdall) (Docker)
-				* [Kasm Workspaces](https://kasmweb.com/) (Docker)
 				* [Uptime Kuma](https://github.com/louislam/uptime-kuma) (Docker) with [IFTTT Notifications](https://ifttt.com/)
 				* [Speedtest Tracker](https://docs.speedtest-tracker.dev/) (Docker)
 				* [Prometheus](https://hub.docker.com/r/ubuntu/prometheus) (Docker)
 				* [Portainer](https://www.portainer.io/) (Docker)
 				* [Watchtower](https://containrrr.dev/watchtower/) (Docker)
-		* [Samsung - T7 1TB External](https://www.bestbuy.com/site/samsung-t7-1tb-external-usb-3-2-gen-2-portable-ssd-with-hardware-encryption-titan-gray/6408299.p?skuId=6408299) (Nextcloud)
 		* [WD_Black 5TB P10-Game Drive](https://www.amazon.com/WD_Black-Drive-External-Compatible-WDBA3A0050BBK-WESN/dp/B07VNTFHD5) (Backups)
 		* [Plugable USB 3.0 Universal Laptop Docking Station](https://www.amazon.com/Plugable-Universal-Docking-Station-Ethernet/dp/B00ECDM78E)
 	* **Network** 
@@ -291,6 +289,12 @@
 	*   **Power:**
 		* [CyberPower CP1000PFCLCD PFC Sinewave UPS](https://www.amazon.com/gp/product/B00429N192)
 	*    **Cooling:** [AC Infinity MULTIFAN S4](https://www.amazon.com/gp/product/B00MWH4FL4) x 2
+* **TrueNAS Node**
+	*  AMD Phenom(tm) II X6 1055T
+	*  32GB DDR4 SDRAM
+	*  256GB SSH (OS)
+	*  [Seagate 4TB Internal Drive](https://www.amazon.com/dp/B07J46FXHK) - Renewed (RAID)
+	*  [HGST Ultrastar 4TB Internal Drive x 2](https://www.amazon.com/dp/B079JRGP4N) - Renewed (RAID)
 *   **Lab Monitor Node**
 	*   Dell Latitude E6530
 		* 4x Intel Core i5-3320M CPU @ 2.60GHz
