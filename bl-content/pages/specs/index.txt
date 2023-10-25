@@ -291,10 +291,13 @@
 	*    **Cooling:** [AC Infinity MULTIFAN S4](https://www.amazon.com/gp/product/B00MWH4FL4) x 2
 * **TrueNAS Node**
 	*  AMD Phenom(tm) II X6 1055T
+	*   **Operating System:** [TrueNAS Scale](https://www.truenas.com/truenas-scale/)
 	*  32GB DDR4 SDRAM
 	*  256GB SSH (OS)
 	*  [Seagate 4TB Internal Drive](https://www.amazon.com/dp/B07J46FXHK) - Renewed (RAID)
 	*  [HGST Ultrastar 4TB Internal Drive x 2](https://www.amazon.com/dp/B079JRGP4N) - Renewed (RAID)
+	* **Network** 
+		* [Netgear 5 Port Gigabit Ethernet Network Switch (GS105)](https://www.netgear.com/business/wired/switches/unmanaged/gs105/)
 *   **Lab Monitor Node**
 	*   Dell Latitude E6530
 		* 4x Intel Core i5-3320M CPU @ 2.60GHz
