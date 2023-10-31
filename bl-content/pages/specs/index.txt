@@ -292,12 +292,14 @@
 * **TrueNAS Node**
 	*  AMD Phenom(tm) II X6 1055T
 	*   **Operating System:** [TrueNAS Scale](https://www.truenas.com/truenas-scale/)
-	*  32GB DDR4 SDRAM
-	*  256GB SSH (OS)
+	*  [32GB G.Skill Ares DDR3 1600MHz](https://www.ebay.com/itm/115172296388)
+	*  Crucial 240GB SSD (OS)
 	*  [Seagate 4TB Internal Drive](https://www.amazon.com/dp/B07J46FXHK) - Renewed (RAID)
 	*  [HGST Ultrastar 4TB Internal Drive x 2](https://www.amazon.com/dp/B079JRGP4N) - Renewed (RAID)
 	* **Network** 
 		* [Netgear 5 Port Gigabit Ethernet Network Switch (GS105)](https://www.netgear.com/business/wired/switches/unmanaged/gs105/)
+	*   **Power:**
+		* [CyberPower CP1000PFCLCD PFC Sinewave UPS](https://www.amazon.com/gp/product/B00429N192)
 *   **Lab Monitor Node**
 	*   Dell Latitude E6530
 		* 4x Intel Core i5-3320M CPU @ 2.60GHz
