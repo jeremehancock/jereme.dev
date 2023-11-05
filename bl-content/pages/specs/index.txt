@@ -294,6 +294,9 @@
 	*   **Operating System:** [TrueNAS Scale](https://www.truenas.com/truenas-scale/)
 	*  [32GB G.Skill Ares DDR3 1600MHz](https://www.ebay.com/itm/115172296388)
 	*  [Crucial 240GB SSD](https://www.disctech.com/Crucial-CT240M500SSD1-M500-240GB-2-5-MLC-SSD) (OS)
+		*  [Nextcloud](https://github.com/truenas/charts/tree/master/charts/nextcloud)
+		*  [Scrutiny](https://github.com/truecharts/charts/tree/master/charts/stable/scrutiny)
+		*  [Paperless-ngx](https://github.com/truenas/charts/tree/master/library/ix-dev/community/paperless-ngx)
 	*  [Seagate 4TB Internal Drive](https://www.amazon.com/dp/B07J46FXHK) - Renewed (RAID)
 	*  [HGST Ultrastar 4TB Internal Drive x 2](https://www.amazon.com/dp/B079JRGP4N) - Renewed (RAID)
 	* **Network** 
