@@ -9,7 +9,6 @@ This requires the use of the [Bludit API](https://docs.bludit.com/en/api/introdu
 Hopefully this will be helpful to someone looking to leverage the power of Gatsby and Bludit.
 
 [![GitHub license](https://img.shields.io/github/license/jeremehancock/gatsby-source-bludit?color=orange&style=for-the-badge)](https://github.com/jeremehancock/gatsby-source-bludit/blob/main/LICENSE)
-[![demo](https://img.shields.io/badge/Gatsby%20%2B%20Bludit-Demo-green?style=for-the-badge)](https://dumbprojects.com/bludit/)
 [![npm](https://img.shields.io/npm/v/gatsby-source-bludit?label=NPM%20PACKAGE&style=for-the-badge)](https://www.npmjs.com/package/gatsby-source-bludit)
 [![gatsby](https://img.shields.io/static/v1?label=TRY&message=GATSBY&color=blueviolet&style=for-the-badge)](https://www.gatsbyjs.com/)
 [![bludit](https://img.shields.io/static/v1?label=TRY&message=BLUDIT&color=black&style=for-the-badge)](https://www.bludit.com)
@@ -18,5 +17,7 @@ Hopefully this will be helpful to someone looking to leverage the power of Gatsb
 > *I have made some improvements to the demo. It now has a much cleaner design and pulls more data including tags and a portion of the post content into the"preview" cards.*
 > 
 > *The gatsby-source-bludit plugin now supports multiple Bludit API endpoints as well as the ability to set the number of items to return when using the "pages" endpoint.*
+> 
+> *This plugin is not being actively maintained.*
 
 
