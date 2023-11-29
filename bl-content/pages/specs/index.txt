@@ -290,15 +290,24 @@
 		* [CyberPower CP1000PFCLCD PFC Sinewave UPS](https://www.amazon.com/gp/product/B00429N192)
 	*    **Cooling:** [AC Infinity MULTIFAN S4](https://www.amazon.com/gp/product/B00MWH4FL4) x 2
 * **TrueNAS Node**
-	*  AMD Phenom(tm) II X6 1055T
-	*   **Operating System:** [TrueNAS Scale](https://www.truenas.com/truenas-scale/)
-	*  [32GB G.Skill Ares DDR3 1600MHz](https://www.ebay.com/itm/115172296388)
-	*  [Crucial 240GB SSD](https://www.disctech.com/Crucial-CT240M500SSD1-M500-240GB-2-5-MLC-SSD) (OS)
-		*  [Nextcloud](https://github.com/truenas/charts/tree/master/charts/nextcloud)
-		*  [Scrutiny](https://github.com/truecharts/charts/tree/master/charts/stable/scrutiny)
-		*  [Paperless-ngx](https://github.com/truenas/charts/tree/master/library/ix-dev/community/paperless-ngx)
-	*  [Seagate 4TB Internal Drive](https://www.amazon.com/dp/B07J46FXHK) - Renewed (RAID)
-	*  [HGST Ultrastar 4TB Internal Drive x 2](https://www.amazon.com/dp/B079JRGP4N) - Renewed (RAID)
+  * Dell Precision 5820
+		*  Intel(R) Xeon(R) W-2135 CPU @ 3.70GHz
+		*   **Operating System:** [TrueNAS Scale](https://www.truenas.com/truenas-scale/)
+		*  128GB DDR4 ECC SDRAM
+		*  [Sedna PCI Express (PCIe) SATA III (6G) SSD Adapter](https://www.amazon.com/dp/B01452SP1O)
+		*  [Crucial 500GB SSD](https://www.amazon.com/dp/B0786QNS9B) (OS)
+		*  Apps
+			*  [Nextcloud](https://github.com/truenas/charts/tree/master/charts/nextcloud)
+			*  [Scrutiny](https://github.com/truecharts/charts/tree/master/charts/stable/scrutiny)
+			*  [Paperless-ngx](https://github.com/truenas/charts/tree/master/library/ix-dev/community/paperless-ngx)
+			*  [Tailscale](https://github.com/truenas/charts/tree/master/community/tailscale)
+	* Raidz2
+		* [Western Digital 4TB](https://www.amazon.com/dp/B0090UEQ8I)
+		*  [Seagate 4TB Internal Drive](https://www.amazon.com/dp/B07J46FXHK)
+		*  [HGST Ultrastar 4TB Internal Drive x 2](https://www.amazon.com/dp/B079JRGP4N)
+	* **Graphics Cards**
+		* NVIDIA Corporation GK107 [GeForce GT 640] (Isolated)
+		*  NVIDIA Corporation GT218 [GeForce 8400 GS Rev. 3] (System)
 	* **Network** 
 		* [Netgear 5 Port Gigabit Ethernet Network Switch (GS105)](https://www.netgear.com/business/wired/switches/unmanaged/gs105/)
 	*   **Power:**
