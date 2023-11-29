@@ -311,6 +311,7 @@
 	* **Network** 
 		* [Netgear 5 Port Gigabit Ethernet Network Switch (GS105)](https://www.netgear.com/business/wired/switches/unmanaged/gs105/)
 	*   **Power:**
+		*   950W PSU
 		* [CyberPower CP1000PFCLCD PFC Sinewave UPS](https://www.amazon.com/gp/product/B00429N192)
 *   **Lab Monitor Node**
 	*   Dell Latitude E6530
