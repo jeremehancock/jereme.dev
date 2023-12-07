@@ -285,7 +285,8 @@
 			*  [Tailscale](https://github.com/truenas/charts/tree/master/community/tailscale)
 		*  VMs
 			*  Ubuntu 22.04 Server
-				*   [Paperless-ngx](https://docs.paperless-ngx.com/) (Docker)
+				*  [Paperless-ngx](https://docs.paperless-ngx.com/) (Docker)
+				*  [Portainer](https://www.portainer.io/) (Docker)
 	* Raidz2
 		* [Western Digital 4TB](https://www.amazon.com/dp/B0090UEQ8I)
 		* [Seagate 4TB Internal Drive](https://www.amazon.com/dp/B07J46FXHK)
@@ -294,7 +295,7 @@
 			* [Western Digital 4TB](https://www.amazon.com/dp/B0090UEQ8I) (Hot Spare)
 	* **Graphics Cards**
 		* NVIDIA Corporation GK107 [GeForce GT 640] (Isolated)
-		*  NVIDIA Corporation GT218 [GeForce 8400 GS Rev. 3] (System)
+		* NVIDIA Corporation GT218 [GeForce 8400 GS Rev. 3] (System)
 	* **Network** 
 		* [Netgear 5 Port Gigabit Ethernet Network Switch (GS105)](https://www.netgear.com/business/wired/switches/unmanaged/gs105/)
 	*   **Power:**
