@@ -282,8 +282,10 @@
 		*  Apps
 			*  [Nextcloud](https://github.com/truenas/charts/tree/master/charts/nextcloud)
 			*  [Scrutiny](https://github.com/truecharts/charts/tree/master/charts/stable/scrutiny)
-			*  [Paperless-ngx](https://github.com/truenas/charts/tree/master/library/ix-dev/community/paperless-ngx)
 			*  [Tailscale](https://github.com/truenas/charts/tree/master/community/tailscale)
+		*  VMs
+			*  Ubuntu 22.04 Server
+				*   [Paperless-ngx](https://docs.paperless-ngx.com/) (Docker)
 	* Raidz2
 		* [Western Digital 4TB](https://www.amazon.com/dp/B0090UEQ8I)
 		* [Seagate 4TB Internal Drive](https://www.amazon.com/dp/B07J46FXHK)
