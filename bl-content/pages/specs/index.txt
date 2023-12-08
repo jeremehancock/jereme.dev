@@ -171,20 +171,6 @@
 		* [Nest WiFi Pro - 6E](https://www.amazon.com/Google-Nest-WiFi-Pro-Reliable/dp/B0BCQSYPZB/) - 3 Pack plus extra router
 		* [TP-Link 16 Port Gigabit Ethernet Network Switch (TL-SG116)](https://www.amazon.com/gp/product/B07GR9S6FN)
 	* [More Details](octoprint-node)
-*   **Test Node**
-    *   1 Raspberry Pi Zero W
-				* Sandisk Ultra 8GB microSDHC Card
-				*   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
-				* [Node Exporter](https://github.com/prometheus/node_exporter) - Expose Linux metrics: Installed to each node.
-				* [RPi Exporter](https://github.com/lukasmalkmus/rpi_exporter) - Expose Raspberry Pi metrics: Installed to each node.
-				* [USB-A Add-on Board](https://www.amazon.com/gp/product/B07DBL3WYQ)
-				* [GLCON Power Strip Tower](https://www.amazon.com/gp/product/B01G6PPTH6)
-				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=testpi1" target="_blank">Metrics Dashboard</a> (testpi1)
-	* **Network** 
-		* [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
-		* [Nest WiFi Pro - 6E](https://www.amazon.com/Google-Nest-WiFi-Pro-Reliable/dp/B0BCQSYPZB/) - 3 Pack plus extra router
-		* [TP-Link 16 Port Gigabit Ethernet Network Switch (TL-SG116)](https://www.amazon.com/gp/product/B07GR9S6FN)
-	* [More Details](pi-zero-wall-plug-web-server)
 *   **RetroFlag GPi Case**
     *   1 Raspberry Pi Zero W
 				* Samsung EVO Plus 32GB microSDHC Card
