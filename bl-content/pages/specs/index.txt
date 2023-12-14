@@ -269,6 +269,7 @@
 			*  [Nextcloud](https://github.com/truenas/charts/tree/master/charts/nextcloud)
 			*  [Scrutiny](https://github.com/truecharts/charts/tree/master/charts/stable/scrutiny)
 			*  [Tailscale](https://github.com/truenas/charts/tree/master/community/tailscale)
+			*  [pgAdmin](https://hub.docker.com/r/dpage/pgadmin4)
 		*  VMs
 			*  Ubuntu 22.04 Server
 				*  [Paperless-ngx](https://docs.paperless-ngx.com/) (Docker)
