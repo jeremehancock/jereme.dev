@@ -197,7 +197,6 @@
 			* [Plex Media Server](https://www.plex.tv/)
 			* [Jellyfin (Backup Media Server)](https://hub.docker.com/r/linuxserver/jellyfin) (Docker)
 			* [Tautulli](https://tautulli.com/) (Docker)
-			* [JellyStat](https://github.com/CyferShepard/Jellystat) (Docker)
 			* [Jellystat](https://hub.docker.com/r/cyfershepard/jellystat) (Docker)
 			* [Overseerr](https://overseerr.dev/) (Docker)
 			* [Radarr](https://hub.docker.com/r/linuxserver/radarr) (Docker)
