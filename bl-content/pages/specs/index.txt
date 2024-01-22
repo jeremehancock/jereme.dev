@@ -200,6 +200,7 @@
 			* [Jellystat](https://hub.docker.com/r/cyfershepard/jellystat) (Docker)
 			* [Overseerr](https://overseerr.dev/) (Docker)
 			* [ErsatzTV](https://github.com/ErsatzTV/ErsatzTV) (Docker)
+			* [xTeVe](https://github.com/xteve-project/xTeVe) (Docker)
 			* [Radarr](https://hub.docker.com/r/linuxserver/radarr) (Docker)
 			* [Sonarr](https://hub.docker.com/r/linuxserver/sonarr) (Docker)
 			* [Lidarr](https://hub.docker.com/r/linuxserver/lidarr) (Docker)
