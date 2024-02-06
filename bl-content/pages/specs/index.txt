@@ -282,7 +282,6 @@
 		* [Seagate 4TB Internal Drive](https://www.amazon.com/dp/B07J46FXHK)
 		* [HGST Ultrastar 4TB Internal Drive x 2](https://www.amazon.com/dp/B079JRGP4N)
 		* [3.5” HDD Hard Drive to 5.25” Cage](https://www.amazon.com/dp/B08BNTNTCY)
-			* [Western Digital 4TB](https://www.amazon.com/dp/B0090UEQ8I) (Hot Spare)
 	* **Graphics Card**
 		* NVIDIA Corporation GT218 [GeForce 8400 GS Rev. 3]
 	* **Network** 
