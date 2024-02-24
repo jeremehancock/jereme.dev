@@ -70,7 +70,7 @@
 *   **Plugins:** [Pi Lab Plugins](plugins)
 *   **Network** 
     * [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
-    * [Nest WiFi Pro - 6E](https://www.amazon.com/Google-Nest-WiFi-Pro-Reliable/dp/B0BCQSYPZB/) - 3 Pack plus extra router
+    * [Nest WiFi Pro - 6E](https://www.amazon.com/Google-Nest-WiFi-Pro-Reliable/dp/B0BCQSYPZB/) - 3 Pack plus extra router - Wired Backhaul
     * [TP-Link 16 Port Gigabit Ethernet Network Switch (TL-SG116)](https://www.amazon.com/gp/product/B07GR9S6FN)
 *   **Live Stream:** [AT&T Sercomm OC432](https://forums.att.com/conversations/device-troubleshooting/repurposing-digital-life-camera/5deff480bad5f2f6065cc3e0?commentId=5df01789bad5f2f606b01161)
 *   **Power:**
@@ -94,7 +94,7 @@
 		* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=thanos" target="_blank">Metrics Dashboard</a> (thanos)
 	*   **Network** 
 		* [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
-		* [Nest WiFi Pro - 6E](https://www.amazon.com/Google-Nest-WiFi-Pro-Reliable/dp/B0BCQSYPZB/) - 3 Pack plus extra router
+		* [Nest WiFi Pro - 6E](https://www.amazon.com/Google-Nest-WiFi-Pro-Reliable/dp/B0BCQSYPZB/) - 3 Pack plus extra router - Wired Backhaul
 		* [TP-Link 16 Port Gigabit Ethernet Network Switch (TL-SG116)](https://www.amazon.com/gp/product/B07GR9S6FN)
 	*   **Power:**
 		* [CyberPower CP1000PFCLCD PFC Sinewave UPS](https://www.amazon.com/gp/product/B00429N192)
@@ -113,7 +113,7 @@
 				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=restreamerpi" target="_blank">Metrics Dashboard</a> (restreamerpi)
 	* **Network** 
 				* [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
-				* [Nest WiFi Pro - 6E](https://www.amazon.com/Google-Nest-WiFi-Pro-Reliable/dp/B0BCQSYPZB/) - 3 Pack plus extra router
+				* [Nest WiFi Pro - 6E](https://www.amazon.com/Google-Nest-WiFi-Pro-Reliable/dp/B0BCQSYPZB/) - 3 Pack plus extra router - Wired Backhaul
 				* [TP-Link 16 Port Gigabit Ethernet Network Switch (TL-SG116)](https://www.amazon.com/gp/product/B07GR9S6FN)
 	*   **Power:**
 				* [CyberPower CP1000PFCLCD PFC Sinewave UPS](https://www.amazon.com/gp/product/B00429N192)
@@ -130,7 +130,7 @@
 				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=noderedpi" target="_blank">Metrics Dashboard</a> (noderedpi)
 	*  **Network** 
 		* [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
-		* [Nest WiFi Pro - 6E](https://www.amazon.com/Google-Nest-WiFi-Pro-Reliable/dp/B0BCQSYPZB/) - 3 Pack plus extra router
+		* [Nest WiFi Pro - 6E](https://www.amazon.com/Google-Nest-WiFi-Pro-Reliable/dp/B0BCQSYPZB/) - 3 Pack plus extra router - Wired Backhaul
 		* [TP-Link 16 Port Gigabit Ethernet Network Switch (TL-SG116)](https://www.amazon.com/gp/product/B07GR9S6FN)
 	*   **Power:**
 		* [CyberPower CP1000PFCLCD PFC Sinewave UPS](https://www.amazon.com/gp/product/B00429N192)
@@ -148,7 +148,7 @@
 				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=prometheus" target="_blank">Metrics Dashboard</a> (prometheus)
 	* **Network** 
 		* [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
-		* [Nest WiFi Pro - 6E](https://www.amazon.com/Google-Nest-WiFi-Pro-Reliable/dp/B0BCQSYPZB/) - 3 Pack plus extra router
+		* [Nest WiFi Pro - 6E](https://www.amazon.com/Google-Nest-WiFi-Pro-Reliable/dp/B0BCQSYPZB/) - 3 Pack plus extra router - Wired Backhaul
 		* [TP-Link 16 Port Gigabit Ethernet Network Switch (TL-SG116)](https://www.amazon.com/gp/product/B07GR9S6FN)
 	*   **Power:**
 		* [CyberPower CP1000PFCLCD PFC Sinewave UPS](https://www.amazon.com/gp/product/B00429N192)
@@ -168,7 +168,7 @@
 				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=octopi" target="_blank">Metrics Dashboard</a> (octopi)
 	*  **Network** 
 		* [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
-		* [Nest WiFi Pro - 6E](https://www.amazon.com/Google-Nest-WiFi-Pro-Reliable/dp/B0BCQSYPZB/) - 3 Pack plus extra router
+		* [Nest WiFi Pro - 6E](https://www.amazon.com/Google-Nest-WiFi-Pro-Reliable/dp/B0BCQSYPZB/) - 3 Pack plus extra router - Wired Backhaul
 		* [TP-Link 16 Port Gigabit Ethernet Network Switch (TL-SG116)](https://www.amazon.com/gp/product/B07GR9S6FN)
 	* [More Details](octoprint-node)
 *   **RetroFlag GPi Case**
@@ -181,7 +181,7 @@
 				*   **Operating System:** [RetroPie](https://retropie.org.uk/)
 	* **Network** 
 				* [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
-				* [Nest WiFi Pro - 6E](https://www.amazon.com/Google-Nest-WiFi-Pro-Reliable/dp/B0BCQSYPZB/) - 3 Pack plus extra router
+				* [Nest WiFi Pro - 6E](https://www.amazon.com/Google-Nest-WiFi-Pro-Reliable/dp/B0BCQSYPZB/) - 3 Pack plus extra router - Wired Backhaul
 				
 ---
 
@@ -232,7 +232,7 @@
 		* [KVM VGA Switch](https://www.amazon.com/dp/B08G8HVVDN)
 	* **Network** 
 		* [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
-		* [Nest WiFi Pro - 6E](https://www.amazon.com/Google-Nest-WiFi-Pro-Reliable/dp/B0BCQSYPZB/) - 3 Pack plus extra router
+		* [Nest WiFi Pro - 6E](https://www.amazon.com/Google-Nest-WiFi-Pro-Reliable/dp/B0BCQSYPZB/) - 3 Pack plus extra router - Wired Backhaul
 		* [TP-Link 16 Port Gigabit Ethernet Network Switch (TL-SG116)](https://www.amazon.com/gp/product/B07GR9S6FN)
 	*   **Power:**
 		* [CyberPower CP1000PFCLCD PFC Sinewave UPS](https://www.amazon.com/gp/product/B00429N192)
@@ -255,7 +255,7 @@
 		* [Plugable USB 3.0 Universal Laptop Docking Station](https://www.amazon.com/Plugable-Universal-Docking-Station-Ethernet/dp/B00ECDM78E)
 	* **Network** 
 		* [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
-		* [Nest WiFi Pro - 6E](https://www.amazon.com/Google-Nest-WiFi-Pro-Reliable/dp/B0BCQSYPZB/) - 3 Pack plus extra router
+		* [Nest WiFi Pro - 6E](https://www.amazon.com/Google-Nest-WiFi-Pro-Reliable/dp/B0BCQSYPZB/) - 3 Pack plus extra router - Wired Backhaul
 		* [TP-Link 16 Port Gigabit Ethernet Network Switch (TL-SG116)](https://www.amazon.com/gp/product/B07GR9S6FN)
 	*   **Power:**
 		* [CyberPower CP1000PFCLCD PFC Sinewave UPS](https://www.amazon.com/gp/product/B00429N192)
@@ -299,7 +299,7 @@
 		* [KVM VGA Switch](https://www.amazon.com/dp/B08G8HVVDN)
 	*  **Network** 
 		* [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
-		* [Nest WiFi Pro - 6E](https://www.amazon.com/Google-Nest-WiFi-Pro-Reliable/dp/B0BCQSYPZB/) - 3 Pack plus extra router
+		* [Nest WiFi Pro - 6E](https://www.amazon.com/Google-Nest-WiFi-Pro-Reliable/dp/B0BCQSYPZB/) - 3 Pack plus extra router - Wired Backhaul
 		* [TP-Link 16 Port Gigabit Ethernet Network Switch (TL-SG116)](https://www.amazon.com/gp/product/B07GR9S6FN)
 			
 ---
