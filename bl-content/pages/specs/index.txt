@@ -72,6 +72,7 @@
     * [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
     * [Nest WiFi Pro - 6E](https://www.amazon.com/Google-Nest-WiFi-Pro-Reliable/dp/B0BCQSYPZB/) - 3 Pack plus extra router - Wired Backhaul
     * [TP-Link 16 Port Gigabit Ethernet Network Switch (TL-SG116)](https://www.amazon.com/gp/product/B07GR9S6FN)
+    * [Netgear 5 Port Gigabit Ethernet Network Switch](https://www.netgear.com/business/wired/switches/unmanaged/gs105/)
 *   **Live Stream:** [AT&T Sercomm OC432](https://forums.att.com/conversations/device-troubleshooting/repurposing-digital-life-camera/5deff480bad5f2f6065cc3e0?commentId=5df01789bad5f2f606b01161)
 *   **Power:**
 		* [CyberPower CP1000PFCLCD PFC Sinewave UPS](https://www.amazon.com/gp/product/B00429N192)
@@ -96,6 +97,7 @@
 		* [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
 		* [Nest WiFi Pro - 6E](https://www.amazon.com/Google-Nest-WiFi-Pro-Reliable/dp/B0BCQSYPZB/) - 3 Pack plus extra router - Wired Backhaul
 		* [TP-Link 16 Port Gigabit Ethernet Network Switch (TL-SG116)](https://www.amazon.com/gp/product/B07GR9S6FN)
+		* [Netgear 5 Port Gigabit Ethernet Network Switch](https://www.netgear.com/business/wired/switches/unmanaged/gs105/)
 	*   **Power:**
 		* [CyberPower CP1000PFCLCD PFC Sinewave UPS](https://www.amazon.com/gp/product/B00429N192)
 		* [XDCDHM USB Charger, 60 Watt 12A 6-Port High Speed Charger](https://www.amazon.com/gp/product/B075P22QC2)
@@ -115,6 +117,7 @@
 				* [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
 				* [Nest WiFi Pro - 6E](https://www.amazon.com/Google-Nest-WiFi-Pro-Reliable/dp/B0BCQSYPZB/) - 3 Pack plus extra router - Wired Backhaul
 				* [TP-Link 16 Port Gigabit Ethernet Network Switch (TL-SG116)](https://www.amazon.com/gp/product/B07GR9S6FN)
+				* [Netgear 5 Port Gigabit Ethernet Network Switch](https://www.netgear.com/business/wired/switches/unmanaged/gs105/)
 	*   **Power:**
 				* [CyberPower CP1000PFCLCD PFC Sinewave UPS](https://www.amazon.com/gp/product/B00429N192)
 				* [XDCDHM USB Charger, 60 Watt 12A 6-Port High Speed Charger](https://www.amazon.com/gp/product/B075P22QC2)
@@ -132,6 +135,7 @@
 		* [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
 		* [Nest WiFi Pro - 6E](https://www.amazon.com/Google-Nest-WiFi-Pro-Reliable/dp/B0BCQSYPZB/) - 3 Pack plus extra router - Wired Backhaul
 		* [TP-Link 16 Port Gigabit Ethernet Network Switch (TL-SG116)](https://www.amazon.com/gp/product/B07GR9S6FN)
+		* [Netgear 5 Port Gigabit Ethernet Network Switch](https://www.netgear.com/business/wired/switches/unmanaged/gs105/)
 	*   **Power:**
 		* [CyberPower CP1000PFCLCD PFC Sinewave UPS](https://www.amazon.com/gp/product/B00429N192)
 		* [XDCDHM USB Charger, 60 Watt 12A 6-Port High Speed Charger](https://www.amazon.com/gp/product/B075P22QC2)
@@ -150,6 +154,7 @@
 		* [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
 		* [Nest WiFi Pro - 6E](https://www.amazon.com/Google-Nest-WiFi-Pro-Reliable/dp/B0BCQSYPZB/) - 3 Pack plus extra router - Wired Backhaul
 		* [TP-Link 16 Port Gigabit Ethernet Network Switch (TL-SG116)](https://www.amazon.com/gp/product/B07GR9S6FN)
+		* [Netgear 5 Port Gigabit Ethernet Network Switch](https://www.netgear.com/business/wired/switches/unmanaged/gs105/)
 	*   **Power:**
 		* [CyberPower CP1000PFCLCD PFC Sinewave UPS](https://www.amazon.com/gp/product/B00429N192)
 		* [XDCDHM USB Charger, 60 Watt 12A 6-Port High Speed Charger](https://www.amazon.com/gp/product/B075P22QC2)
@@ -170,6 +175,7 @@
 		* [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
 		* [Nest WiFi Pro - 6E](https://www.amazon.com/Google-Nest-WiFi-Pro-Reliable/dp/B0BCQSYPZB/) - 3 Pack plus extra router - Wired Backhaul
 		* [TP-Link 16 Port Gigabit Ethernet Network Switch (TL-SG116)](https://www.amazon.com/gp/product/B07GR9S6FN)
+		* [Netgear 5 Port Gigabit Ethernet Network Switch](https://www.netgear.com/business/wired/switches/unmanaged/gs105/)
 	* [More Details](octoprint-node)
 *   **RetroFlag GPi Case**
     *   1 Raspberry Pi Zero W
@@ -234,6 +240,7 @@
 		* [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
 		* [Nest WiFi Pro - 6E](https://www.amazon.com/Google-Nest-WiFi-Pro-Reliable/dp/B0BCQSYPZB/) - 3 Pack plus extra router - Wired Backhaul
 		* [TP-Link 16 Port Gigabit Ethernet Network Switch (TL-SG116)](https://www.amazon.com/gp/product/B07GR9S6FN)
+		* [Netgear 5 Port Gigabit Ethernet Network Switch](https://www.netgear.com/business/wired/switches/unmanaged/gs105/)
 	*   **Power:**
 		* [CyberPower CP1000PFCLCD PFC Sinewave UPS](https://www.amazon.com/gp/product/B00429N192)
 *   **Overseer Node**
@@ -257,6 +264,7 @@
 		* [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
 		* [Nest WiFi Pro - 6E](https://www.amazon.com/Google-Nest-WiFi-Pro-Reliable/dp/B0BCQSYPZB/) - 3 Pack plus extra router - Wired Backhaul
 		* [TP-Link 16 Port Gigabit Ethernet Network Switch (TL-SG116)](https://www.amazon.com/gp/product/B07GR9S6FN)
+		* [Netgear 5 Port Gigabit Ethernet Network Switch](https://www.netgear.com/business/wired/switches/unmanaged/gs105/)
 	*   **Power:**
 		* [CyberPower CP1000PFCLCD PFC Sinewave UPS](https://www.amazon.com/gp/product/B00429N192)
 	*    **Cooling:** [AC Infinity MULTIFAN S4](https://www.amazon.com/gp/product/B00MWH4FL4) x 2
@@ -299,6 +307,7 @@
 		* [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
 		* [Nest WiFi Pro - 6E](https://www.amazon.com/Google-Nest-WiFi-Pro-Reliable/dp/B0BCQSYPZB/) - 3 Pack plus extra router - Wired Backhaul
 		* [TP-Link 16 Port Gigabit Ethernet Network Switch (TL-SG116)](https://www.amazon.com/gp/product/B07GR9S6FN)
+		* [Netgear 5 Port Gigabit Ethernet Network Switch](https://www.netgear.com/business/wired/switches/unmanaged/gs105/)
 			
 ---
 				
