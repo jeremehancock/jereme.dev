@@ -284,7 +284,7 @@
 				*  [Paperless-ngx](https://docs.paperless-ngx.com/) (Docker)
 				*  [Portainer](https://www.portainer.io/) (Docker)
 	* Raidz2
-		* [Seagate BarraCuda 4TB](https://www.amazon.com/dp/B07D9C7SQH)
+		* [Western Digital 4TB](https://www.amazon.com/gp/product/B0090UEQ8I)
 		* [Seagate 4TB Internal Drive](https://www.amazon.com/dp/B07J46FXHK)
 		* [HGST Ultrastar 4TB Internal Drive x 2](https://www.amazon.com/dp/B079JRGP4N)
 		* [3.5” HDD Hard Drive to 5.25” Cage](https://www.amazon.com/dp/B08BNTNTCY)
