@@ -210,6 +210,7 @@
 			* [Radarr](https://hub.docker.com/r/linuxserver/radarr) (Docker)
 			* [Sonarr](https://hub.docker.com/r/linuxserver/sonarr) (Docker)
 			* [Lidarr](https://hub.docker.com/r/linuxserver/lidarr) (Docker)
+			* [LidaTube](https://github.com/TheWicklowWolf/LidaTube) (Docker)
 			* [Prowlarr](https://hub.docker.com/r/linuxserver/prowlarr) (Docker)
 			* [FlareSolverr](https://github.com/FlareSolverr/FlareSolverr) (Docker)
 			* [qBittorrent / WireGuard](https://hub.docker.com/r/dyonr/qbittorrentvpn/) (Docker)
