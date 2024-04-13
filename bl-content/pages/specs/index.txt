@@ -224,6 +224,7 @@
 			* [Jellyfin-NowPlaying](https://github.com/jeremehancock/Jellyfin-NowPlaying) (Bash)
 			* [Exportarr](https://github.com/onedr0p/exportarr) (Docker)
 			* [Portainer](https://www.portainer.io/) (Docker)
+			* [Scrutiny](https://github.com/AnalogJ/scrutiny) (Docker)
 			* [yt-dlp](https://github.com/yt-dlp/yt-dlp)
 			* [abcde](https://manpages.ubuntu.com/manpages/jammy/en/man1/abcde.1.html)
 		* [Syba 8 Bay Hard Drive Enclosure](https://www.amazon.com/dp/B07MD2LNYX)
@@ -244,23 +245,22 @@
 		* [Netgear 5 Port Gigabit Ethernet Network Switch](https://www.netgear.com/business/wired/switches/unmanaged/gs105/)
 	*   **Power:**
 		* [CyberPower CP1000PFCLCD PFC Sinewave UPS](https://www.amazon.com/gp/product/B00429N192)
-*   **Overseer Node**
-	*   Dell Latitude E7470
-		* 4x Intel Core i7-6600U CPU @ 2.60GHz
+*   **Optimus Node**
+	*   Dell OptiPlex 3060 Small Form Factor
+		* [Intel Core i3-8100 CPU @ 3.60GHz](https://ark.intel.com/content/www/us/en/ark/products/126688/intel-core-i38100-processor-6m-cache-3-60-ghz.html)
 		*   **Operating System:** [Ubuntu Server 22.04.3 LTS](https://ubuntu.com/download/server)
 		* 16GB DDR4 SDRAM 2133 MT/s
-		* SanDisk X400 M.2 512GB (OS)
+		* 256GB m.2 SSD (OS)
 				* [Nginx Proxy Manager](https://github.com/NginxProxyManager/nginx-proxy-manager) (Docker)
-				* [Nextcloud](https://snapcraft.io/install/nextcloud/ubuntu) (Snap)
 				* [Homarr](https://homarr.dev) (Docker)
-				* [Heimdall](https://hub.docker.com/r/linuxserver/heimdall) (Docker)
-				* [Uptime Kuma](https://github.com/louislam/uptime-kuma) (Docker) with [IFTTT Notifications](https://ifttt.com/)
+				* [Uptime Kuma](https://github.com/louislam/uptime-kuma) (Docker) with [Pushover](https://pushover.net/)
 				* [Speedtest Tracker](https://docs.speedtest-tracker.dev/) (Docker)
 				* [Prometheus](https://hub.docker.com/r/ubuntu/prometheus) (Docker)
 				* [Portainer](https://www.portainer.io/) (Docker)
+				* [IT Tools](https://github.com/CorentinTh/it-tools) (Docker)
+				* [Scrutiny](https://github.com/AnalogJ/scrutiny) (Docker)
 				* [Watchtower](https://containrrr.dev/watchtower/) (Docker)
-		* [WD_Black 5TB P10-Game Drive](https://www.amazon.com/WD_Black-Drive-External-Compatible-WDBA3A0050BBK-WESN/dp/B07VNTFHD5) (Backups)
-		* [Plugable USB 3.0 Universal Laptop Docking Station](https://www.amazon.com/Plugable-Universal-Docking-Station-Ethernet/dp/B00ECDM78E)
+		* [Seagate BarraCuda 4TB Internal Hard Drive](https://www.amazon.com/dp/B07D9C7SQH) (Backups)
 	* **Network** 
 		* [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
 		* [Nest WiFi Pro - 6E](https://www.amazon.com/Google-Nest-WiFi-Pro-Reliable/dp/B0BCQSYPZB/) - 3 Pack plus extra router - Wired Backhaul
@@ -268,12 +268,12 @@
 		* [Netgear 5 Port Gigabit Ethernet Network Switch](https://www.netgear.com/business/wired/switches/unmanaged/gs105/)
 	*   **Power:**
 		* [CyberPower CP1000PFCLCD PFC Sinewave UPS](https://www.amazon.com/gp/product/B00429N192)
-	*    **Cooling:** [AC Infinity MULTIFAN S4](https://www.amazon.com/gp/product/B00MWH4FL4) x 2
 * **TrueNAS Node**
   * Dell Precision 5820
 		*  Intel(R) Xeon(R) W-2135 CPU @ 3.70GHz
 		*   **Operating System:** [TrueNAS Scale](https://www.truenas.com/truenas-scale/)
 		*  128GB DDR4 ECC SDRAM
+		*  Dell 22 Inch Monitor
 		*  [Sedna PCI Express (PCIe) SATA III (6G) SSD Adapter](https://www.amazon.com/dp/B01452SP1O)
 		*  [Crucial 500GB SSD](https://www.amazon.com/dp/B0786QNS9B) (OS)
 		*  Apps
@@ -296,19 +296,6 @@
 	*   **Power:**
 		*   950W PSU
 		* [CyberPower CP1000PFCLCD PFC Sinewave UPS](https://www.amazon.com/gp/product/B00429N192)
-*   **Lab Monitor Node**
-	*   Dell Latitude E6530
-		* 4x Intel Core i5-3320M CPU @ 2.60GHz
-    * 8GB DDR3 SDRAM 1600MHz
-		*   **Operating System:** [Ubuntu 22.04.3 LTS](https://ubuntu.com/download/desktop)
-		* Intel 120GB SSD (OS)
-		* Dell 22 Inch Monitor
-		* [KVM VGA Switch](https://www.amazon.com/dp/B08G8HVVDN)
-	*  **Network** 
-		* [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
-		* [Nest WiFi Pro - 6E](https://www.amazon.com/Google-Nest-WiFi-Pro-Reliable/dp/B0BCQSYPZB/) - 3 Pack plus extra router - Wired Backhaul
-		* [TP-Link 16 Port Gigabit Ethernet Network Switch (TL-SG116)](https://www.amazon.com/gp/product/B07GR9S6FN)
-		* [Netgear 5 Port Gigabit Ethernet Network Switch](https://www.netgear.com/business/wired/switches/unmanaged/gs105/)
 			
 ---
 				
