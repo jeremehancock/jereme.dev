@@ -224,6 +224,7 @@
 			* [Jellyfin-NowPlaying](https://github.com/jeremehancock/Jellyfin-NowPlaying) (Bash)
 			* [Exportarr](https://github.com/onedr0p/exportarr) (Docker)
 			* [Portainer](https://www.portainer.io/) (Docker)
+			* [Dozzle](https://dozzle.dev/) (Docker)
 			* [Scrutiny](https://github.com/AnalogJ/scrutiny) (Docker)
 			* [yt-dlp](https://github.com/yt-dlp/yt-dlp)
 			* [abcde](https://manpages.ubuntu.com/manpages/jammy/en/man1/abcde.1.html)
@@ -257,6 +258,7 @@
 				* [Speedtest Tracker](https://docs.speedtest-tracker.dev/) (Docker)
 				* [Prometheus](https://hub.docker.com/r/ubuntu/prometheus) (Docker)
 				* [Portainer](https://www.portainer.io/) (Docker)
+				* [Dozzle](https://dozzle.dev/) (Docker)
 				* [IT Tools](https://github.com/CorentinTh/it-tools) (Docker)
 				* [Scrutiny](https://github.com/AnalogJ/scrutiny) (Docker)
 				* [Watchtower](https://containrrr.dev/watchtower/) (Docker)
@@ -283,6 +285,7 @@
 			*  Ubuntu 22.04 Server
 				*  [Paperless-ngx](https://docs.paperless-ngx.com/) (Docker)
 				*  [Portainer](https://www.portainer.io/) (Docker)
+				*  [Dozzle](https://dozzle.dev/) (Docker)
 				*  [Nextcloud](https://hub.docker.com/_/nextcloud) (Docker)
 	* Raidz2
 		* [Western Digital 4TB](https://www.amazon.com/gp/product/B0090UEQ8I)
