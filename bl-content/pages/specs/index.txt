@@ -249,7 +249,7 @@
 	*   Dell OptiPlex 3060 Small Form Factor
 		* [Intel Core i3-8100 CPU @ 3.60GHz](https://ark.intel.com/content/www/us/en/ark/products/126688/intel-core-i38100-processor-6m-cache-3-60-ghz.html)
 		*   **Operating System:** [Ubuntu Server 22.04.3 LTS](https://ubuntu.com/download/server)
-		* 16GB DDR4 SDRAM 2133 MT/s
+		* 24GB DDR4 SDRAM 2133 MT/s
 		*  [WD Blue SN580 NVMe 1TB Solid State Drive](https://www.amazon.com/Western-Digital-SN580-Internal-Solid/dp/B09HKDQ1RN) - [SABRENT NVMe M.2 SSD to PCIe](https://www.amazon.com/dp/B084GDY2PW) (OS)
 				* [Nginx Proxy Manager](https://github.com/NginxProxyManager/nginx-proxy-manager) (Docker)
 				* [Homarr](https://homarr.dev) (Docker)
