@@ -235,9 +235,6 @@
 		* [WD easystore 16TB](https://www.bestbuy.com/site/wd-easystore-16tb-external-usb-3-0-hard-drive-black/6427998.p?skuId=6427998) - Shucked (WD160EDGZ) (TV 2)
 		* [Seagate 2TB Internal Drive](https://www.amazon.com/Seagate-BarraCuda-Internal-Drive-3-5-Inch/dp/B07H2RR55Q) - Renewed (ST2000DM008-2FR102) (Music)
 		*  [WD Blue SN570 NVMe 1TB Solid State Drive](https://www.amazon.com/Western-Digital-SN570-Internal-Solid/dp/B09HKDQ1RN) - [SABRENT NVMe M.2 SSD to PCIe](https://www.amazon.com/dp/B084GDY2PW) (Cache - Downloads/Transcodes/Usenet)
-		* [HDHomeRun DUAL](https://www.amazon.com/SiliconDust-HDHomeRun-Definition-Digital-HDHR3-US/dp/B004HO58SO)
-		* [PBD Outdoor Digital Amplified HDTV Antenna](https://www.amazon.com/dp/B07JN6FNZ4)
-		* [KVM VGA Switch](https://www.amazon.com/dp/B08G8HVVDN)
 	* **Network** 
 		* [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
 		* [Nest WiFi Pro - 6E](https://www.amazon.com/Google-Nest-WiFi-Pro-Reliable/dp/B0BCQSYPZB/) - 3 Pack plus extra router - Wired Backhaul
