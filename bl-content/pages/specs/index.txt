@@ -89,7 +89,6 @@
 		* Samsung EVO Plus 32GB microSDHC Card
 		* **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
 		* [Pi-hole](https://pi-hole.net/)
-		* [Gravity Sync](https://github.com/vmstan/gravity-sync)
 		* [Node Exporter](https://github.com/prometheus/node_exporter) - Expose Linux metrics: Installed to each node.
 		* [RPi Exporter](https://github.com/lukasmalkmus/rpi_exporter) - Expose Raspberry Pi metrics: Installed to each node.
 		* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=thanos" target="_blank">Metrics Dashboard</a> (thanos)
@@ -109,7 +108,6 @@
 				*   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
 				* [Restreamer](https://datarhei.github.io/restreamer/)
 				* [Pi-hole](https://pi-hole.net/)
-				* [Gravity Sync](https://github.com/vmstan/gravity-sync)
 				* [Node Exporter](https://github.com/prometheus/node_exporter) - Expose Linux metrics: Installed to each node.
 				* [RPi Exporter](https://github.com/lukasmalkmus/rpi_exporter) - Expose Raspberry Pi metrics: Installed to each node.
 				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=restreamerpi" target="_blank">Metrics Dashboard</a> (restreamerpi)
@@ -258,6 +256,7 @@
 				* [IT Tools](https://github.com/CorentinTh/it-tools) (Docker)
 				* [Scrutiny](https://github.com/AnalogJ/scrutiny) (Docker)
 				* [Watchtower](https://containrrr.dev/watchtower/) (Docker)
+				* [Orbital Sync](https://orbitalsync.com/) (Docker)
 		* [Seagate BarraCuda 4TB Internal Hard Drive](https://www.amazon.com/dp/B07D9C7SQH) (Backups)
 	* **Network** 
 		* [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
