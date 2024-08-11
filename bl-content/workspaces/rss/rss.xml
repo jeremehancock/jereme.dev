@@ -5,7 +5,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Mon, 29 Jul 2024 13:10:20 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 11 Aug 2024 13:57:00 -0500</lastBuildDate>
     <item>
       <title>Jellyfin NowPlaying</title>
       <link>https://pilab.dev/jellyfin-nowplaying</link>
@@ -65,26 +65,19 @@ SERVER="username@hostname"&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Tailscale traffic comes in on the tailscale0 network interface, so this option is needed to allow your &lt;a href="https://pi-hole.net/"&gt;Pi-hole&lt;/a&gt; to respond to Tailscale-based DNS traffic. When using this option, make sure your &lt;a href="https://pi-hole.net/"&gt;Pi-hole&lt;/a&gt; is properly firewalled.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Step 2:&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Install &lt;a href="https://github.com/vmstan/gravity-sync"&gt;Gravity Sync&lt;/a&gt; on both Raspberry Pis.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;curl -sSL https://gravity.vmstan.com | bash&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Install &lt;a href="https://orbitalsync.com/"&gt;Orbital Sync&lt;/a&gt; on one of the Raspberry Pis. This can also be installed on a completely different device on your home network. I prefer to do that, but it should work from one of the Raspberry Pis. Install instructions can be found &lt;a href="https://orbitalsync.com/#getting-started"&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Step 3:&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Run the first &lt;a href="https://github.com/vmstan/gravity-sync"&gt;Gravity Sync&lt;/a&gt; from the Raspberry Pi that is fully configured with all your settings.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;gravity-sync push&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;Step 4:&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Setup &lt;a href="https://github.com/vmstan/gravity-sync"&gt;Gravity Sync&lt;/a&gt; automation on both Raspberry Pis.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;gravity-sync auto&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;Step 5:&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Install &lt;a href="https://tailscale.com/"&gt;Tailscale&lt;/a&gt; on both Raspberry Pis.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;curl -fsSL https://tailscale.com/install.sh | sh&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;Step 6:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Step 4:&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Enable IP forwarding on both Raspberry Pis.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;echo 'net.ipv4.ip_forward = 1' | sudo tee -a /etc/sysctl.conf
 echo 'net.ipv6.conf.all.forwarding = 1' | sudo tee -a /etc/sysctl.conf
 sudo sysctl -p /etc/sysctl.conf&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;Step 7:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Step 5:&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Start &lt;a href="https://tailscale.com/"&gt;Tailscale&lt;/a&gt; on both Raspberry Pis.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;sudo tailscale up --advertise-exit-node --advertise-routes=192.168.1.0/24 --accept-dns=false --accept-routes=true&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;Step 8:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Step 6:&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Login to &lt;a href="https://tailscale.com/"&gt;Tailscale&lt;/a&gt; and click the &amp;quot;three dots&amp;quot; menu next to the Machine entry for each &lt;a href="https://pi-hole.net/"&gt;Pi-hole&lt;/a&gt;. Select &amp;quot;Disable key expiry&amp;quot; from the drop-down. Since the &lt;a href="https://pi-hole.net/"&gt;Pi-holes&lt;/a&gt; are not directly exposed to the internet it is safe to not require re-authentication. Then select &amp;quot;Edit route settings...&amp;quot; from the same drop-down menu and enable both options. See image below.&lt;/p&gt;
 &lt;div class="centered"&gt;
     &lt;img src="/bl-content/uploads/pages/b2824f25debdfd4c320c3717545b05c8/tailscale-setup.png" class="image-border" /&gt;&lt;br&gt;&lt;br&gt;
@@ -94,12 +87,17 @@ sudo sysctl -p /etc/sysctl.conf&lt;/code&gt;&lt;/pre&gt;
     &lt;img src="/bl-content/uploads/pages/b2824f25debdfd4c320c3717545b05c8/tailscale-dns.png" class="image-border" /&gt;&lt;br&gt;&lt;br&gt;
 &lt;/div&gt;
 &lt;p&gt;Turn on MagicDNS on the DNS tab. This way the &lt;a href="https://pi-hole.net/"&gt;Pi-hole's&lt;/a&gt; interfaces will work when on or off the Tailscale network using their hostnames.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Step 9:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Step 7:&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Configure your router to use the &lt;a href="https://pi-hole.net/"&gt;Pi-hole's&lt;/a&gt; local IP addresses for your DNS.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Step 10:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Step 8:&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Install &lt;a href="https://tailscale.com/"&gt;Tailscale&lt;/a&gt; on other devices such as your phone so you can connect to your &lt;a href="https://tailscale.com/"&gt;Tailscale&lt;/a&gt; network.&lt;/p&gt;
 &lt;p&gt;Thats it!&lt;/p&gt;
-&lt;p&gt;Now you should have all your devices setup with ad blocking and VPN. Now when you are connected to your &lt;a href="https://tailscale.com/"&gt;Tailscale&lt;/a&gt; network you will also get ad blocking even when you are not on your local network.&lt;/p&gt;</description>
+&lt;p&gt;Now you should have all your devices setup with ad blocking and VPN. Now when you are connected to your &lt;a href="https://tailscale.com/"&gt;Tailscale&lt;/a&gt; network you will also get ad blocking even when you are not on your local network.&lt;/p&gt;
+&lt;p&gt;Don't forget if you want everyone on your home network (even without being on &lt;a href="https://tailscale.com/"&gt;Tailscale&lt;/a&gt;) to be covered by &lt;a href="https://pi-hole.net/"&gt;Pi-hole&lt;/a&gt; to update your router's DNS configuration. Instructions can be found &lt;a href="https://docs.pi-hole.net/main/post-install/"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Updates:&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;I have updated the instructions to use Orbital Sync instead of the now deprecated Gravity Sync.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</description>
       <pubDate>Fri, 30 Sep 2022 21:28:01 -0500</pubDate>
       <guid isPermaLink="false">b2824f25debdfd4c320c3717545b05c8</guid>
     </item>
