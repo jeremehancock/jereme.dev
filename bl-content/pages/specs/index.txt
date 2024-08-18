@@ -85,7 +85,7 @@
 ## Pi Lab (Ancillary Nodes):
 
 *  **Pi-hole Node**
-	*  1 Raspberry Pi 2 Model B
+	*  1 Raspberry Pi 4 4GB Model B
 		* Samsung EVO Plus 32GB microSDHC Card
 		* **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
 		* [Pi-hole](https://pi-hole.net/)
@@ -177,10 +177,6 @@
 	* [More Details](octoprint-node)
 *   **RetroFlag GPi Case**
     *   1 Raspberry Pi Zero W
-				* Samsung EVO Plus 32GB microSDHC Card
-				*   **Operating System:** [RetroPie](https://retropie.org.uk/)
-*   **RetroPie Node** 
-    *  1 Raspberry Pi 4 4GB Model B
 				* Samsung EVO Plus 32GB microSDHC Card
 				*   **Operating System:** [RetroPie](https://retropie.org.uk/)
 	* **Network** 
