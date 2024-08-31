@@ -158,7 +158,7 @@
 		* [XDCDHM USB Charger, 60 Watt 12A 6-Port High Speed Charger](https://www.amazon.com/gp/product/B075P22QC2)
 	*   **Cooling:** [C4Labs Zebra Bramble Case](https://www.amazon.com/dp/B07VQKPZZT)
 	* [More Details](prometheus-grafana)
-*   **OctoPrint Node**
+  *   **OctoPrint Node**
     *   1 Raspberry Pi 3 Model B+
 				* Samsung EVO Plus 32GB microSDHC Card
 				*   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
@@ -167,8 +167,6 @@
 				*   OctoPrint
 				* [Onn Universal Wall Charger](https://www.walmart.com/ip/Onn-Universal-Wall-Charger-Black/620837164)
 				* [Ender 3 Pro](https://creality3d.shop/collections/3d-printer/products/creality3d-ender-3-pro-high-precision-3d-printer)
-				* [OctoPrint Node Live Stream](octoprint-node-live-stream)
-				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=octopi" target="_blank">Metrics Dashboard</a> (octopi)
 	*  **Network** 
 		* [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
 		* [Nest WiFi Pro - 6E](https://www.amazon.com/Google-Nest-WiFi-Pro-Reliable/dp/B0BCQSYPZB/) - 3 Pack plus extra router - Wired Backhaul
