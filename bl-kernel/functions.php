@@ -677,8 +677,8 @@ function changeUserPassword($args)
   $confirmPassword = $args['confirmPassword'];
 
   // Password length
-  if (Text::length($newPassword) < 6) {
-    Alert::set($L->g('Password must be at least 6 characters long'), ALERT_STATUS_FAIL);
+  if (Text::length($newPassword) < PASSWORD_LENGTH) {
+    Alert::set($L->g('Password must be at least ' . PASSWORD_LENGTH . ' characters long'), ALERT_STATUS_FAIL);
     return false;
   }
 
@@ -932,7 +932,7 @@ function transformImage($file, $imageDir, $thumbnailDir = false)
 
   // Generate Thumbnail
   if (!empty($thumbnailDir)) {
-    if (($fileExtension == 'svg') || ($fileExtension == 'webp')) {
+    if (($fileExtension == 'svg')) {
       Filesystem::symlink($image, $thumbnailDir . $nextFilename);
     } else {
       $Image = new Image();

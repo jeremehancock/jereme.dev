@@ -396,6 +396,7 @@ function install($adminPassword, $timezone)
 		'gitlab' => '',
 		'linkedin' => '',
 		'xing' => '',
+		'telegram' => '',
 		'dateFormat' => 'F j, Y',
 		'extremeFriendly' => true,
 		'autosaveInterval' => 2,
@@ -432,6 +433,7 @@ function install($adminPassword, $timezone)
 			'codepen' => '',
 			'linkedin' => '',
 			'xing' => '',
+			'telegram' => '',
 			'github' => '',
 			'gitlab' => ''
 		)
@@ -650,7 +652,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 						<input type="hidden" name="timezone" id="jstimezone" value="UTC">
 
 						<div class="form-group">
-							<input type="text" value="admin" class="form-control form-control-lg" id="jsusername" name="username" placeholder="Username" disabled>
+							<input type="text" dir="auto" value="admin" class="form-control form-control-lg" id="jsusername" name="username" placeholder="Username" disabled>
 						</div>
 
 						<div class="form-group mb-0">
