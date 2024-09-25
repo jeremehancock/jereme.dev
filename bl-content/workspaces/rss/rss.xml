@@ -5,7 +5,15 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Sat, 31 Aug 2024 17:16:51 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 25 Sep 2024 14:07:27 -0500</lastBuildDate>
+    <item>
+      <title/>
+      <link>https://pilab.dev/sfdsd</link>
+      <image/>
+      <description>&lt;p&gt;sfdsd&lt;/p&gt;</description>
+      <pubDate>Wed, 25 Sep 2024 14:07:23 -0500</pubDate>
+      <guid isPermaLink="false">386897aef79875510c6438d50dcc4d91</guid>
+    </item>
     <item>
       <title>Jellyfin NowPlaying</title>
       <link>https://pilab.dev/jellyfin-nowplaying</link>
@@ -127,55 +135,6 @@ sudo apt-get install -y nodejs&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;I was so happy that I had setup &lt;a href="http://nodered.org/docs/user-guide/projects/"&gt;Projects&lt;/a&gt;. It was a real life saver and kept me from losing a few years worth of work that I had put into my Node-RED setup. &lt;/p&gt;</description>
       <pubDate>Mon, 01 Aug 2022 09:29:02 -0500</pubDate>
       <guid isPermaLink="false">31d198e511566000181e6b03fd9c964c</guid>
-    </item>
-    <item>
-      <title>Pi-hole Upgrades</title>
-      <link>https://pilab.dev/pi-hole-upgrades</link>
-      <image>https://pilab.dev/bl-content/uploads/pages/fcdb80d303d1fe7901dd6d939ebe87c3/pi-hole-upgrade2.png</image>
-      <description>&lt;p&gt;I recently stumbled across a nice &lt;a href="https://pi-hole.net/"&gt;Pi-hole&lt;/a&gt; setup that provides a quick and easy way to deploy Pi-hole along with a &lt;a href="https://grafana.com/"&gt;Grafana&lt;/a&gt; dashboard to collect metrics on your network.&lt;/p&gt;
-&lt;p&gt;The project is simply called &lt;a href="https://github.com/geerlingguy/internet-pi"&gt;Internet Pi&lt;/a&gt;. &lt;/p&gt;
-&lt;p&gt;The instructions provided with the project worked without any issues. Now I have Pi-hole setup on a Pi 4 and also have a nice dashboard to keep up with my network speeds.&lt;/p&gt;
-&lt;p&gt;I have also been playing with &lt;a href="https://tailscale.com/"&gt;Tailscale&lt;/a&gt;, which is a zero config VPN. I thought it would be super cool if I could set things up so that when I am connected to my Tailscale network I could also take advantage of the Pi-hole ad blocking.&lt;/p&gt;
-&lt;p&gt;After a bit of research I was able to get it all working.&lt;/p&gt;
-&lt;p&gt;Once I had Pi-hole setup I installed Tailscale to the Raspberry Pi running Pi-hole using their simple &lt;a href="https://tailscale.com/download"&gt;install command&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;After install I started up Tailscale with this command.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;sudo tailscale up --advertise-routes=192.168.1.0/24 --accept-dns=false&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; You will need to change the command to match your networks subnet.&lt;/p&gt;
-&lt;p&gt;After I started Tailscale up I got an error referring to &lt;a href="https://tailscale.com/kb/1019/subnets/#setting-up-a-subnet-router"&gt;IP forwarding&lt;/a&gt;. I had to run the following commands to clear that up.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;echo 'net.ipv4.ip_forward = 1' | sudo tee -a /etc/sysctl.conf
-echo 'net.ipv6.conf.all.forwarding = 1' | sudo tee -a /etc/sysctl.conf
-sudo sysctl -p /etc/sysctl.conf&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Then I logged into Tailscale and clicked the &amp;quot;three dots&amp;quot; menu next to the Machine entry for my Pi-hole. I selected &amp;quot;Disable key expiry&amp;quot; from the drop-down. Since the Pi-hole is not directly exposed to the internet it is safe to not require re-authentication. Then I selected &amp;quot;Edit route settings...&amp;quot; from the same drop-down menu and enabled the first option. See image below.&lt;/p&gt;
-&lt;div class="centered"&gt;
-    &lt;img src="/bl-content/uploads/pages/fcdb80d303d1fe7901dd6d939ebe87c3/tailscale-settings-route-updated-new.png" class="image-border" /&gt;&lt;br&gt;&lt;br&gt;
-&lt;/div&gt;
-&lt;p&gt;Next I copied the Tailscale IP address for my Pi-hole and used it as the Nameserver on the DNS tab. I set it to override local DNS. See image below.&lt;/p&gt;
-&lt;div class="centered"&gt;
-    &lt;img src="/bl-content/uploads/pages/fcdb80d303d1fe7901dd6d939ebe87c3/tailscale-dns.png" class="image-border" /&gt;&lt;br&gt;&lt;br&gt;
-&lt;/div&gt;
-&lt;p&gt;I also turned on MagicDNS on the DNS tab so that my servers would be accessible via their hostnames when on the Tailscale network. This way the Pi-hole interface would work when I am on or off the Tailscale network when I use the Pi-hole's hostname.&lt;/p&gt;
-&lt;p&gt;Now I have a Tailscale VPN setup that uses my Pi-hole. &lt;/p&gt;
-&lt;p&gt;I installed the Tailscale Android app so now when I am away from my home network I can still access my servers as well as be protected from ads using my Pi-hole.&lt;/p&gt;
-&lt;p&gt;I also like to use &lt;a href="https://github.com/pi-hole/PADD"&gt;PADD&lt;/a&gt; to display my Pi-hole status on a monitor in my office. However, I noticed that it wouldn't work with this new setup. After a bit more research I found the answer. &lt;/p&gt;
-&lt;p&gt;On the Pi-hole I ran the following to setup PADD.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;mkdir -p /home/pi/padd &amp;amp;&amp;amp; cd padd &amp;amp;&amp;amp; wget -N https://raw.githubusercontent.com/pi-hole/PADD/master/padd.sh &amp;amp;&amp;amp; chmod +x padd.sh&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Now that I had PADD setup I needed to update my Pi-hole configuration to use it.&lt;/p&gt;
-&lt;p&gt;I had to add the following volume to the &lt;code&gt;pi-hole-docker-compose.yml.j2&lt;/code&gt; file which is located at &lt;code&gt;/home/pi/internet-pi/templates/&lt;/code&gt;.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;- '${HOME}/padd:/padd'&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;I then ran the following command from inside the &lt;code&gt;internet-pi&lt;/code&gt; directory per the project's instructions.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;ansible-playbook main.yml&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Next I added the following alias to my &lt;code&gt;.bash_aliases&lt;/code&gt; file in the Pi-hole home directory.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;alias padd="docker exec -it pihole bash /padd/padd.sh"&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Now I can use the &lt;code&gt;padd&lt;/code&gt; command to startup PADD.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Updates:&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;I originally had Tailscale setup to use Pi-hole as an Exit Node. I found that I was having issues resolving hostnames. I have updated the setup to not use the Pi-hole as the Exit Node. I still get the ad-blocking, and now the hostname resolution issues have been resolved.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;I started having odd issues where the internet speeds from the Pi 4 running Pi-hole would drop off significantly around 2am everyday. I have since moved back to Pi-hole's default installation.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;*Check out my new dual Pi-hole + Tailscale setup &lt;a href="dual-pi-hole-tailscale"&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;*I have moved my Pi-hole setup to an older Pi 2 Model B so that I could free the Pi 4 up for some retro gaming.&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-      <pubDate>Mon, 28 Mar 2022 13:54:42 -0500</pubDate>
-      <guid isPermaLink="false">fcdb80d303d1fe7901dd6d939ebe87c3</guid>
     </item>
   </channel>
 </rss>

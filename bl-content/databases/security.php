@@ -20,8 +20,8 @@
             "numberFailures": 1
         },
         "192.168.86.75": {
-            "lastFailure": 1727289702,
-            "numberFailures": 6
+            "lastFailure": 1727292112,
+            "numberFailures": 1
         }
     }
 }
