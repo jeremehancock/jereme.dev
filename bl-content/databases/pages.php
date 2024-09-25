@@ -1,5 +1,27 @@
 <?php defined('BLUDIT') or die('Bludit CMS.'); ?>
 {
+    "autosave-ae6baedd36be1d5b3fa9ec0d872cc735": {
+        "title": "Specs",
+        "description": "",
+        "username": "admin",
+        "tags": [],
+        "type": "autosave",
+        "date": "2024-09-25 18:48:21",
+        "dateModified": "",
+        "position": 0,
+        "coverImage": "",
+        "category": "",
+        "md5file": "b038b9edaa1575614cb6a5fd2bf18874",
+        "uuid": "autosave-ae6baedd36be1d5b3fa9ec0d872cc735",
+        "allowComments": true,
+        "template": "",
+        "noindex": false,
+        "nofollow": false,
+        "noarchive": false,
+        "custom": [
+            false
+        ]
+    },
     "autosave-393a579fcfaf4f8463fe6b4f24cdb23b": {
         "title": "Test",
         "description": "",
@@ -1402,11 +1424,11 @@
         },
         "type": "static",
         "date": "2019-05-09 21:13:56",
-        "dateModified": "2024-09-25 18:12:42",
+        "dateModified": "2024-09-25 18:48:20",
         "position": 2,
         "coverImage": "picluster-v3.jpg",
         "category": "raspberry-pi",
-        "md5file": "d088afaa1e1676e2c32c87b66a415fb5",
+        "md5file": "cd832db6f07ccabdae5cbb581cf24e23",
         "uuid": "ae6baedd36be1d5b3fa9ec0d872cc735",
         "allowComments": true,
         "template": "",
