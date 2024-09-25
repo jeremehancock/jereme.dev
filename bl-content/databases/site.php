@@ -44,5 +44,7 @@
     "markdownParser": true,
     "dribbble": "",
     "vk": "",
-    "customFields": "{&quot;_amper&quot;:{&quot;type&quot;:&quot;bool&quot;,&quot;label&quot;:&quot;AMPER&quot;,&quot;tip&quot;:&quot;Disable AMP pages for this content&quot;}}"
+    "customFields": "{\r\n    &quot;_amper&quot;: {\r\n        &quot;type&quot;: &quot;bool&quot;,\r\n        &quot;label&quot;: &quot;AMPER&quot;,\r\n        &quot;tip&quot;: &quot;Disable AMP pages for this content&quot;\r\n    }\r\n}",
+    "xing": "",
+    "telegram": ""
 }

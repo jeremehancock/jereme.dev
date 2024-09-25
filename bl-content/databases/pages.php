@@ -18,9 +18,12 @@
         "noindex": false,
         "nofollow": false,
         "noarchive": false,
-        "custom": [
-            false
-        ]
+        "custom": {
+            "0": false,
+            "_amper": {
+                "value": ""
+            }
+        }
     },
     "autosave-b2824f25debdfd4c320c3717545b05c8": {
         "title": "Dual Pi-hole + Tailscale",
@@ -40,9 +43,12 @@
         "noindex": false,
         "nofollow": false,
         "noarchive": false,
-        "custom": [
-            false
-        ]
+        "custom": {
+            "0": false,
+            "_amper": {
+                "value": ""
+            }
+        }
     },
     "jellyfin-nowplaying": {
         "title": "Jellyfin NowPlaying",
@@ -225,9 +231,12 @@
         "noindex": false,
         "nofollow": false,
         "noarchive": false,
-        "custom": [
-            false
-        ]
+        "custom": {
+            "0": false,
+            "_amper": {
+                "value": ""
+            }
+        }
     },
     "ubuntuce-resurrected": {
         "title": "UbuntuCE Resurrected",
@@ -329,9 +338,12 @@
         "noindex": true,
         "nofollow": false,
         "noarchive": true,
-        "custom": [
-            true
-        ]
+        "custom": {
+            "0": true,
+            "_amper": {
+                "value": ""
+            }
+        }
     },
     "octoprint-node": {
         "title": "OctoPrint Node",
@@ -569,9 +581,12 @@
         "noindex": true,
         "nofollow": false,
         "noarchive": true,
-        "custom": [
-            true
-        ]
+        "custom": {
+            "0": true,
+            "_amper": {
+                "value": ""
+            }
+        }
     },
     "seti-home-hibernation": {
         "title": "SETI@home Hibernation",
@@ -593,9 +608,12 @@
         "noindex": false,
         "nofollow": false,
         "noarchive": false,
-        "custom": [
-            false
-        ]
+        "custom": {
+            "0": false,
+            "_amper": {
+                "value": ""
+            }
+        }
     },
     "pi-lab-live-stream": {
         "title": "Pi Lab Live Stream",
@@ -672,9 +690,12 @@
         "noindex": false,
         "nofollow": false,
         "noarchive": false,
-        "custom": [
-            false
-        ]
+        "custom": {
+            "0": false,
+            "_amper": {
+                "value": ""
+            }
+        }
     },
     "prometheus-grafana": {
         "title": "Prometheus &amp; Grafana",
@@ -754,9 +775,12 @@
         "noindex": false,
         "nofollow": false,
         "noarchive": false,
-        "custom": [
-            false
-        ]
+        "custom": {
+            "0": false,
+            "_amper": {
+                "value": ""
+            }
+        }
     },
     "pi-zero-wall-plug-web-server": {
         "title": "Pi Zero Web Server",
@@ -780,9 +804,12 @@
         "noindex": false,
         "nofollow": false,
         "noarchive": false,
-        "custom": [
-            false
-        ]
+        "custom": {
+            "0": false,
+            "_amper": {
+                "value": ""
+            }
+        }
     },
     "quick-wordpress": {
         "title": "Quick WordPress",
@@ -887,9 +914,12 @@
         "noindex": false,
         "nofollow": false,
         "noarchive": false,
-        "custom": [
-            false
-        ]
+        "custom": {
+            "0": false,
+            "_amper": {
+                "value": ""
+            }
+        }
     },
     "raspberry-pi-portable-dev-server": {
         "title": "RPi Portable Dev Server",
@@ -913,9 +943,12 @@
         "noindex": false,
         "nofollow": false,
         "noarchive": false,
-        "custom": [
-            false
-        ]
+        "custom": {
+            "0": false,
+            "_amper": {
+                "value": ""
+            }
+        }
     },
     "bouncing-trump": {
         "title": "Bouncing Trump!",
@@ -938,7 +971,11 @@
         "noindex": false,
         "nofollow": false,
         "noarchive": false,
-        "custom": []
+        "custom": {
+            "_amper": {
+                "value": ""
+            }
+        }
     },
     "raspberry-pi-random-goat-tv": {
         "title": "Raspberry Pi Random Goat TV",
@@ -961,7 +998,11 @@
         "noindex": false,
         "nofollow": false,
         "noarchive": false,
-        "custom": []
+        "custom": {
+            "_amper": {
+                "value": ""
+            }
+        }
     },
     "pi-lab-twitter-bot": {
         "title": "Pi Lab Twitter Bot",
@@ -1012,9 +1053,12 @@
         "noindex": false,
         "nofollow": false,
         "noarchive": false,
-        "custom": [
-            false
-        ]
+        "custom": {
+            "0": false,
+            "_amper": {
+                "value": ""
+            }
+        }
     },
     "pi-lab-sd-card-upgrade": {
         "title": "Pi Lab SD Card Upgrade",
@@ -1038,9 +1082,12 @@
         "noindex": false,
         "nofollow": false,
         "noarchive": false,
-        "custom": [
-            false
-        ]
+        "custom": {
+            "0": false,
+            "_amper": {
+                "value": ""
+            }
+        }
     },
     "bludit-api-php-example": {
         "title": "Bludit API PHP Example",
@@ -1117,9 +1164,12 @@
         "noindex": false,
         "nofollow": false,
         "noarchive": false,
-        "custom": [
-            false
-        ]
+        "custom": {
+            "0": false,
+            "_amper": {
+                "value": ""
+            }
+        }
     },
     "pi-lab-setup": {
         "title": "Pi Lab Setup",
@@ -1169,9 +1219,12 @@
         "noindex": false,
         "nofollow": false,
         "noarchive": false,
-        "custom": [
-            false
-        ]
+        "custom": {
+            "0": false,
+            "_amper": {
+                "value": ""
+            }
+        }
     },
     "randomgoat": {
         "title": "Random Goat",
@@ -1194,9 +1247,12 @@
         "noindex": false,
         "nofollow": false,
         "noarchive": false,
-        "custom": [
-            false
-        ]
+        "custom": {
+            "0": false,
+            "_amper": {
+                "value": ""
+            }
+        }
     },
     "bludit-mention": {
         "title": "Bludit Mentions",
@@ -1220,9 +1276,12 @@
         "noindex": false,
         "nofollow": false,
         "noarchive": false,
-        "custom": [
-            false
-        ]
+        "custom": {
+            "0": false,
+            "_amper": {
+                "value": ""
+            }
+        }
     },
     "bludit-flat-file-cms": {
         "title": "Bludit Flat File CMS",
@@ -1244,9 +1303,12 @@
         "noindex": false,
         "nofollow": false,
         "noarchive": false,
-        "custom": [
-            false
-        ]
+        "custom": {
+            "0": false,
+            "_amper": {
+                "value": ""
+            }
+        }
     },
     "stats": {
         "title": "Stats",
@@ -1323,9 +1385,12 @@
         "noindex": false,
         "nofollow": false,
         "noarchive": false,
-        "custom": [
-            false
-        ]
+        "custom": {
+            "0": false,
+            "_amper": {
+                "value": ""
+            }
+        }
     },
     "specs": {
         "title": "Specs",
@@ -1337,11 +1402,11 @@
         },
         "type": "static",
         "date": "2019-05-09 21:13:56",
-        "dateModified": "2024-09-25 13:52:25",
+        "dateModified": "2024-09-25 18:05:24",
         "position": 2,
         "coverImage": "picluster-v3.jpg",
         "category": "raspberry-pi",
-        "md5file": "8222dc90ba6313323cc921f69f9da13d",
+        "md5file": "5f5e414c121107c109b312fa34be58a2",
         "uuid": "ae6baedd36be1d5b3fa9ec0d872cc735",
         "allowComments": true,
         "template": "",

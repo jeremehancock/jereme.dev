@@ -1,82 +1,36 @@
-<div class="centered">
-		<div style="display:none;">Pi Lab is my homelab that consists primarily of Raspberry Pis. This blog is hosted on the Raspberry Pi cluster that started it all.
-			&nbsp;&nbsp;&nbsp;
-	  </div>
-
-    <!-- <img id="liveStream" src="https://pilab.dev/live-stream" class="image-border" style="margin-bottom:15px;" /> -->
-		<!--<iframe class="iframe-border" style="margin-bottom:15px;" width="100%" height="600" src="https://www.youtube.com/embed/ROEeJ2QYL3U?autoplay=1&rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
-		<!-- <div class="iframe-container" style="margin-bottom:25px;">
-			<div id="player"></div>
-		</div>-->
-			<!--<script>
-				var tag = document.createElement('script');
-
-				tag.src = "https://www.youtube.com/iframe_api";
-				var firstScriptTag = document.getElementsByTagName('script')[0];
-				firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-
-				var player;
-				function onYouTubeIframeAPIReady() {
-					player = new YT.Player('player', {
-						width: '100%',
-						videoId: 'ROEeJ2QYL3U',
-						playerVars: { 'autoplay': 1, 'playsinline': 1, 'rel': 0, 'modestbranding': 1 },
-						events: {
-							'onReady': onPlayerReady
-						}
-					});
-				}
-
-
-				function onPlayerReady(event) {
-					 event.target.mute();
-					event.target.playVideo();
-				}
-		</script>-->
-</div>
-
 *Pi Lab is my homelab that consists primarily of Raspberry Pis. This blog is hosted on the Raspberry Pi cluster that started it all. *
 
 ## Pi Lab (Primary Nodes):
 
-*   **Load Balancer Node**
-    *   1 Raspberry Pi 4 2GB Model B
-				* Samsung EVO Plus 32GB microSDHC Card
-				* [Node Exporter](https://github.com/prometheus/node_exporter) - Expose Linux metrics: Installed to each node.
-				* [RPi Exporter](https://github.com/lukasmalkmus/rpi_exporter) - Expose Raspberry Pi metrics: Installed to each node.
-				* Metrics Dashboard <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=pi0" target="_blank">Node 0</a> (pi0)
-*   **Development/Production Node**
-    *    1 Raspberry Pi 4 2GB Model B
-				* Samsung EVO Plus 32GB microSDHC Card
-				* [Node Exporter](https://github.com/prometheus/node_exporter) - Expose Linux metrics: Installed to each node.
-				* [RPi Exporter](https://github.com/lukasmalkmus/rpi_exporter) - Expose Raspberry Pi metrics: Installed to each node.
-				* Metrics Dashboard <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=pi1" target="_blank">Node 1</a> (pi1)
-*  **Production Nodes**
-    *    4 Raspberry Pi 4 2GB Model Bs
-				* Samsung EVO Plus 32GB microSDHC Cards
-				* [Node Exporter](https://github.com/prometheus/node_exporter) - Expose Linux metrics: Installed to each node.
-				* [RPi Exporter](https://github.com/lukasmalkmus/rpi_exporter) - Expose Raspberry Pi metrics: Installed to each node.
-				* **Metrics Dashboards:**
-					* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=pi2" target="_blank">Node 2</a> (pi2)
-					* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=pi3" target="_blank">Node 3</a> (pi3)
-					* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=pi4" target="_blank">Node 4</a> (pi4)
-					* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=pi5" target="_blank">Node 5</a> (pi5)
+### Load Balancer Node
+*   1 Raspberry Pi 4 2GB Model B
+		* Samsung EVO Plus 32GB microSDHC Card
+		* [Nginx](https://nginx.org/)
+		* [SSL - Let's Encrypt](https://letsencrypt.org/)
+		* Metrics Dashboard <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=pi0" target="_blank">Node 0</a> (pi0)
+
+### Development/Production Node
+*    1 Raspberry Pi 4 2GB Model B
+		* Samsung EVO Plus 32GB microSDHC Card
+		* Metrics Dashboard <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=pi1" target="_blank">Node 1</a> (pi1)
+
+### Production Nodes
+*    4 Raspberry Pi 4 2GB Model Bs
+		* Samsung EVO Plus 32GB microSDHC Cards
+		* **Metrics Dashboards:**
+			* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=pi2" target="_blank">Node 2</a> (pi2)
+			* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=pi3" target="_blank">Node 3</a> (pi3)
+			* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=pi4" target="_blank">Node 4</a> (pi4)
+			* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=pi5" target="_blank">Node 5</a> (pi5)
+
+### Common to all Nodes
 *   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
-*   **Webserver/Load Balancer:** [Nginx](https://nginx.org/)
-*   **SSL:** [Let's Encrypt](https://letsencrypt.org/)
+* [Node Exporter](https://github.com/prometheus/node_exporter) - Expose Linux metrics
+* [RPi Exporter](https://github.com/lukasmalkmus/rpi_exporter) - Expose Raspberry Pi metrics
 *   **CMS:** [Bludit - v3.13.1 PRO](https://www.bludit.com/)
 *   **Theme:** [Blekathlon](https://blthemes.pp.ua/) - Customized
 *   **Plugins:** [Pi Lab Plugins](plugins)
-*   **Network** 
-    * [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
-    * [Nest WiFi Pro - 6E](https://www.amazon.com/Google-Nest-WiFi-Pro-Reliable/dp/B0BCQSYPZB/) - 3 Pack plus extra router - Wired Backhaul
-    * [TP-Link 16 Port Gigabit Ethernet Network Switch (TL-SG116)](https://www.amazon.com/gp/product/B07GR9S6FN)
-    * [Netgear 5 Port Gigabit Ethernet Network Switch](https://www.netgear.com/business/wired/switches/unmanaged/gs105/)
-*   **Live Stream:** [AT&T Sercomm OC432](https://forums.att.com/conversations/device-troubleshooting/repurposing-digital-life-camera/5deff480bad5f2f6065cc3e0?commentId=5df01789bad5f2f606b01161)
-*   **Power:**
-		* [CyberPower CP1000PFCLCD PFC Sinewave UPS](https://www.amazon.com/gp/product/B00429N192)
-		* [Anker 60W 10-Port USB Wall Charger](https://www.amazon.com/dp/B00YRYS4T4)
+*   **Power:** [Anker 60W 10-Port USB Wall Charger](https://www.amazon.com/dp/B00YRYS4T4)
 *    **Cooling:** [C4Labs Zebra Bramble Case](https://www.amazon.com/dp/B07VQKPZZT)
 * [More Details](pi-lab-setup)
 
@@ -84,233 +38,175 @@
 
 ## Pi Lab (Ancillary Nodes):
 
-*  **Pi-hole Node**
-	*  1 Raspberry Pi 4 4GB Model B
-		* Samsung EVO Plus 32GB microSDHC Card
-		* **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
+### Pi-hole Node
+* 1 Raspberry Pi 4 4GB Model B
+	* Samsung EVO Plus 32GB microSDHC Card
+	* **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
+	* [Pi-hole](https://pi-hole.net/)
+	* [Node Exporter](https://github.com/prometheus/node_exporter) - Expose Linux metrics: Installed to each node.
+	* [RPi Exporter](https://github.com/lukasmalkmus/rpi_exporter) - Expose Raspberry Pi metrics: Installed to each node.
+	* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=thanos" target="_blank">Metrics Dashboard</a> (thanos)
+*   **Power:** [XDCDHM USB Charger, 60 Watt 12A 6-Port High Speed Charger](https://www.amazon.com/gp/product/B075P22QC2)
+*   **Cooling:** [C4Labs Zebra Bramble Case](https://www.amazon.com/dp/B07VQKPZZT)
+* [More Details](pi-hole-upgrades)
+
+### Restreamer Node
+*  1 Raspberry Pi 4 4GB Model B
+		*  Samsung EVO Plus 32GB microSDHC Card
+		*   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
+		* [Restreamer](https://datarhei.github.io/restreamer/)
 		* [Pi-hole](https://pi-hole.net/)
 		* [Node Exporter](https://github.com/prometheus/node_exporter) - Expose Linux metrics: Installed to each node.
 		* [RPi Exporter](https://github.com/lukasmalkmus/rpi_exporter) - Expose Raspberry Pi metrics: Installed to each node.
-		* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=thanos" target="_blank">Metrics Dashboard</a> (thanos)
-	*   **Network** 
-		* [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
-		* [Nest WiFi Pro - 6E](https://www.amazon.com/Google-Nest-WiFi-Pro-Reliable/dp/B0BCQSYPZB/) - 3 Pack plus extra router - Wired Backhaul
-		* [TP-Link 16 Port Gigabit Ethernet Network Switch (TL-SG116)](https://www.amazon.com/gp/product/B07GR9S6FN)
-		* [Netgear 5 Port Gigabit Ethernet Network Switch](https://www.netgear.com/business/wired/switches/unmanaged/gs105/)
-	*   **Power:**
-		* [CyberPower CP1000PFCLCD PFC Sinewave UPS](https://www.amazon.com/gp/product/B00429N192)
-		* [XDCDHM USB Charger, 60 Watt 12A 6-Port High Speed Charger](https://www.amazon.com/gp/product/B075P22QC2)
-	*   **Cooling:** [C4Labs Zebra Bramble Case](https://www.amazon.com/dp/B07VQKPZZT)
-  * [More Details](pi-hole-upgrades)
-*   **Restreamer Node** (Secondary Pi-hole)
-    *  1 Raspberry Pi 4 4GB Model B
-				* Samsung EVO Plus 32GB microSDHC Card
-				*   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
-				* [Restreamer](https://datarhei.github.io/restreamer/)
-				* [Pi-hole](https://pi-hole.net/)
-				* [Node Exporter](https://github.com/prometheus/node_exporter) - Expose Linux metrics: Installed to each node.
-				* [RPi Exporter](https://github.com/lukasmalkmus/rpi_exporter) - Expose Raspberry Pi metrics: Installed to each node.
-				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=restreamerpi" target="_blank">Metrics Dashboard</a> (restreamerpi)
-	* **Network** 
-				* [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
-				* [Nest WiFi Pro - 6E](https://www.amazon.com/Google-Nest-WiFi-Pro-Reliable/dp/B0BCQSYPZB/) - 3 Pack plus extra router - Wired Backhaul
-				* [TP-Link 16 Port Gigabit Ethernet Network Switch (TL-SG116)](https://www.amazon.com/gp/product/B07GR9S6FN)
-				* [Netgear 5 Port Gigabit Ethernet Network Switch](https://www.netgear.com/business/wired/switches/unmanaged/gs105/)
-	*   **Power:**
-				* [CyberPower CP1000PFCLCD PFC Sinewave UPS](https://www.amazon.com/gp/product/B00429N192)
-				* [XDCDHM USB Charger, 60 Watt 12A 6-Port High Speed Charger](https://www.amazon.com/gp/product/B075P22QC2)
-	*   **Cooling:** [C4Labs Zebra Bramble Case](https://www.amazon.com/dp/B07VQKPZZT)
-	* [More Details](restreamer)
-*   **Node-Red Node**
-    *   1 Raspberry Pi 3 Model B
-				* Samsung EVO Plus 32GB microSDHC Card
-				*   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
-				* [Node Exporter](https://github.com/prometheus/node_exporter) - Expose Linux metrics: Installed to each node.
-				* [RPi Exporter](https://github.com/lukasmalkmus/rpi_exporter) - Expose Raspberry Pi metrics: Installed to each node.
-				* [Node-Red](https://nodered.org/docs/getting-started/raspberrypi)
-				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=noderedpi" target="_blank">Metrics Dashboard</a> (noderedpi)
-	*  **Network** 
-		* [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
-		* [Nest WiFi Pro - 6E](https://www.amazon.com/Google-Nest-WiFi-Pro-Reliable/dp/B0BCQSYPZB/) - 3 Pack plus extra router - Wired Backhaul
-		* [TP-Link 16 Port Gigabit Ethernet Network Switch (TL-SG116)](https://www.amazon.com/gp/product/B07GR9S6FN)
-		* [Netgear 5 Port Gigabit Ethernet Network Switch](https://www.netgear.com/business/wired/switches/unmanaged/gs105/)
-	*   **Power:**
-		* [CyberPower CP1000PFCLCD PFC Sinewave UPS](https://www.amazon.com/gp/product/B00429N192)
-		* [XDCDHM USB Charger, 60 Watt 12A 6-Port High Speed Charger](https://www.amazon.com/gp/product/B075P22QC2)
-	*   **Cooling:** [C4Labs Zebra Bramble Case](https://www.amazon.com/dp/B07VQKPZZT)
-	* [More Details](node-red-twitter-bot)
-*   **Metrics Node**
-    *   1 Raspberry Pi 3 Model B
-				*  Samsung EVO Plus 32GB microSDHC Card
-				*   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
-				* [Node Exporter](https://github.com/prometheus/node_exporter) - Expose Linux metrics: Installed to each node.
-				* [RPi Exporter](https://github.com/lukasmalkmus/rpi_exporter) - Expose Raspberry Pi metrics: Installed to each node.
-				* [Prometheus](https://prometheus.io/) - Collect and store metrics
-				* [Grafana](https://grafana.com/) - Metrics visualization
-				* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=prometheus" target="_blank">Metrics Dashboard</a> (prometheus)
-	* **Network** 
-		* [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
-		* [Nest WiFi Pro - 6E](https://www.amazon.com/Google-Nest-WiFi-Pro-Reliable/dp/B0BCQSYPZB/) - 3 Pack plus extra router - Wired Backhaul
-		* [TP-Link 16 Port Gigabit Ethernet Network Switch (TL-SG116)](https://www.amazon.com/gp/product/B07GR9S6FN)
-		* [Netgear 5 Port Gigabit Ethernet Network Switch](https://www.netgear.com/business/wired/switches/unmanaged/gs105/)
-	*   **Power:**
-		* [CyberPower CP1000PFCLCD PFC Sinewave UPS](https://www.amazon.com/gp/product/B00429N192)
-		* [XDCDHM USB Charger, 60 Watt 12A 6-Port High Speed Charger](https://www.amazon.com/gp/product/B075P22QC2)
-	*   **Cooling:** [C4Labs Zebra Bramble Case](https://www.amazon.com/dp/B07VQKPZZT)
-	* [More Details](prometheus-grafana)
-  *   **OctoPrint Node**
-    *   1 Raspberry Pi 3 Model B+
-				* Samsung EVO Plus 32GB microSDHC Card
-				*   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
-				* [Node Exporter](https://github.com/prometheus/node_exporter) - Expose Linux metrics: Installed to each node.
-				* [RPi Exporter](https://github.com/lukasmalkmus/rpi_exporter) - Expose Raspberry Pi metrics: Installed to each node.
-				*   OctoPrint
-				* [Onn Universal Wall Charger](https://www.walmart.com/ip/Onn-Universal-Wall-Charger-Black/620837164)
-				* [Ender 3 Pro](https://creality3d.shop/collections/3d-printer/products/creality3d-ender-3-pro-high-precision-3d-printer)
-	*  **Network** 
-		* [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
-		* [Nest WiFi Pro - 6E](https://www.amazon.com/Google-Nest-WiFi-Pro-Reliable/dp/B0BCQSYPZB/) - 3 Pack plus extra router - Wired Backhaul
-		* [TP-Link 16 Port Gigabit Ethernet Network Switch (TL-SG116)](https://www.amazon.com/gp/product/B07GR9S6FN)
-		* [Netgear 5 Port Gigabit Ethernet Network Switch](https://www.netgear.com/business/wired/switches/unmanaged/gs105/)
-	* [More Details](octoprint-node)
-*   **RetroFlag GPi Case**
-    *   1 Raspberry Pi Zero W
-				* Samsung EVO Plus 32GB microSDHC Card
-				*   **Operating System:** [RetroPie](https://retropie.org.uk/)
-	* **Network** 
-				* [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
-				* [Nest WiFi Pro - 6E](https://www.amazon.com/Google-Nest-WiFi-Pro-Reliable/dp/B0BCQSYPZB/) - 3 Pack plus extra router - Wired Backhaul
-				
+		* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=restreamerpi" target="_blank">Metrics Dashboard</a> (restreamerpi)
+*   **Power:** [XDCDHM USB Charger, 60 Watt 12A 6-Port High Speed Charger](https://www.amazon.com/gp/product/B075P22QC2)
+*   **Cooling:** [C4Labs Zebra Bramble Case](https://www.amazon.com/dp/B07VQKPZZT)
+* [More Details](restreamer)
+
+### Node-Red Node
+*   1 Raspberry Pi 3 Model B
+		* Samsung EVO Plus 32GB microSDHC Card
+		*   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
+		* [Node Exporter](https://github.com/prometheus/node_exporter) - Expose Linux metrics: Installed to each node.
+		* [RPi Exporter](https://github.com/lukasmalkmus/rpi_exporter) - Expose Raspberry Pi metrics: Installed to each node.
+		* [Node-Red](https://nodered.org/docs/getting-started/raspberrypi)
+		* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=noderedpi" target="_blank">Metrics Dashboard</a> (noderedpi)
+*   **Power:** [XDCDHM USB Charger, 60 Watt 12A 6-Port High Speed Charger](https://www.amazon.com/gp/product/B075P22QC2)
+*   **Cooling:** [C4Labs Zebra Bramble Case](https://www.amazon.com/dp/B07VQKPZZT)
+* [More Details](node-red-twitter-bot)
+
+### Metrics Node
+*   1 Raspberry Pi 3 Model B
+		*  Samsung EVO Plus 32GB microSDHC Card
+		*   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
+		* [Node Exporter](https://github.com/prometheus/node_exporter) - Expose Linux metrics: Installed to each node.
+		* [RPi Exporter](https://github.com/lukasmalkmus/rpi_exporter) - Expose Raspberry Pi metrics: Installed to each node.
+		* [Prometheus](https://prometheus.io/) - Collect and store metrics
+		* [Grafana](https://grafana.com/) - Metrics visualization
+		* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=prometheus" target="_blank">Metrics Dashboard</a> (prometheus)
+*   **Power:** [XDCDHM USB Charger, 60 Watt 12A 6-Port High Speed Charger](https://www.amazon.com/gp/product/B075P22QC2)
+*   **Cooling:** [C4Labs Zebra Bramble Case](https://www.amazon.com/dp/B07VQKPZZT)
+* [More Details](prometheus-grafana)
+
+### OctoPi Node
+*   1 Raspberry Pi 3 Model B+
+		* Samsung EVO Plus 32GB microSDHC Card
+		*   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
+		* [Node Exporter](https://github.com/prometheus/node_exporter) - Expose Linux metrics: Installed to each node.
+		* [RPi Exporter](https://github.com/lukasmalkmus/rpi_exporter) - Expose Raspberry Pi metrics: Installed to each node.
+		*   OctoPrint
+		* [Onn Universal Wall Charger](https://www.walmart.com/ip/Onn-Universal-Wall-Charger-Black/620837164)
+		* [Ender 3 Pro](https://creality3d.shop/collections/3d-printer/products/creality3d-ender-3-pro-high-precision-3d-printer)
+* [More Details](octoprint-node)
+
 ---
 
 ## Pi Lab (Non-Pi Servers):
 <span id="plex"/>
-*   **Anansi Node**
-	*   [Aspire TC-1750-UR11](https://www.acer.com/us-en/desktops-and-all-in-ones/aspire-classic-desktops/aspire-tc/pdp/DT.BJUAA.001)
-		* [Intel® Core™ i5-12400 up to 4.4GHz](https://ark.intel.com/content/www/us/en/ark/products/134586/intel-core-i5-12400-processor-18m-cache-up-to-4-40-ghz.html)
-		* [32GB Corsair VENGEANCE LPX DDR4 3200MHz](https://www.amazon.com/Corsair-VENGEANCE-3200MHz-Compatible-Computer/dp/B07RS1G6XW)
-		*   **Operating System:** [Ubuntu Server 22.04.3 LTS](https://ubuntu.com/download/server)
-		* [WD Blue SN570 NVMe 1TB Solid State Drive](https://www.amazon.com/Western-Digital-SN570-Internal-Solid/dp/B09HKDQ1RN) (OS)
-			* [xTeVe](https://github.com/xteve-project/xTeVe) (Docker)
-			* [Plex Media Server](https://www.plex.tv/)
-			* [Jellyfin (Backup Media Server)](https://hub.docker.com/r/linuxserver/jellyfin) (Docker)
-			* [Tautulli](https://tautulli.com/) (Docker)
-			* [Jellystat](https://hub.docker.com/r/cyfershepard/jellystat) (Docker)
-			* [Overseerr](https://overseerr.dev/) (Docker)
-			* [ErsatzTV](https://github.com/ErsatzTV/ErsatzTV) (Docker)
-			* [xTeVe](https://github.com/xteve-project/xTeVe) (Docker)
-			* [Radarr](https://hub.docker.com/r/linuxserver/radarr) (Docker)
-			* [Sonarr](https://hub.docker.com/r/linuxserver/sonarr) (Docker)
-			* [Lidarr](https://hub.docker.com/r/linuxserver/lidarr) (Docker)
-			* [LidaTube](https://github.com/TheWicklowWolf/LidaTube) (Docker)
-			* [Prowlarr](https://hub.docker.com/r/linuxserver/prowlarr) (Docker)
-			* [FlareSolverr](https://github.com/FlareSolverr/FlareSolverr) (Docker)
-			* [qBittorrent / WireGuard](https://hub.docker.com/r/dyonr/qbittorrentvpn/) (Docker)
-			* [SABnzbd](https://hub.docker.com/r/linuxserver/sabnzbd) (Docker)
-			* [Unpackerr](https://github.com/davidnewhall/unpackerr) (Docker)
-			* [Posterr](https://github.com/petersem/posterr) (Docker)
-			* [PlexTraktSync](https://github.com/Taxel/PlexTraktSync) (Docker)
-			* [JellyPlex-Watched](https://github.com/luigi311/JellyPlex-Watched) (Docker)
-			* [Plex Exporter](https://github.com/axsuul/plex-media-server-exporter) (Docker)
-			* [plex-nowplaying](https://github.com/arcadellama/plex-nowplaying) (Bash)
-			* [Jellyfin-NowPlaying](https://github.com/jeremehancock/Jellyfin-NowPlaying) (Bash)
-			* [Exportarr](https://github.com/onedr0p/exportarr) (Docker)
-			* [Portainer](https://www.portainer.io/) (Docker)
-			* [Dozzle](https://dozzle.dev/) (Docker)
-			* [Scrutiny](https://github.com/AnalogJ/scrutiny) (Docker)
-			* [yt-dlp](https://github.com/yt-dlp/yt-dlp)
-			* [abcde](https://manpages.ubuntu.com/manpages/jammy/en/man1/abcde.1.html)
-		* [Syba 8 Bay Hard Drive Enclosure](https://www.amazon.com/dp/B07MD2LNYX)
-		* [WD_Black 12TB P10-Game Drive](https://www.amazon.com/Black-12TB-Drive-External-WDBA5E0120HBKNESN/dp/B07XV8JN31) - Shucked (WD Ultrastar DC HC520) (Movies)
-		* [WD Elements 14TB](https://www.amazon.com/14TB-Elements-Desktop-Drive-WDBWLG0140HBK-NESN/dp/B07YD3G568?th=1) - Shucked (WD140EDGZ) (Movies)
-		* [WD easystore 14TB](https://www.bestbuy.com/site/wd-easystore-14tb-external-usb-3-0-hard-drive-black/6425303.p?skuId=6425303) - Shucked (WD140EDGZ) (TV)
-		* [WD easystore 16TB](https://www.bestbuy.com/site/wd-easystore-16tb-external-usb-3-0-hard-drive-black/6427998.p?skuId=6427998) - Shucked (WD160EDGZ) (TV 2)
-		* [Seagate 2TB Internal Drive](https://www.amazon.com/Seagate-BarraCuda-Internal-Drive-3-5-Inch/dp/B07H2RR55Q) - Renewed (ST2000DM008-2FR102) (Music)
-		*  [WD Blue SN570 NVMe 1TB Solid State Drive](https://www.amazon.com/Western-Digital-SN570-Internal-Solid/dp/B09HKDQ1RN) - [SABRENT NVMe M.2 SSD to PCIe](https://www.amazon.com/dp/B084GDY2PW) (Cache - Downloads/Transcodes/Usenet)
-	* **Network** 
-		* [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
-		* [Nest WiFi Pro - 6E](https://www.amazon.com/Google-Nest-WiFi-Pro-Reliable/dp/B0BCQSYPZB/) - 3 Pack plus extra router - Wired Backhaul
-		* [TP-Link 16 Port Gigabit Ethernet Network Switch (TL-SG116)](https://www.amazon.com/gp/product/B07GR9S6FN)
-		* [Netgear 5 Port Gigabit Ethernet Network Switch](https://www.netgear.com/business/wired/switches/unmanaged/gs105/)
-	*   **Power:**
-		* [CyberPower CP1000PFCLCD PFC Sinewave UPS](https://www.amazon.com/gp/product/B00429N192)
-*   **Optimus Node**
-	*   Dell OptiPlex 3060 Small Form Factor
-		* [Intel Core i3-8100 CPU @ 3.60GHz](https://ark.intel.com/content/www/us/en/ark/products/126688/intel-core-i38100-processor-6m-cache-3-60-ghz.html)
-		*   **Operating System:** [Ubuntu Server 22.04.3 LTS](https://ubuntu.com/download/server)
-		* 24GB DDR4 SDRAM 2133 MT/s
-		*  [WD Blue SN580 NVMe 1TB Solid State Drive](https://www.amazon.com/Western-Digital-SN580-Internal-Solid/dp/B09HKDQ1RN) - [SABRENT NVMe M.2 SSD to PCIe](https://www.amazon.com/dp/B084GDY2PW) (OS)
-				* [Nginx Proxy Manager](https://github.com/NginxProxyManager/nginx-proxy-manager) (Docker)
-				* [Homarr](https://homarr.dev) (Docker)
-				* [Uptime Kuma](https://github.com/louislam/uptime-kuma) (Docker) with [Pushover](https://pushover.net/)
-				* [Speedtest Tracker](https://docs.speedtest-tracker.dev/) (Docker)
-				* [Prometheus](https://hub.docker.com/r/ubuntu/prometheus) (Docker)
+### Anansi Node
+*   [Aspire TC-1750-UR11](https://www.acer.com/us-en/desktops-and-all-in-ones/aspire-classic-desktops/aspire-tc/pdp/DT.BJUAA.001)
+	* [Intel® Core™ i5-12400 up to 4.4GHz](https://ark.intel.com/content/www/us/en/ark/products/134586/intel-core-i5-12400-processor-18m-cache-up-to-4-40-ghz.html)
+	* [32GB Corsair VENGEANCE LPX DDR4 3200MHz](https://www.amazon.com/Corsair-VENGEANCE-3200MHz-Compatible-Computer/dp/B07RS1G6XW)
+	*   **Operating System:** [Ubuntu Server 22.04.3 LTS](https://ubuntu.com/download/server)
+	* [WD Blue SN570 NVMe 1TB Solid State Drive](https://www.amazon.com/Western-Digital-SN570-Internal-Solid/dp/B09HKDQ1RN) (OS)
+		* [xTeVe](https://github.com/xteve-project/xTeVe) (Docker)
+		* [Plex Media Server](https://www.plex.tv/)
+		* [Jellyfin (Backup Media Server)](https://hub.docker.com/r/linuxserver/jellyfin) (Docker)
+		* [Tautulli](https://tautulli.com/) (Docker)
+		* [Jellystat](https://hub.docker.com/r/cyfershepard/jellystat) (Docker)
+		* [Overseerr](https://overseerr.dev/) (Docker)
+		* [ErsatzTV](https://github.com/ErsatzTV/ErsatzTV) (Docker)
+		* [xTeVe](https://github.com/xteve-project/xTeVe) (Docker)
+		* [Radarr](https://hub.docker.com/r/linuxserver/radarr) (Docker)
+		* [Sonarr](https://hub.docker.com/r/linuxserver/sonarr) (Docker)
+		* [Lidarr](https://hub.docker.com/r/linuxserver/lidarr) (Docker)
+		* [LidaTube](https://github.com/TheWicklowWolf/LidaTube) (Docker)
+		* [Prowlarr](https://hub.docker.com/r/linuxserver/prowlarr) (Docker)
+		* [FlareSolverr](https://github.com/FlareSolverr/FlareSolverr) (Docker)
+		* [qBittorrent / WireGuard](https://hub.docker.com/r/dyonr/qbittorrentvpn/) (Docker)
+		* [SABnzbd](https://hub.docker.com/r/linuxserver/sabnzbd) (Docker)
+		* [Unpackerr](https://github.com/davidnewhall/unpackerr) (Docker)
+		* [Posterr](https://github.com/petersem/posterr) (Docker)
+		* [PlexTraktSync](https://github.com/Taxel/PlexTraktSync) (Docker)
+		* [JellyPlex-Watched](https://github.com/luigi311/JellyPlex-Watched) (Docker)
+		* [Plex Exporter](https://github.com/axsuul/plex-media-server-exporter) (Docker)
+		* [plex-nowplaying](https://github.com/arcadellama/plex-nowplaying) (Bash)
+		* [Jellyfin-NowPlaying](https://github.com/jeremehancock/Jellyfin-NowPlaying) (Bash)
+		* [Exportarr](https://github.com/onedr0p/exportarr) (Docker)
+		* [Portainer](https://www.portainer.io/) (Docker)
+		* [Dozzle](https://dozzle.dev/) (Docker)
+		* [Scrutiny](https://github.com/AnalogJ/scrutiny) (Docker)
+		* [yt-dlp](https://github.com/yt-dlp/yt-dlp)
+		* [abcde](https://manpages.ubuntu.com/manpages/jammy/en/man1/abcde.1.html)
+	* [Syba 8 Bay Hard Drive Enclosure](https://www.amazon.com/dp/B07MD2LNYX)
+	* [WD_Black 12TB P10-Game Drive](https://www.amazon.com/Black-12TB-Drive-External-WDBA5E0120HBKNESN/dp/B07XV8JN31) - Shucked (WD Ultrastar DC HC520) (Movies)
+	* [WD Elements 14TB](https://www.amazon.com/14TB-Elements-Desktop-Drive-WDBWLG0140HBK-NESN/dp/B07YD3G568?th=1) - Shucked (WD140EDGZ) (Movies)
+	* [WD easystore 14TB](https://www.bestbuy.com/site/wd-easystore-14tb-external-usb-3-0-hard-drive-black/6425303.p?skuId=6425303) - Shucked (WD140EDGZ) (TV)
+	* [WD easystore 16TB](https://www.bestbuy.com/site/wd-easystore-16tb-external-usb-3-0-hard-drive-black/6427998.p?skuId=6427998) - Shucked (WD160EDGZ) (TV 2)
+	* [Seagate 2TB Internal Drive](https://www.amazon.com/Seagate-BarraCuda-Internal-Drive-3-5-Inch/dp/B07H2RR55Q) - Renewed (ST2000DM008-2FR102) (Music)
+	*   [SABRENT NVMe M.2 SSD to PCIe](https://www.amazon.com/dp/B084GDY2PW)
+		* [WD Blue SN570 NVMe 1TB Solid State Drive](https://www.amazon.com/Western-Digital-SN570-Internal-Solid/dp/B09HKDQ1RN) (Cache - Downloads/Transcodes/Usenet)
+
+### Optimus Node
+*   Dell OptiPlex 3060 Small Form Factor
+	* [Intel Core i3-8100 CPU @ 3.60GHz](https://ark.intel.com/content/www/us/en/ark/products/126688/intel-core-i38100-processor-6m-cache-3-60-ghz.html)
+	*   **Operating System:** [Ubuntu Server 22.04.3 LTS](https://ubuntu.com/download/server)
+	* 24GB DDR4 SDRAM 2133 MT/s
+	* [SABRENT NVMe M.2 SSD to PCIe](https://www.amazon.com/dp/B084GDY2PW)
+		*   [WD Blue SN580 NVMe 1TB Solid State Drive](https://www.amazon.com/Western-Digital-SN580-Internal-Solid/dp/B09HKDQ1RN) (OS)
 				* [Portainer](https://www.portainer.io/) (Docker)
 				* [Dozzle](https://dozzle.dev/) (Docker)
-				* [IT Tools](https://github.com/CorentinTh/it-tools) (Docker)
 				* [Scrutiny](https://github.com/AnalogJ/scrutiny) (Docker)
 				* [Watchtower](https://containrrr.dev/watchtower/) (Docker)
-				* [Orbital Sync](https://orbitalsync.com/) (Docker)
-		* [Seagate BarraCuda 4TB Internal Hard Drive](https://www.amazon.com/dp/B07D9C7SQH) (Backups)
-	* **Network** 
-		* [BGW320-505 (Passthrough Mode)](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW)
-		* [Nest WiFi Pro - 6E](https://www.amazon.com/Google-Nest-WiFi-Pro-Reliable/dp/B0BCQSYPZB/) - 3 Pack plus extra router - Wired Backhaul
-		* [TP-Link 16 Port Gigabit Ethernet Network Switch (TL-SG116)](https://www.amazon.com/gp/product/B07GR9S6FN)
-		* [Netgear 5 Port Gigabit Ethernet Network Switch](https://www.netgear.com/business/wired/switches/unmanaged/gs105/)
-	*   **Power:**
-		* [CyberPower CP1000PFCLCD PFC Sinewave UPS](https://www.amazon.com/gp/product/B00429N192)
-*   **Homelab Node**
-	*   Dell OptiPlex 3060 Small Form Factor
-		* [Intel Core i3-8100 CPU @ 3.60GHz](https://ark.intel.com/content/www/us/en/ark/products/126688/intel-core-i38100-processor-6m-cache-3-60-ghz.html)
-		*   **Operating System:** [Ubuntu Server 22.04.3 LTS](https://ubuntu.com/download/server)
-		* 8GB DDR4 SDRAM 2133 MT/s
-		*  Crucial 240GB Solid State Drive (OS)
-* **TrueNAS Node**
-  * Dell Precision 5820
-		*  Intel(R) Xeon(R) W-2135 CPU @ 3.70GHz
-		*   **Operating System:** [TrueNAS Scale](https://www.truenas.com/truenas-scale/)
-		*  128GB DDR4 ECC SDRAM
-		*  Dell 22 Inch Monitor
-		*  [Sedna PCI Express (PCIe) SATA III (6G) SSD Adapter](https://www.amazon.com/dp/B01452SP1O)
-		*  [Crucial 500GB SSD](https://www.amazon.com/dp/B0786QNS9B) (OS)
-		*  Apps
-			*  [Tailscale](https://github.com/truenas/charts/tree/master/community/tailscale)
-		  *  [Syncthing](https://syncthing.net/)
+	* [Seagate BarraCuda 4TB Internal Hard Drive](https://www.amazon.com/dp/B07D9C7SQH) (Backups)
+
+### TrueNAS Node
+* Dell Precision 5820
+	*  Intel(R) Xeon(R) W-2135 CPU @ 3.70GHz
+	*   **Operating System:** [TrueNAS Scale](https://www.truenas.com/truenas-scale/)
+	*  128GB DDR4 ECC SDRAM
+	*  [Sedna PCI Express (PCIe) SATA III (6G) SSD Adapter](https://www.amazon.com/dp/B01452SP1O)
+	*  [Crucial 500GB SSD](https://www.amazon.com/dp/B0786QNS9B) (OS)
+	*  Apps
+		*  [Tailscale](https://github.com/truenas/charts/tree/master/community/tailscale)
+		*  [Syncthing](https://syncthing.net/)
+	*  VMs
+		*  Ubuntu 22.04 Server
+			*  [Paperless-ngx](https://docs.paperless-ngx.com/) (Docker)
+			*  [Portainer](https://www.portainer.io/) (Docker)
+			*  [Dozzle](https://dozzle.dev/) (Docker)
+			*  [Nextcloud](https://hub.docker.com/_/nextcloud) (Docker)
+* Raidz2
+	* [Western Digital 4TB](https://www.amazon.com/gp/product/B0090UEQ8I)
+	* [Seagate 4TB Internal Drive](https://www.amazon.com/dp/B07J46FXHK)
+	* [HGST Ultrastar 4TB Internal Drive x 2](https://www.amazon.com/dp/B079JRGP4N)
+	* [3.5” HDD Hard Drive to 5.25” Cage](https://www.amazon.com/dp/B08BNTNTCY)
+* **Graphics Card**
+	* NVIDIA Corporation GT218 [GeForce 8400 GS Rev. 3]
+*   **Power:** 950W PSU
+
+### Proxmox Node
+*   [Minisforum MS-A1](https://store.minisforum.com/products/minisforum-ms-a1?variant=45707673338101)
+	* [AMD Ryzen™ 7 8700G](https://www.amd.com/en/products/processors/desktops/ryzen/8000-series/amd-ryzen-7-8700g.html)
+	*   **Operating System:** [Proxmox](https://proxmox.com/)
 		*  VMs
 			*  Ubuntu 22.04 Server
-				*  [Paperless-ngx](https://docs.paperless-ngx.com/) (Docker)
-				*  [Portainer](https://www.portainer.io/) (Docker)
-				*  [Dozzle](https://dozzle.dev/) (Docker)
-				*  [Nextcloud](https://hub.docker.com/_/nextcloud) (Docker)
-	* Raidz2
-		* [Western Digital 4TB](https://www.amazon.com/gp/product/B0090UEQ8I)
-		* [Seagate 4TB Internal Drive](https://www.amazon.com/dp/B07J46FXHK)
-		* [HGST Ultrastar 4TB Internal Drive x 2](https://www.amazon.com/dp/B079JRGP4N)
-		* [3.5” HDD Hard Drive to 5.25” Cage](https://www.amazon.com/dp/B08BNTNTCY)
-	* **Graphics Card**
-		* NVIDIA Corporation GT218 [GeForce 8400 GS Rev. 3]
-	* **Network** 
-		* [Netgear 5 Port Gigabit Ethernet Network Switch (GS105)](https://www.netgear.com/business/wired/switches/unmanaged/gs105/)
-	*   **Power:**
-		*   950W PSU
-		* [CyberPower CP1000PFCLCD PFC Sinewave UPS](https://www.amazon.com/gp/product/B00429N192)
-			
----
-				
+					* [Nginx Proxy Manager](https://github.com/NginxProxyManager/nginx-proxy-manager) (Docker)
+					* [Homarr](https://homarr.dev) (Docker)
+					* [Uptime Kuma](https://github.com/louislam/uptime-kuma) (Docker) with [Pushover](https://pushover.net/)
+					* [Speedtest Tracker](https://docs.speedtest-tracker.dev/) (Docker)
+					* [OpenSpeedTest](https://openspeedtest.com/) (Docker)
+					* [Prometheus](https://hub.docker.com/r/ubuntu/prometheus) (Docker)
+					* [Portainer](https://www.portainer.io/) (Docker)
+					* [Dozzle](https://dozzle.dev/) (Docker)
+					* [Watchtower](https://containrrr.dev/watchtower/) (Docker)
+					* [Orbital Sync](https://orbitalsync.com/) (Docker)
+	* 32GB DDR5 RAM
+	*  512GB NVMe SSD (OS)
+	*  2 x 1TB NVMe SSD (VM Storage)
+
 <style>
 	.page-content, .entry-header, .entry-content {
     //max-width: 740px;
 }
 </style>
-
-<script>
-			function startStream() {
-				setInterval(updateStream, 60 * 1000);
-			}
-          
-			function updateStream() {
-				document.getElementById('liveStream').src='https://pilab.dev/live-stream?i=' + Math.floor(Math.random() * 1001);
-			}
-			
-			startStream();
-</script>
