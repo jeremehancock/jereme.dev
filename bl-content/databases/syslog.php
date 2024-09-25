@@ -1,82 +1,82 @@
 <?php defined('BLUDIT') or die('Bludit CMS.'); ?>
 [
     {
+        "date": "2024-09-25 18:12:42",
+        "dictionaryKey": "content-edited",
+        "notes": "Specs",
+        "idExecution": "66f498ea41575",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
+        "date": "2024-09-25 18:12:28",
+        "dictionaryKey": "content-edited",
+        "notes": "Specs",
+        "idExecution": "66f498dc49267",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
+        "date": "2024-09-25 18:12:17",
+        "dictionaryKey": "content-edited",
+        "notes": "Specs",
+        "idExecution": "66f498d183a94",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
+        "date": "2024-09-25 18:11:58",
+        "dictionaryKey": "content-edited",
+        "notes": "Specs",
+        "idExecution": "66f498be3d173",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
+        "date": "2024-09-25 18:11:58",
+        "dictionaryKey": "content-deleted",
+        "notes": "autosave-ae6baedd36be1d5b3fa9ec0d872cc735",
+        "idExecution": "66f498be3d173",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
+        "date": "2024-09-25 18:11:23",
+        "dictionaryKey": "new-content-created",
+        "notes": "Specs[Autosave]",
+        "idExecution": "66f4989b776ca",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
+        "date": "2024-09-25 18:09:22",
+        "dictionaryKey": "content-edited",
+        "notes": "Specs",
+        "idExecution": "66f498217427b",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
+        "date": "2024-09-25 18:09:21",
+        "dictionaryKey": "content-deleted",
+        "notes": "autosave-ae6baedd36be1d5b3fa9ec0d872cc735",
+        "idExecution": "66f498217427b",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
+        "date": "2024-09-25 18:09:07",
+        "dictionaryKey": "new-content-created",
+        "notes": "Specs[Autosave]",
+        "idExecution": "66f49812aa04c",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
         "date": "2024-09-25 18:05:39",
         "dictionaryKey": "content-deleted",
         "notes": "specs-0",
         "idExecution": "66f497436c719",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2024-09-25 18:05:24",
-        "dictionaryKey": "content-edited",
-        "notes": "Specs",
-        "idExecution": "66f49734490e4",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2024-09-25 18:04:43",
-        "dictionaryKey": "content-edited",
-        "notes": "Specs",
-        "idExecution": "66f4970b0c0e4",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2024-09-25 18:03:53",
-        "dictionaryKey": "content-edited",
-        "notes": "Specs",
-        "idExecution": "66f496d8bb4c4",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2024-09-25 18:02:40",
-        "dictionaryKey": "content-edited",
-        "notes": "Specs",
-        "idExecution": "66f4968fc419a",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2024-09-25 18:02:08",
-        "dictionaryKey": "content-edited",
-        "notes": "Specs",
-        "idExecution": "66f496701f36c",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2024-09-25 18:00:07",
-        "dictionaryKey": "content-edited",
-        "notes": "Specs",
-        "idExecution": "66f495f749143",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2024-09-25 17:59:43",
-        "dictionaryKey": "content-edited",
-        "notes": "Specs",
-        "idExecution": "66f495df67b86",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2024-09-25 17:58:35",
-        "dictionaryKey": "content-edited",
-        "notes": "Specs",
-        "idExecution": "66f4959b91678",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2024-09-25 17:57:44",
-        "dictionaryKey": "content-edited",
-        "notes": "Specs",
-        "idExecution": "66f49567ed275",
         "method": "POST",
         "username": "admin"
     }
