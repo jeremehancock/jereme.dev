@@ -5,7 +5,7 @@
         "firstName": "Jereme",
         "lastName": "Hancock",
         "role": "admin",
-        "password": "6d4e9c377cdbf6feceb657a0259815dcfcd78325",
+        "password": "!",
         "salt": "&%5e8h@0",
         "email": "bozodev@protonmail.com",
         "registered": "2019-05-08 22:27:31",
