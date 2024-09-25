@@ -1,29 +1,5 @@
 <?php defined('BLUDIT') or die('Bludit CMS.'); ?>
 {
-    "sfdsd": {
-        "title": "",
-        "description": "",
-        "username": "admin",
-        "tags": [],
-        "type": "published",
-        "date": "2024-09-25 14:07:23",
-        "dateModified": "",
-        "position": 129,
-        "coverImage": "",
-        "category": "",
-        "md5file": "21f5cf5645f2946b15d35fefc37e45aa",
-        "uuid": "386897aef79875510c6438d50dcc4d91",
-        "allowComments": true,
-        "template": "",
-        "noindex": false,
-        "nofollow": false,
-        "noarchive": false,
-        "custom": {
-            "_amper": {
-                "value": false
-            }
-        }
-    },
     "autosave-393a579fcfaf4f8463fe6b4f24cdb23b": {
         "title": "Test",
         "description": "",
