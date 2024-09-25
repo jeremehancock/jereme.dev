@@ -1,6 +1,30 @@
 <?php defined('BLUDIT') or die('Bludit CMS.'); ?>
 [
     {
+        "date": "2024-09-25 16:25:21",
+        "dictionaryKey": "plugin-configured",
+        "notes": "EasyMDE",
+        "idExecution": "66f47fc129a9a",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
+        "date": "2024-09-25 16:25:18",
+        "dictionaryKey": "plugin-activated",
+        "notes": "EasyMDE",
+        "idExecution": "66f47fbe41197",
+        "method": "GET",
+        "username": "admin"
+    },
+    {
+        "date": "2024-09-25 16:25:11",
+        "dictionaryKey": "plugin-deactivated",
+        "notes": "TinyMCE",
+        "idExecution": "66f47fb7d39b2",
+        "method": "GET",
+        "username": "admin"
+    },
+    {
         "date": "2024-09-25 16:17:27",
         "dictionaryKey": "user-password-changed",
         "notes": "admin",
@@ -54,30 +78,6 @@
         "notes": "Bludit v3.16.2",
         "idExecution": "66f45f55aea6a",
         "method": "GET",
-        "username": "admin"
-    },
-    {
-        "date": "2024-09-25 14:06:45",
-        "dictionaryKey": "plugin-deactivated",
-        "notes": "EasyMDE",
-        "idExecution": "66f45f4560bf7",
-        "method": "GET",
-        "username": "admin"
-    },
-    {
-        "date": "2024-09-25 13:52:26",
-        "dictionaryKey": "content-edited",
-        "notes": "Specs",
-        "idExecution": "66f45be9659a8",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2024-09-25 13:52:25",
-        "dictionaryKey": "content-deleted",
-        "notes": "autosave-ae6baedd36be1d5b3fa9ec0d872cc735",
-        "idExecution": "66f45be9659a8",
-        "method": "POST",
         "username": "admin"
     }
 ]
