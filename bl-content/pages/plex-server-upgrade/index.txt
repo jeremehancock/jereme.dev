@@ -4,7 +4,7 @@ I was shocked to find something better than a returned item. It was a display mo
 
 That's right I got it for $150 with no sales tax since it was at the BX.
 
-I was able to migrate my existing Plex install to a 1TB NVMe drive that I already had. I put that drive in the new machine and it just fired right up. I also upgraded the RAM with2 16GB sticks that I already had on hand.
+I was able to migrate my existing Plex install to a 1TB NVMe drive that I already had. I put that drive in the new machine and it just fired right up. I also upgraded the RAM with 2 16GB sticks that I already had on hand.
 
 It has been an awesome upgrade and the migration was super simple!
 

@@ -1,6 +1,14 @@
 <?php defined('BLUDIT') or die('Bludit CMS.'); ?>
 [
     {
+        "date": "2024-09-26 12:39:55",
+        "dictionaryKey": "content-edited",
+        "notes": "Plex Server Upgrade!",
+        "idExecution": "66f59c6ab0fe1",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
         "date": "2024-09-26 12:31:41",
         "dictionaryKey": "content-edited",
         "notes": "Plex Server Upgrade!",
@@ -69,14 +77,6 @@
         "dictionaryKey": "content-edited",
         "notes": "Plex Server Upgrade![Autosave]",
         "idExecution": "66f596ff78d50",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2024-09-26 12:14:47",
-        "dictionaryKey": "new-content-created",
-        "notes": "Plex Server Upgrade![Autosave]",
-        "idExecution": "66f59687774f1",
         "method": "POST",
         "username": "admin"
     }
