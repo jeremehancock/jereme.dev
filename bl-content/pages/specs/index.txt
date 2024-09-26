@@ -189,7 +189,7 @@
 					* [Orbital Sync](https://orbitalsync.com/) (Docker)
 	* 32GB DDR5 RAM
 	*  512GB NVMe SSD (OS)
-	*  2 x 1TB NVMe SSD (VM Storage)
+	*  2 x 1TB NVMe SSD Mirrored (VM Storage)
 	* [WD_BLACK P10 Game Drive - 5TB](https://www.westerndigital.com/products/portable-drives/wd-black-p10-game-drive-usb-3-2-hdd?sku=WDBA3A0050BBK-WESN) (Backups)
 
 <style>
