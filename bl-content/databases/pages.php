@@ -1,5 +1,77 @@
 <?php defined('BLUDIT') or die('Bludit CMS.'); ?>
 {
+    "my-travel-tv-box-setup": {
+        "title": "My Travel TV Box Setup",
+        "description": "",
+        "username": "admin",
+        "tags": [],
+        "type": "draft",
+        "date": "2024-09-26 12:07:07",
+        "dateModified": "2024-09-26 12:27:36",
+        "position": 131,
+        "coverImage": "",
+        "category": "",
+        "md5file": "d4908b1e39cc61772e5d74e5fb77d241",
+        "uuid": "2e2762b3524a642f87e1dda68eabfc0d",
+        "allowComments": true,
+        "template": "",
+        "noindex": false,
+        "nofollow": false,
+        "noarchive": false,
+        "custom": {
+            "_amper": {
+                "value": false
+            }
+        }
+    },
+    "i-won-a-server": {
+        "title": "I won a server!",
+        "description": "",
+        "username": "admin",
+        "tags": [],
+        "type": "draft",
+        "date": "2024-09-26 12:06:45",
+        "dateModified": "2024-09-26 12:27:31",
+        "position": 130,
+        "coverImage": "",
+        "category": "",
+        "md5file": "d4908b1e39cc61772e5d74e5fb77d241",
+        "uuid": "89e9143555d071d55ac2daaebd4f2a00",
+        "allowComments": true,
+        "template": "",
+        "noindex": false,
+        "nofollow": false,
+        "noarchive": false,
+        "custom": {
+            "_amper": {
+                "value": false
+            }
+        }
+    },
+    "plex-server-upgrade": {
+        "title": "Plex Server Upgrade!",
+        "description": "",
+        "username": "admin",
+        "tags": [],
+        "type": "published",
+        "date": "2024-09-26 12:06:18",
+        "dateModified": "2024-09-26 12:31:40",
+        "position": 129,
+        "coverImage": "plex-upgrade.png",
+        "category": "media-servers",
+        "md5file": "67b96961e2a8f539e4580b69144ab3ff",
+        "uuid": "43b7edbcad678bca496b82316ea68fed",
+        "allowComments": true,
+        "template": "",
+        "noindex": false,
+        "nofollow": false,
+        "noarchive": false,
+        "custom": {
+            "_amper": {
+                "value": false
+            }
+        }
+    },
     "autosave-ae6baedd36be1d5b3fa9ec0d872cc735": {
         "title": "Specs",
         "description": "",

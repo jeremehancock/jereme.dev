@@ -46,6 +46,7 @@
         "template": "",
         "description": "Everything Plex, Jellyfin, etc.",
         "list": [
+            "plex-server-upgrade",
             "jellyfin-nowplaying",
             "moviecli"
         ]
