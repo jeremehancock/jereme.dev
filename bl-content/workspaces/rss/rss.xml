@@ -5,7 +5,29 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Thu, 26 Sep 2024 13:12:37 -0500</lastBuildDate>
+    <lastBuildDate>Thu, 26 Sep 2024 22:52:24 -0500</lastBuildDate>
+    <item>
+      <title>I won a server!</title>
+      <link>https://pilab.dev/i-won-a-server</link>
+      <image>https://pilab.dev/bl-content/uploads/pages/89e9143555d071d55ac2daaebd4f2a00/minisforum-ms-a1-thumb2.png</image>
+      <description>&lt;p&gt;I thought my recent good luck with my &lt;a href="/plex-server-upgrade"&gt;Plex server upgrade&lt;/a&gt; was great, then I won a &lt;a href="https://store.minisforum.com/products/minisforum-ms-a1?variant=45707673338101"&gt;Minisforum MS-A1&lt;/a&gt;!&lt;/p&gt;
+&lt;p&gt;I was listening to some YouTube videos while working the other day. I came across a channel &lt;a href="https://www.youtube.com/@VirtualizationHowto"&gt;@VirtualizationHowto&lt;/a&gt; that I hadn't seen before. The title &amp;quot;Perfect Home Lab 2024 and Minisforum Giveaway!&amp;quot; caught my eye. So I decided to watch. The contest rules were simple so I decided to put my name in the hat. I typed &amp;quot;Fingers crossed :)&amp;quot; into the comments and went on with my day.&lt;/p&gt;
+&lt;p&gt;I had completely forgotten about the contest until a week or so later when I saw a notification with a reply to my comment. It took me a few minutes to figure out what it even was. Then once I remembered I thought for sure I was being scammed. &lt;/p&gt;
+&lt;p&gt;So I reached out as requested and I was pleasantly surprised to learn that I had indeed won!&lt;/p&gt;
+&lt;p&gt;Brandon from &lt;a href="https://www.youtube.com/@VirtualizationHowto"&gt;@VirtualizationHowto&lt;/a&gt; was great and got the server shipped super quick. It arrived in great condition and has been a marvelous addition to my setup.&lt;/p&gt;
+&lt;p&gt;I have also really enjoyed the channel. I am sure I will be watching many more videos to get more tips on using my new server!&lt;/p&gt;
+&lt;div class="centered"&gt;
+    &lt;img src="/bl-content/uploads/pages/89e9143555d071d55ac2daaebd4f2a00/minisforum-ms-a1.png" class="image-border" /&gt;&lt;br&gt;&lt;br&gt;
+&lt;/div&gt;
+&lt;h4&gt;So what am I using it for?&lt;/h4&gt;
+&lt;p&gt;I have set it up as a &lt;a href="https://proxmox.com/en/"&gt;Proxmox&lt;/a&gt; server. I have the OS installed on a 512GB NVMe SSD and have 2 1TB NVMe SSDs setup as a mirror for VM storage. I have migrated a setup that was previously on a Dell OptiPlex to an Ubuntu VM running on the new server. It is working great and I have a ton of overhead to add more VMs and services. Full specs are &lt;a href="/specs#proxmox"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h4&gt;Here is the video announcing the winner.&lt;/h4&gt;
+&lt;div class="centered"&gt;
+&lt;iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/szL4OrvSbG8?si=Qlbq4NTARhyiizwN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;</description>
+      <pubDate>Thu, 26 Sep 2024 12:06:45 -0500</pubDate>
+      <guid isPermaLink="false">89e9143555d071d55ac2daaebd4f2a00</guid>
+    </item>
     <item>
       <title>Plex Server Upgrade!</title>
       <link>https://pilab.dev/plex-server-upgrade</link>
@@ -117,33 +139,6 @@ sudo sysctl -p /etc/sysctl.conf&lt;/code&gt;&lt;/pre&gt;
 &lt;/blockquote&gt;</description>
       <pubDate>Fri, 30 Sep 2022 21:28:01 -0500</pubDate>
       <guid isPermaLink="false">b2824f25debdfd4c320c3717545b05c8</guid>
-    </item>
-    <item>
-      <title>Node-RED Upgrades (v3)</title>
-      <link>https://pilab.dev/node-red-upgrades-v3</link>
-      <image>https://pilab.dev/bl-content/uploads/pages/31d198e511566000181e6b03fd9c964c/node-red-upgrade.png</image>
-      <description>&lt;p&gt;I noticed the other day that my &lt;a href="node-red-twitter-bot"&gt;Node-RED node&lt;/a&gt; was in need of an update. So I ran the script provided in the &lt;a href="https://nodered.org/docs/getting-started/raspberrypi"&gt;Node-RED docs&lt;/a&gt;. I expected it to run smoothly since it has always in the past. However, I received a message stating that the script couldn't update from v2 of Node-RED to v3 of Node-RED because I was  on Nodejs v12. &lt;/p&gt;
-&lt;h4&gt;&lt;em&gt;Note:&lt;/em&gt;&lt;/h4&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Before I did anything. I went to Node-RED in my browser and hit &lt;code&gt;alt-shift-P&lt;/code&gt; and ensured that all nodes were updated to their latest version.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;h3&gt;Here are the steps that I took to do the upgrade.&lt;/h3&gt;
-&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;1. Remove current installation of Nodejs:&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;sudo apt remove nodejs&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;2. Install Nodejs v14 (Node-RED recommends this version):&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;sudo curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
-sudo apt-get install -y nodejs&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;3. Run Node-RED install script:&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;bash &amp;lt;(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;4. Start Node-RED:&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;node-red-start --max-old-space-size=1024 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;When I visited my newly upgrade Node-RED installation in my browser I was shocked to see that all my Flows were gone! I just had an empty default Flow. I was freaking out until I remembered that I had previously setup up &lt;a href="http://nodered.org/docs/user-guide/projects/"&gt;Projects&lt;/a&gt; which allowed me to backup all my Flows and creds to GithHub.&lt;/p&gt;
-&lt;p&gt;So I followed the &lt;a href="http://nodered.org/docs/user-guide/projects/"&gt;docs&lt;/a&gt; and re-enabled &lt;a href="http://nodered.org/docs/user-guide/projects/"&gt;Projects&lt;/a&gt;. I then went to my GitHub account and copied the &lt;code&gt;flows_noderedpi.json&lt;/code&gt; and &lt;code&gt;flows_noderedpi_cred.json&lt;/code&gt; to &lt;code&gt;~/.node-red&lt;/code&gt; on my &lt;a href="node-red-twitter-bot"&gt;Node-RED node&lt;/a&gt;. Once I restarted (&lt;code&gt;node-red-restart&lt;/code&gt;) Node-RED everything was back in order and working. I made a few updates to take advantage of some of the new features in Node-RED and was able to easily push those changes to GitHub.&lt;/p&gt;
-&lt;p&gt;I was so happy that I had setup &lt;a href="http://nodered.org/docs/user-guide/projects/"&gt;Projects&lt;/a&gt;. It was a real life saver and kept me from losing a few years worth of work that I had put into my Node-RED setup. &lt;/p&gt;</description>
-      <pubDate>Mon, 01 Aug 2022 09:29:02 -0500</pubDate>
-      <guid isPermaLink="false">31d198e511566000181e6b03fd9c964c</guid>
     </item>
   </channel>
 </rss>

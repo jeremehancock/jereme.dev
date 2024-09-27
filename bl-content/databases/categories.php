@@ -30,6 +30,7 @@
         "description": "Everything else...",
         "template": "",
         "list": [
+            "i-won-a-server",
             "ubuntuce-resurrected",
             "roadside-america",
             "new-pi-lab-media-nodes",

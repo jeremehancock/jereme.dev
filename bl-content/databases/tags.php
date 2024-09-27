@@ -50,6 +50,12 @@
             "gatsby-bludit"
         ]
     },
+    "giveaway": {
+        "name": "giveaway",
+        "list": [
+            "i-won-a-server"
+        ]
+    },
     "goat": {
         "name": "Goat",
         "list": [
@@ -72,6 +78,18 @@
         "name": "live stream",
         "list": [
             "octoprint-node-live-stream"
+        ]
+    },
+    "media-server": {
+        "name": "media server",
+        "list": [
+            "plex-server-upgrade"
+        ]
+    },
+    "mini-pc": {
+        "name": "mini-pc",
+        "list": [
+            "i-won-a-server"
         ]
     },
     "node-red": {
@@ -125,6 +143,7 @@
     "plex": {
         "name": "plex",
         "list": [
+            "plex-server-upgrade",
             "moviecli"
         ]
     },
@@ -197,6 +216,12 @@
             "new-pi-lab-media-nodes"
         ]
     },
+    "server": {
+        "name": "server",
+        "list": [
+            "i-won-a-server"
+        ]
+    },
     "seti-home": {
         "name": "SETI@home",
         "list": [
@@ -232,6 +257,12 @@
         "name": "UbuntuCE",
         "list": [
             "ubuntuce-resurrected"
+        ]
+    },
+    "upgrade": {
+        "name": "upgrade",
+        "list": [
+            "plex-server-upgrade"
         ]
     },
     "vagrant": {

@@ -1,1 +1,25 @@
-TBD
+I thought my recent good luck with my [Plex server upgrade](/plex-server-upgrade) was great, then I won a [Minisforum MS-A1](https://store.minisforum.com/products/minisforum-ms-a1?variant=45707673338101)!
+
+I was listening to some YouTube videos while working the other day. I came across a channel [@VirtualizationHowto](https://www.youtube.com/@VirtualizationHowto) that I hadn't seen before. The title "Perfect Home Lab 2024 and Minisforum Giveaway!" caught my eye. So I decided to watch. The contest rules were simple so I decided to put my name in the hat. I typed "Fingers crossed :)" into the comments and went on with my day.
+
+I had completely forgotten about the contest until a week or so later when I saw a notification with a reply to my comment. It took me a few minutes to figure out what it even was. Then once I remembered I thought for sure I was being scammed. 
+
+So I reached out as requested and I was pleasantly surprised to learn that I had indeed won!
+
+Brandon from [@VirtualizationHowto](https://www.youtube.com/@VirtualizationHowto) was great and got the server shipped super quick. It arrived in great condition and has been a marvelous addition to my setup.
+
+I have also really enjoyed the channel. I am sure I will be watching many more videos to get more tips on using my new server!
+
+<div class="centered">
+    <img src="/bl-content/uploads/pages/89e9143555d071d55ac2daaebd4f2a00/minisforum-ms-a1.png" class="image-border" /><br><br>
+</div>
+
+#### So what am I using it for?
+
+I have set it up as a [Proxmox](https://proxmox.com/en/) server. I have the OS installed on a 512GB NVMe SSD and have 2 1TB NVMe SSDs setup as a mirror for VM storage. I have migrated a setup that was previously on a Dell OptiPlex to an Ubuntu VM running on the new server. It is working great and I have a ton of overhead to add more VMs and services. Full specs are [here](/specs#proxmox).
+
+#### Here is the video announcing the winner.
+
+<div class="centered">
+<iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/szL4OrvSbG8?si=Qlbq4NTARhyiizwN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>

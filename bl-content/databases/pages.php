@@ -28,14 +28,18 @@
         "title": "I won a server!",
         "description": "",
         "username": "admin",
-        "tags": [],
-        "type": "draft",
+        "tags": {
+            "mini-pc": "mini-pc",
+            "server": "server",
+            "giveaway": "giveaway"
+        },
+        "type": "published",
         "date": "2024-09-26 12:06:45",
-        "dateModified": "2024-09-26 12:27:31",
+        "dateModified": "2024-09-26 22:52:24",
         "position": 130,
-        "coverImage": "",
-        "category": "",
-        "md5file": "d4908b1e39cc61772e5d74e5fb77d241",
+        "coverImage": "minisforum-ms-a1-thumb2.png",
+        "category": "general",
+        "md5file": "c4937e83e4973ff3e654f047d2bd5539",
         "uuid": "89e9143555d071d55ac2daaebd4f2a00",
         "allowComments": true,
         "template": "",
@@ -52,10 +56,14 @@
         "title": "Plex Server Upgrade!",
         "description": "",
         "username": "admin",
-        "tags": [],
+        "tags": {
+            "plex": "plex",
+            "media-server": "media server",
+            "upgrade": "upgrade"
+        },
         "type": "published",
         "date": "2024-09-26 12:06:18",
-        "dateModified": "2024-09-26 12:39:54",
+        "dateModified": "2024-09-26 22:48:06",
         "position": 129,
         "coverImage": "plex-upgrade.png",
         "category": "media-servers",
@@ -597,33 +605,6 @@
         "category": "raspberry-pi",
         "md5file": "f9bc1b570ede9df404b62fd54e93fb0d",
         "uuid": "f7a9f3c988752b64b891403e01748dde",
-        "allowComments": true,
-        "template": "",
-        "noindex": false,
-        "nofollow": false,
-        "noarchive": false,
-        "custom": {
-            "_amper": {
-                "value": false
-            }
-        }
-    },
-    "zero-tv": {
-        "title": "Zero TV",
-        "description": "",
-        "username": "admin",
-        "tags": {
-            "raspberry-pi": "Raspberry Pi",
-            "pi": "Pi"
-        },
-        "type": "draft",
-        "date": "2020-04-13 22:11:59",
-        "dateModified": "2023-12-04 20:30:15",
-        "position": 111,
-        "coverImage": "zerotv-thumb.png",
-        "category": "raspberry-pi",
-        "md5file": "053bd4fa98b46fc4bcdd1337ade035b4",
-        "uuid": "e5cc099cec19476d9ea5bc92a4f113ae",
         "allowComments": true,
         "template": "",
         "noindex": false,
@@ -1188,33 +1169,6 @@
             }
         }
     },
-    "free-live-tv": {
-        "title": "Free Live TV",
-        "description": "",
-        "username": "admin",
-        "tags": {
-            "raspberry-pi": "Raspberry Pi",
-            "pi": "Pi"
-        },
-        "type": "draft",
-        "date": "2019-06-02 22:18:37",
-        "dateModified": "2023-12-04 20:30:36",
-        "position": 14,
-        "coverImage": "free-live-tv.png",
-        "category": "general",
-        "md5file": "95b4bb4f121e11e17988cc223b728c5a",
-        "uuid": "d40fd6d17fb800f4241386472aadc246",
-        "allowComments": true,
-        "template": "",
-        "noindex": false,
-        "nofollow": false,
-        "noarchive": false,
-        "custom": {
-            "_amper": {
-                "value": false
-            }
-        }
-    },
     "plugins": {
         "title": "Plugins",
         "description": "",
@@ -1474,11 +1428,11 @@
         },
         "type": "static",
         "date": "2019-05-09 21:13:56",
-        "dateModified": "2024-09-26 13:12:37",
+        "dateModified": "2024-09-26 22:34:27",
         "position": 2,
         "coverImage": "picluster-v3.jpg",
         "category": "raspberry-pi",
-        "md5file": "82d968b165530cba9cc13a773ce1566a",
+        "md5file": "426b4fc51f4e0bbb00f770169a981d15",
         "uuid": "ae6baedd36be1d5b3fa9ec0d872cc735",
         "allowComments": true,
         "template": "",

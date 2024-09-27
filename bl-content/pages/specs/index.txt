@@ -146,6 +146,7 @@
 				* [Watchtower](https://containrrr.dev/watchtower/) (Docker)
 	* [Seagate BarraCuda 4TB Internal Hard Drive](https://www.amazon.com/dp/B07D9C7SQH) (Backups)
 
+<span id="truenas"/>
 ### TrueNAS Node
 * Dell Precision 5820
 	*  Intel(R) Xeon(R) W-2135 CPU @ 3.70GHz
@@ -171,6 +172,7 @@
 	* NVIDIA Corporation GT218 [GeForce 8400 GS Rev. 3]
 *   **Power:** 950W PSU
 
+<span id="proxmox"/>
 ### Proxmox Node
 *   [Minisforum MS-A1](https://store.minisforum.com/products/minisforum-ms-a1?variant=45707673338101)
 	* [AMD Ryzen™ 7 8700G](https://www.amd.com/en/products/processors/desktops/ryzen/8000-series/amd-ryzen-7-8700g.html)
