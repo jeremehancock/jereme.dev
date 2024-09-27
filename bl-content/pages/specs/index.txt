@@ -89,7 +89,7 @@
 
 ## Pi Lab (Non-Pi Servers):
 <span id="plex"/>
-### Anansi Node
+### Plex Node
 *   [Aspire TC-1750-UR11](https://www.acer.com/us-en/desktops-and-all-in-ones/aspire-classic-desktops/aspire-tc/pdp/DT.BJUAA.001)
 	* [Intel® Core™ i5-12400 up to 4.4GHz](https://ark.intel.com/content/www/us/en/ark/products/134586/intel-core-i5-12400-processor-18m-cache-up-to-4-40-ghz.html)
 	* [32GB Corsair VENGEANCE LPX DDR4 3200MHz](https://www.amazon.com/Corsair-VENGEANCE-3200MHz-Compatible-Computer/dp/B07RS1G6XW)
@@ -133,7 +133,7 @@
 	*   [SABRENT NVMe M.2 SSD to PCIe](https://www.amazon.com/dp/B084GDY2PW)
 		* [WD Blue SN570 NVMe 1TB Solid State Drive](https://www.amazon.com/Western-Digital-SN570-Internal-Solid/dp/B09HKDQ1RN) (Cache - Downloads/Transcodes/Usenet)
 
-### Optimus Node
+### Monitoring Node
 *   Dell OptiPlex 3060 Small Form Factor
 	* [Intel Core i3-8100 CPU @ 3.60GHz](https://ark.intel.com/content/www/us/en/ark/products/126688/intel-core-i38100-processor-6m-cache-3-60-ghz.html)
 	*   **Operating System:** [Ubuntu Server 22.04.3 LTS](https://ubuntu.com/download/server)
