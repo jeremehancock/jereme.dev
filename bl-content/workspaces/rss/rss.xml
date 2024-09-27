@@ -5,7 +5,34 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Thu, 26 Sep 2024 23:18:16 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 27 Sep 2024 11:41:08 -0500</lastBuildDate>
+    <item>
+      <title>The Perfect Travel TV Setup</title>
+      <link>https://pilab.dev/the-perfect-travel-tv-setup</link>
+      <image>https://pilab.dev/bl-content/uploads/pages/2e2762b3524a642f87e1dda68eabfc0d/onn-4k-2.png</image>
+      <description>&lt;p&gt;One of the best benefits of running your own Plex server is being able to watch your movies and shows wherever you are. Many folks will just log in to Plex on the hotel TV (assuming it has the Plex app) while traveling. I don't like doing this. For one thing smart TVs are generally underpowered and that can cause issues streaming. The other issue is I don't like to log in to a TV that isn't mine.&lt;/p&gt;
+&lt;p&gt;I have seen a ton of posts on Reddit over the years with different solutions for this. Many of them seem very complicated. I like to keep things simple.&lt;/p&gt;
+&lt;h2&gt;Here is my current travel setup&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.amazon.com/Android-Streaming-Device-Remote-Control/dp/B0BRBLG3W6/ref=sr_1_1"&gt;ONN 4K Android TV Box&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href="https://play.google.com/store/apps/details?id=com.plexapp.android"&gt;Plex&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href="https://play.google.com/store/apps/details?id=org.xbmc.kodi"&gt;Kodi&lt;/a&gt;&lt;/strong&gt; - In case my location doesn't have decent internet connection.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href="https://play.google.com/store/apps/details?id=org.jellyfin.mobile"&gt;Jellyfin&lt;/a&gt;&lt;/strong&gt; - In case Plex has any issues.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href="https://play.google.com/store/apps/details?id=com.google.android.apps.youtube.unplugged"&gt;YouTube TV&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href="https://play.google.com/store/apps/details?id=com.tailscale.ipn"&gt;Tailscale&lt;/a&gt;&lt;/strong&gt; - I have this setup to auto connect and use one of my home servers (could be the Plex server) as an exit node. I have Plex, Kodi, and JellyFin added to the exceptions list so that they don't route through Tailscale. This is only really used for YouTube TV.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.amazon.com/WD-1TB-Elements-Compatible-WDBAYN0010BBK-WESN/dp/B097TTZD48"&gt;WD 1TB External SSD&lt;/a&gt; (Offline Media)&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.amazon.com/dp/B083KJ1B5H"&gt;OTG Cable&lt;/a&gt; - For connecting the SSD&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In this setup I have Plex (Jellyfin as backup) for when I have a good internet connection and can stream from my server. I have Kodi setup to point to the local SSD that has been pre-loaded with a selection of movies and shows in case the internet is not good enough for connecting to my Plex server. I have Tailscale setup to use one of my home servers as an exit node so that I can watch YouTube TV as if I were at home.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Note: I chose the ONN 4K 2023 box because it is cheap and it supports connecting an SSD via OTG cable. I had issues with other cheap boxes not recognizing the connection.&lt;/em&gt;&lt;/p&gt;
+&lt;div class="centered"&gt;
+    &lt;img src="/bl-content/uploads/pages/2e2762b3524a642f87e1dda68eabfc0d/travel-tv-box.png" class="image-border" /&gt;&lt;br&gt;&lt;br&gt;
+&lt;/div&gt;</description>
+      <pubDate>Thu, 26 Sep 2024 12:07:07 -0500</pubDate>
+      <guid isPermaLink="false">2e2762b3524a642f87e1dda68eabfc0d</guid>
+    </item>
     <item>
       <title>I won a server!</title>
       <link>https://pilab.dev/i-won-a-server</link>
@@ -87,58 +114,6 @@ SERVER="username@hostname"&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;a href="https://github.com/jeremehancock/moviecli#moviecli"&gt;&lt;img data-src="/images/check-it-out-on-github.png" alt="Get it on GitHub" class="on-github lozad" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
       <pubDate>Mon, 15 May 2023 19:38:40 -0500</pubDate>
       <guid isPermaLink="false">94a28a727ba5e3fad78b2d7d5221b126</guid>
-    </item>
-    <item>
-      <title>Dual Pi-hole + Tailscale</title>
-      <link>https://pilab.dev/dual-pi-hole-tailscale</link>
-      <image>https://pilab.dev/bl-content/uploads/pages/b2824f25debdfd4c320c3717545b05c8/dual-pi-holetailscale.png</image>
-      <description>&lt;p&gt;This might be the perfect &lt;a href="https://pi-hole.net/"&gt;Pi-hole&lt;/a&gt; setup!&lt;/p&gt;
-&lt;p&gt;With this new setup I have redundancy for my DNS as well as the simplest VPN setup ever. Now when I am on the go not only can I access my home network with ease I am also able to take advantage of the ad blocking of &lt;a href="https://pi-hole.net/"&gt;Pi-hole&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Here are the basic steps to get things setup. There are more configuration steps available for each installation. Please check their websites for full details before proceeding.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Step 1:&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Install &lt;a href="https://pi-hole.net/"&gt;Pi-hole&lt;/a&gt; on two Raspberry Pis. &lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;curl -sSL https://install.pi-hole.net | bash&lt;/code&gt;&lt;/pre&gt;
-&lt;h3&gt;Note:&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;In the &lt;a href="https://pi-hole.net/"&gt;Pi-hole&lt;/a&gt; Admin page in Settings &amp;gt; DNS, make sure that Listen on all interfaces, permit all origins is selected.&lt;/p&gt;
-&lt;p&gt;Tailscale traffic comes in on the tailscale0 network interface, so this option is needed to allow your &lt;a href="https://pi-hole.net/"&gt;Pi-hole&lt;/a&gt; to respond to Tailscale-based DNS traffic. When using this option, make sure your &lt;a href="https://pi-hole.net/"&gt;Pi-hole&lt;/a&gt; is properly firewalled.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Step 2:&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Install &lt;a href="https://orbitalsync.com/"&gt;Orbital Sync&lt;/a&gt; on one of the Raspberry Pis. This can also be installed on a completely different device on your home network. I prefer to do that, but it should work from one of the Raspberry Pis. Install instructions can be found &lt;a href="https://orbitalsync.com/#getting-started"&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Step 3:&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Install &lt;a href="https://tailscale.com/"&gt;Tailscale&lt;/a&gt; on both Raspberry Pis.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;curl -fsSL https://tailscale.com/install.sh | sh&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;Step 4:&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Enable IP forwarding on both Raspberry Pis.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;echo 'net.ipv4.ip_forward = 1' | sudo tee -a /etc/sysctl.conf
-echo 'net.ipv6.conf.all.forwarding = 1' | sudo tee -a /etc/sysctl.conf
-sudo sysctl -p /etc/sysctl.conf&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;Step 5:&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Start &lt;a href="https://tailscale.com/"&gt;Tailscale&lt;/a&gt; on both Raspberry Pis.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;sudo tailscale up --advertise-exit-node --advertise-routes=192.168.1.0/24 --accept-dns=false --accept-routes=true&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;Step 6:&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Login to &lt;a href="https://tailscale.com/"&gt;Tailscale&lt;/a&gt; and click the &amp;quot;three dots&amp;quot; menu next to the Machine entry for each &lt;a href="https://pi-hole.net/"&gt;Pi-hole&lt;/a&gt;. Select &amp;quot;Disable key expiry&amp;quot; from the drop-down. Since the &lt;a href="https://pi-hole.net/"&gt;Pi-holes&lt;/a&gt; are not directly exposed to the internet it is safe to not require re-authentication. Then select &amp;quot;Edit route settings...&amp;quot; from the same drop-down menu and enable both options. See image below.&lt;/p&gt;
-&lt;div class="centered"&gt;
-    &lt;img src="/bl-content/uploads/pages/b2824f25debdfd4c320c3717545b05c8/tailscale-setup.png" class="image-border" /&gt;&lt;br&gt;&lt;br&gt;
-&lt;/div&gt;
-&lt;p&gt;Next copy the &lt;a href="https://tailscale.com/"&gt;Tailscale&lt;/a&gt; IP address for each &lt;a href="https://pi-hole.net/"&gt;Pi-hole&lt;/a&gt; and use them as the Global Nameservers on the DNS tab. Set them override local DNS. See image below.&lt;/p&gt;
-&lt;div class="centered"&gt;
-    &lt;img src="/bl-content/uploads/pages/b2824f25debdfd4c320c3717545b05c8/tailscale-dns.png" class="image-border" /&gt;&lt;br&gt;&lt;br&gt;
-&lt;/div&gt;
-&lt;p&gt;Turn on MagicDNS on the DNS tab. This way the &lt;a href="https://pi-hole.net/"&gt;Pi-hole's&lt;/a&gt; interfaces will work when on or off the Tailscale network using their hostnames.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Step 7:&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Configure your router to use the &lt;a href="https://pi-hole.net/"&gt;Pi-hole's&lt;/a&gt; local IP addresses for your DNS.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Step 8:&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Install &lt;a href="https://tailscale.com/"&gt;Tailscale&lt;/a&gt; on other devices such as your phone so you can connect to your &lt;a href="https://tailscale.com/"&gt;Tailscale&lt;/a&gt; network.&lt;/p&gt;
-&lt;p&gt;Thats it!&lt;/p&gt;
-&lt;p&gt;Now you should have all your devices setup with ad blocking and VPN. Now when you are connected to your &lt;a href="https://tailscale.com/"&gt;Tailscale&lt;/a&gt; network you will also get ad blocking even when you are not on your local network.&lt;/p&gt;
-&lt;p&gt;Don't forget if you want everyone on your home network (even without being on &lt;a href="https://tailscale.com/"&gt;Tailscale&lt;/a&gt;) to be covered by &lt;a href="https://pi-hole.net/"&gt;Pi-hole&lt;/a&gt; to update your router's DNS configuration. Instructions can be found &lt;a href="https://docs.pi-hole.net/main/post-install/"&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Updates:&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;I have updated the instructions to use Orbital Sync instead of the now deprecated Gravity Sync.&lt;/em&gt;&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-      <pubDate>Fri, 30 Sep 2022 21:28:01 -0500</pubDate>
-      <guid isPermaLink="false">b2824f25debdfd4c320c3717545b05c8</guid>
     </item>
   </channel>
 </rss>

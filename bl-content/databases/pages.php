@@ -1,17 +1,23 @@
 <?php defined('BLUDIT') or die('Bludit CMS.'); ?>
 {
-    "my-travel-tv-box-setup": {
-        "title": "My Travel TV Box Setup",
+    "the-perfect-travel-tv-setup": {
+        "title": "The Perfect Travel TV Setup",
         "description": "",
         "username": "admin",
-        "tags": [],
-        "type": "draft",
+        "tags": {
+            "plex": "plex",
+            "jellyfin": "jellyfin",
+            "kodi": "kodi",
+            "media-server": "media server",
+            "youtube-tv": "youtube tv"
+        },
+        "type": "published",
         "date": "2024-09-26 12:07:07",
-        "dateModified": "2024-09-26 12:27:36",
+        "dateModified": "2024-09-27 11:41:08",
         "position": 131,
-        "coverImage": "",
-        "category": "",
-        "md5file": "d4908b1e39cc61772e5d74e5fb77d241",
+        "coverImage": "onn-4k-2.png",
+        "category": "media-servers",
+        "md5file": "3eed6631a2362056c48df990cb0306be",
         "uuid": "2e2762b3524a642f87e1dda68eabfc0d",
         "allowComments": true,
         "template": "",

@@ -46,6 +46,7 @@
         "template": "",
         "description": "Everything Plex, Jellyfin, etc.",
         "list": [
+            "the-perfect-travel-tv-setup",
             "plex-server-upgrade",
             "jellyfin-nowplaying",
             "moviecli"

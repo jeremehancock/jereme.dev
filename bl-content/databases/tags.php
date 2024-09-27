@@ -63,9 +63,16 @@
         ]
     },
     "jellyfin": {
-        "name": "Jellyfin",
+        "name": "jellyfin",
         "list": [
+            "the-perfect-travel-tv-setup",
             "jellyfin-nowplaying"
+        ]
+    },
+    "kodi": {
+        "name": "kodi",
+        "list": [
+            "the-perfect-travel-tv-setup"
         ]
     },
     "linux": {
@@ -83,6 +90,7 @@
     "media-server": {
         "name": "media server",
         "list": [
+            "the-perfect-travel-tv-setup",
             "plex-server-upgrade"
         ]
     },
@@ -143,6 +151,7 @@
     "plex": {
         "name": "plex",
         "list": [
+            "the-perfect-travel-tv-setup",
             "plex-server-upgrade",
             "moviecli"
         ]
@@ -263,6 +272,12 @@
         "name": "WordPress",
         "list": [
             "quick-wordpress"
+        ]
+    },
+    "youtube-tv": {
+        "name": "youtube tv",
+        "list": [
+            "the-perfect-travel-tv-setup"
         ]
     }
 }
