@@ -37,7 +37,6 @@
             "seti-home-hibernation",
             "resources",
             "quick-wordpress",
-            "bouncing-trump",
             "randomgoat",
             "sysk-podcast"
         ]

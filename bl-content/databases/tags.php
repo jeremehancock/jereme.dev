@@ -229,18 +229,6 @@
             "pi-lab-seti-home-node"
         ]
     },
-    "silly": {
-        "name": "Silly",
-        "list": [
-            "bouncing-trump"
-        ]
-    },
-    "trump": {
-        "name": "Trump",
-        "list": [
-            "bouncing-trump"
-        ]
-    },
     "twitter": {
         "name": "Twitter",
         "list": [

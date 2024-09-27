@@ -35,11 +35,11 @@
         },
         "type": "published",
         "date": "2024-09-26 12:06:45",
-        "dateModified": "2024-09-26 22:52:24",
+        "dateModified": "2024-09-26 23:02:50",
         "position": 130,
         "coverImage": "minisforum-ms-a1-thumb2.png",
         "category": "general",
-        "md5file": "c4937e83e4973ff3e654f047d2bd5539",
+        "md5file": "5daf3661e298822cc8ba453ae88c0c64",
         "uuid": "89e9143555d071d55ac2daaebd4f2a00",
         "allowComments": true,
         "template": "",
@@ -1011,9 +1011,9 @@
             "trump": "Trump",
             "silly": "Silly"
         },
-        "type": "published",
+        "type": "draft",
         "date": "2019-09-07 21:08:21",
-        "dateModified": "2019-09-07 21:43:51",
+        "dateModified": "2024-09-26 23:01:27",
         "position": 20,
         "coverImage": "trump-embed.png",
         "category": "general",
@@ -1026,7 +1026,7 @@
         "noarchive": false,
         "custom": {
             "_amper": {
-                "value": ""
+                "value": false
             }
         }
     },

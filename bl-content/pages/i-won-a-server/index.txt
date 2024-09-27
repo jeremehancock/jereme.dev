@@ -21,5 +21,5 @@ I have set it up as a [Proxmox](https://proxmox.com/en/) server. I have the OS i
 #### Here is the video announcing the winner.
 
 <div class="centered">
-<iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/szL4OrvSbG8?si=Qlbq4NTARhyiizwN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe class="iframe-border" width="100%" height="500" src="https://www.youtube-nocookie.com/embed/szL4OrvSbG8?si=Qlbq4NTARhyiizwN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
