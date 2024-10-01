@@ -1,6 +1,14 @@
 <?php defined('BLUDIT') or die('Bludit CMS.'); ?>
 [
     {
+        "date": "2024-10-01 08:15:25",
+        "dictionaryKey": "content-edited",
+        "notes": "Specs",
+        "idExecution": "66fbf5ed06649",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
         "date": "2024-09-27 11:41:11",
         "dictionaryKey": "content-edited",
         "notes": "The Perfect Travel TV Setup",
@@ -69,14 +77,6 @@
         "dictionaryKey": "new-content-created",
         "notes": "My Travel TV Box Setup[Autosave]",
         "idExecution": "66f6defe4c54e",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2024-09-27 11:34:13",
-        "dictionaryKey": "content-edited",
-        "notes": "My Travel TV Box Setup",
-        "idExecution": "66f6de84bb998",
         "method": "POST",
         "username": "admin"
     }
