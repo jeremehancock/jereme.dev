@@ -163,6 +163,7 @@
 			*  [Portainer](https://www.portainer.io/) (Docker)
 			*  [Dozzle](https://dozzle.dev/) (Docker)
 			*  [Nextcloud](https://hub.docker.com/_/nextcloud) (Docker)
+			*  [Hoarder](https://hoarder.app) (Docker)
 * Raidz2
 	* [Western Digital 4TB](https://www.amazon.com/gp/product/B0090UEQ8I)
 	* [Seagate 4TB Internal Drive](https://www.amazon.com/dp/B07J46FXHK)
