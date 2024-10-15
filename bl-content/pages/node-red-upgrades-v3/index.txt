@@ -38,4 +38,7 @@ So I followed the [docs](http://nodered.org/docs/user-guide/projects/) and re-en
 
 I was so happy that I had setup [Projects](http://nodered.org/docs/user-guide/projects/). It was a real life saver and kept me from losing a few years worth of work that I had put into my Node-RED setup. 
 
+**Updates:**
+> *I have moved my Node-RED node to an LXC container running in Proxmox.*
+
 

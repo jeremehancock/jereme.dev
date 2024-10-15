@@ -1,6 +1,30 @@
 <?php defined('BLUDIT') or die('Bludit CMS.'); ?>
 [
     {
+        "date": "2024-10-15 09:11:53",
+        "dictionaryKey": "content-edited",
+        "notes": "Pi Lab Monitor Node",
+        "idExecution": "670e7829a1842",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
+        "date": "2024-10-15 09:10:36",
+        "dictionaryKey": "content-edited",
+        "notes": "Node-RED Upgrades (v3)",
+        "idExecution": "670e77db91afb",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
+        "date": "2024-10-15 09:10:20",
+        "dictionaryKey": "content-edited",
+        "notes": "Node-RED Twitter Bot",
+        "idExecution": "670e77cc9737a",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
         "date": "2024-10-15 09:08:23",
         "dictionaryKey": "content-edited",
         "notes": "Specs",
@@ -53,30 +77,6 @@
         "dictionaryKey": "content-deleted",
         "notes": "autosave-b2824f25debdfd4c320c3717545b05c8",
         "idExecution": "670e74ae88159",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2024-10-15 08:55:02",
-        "dictionaryKey": "content-edited",
-        "notes": "Pi-hole Upgrades",
-        "idExecution": "670e7435d0aa3",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2024-10-15 08:55:02",
-        "dictionaryKey": "content-deleted",
-        "notes": "autosave-fcdb80d303d1fe7901dd6d939ebe87c3",
-        "idExecution": "670e7435d0aa3",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2024-10-15 08:54:41",
-        "dictionaryKey": "new-content-created",
-        "notes": "Pi-hole Upgrades[Autosave]",
-        "idExecution": "670e7420b76c7",
         "method": "POST",
         "username": "admin"
     }

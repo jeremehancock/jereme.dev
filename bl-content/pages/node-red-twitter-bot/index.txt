@@ -40,3 +40,5 @@ I am very impressed with [Node-RED](https://nodered.org/). I definitely recommen
 > *I have upgraded to Node-RED v3. I ran into a few issues during the upgrade. [Read more](node-red-upgrades-v3)*
 > 
 > *Twitter has suspended the Pi Lab Twitter account. They didn't give any specific reason. Not going to put any effort into fixing it since Twitter is a total dumpster fire at this point.*
+> 
+> *I have moved my Node-RED node to an LXC container running in Proxmox.*
