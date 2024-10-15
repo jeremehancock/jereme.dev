@@ -1,6 +1,38 @@
 <?php defined('BLUDIT') or die('Bludit CMS.'); ?>
 [
     {
+        "date": "2024-10-15 16:26:20",
+        "dictionaryKey": "content-edited",
+        "notes": "Specs",
+        "idExecution": "670eddfbe63c8",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
+        "date": "2024-10-15 16:26:02",
+        "dictionaryKey": "content-edited",
+        "notes": "Specs",
+        "idExecution": "670edde9c9f79",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
+        "date": "2024-10-15 16:23:07",
+        "dictionaryKey": "content-edited",
+        "notes": "Specs",
+        "idExecution": "670edd3aebd00",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
+        "date": "2024-10-15 16:22:17",
+        "dictionaryKey": "content-edited",
+        "notes": "Specs",
+        "idExecution": "670edd0919898",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
         "date": "2024-10-15 09:11:53",
         "dictionaryKey": "content-edited",
         "notes": "Pi Lab Monitor Node",
@@ -45,38 +77,6 @@
         "dictionaryKey": "new-content-created",
         "notes": "Specs[Autosave]",
         "idExecution": "670e77495424c",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2024-10-15 08:57:46",
-        "dictionaryKey": "content-edited",
-        "notes": "OctoPrint Live Stream",
-        "idExecution": "670e74da74142",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2024-10-15 08:57:30",
-        "dictionaryKey": "content-edited",
-        "notes": "OctoPrint Node",
-        "idExecution": "670e74c99a81f",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2024-10-15 08:57:03",
-        "dictionaryKey": "content-edited",
-        "notes": "Dual Pi-hole + Tailscale",
-        "idExecution": "670e74ae88159",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2024-10-15 08:57:03",
-        "dictionaryKey": "content-deleted",
-        "notes": "autosave-b2824f25debdfd4c320c3717545b05c8",
-        "idExecution": "670e74ae88159",
         "method": "POST",
         "username": "admin"
     }
