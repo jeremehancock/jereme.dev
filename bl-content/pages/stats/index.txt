@@ -1,76 +1,12 @@
 ## Pi Lab Metrics Playlist
-<iframe width="100%" height="1380" data-src="https://pilab.dev/metrics/playlists/play/2?kiosk=tv" frameborder="0" class="iframe-border lozad"></iframe>
+<iframe width="100%" height="1380" data-src="https://pilab.dev/metrics/playlists/play/be0wm2c9uw4cgc?kiosk=tv&autofitpanels" frameborder="0" class="iframe-border lozad"></iframe>
 
-<a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&kiosk=tv" target="_blank" style="float:right;">View Fullscreen</a>
+<a href="https://pilab.dev/metrics" target="_blank" style="float:right;">View Fullscreen</a>
 
 ## Plex Metrics
-<iframe width="100%" height="1100" data-src="https://pilab.dev/metrics/d/K5499Bh7z/plex?orgId=1&refresh=30s&kiosk" frameborder="0" class="iframe-border lozad"></iframe>
+<iframe width="100%" height="1100" data-src="https://pilab.dev/metrics/d/K5499Bh7z/plex?orgId=2&refresh=30s&kiosk" frameborder="0" class="iframe-border lozad"></iframe>
 
-<a href="https://pilab.dev/metrics/d/K5499Bh7z/plex?orgId=1&refresh=30s&kiosk" target="_blank" style="float:right;">View Fullscreen</a>
-
-<!-- ## Load Balancer Node
-<iframe width="100%" height="350" data-src="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=pi0&kiosk" frameborder="0" class="iframe-border lozad"></iframe>
-
-<a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=pi0" target="_blank" style="float:right;">View Fullscreen</a>
-
-## Node 1
-<iframe width="100%" height="350" data-src="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=pi1&kiosk" frameborder="0" class="iframe-border lozad"></iframe>
-
-<a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=pi1" target="_blank" style="float:right;">View Fullscreen</a>
-## Node 2
-<iframe width="100%" height="350" data-src="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=pi2&kiosk" frameborder="0" class="iframe-border lozad"></iframe>
-
-<a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=pi2" target="_blank" style="float:right;">View Fullscreen</a>
-## Node 3
-<iframe width="100%" height="350" data-src="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=pi3&kiosk" frameborder="0" class="iframe-border lozad"></iframe>
-
-<a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=pi3" target="_blank" style="float:right;">View Fullscreen</a>
-## Node 4
-<iframe width="100%" height="350" data-src="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=pi4&kiosk" frameborder="0" class="iframe-border lozad"></iframe>
-
-<a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=pi4" target="_blank" style="float:right;">View Fullscreen</a>
-## Node 5
-<iframe width="100%" height="350" data-src="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=pi5&kiosk" frameborder="0" class="iframe-border lozad"></iframe>
-
-<a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=pi5" target="_blank" style="float:right;">View Fullscreen</a>
-## BOINC Node
-<iframe width="100%" height="350" data-src="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=boincpi&kiosk" frameborder="0" class="iframe-border lozad"></iframe>
-
-<a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=boincpi" target="_blank" style="float:right;">View Fullscreen</a>
-## Zero TV Node
-<iframe width="100%" height="350" data-src="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=zerotv&kiosk" frameborder="0" class="iframe-border lozad"></iframe>
-
-<a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=zerotv" target="_blank" style="float:right;">View Fullscreen</a>
-## Test Node 1
-<iframe width="100%" height="350" data-src="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=testpi1&kiosk" frameborder="0" class="iframe-border lozad"></iframe>
-
-<a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=testpi1" target="_blank" style="float:right;">View Fullscreen</a>
-## Test Node 2
-<iframe width="100%" height="350" data-src="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=testpi2&kiosk" frameborder="0" class="iframe-border lozad"></iframe>
-
-<a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=testpi2" target="_blank" style="float:right;">View Fullscreen</a>
-## Metrics Node
-<iframe width="100%" height="350" data-src="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=prometheus&kiosk" frameborder="0" class="iframe-border lozad"></iframe>
-
-<a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=prometheus" target="_blank" style="float:right;">View Fullscreen</a>
-## Node-Red Node
-<iframe width="100%" height="350" data-src="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=noderedpi&kiosk" frameborder="0" class="iframe-border lozad"></iframe>
-
-<a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=noderedpi" target="_blank" style="float:right;">View Fullscreen</a>
-## Restreamer Node
-<iframe width="100%" height="350" data-src="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=restreamerpi&kiosk" frameborder="0" class="iframe-border lozad"></iframe>
-
-<a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=restreamerpi" target="_blank" style="float:right;">View Fullscreen</a>
-## Monitor Node
-<iframe width="100%" height="350" data-src="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=pimonitor&kiosk" frameborder="0" class="iframe-border lozad"></iframe>
-
-<a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=pimonitor" target="_blank" style="float:right;">View Fullscreen</a>
-## Pi-hole/OpenVPN Node
-<iframe width="100%" height="350" data-src="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=thanospi&kiosk" frameborder="0" class="iframe-border lozad"></iframe>
-
-<a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-instance=thanospi" target="_blank" style="float:right;">View Fullscreen</a> -->
-
-<!-- <iframe  width="100%" height="255"  data-src="status.php" frameborder="0" class="stats-border lozad"></iframe> -->
+<a href="https://pilab.dev/metrics/d/K5499Bh7z/plex?orgId=2" target="_blank" style="float:right;">View Fullscreen</a>
 
 ## Web Stats
 <iframe width="100%" height="550" data-src="https://statcounter.com/p12007932/summary/?account_id=324824&login_id=1&code=8be480ebcbd8fbe290785aac26c3ab68&guest_login=1" frameborder="0" class="iframe-border lozad"></iframe>
