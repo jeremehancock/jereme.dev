@@ -139,6 +139,10 @@
 					* [Dozzle](https://dozzle.dev/) (Docker)
 					* [Watchtower](https://containrrr.dev/watchtower/) (Docker)
 					* [Orbital Sync](https://orbitalsync.com/) (Docker)
+		* LXCs
+			* [Pi-hole](https://tteck.github.io/Proxmox/#pi-hole-lxc)
+			* [Grafana](https://tteck.github.io/Proxmox/#grafana-lxc)
+			* [Node-RED](https://tteck.github.io/Proxmox/#node-red-lxc)
 	* 32GB DDR5 RAM
 	*  512GB NVMe SSD (OS)
 	*  2 x 1TB NVMe SSD Mirrored (VM Storage)
