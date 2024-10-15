@@ -7,21 +7,21 @@
 		* Samsung EVO Plus 32GB microSDHC Card
 		* [Nginx](https://nginx.org/)
 		* [SSL - Let's Encrypt](https://letsencrypt.org/)
-		* Metrics Dashboard <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=pi0" target="_blank">Node 0</a> (pi0)
+		* Metrics Dashboard <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=2&refresh=30s&var-node=pi0" target="_blank">Node 0</a> (pi0)
 
 ### Development/Production Node
 *    1 Raspberry Pi 4 2GB Model B
 		* Samsung EVO Plus 32GB microSDHC Card
-		* Metrics Dashboard <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=pi1" target="_blank">Node 1</a> (pi1)
+		* Metrics Dashboard <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=2&refresh=30s&var-node=pi1" target="_blank">Node 1</a> (pi1)
 
 ### Production Nodes
 *    4 Raspberry Pi 4 2GB Model Bs
 		* Samsung EVO Plus 32GB microSDHC Cards
 		* **Metrics Dashboards:**
-			* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=pi2" target="_blank">Node 2</a> (pi2)
-			* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=pi3" target="_blank">Node 3</a> (pi3)
-			* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=pi4" target="_blank">Node 4</a> (pi4)
-			* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=pi5" target="_blank">Node 5</a> (pi5)
+			* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=2&refresh=30s&var-node=pi2" target="_blank">Node 2</a> (pi2)
+			* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=2&refresh=30s&var-node=pi3" target="_blank">Node 3</a> (pi3)
+			* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=2&refresh=30s&var-node=pi4" target="_blank">Node 4</a> (pi4)
+			* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=2&refresh=30s&var-node=pi5" target="_blank">Node 5</a> (pi5)
 
 ### Common to all Nodes
 *   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
@@ -33,57 +33,6 @@
 *   **Power:** [Anker 60W 10-Port USB Wall Charger](https://www.amazon.com/dp/B00YRYS4T4)
 *    **Cooling:** [C4Labs Zebra Bramble Case](https://www.amazon.com/dp/B07VQKPZZT)
 * [More Details](pi-lab-setup)
-
----
-
-## Pi Lab (Ancillary Nodes):
-
-### Pi-hole Node
-* 1 Raspberry Pi 4 4GB Model B
-	* Samsung EVO Plus 32GB microSDHC Card
-	* [Pi-hole](https://pi-hole.net/)
-	* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=thanos" target="_blank">Metrics Dashboard</a> (thanos)
-* [More Details](pi-hole-upgrades)
-
-### Restreamer Node
-*  1 Raspberry Pi 4 4GB Model B
-		*  Samsung EVO Plus 32GB microSDHC Card
-		* [Restreamer](https://datarhei.github.io/restreamer/)
-		* [Pi-hole](https://pi-hole.net/)
-		* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=restreamerpi" target="_blank">Metrics Dashboard</a> (restreamerpi)
-* [More Details](restreamer)
-
-### Node-Red Node
-*   1 Raspberry Pi 3 Model B
-		* Samsung EVO Plus 32GB microSDHC Card
-		* [Node-Red](https://nodered.org/docs/getting-started/raspberrypi)
-		* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=noderedpi" target="_blank">Metrics Dashboard</a> (noderedpi)
-* [More Details](node-red-twitter-bot)
-
-### Metrics Node
-*   1 Raspberry Pi 3 Model B
-		*  Samsung EVO Plus 32GB microSDHC Card
-		* [Prometheus](https://prometheus.io/) - Collect and store metrics
-		* [Grafana](https://grafana.com/) - Metrics visualization
-		* <a href="https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=1&refresh=30s&var-node=prometheus" target="_blank">Metrics Dashboard</a> (prometheus)
-* [More Details](prometheus-grafana)
-
-### OctoPi Node
-*   1 Raspberry Pi 3 Model B+
-		* Samsung EVO Plus 32GB microSDHC Card
-		* OctoPrint
-		* [Onn Universal Wall Charger](https://www.walmart.com/ip/Onn-Universal-Wall-Charger-Black/620837164)
-		* [Ender 3 Pro](https://creality3d.shop/collections/3d-printer/products/creality3d-ender-3-pro-high-precision-3d-printer)
-* [More Details](octoprint-node)
-
-### Common to all Nodes
-*   **Operating System:** [Raspberry Pi OS](https://www.raspberrypi.org/software/)
-* [Node Exporter](https://github.com/prometheus/node_exporter) - Expose Linux metrics
-* [RPi Exporter](https://github.com/lukasmalkmus/rpi_exporter) - Expose Raspberry Pi metrics
-*   **Power:** [XDCDHM USB Charger, 60 Watt 12A 6-Port High Speed Charger](https://www.amazon.com/gp/product/B075P22QC2)
-*   **Cooling:** [C4Labs Zebra Bramble Case](https://www.amazon.com/dp/B07VQKPZZT)
-
-*Note: The OctoPi Node doesn't share the same Power/Cooling Specs as the other nodes.*
 
 ---
 

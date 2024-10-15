@@ -1,82 +1,82 @@
 <?php defined('BLUDIT') or die('Bludit CMS.'); ?>
 [
     {
-        "date": "2024-10-14 21:57:32",
+        "date": "2024-10-15 08:57:46",
         "dictionaryKey": "content-edited",
-        "notes": "Stats",
-        "idExecution": "670dda1b8912f",
+        "notes": "OctoPrint Live Stream",
+        "idExecution": "670e74da74142",
         "method": "POST",
         "username": "admin"
     },
     {
-        "date": "2024-10-14 21:56:46",
+        "date": "2024-10-15 08:57:30",
         "dictionaryKey": "content-edited",
-        "notes": "Stats",
-        "idExecution": "670dd9edd6947",
+        "notes": "OctoPrint Node",
+        "idExecution": "670e74c99a81f",
         "method": "POST",
         "username": "admin"
     },
     {
-        "date": "2024-10-14 21:55:37",
+        "date": "2024-10-15 08:57:03",
         "dictionaryKey": "content-edited",
-        "notes": "Stats",
-        "idExecution": "670dd9a93d6b9",
+        "notes": "Dual Pi-hole + Tailscale",
+        "idExecution": "670e74ae88159",
         "method": "POST",
         "username": "admin"
     },
     {
-        "date": "2024-10-14 21:38:14",
+        "date": "2024-10-15 08:57:03",
+        "dictionaryKey": "content-deleted",
+        "notes": "autosave-b2824f25debdfd4c320c3717545b05c8",
+        "idExecution": "670e74ae88159",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
+        "date": "2024-10-15 08:55:02",
         "dictionaryKey": "content-edited",
-        "notes": "Stats",
-        "idExecution": "670dd595b58c2",
+        "notes": "Pi-hole Upgrades",
+        "idExecution": "670e7435d0aa3",
         "method": "POST",
         "username": "admin"
     },
     {
-        "date": "2024-10-14 21:37:43",
+        "date": "2024-10-15 08:55:02",
+        "dictionaryKey": "content-deleted",
+        "notes": "autosave-fcdb80d303d1fe7901dd6d939ebe87c3",
+        "idExecution": "670e7435d0aa3",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
+        "date": "2024-10-15 08:54:41",
+        "dictionaryKey": "new-content-created",
+        "notes": "Pi-hole Upgrades[Autosave]",
+        "idExecution": "670e7420b76c7",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
+        "date": "2024-10-15 08:51:59",
         "dictionaryKey": "content-edited",
-        "notes": "Stats",
-        "idExecution": "670dd57766038",
+        "notes": "Restreamer Node",
+        "idExecution": "670e737e6cd17",
         "method": "POST",
         "username": "admin"
     },
     {
-        "date": "2024-10-14 21:36:44",
-        "dictionaryKey": "content-edited",
-        "notes": "Stats",
-        "idExecution": "670dd53c31e5f",
+        "date": "2024-10-15 08:51:58",
+        "dictionaryKey": "content-deleted",
+        "notes": "autosave-241c4852179f57be27536866df35d4ae",
+        "idExecution": "670e737e6cd17",
         "method": "POST",
         "username": "admin"
     },
     {
-        "date": "2024-10-14 21:35:05",
-        "dictionaryKey": "content-edited",
-        "notes": "Stats",
-        "idExecution": "670dd4d8e03ea",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2024-10-08 21:34:07",
-        "dictionaryKey": "plugin-configured",
-        "notes": "Links",
-        "idExecution": "6705eb9f495d2",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2024-10-08 21:34:05",
-        "dictionaryKey": "plugin-configured",
-        "notes": "Links",
-        "idExecution": "6705eb9dcb26f",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2024-10-02 08:24:52",
-        "dictionaryKey": "content-edited",
-        "notes": "Specs",
-        "idExecution": "66fd49a473bb9",
+        "date": "2024-10-15 08:51:46",
+        "dictionaryKey": "new-content-created",
+        "notes": "Restreamer Node[Autosave]",
+        "idExecution": "670e737232808",
         "method": "POST",
         "username": "admin"
     }

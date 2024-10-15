@@ -39,4 +39,3 @@ This live stream is utilizing a Wyze Pan Cam with the RTSP firmware. I use [Rest
 
 **Updates:**
 > *I have shutdown this live stream due to some weird YouTube Copyright Infringement claims that make no sense.*
-> 

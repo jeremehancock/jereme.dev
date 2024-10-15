@@ -82,3 +82,5 @@ Now I can use the `padd` command to startup PADD.
 > *Check out my new dual Pi-hole + Tailscale setup [here](dual-pi-hole-tailscale).
 > 
 > *I have moved my Pi-hole setup to an older Pi 2 Model B so that I could free the Pi 4 up for some retro gaming.
+>
+> *I have moved my Pi-hole setup to an LXC container running in Proxmox.

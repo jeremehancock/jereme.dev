@@ -79,4 +79,5 @@ Don't forget if you want everyone on your home network (even without being on [T
 
 **Updates:**
 > *I have updated the instructions to use Orbital Sync instead of the now deprecated Gravity Sync.*
-
+> 
+> *I have moved my Pi-hole install to an LXC running in Proxmox. So now I only have 1 Pi-hole running. I might eventually spin up another LXC container for redundancy.

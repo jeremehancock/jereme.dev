@@ -19,4 +19,4 @@ So far I have mostly printed [3DBenchies](http://www.3dbenchy.com/) trying to re
 I have added a new [3D Printing](category/3d-printing) category to the blog and I hope to be posting many more prints very soon.
 
 **Updates:**
-> *I have added the  [OctoPrint Node Live Stream](octoprint-node-live-stream)*.
+> *I have added the [OctoPrint Node Live Stream](octoprint-node-live-stream)*.
