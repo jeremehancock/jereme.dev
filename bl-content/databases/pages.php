@@ -684,9 +684,9 @@
             "raspberry-pi": "Raspberry Pi",
             "pi": "Pi"
         },
-        "type": "published",
+        "type": "draft",
         "date": "2020-01-29 21:56:59",
-        "dateModified": "2022-09-10 15:44:03",
+        "dateModified": "2024-10-16 09:26:03",
         "position": 31,
         "coverImage": "pi-lab-weather-1-compressed.jpg",
         "category": "raspberry-pi",

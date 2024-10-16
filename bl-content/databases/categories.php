@@ -66,7 +66,6 @@
             "node-red-twitter-bot",
             "fold-for-covid",
             "pi-lab-live-stream",
-            "weather-dashboard",
             "pi-dashboard-ui",
             "prometheus-grafana",
             "raspcontroller-android-app",
