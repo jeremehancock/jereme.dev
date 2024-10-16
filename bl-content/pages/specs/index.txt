@@ -88,7 +88,7 @@
 	*   **Operating System:** [Ubuntu Server 22.04.3 LTS](https://ubuntu.com/download/server)
 	* 24GB DDR4 SDRAM 2133 MT/s
 	* [SABRENT NVMe M.2 SSD to PCIe](https://www.amazon.com/dp/B084GDY2PW)
-		*   [WD Blue SN580 NVMe 1TB Solid State Drive](https://www.amazon.com/Western-Digital-SN580-Internal-Solid/dp/B09HKDQ1RN) (OS)
+		*   [WD Blue SN580 NVMe 1TB Solid State Drive](https://www.amazon.com/dp/B0C8XMH264) (OS)
 				* [Portainer](https://www.portainer.io/) (Docker)
 				* [Dozzle](https://dozzle.dev/) (Docker)
 				* [Scrutiny](https://github.com/AnalogJ/scrutiny) (Docker)
@@ -149,7 +149,7 @@
 	* 32GB DDR5 RAM
 	*  512GB NVMe SSD (OS)
 	*  2 x 1TB NVMe SSD Mirrored (VM Storage)
-	*  [WD Blue SN580 NVMe 1TB Solid State Drive](https://www.amazon.com/Western-Digital-SN580-Internal-Solid/dp/B09HKDQ1RN) (VM Backups)
+	*  [WD Blue SN580 NVMe 1TB Solid State Drive](https://www.amazon.com/dp/B0C8XMH264) (VM Backups)
 
 <style>
 	.page-content, .entry-header, .entry-content {
