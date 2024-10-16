@@ -149,7 +149,7 @@
 	* 32GB DDR5 RAM
 	*  512GB NVMe SSD (OS)
 	*  2 x 1TB NVMe SSD Mirrored (VM Storage)
-	*  [WD Blue SN570 NVMe 1TB Solid State Drive](https://www.amazon.com/Western-Digital-SN570-Internal-Solid/dp/B09HKDQ1RN) (VM Backups)
+	*  [WD Blue SN580 NVMe 1TB Solid State Drive](https://www.amazon.com/Western-Digital-SN580-Internal-Solid/dp/B09HKDQ1RN) (VM Backups)
 
 <style>
 	.page-content, .entry-header, .entry-content {
