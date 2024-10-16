@@ -145,9 +145,11 @@
 			* [Pi-hole](https://tteck.github.io/Proxmox/#pi-hole-lxc)
 			* [Grafana](https://tteck.github.io/Proxmox/#grafana-lxc)
 			* [Node-RED](https://tteck.github.io/Proxmox/#node-red-lxc)
+			* [Vaultwarden](https://github.com/dani-garcia/vaultwarden)
 	* 32GB DDR5 RAM
 	*  512GB NVMe SSD (OS)
 	*  2 x 1TB NVMe SSD Mirrored (VM Storage)
+	*  [WD Blue SN570 NVMe 1TB Solid State Drive](https://www.amazon.com/Western-Digital-SN570-Internal-Solid/dp/B09HKDQ1RN) (VM Backups)
 
 <style>
 	.page-content, .entry-header, .entry-content {
