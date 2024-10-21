@@ -1,6 +1,14 @@
 <?php defined('BLUDIT') or die('Bludit CMS.'); ?>
 [
     {
+        "date": "2024-10-21 16:15:05",
+        "dictionaryKey": "content-edited",
+        "notes": "Specs",
+        "idExecution": "6716c4596aa73",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
         "date": "2024-10-16 09:26:04",
         "dictionaryKey": "content-edited",
         "notes": "Weather Dashboard",
@@ -69,14 +77,6 @@
         "dictionaryKey": "content-edited",
         "notes": "Specs",
         "idExecution": "670edde9c9f79",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2024-10-15 16:23:07",
-        "dictionaryKey": "content-edited",
-        "notes": "Specs",
-        "idExecution": "670edd3aebd00",
         "method": "POST",
         "username": "admin"
     }

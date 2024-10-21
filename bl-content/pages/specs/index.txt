@@ -146,6 +146,7 @@
 			* [Grafana](https://tteck.github.io/Proxmox/#grafana-lxc)
 			* [Node-RED](https://tteck.github.io/Proxmox/#node-red-lxc)
 			* [Vaultwarden](https://github.com/dani-garcia/vaultwarden)
+			* [Whoogle](https://tteck.github.io/Proxmox/#whoogle-lxc)
 	* 32GB DDR5 RAM
 	*  512GB NVMe SSD (OS)
 	*  2 x 1TB NVMe SSD Mirrored (VM Storage)
