@@ -140,7 +140,7 @@
 					* [Portainer](https://www.portainer.io/) (Docker)
 					* [Dozzle](https://dozzle.dev/) (Docker)
 					* [Watchtower](https://containrrr.dev/watchtower/) (Docker)
-					* [Orbital Sync](https://orbitalsync.com/) (Docker)
+					* [Restreamer](https://github.com/datarhei/restreamer) (Docker)
 		* LXCs
 			* [Pi-hole](https://tteck.github.io/Proxmox/#pi-hole-lxc)
 			* [Grafana](https://tteck.github.io/Proxmox/#grafana-lxc)

@@ -1,6 +1,30 @@
 <?php defined('BLUDIT') or die('Bludit CMS.'); ?>
 [
     {
+        "date": "2024-10-23 16:48:55",
+        "dictionaryKey": "content-edited",
+        "notes": "Pi Lab Live Stream",
+        "idExecution": "67196f474a435",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
+        "date": "2024-10-23 16:48:32",
+        "dictionaryKey": "content-edited",
+        "notes": "Restreamer Node",
+        "idExecution": "67196f300ec81",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
+        "date": "2024-10-23 16:47:13",
+        "dictionaryKey": "content-edited",
+        "notes": "Specs",
+        "idExecution": "67196ee125276",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
         "date": "2024-10-21 16:15:05",
         "dictionaryKey": "content-edited",
         "notes": "Specs",
@@ -53,30 +77,6 @@
         "dictionaryKey": "new-content-created",
         "notes": "Specs[Autosave]",
         "idExecution": "670fca17db8a7",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2024-10-15 18:20:50",
-        "dictionaryKey": "content-edited",
-        "notes": "Specs",
-        "idExecution": "670ef8d269091",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2024-10-15 16:26:20",
-        "dictionaryKey": "content-edited",
-        "notes": "Specs",
-        "idExecution": "670eddfbe63c8",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2024-10-15 16:26:02",
-        "dictionaryKey": "content-edited",
-        "notes": "Specs",
-        "idExecution": "670edde9c9f79",
         "method": "POST",
         "username": "admin"
     }
