@@ -98,7 +98,7 @@
 <span id="truenas"/>
 ### TrueNAS Node
 * Dell Precision 5820
-	*  Intel(R) Xeon(R) W-2135 CPU @ 3.70GHz
+	*  [Intel(R) Xeon(R) W-2135 CPU @ 3.70GHz](https://www.intel.com/content/www/us/en/products/sku/126709/intel-xeon-w2135-processor-8-25m-cache-3-70-ghz/specifications.html)
 	*   **Operating System:** [TrueNAS Scale](https://www.truenas.com/truenas-scale/)
 	*  128GB DDR4 ECC SDRAM
 	*  [Sedna PCI Express (PCIe) SATA III (6G) SSD Adapter](https://www.amazon.com/dp/B01452SP1O)
