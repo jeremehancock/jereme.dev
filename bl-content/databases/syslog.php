@@ -1,6 +1,62 @@
 <?php defined('BLUDIT') or die('Bludit CMS.'); ?>
 [
     {
+        "date": "2024-10-24 09:42:09",
+        "dictionaryKey": "content-edited",
+        "notes": "Specs",
+        "idExecution": "671a5cc13cd48",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
+        "date": "2024-10-24 09:40:51",
+        "dictionaryKey": "content-edited",
+        "notes": "Specs",
+        "idExecution": "671a5c721f5e4",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
+        "date": "2024-10-24 09:40:50",
+        "dictionaryKey": "content-deleted",
+        "notes": "autosave-ae6baedd36be1d5b3fa9ec0d872cc735",
+        "idExecution": "671a5c721f5e4",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
+        "date": "2024-10-24 09:39:09",
+        "dictionaryKey": "content-edited",
+        "notes": "Specs[Autosave]",
+        "idExecution": "671a5c0d57b25",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
+        "date": "2024-10-24 09:37:10",
+        "dictionaryKey": "content-edited",
+        "notes": "Specs[Autosave]",
+        "idExecution": "671a5b96141b4",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
+        "date": "2024-10-24 09:35:09",
+        "dictionaryKey": "content-edited",
+        "notes": "Specs[Autosave]",
+        "idExecution": "671a5b1d5f336",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
+        "date": "2024-10-24 09:31:10",
+        "dictionaryKey": "new-content-created",
+        "notes": "Specs[Autosave]",
+        "idExecution": "671a5a2e18117",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
         "date": "2024-10-23 16:48:55",
         "dictionaryKey": "content-edited",
         "notes": "Pi Lab Live Stream",
@@ -21,62 +77,6 @@
         "dictionaryKey": "content-edited",
         "notes": "Specs",
         "idExecution": "67196ee125276",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2024-10-21 16:15:05",
-        "dictionaryKey": "content-edited",
-        "notes": "Specs",
-        "idExecution": "6716c4596aa73",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2024-10-16 09:26:04",
-        "dictionaryKey": "content-edited",
-        "notes": "Weather Dashboard",
-        "idExecution": "670fccfb86065",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2024-10-16 09:19:48",
-        "dictionaryKey": "content-edited",
-        "notes": "Specs",
-        "idExecution": "670fcb844f6a8",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2024-10-16 09:17:31",
-        "dictionaryKey": "content-edited",
-        "notes": "Specs",
-        "idExecution": "670fcafb3cc51",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2024-10-16 09:14:11",
-        "dictionaryKey": "content-edited",
-        "notes": "Specs",
-        "idExecution": "670fca32cc2fc",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2024-10-16 09:14:11",
-        "dictionaryKey": "content-deleted",
-        "notes": "autosave-ae6baedd36be1d5b3fa9ec0d872cc735",
-        "idExecution": "670fca32cc2fc",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2024-10-16 09:13:44",
-        "dictionaryKey": "new-content-created",
-        "notes": "Specs[Autosave]",
-        "idExecution": "670fca17db8a7",
         "method": "POST",
         "username": "admin"
     }
