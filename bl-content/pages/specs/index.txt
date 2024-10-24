@@ -152,7 +152,10 @@
 	*  2 x 1TB NVMe SSD Mirrored (VM Storage)
 	*  [WD Blue SN580 NVMe 1TB Solid State Drive](https://www.amazon.com/dp/B0C8XMH264) (VM Backups)
 
-### Networking & Power
+
+---
+
+## Networking & Power
 * AT&T 1 GIG Fiber
 * [AT&T BGW-320](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW) (Passthrough Mode)
 * [Google Nest WiFi Pro](https://www.amazon.com/Google-Nest-WiFi-Pro-Reliable/dp/B0BQCRST1K) (4-pack)
