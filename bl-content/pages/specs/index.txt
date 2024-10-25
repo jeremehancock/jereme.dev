@@ -147,7 +147,7 @@
 			* [Node-RED](https://tteck.github.io/Proxmox/#node-red-lxc)
 			* [Vaultwarden](https://github.com/dani-garcia/vaultwarden)
 			* [Whoogle](https://tteck.github.io/Proxmox/#whoogle-lxc)
-	* 32GB DDR5 RAM
+	*  [64GB DDR5 RAM](https://www.amazon.com/dp/B09YN1SMYJ)
 	*  512GB NVMe SSD (OS)
 	*  2 x 1TB NVMe SSD Mirrored (VM Storage)
 	*  [WD Blue SN580 NVMe 1TB Solid State Drive](https://www.amazon.com/dp/B0C8XMH264) (VM Backups)
