@@ -116,10 +116,11 @@
 			*  [Watchtower](https://github.com/containrrr/watchtower) (Docker)
 		* [Proxmox Backup Server](https://www.proxmox.com/en/proxmox-backup-server/overview)
 * Raidz2
-	* [Western Digital 4TB](https://www.amazon.com/gp/product/B0090UEQ8I)
+	* [Seagate IronWolf 4TB NAS Internal Hard Drive](https://www.amazon.com/dp/B09NHV3CK9)
 	* [Seagate 4TB Internal Drive](https://www.amazon.com/dp/B07J46FXHK)
 	* [HGST Ultrastar 4TB Internal Drive x 2](https://www.amazon.com/dp/B079JRGP4N)
 	* [3.5” HDD Hard Drive to 5.25” Cage](https://www.amazon.com/dp/B08BNTNTCY)
+		* [Seagate IronWolf 4TB NAS Internal Hard Drive](https://www.amazon.com/dp/B09NHV3CK9)
 * **Graphics Card**
 	* NVIDIA Corporation GT218 [GeForce 8400 GS Rev. 3]
 *   **Power:** 950W PSU

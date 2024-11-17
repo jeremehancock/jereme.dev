@@ -1,6 +1,38 @@
 <?php defined('BLUDIT') or die('Bludit CMS.'); ?>
 [
     {
+        "date": "2024-11-17 15:31:01",
+        "dictionaryKey": "content-edited",
+        "notes": "Specs",
+        "idExecution": "673a6094bf7d4",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
+        "date": "2024-11-17 15:31:01",
+        "dictionaryKey": "content-deleted",
+        "notes": "autosave-ae6baedd36be1d5b3fa9ec0d872cc735",
+        "idExecution": "673a6094bf7d4",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
+        "date": "2024-11-17 15:30:50",
+        "dictionaryKey": "content-edited",
+        "notes": "Specs[Autosave]",
+        "idExecution": "673a607b7273f",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
+        "date": "2024-11-17 15:28:35",
+        "dictionaryKey": "new-content-created",
+        "notes": "Specs[Autosave]",
+        "idExecution": "673a600355a85",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
         "date": "2024-11-01 00:03:45",
         "dictionaryKey": "plugin-configured",
         "notes": "Links",
@@ -45,38 +77,6 @@
         "dictionaryKey": "content-edited",
         "notes": "Specs",
         "idExecution": "671a5cc13cd48",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2024-10-24 09:40:51",
-        "dictionaryKey": "content-edited",
-        "notes": "Specs",
-        "idExecution": "671a5c721f5e4",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2024-10-24 09:40:50",
-        "dictionaryKey": "content-deleted",
-        "notes": "autosave-ae6baedd36be1d5b3fa9ec0d872cc735",
-        "idExecution": "671a5c721f5e4",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2024-10-24 09:39:09",
-        "dictionaryKey": "content-edited",
-        "notes": "Specs[Autosave]",
-        "idExecution": "671a5c0d57b25",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2024-10-24 09:37:10",
-        "dictionaryKey": "content-edited",
-        "notes": "Specs[Autosave]",
-        "idExecution": "671a5b96141b4",
         "method": "POST",
         "username": "admin"
     }
