@@ -1,82 +1,82 @@
 <?php defined('BLUDIT') or die('Bludit CMS.'); ?>
 [
     {
+        "date": "2024-12-10 11:17:25",
+        "dictionaryKey": "content-edited",
+        "notes": "AI Game Collection",
+        "idExecution": "675877a53e176",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
+        "date": "2024-12-10 11:17:04",
+        "dictionaryKey": "content-edited",
+        "notes": "AI Game Collection",
+        "idExecution": "67587790891a7",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
+        "date": "2024-12-10 11:16:46",
+        "dictionaryKey": "content-edited",
+        "notes": "AI Game Collection",
+        "idExecution": "6758777d94ee8",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
+        "date": "2024-12-10 11:16:36",
+        "dictionaryKey": "content-edited",
+        "notes": "AI Game Collection",
+        "idExecution": "6758777430bf1",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
+        "date": "2024-12-10 11:16:25",
+        "dictionaryKey": "content-edited",
+        "notes": "AI Game Collection",
+        "idExecution": "675877689ab32",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
+        "date": "2024-12-10 11:16:10",
+        "dictionaryKey": "content-edited",
+        "notes": "AI Game Collection",
+        "idExecution": "67587759b119f",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
+        "date": "2024-12-10 11:14:44",
+        "dictionaryKey": "content-edited",
+        "notes": "AI Game Collection",
+        "idExecution": "675877043c513",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
+        "date": "2024-12-10 11:14:18",
+        "dictionaryKey": "content-edited",
+        "notes": "AI Game Collection",
+        "idExecution": "675876ea9530d",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
+        "date": "2024-12-10 11:13:47",
+        "dictionaryKey": "content-edited",
+        "notes": "AI Game Collection",
+        "idExecution": "675876caa98e5",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
         "date": "2024-12-10 10:57:42",
         "dictionaryKey": "content-edited",
         "notes": "AI Game Collection",
         "idExecution": "67587305c611e",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2024-12-10 10:47:32",
-        "dictionaryKey": "content-edited",
-        "notes": "AI Game Collection",
-        "idExecution": "675870a3da19b",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2024-12-10 10:45:22",
-        "dictionaryKey": "content-edited",
-        "notes": "AI Game Collection",
-        "idExecution": "6758702223656",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2024-12-10 10:44:12",
-        "dictionaryKey": "content-edited",
-        "notes": "AI Game Collection",
-        "idExecution": "67586fdc5a8b1",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2024-12-10 10:43:55",
-        "dictionaryKey": "new-category-created",
-        "notes": "AI",
-        "idExecution": "67586fcb045d3",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2024-12-10 10:43:22",
-        "dictionaryKey": "content-edited",
-        "notes": "AI Game Collection",
-        "idExecution": "67586fa9c08d8",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2024-12-10 10:42:39",
-        "dictionaryKey": "content-edited",
-        "notes": "AI Game Collection",
-        "idExecution": "67586f7eb8322",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2024-12-10 10:41:45",
-        "dictionaryKey": "content-edited",
-        "notes": "AI Game Collection",
-        "idExecution": "67586f48a11e2",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2024-12-10 10:41:45",
-        "dictionaryKey": "content-deleted",
-        "notes": "autosave-b76e72cdd1ec17ffdf9eab71f7338e98",
-        "idExecution": "67586f48a11e2",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2024-12-10 10:41:10",
-        "dictionaryKey": "new-content-created",
-        "notes": "AI Game Collection[Autosave]",
-        "idExecution": "67586f2621ba3",
         "method": "POST",
         "username": "admin"
     }
