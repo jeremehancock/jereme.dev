@@ -1,6 +1,6 @@
 I recently stumbled across a [YouTube video](https://www.youtube.com/watch?v=-tKf3uV2kTc). They had created a simple bash script that allowed you to pull up a searchable list of movies and launch them from the terminal. I thought it was really cool. So I decided to extend that idea to allow me to do the same with the movies on my [Plex](https://www.plex.tv/) server.
 
-After a bit of tinkering and consulting with ChatGPT &#128540;, I ended up with what I am calling MovieCLI.
+After a bit of tinkering and consulting with ChatGPT <span class="emoji">&#128540;</span>, I ended up with what I am calling MovieCLI.
 
 It is not specific to [Plex](https://www.plex.tv/). It will work with any server that you have access to. By updating a few variables, the script will temporarily mount your server and list out the movies and allow you to watch them directly. Once you close out of the movie, the server is unmounted.
 

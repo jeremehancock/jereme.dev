@@ -1,2 +1,10 @@
 <?php defined('BLUDIT') or die('Bludit CMS.'); ?>
-{"head":"","header":"&lt;script&gt;\r\nvar isIOS = \/iPad|iPhone|iPod\/.test(navigator.userAgent) &amp;&amp; !window.MSStream;\r\nif (!isIOS) {\r\n\t\/* When the user scrolls down, hide the navbar &amp; footbar. When the user scrolls up, show the navbar &amp; footbar *\/\r\n\tvar prevScrollpos = window.pageYOffset;\r\n\twindow.onscroll = function() {\r\n\tvar currentScrollPos = window.pageYOffset;\r\n\tif (prevScrollpos &gt; currentScrollPos) {\r\n\t    document.getElementById(&quot;navbar&quot;).style.top = &quot;0&quot;;\r\n\t    document.getElementById(&quot;footbar&quot;).style.bottom = &quot;0&quot;;\r\n\t} else {\r\n\t    document.getElementById(&quot;navbar&quot;).style.top = &quot;-100px&quot;;\r\n\t    document.getElementById(&quot;footbar&quot;).style.bottom = &quot;-68px&quot;;\r\n\t}\r\n\tprevScrollpos = currentScrollPos;\r\n\t}\r\n}\r\n&lt;\/script&gt;","footer":"","adminHead":"&lt;style&gt;\r\n.navbar {\r\nz-index: 9999; \r\n}\r\n&lt;\/style&gt;\r\n","adminHeader":"","adminFooter":"","position":1}
+{
+    "head": "&lt;style&gt;\r\n   .emoji {\r\n      isolation: isolate;\r\n    }\r\n&lt;\/style&gt;",
+    "header": "&lt;script&gt;\r\nvar isIOS = \/iPad|iPhone|iPod\/.test(navigator.userAgent) &amp;&amp; !window.MSStream;\r\nif (!isIOS) {\r\n\t\/* When the user scrolls down, hide the navbar &amp; footbar. When the user scrolls up, show the navbar &amp; footbar *\/\r\n\tvar prevScrollpos = window.pageYOffset;\r\n\twindow.onscroll = function() {\r\n\tvar currentScrollPos = window.pageYOffset;\r\n\tif (prevScrollpos &gt; currentScrollPos) {\r\n\t    document.getElementById(&quot;navbar&quot;).style.top = &quot;0&quot;;\r\n\t    document.getElementById(&quot;footbar&quot;).style.bottom = &quot;0&quot;;\r\n\t} else {\r\n\t    document.getElementById(&quot;navbar&quot;).style.top = &quot;-100px&quot;;\r\n\t    document.getElementById(&quot;footbar&quot;).style.bottom = &quot;-68px&quot;;\r\n\t}\r\n\tprevScrollpos = currentScrollPos;\r\n\t}\r\n}\r\n&lt;\/script&gt;",
+    "footer": "",
+    "adminHead": "&lt;style&gt;\r\n.navbar {\r\nz-index: 9999; \r\n}\r\n&lt;\/style&gt;\r\n",
+    "adminHeader": "",
+    "adminFooter": "",
+    "position": 1
+}
