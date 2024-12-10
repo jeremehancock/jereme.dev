@@ -8,9 +8,9 @@ The **[AI Game Collection](https://aigamecollection.com/)** is my latest passion
 
 Picture this: classic games reimagined with a futuristic AI twist. I wanted to explore the untapped potential of combining gaming and AI, and let me tell you, it's been an absolute blast!
 
-### <span class="emoji">🎨</span> Self-Contained JavaScript Files
+### <span class="emoji">🎨</span> Self-Contained HTML Files
 
-The best part? Each game is a self-contained JavaScript file, making it a breeze for anyone to jump in and start playing around with the code. Whether you're a seasoned programmer or just taking your first steps into the coding world, you'll have a ton of fun exploring these AI-infused creations. 
+The best part? Each game is a self-contained HTML file, making it a breeze for anyone to jump in and start playing around with the code. Whether you're a seasoned programmer or just taking your first steps into the coding world, you'll have a ton of fun exploring these AI-infused creations. 
 
 ### <span class="emoji">🚀</span> Join the Adventure on GitHub
 
