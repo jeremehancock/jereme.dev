@@ -1,5 +1,36 @@
 <?php defined('BLUDIT') or die('Bludit CMS.'); ?>
 {
+    "ai-game-collection": {
+        "title": "AI Game Collection",
+        "description": "",
+        "username": "admin",
+        "tags": {
+            "ai": "ai",
+            "chatgpt": "chatgpt",
+            "claude": "claude",
+            "gaming": "gaming",
+            "coding": "coding",
+            "javascript": "javascript"
+        },
+        "type": "published",
+        "date": "2024-12-10 10:22:22",
+        "dateModified": "2024-12-10 10:47:31",
+        "position": 132,
+        "coverImage": "ai-game-collection.webp",
+        "category": "ai",
+        "md5file": "713ea603d20b0e3e01312f1b31094252",
+        "uuid": "b76e72cdd1ec17ffdf9eab71f7338e98",
+        "allowComments": true,
+        "template": "",
+        "noindex": false,
+        "nofollow": false,
+        "noarchive": false,
+        "custom": {
+            "_amper": {
+                "value": false
+            }
+        }
+    },
     "the-perfect-travel-tv-setup": {
         "title": "The Perfect Travel TV Setup",
         "description": "",

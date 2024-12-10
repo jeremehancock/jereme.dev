@@ -7,6 +7,12 @@
             "octoprint-node"
         ]
     },
+    "ai": {
+        "name": "ai",
+        "list": [
+            "ai-game-collection"
+        ]
+    },
     "android": {
         "name": "Android",
         "list": [
@@ -36,12 +42,36 @@
             "bludit-flat-file-cms"
         ]
     },
+    "chatgpt": {
+        "name": "chatgpt",
+        "list": [
+            "ai-game-collection"
+        ]
+    },
+    "claude": {
+        "name": "claude",
+        "list": [
+            "ai-game-collection"
+        ]
+    },
+    "coding": {
+        "name": "coding",
+        "list": [
+            "ai-game-collection"
+        ]
+    },
     "dev": {
         "name": "Dev",
         "list": [
             "resources",
             "dev-dashboard-build-tool",
             "raspberry-pi-portable-dev-server"
+        ]
+    },
+    "gaming": {
+        "name": "gaming",
+        "list": [
+            "ai-game-collection"
         ]
     },
     "gatsby": {
@@ -60,6 +90,12 @@
         "name": "Goat",
         "list": [
             "randomgoat"
+        ]
+    },
+    "javascript": {
+        "name": "javascript",
+        "list": [
+            "ai-game-collection"
         ]
     },
     "jellyfin": {

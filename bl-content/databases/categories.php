@@ -9,6 +9,14 @@
             "octoprint-node"
         ]
     },
+    "ai": {
+        "name": "AI",
+        "template": "",
+        "description": "The power of Artificial Intelligence",
+        "list": [
+            "ai-game-collection"
+        ]
+    },
     "bludit": {
         "name": "Bludit",
         "template": "",
