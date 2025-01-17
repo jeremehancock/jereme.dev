@@ -1,6 +1,14 @@
 <?php defined('BLUDIT') or die('Bludit CMS.'); ?>
 [
     {
+        "date": "2025-01-17 09:45:36",
+        "dictionaryKey": "content-edited",
+        "notes": "Prometheus &amp; Grafana",
+        "idExecution": "678a7b1fb8eb3",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
         "date": "2024-12-10 12:03:34",
         "dictionaryKey": "content-edited",
         "notes": "AI Game Collection",
@@ -69,14 +77,6 @@
         "dictionaryKey": "content-edited",
         "notes": "AI Game Collection",
         "idExecution": "6758777d94ee8",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2024-12-10 11:16:36",
-        "dictionaryKey": "content-edited",
-        "notes": "AI Game Collection",
-        "idExecution": "6758777430bf1",
         "method": "POST",
         "username": "admin"
     }
