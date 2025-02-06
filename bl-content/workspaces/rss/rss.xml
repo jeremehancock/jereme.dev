@@ -5,11 +5,11 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Thu, 06 Feb 2025 09:52:28 -0600</lastBuildDate>
+    <lastBuildDate>Thu, 06 Feb 2025 09:56:03 -0600</lastBuildDate>
     <item>
       <title>Libretto: Plex Library Metadata Exporter</title>
       <link>https://pilab.dev/libretto-plex-library-metadata-exporter</link>
-      <image>https://pilab.dev/bl-content/uploads/pages/2dcc539255956b2c8ec293f1ea620010/libretto-thumbnail.png</image>
+      <image>https://pilab.dev/bl-content/uploads/pages/2dcc539255956b2c8ec293f1ea620010/libretto.png</image>
       <description>&lt;p&gt;Hello, fellow Plex enthusiasts! If you're anything like me, you've poured countless hours into organizing your Plex media libraries just the way you like them. Carefully filling in movie details, series summaries, episode titles - it's a true labor of love. &lt;span class="emoji"&gt;😊&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;But have you considered what would happen if you lost all that painstakingly curated metadata? Server crashes, database corruptions - these things happen, and they could wipe out all your hard work in a heartbeat! &lt;span class="emoji"&gt;😱&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;Fear not, for Libretto is here to save the day! &lt;span class="emoji"&gt;🦸‍♂️&lt;/span&gt;&lt;/p&gt;

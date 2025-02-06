@@ -1,6 +1,14 @@
 <?php defined('BLUDIT') or die('Bludit CMS.'); ?>
 [
     {
+        "date": "2025-02-06 09:56:04",
+        "dictionaryKey": "content-edited",
+        "notes": "Libretto: Plex Library Metadata Exporter",
+        "idExecution": "67a4db93e0886",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
         "date": "2025-02-06 09:54:16",
         "dictionaryKey": "plugin-configured",
         "notes": "Links",
@@ -69,14 +77,6 @@
         "dictionaryKey": "content-edited",
         "notes": "AI Game Collection",
         "idExecution": "67588276760de",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2024-12-10 11:23:31",
-        "dictionaryKey": "content-edited",
-        "notes": "MovieCLI",
-        "idExecution": "6758791358f61",
         "method": "POST",
         "username": "admin"
     }
