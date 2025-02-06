@@ -1,6 +1,54 @@
 <?php defined('BLUDIT') or die('Bludit CMS.'); ?>
 [
     {
+        "date": "2025-02-06 09:52:29",
+        "dictionaryKey": "content-edited",
+        "notes": "Libretto: Plex Library Metadata Exporter",
+        "idExecution": "67a4dabca51d5",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
+        "date": "2025-02-06 09:51:54",
+        "dictionaryKey": "content-edited",
+        "notes": "Libretto: Plex Library Metadata Exporter",
+        "idExecution": "67a4da9a7c0c5",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
+        "date": "2025-02-06 09:51:21",
+        "dictionaryKey": "content-edited",
+        "notes": "Libretto: Plex Library Metadata Exporter",
+        "idExecution": "67a4da7893ad0",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
+        "date": "2025-02-06 09:50:46",
+        "dictionaryKey": "content-edited",
+        "notes": "Libretto: Plex Library Metadata Exporter",
+        "idExecution": "67a4da55e25a2",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
+        "date": "2025-02-06 09:48:52",
+        "dictionaryKey": "content-edited",
+        "notes": "Libretto: Plex Library Metadata Exporter",
+        "idExecution": "67a4d9e41b047",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
+        "date": "2025-02-06 09:48:34",
+        "dictionaryKey": "new-content-created",
+        "notes": "Libretto: Plex Library Metadata Exporter",
+        "idExecution": "67a4d9d21f8a2",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
         "date": "2025-01-17 09:45:36",
         "dictionaryKey": "content-edited",
         "notes": "Prometheus &amp; Grafana",
@@ -29,54 +77,6 @@
         "dictionaryKey": "content-edited",
         "notes": "AI Game Collection",
         "idExecution": "675878dcbc4ef",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2024-12-10 11:21:32",
-        "dictionaryKey": "plugin-configured",
-        "notes": "HTML Code",
-        "idExecution": "6758789ce0b82",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2024-12-10 11:20:40",
-        "dictionaryKey": "content-edited",
-        "notes": "AI Game Collection",
-        "idExecution": "67587867d264a",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2024-12-10 11:20:11",
-        "dictionaryKey": "content-edited",
-        "notes": "AI Game Collection",
-        "idExecution": "6758784b74c5a",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2024-12-10 11:17:25",
-        "dictionaryKey": "content-edited",
-        "notes": "AI Game Collection",
-        "idExecution": "675877a53e176",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2024-12-10 11:17:04",
-        "dictionaryKey": "content-edited",
-        "notes": "AI Game Collection",
-        "idExecution": "67587790891a7",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2024-12-10 11:16:46",
-        "dictionaryKey": "content-edited",
-        "notes": "AI Game Collection",
-        "idExecution": "6758777d94ee8",
         "method": "POST",
         "username": "admin"
     }

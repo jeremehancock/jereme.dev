@@ -5,7 +5,55 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Fri, 17 Jan 2025 09:45:35 -0600</lastBuildDate>
+    <lastBuildDate>Thu, 06 Feb 2025 09:52:28 -0600</lastBuildDate>
+    <item>
+      <title>Libretto: Plex Library Metadata Exporter</title>
+      <link>https://pilab.dev/libretto-plex-library-metadata-exporter</link>
+      <image>https://pilab.dev/bl-content/uploads/pages/2dcc539255956b2c8ec293f1ea620010/libretto-thumbnail.png</image>
+      <description>&lt;p&gt;Hello, fellow Plex enthusiasts! If you're anything like me, you've poured countless hours into organizing your Plex media libraries just the way you like them. Carefully filling in movie details, series summaries, episode titles - it's a true labor of love. &lt;span class="emoji"&gt;😊&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;But have you considered what would happen if you lost all that painstakingly curated metadata? Server crashes, database corruptions - these things happen, and they could wipe out all your hard work in a heartbeat! &lt;span class="emoji"&gt;😱&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Fear not, for Libretto is here to save the day! &lt;span class="emoji"&gt;🦸‍♂️&lt;/span&gt;&lt;/p&gt;
+&lt;h2&gt;Libretto: Your Metadata Safety Net &lt;span class="emoji"&gt;🌟&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;Libretto is a clever Python script that interfaces with your Plex server and exports detailed metadata about your Movie, TV Show, and Music libraries into neatly formatted CSV files.&lt;/p&gt;
+&lt;p&gt;So, what sort of metadata does Libretto back up? Here's a peek:&lt;/p&gt;
+&lt;h3&gt;Movies &lt;span class="emoji"&gt;🎬&lt;/span&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Title, Year, Duration, Rating &lt;/li&gt;
+&lt;li&gt;Studio, Content Rating, Tagline, Summary&lt;/li&gt;
+&lt;li&gt;Media Info (Resolution, Audio/Video Codecs, etc.)&lt;/li&gt;
+&lt;li&gt;File Details (Size, Container, etc.)&lt;/li&gt;
+&lt;li&gt;Genre, Country, Director, Writer, Actor Info&lt;/li&gt;
+&lt;li&gt;...and more!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;TV Shows &lt;span class="emoji"&gt;📺&lt;/span&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Series Title, Episode Count, Season Count&lt;/li&gt;
+&lt;li&gt;Studio, Content Rating, Summary, Rating  &lt;/li&gt;
+&lt;li&gt;Original Air Date, Duration&lt;/li&gt;
+&lt;li&gt;Genre, Country, Actor Info&lt;/li&gt;
+&lt;li&gt;...and more!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Music &lt;span class="emoji"&gt;🎵&lt;/span&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Artist, Album, Year&lt;/li&gt;
+&lt;li&gt;Genre, Studio&lt;/li&gt;
+&lt;li&gt;...and more!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Libretto fetches all this valuable metadata and saves it into tidy CSV files, giving you a full backup of your library details at the time of export.&lt;/p&gt;
+&lt;h2&gt;The Importance of Metadata Backups &lt;span class="emoji"&gt;💡&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;You might be thinking, &amp;quot;I already back up my media files themselves. Why do I need a separate metadata backup?&amp;quot;&lt;/p&gt;
+&lt;p&gt;While your media files do contain the actual content, it's the metadata that truly makes your Plex library unique. Details like summaries, ratings, original air dates - these are what could be lost if something goes wrong with your Plex server.&lt;/p&gt;
+&lt;p&gt;With Libretto, you'll have a metadata backup at the ready. If you ever need to rebuild your Plex library from the ground up, you can use these CSV files to restore key details. Think of it as an insurance policy for your Plex library metadata!&lt;/p&gt;
+&lt;h2&gt;Using Libretto is a Breeze &lt;span class="emoji"&gt;🍃&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;Getting started with Libretto couldn't be easier. Just grab the Python script from the &lt;a href="https://github.com/jeremehancock/Libretto"&gt;GitHub repo&lt;/a&gt;, set it up with your Plex server info, and let it do its thing! You can back up individual libraries or your entire server in one go.&lt;/p&gt;
+&lt;p&gt;You can even set up a cron job or scheduled task to run Libretto automatically, ensuring your metadata backups are always up to date without you having to lift a finger. Set it and forget it, and enjoy the peace of mind that comes with knowing your Plex library metadata is safe and sound.&lt;/p&gt;
+&lt;h2&gt;Get Libretto Today! &lt;span class="emoji"&gt;💾&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;Ready to give your Plex metadata the safety net it deserves? Snag Libretto from &lt;a href="https://github.com/jeremehancock/Libretto"&gt;GitHub&lt;/a&gt; now - it's 100% free and open-source!&lt;/p&gt;
+&lt;p&gt;With Libretto in your corner, you'll never need to stress over losing your lovingly curated Plex library details again. &lt;span class="emoji"&gt;🎉&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Happy backing up, Plex friends!&lt;span class="emoji"&gt; 🤗📚🎬🎵&lt;/span&gt;&lt;/p&gt;</description>
+      <pubDate>Thu, 06 Feb 2025 09:47:53 -0600</pubDate>
+      <guid isPermaLink="false">2dcc539255956b2c8ec293f1ea620010</guid>
+    </item>
     <item>
       <title>AI Game Collection</title>
       <link>https://pilab.dev/ai-game-collection</link>
@@ -109,25 +157,6 @@
 &lt;p&gt;See full server specs &lt;a href="/specs#plex"&gt;here&lt;/a&gt;.&lt;/p&gt;</description>
       <pubDate>Thu, 26 Sep 2024 12:06:18 -0500</pubDate>
       <guid isPermaLink="false">43b7edbcad678bca496b82316ea68fed</guid>
-    </item>
-    <item>
-      <title>Jellyfin NowPlaying</title>
-      <link>https://pilab.dev/jellyfin-nowplaying</link>
-      <image>https://pilab.dev/bl-content/uploads/pages/b374f0cffd10282127faa3aad2061f6d/jellyfin-nowplaying-updated.png</image>
-      <description>&lt;p&gt;I have been working on getting my &lt;a href="https://jellyfin.org/"&gt;Jellyfin&lt;/a&gt; setup configured. I am not planning on switching from &lt;a href="https://www.plex.tv/"&gt;Plex&lt;/a&gt; just yet. I just wanted to be ready in case I needed to. It is also just fun to tinker with stuff. :)&lt;/p&gt;
-&lt;p&gt;One thing that I really like in my &lt;a href="https://www.plex.tv/"&gt;Plex&lt;/a&gt; setup is a script that I use to display what is currently playing on my server from the command line. I have it setup to run when I &lt;code&gt;ssh&lt;/code&gt; in to the server. The script is called &lt;a href="https://github.com/arcadellama/plex-nowplaying"&gt;Plex NowPlaying&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;I decided to create a simplified version for &lt;a href="https://jellyfin.org/"&gt;Jellyfin&lt;/a&gt;. &lt;/p&gt;
-&lt;p&gt;Here are the variables to configure:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;# The Jellyfin server url.
-JELLYFIN_URL="http://YOUR-DOMAIN:8096"
-
-# THe Jellyfin API key.
-API_KEY=""
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src="/bl-content/uploads/pages/b374f0cffd10282127faa3aad2061f6d/jellyfin-nowplaying-terminal.png" alt="Image description" /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://github.com/jeremehancock/Jellyfin-NowPlaying#jellyfin-nowplaying"&gt;&lt;img data-src="/images/check-it-out-on-github.png" alt="Get it on GitHub" class="on-github lozad" /&gt;&lt;/a&gt;&lt;/p&gt;</description>
-      <pubDate>Fri, 29 Sep 2023 07:38:55 -0500</pubDate>
-      <guid isPermaLink="false">b374f0cffd10282127faa3aad2061f6d</guid>
     </item>
   </channel>
 </rss>

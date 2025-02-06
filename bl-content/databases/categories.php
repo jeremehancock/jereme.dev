@@ -54,6 +54,7 @@
         "template": "",
         "description": "Everything Plex, Jellyfin, etc.",
         "list": [
+            "libretto-plex-library-metadata-exporter",
             "the-perfect-travel-tv-setup",
             "plex-server-upgrade",
             "jellyfin-nowplaying",

@@ -1,5 +1,32 @@
 <?php defined('BLUDIT') or die('Bludit CMS.'); ?>
 {
+    "libretto-plex-library-metadata-exporter": {
+        "title": "Libretto: Plex Library Metadata Exporter",
+        "description": "",
+        "username": "admin",
+        "tags": {
+            "plex": "plex",
+            "plex-media-server": "plex media server"
+        },
+        "type": "published",
+        "date": "2025-02-06 09:47:53",
+        "dateModified": "2025-02-06 09:52:28",
+        "position": 133,
+        "coverImage": "libretto-thumbnail.png",
+        "category": "media-servers",
+        "md5file": "b4bdd220504c35ef38e1b17b79fbc783",
+        "uuid": "2dcc539255956b2c8ec293f1ea620010",
+        "allowComments": true,
+        "template": "",
+        "noindex": false,
+        "nofollow": false,
+        "noarchive": false,
+        "custom": {
+            "_amper": {
+                "value": false
+            }
+        }
+    },
     "ai-game-collection": {
         "title": "AI Game Collection",
         "description": "",

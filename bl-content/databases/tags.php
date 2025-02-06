@@ -186,9 +186,16 @@
     "plex": {
         "name": "plex",
         "list": [
+            "libretto-plex-library-metadata-exporter",
             "the-perfect-travel-tv-setup",
             "plex-server-upgrade",
             "moviecli"
+        ]
+    },
+    "plex-media-server": {
+        "name": "plex media server",
+        "list": [
+            "libretto-plex-library-metadata-exporter"
         ]
     },
     "plugins": {
