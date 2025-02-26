@@ -5,7 +5,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Wed, 26 Feb 2025 09:50:43 -0600</lastBuildDate>
+    <lastBuildDate>Wed, 26 Feb 2025 12:38:32 -0600</lastBuildDate>
     <item>
       <title>Introducing Posteria</title>
       <link>https://pilab.dev/introducing-posteria</link>
@@ -38,7 +38,7 @@ Fully mobile-responsive and installable as a Progressive Web App (PWA), Posteria
 &lt;p&gt;&lt;span class="emoji"&gt;🔒&lt;/span&gt; &lt;strong&gt;Simple, Secure Access&lt;/strong&gt;
 Protect your carefully curated collection with an easy-to-use authentication system.&lt;/p&gt;
 &lt;h2&gt;Screenshot&lt;/h2&gt;
-&lt;p&gt;&lt;img src="https://pilab.dev/bl-content/uploads/pages/782e531ab637451cf79a40ca150604c5/posteria-screenshot.png" alt="Image description" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/jeremehancock/Posteria/main/images/screenshot.png" alt="Image description" /&gt;&lt;/p&gt;
 &lt;h2&gt;More Than Just an App&lt;/h2&gt;
 &lt;p&gt;Posteria isn't just a tool – it's a love letter to media collectors who care about the details. It's designed for people who see their media library as more than just files – it's a reflection of their taste, memories, and passion.&lt;/p&gt;
 &lt;h3&gt;Who Is Posteria For?&lt;/h3&gt;

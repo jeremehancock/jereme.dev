@@ -32,7 +32,7 @@ Fully mobile-responsive and installable as a Progressive Web App (PWA), Posteria
 Protect your carefully curated collection with an easy-to-use authentication system.
 
 ## Screenshot
-![Image description](https://pilab.velvethotdog.com/bl-content/uploads/pages/782e531ab637451cf79a40ca150604c5/posteria-screenshot.png)
+![Image description](https://raw.githubusercontent.com/jeremehancock/Posteria/main/images/screenshot.png)
 
 ## More Than Just an App
 
