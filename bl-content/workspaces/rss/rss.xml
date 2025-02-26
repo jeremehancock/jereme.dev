@@ -5,7 +5,66 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Thu, 06 Feb 2025 09:56:03 -0600</lastBuildDate>
+    <lastBuildDate>Wed, 26 Feb 2025 09:46:02 -0600</lastBuildDate>
+    <item>
+      <title>Introducing Posteria</title>
+      <link>https://pilab.dev/introducing-posteria</link>
+      <image>https://pilab.dev/bl-content/uploads/pages/782e531ab637451cf79a40ca150604c5/posteria.png</image>
+      <description>&lt;h1&gt;Posteria: Your Media Poster Management Dream&lt;/h1&gt;
+&lt;p&gt;Imagine a world where your media library looks as good as it feels. Posteria is the solution media enthusiasts have been waiting for – a sleek, intuitive platform that transforms how you organize and showcase your movie, TV show, and collection artwork.&lt;/p&gt;
+&lt;h2&gt;Why Posteria Matters&lt;/h2&gt;
+&lt;p&gt;For anyone with a growing media collection, poster management can quickly become a frustrating mess. Mismatched artwork, cluttered folders, and inconsistent designs can turn your digital library into a visual nightmare. Posteria changes all that.&lt;/p&gt;
+&lt;h3&gt;Features That Make a Difference&lt;/h3&gt;
+&lt;p&gt;&lt;span class="emoji"&gt;🖼️&lt;/span&gt; &lt;strong&gt;Beautiful, Intuitive Design&lt;/strong&gt;
+Say goodbye to cluttered poster libraries. Posteria offers a clean, modern interface that makes managing your media artwork as enjoyable as watching your favorite shows.&lt;/p&gt;
+&lt;p&gt;&lt;span class="emoji"&gt;📁&lt;/span&gt; &lt;strong&gt;Comprehensive Organization&lt;/strong&gt;
+Keep everything perfectly sorted with dedicated categories for:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Movies&lt;/li&gt;
+&lt;li&gt;TV Shows&lt;/li&gt;
+&lt;li&gt;TV Seasons&lt;/li&gt;
+&lt;li&gt;Collections&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;span class="emoji"&gt;🔍&lt;/span&gt; &lt;strong&gt;Lightning-Fast Search&lt;/strong&gt;
+No more endless scrolling. The powerful fuzzy search lets you find exactly the poster you want in seconds.&lt;/p&gt;
+&lt;p&gt;&lt;span class="emoji"&gt;📱&lt;/span&gt; &lt;strong&gt;Access Anywhere, Anytime&lt;/strong&gt;
+Fully mobile-responsive and installable as a Progressive Web App (PWA), Posteria goes wherever you go.&lt;/p&gt;
+&lt;p&gt;&lt;span class="emoji"&gt;⚡&lt;/span&gt; &lt;strong&gt;Effortless Poster Management&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Upload from Local files&lt;/li&gt;
+&lt;li&gt;Upload from Direct URLs&lt;/li&gt;
+&lt;li&gt;Import from your Plex Media Server&lt;/li&gt;
+&lt;li&gt;Easily move between categories&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;span class="emoji"&gt;🔒&lt;/span&gt; &lt;strong&gt;Simple, Secure Access&lt;/strong&gt;
+Protect your carefully curated collection with an easy-to-use authentication system.&lt;/p&gt;
+&lt;h2&gt;Screenshot&lt;/h2&gt;
+&lt;p&gt;&lt;img src="https://pilab.dev/bl-content/uploads/pages/782e531ab637451cf79a40ca150604c5/posteria-screenshot.png" alt="Image description" /&gt;&lt;/p&gt;
+&lt;h2&gt;More Than Just an App&lt;/h2&gt;
+&lt;p&gt;Posteria isn't just a tool – it's a love letter to media collectors who care about the details. It's designed for people who see their media library as more than just files – it's a reflection of their taste, memories, and passion.&lt;/p&gt;
+&lt;h3&gt;Who Is Posteria For?&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Movie buffs with extensive collections&lt;/li&gt;
+&lt;li&gt;TV show enthusiasts&lt;/li&gt;
+&lt;li&gt;Media server owners&lt;/li&gt;
+&lt;li&gt;Anyone who takes pride in their digital media library&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Get Started&lt;/h2&gt;
+&lt;p&gt;Ready to transform your media library? Visit &lt;a href="https://posteria.app"&gt;posteria.app&lt;/a&gt; for full details on installation, features, and how to get started.&lt;/p&gt;
+&lt;h3&gt;Support the Project&lt;/h3&gt;
+&lt;p&gt;Found Posteria useful? Consider supporting the developer and helping them continue improving this amazing tool!&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.paypal.com/ncp/payment/FU85BL8345S7L"&gt;Donate via PayPal&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Technical Highlights&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Flexible Image Support&lt;/strong&gt;: JPG, JPEG, PNG, WebP&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cross-Platform&lt;/strong&gt;: Web-based with PWA support&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Open Source&lt;/strong&gt;: MIT Licensed&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Built with &lt;span class="emoji"&gt;❤️&lt;/span&gt; and AI Assistance&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Posteria isn't just an app – it's your media library's new best friend. Organize, beautify, and enjoy your collection like never before!!&lt;/p&gt;</description>
+      <pubDate>Wed, 26 Feb 2025 09:35:51 -0600</pubDate>
+      <guid isPermaLink="false">782e531ab637451cf79a40ca150604c5</guid>
+    </item>
     <item>
       <title>Libretto: Plex Library Metadata Exporter</title>
       <link>https://pilab.dev/libretto-plex-library-metadata-exporter</link>
@@ -140,23 +199,6 @@
 &lt;/div&gt;</description>
       <pubDate>Thu, 26 Sep 2024 12:06:45 -0500</pubDate>
       <guid isPermaLink="false">89e9143555d071d55ac2daaebd4f2a00</guid>
-    </item>
-    <item>
-      <title>Plex Server Upgrade!</title>
-      <link>https://pilab.dev/plex-server-upgrade</link>
-      <image>https://pilab.dev/bl-content/uploads/pages/43b7edbcad678bca496b82316ea68fed/plex-upgrade.png</image>
-      <description>&lt;p&gt;Recently while visiting a friend for their retirement ceremony I came across a deal too good to pass up. I was in Oklahoma for the event. It was an Air Force retirement. The base is a smaller one so I knew I had to check out the BX. I have always found great deals on returned items at the BX on small bases.&lt;/p&gt;
-&lt;p&gt;I was shocked to find something better than a returned item. It was a display model. It was a &lt;a href="https://www.acer.com/us-en/desktops-and-all-in-ones/aspire-classic-desktops/aspire-tc/pdp/DT.BJUAA.001"&gt;Aspire TC-1750-UR11&lt;/a&gt; which has an i5-12400 Intel CPU with QuickSync. This would be a nice upgrade from my Dell OptiPlex 3060 with an i3-8100. The price was the best part.&lt;strong&gt; $150!&lt;/strong&gt; &lt;/p&gt;
-&lt;p&gt;That's right I got it for $150 with no sales tax since it was at the BX.&lt;/p&gt;
-&lt;p&gt;I was able to migrate my existing Plex install to a 1TB NVMe drive that I already had. I put that drive in the new machine and it just fired right up. I also upgraded the RAM with 2 16GB sticks that I already had on hand.&lt;/p&gt;
-&lt;p&gt;It has been an awesome upgrade and the migration was super simple!&lt;/p&gt;
-&lt;h3&gt;Check it out!&lt;/h3&gt;
-&lt;div class="centered"&gt;
-    &lt;img src="/bl-content/uploads/pages/43b7edbcad678bca496b82316ea68fed/plex-upgrade-large.png" class="image-border" /&gt;&lt;br&gt;&lt;br&gt;
-&lt;/div&gt;
-&lt;p&gt;See full server specs &lt;a href="/specs#plex"&gt;here&lt;/a&gt;.&lt;/p&gt;</description>
-      <pubDate>Thu, 26 Sep 2024 12:06:18 -0500</pubDate>
-      <guid isPermaLink="false">43b7edbcad678bca496b82316ea68fed</guid>
     </item>
   </channel>
 </rss>

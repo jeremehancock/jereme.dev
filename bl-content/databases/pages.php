@@ -1,5 +1,29 @@
 <?php defined('BLUDIT') or die('Bludit CMS.'); ?>
 {
+    "introducing-posteria": {
+        "title": "Introducing Posteria",
+        "description": "",
+        "username": "admin",
+        "tags": [],
+        "type": "published",
+        "date": "2025-02-26 09:35:51",
+        "dateModified": "2025-02-26 09:46:02",
+        "position": 134,
+        "coverImage": "posteria.png",
+        "category": "",
+        "md5file": "fb8a4bb22380d5216844791a874e31e9",
+        "uuid": "782e531ab637451cf79a40ca150604c5",
+        "allowComments": true,
+        "template": "",
+        "noindex": false,
+        "nofollow": false,
+        "noarchive": false,
+        "custom": {
+            "_amper": {
+                "value": false
+            }
+        }
+    },
     "libretto-plex-library-metadata-exporter": {
         "title": "Libretto: Plex Library Metadata Exporter",
         "description": "",

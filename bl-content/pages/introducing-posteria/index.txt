@@ -1,0 +1,67 @@
+# Posteria: Your Media Poster Management Dream
+
+Imagine a world where your media library looks as good as it feels. Posteria is the solution media enthusiasts have been waiting for – a sleek, intuitive platform that transforms how you organize and showcase your movie, TV show, and collection artwork.
+
+## Why Posteria Matters
+
+For anyone with a growing media collection, poster management can quickly become a frustrating mess. Mismatched artwork, cluttered folders, and inconsistent designs can turn your digital library into a visual nightmare. Posteria changes all that.
+
+### Features That Make a Difference
+
+<span class="emoji">🖼️</span> **Beautiful, Intuitive Design**
+Say goodbye to cluttered poster libraries. Posteria offers a clean, modern interface that makes managing your media artwork as enjoyable as watching your favorite shows.
+
+<span class="emoji">📁</span> **Comprehensive Organization**
+Keep everything perfectly sorted with dedicated categories for:
+- Movies
+- TV Shows
+- TV Seasons
+- Collections
+
+<span class="emoji">🔍</span> **Lightning-Fast Search**
+No more endless scrolling. The powerful fuzzy search lets you find exactly the poster you want in seconds.
+
+<span class="emoji">📱</span> **Access Anywhere, Anytime**
+Fully mobile-responsive and installable as a Progressive Web App (PWA), Posteria goes wherever you go.
+
+<span class="emoji">⚡</span> **Effortless Poster Management**
+- Upload from Local files
+- Upload from Direct URLs
+- Import from your Plex Media Server
+- Easily move between categories
+
+<span class="emoji">🔒</span> **Simple, Secure Access**
+Protect your carefully curated collection with an easy-to-use authentication system.
+
+## Screenshot
+![Image description](https://pilab.velvethotdog.com/bl-content/uploads/pages/782e531ab637451cf79a40ca150604c5/posteria-screenshot.png)
+
+## More Than Just an App
+
+Posteria isn't just a tool – it's a love letter to media collectors who care about the details. It's designed for people who see their media library as more than just files – it's a reflection of their taste, memories, and passion.
+
+### Who Is Posteria For?
+
+- Movie buffs with extensive collections
+- TV show enthusiasts
+- Media server owners
+- Anyone who takes pride in their digital media library
+
+## Get Started
+
+Ready to transform your media library? Visit [posteria.app](https://posteria.app) for full details on installation, features, and how to get started.
+
+### Support the Project
+
+Found Posteria useful? Consider supporting the developer and helping them continue improving this amazing tool!
+
+[Donate via PayPal](https://www.paypal.com/ncp/payment/FU85BL8345S7L)
+
+## Technical Highlights
+
+- **Flexible Image Support**: JPG, JPEG, PNG, WebP
+- **Cross-Platform**: Web-based with PWA support
+- **Open Source**: MIT Licensed
+- **Built with <span class="emoji">❤️</span> and AI Assistance**
+
+Posteria isn't just an app – it's your media library's new best friend. Organize, beautify, and enjoy your collection like never before!!
