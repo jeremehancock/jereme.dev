@@ -1,6 +1,14 @@
 <?php defined('BLUDIT') or die('Bludit CMS.'); ?>
 [
     {
+        "date": "2025-02-26 09:49:35",
+        "dictionaryKey": "content-edited",
+        "notes": "Introducing Posteria",
+        "idExecution": "67bf380e90fd3",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
         "date": "2025-02-26 09:46:02",
         "dictionaryKey": "content-edited",
         "notes": "Introducing Posteria",
@@ -69,14 +77,6 @@
         "dictionaryKey": "plugin-configured",
         "notes": "Links",
         "idExecution": "67a4db2835b09",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2025-02-06 09:52:29",
-        "dictionaryKey": "content-edited",
-        "notes": "Libretto: Plex Library Metadata Exporter",
-        "idExecution": "67a4dabca51d5",
         "method": "POST",
         "username": "admin"
     }

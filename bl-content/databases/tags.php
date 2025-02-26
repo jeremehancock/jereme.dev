@@ -123,9 +123,16 @@
             "octoprint-node-live-stream"
         ]
     },
+    "media-posters": {
+        "name": "media posters",
+        "list": [
+            "introducing-posteria"
+        ]
+    },
     "media-server": {
         "name": "media server",
         "list": [
+            "introducing-posteria",
             "the-perfect-travel-tv-setup",
             "plex-server-upgrade"
         ]
@@ -186,6 +193,7 @@
     "plex": {
         "name": "plex",
         "list": [
+            "introducing-posteria",
             "libretto-plex-library-metadata-exporter",
             "the-perfect-travel-tv-setup",
             "plex-server-upgrade",

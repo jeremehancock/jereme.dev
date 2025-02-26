@@ -54,6 +54,7 @@
         "template": "",
         "description": "Everything Plex, Jellyfin, etc.",
         "list": [
+            "introducing-posteria",
             "libretto-plex-library-metadata-exporter",
             "the-perfect-travel-tv-setup",
             "plex-server-upgrade",
