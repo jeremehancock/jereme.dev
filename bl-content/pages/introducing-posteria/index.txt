@@ -23,7 +23,7 @@ Easily import existing posters directly from your Plex Media Server with just a 
 Send your custom posters directly back to your Plex Media Server, ensuring visual consistency across your entire media library.
 
 <span class="emoji">🎬</span> **TMDB Integration**  
-The Movie Database (TMDB) is now fully integrated with Posteria, allowing for automatic poster fetching directly from this extensive library of official and fan-made artwork.
+The Movie Database (TMDB) is now fully integrated with Posteria, allowing for automatic poster fetching directly TMDB.
 
 <span class="emoji">🧹</span> **Orphan Detection**  
 Identify and manage orphaned posters that aren't linked to media, keeping your collection clean and relevant.

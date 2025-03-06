@@ -5,7 +5,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Wed, 05 Mar 2025 12:59:20 -0600</lastBuildDate>
+    <lastBuildDate>Thu, 06 Mar 2025 00:03:48 -0600</lastBuildDate>
     <item>
       <title>Introducing Posteria</title>
       <link>https://pilab.dev/introducing-posteria</link>
@@ -29,7 +29,7 @@ Easily import existing posters directly from your Plex Media Server with just a 
 &lt;p&gt;&lt;span class="emoji"&gt;📤&lt;/span&gt; &lt;strong&gt;Export to Plex&lt;/strong&gt;&lt;br /&gt;
 Send your custom posters directly back to your Plex Media Server, ensuring visual consistency across your entire media library.&lt;/p&gt;
 &lt;p&gt;&lt;span class="emoji"&gt;🎬&lt;/span&gt; &lt;strong&gt;TMDB Integration&lt;/strong&gt;&lt;br /&gt;
-The Movie Database (TMDB) is now fully integrated with Posteria, allowing for automatic poster fetching directly from this extensive library of official and fan-made artwork.&lt;/p&gt;
+The Movie Database (TMDB) is now fully integrated with Posteria, allowing for automatic poster fetching directly TMDB.&lt;/p&gt;
 &lt;p&gt;&lt;span class="emoji"&gt;🧹&lt;/span&gt; &lt;strong&gt;Orphan Detection&lt;/strong&gt;&lt;br /&gt;
 Identify and manage orphaned posters that aren't linked to media, keeping your collection clean and relevant.&lt;/p&gt;
 &lt;p&gt;&lt;span class="emoji"&gt;📱&lt;/span&gt; &lt;strong&gt;Installable PWA&lt;/strong&gt;&lt;br /&gt;
