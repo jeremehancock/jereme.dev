@@ -513,20 +513,26 @@
             threshold: 0.01
         });
         
-        // Tab switching
-        document.querySelectorAll('.tab').forEach(tab => {
-            tab.addEventListener('click', () => {
-                // Update active tab
-                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
-                
-                // Update active content
-                document.querySelectorAll('.content').forEach(content => {
-                    content.classList.remove('active');
-                });
-                document.getElementById(tab.dataset.content + '-content').classList.add('active');
-            });
-        });
+	// Tab switching
+	document.querySelectorAll('.tab').forEach(tab => {
+		tab.addEventListener('click', () => {
+		    // Get current search query before switching tabs
+		    const currentSearchTerm = document.querySelector('.search-input').value.toLowerCase();
+		    
+		    // Update active tab
+		    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+		    tab.classList.add('active');
+		    
+		    // Update active content
+		    document.querySelectorAll('.content').forEach(content => {
+		        content.classList.remove('active');
+		    });
+		    document.getElementById(tab.dataset.content + '-content').classList.add('active');
+		    
+		    // Apply the current search to the newly selected tab content
+		    filterMedia(currentSearchTerm);
+		});
+	});
 
         // Search functionality
         const searchInput = document.querySelector('.search-input');
