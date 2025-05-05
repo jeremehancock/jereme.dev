@@ -378,7 +378,7 @@
             height: 180px;
             background-size: cover;
             background-position: center top;
-            opacity: 0.3;
+            opacity: 0.6; /* Increased from 0.3 to make backdrops more visible */
             z-index: 0;
         }
         
@@ -389,7 +389,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to bottom, rgba(42, 42, 42, 0.5) 0%, var(--secondary-bg) 100%);
+            background: linear-gradient(to bottom, rgba(42, 42, 42, 0.3) 0%, var(--secondary-bg) 100%); /* Reduced opacity from 0.5 to 0.3 */
         }
         
         .modal-overlay.active .modal-content {
@@ -467,7 +467,7 @@
             justify-content: center;
             transition: background-color 0.2s;
             padding: 0;
-            z-index: 1;
+            z-index: 10; /* Increased z-index to ensure it's above other elements */
         }
         
         .modal-close:hover {
@@ -1136,7 +1136,11 @@
         }
         
         // Close modal functionality
-        modalClose.addEventListener('click', closeModal);
+        modalClose.addEventListener('click', function(e) {
+            e.preventDefault(); // Prevent event propagation
+            e.stopPropagation(); // Stop event bubbling
+            closeModal();
+        });
         
         // Close modal when clicking outside
         modalOverlay.addEventListener('click', (e) => {
