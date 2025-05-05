@@ -58,9 +58,10 @@ class PlexDataFetcher:
             return False
         
         try:
-            # Remove existing file if it exists
+            # Check if file already exists
             if output_path.exists():
-                os.remove(output_path)
+                print(f"Poster already exists, skipping: {output_path.name}")
+                return True
             
             response = self.session.get(f"{self.plex_url}{image_url}")
             response.raise_for_status()
