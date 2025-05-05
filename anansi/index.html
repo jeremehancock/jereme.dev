@@ -378,7 +378,7 @@
             height: 280px;
             background-size: cover;
             background-position: center center;
-            opacity: 0.5; /* Increased from 0.3 to make backdrops more visible */
+            opacity: 0.3; /* Increased from 0.3 to make backdrops more visible */
             z-index: 0;
         }
         
@@ -1095,40 +1095,72 @@
                 castContainer.innerHTML = '<div>No cast information available</div>';
             }
             
-            // Set crew (directors and writers)
-            const crewContainer = document.getElementById('modal-crew');
-            crewContainer.innerHTML = '';
-            
-            // Add directors
-            if (item.directors && item.directors.length > 0) {
-                item.directors.forEach(director => {
-                    const directorElement = document.createElement('div');
-                    directorElement.className = 'crew-item';
-                    directorElement.innerHTML = `
-                        <div class="crew-role">Director</div>
-                        <div class="crew-name">${director}</div>
-                    `;
-                    crewContainer.appendChild(directorElement);
-                });
-            }
-            
-            // Add writers
-            if (item.writers && item.writers.length > 0) {
-                item.writers.forEach(writer => {
-                    const writerElement = document.createElement('div');
-                    writerElement.className = 'crew-item';
-                    writerElement.innerHTML = `
-                        <div class="crew-role">Writer</div>
-                        <div class="crew-name">${writer}</div>
-                    `;
-                    crewContainer.appendChild(writerElement);
-                });
-            }
-            
-            if ((!item.directors || item.directors.length === 0) && 
-                (!item.writers || item.writers.length === 0)) {
-                crewContainer.innerHTML = '<div>No crew information available</div>';
-            }
+			// Set crew (directors, writers, producers, creators)
+			const crewContainer = document.getElementById('modal-crew');
+			crewContainer.innerHTML = '';
+
+			// Add directors
+			if (item.directors && item.directors.length > 0) {
+				item.directors.forEach(director => {
+					const directorElement = document.createElement('div');
+					directorElement.className = 'crew-item';
+					directorElement.innerHTML = `
+						<div class="crew-role">Director</div>
+						<div class="crew-name">${director}</div>
+					`;
+					crewContainer.appendChild(directorElement);
+				});
+			}
+
+			// Add writers
+			if (item.writers && item.writers.length > 0) {
+				item.writers.forEach(writer => {
+					const writerElement = document.createElement('div');
+					writerElement.className = 'crew-item';
+					writerElement.innerHTML = `
+						<div class="crew-role">Writer</div>
+						<div class="crew-name">${writer}</div>
+					`;
+					crewContainer.appendChild(writerElement);
+				});
+			}
+
+			// Add creators (for TV shows)
+			if (type === 'tvshows' && item.creators && item.creators.length > 0) {
+				item.creators.forEach(creator => {
+					const creatorElement = document.createElement('div');
+					creatorElement.className = 'crew-item';
+					creatorElement.innerHTML = `
+						<div class="crew-role">Creator</div>
+						<div class="crew-name">${creator}</div>
+					`;
+					crewContainer.appendChild(creatorElement);
+				});
+			}
+
+			// Add producers (for TV shows, but only show a few main ones)
+			if (type === 'tvshows' && item.producers && item.producers.length > 0) {
+				// Only show up to 3 producers to avoid cluttering the modal
+				const mainProducers = item.producers.slice(0, 3);
+				mainProducers.forEach(producer => {
+					const producerElement = document.createElement('div');
+					producerElement.className = 'crew-item';
+					producerElement.innerHTML = `
+						<div class="crew-role">Producer</div>
+						<div class="crew-name">${producer}</div>
+					`;
+					crewContainer.appendChild(producerElement);
+				});
+			}
+
+			// Show a message if no crew info is available
+			if ((!item.directors || item.directors.length === 0) && 
+				(!item.writers || item.writers.length === 0) &&
+				(type !== 'tvshows' || 
+				 (!item.creators || item.creators.length === 0) && 
+				 (!item.producers || item.producers.length === 0))) {
+				crewContainer.innerHTML = '<div>No crew information available</div>';
+			}
             
             // Show modal
             document.body.style.overflow = 'hidden'; // Prevent background scrolling
