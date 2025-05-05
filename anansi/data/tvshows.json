@@ -8,8 +8,29 @@
     "studio": "Broadway Video",
     "addedAt": 1745671082,
     "updatedAt": 1745894850,
+    "genres": [
+      "Comedy"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Tina Fey",
+        "role": ""
+      },
+      {
+        "name": "Alec Baldwin",
+        "role": ""
+      },
+      {
+        "name": "Tracy Morgan",
+        "role": ""
+      }
+    ],
     "leafCount": 136,
-    "childCount": 7
+    "childCount": 7,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2006-10-11"
   },
   {
     "id": "132521",
@@ -20,8 +41,30 @@
     "studio": "CBS News Productions",
     "addedAt": 1745448478,
     "updatedAt": 1745565669,
+    "genres": [
+      "News",
+      "Documentary"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Peter Van Sant",
+        "role": ""
+      },
+      {
+        "name": "Erin Moriarty",
+        "role": ""
+      },
+      {
+        "name": "Natalie Morales",
+        "role": ""
+      }
+    ],
     "leafCount": 82,
-    "childCount": 3
+    "childCount": 3,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "1988-01-19"
   },
   {
     "id": "90851",
@@ -32,8 +75,30 @@
     "studio": "101 Studios",
     "addedAt": 1678401961,
     "updatedAt": 1745139307,
+    "genres": [
+      "Drama",
+      "Western"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Sam Elliott",
+        "role": ""
+      },
+      {
+        "name": "Tim McGraw",
+        "role": ""
+      },
+      {
+        "name": "Faith Hill",
+        "role": ""
+      }
+    ],
     "leafCount": 10,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2021-12-19"
   },
   {
     "id": "108776",
@@ -44,8 +109,30 @@
     "studio": "Bosque Ranch Productions",
     "addedAt": 1691711011,
     "updatedAt": 1744443958,
+    "genres": [
+      "Drama",
+      "Western"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Helen Mirren",
+        "role": ""
+      },
+      {
+        "name": "Harrison Ford",
+        "role": ""
+      },
+      {
+        "name": "Brandon Sklenar",
+        "role": ""
+      }
+    ],
     "leafCount": 15,
-    "childCount": 2
+    "childCount": 2,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2022-12-18"
   },
   {
     "id": "88823",
@@ -56,8 +143,30 @@
     "studio": "Stephen J. Cannell Productions",
     "addedAt": 1643256512,
     "updatedAt": 1745139306,
+    "genres": [
+      "Crime",
+      "Comedy"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "George Peppard",
+        "role": ""
+      },
+      {
+        "name": "Dirk Benedict",
+        "role": ""
+      },
+      {
+        "name": "Mr. T",
+        "role": ""
+      }
+    ],
     "leafCount": 96,
-    "childCount": 5
+    "childCount": 5,
+    "contentRating": "TV-PG",
+    "originallyAvailableAt": "1983-01-23"
   },
   {
     "id": "128555",
@@ -68,8 +177,29 @@
     "studio": "Oxygen Media",
     "addedAt": 1735837040,
     "updatedAt": 1745139328,
+    "genres": [
+      "Comedy"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Jennifer Saunders",
+        "role": ""
+      },
+      {
+        "name": "Joanna Lumley",
+        "role": ""
+      },
+      {
+        "name": "Julia Sawalha",
+        "role": ""
+      }
+    ],
     "leafCount": 37,
-    "childCount": 7
+    "childCount": 7,
+    "contentRating": "TV-PG",
+    "originallyAvailableAt": "1992-11-12"
   },
   {
     "id": "125182",
@@ -80,8 +210,30 @@
     "studio": "Lucasfilm Ltd.",
     "addedAt": 1717697816,
     "updatedAt": 1745139324,
+    "genres": [
+      "Mystery",
+      "Action"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Amandla Stenberg",
+        "role": ""
+      },
+      {
+        "name": "Lee Jung-jae",
+        "role": ""
+      },
+      {
+        "name": "Joonas Suotamo",
+        "role": ""
+      }
+    ],
     "leafCount": 8,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2024-06-04"
   },
   {
     "id": "102124",
@@ -92,8 +244,30 @@
     "studio": "Nice Little Day",
     "addedAt": 1679688148,
     "updatedAt": 1745139313,
+    "genres": [
+      "Comedy",
+      "Documentary"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Adam Conover",
+        "role": ""
+      },
+      {
+        "name": "Emily Axford",
+        "role": ""
+      },
+      {
+        "name": "River Butcher",
+        "role": ""
+      }
+    ],
     "leafCount": 64,
-    "childCount": 3
+    "childCount": 3,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2015-09-29"
   },
   {
     "id": "131760",
@@ -104,8 +278,30 @@
     "studio": "Warp Films",
     "addedAt": 1743384358,
     "updatedAt": 1744364022,
+    "genres": [
+      "Crime",
+      "Drama"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Stephen Graham",
+        "role": ""
+      },
+      {
+        "name": "Owen Cooper",
+        "role": ""
+      },
+      {
+        "name": "Bidi Iredale",
+        "role": ""
+      }
+    ],
     "leafCount": 4,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2025-03-13"
   },
   {
     "id": "127237",
@@ -116,8 +312,30 @@
     "studio": "Marvel Studios",
     "addedAt": 1726709145,
     "updatedAt": 1745139326,
+    "genres": [
+      "Comedy",
+      "Action"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Kathryn Hahn",
+        "role": ""
+      },
+      {
+        "name": "Joe Locke",
+        "role": ""
+      },
+      {
+        "name": "Sasheer Zamata",
+        "role": ""
+      }
+    ],
     "leafCount": 9,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2024-09-18"
   },
   {
     "id": "124097",
@@ -128,8 +346,22 @@
     "studio": "British Broadcasting Corporation (BBC)",
     "addedAt": 1709751721,
     "updatedAt": 1741424352,
+    "genres": [
+      "Documentary",
+      "Crime"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Lucy Worsley",
+        "role": ""
+      }
+    ],
     "leafCount": 3,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "",
+    "originallyAvailableAt": "2022-11-25"
   },
   {
     "id": "115894",
@@ -140,8 +372,30 @@
     "studio": "Lucasfilm Ltd.",
     "addedAt": 1693704180,
     "updatedAt": 1745139318,
+    "genres": [
+      "Action",
+      "Adventure"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Rosario Dawson",
+        "role": ""
+      },
+      {
+        "name": "Natasha Liu Bordizzo",
+        "role": ""
+      },
+      {
+        "name": "Ray Stevenson",
+        "role": ""
+      }
+    ],
     "leafCount": 8,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2023-08-23"
   },
   {
     "id": "87148",
@@ -152,8 +406,30 @@
     "studio": "Playground Entertainment",
     "addedAt": 1678401641,
     "updatedAt": 1745139305,
+    "genres": [
+      "Drama",
+      "Comedy"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Nicholas Ralph",
+        "role": ""
+      },
+      {
+        "name": "Samuel West",
+        "role": ""
+      },
+      {
+        "name": "Anna Madeley",
+        "role": ""
+      }
+    ],
     "leafCount": 35,
-    "childCount": 5
+    "childCount": 5,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2020-09-01"
   },
   {
     "id": "94953",
@@ -164,8 +440,30 @@
     "studio": "Ryan Murphy Television",
     "addedAt": 1678402279,
     "updatedAt": 1744647354,
+    "genres": [
+      "Crime",
+      "Drama"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Sarah Paulson",
+        "role": ""
+      },
+      {
+        "name": "Annaleigh Ashford",
+        "role": ""
+      },
+      {
+        "name": "Sterling K. Brown",
+        "role": ""
+      }
+    ],
     "leafCount": 29,
-    "childCount": 3
+    "childCount": 3,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2016-02-02"
   },
   {
     "id": "126642",
@@ -176,8 +474,22 @@
     "studio": "History",
     "addedAt": 1723598533,
     "updatedAt": 1745658225,
+    "genres": [
+      "Documentary",
+      "Crime"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Michael Imperioli",
+        "role": ""
+      }
+    ],
     "leafCount": 3,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2024-08-11"
   },
   {
     "id": "128389",
@@ -188,8 +500,30 @@
     "studio": "FremantleMedia North America",
     "addedAt": 1735257490,
     "updatedAt": 1744318657,
+    "genres": [
+      "Drama",
+      "Mystery"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Ricky Whittle",
+        "role": ""
+      },
+      {
+        "name": "Ian McShane",
+        "role": ""
+      },
+      {
+        "name": "Emily Browning",
+        "role": ""
+      }
+    ],
     "leafCount": 25,
-    "childCount": 3
+    "childCount": 3,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2017-03-01"
   },
   {
     "id": "123602",
@@ -200,8 +534,30 @@
     "studio": "Acorn Productions",
     "addedAt": 1707838942,
     "updatedAt": 1745139322,
+    "genres": [
+      "Drama",
+      "Mystery"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Charles Dance",
+        "role": ""
+      },
+      {
+        "name": "Maeve Dermody",
+        "role": ""
+      },
+      {
+        "name": "Aidan Turner",
+        "role": ""
+      }
+    ],
     "leafCount": 3,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-PG",
+    "originallyAvailableAt": "2015-12-26"
   },
   {
     "id": "131279",
@@ -212,8 +568,30 @@
     "studio": "Lucasfilm Ltd.",
     "addedAt": 1741815601,
     "updatedAt": 1746429573,
+    "genres": [
+      "Action",
+      "Adventure"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Diego Luna",
+        "role": ""
+      },
+      {
+        "name": "Stellan Skarsg\u00e5rd",
+        "role": ""
+      },
+      {
+        "name": "Denise Gough",
+        "role": ""
+      }
+    ],
     "leafCount": 18,
-    "childCount": 2
+    "childCount": 2,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2022-09-20"
   },
   {
     "id": "98006",
@@ -224,8 +602,30 @@
     "studio": "CBS",
     "addedAt": 1678402538,
     "updatedAt": 1744196069,
+    "genres": [
+      "Comedy",
+      "Family"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Andy Griffith",
+        "role": ""
+      },
+      {
+        "name": "Ron Howard",
+        "role": ""
+      },
+      {
+        "name": "Frances Bavier",
+        "role": ""
+      }
+    ],
     "leafCount": 250,
-    "childCount": 9
+    "childCount": 9,
+    "contentRating": "TV-G",
+    "originallyAvailableAt": "1960-10-03"
   },
   {
     "id": "124056",
@@ -236,8 +636,30 @@
     "studio": "The Magic Store",
     "addedAt": 1709613577,
     "updatedAt": 1742484483,
+    "genres": [
+      "Adventure",
+      "Comedy"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Mr. Lawrence",
+        "role": ""
+      },
+      {
+        "name": "Chad Larson",
+        "role": ""
+      },
+      {
+        "name": "James R. Briggs, Jr",
+        "role": ""
+      }
+    ],
     "leafCount": 21,
-    "childCount": 3
+    "childCount": 3,
+    "contentRating": "TV-PG",
+    "originallyAvailableAt": "2012-03-03"
   },
   {
     "id": "120377",
@@ -248,8 +670,30 @@
     "studio": "ITV Studios",
     "addedAt": 1701340012,
     "updatedAt": 1745139320,
+    "genres": [
+      "Drama",
+      "Biography"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Jason Isaacs",
+        "role": ""
+      },
+      {
+        "name": "Laura Aikman",
+        "role": ""
+      },
+      {
+        "name": "Harriet Walter",
+        "role": ""
+      }
+    ],
     "leafCount": 4,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2023-11-23"
   },
   {
     "id": "97380",
@@ -260,8 +704,29 @@
     "studio": "Imagine Television Studios",
     "addedAt": 1678402484,
     "updatedAt": 1745139311,
+    "genres": [
+      "Comedy"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Jason Bateman",
+        "role": ""
+      },
+      {
+        "name": "Portia de Rossi",
+        "role": ""
+      },
+      {
+        "name": "Will Arnett",
+        "role": ""
+      }
+    ],
     "leafCount": 106,
-    "childCount": 6
+    "childCount": 6,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2003-11-02"
   },
   {
     "id": "98781",
@@ -272,8 +737,30 @@
     "studio": "Nickelodeon Animation Studio",
     "addedAt": 1678402613,
     "updatedAt": 1744505145,
+    "genres": [
+      "Action",
+      "Adventure"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Zach Tyler Eisen",
+        "role": ""
+      },
+      {
+        "name": "Mae Whitman",
+        "role": ""
+      },
+      {
+        "name": "Jack De Sena",
+        "role": ""
+      }
+    ],
     "leafCount": 61,
-    "childCount": 3
+    "childCount": 3,
+    "contentRating": "TV-Y7",
+    "originallyAvailableAt": "2005-02-21"
   },
   {
     "id": "123810",
@@ -284,8 +771,30 @@
     "studio": "Nickelodeon Productions",
     "addedAt": 1708650819,
     "updatedAt": 1745139323,
+    "genres": [
+      "Family",
+      "Action"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Gordon Cormier",
+        "role": ""
+      },
+      {
+        "name": "Kiawentiio",
+        "role": ""
+      },
+      {
+        "name": "Ian Ousley",
+        "role": ""
+      }
+    ],
     "leafCount": 8,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-PG",
+    "originallyAvailableAt": "2024-02-22"
   },
   {
     "id": "129545",
@@ -296,8 +805,30 @@
     "studio": "Marvel Entertainment",
     "addedAt": 1737915499,
     "updatedAt": 1744505299,
+    "genres": [
+      "Action",
+      "Animation"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Eric Loomis",
+        "role": ""
+      },
+      {
+        "name": "Brian Bloom",
+        "role": ""
+      },
+      {
+        "name": "Rick D. Wasserman",
+        "role": ""
+      }
+    ],
     "leafCount": 52,
-    "childCount": 2
+    "childCount": 2,
+    "contentRating": "TV-Y7",
+    "originallyAvailableAt": "2010-09-22"
   },
   {
     "id": "126716",
@@ -308,8 +839,30 @@
     "studio": "Warner Bros. Television",
     "addedAt": 1724110275,
     "updatedAt": 1745139325,
+    "genres": [
+      "Crime",
+      "Comedy"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Vince Vaughn",
+        "role": ""
+      },
+      {
+        "name": "L. Scott Caldwell",
+        "role": ""
+      },
+      {
+        "name": "Rob Delaney",
+        "role": ""
+      }
+    ],
     "leafCount": 10,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2024-08-14"
   },
   {
     "id": "109305",
@@ -320,8 +873,30 @@
     "studio": "RSJ Films",
     "addedAt": 1692200761,
     "updatedAt": 1745139316,
+    "genres": [
+      "Drama",
+      "History"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Russell Tovey",
+        "role": ""
+      },
+      {
+        "name": "MyAnna Buring",
+        "role": ""
+      },
+      {
+        "name": "Nicholas Moss",
+        "role": ""
+      }
+    ],
     "leafCount": 7,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2015-03-04"
   },
   {
     "id": "92697",
@@ -332,8 +907,30 @@
     "studio": "Alec Berg Productions",
     "addedAt": 1678402109,
     "updatedAt": 1744503813,
+    "genres": [
+      "Comedy",
+      "Crime"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Bill Hader",
+        "role": ""
+      },
+      {
+        "name": "Sarah Goldberg",
+        "role": ""
+      },
+      {
+        "name": "Anthony Carrigan",
+        "role": ""
+      }
+    ],
     "leafCount": 32,
-    "childCount": 4
+    "childCount": 4,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2018-03-25"
   },
   {
     "id": "107063",
@@ -344,8 +941,30 @@
     "studio": "FX Productions",
     "addedAt": 1687554523,
     "updatedAt": 1744562189,
+    "genres": [
+      "Drama",
+      "Comedy"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Jeremy Allen White",
+        "role": ""
+      },
+      {
+        "name": "Ebon Moss-Bachrach",
+        "role": ""
+      },
+      {
+        "name": "Ayo Edebiri",
+        "role": ""
+      }
+    ],
     "leafCount": 28,
-    "childCount": 3
+    "childCount": 3,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2022-06-23"
   },
   {
     "id": "93407",
@@ -356,8 +975,30 @@
     "studio": "Sony Pictures Television",
     "addedAt": 1678402161,
     "updatedAt": 1744576440,
+    "genres": [
+      "Crime",
+      "Drama"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Bob Odenkirk",
+        "role": ""
+      },
+      {
+        "name": "Jonathan Banks",
+        "role": ""
+      },
+      {
+        "name": "Rhea Seehorn",
+        "role": ""
+      }
+    ],
     "leafCount": 63,
-    "childCount": 6
+    "childCount": 6,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2015-02-08"
   },
   {
     "id": "107539",
@@ -368,8 +1009,30 @@
     "studio": "Boardwalk Pictures",
     "addedAt": 1689987882,
     "updatedAt": 1736151539,
+    "genres": [
+      "Reality",
+      "Game Show"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Dan Levy",
+        "role": ""
+      },
+      {
+        "name": "Sohla El-Waylly",
+        "role": ""
+      },
+      {
+        "name": "Will Guidara",
+        "role": ""
+      }
+    ],
     "leafCount": 8,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2022-11-10"
   },
   {
     "id": "122403",
@@ -380,8 +1043,29 @@
     "studio": "Free 90 Media",
     "addedAt": 1706479079,
     "updatedAt": 1742484491,
+    "genres": [
+      "Documentary"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Jeff Dunham",
+        "role": ""
+      },
+      {
+        "name": "Jeff Foxworthy",
+        "role": ""
+      },
+      {
+        "name": "Bobby Moynihan",
+        "role": ""
+      }
+    ],
     "leafCount": 3,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2019-05-27"
   },
   {
     "id": "122370",
@@ -392,8 +1076,30 @@
     "studio": "Cyber Resonance",
     "addedAt": 1706477764,
     "updatedAt": 1742484491,
+    "genres": [
+      "Documentary",
+      "Biography"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Bruce Prichard",
+        "role": ""
+      },
+      {
+        "name": "Vince McMahon",
+        "role": ""
+      },
+      {
+        "name": "Hulk Hogan",
+        "role": ""
+      }
+    ],
     "leafCount": 45,
-    "childCount": 4
+    "childCount": 4,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2021-04-18"
   },
   {
     "id": "98270",
@@ -404,8 +1110,30 @@
     "studio": "House of Tomorrow",
     "addedAt": 1678402559,
     "updatedAt": 1744787775,
+    "genres": [
+      "Drama",
+      "Mystery"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Anjana Vasan",
+        "role": ""
+      },
+      {
+        "name": "Jesse Plemons",
+        "role": ""
+      },
+      {
+        "name": "Cristin Milioti",
+        "role": ""
+      }
+    ],
     "leafCount": 33,
-    "childCount": 8
+    "childCount": 8,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2011-12-04"
   },
   {
     "id": "124354",
@@ -416,8 +1144,30 @@
     "studio": "BBC",
     "addedAt": 1710304578,
     "updatedAt": 1744672753,
+    "genres": [
+      "Comedy",
+      "War & Politics"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Rowan Atkinson",
+        "role": ""
+      },
+      {
+        "name": "Tony Robinson",
+        "role": ""
+      },
+      {
+        "name": "Tim McInnerny",
+        "role": ""
+      }
+    ],
     "leafCount": 24,
-    "childCount": 4
+    "childCount": 4,
+    "contentRating": "TV-PG",
+    "originallyAvailableAt": "1983-06-15"
   },
   {
     "id": "90454",
@@ -428,8 +1178,30 @@
     "studio": "CBS Productions",
     "addedAt": 1678401924,
     "updatedAt": 1745139306,
+    "genres": [
+      "Crime",
+      "Drama"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Tom Selleck",
+        "role": ""
+      },
+      {
+        "name": "Donnie Wahlberg",
+        "role": ""
+      },
+      {
+        "name": "Bridget Moynahan",
+        "role": ""
+      }
+    ],
     "leafCount": 285,
-    "childCount": 14
+    "childCount": 14,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2010-09-24"
   },
   {
     "id": "118080",
@@ -440,8 +1212,30 @@
     "studio": "Closest to the Hole Productions",
     "addedAt": 1694739937,
     "updatedAt": 1745139319,
+    "genres": [
+      "Crime",
+      "Drama"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Steve Buscemi",
+        "role": ""
+      },
+      {
+        "name": "Kelly Macdonald",
+        "role": ""
+      },
+      {
+        "name": "Michael Shannon",
+        "role": ""
+      }
+    ],
     "leafCount": 56,
-    "childCount": 5
+    "childCount": 5,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2010-09-19"
   },
   {
     "id": "101384",
@@ -452,8 +1246,30 @@
     "studio": "The Tornante Company",
     "addedAt": 1678977975,
     "updatedAt": 1744673034,
+    "genres": [
+      "Animation",
+      "Comedy"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Will Arnett",
+        "role": ""
+      },
+      {
+        "name": "Aaron Paul",
+        "role": ""
+      },
+      {
+        "name": "Alison Brie",
+        "role": ""
+      }
+    ],
     "leafCount": 76,
-    "childCount": 6
+    "childCount": 6,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2014-08-22"
   },
   {
     "id": "96038",
@@ -464,8 +1280,30 @@
     "studio": "20th Century Fox Television",
     "addedAt": 1678402355,
     "updatedAt": 1745139310,
+    "genres": [
+      "Drama",
+      "Crime"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Emily Deschanel",
+        "role": ""
+      },
+      {
+        "name": "David Boreanaz",
+        "role": ""
+      },
+      {
+        "name": "Michaela Conlin",
+        "role": ""
+      }
+    ],
     "leafCount": 245,
-    "childCount": 12
+    "childCount": 12,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2005-09-13"
   },
   {
     "id": "109125",
@@ -476,8 +1314,30 @@
     "studio": "Lucasfilm Ltd.",
     "addedAt": 1692022017,
     "updatedAt": 1745139316,
+    "genres": [
+      "Action",
+      "Adventure"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Temuera Morrison",
+        "role": ""
+      },
+      {
+        "name": "Ming-Na Wen",
+        "role": ""
+      },
+      {
+        "name": "Frank Trigg",
+        "role": ""
+      }
+    ],
     "leafCount": 7,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2021-06-08"
   },
   {
     "id": "92289",
@@ -488,8 +1348,30 @@
     "studio": "Amazon Studios",
     "addedAt": 1678402081,
     "updatedAt": 1744674285,
+    "genres": [
+      "Action",
+      "Comedy"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Karl Urban",
+        "role": ""
+      },
+      {
+        "name": "Jack Quaid",
+        "role": ""
+      },
+      {
+        "name": "Antony Starr",
+        "role": ""
+      }
+    ],
     "leafCount": 32,
-    "childCount": 4
+    "childCount": 4,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2019-07-26"
   },
   {
     "id": "93946",
@@ -500,8 +1382,30 @@
     "studio": "Sony Pictures Television",
     "addedAt": 1678402210,
     "updatedAt": 1745139308,
+    "genres": [
+      "Drama",
+      "Crime"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Bryan Cranston",
+        "role": ""
+      },
+      {
+        "name": "Aaron Paul",
+        "role": ""
+      },
+      {
+        "name": "Dean Norris",
+        "role": ""
+      }
+    ],
     "leafCount": 62,
-    "childCount": 5
+    "childCount": 5,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2008-01-20"
   },
   {
     "id": "109397",
@@ -512,8 +1416,21 @@
     "studio": "Weird Lucy Productions",
     "addedAt": 1692217550,
     "updatedAt": 1738749791,
+    "genres": [
+      "Documentary"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Bren\u00e9 Brown",
+        "role": ""
+      }
+    ],
     "leafCount": 5,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "",
+    "originallyAvailableAt": "2022-03-31"
   },
   {
     "id": "92754",
@@ -524,8 +1441,30 @@
     "studio": "shondaland",
     "addedAt": 1678402112,
     "updatedAt": 1745139308,
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Nicola Coughlan",
+        "role": ""
+      },
+      {
+        "name": "Ruth Gemmell",
+        "role": ""
+      },
+      {
+        "name": "Luke Thompson",
+        "role": ""
+      }
+    ],
     "leafCount": 24,
-    "childCount": 3
+    "childCount": 3,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2020-12-25"
   },
   {
     "id": "94097",
@@ -536,8 +1475,30 @@
     "studio": "Dr. Goor Productions",
     "addedAt": 1678402221,
     "updatedAt": 1744725085,
+    "genres": [
+      "Comedy",
+      "Crime"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Andy Samberg",
+        "role": ""
+      },
+      {
+        "name": "Melissa Fumero",
+        "role": ""
+      },
+      {
+        "name": "Terry Crews",
+        "role": ""
+      }
+    ],
     "leafCount": 153,
-    "childCount": 8
+    "childCount": 8,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2013-09-17"
   },
   {
     "id": "121163",
@@ -548,8 +1509,30 @@
     "studio": "British Broadcasting Corporation (BBC)",
     "addedAt": 1705363854,
     "updatedAt": 1742484501,
+    "genres": [
+      "Adventure",
+      "Drama"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Carla Gugino",
+        "role": ""
+      },
+      {
+        "name": "Mira Sorvino",
+        "role": ""
+      },
+      {
+        "name": "Alison Elliott",
+        "role": ""
+      }
+    ],
     "leafCount": 5,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "1995-02-05"
   },
   {
     "id": "109026",
@@ -560,8 +1543,30 @@
     "studio": "Smoke House Pictures",
     "addedAt": 1691980288,
     "updatedAt": 1745139315,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Christopher Abbott",
+        "role": ""
+      },
+      {
+        "name": "Kyle Chandler",
+        "role": ""
+      },
+      {
+        "name": "Daniel David Stewart",
+        "role": ""
+      }
+    ],
     "leafCount": 6,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2019-05-17"
   },
   {
     "id": "126313",
@@ -572,8 +1577,30 @@
     "studio": "Pilot Boy Productions",
     "addedAt": 1722871044,
     "updatedAt": 1745139325,
+    "genres": [
+      "Comedy",
+      "Music"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Dave Chappelle",
+        "role": ""
+      },
+      {
+        "name": "Donnell Rawlings",
+        "role": ""
+      },
+      {
+        "name": "Charlie Murphy",
+        "role": ""
+      }
+    ],
     "leafCount": 28,
-    "childCount": 3
+    "childCount": 3,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2003-01-22"
   },
   {
     "id": "116025",
@@ -584,8 +1611,30 @@
     "studio": "Loaves & Fishes Productions",
     "addedAt": 1699116282,
     "updatedAt": 1745139318,
+    "genres": [
+      "Drama",
+      "History"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Elizabeth Tabish",
+        "role": ""
+      },
+      {
+        "name": "Jonathan Roumie",
+        "role": ""
+      },
+      {
+        "name": "Shahar Isaac",
+        "role": ""
+      }
+    ],
     "leafCount": 32,
-    "childCount": 4
+    "childCount": 4,
+    "contentRating": "TV-PG",
+    "originallyAvailableAt": "2019-04-21"
   },
   {
     "id": "109036",
@@ -596,8 +1645,30 @@
     "studio": "Super Delicious Productions",
     "addedAt": 1691981403,
     "updatedAt": 1745139316,
+    "genres": [
+      "Reality",
+      "Game Show"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Alex Guarnaschelli",
+        "role": ""
+      },
+      {
+        "name": "Gabriele Bertaccini",
+        "role": ""
+      },
+      {
+        "name": "Omar Ashley",
+        "role": ""
+      }
+    ],
     "leafCount": 18,
-    "childCount": 2
+    "childCount": 2,
+    "contentRating": "TV-PG",
+    "originallyAvailableAt": "2023-04-16"
   },
   {
     "id": "91588",
@@ -608,8 +1679,30 @@
     "studio": "Hurwitz & Schlossberg Productions",
     "addedAt": 1678402026,
     "updatedAt": 1744727632,
+    "genres": [
+      "Action",
+      "Comedy"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "William Zabka",
+        "role": ""
+      },
+      {
+        "name": "Ralph Macchio",
+        "role": ""
+      },
+      {
+        "name": "Courtney Henggeler",
+        "role": ""
+      }
+    ],
     "leafCount": 65,
-    "childCount": 6
+    "childCount": 6,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2018-05-02"
   },
   {
     "id": "98849",
@@ -620,8 +1713,30 @@
     "studio": "Jerry Bruckheimer Television",
     "addedAt": 1678402617,
     "updatedAt": 1745139312,
+    "genres": [
+      "Crime",
+      "Drama"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Kathryn Morris",
+        "role": ""
+      },
+      {
+        "name": "Danny Pino",
+        "role": ""
+      },
+      {
+        "name": "Jeremy Ratchford",
+        "role": ""
+      }
+    ],
     "leafCount": 156,
-    "childCount": 7
+    "childCount": 7,
+    "contentRating": "TV-PG",
+    "originallyAvailableAt": "2003-09-28"
   },
   {
     "id": "96644",
@@ -632,8 +1747,29 @@
     "studio": "Krasnoff / Foster Entertainment",
     "addedAt": 1678402411,
     "updatedAt": 1744729474,
+    "genres": [
+      "Comedy"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Joel McHale",
+        "role": ""
+      },
+      {
+        "name": "Gillian Jacobs",
+        "role": ""
+      },
+      {
+        "name": "Danny Pudi",
+        "role": ""
+      }
+    ],
     "leafCount": 110,
-    "childCount": 6
+    "childCount": 6,
+    "contentRating": "TV-PG",
+    "originallyAvailableAt": "2009-09-16"
   },
   {
     "id": "119232",
@@ -644,8 +1780,30 @@
     "studio": "Thunder Road",
     "addedAt": 1696644063,
     "updatedAt": 1745139319,
+    "genres": [
+      "Crime",
+      "Action"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Colin Woodell",
+        "role": ""
+      },
+      {
+        "name": "Mel Gibson",
+        "role": ""
+      },
+      {
+        "name": "Mishel Prada",
+        "role": ""
+      }
+    ],
     "leafCount": 3,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2023-09-01"
   },
   {
     "id": "121017",
@@ -656,8 +1814,30 @@
     "studio": "SUNRISE",
     "addedAt": 1704771207,
     "updatedAt": 1745139320,
+    "genres": [
+      "Animation",
+      "Action"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Koichi Yamadera",
+        "role": ""
+      },
+      {
+        "name": "Unsho Ishizuka",
+        "role": ""
+      },
+      {
+        "name": "Megumi Hayashibara",
+        "role": ""
+      }
+    ],
     "leafCount": 26,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "1998-04-03"
   },
   {
     "id": "129531",
@@ -668,8 +1848,30 @@
     "studio": "Warner Bros. Animation",
     "addedAt": 1737914235,
     "updatedAt": 1745139328,
+    "genres": [
+      "Animation",
+      "Action"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Indira Varma",
+        "role": ""
+      },
+      {
+        "name": "Sean Gunn",
+        "role": ""
+      },
+      {
+        "name": "Alan Tudyk",
+        "role": ""
+      }
+    ],
     "leafCount": 7,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2024-12-05"
   },
   {
     "id": "89308",
@@ -680,8 +1882,30 @@
     "studio": "Left Bank Pictures",
     "addedAt": 1678401818,
     "updatedAt": 1745139306,
+    "genres": [
+      "Drama",
+      "Biography"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Claire Foy",
+        "role": ""
+      },
+      {
+        "name": "Olivia Colman",
+        "role": ""
+      },
+      {
+        "name": "Vanessa Kirby",
+        "role": ""
+      }
+    ],
     "leafCount": 60,
-    "childCount": 6
+    "childCount": 6,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2016-11-04"
   },
   {
     "id": "88516",
@@ -692,8 +1916,30 @@
     "studio": "House of Tomorrow",
     "addedAt": 1678401748,
     "updatedAt": 1745139305,
+    "genres": [
+      "Comedy",
+      "Short"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Diane Morgan",
+        "role": ""
+      },
+      {
+        "name": "Hammed Animashaun",
+        "role": ""
+      },
+      {
+        "name": "Emily Lloyd-Saini",
+        "role": ""
+      }
+    ],
     "leafCount": 7,
-    "childCount": 2
+    "childCount": 2,
+    "contentRating": "",
+    "originallyAvailableAt": "2019-12-16"
   },
   {
     "id": "88533",
@@ -704,8 +1950,30 @@
     "studio": "House of Tomorrow",
     "addedAt": 1678401750,
     "updatedAt": 1745139305,
+    "genres": [
+      "Comedy",
+      "History"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Diane Morgan",
+        "role": ""
+      },
+      {
+        "name": "Ashley Jackson",
+        "role": ""
+      },
+      {
+        "name": "Ruth Adams",
+        "role": ""
+      }
+    ],
     "leafCount": 5,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2018-04-03"
   },
   {
     "id": "131415",
@@ -716,8 +1984,30 @@
     "studio": "Broke and Bones",
     "addedAt": 1742485549,
     "updatedAt": 1745392964,
+    "genres": [
+      "Comedy",
+      "Documentary"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Diane Morgan",
+        "role": ""
+      },
+      {
+        "name": "Jim Al-Khalili",
+        "role": ""
+      },
+      {
+        "name": "Shirley J. Thompson",
+        "role": ""
+      }
+    ],
     "leafCount": 5,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2022-09-20"
   },
   {
     "id": "94542",
@@ -728,8 +2018,29 @@
     "studio": "HBO",
     "addedAt": 1678402250,
     "updatedAt": 1745139309,
+    "genres": [
+      "Comedy"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Larry David",
+        "role": ""
+      },
+      {
+        "name": "Jeff Garlin",
+        "role": ""
+      },
+      {
+        "name": "Susie Essman",
+        "role": ""
+      }
+    ],
     "leafCount": 120,
-    "childCount": 12
+    "childCount": 12,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2000-10-14"
   },
   {
     "id": "131363",
@@ -740,8 +2051,30 @@
     "studio": "Marvel Studios",
     "addedAt": 1742228382,
     "updatedAt": 1745229342,
+    "genres": [
+      "Crime",
+      "Drama"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Charlie Cox",
+        "role": ""
+      },
+      {
+        "name": "Vincent D'Onofrio",
+        "role": ""
+      },
+      {
+        "name": "Margarita Levieva",
+        "role": ""
+      }
+    ],
     "leafCount": 9,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2025-03-04"
   },
   {
     "id": "125252",
@@ -752,8 +2085,30 @@
     "studio": "Railsplitter Pictures",
     "addedAt": 1718467013,
     "updatedAt": 1743000144,
+    "genres": [
+      "Documentary",
+      "Biography"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Mark McGrath",
+        "role": ""
+      },
+      {
+        "name": "Adam Duritz",
+        "role": ""
+      },
+      {
+        "name": "Michael Kenneth Williams",
+        "role": ""
+      }
+    ],
     "leafCount": 30,
-    "childCount": 3
+    "childCount": 3,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2021-07-15"
   },
   {
     "id": "127201",
@@ -764,8 +2119,30 @@
     "studio": "AMC Studios",
     "addedAt": 1726543590,
     "updatedAt": 1745829080,
+    "genres": [
+      "Crime",
+      "Drama"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Zahn McClarnon",
+        "role": ""
+      },
+      {
+        "name": "Kiowa Gordon",
+        "role": ""
+      },
+      {
+        "name": "Jessica Matten",
+        "role": ""
+      }
+    ],
     "leafCount": 20,
-    "childCount": 3
+    "childCount": 3,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2022-06-12"
   },
   {
     "id": "131710",
@@ -776,8 +2153,21 @@
     "studio": "Imagine Documentaries",
     "addedAt": 1743100286,
     "updatedAt": 1745229342,
+    "genres": [
+      "Documentary"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "David Blaine",
+        "role": ""
+      }
+    ],
     "leafCount": 6,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2025-03-23"
   },
   {
     "id": "127752",
@@ -788,8 +2178,30 @@
     "studio": "Carnival Films",
     "addedAt": 1731711818,
     "updatedAt": 1745139327,
+    "genres": [
+      "Drama",
+      "Mystery"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Eddie Redmayne",
+        "role": ""
+      },
+      {
+        "name": "Lashana Lynch",
+        "role": ""
+      },
+      {
+        "name": "Eleanor Matsuura",
+        "role": ""
+      }
+    ],
     "leafCount": 10,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2024-11-07"
   },
   {
     "id": "88784",
@@ -800,8 +2212,30 @@
     "studio": "Madhouse",
     "addedAt": 1678401775,
     "updatedAt": 1745139306,
+    "genres": [
+      "Animation",
+      "Crime"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Mamoru Miyano",
+        "role": ""
+      },
+      {
+        "name": "Shido Nakamura",
+        "role": ""
+      },
+      {
+        "name": "Aya Hirano",
+        "role": ""
+      }
+    ],
     "leafCount": 37,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2006-10-03"
   },
   {
     "id": "102390",
@@ -812,8 +2246,29 @@
     "studio": "Columbia Pictures Television",
     "addedAt": 1680464669,
     "updatedAt": 1745139313,
+    "genres": [
+      "Comedy"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Dixie Carter",
+        "role": ""
+      },
+      {
+        "name": "Annie Potts",
+        "role": ""
+      },
+      {
+        "name": "Meshach Taylor",
+        "role": ""
+      }
+    ],
     "leafCount": 159,
-    "childCount": 7
+    "childCount": 7,
+    "contentRating": "TV-PG",
+    "originallyAvailableAt": "1986-09-29"
   },
   {
     "id": "106288",
@@ -824,8 +2279,30 @@
     "studio": "Mandt Bros. Productions",
     "addedAt": 1684980369,
     "updatedAt": 1736151538,
+    "genres": [
+      "Documentary",
+      "Reality"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Josh Gates",
+        "role": ""
+      },
+      {
+        "name": "Jael de Pardo",
+        "role": ""
+      },
+      {
+        "name": "Jarrod Tomassi",
+        "role": ""
+      }
+    ],
     "leafCount": 55,
-    "childCount": 5
+    "childCount": 5,
+    "contentRating": "TV-PG",
+    "originallyAvailableAt": "2007-06-06"
   },
   {
     "id": "108914",
@@ -836,8 +2313,29 @@
     "studio": "Broadway Video",
     "addedAt": 1691841230,
     "updatedAt": 1745139315,
+    "genres": [
+      "Comedy"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Sam Richardson",
+        "role": ""
+      },
+      {
+        "name": "Tim Robinson",
+        "role": ""
+      },
+      {
+        "name": "Shawntay Dalon",
+        "role": ""
+      }
+    ],
     "leafCount": 20,
-    "childCount": 2
+    "childCount": 2,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2017-02-07"
   },
   {
     "id": "127594",
@@ -848,8 +2346,30 @@
     "studio": "Ryan Murphy Television",
     "addedAt": 1729378110,
     "updatedAt": 1746429572,
+    "genres": [
+      "Drama",
+      "Mystery"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Joshua Jackson",
+        "role": ""
+      },
+      {
+        "name": "Phillipa Soo",
+        "role": ""
+      },
+      {
+        "name": "Sean Teale",
+        "role": ""
+      }
+    ],
     "leafCount": 16,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2024-09-25"
   },
   {
     "id": "92533",
@@ -860,8 +2380,30 @@
     "studio": "ITV Studios",
     "addedAt": 1678402098,
     "updatedAt": 1745139307,
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Maggie Smith",
+        "role": ""
+      },
+      {
+        "name": "Michelle Dockery",
+        "role": ""
+      },
+      {
+        "name": "Laura Carmichael",
+        "role": ""
+      }
+    ],
     "leafCount": 47,
-    "childCount": 6
+    "childCount": 6,
+    "contentRating": "TV-PG",
+    "originallyAvailableAt": "2010-09-26"
   },
   {
     "id": "128426",
@@ -872,8 +2414,30 @@
     "studio": "Adline Entertainment",
     "addedAt": 1735441743,
     "updatedAt": 1745139328,
+    "genres": [
+      "Drama",
+      "Mystery"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Fleur Geffrier",
+        "role": ""
+      },
+      {
+        "name": "Tomohisa Yamashita",
+        "role": ""
+      },
+      {
+        "name": "Tom Wozniczka",
+        "role": ""
+      }
+    ],
     "leafCount": 8,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2023-04-21"
   },
   {
     "id": "97495",
@@ -884,8 +2448,30 @@
     "studio": "Gary Sanchez Productions",
     "addedAt": 1678402496,
     "updatedAt": 1745251352,
+    "genres": [
+      "Comedy",
+      "History"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Derek Waters",
+        "role": ""
+      },
+      {
+        "name": "Bennie Arthur",
+        "role": ""
+      },
+      {
+        "name": "Maria Blasucci",
+        "role": ""
+      }
+    ],
     "leafCount": 71,
-    "childCount": 6
+    "childCount": 6,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2013-07-09"
   },
   {
     "id": "127788",
@@ -896,8 +2482,30 @@
     "studio": "Legendary Television",
     "addedAt": 1731896811,
     "updatedAt": 1745139327,
+    "genres": [
+      "Drama",
+      "Science Fiction"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Emily Watson",
+        "role": ""
+      },
+      {
+        "name": "Olivia Williams",
+        "role": ""
+      },
+      {
+        "name": "Travis Fimmel",
+        "role": ""
+      }
+    ],
     "leafCount": 6,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2024-11-17"
   },
   {
     "id": "94428",
@@ -908,8 +2516,30 @@
     "studio": "Rough House Pictures",
     "addedAt": 1678402243,
     "updatedAt": 1745177285,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Danny McBride",
+        "role": ""
+      },
+      {
+        "name": "Steve Little",
+        "role": ""
+      },
+      {
+        "name": "Katy Mixon",
+        "role": ""
+      }
+    ],
     "leafCount": 29,
-    "childCount": 4
+    "childCount": 4,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2009-02-15"
   },
   {
     "id": "125296",
@@ -920,8 +2550,30 @@
     "studio": "SISTER",
     "addedAt": 1718996416,
     "updatedAt": 1745139324,
+    "genres": [
+      "Drama",
+      "Mystery"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Benedict Cumberbatch",
+        "role": ""
+      },
+      {
+        "name": "Gaby Hoffmann",
+        "role": ""
+      },
+      {
+        "name": "McKinley Belcher III",
+        "role": ""
+      }
+    ],
     "leafCount": 6,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2024-05-30"
   },
   {
     "id": "105357",
@@ -932,8 +2584,30 @@
     "studio": "Working For Monsters",
     "addedAt": 1682666430,
     "updatedAt": 1745139313,
+    "genres": [
+      "Comedy",
+      "Talk Show"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Eric Andr\u00e9",
+        "role": ""
+      },
+      {
+        "name": "Hannibal Buress",
+        "role": ""
+      },
+      {
+        "name": "Pfelton Sutton",
+        "role": ""
+      }
+    ],
     "leafCount": 60,
-    "childCount": 6
+    "childCount": 6,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2012-05-20"
   },
   {
     "id": "115125",
@@ -944,8 +2618,22 @@
     "studio": "Ping Pong Productions",
     "addedAt": 1693450855,
     "updatedAt": 1738749792,
+    "genres": [
+      "Reality",
+      "Documentary"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Josh Gates",
+        "role": ""
+      }
+    ],
     "leafCount": 4,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-PG",
+    "originallyAvailableAt": "2017-10-04"
   },
   {
     "id": "115131",
@@ -956,8 +2644,22 @@
     "studio": "Ping Pong Productions",
     "addedAt": 1693451263,
     "updatedAt": 1733476068,
+    "genres": [
+      "Adventure",
+      "Documentary"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Josh Gates",
+        "role": ""
+      }
+    ],
     "leafCount": 4,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "",
+    "originallyAvailableAt": "2016-10-05"
   },
   {
     "id": "123652",
@@ -968,8 +2670,30 @@
     "studio": "Ping Pong Productions",
     "addedAt": 1708092939,
     "updatedAt": 1745565668,
+    "genres": [
+      "Reality",
+      "Mystery"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Phil Torres",
+        "role": ""
+      },
+      {
+        "name": "Josh Gates",
+        "role": ""
+      },
+      {
+        "name": "Jessica Chobot",
+        "role": ""
+      }
+    ],
     "leafCount": 66,
-    "childCount": 9
+    "childCount": 9,
+    "contentRating": "TV-PG",
+    "originallyAvailableAt": "2020-02-12"
   },
   {
     "id": "117056",
@@ -980,8 +2704,30 @@
     "studio": "Marvel Studios",
     "addedAt": 1694460655,
     "updatedAt": 1745139318,
+    "genres": [
+      "Action",
+      "Adventure"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Anthony Mackie",
+        "role": ""
+      },
+      {
+        "name": "Sebastian Stan",
+        "role": ""
+      },
+      {
+        "name": "Wyatt Russell",
+        "role": ""
+      }
+    ],
     "leafCount": 6,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2021-03-19"
   },
   {
     "id": "124663",
@@ -992,8 +2738,30 @@
     "studio": "Kilter Films",
     "addedAt": 1712970034,
     "updatedAt": 1745139324,
+    "genres": [
+      "Drama",
+      "Action"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Ella Purnell",
+        "role": ""
+      },
+      {
+        "name": "Aaron Moten",
+        "role": ""
+      },
+      {
+        "name": "Mois\u00e9s Arias",
+        "role": ""
+      }
+    ],
     "leafCount": 8,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2024-04-10"
   },
   {
     "id": "133883",
@@ -1004,8 +2772,30 @@
     "studio": "Cornwell Casting",
     "addedAt": 1746242135,
     "updatedAt": 1746301586,
+    "genres": [
+      "Reality",
+      "Romance"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Jennifer Nettles",
+        "role": ""
+      },
+      {
+        "name": "Kimberly Williams-Paisley",
+        "role": ""
+      },
+      {
+        "name": "Matt Warren",
+        "role": ""
+      }
+    ],
     "leafCount": 32,
-    "childCount": 3
+    "childCount": 3,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2023-03-08"
   },
   {
     "id": "119605",
@@ -1016,8 +2806,30 @@
     "studio": "Ryan Murphy Television",
     "addedAt": 1698620756,
     "updatedAt": 1745139320,
+    "genres": [
+      "Drama",
+      "Biography"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Jessica Lange",
+        "role": ""
+      },
+      {
+        "name": "Alison Wright",
+        "role": ""
+      },
+      {
+        "name": "Tom Hollander",
+        "role": ""
+      }
+    ],
     "leafCount": 16,
-    "childCount": 2
+    "childCount": 2,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2017-03-05"
   },
   {
     "id": "133872",
@@ -1028,8 +2840,29 @@
     "studio": "Sharp Entertainment",
     "addedAt": 1746241907,
     "updatedAt": 1746241908,
+    "genres": [
+      "Reality"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Lindsey Miller",
+        "role": ""
+      },
+      {
+        "name": "Laurie Palermo",
+        "role": ""
+      },
+      {
+        "name": "Ashley Qasem",
+        "role": ""
+      }
+    ],
     "leafCount": 8,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2024-07-21"
   },
   {
     "id": "121171",
@@ -1040,8 +2873,30 @@
     "studio": "Granada Television",
     "addedAt": 1705365405,
     "updatedAt": 1745177673,
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Gina McKee",
+        "role": ""
+      },
+      {
+        "name": "Damian Lewis",
+        "role": ""
+      },
+      {
+        "name": "Corin Redgrave",
+        "role": ""
+      }
+    ],
     "leafCount": 10,
-    "childCount": 2
+    "childCount": 2,
+    "contentRating": "TV-PG",
+    "originallyAvailableAt": "2002-04-07"
   },
   {
     "id": "86191",
@@ -1052,8 +2907,30 @@
     "studio": "Apatow Productions",
     "addedAt": 1678401563,
     "updatedAt": 1745139304,
+    "genres": [
+      "Drama",
+      "Comedy"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "John Francis Daley",
+        "role": ""
+      },
+      {
+        "name": "Linda Cardellini",
+        "role": ""
+      },
+      {
+        "name": "James Franco",
+        "role": ""
+      }
+    ],
     "leafCount": 18,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-PG",
+    "originallyAvailableAt": "1999-09-25"
   },
   {
     "id": "118969",
@@ -1064,8 +2941,30 @@
     "studio": "Warner Bros. Television",
     "addedAt": 1696575736,
     "updatedAt": 1745177941,
+    "genres": [
+      "Comedy",
+      "Romance"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Jennifer Aniston",
+        "role": ""
+      },
+      {
+        "name": "Courteney Cox",
+        "role": ""
+      },
+      {
+        "name": "Lisa Kudrow",
+        "role": ""
+      }
+    ],
     "leafCount": 234,
-    "childCount": 10
+    "childCount": 10,
+    "contentRating": "TV-PG",
+    "originallyAvailableAt": "1994-09-22"
   },
   {
     "id": "119449",
@@ -1076,8 +2975,30 @@
     "studio": "Higher Ground",
     "addedAt": 1696985399,
     "updatedAt": 1738749795,
+    "genres": [
+      "Documentary",
+      "Comedy"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Adam Conover",
+        "role": ""
+      },
+      {
+        "name": "Nicole Randall Johnson",
+        "role": ""
+      },
+      {
+        "name": "James Austin Johnson",
+        "role": ""
+      }
+    ],
     "leafCount": 6,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2022-05-19"
   },
   {
     "id": "120607",
@@ -1088,8 +3009,30 @@
     "studio": "Sunbow Productions",
     "addedAt": 1703434842,
     "updatedAt": 1745139320,
+    "genres": [
+      "Animation",
+      "Action"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Christopher Collins",
+        "role": ""
+      },
+      {
+        "name": "Morgan Lofting",
+        "role": ""
+      },
+      {
+        "name": "Michael Bell",
+        "role": ""
+      }
+    ],
     "leafCount": 139,
-    "childCount": 4
+    "childCount": 4,
+    "contentRating": "TV-Y7",
+    "originallyAvailableAt": "1983-09-12"
   },
   {
     "id": "127036",
@@ -1100,8 +3043,30 @@
     "studio": "Revolution Sun Studios",
     "addedAt": 1726415054,
     "updatedAt": 1745139326,
+    "genres": [
+      "Action",
+      "Adventure"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Kit Harington",
+        "role": ""
+      },
+      {
+        "name": "Isaac Hempstead Wright",
+        "role": ""
+      },
+      {
+        "name": "Iain Glen",
+        "role": ""
+      }
+    ],
     "leafCount": 73,
-    "childCount": 8
+    "childCount": 8,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2011-04-17"
   },
   {
     "id": "121300",
@@ -1112,8 +3077,30 @@
     "studio": "Sony Pictures Television",
     "addedAt": 1705712909,
     "updatedAt": 1745139321,
+    "genres": [
+      "Drama",
+      "Action"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Jaz Sinclair",
+        "role": ""
+      },
+      {
+        "name": "Chance Perdomo",
+        "role": ""
+      },
+      {
+        "name": "Lizze Broadway",
+        "role": ""
+      }
+    ],
     "leafCount": 8,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2023-09-28"
   },
   {
     "id": "124132",
@@ -1124,8 +3111,30 @@
     "studio": "Moonage Pictures",
     "addedAt": 1709856556,
     "updatedAt": 1745139323,
+    "genres": [
+      "Comedy",
+      "Crime"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Theo James",
+        "role": ""
+      },
+      {
+        "name": "Kaya Scodelario",
+        "role": ""
+      },
+      {
+        "name": "Daniel Ings",
+        "role": ""
+      }
+    ],
     "leafCount": 8,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2024-03-07"
   },
   {
     "id": "108946",
@@ -1136,8 +3145,30 @@
     "studio": "101 Studios",
     "addedAt": 1691844535,
     "updatedAt": 1745139315,
+    "genres": [
+      "Drama",
+      "Biography"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Jessica Chastain",
+        "role": ""
+      },
+      {
+        "name": "Michael Shannon",
+        "role": ""
+      },
+      {
+        "name": "Steve Zahn",
+        "role": ""
+      }
+    ],
     "leafCount": 6,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2022-12-04"
   },
   {
     "id": "124083",
@@ -1148,8 +3179,30 @@
     "studio": "Rise Films",
     "addedAt": 1709678333,
     "updatedAt": 1745658224,
+    "genres": [
+      "Documentary",
+      "Biography"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "George Carlin",
+        "role": ""
+      },
+      {
+        "name": "Bette Midler",
+        "role": ""
+      },
+      {
+        "name": "Patton Oswalt",
+        "role": ""
+      }
+    ],
     "leafCount": 2,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2022-05-20"
   },
   {
     "id": "109113",
@@ -1160,8 +3213,29 @@
     "studio": "Universal Television",
     "addedAt": 1692021242,
     "updatedAt": 1745139316,
+    "genres": [
+      "Drama"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Carrie Coon",
+        "role": ""
+      },
+      {
+        "name": "Morgan Spector",
+        "role": ""
+      },
+      {
+        "name": "Louisa Jacobson",
+        "role": ""
+      }
+    ],
     "leafCount": 17,
-    "childCount": 2
+    "childCount": 2,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2022-01-24"
   },
   {
     "id": "94986",
@@ -1172,8 +3246,30 @@
     "studio": "Dorothy Parker Drank Here Productions",
     "addedAt": 1678402282,
     "updatedAt": 1745139310,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Lauren Graham",
+        "role": ""
+      },
+      {
+        "name": "Alexis Bledel",
+        "role": ""
+      },
+      {
+        "name": "Scott Patterson",
+        "role": ""
+      }
+    ],
     "leafCount": 153,
-    "childCount": 7
+    "childCount": 7,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2000-10-05"
   },
   {
     "id": "115974",
@@ -1184,8 +3280,30 @@
     "studio": "Paragon Studios",
     "addedAt": 1693764694,
     "updatedAt": 1745139318,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Lauren Graham",
+        "role": ""
+      },
+      {
+        "name": "Alexis Bledel",
+        "role": ""
+      },
+      {
+        "name": "Scott Patterson",
+        "role": ""
+      }
+    ],
     "leafCount": 4,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2016-11-25"
   },
   {
     "id": "131298",
@@ -1196,8 +3314,30 @@
     "studio": "Universal Television",
     "addedAt": 1741815939,
     "updatedAt": 1745139329,
+    "genres": [
+      "Comedy",
+      "Music"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Sara Bareilles",
+        "role": ""
+      },
+      {
+        "name": "Busy Philipps",
+        "role": ""
+      },
+      {
+        "name": "Paula Pell",
+        "role": ""
+      }
+    ],
     "leafCount": 22,
-    "childCount": 3
+    "childCount": 3,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2021-05-06"
   },
   {
     "id": "91222",
@@ -1208,8 +3348,30 @@
     "studio": "Sony Pictures Television",
     "addedAt": 1678401997,
     "updatedAt": 1745139307,
+    "genres": [
+      "Comedy",
+      "Family"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Wendi McLendon-Covey",
+        "role": ""
+      },
+      {
+        "name": "Sean Giambrone",
+        "role": ""
+      },
+      {
+        "name": "Troy Gentile",
+        "role": ""
+      }
+    ],
     "leafCount": 226,
-    "childCount": 10
+    "childCount": 10,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2013-09-24"
   },
   {
     "id": "98299",
@@ -1220,8 +3382,30 @@
     "studio": "Touchstone Television",
     "addedAt": 1678402561,
     "updatedAt": 1745139311,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Bea Arthur",
+        "role": ""
+      },
+      {
+        "name": "Betty White",
+        "role": ""
+      },
+      {
+        "name": "Rue McClanahan",
+        "role": ""
+      }
+    ],
     "leafCount": 180,
-    "childCount": 7
+    "childCount": 7,
+    "contentRating": "TV-PG",
+    "originallyAvailableAt": "1985-09-14"
   },
   {
     "id": "108115",
@@ -1232,8 +3416,30 @@
     "studio": "Narrativia",
     "addedAt": 1691466937,
     "updatedAt": 1745139314,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Michael Sheen",
+        "role": ""
+      },
+      {
+        "name": "David Tennant",
+        "role": ""
+      },
+      {
+        "name": "Jon Hamm",
+        "role": ""
+      }
+    ],
     "leafCount": 12,
-    "childCount": 2
+    "childCount": 2,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2019-05-27"
   },
   {
     "id": "95795",
@@ -1244,8 +3450,30 @@
     "studio": "Fremulon",
     "addedAt": 1678402337,
     "updatedAt": 1745139310,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Kristen Bell",
+        "role": ""
+      },
+      {
+        "name": "Ted Danson",
+        "role": ""
+      },
+      {
+        "name": "William Jackson Harper",
+        "role": ""
+      }
+    ],
     "leafCount": 50,
-    "childCount": 4
+    "childCount": 4,
+    "contentRating": "TV-PG",
+    "originallyAvailableAt": "2016-09-19"
   },
   {
     "id": "115200",
@@ -1256,8 +3484,30 @@
     "studio": "W. Chump and Sons",
     "addedAt": 1693528926,
     "updatedAt": 1745139317,
+    "genres": [
+      "Comedy",
+      "Talk Show"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Jeremy Clarkson",
+        "role": ""
+      },
+      {
+        "name": "Richard Hammond",
+        "role": ""
+      },
+      {
+        "name": "James May",
+        "role": ""
+      }
+    ],
     "leafCount": 46,
-    "childCount": 6
+    "childCount": 6,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2016-11-17"
   },
   {
     "id": "102015",
@@ -1268,8 +3518,30 @@
     "studio": "Disney Television Animation",
     "addedAt": 1679631410,
     "updatedAt": 1745139313,
+    "genres": [
+      "Animation",
+      "Comedy"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Jason Ritter",
+        "role": ""
+      },
+      {
+        "name": "Kristen Schaal",
+        "role": ""
+      },
+      {
+        "name": "Alex Hirsch",
+        "role": ""
+      }
+    ],
     "leafCount": 40,
-    "childCount": 2
+    "childCount": 2,
+    "contentRating": "TV-Y7",
+    "originallyAvailableAt": "2012-06-14"
   },
   {
     "id": "94470",
@@ -1280,8 +3552,30 @@
     "studio": "MRC",
     "addedAt": 1678402246,
     "updatedAt": 1745139309,
+    "genres": [
+      "Drama",
+      "Comedy"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Elle Fanning",
+        "role": ""
+      },
+      {
+        "name": "Phoebe Fox",
+        "role": ""
+      },
+      {
+        "name": "Gwilym Lee",
+        "role": ""
+      }
+    ],
     "leafCount": 30,
-    "childCount": 3
+    "childCount": 3,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2020-05-14"
   },
   {
     "id": "97294",
@@ -1292,8 +3586,30 @@
     "studio": "Stephen J. Cannell Productions",
     "addedAt": 1678402477,
     "updatedAt": 1745139310,
+    "genres": [
+      "Comedy",
+      "Crime"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "William Katt",
+        "role": ""
+      },
+      {
+        "name": "Robert Culp",
+        "role": ""
+      },
+      {
+        "name": "Connie Sellecca",
+        "role": ""
+      }
+    ],
     "leafCount": 43,
-    "childCount": 3
+    "childCount": 3,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "1981-03-18"
   },
   {
     "id": "121630",
@@ -1304,8 +3620,30 @@
     "studio": "Latin World Entertainment",
     "addedAt": 1706231344,
     "updatedAt": 1745139322,
+    "genres": [
+      "Drama",
+      "Crime"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Sof\u00eda Vergara",
+        "role": ""
+      },
+      {
+        "name": "Alberto Guerra",
+        "role": ""
+      },
+      {
+        "name": "Christian Tapp\u00e1n",
+        "role": ""
+      }
+    ],
     "leafCount": 6,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2024-01-25"
   },
   {
     "id": "127127",
@@ -1316,8 +3654,30 @@
     "studio": "Universal Television",
     "addedAt": 1726458290,
     "updatedAt": 1746429572,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Jean Smart",
+        "role": ""
+      },
+      {
+        "name": "Hannah Einbinder",
+        "role": ""
+      },
+      {
+        "name": "Carl Clemons-Hopkins",
+        "role": ""
+      }
+    ],
     "leafCount": 32,
-    "childCount": 4
+    "childCount": 4,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2021-05-13"
   },
   {
     "id": "94493",
@@ -1328,8 +3688,30 @@
     "studio": "Marvel Studios",
     "addedAt": 1678402247,
     "updatedAt": 1745139309,
+    "genres": [
+      "Drama",
+      "Comedy"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Jeremy Renner",
+        "role": ""
+      },
+      {
+        "name": "Hailee Steinfeld",
+        "role": ""
+      },
+      {
+        "name": "Tony Dalton",
+        "role": ""
+      }
+    ],
     "leafCount": 6,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2021-11-24"
   },
   {
     "id": "85748",
@@ -1340,8 +3722,30 @@
     "studio": "Searchlight Television",
     "addedAt": 1678401521,
     "updatedAt": 1745139304,
+    "genres": [
+      "Comedy",
+      "History"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Wanda Sykes",
+        "role": ""
+      },
+      {
+        "name": "Nick Kroll",
+        "role": ""
+      },
+      {
+        "name": "Ike Barinholtz",
+        "role": ""
+      }
+    ],
     "leafCount": 8,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2023-03-06"
   },
   {
     "id": "94355",
@@ -1352,8 +3756,30 @@
     "studio": "NBCUniversal",
     "addedAt": 1678402238,
     "updatedAt": 1745139308,
+    "genres": [
+      "Drama",
+      "History"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Anton Lesser",
+        "role": ""
+      },
+      {
+        "name": "Simon Russell Beale",
+        "role": ""
+      },
+      {
+        "name": "Tom Sturridge",
+        "role": ""
+      }
+    ],
     "leafCount": 7,
-    "childCount": 2
+    "childCount": 2,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2012-06-30"
   },
   {
     "id": "131801",
@@ -1364,8 +3790,30 @@
     "studio": "Wonder Project",
     "addedAt": 1743871502,
     "updatedAt": 1744187782,
+    "genres": [
+      "History",
+      "Drama"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Michael Iskander",
+        "role": ""
+      },
+      {
+        "name": "Ali Suliman",
+        "role": ""
+      },
+      {
+        "name": "Ayelet Zurer",
+        "role": ""
+      }
+    ],
     "leafCount": 8,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-PG",
+    "originallyAvailableAt": "2025-02-27"
   },
   {
     "id": "115475",
@@ -1376,8 +3824,30 @@
     "studio": "Carter Bays",
     "addedAt": 1693617963,
     "updatedAt": 1745139318,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Josh Radnor",
+        "role": ""
+      },
+      {
+        "name": "Neil Patrick Harris",
+        "role": ""
+      },
+      {
+        "name": "Jason Segel",
+        "role": ""
+      }
+    ],
     "leafCount": 208,
-    "childCount": 9
+    "childCount": 9,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2005-09-19"
   },
   {
     "id": "86646",
@@ -1388,8 +3858,30 @@
     "studio": "Monkeypaw Productions",
     "addedAt": 1678401600,
     "updatedAt": 1745139305,
+    "genres": [
+      "Drama",
+      "Crime"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Logan Lerman",
+        "role": ""
+      },
+      {
+        "name": "Jerrika Hinton",
+        "role": ""
+      },
+      {
+        "name": "Lena Olin",
+        "role": ""
+      }
+    ],
     "leafCount": 18,
-    "childCount": 2
+    "childCount": 2,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2020-02-21"
   },
   {
     "id": "107129",
@@ -1400,8 +3892,29 @@
     "studio": "Irony Point",
     "addedAt": 1687876707,
     "updatedAt": 1745139314,
+    "genres": [
+      "Comedy"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Tim Robinson",
+        "role": ""
+      },
+      {
+        "name": "Sam Richardson",
+        "role": ""
+      },
+      {
+        "name": "Patti Harrison",
+        "role": ""
+      }
+    ],
     "leafCount": 18,
-    "childCount": 3
+    "childCount": 3,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2019-04-23"
   },
   {
     "id": "91656",
@@ -1412,8 +3925,30 @@
     "studio": "Universal Television",
     "addedAt": 1662467235,
     "updatedAt": 1745139307,
+    "genres": [
+      "Action",
+      "Drama"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Bill Bixby",
+        "role": ""
+      },
+      {
+        "name": "Lou Ferrigno",
+        "role": ""
+      },
+      {
+        "name": "Jack Colvin",
+        "role": ""
+      }
+    ],
     "leafCount": 86,
-    "childCount": 6
+    "childCount": 6,
+    "contentRating": "TV-PG",
+    "originallyAvailableAt": "1977-11-04"
   },
   {
     "id": "108900",
@@ -1424,8 +3959,30 @@
     "studio": "Amazon Studios",
     "addedAt": 1691820229,
     "updatedAt": 1745139314,
+    "genres": [
+      "Animation",
+      "Drama"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Steven Yeun",
+        "role": ""
+      },
+      {
+        "name": "Sandra Oh",
+        "role": ""
+      },
+      {
+        "name": "J.K. Simmons",
+        "role": ""
+      }
+    ],
     "leafCount": 24,
-    "childCount": 3
+    "childCount": 3,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2021-03-25"
   },
   {
     "id": "101476",
@@ -1436,8 +3993,29 @@
     "studio": "3 Arts Entertainment",
     "addedAt": 1679012015,
     "updatedAt": 1745139312,
+    "genres": [
+      "Comedy"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Charlie Day",
+        "role": ""
+      },
+      {
+        "name": "Glenn Howerton",
+        "role": ""
+      },
+      {
+        "name": "Rob McElhenney",
+        "role": ""
+      }
+    ],
     "leafCount": 169,
-    "childCount": 16
+    "childCount": 16,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2005-08-04"
   },
   {
     "id": "127412",
@@ -1448,8 +4026,30 @@
     "studio": "Stone Stanley Entertainment",
     "addedAt": 1728324668,
     "updatedAt": 1745139327,
+    "genres": [
+      "Comedy",
+      "Reality"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Natasha Leggero",
+        "role": ""
+      },
+      {
+        "name": "Tim Herzog",
+        "role": ""
+      },
+      {
+        "name": "Brian Keith Etheridge",
+        "role": ""
+      }
+    ],
     "leafCount": 27,
-    "childCount": 3
+    "childCount": 3,
+    "contentRating": "",
+    "originallyAvailableAt": "2003-09-02"
   },
   {
     "id": "129628",
@@ -1460,8 +4060,30 @@
     "studio": "MTV Entertainment Studios",
     "addedAt": 1738116462,
     "updatedAt": 1746089986,
+    "genres": [
+      "Reality",
+      "Comedy"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Cat Deeley",
+        "role": ""
+      },
+      {
+        "name": "Lisa Fredrickson",
+        "role": ""
+      },
+      {
+        "name": "Frances Callier",
+        "role": ""
+      }
+    ],
     "leafCount": 10,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2025-01-21"
   },
   {
     "id": "124640",
@@ -1472,8 +4094,30 @@
     "studio": "Mid Atlantic Films",
     "addedAt": 1712718464,
     "updatedAt": 1745139323,
+    "genres": [
+      "Drama",
+      "Biography"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Paul Giamatti",
+        "role": ""
+      },
+      {
+        "name": "Laura Linney",
+        "role": ""
+      },
+      {
+        "name": "Stephen Dillane",
+        "role": ""
+      }
+    ],
     "leafCount": 7,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2008-03-16"
   },
   {
     "id": "126904",
@@ -1484,8 +4128,22 @@
     "studio": "BBC Studios",
     "addedAt": 1725414761,
     "updatedAt": 1745139325,
+    "genres": [
+      "Documentary",
+      "History"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Janet McTeer",
+        "role": ""
+      }
+    ],
     "leafCount": 3,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "",
+    "originallyAvailableAt": "2023-11-27"
   },
   {
     "id": "86908",
@@ -1496,8 +4154,30 @@
     "studio": "Automatik Entertainment",
     "addedAt": 1678401624,
     "updatedAt": 1745139305,
+    "genres": [
+      "Crime",
+      "Thriller"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Giancarlo Esposito",
+        "role": ""
+      },
+      {
+        "name": "Paz Vega",
+        "role": ""
+      },
+      {
+        "name": "Rufus Sewell",
+        "role": ""
+      }
+    ],
     "leafCount": 9,
-    "childCount": 2
+    "childCount": 2,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2023-01-01"
   },
   {
     "id": "126887",
@@ -1508,8 +4188,30 @@
     "studio": "SISTER",
     "addedAt": 1725083230,
     "updatedAt": 1745139325,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Stephen Dillane",
+        "role": ""
+      },
+      {
+        "name": "Aurora Perrineau",
+        "role": ""
+      },
+      {
+        "name": "Janet McTeer",
+        "role": ""
+      }
+    ],
     "leafCount": 8,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2024-08-29"
   },
   {
     "id": "101941",
@@ -1520,8 +4222,30 @@
     "studio": "Monkeypaw Productions",
     "addedAt": 1679627328,
     "updatedAt": 1745139312,
+    "genres": [
+      "Comedy",
+      "Adventure"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Keegan-Michael Key",
+        "role": ""
+      },
+      {
+        "name": "Jordan Peele",
+        "role": ""
+      },
+      {
+        "name": "Metta Sandiford-Artest",
+        "role": ""
+      }
+    ],
     "leafCount": 53,
-    "childCount": 5
+    "childCount": 5,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2012-01-31"
   },
   {
     "id": "98490",
@@ -1532,8 +4256,29 @@
     "studio": "Columbia TriStar Television",
     "addedAt": 1678402575,
     "updatedAt": 1745139311,
+    "genres": [
+      "Comedy"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Kevin James",
+        "role": ""
+      },
+      {
+        "name": "Leah Remini",
+        "role": ""
+      },
+      {
+        "name": "Jerry Stiller",
+        "role": ""
+      }
+    ],
     "leafCount": 207,
-    "childCount": 9
+    "childCount": 9,
+    "contentRating": "TV-PG",
+    "originallyAvailableAt": "1998-09-21"
   },
   {
     "id": "94676",
@@ -1544,8 +4289,30 @@
     "studio": "20th Century Fox Television",
     "addedAt": 1678402261,
     "updatedAt": 1745139310,
+    "genres": [
+      "Animation",
+      "Comedy"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Mike Judge",
+        "role": ""
+      },
+      {
+        "name": "Kathy Najimy",
+        "role": ""
+      },
+      {
+        "name": "Pamela Adlon",
+        "role": ""
+      }
+    ],
     "leafCount": 262,
-    "childCount": 14
+    "childCount": 14,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "1997-01-12"
   },
   {
     "id": "127769",
@@ -1556,8 +4323,30 @@
     "studio": "Bosque Ranch Productions",
     "addedAt": 1731863625,
     "updatedAt": 1745139327,
+    "genres": [
+      "Drama",
+      "Western"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Billy Bob Thornton",
+        "role": ""
+      },
+      {
+        "name": "Ali Larter",
+        "role": ""
+      },
+      {
+        "name": "Jacob Lofland",
+        "role": ""
+      }
+    ],
     "leafCount": 10,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2024-11-17"
   },
   {
     "id": "86367",
@@ -1568,8 +4357,30 @@
     "studio": "ESPN Films",
     "addedAt": 1678401578,
     "updatedAt": 1745139304,
+    "genres": [
+      "Documentary",
+      "Biography"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Michael Jordan",
+        "role": ""
+      },
+      {
+        "name": "Scottie Pippen",
+        "role": ""
+      },
+      {
+        "name": "Dennis Rodman",
+        "role": ""
+      }
+    ],
     "leafCount": 10,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2020-04-19"
   },
   {
     "id": "86237",
@@ -1580,8 +4391,30 @@
     "studio": "PlayStation Productions",
     "addedAt": 1678401568,
     "updatedAt": 1746429571,
+    "genres": [
+      "Drama",
+      "Action"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Pedro Pascal",
+        "role": ""
+      },
+      {
+        "name": "Bella Ramsey",
+        "role": ""
+      },
+      {
+        "name": "Gabriel Luna",
+        "role": ""
+      }
+    ],
     "leafCount": 13,
-    "childCount": 2
+    "childCount": 2,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2023-01-15"
   },
   {
     "id": "102915",
@@ -1592,8 +4425,30 @@
     "studio": "Sixteen String Jack Productions",
     "addedAt": 1681259349,
     "updatedAt": 1746001427,
+    "genres": [
+      "Talk Show",
+      "Comedy"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "John Oliver",
+        "role": ""
+      },
+      {
+        "name": "Ryan Barger",
+        "role": ""
+      },
+      {
+        "name": "David Kaye",
+        "role": ""
+      }
+    ],
     "leafCount": 330,
-    "childCount": 12
+    "childCount": 12,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2014-04-27"
   },
   {
     "id": "121640",
@@ -1604,8 +4459,30 @@
     "studio": "Wolf Entertainment",
     "addedAt": 1640032282,
     "updatedAt": 1746346686,
+    "genres": [
+      "Drama",
+      "Crime"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Sam Waterston",
+        "role": ""
+      },
+      {
+        "name": "S. Epatha Merkerson",
+        "role": ""
+      },
+      {
+        "name": "Jerry Orbach",
+        "role": ""
+      }
+    ],
     "leafCount": 521,
-    "childCount": 24
+    "childCount": 24,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "1990-09-13"
   },
   {
     "id": "119765",
@@ -1616,8 +4493,30 @@
     "studio": "Yoruba Saxon",
     "addedAt": 1699229682,
     "updatedAt": 1745139320,
+    "genres": [
+      "Drama",
+      "Western"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "David Oyelowo",
+        "role": ""
+      },
+      {
+        "name": "Lauren E. Banks",
+        "role": ""
+      },
+      {
+        "name": "Demi Singleton",
+        "role": ""
+      }
+    ],
     "leafCount": 8,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2023-11-05"
   },
   {
     "id": "98723",
@@ -1628,8 +4527,30 @@
     "studio": "Pierrot",
     "addedAt": 1678402608,
     "updatedAt": 1745139312,
+    "genres": [
+      "Animation",
+      "Action"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Janet Varney",
+        "role": ""
+      },
+      {
+        "name": "David Faustino",
+        "role": ""
+      },
+      {
+        "name": "P.J. Byrne",
+        "role": ""
+      }
+    ],
     "leafCount": 51,
-    "childCount": 4
+    "childCount": 4,
+    "contentRating": "TV-Y7",
+    "originallyAvailableAt": "2012-04-14"
   },
   {
     "id": "127311",
@@ -1640,8 +4561,30 @@
     "studio": "Lucasfilm Ltd.",
     "addedAt": 1727135417,
     "updatedAt": 1742484558,
+    "genres": [
+      "Animation",
+      "Comedy"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Gaten Matarazzo",
+        "role": ""
+      },
+      {
+        "name": "Tony Revolori",
+        "role": ""
+      },
+      {
+        "name": "Marsai Martin",
+        "role": ""
+      }
+    ],
     "leafCount": 4,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-Y7",
+    "originallyAvailableAt": "2024-09-13"
   },
   {
     "id": "92010",
@@ -1652,8 +4595,30 @@
     "studio": "Marvel Studios",
     "addedAt": 1678402060,
     "updatedAt": 1745139307,
+    "genres": [
+      "Action",
+      "Adventure"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Tara Strong",
+        "role": ""
+      },
+      {
+        "name": "Tom Hiddleston",
+        "role": ""
+      },
+      {
+        "name": "Sophia Di Martino",
+        "role": ""
+      }
+    ],
     "leafCount": 12,
-    "childCount": 2
+    "childCount": 2,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2021-06-09"
   },
   {
     "id": "125413",
@@ -1664,8 +4629,29 @@
     "studio": "Universal Television",
     "addedAt": 1719709284,
     "updatedAt": 1745229337,
+    "genres": [
+      "Comedy"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Maya Rudolph",
+        "role": ""
+      },
+      {
+        "name": "Michaela Ja\u00e9 Rodriguez",
+        "role": ""
+      },
+      {
+        "name": "Joel Kim Booster",
+        "role": ""
+      }
+    ],
     "leafCount": 20,
-    "childCount": 2
+    "childCount": 2,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2022-06-24"
   },
   {
     "id": "122421",
@@ -1676,8 +4662,30 @@
     "studio": "Primary Wave Entertainment",
     "addedAt": 1706564536,
     "updatedAt": 1745229336,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Ron Livingston",
+        "role": ""
+      },
+      {
+        "name": "Will Sasso",
+        "role": ""
+      },
+      {
+        "name": "Anja Savcic",
+        "role": ""
+      }
+    ],
     "leafCount": 30,
-    "childCount": 3
+    "childCount": 3,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2017-10-17"
   },
   {
     "id": "85907",
@@ -1688,8 +4696,30 @@
     "studio": "Kinetic Content",
     "addedAt": 1678401533,
     "updatedAt": 1745229317,
+    "genres": [
+      "Reality",
+      "Romance"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Nick Lachey",
+        "role": ""
+      },
+      {
+        "name": "Vanessa Lachey",
+        "role": ""
+      },
+      {
+        "name": "Zack Goytowski",
+        "role": ""
+      }
+    ],
     "leafCount": 110,
-    "childCount": 8
+    "childCount": 8,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2020-02-13"
   },
   {
     "id": "126955",
@@ -1700,8 +4730,26 @@
     "studio": "CPL Productions",
     "addedAt": 1725760666,
     "updatedAt": 1745229338,
+    "genres": [
+      "Reality",
+      "Game Show"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Emma Willis",
+        "role": ""
+      },
+      {
+        "name": "Matt Willis",
+        "role": ""
+      }
+    ],
     "leafCount": 12,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2024-08-07"
   },
   {
     "id": "89365",
@@ -1712,8 +4760,30 @@
     "studio": "Paramount Television",
     "addedAt": 1678401822,
     "updatedAt": 1745229319,
+    "genres": [
+      "Crime",
+      "Drama"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Richard Dean Anderson",
+        "role": ""
+      },
+      {
+        "name": "Dana Elcar",
+        "role": ""
+      },
+      {
+        "name": "Bruce McGill",
+        "role": ""
+      }
+    ],
     "leafCount": 141,
-    "childCount": 8
+    "childCount": 8,
+    "contentRating": "TV-PG",
+    "originallyAvailableAt": "1985-09-29"
   },
   {
     "id": "117717",
@@ -1724,8 +4794,29 @@
     "studio": "Lionsgate",
     "addedAt": 1694643909,
     "updatedAt": 1745229333,
+    "genres": [
+      "Drama"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Jon Hamm",
+        "role": ""
+      },
+      {
+        "name": "Elisabeth Moss",
+        "role": ""
+      },
+      {
+        "name": "Vincent Kartheiser",
+        "role": ""
+      }
+    ],
     "leafCount": 88,
-    "childCount": 7
+    "childCount": 7,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2007-07-19"
   },
   {
     "id": "127268",
@@ -1736,8 +4827,29 @@
     "studio": "TOA - The Originals of America",
     "addedAt": 1726942168,
     "updatedAt": 1745229338,
+    "genres": [
+      "Drama"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Lambert Wilson",
+        "role": ""
+      },
+      {
+        "name": "Amira Casar",
+        "role": ""
+      },
+      {
+        "name": "Carole Bouquet",
+        "role": ""
+      }
+    ],
     "leafCount": 10,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2024-09-20"
   },
   {
     "id": "92260",
@@ -1748,8 +4860,30 @@
     "studio": "HouseSitter Productions",
     "addedAt": 1678402079,
     "updatedAt": 1745229321,
+    "genres": [
+      "Comedy",
+      "Family"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Rowan Atkinson",
+        "role": ""
+      },
+      {
+        "name": "Claudie Blakley",
+        "role": ""
+      },
+      {
+        "name": "India Fowler",
+        "role": ""
+      }
+    ],
     "leafCount": 9,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-PG",
+    "originallyAvailableAt": "2022-06-24"
   },
   {
     "id": "87123",
@@ -1760,8 +4894,30 @@
     "studio": "Lucasfilm Ltd.",
     "addedAt": 1678401640,
     "updatedAt": 1745229319,
+    "genres": [
+      "Drama",
+      "Action"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Pedro Pascal",
+        "role": ""
+      },
+      {
+        "name": "Katee Sackhoff",
+        "role": ""
+      },
+      {
+        "name": "Chris Bartlett",
+        "role": ""
+      }
+    ],
     "leafCount": 24,
-    "childCount": 3
+    "childCount": 3,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2019-11-12"
   },
   {
     "id": "124396",
@@ -1772,8 +4928,30 @@
     "studio": "POV Entertainment",
     "addedAt": 1710693974,
     "updatedAt": 1745229336,
+    "genres": [
+      "Drama",
+      "Crime"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Tobias Menzies",
+        "role": ""
+      },
+      {
+        "name": "Anthony Boyle",
+        "role": ""
+      },
+      {
+        "name": "Lovie Simone",
+        "role": ""
+      }
+    ],
     "leafCount": 7,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2024-03-14"
   },
   {
     "id": "129827",
@@ -1784,8 +4962,30 @@
     "studio": "Lionsgate Alternative Television",
     "addedAt": 1739153618,
     "updatedAt": 1745392963,
+    "genres": [
+      "Documentary",
+      "Drama"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Liah O'Prey",
+        "role": ""
+      },
+      {
+        "name": "Yahya Mahayni",
+        "role": ""
+      },
+      {
+        "name": "Lorenzo de Moor",
+        "role": ""
+      }
+    ],
     "leafCount": 7,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "",
+    "originallyAvailableAt": "2024-11-17"
   },
   {
     "id": "97963",
@@ -1796,8 +4996,30 @@
     "studio": "ABC Studios",
     "addedAt": 1678402535,
     "updatedAt": 1745229327,
+    "genres": [
+      "Crime",
+      "Drama"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Charlie Cox",
+        "role": ""
+      },
+      {
+        "name": "Deborah Ann Woll",
+        "role": ""
+      },
+      {
+        "name": "Elden Henson",
+        "role": ""
+      }
+    ],
     "leafCount": 39,
-    "childCount": 3
+    "childCount": 3,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2015-04-10"
   },
   {
     "id": "94044",
@@ -1808,8 +5030,30 @@
     "studio": "Picrow",
     "addedAt": 1678402217,
     "updatedAt": 1745229324,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Rachel Brosnahan",
+        "role": ""
+      },
+      {
+        "name": "Alex Borstein",
+        "role": ""
+      },
+      {
+        "name": "Michael Zegen",
+        "role": ""
+      }
+    ],
     "leafCount": 43,
-    "childCount": 5
+    "childCount": 5,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2017-03-17"
   },
   {
     "id": "91098",
@@ -1820,8 +5064,30 @@
     "studio": "Showtime Networks",
     "addedAt": 1678401983,
     "updatedAt": 1745229320,
+    "genres": [
+      "Drama",
+      "Mystery"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Lori Petty",
+        "role": ""
+      },
+      {
+        "name": "Heather Feeney",
+        "role": ""
+      },
+      {
+        "name": "J. Winston Carroll",
+        "role": ""
+      }
+    ],
     "leafCount": 26,
-    "childCount": 2
+    "childCount": 2,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2005-10-28"
   },
   {
     "id": "121732",
@@ -1832,8 +5098,30 @@
     "studio": "Amblin Television",
     "addedAt": 1706259701,
     "updatedAt": 1745229335,
+    "genres": [
+      "Drama",
+      "Action"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Austin Butler",
+        "role": ""
+      },
+      {
+        "name": "Callum Turner",
+        "role": ""
+      },
+      {
+        "name": "Anthony Boyle",
+        "role": ""
+      }
+    ],
     "leafCount": 9,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2024-01-25"
   },
   {
     "id": "128284",
@@ -1844,8 +5132,30 @@
     "studio": "Cloud Nine Productions",
     "addedAt": 1733696293,
     "updatedAt": 1745139328,
+    "genres": [
+      "Crime",
+      "Drama"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Kathy Bates",
+        "role": ""
+      },
+      {
+        "name": "Skye P. Marshall",
+        "role": ""
+      },
+      {
+        "name": "Jason Ritter",
+        "role": ""
+      }
+    ],
     "leafCount": 19,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2024-09-22"
   },
   {
     "id": "90781",
@@ -1856,8 +5166,30 @@
     "studio": "Chrysalis/Lakeside",
     "addedAt": 1678401955,
     "updatedAt": 1745229320,
+    "genres": [
+      "Comedy",
+      "Science Fiction"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Concetta Tomei",
+        "role": ""
+      },
+      {
+        "name": "Matt Frewer",
+        "role": ""
+      },
+      {
+        "name": "Chris Young",
+        "role": ""
+      }
+    ],
     "leafCount": 15,
-    "childCount": 3
+    "childCount": 3,
+    "contentRating": "TV-PG",
+    "originallyAvailableAt": "1987-03-31"
   },
   {
     "id": "86402",
@@ -1868,8 +5200,30 @@
     "studio": "Studio T",
     "addedAt": 1678401581,
     "updatedAt": 1745229318,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Daniel Radcliffe",
+        "role": ""
+      },
+      {
+        "name": "Geraldine Viswanathan",
+        "role": ""
+      },
+      {
+        "name": "Jon Bass",
+        "role": ""
+      }
+    ],
     "leafCount": 37,
-    "childCount": 4
+    "childCount": 4,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2019-02-08"
   },
   {
     "id": "96776",
@@ -1880,8 +5234,30 @@
     "studio": "Levitan Lloyd Productions",
     "addedAt": 1678402423,
     "updatedAt": 1745229326,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Ed O'Neill",
+        "role": ""
+      },
+      {
+        "name": "Sof\u00eda Vergara",
+        "role": ""
+      },
+      {
+        "name": "Julie Bowen",
+        "role": ""
+      }
+    ],
     "leafCount": 249,
-    "childCount": 11
+    "childCount": 11,
+    "contentRating": "TV-PG",
+    "originallyAvailableAt": "2009-09-23"
   },
   {
     "id": "120317",
@@ -1892,8 +5268,30 @@
     "studio": "Legendary Television",
     "addedAt": 1700753212,
     "updatedAt": 1745229335,
+    "genres": [
+      "Action",
+      "Adventure"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Anna Sawai",
+        "role": ""
+      },
+      {
+        "name": "Kiersey Clemons",
+        "role": ""
+      },
+      {
+        "name": "Ren Watabe",
+        "role": ""
+      }
+    ],
     "leafCount": 10,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2023-11-17"
   },
   {
     "id": "97827",
@@ -1904,8 +5302,30 @@
     "studio": "Mandeville Films",
     "addedAt": 1678402523,
     "updatedAt": 1745229327,
+    "genres": [
+      "Drama",
+      "Mystery"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Tony Shalhoub",
+        "role": ""
+      },
+      {
+        "name": "Ted Levine",
+        "role": ""
+      },
+      {
+        "name": "Jason Gray-Stanford",
+        "role": ""
+      }
+    ],
     "leafCount": 125,
-    "childCount": 9
+    "childCount": 9,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2002-07-12"
   },
   {
     "id": "88576",
@@ -1916,8 +5336,30 @@
     "studio": "Toei Animation",
     "addedAt": 1678401753,
     "updatedAt": 1745229319,
+    "genres": [
+      "Animation",
+      "Fantasy"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Takahiro Sakurai",
+        "role": ""
+      },
+      {
+        "name": "Daisuke Namikawa",
+        "role": ""
+      },
+      {
+        "name": "Daisuke Sakaguchi",
+        "role": ""
+      }
+    ],
     "leafCount": 12,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2007-07-12"
   },
   {
     "id": "127191",
@@ -1928,8 +5370,30 @@
     "studio": "Haut et Court",
     "addedAt": 1726543231,
     "updatedAt": 1745229338,
+    "genres": [
+      "Thriller",
+      "Crime"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Clive Owen",
+        "role": ""
+      },
+      {
+        "name": "Cara Bossom",
+        "role": ""
+      },
+      {
+        "name": "Denis M\u00e9nochet",
+        "role": ""
+      }
+    ],
     "leafCount": 6,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2024-01-14"
   },
   {
     "id": "127288",
@@ -1940,8 +5404,30 @@
     "studio": "Ryan Murphy Television",
     "addedAt": 1727131335,
     "updatedAt": 1745229339,
+    "genres": [
+      "Biography",
+      "Crime"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Evan Peters",
+        "role": ""
+      },
+      {
+        "name": "Richard Jenkins",
+        "role": ""
+      },
+      {
+        "name": "Molly Ringwald",
+        "role": ""
+      }
+    ],
     "leafCount": 19,
-    "childCount": 2
+    "childCount": 2,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2022-09-21"
   },
   {
     "id": "114534",
@@ -1952,8 +5438,30 @@
     "studio": "Marvel Studios",
     "addedAt": 1693101930,
     "updatedAt": 1745229333,
+    "genres": [
+      "Mystery",
+      "Action"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Oscar Isaac",
+        "role": ""
+      },
+      {
+        "name": "Ethan Hawke",
+        "role": ""
+      },
+      {
+        "name": "May Calamawy",
+        "role": ""
+      }
+    ],
     "leafCount": 6,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2022-03-30"
   },
   {
     "id": "126470",
@@ -1964,8 +5472,29 @@
     "studio": "Unanimous Media",
     "addedAt": 1723173246,
     "updatedAt": 1745229337,
+    "genres": [
+      "Comedy"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Stephen Curry",
+        "role": ""
+      },
+      {
+        "name": "Adam Pally",
+        "role": ""
+      },
+      {
+        "name": "Ego Nwodim",
+        "role": ""
+      }
+    ],
     "leafCount": 6,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2024-08-08"
   },
   {
     "id": "114488",
@@ -1976,8 +5505,30 @@
     "studio": "Marvel Studios",
     "addedAt": 1693091101,
     "updatedAt": 1745229333,
+    "genres": [
+      "Comedy",
+      "Action"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Iman Vellani",
+        "role": ""
+      },
+      {
+        "name": "Matt Lintz",
+        "role": ""
+      },
+      {
+        "name": "Zenobia Shroff",
+        "role": ""
+      }
+    ],
     "leafCount": 6,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2022-06-08"
   },
   {
     "id": "119773",
@@ -1988,8 +5539,22 @@
     "studio": "Appian Way",
     "addedAt": 1699243104,
     "updatedAt": 1741593939,
+    "genres": [
+      "Documentary",
+      "History"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "David Harewood",
+        "role": ""
+      }
+    ],
     "leafCount": 4,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-PG",
+    "originallyAvailableAt": "2023-11-01"
   },
   {
     "id": "95167",
@@ -2000,8 +5565,30 @@
     "studio": "Beyond Productions",
     "addedAt": 1678402293,
     "updatedAt": 1745229324,
+    "genres": [
+      "Documentary",
+      "Mystery"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Robert Lee",
+        "role": ""
+      },
+      {
+        "name": "Adam Savage",
+        "role": ""
+      },
+      {
+        "name": "Jamie Hyneman",
+        "role": ""
+      }
+    ],
     "leafCount": 284,
-    "childCount": 16
+    "childCount": 16,
+    "contentRating": "TV-PG",
+    "originallyAvailableAt": "2003-01-23"
   },
   {
     "id": "131422",
@@ -2012,8 +5599,30 @@
     "studio": "Pierrot",
     "addedAt": 1742494363,
     "updatedAt": 1744419573,
+    "genres": [
+      "Animation",
+      "Action"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Junko Takeuchi",
+        "role": ""
+      },
+      {
+        "name": "Noriaki Sugiyama",
+        "role": ""
+      },
+      {
+        "name": "Chie Nakamura",
+        "role": ""
+      }
+    ],
     "leafCount": 220,
-    "childCount": 5
+    "childCount": 5,
+    "contentRating": "TV-PG",
+    "originallyAvailableAt": "2002-10-03"
   },
   {
     "id": "92774",
@@ -2024,8 +5633,30 @@
     "studio": "TV Tokyo",
     "addedAt": 1678402113,
     "updatedAt": 1745392955,
+    "genres": [
+      "Animation",
+      "Anime"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Junko Takeuchi",
+        "role": ""
+      },
+      {
+        "name": "Noriaki Sugiyama",
+        "role": ""
+      },
+      {
+        "name": "Chie Nakamura",
+        "role": ""
+      }
+    ],
     "leafCount": 500,
-    "childCount": 22
+    "childCount": 22,
+    "contentRating": "TV-PG",
+    "originallyAvailableAt": "2007-02-15"
   },
   {
     "id": "91783",
@@ -2036,8 +5667,30 @@
     "studio": "W.D.M. Productions",
     "addedAt": 1678402044,
     "updatedAt": 1745229321,
+    "genres": [
+      "Comedy",
+      "Documentary"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Nathan Fielder",
+        "role": ""
+      },
+      {
+        "name": "William Heath",
+        "role": ""
+      },
+      {
+        "name": "Anthony Filosa",
+        "role": ""
+      }
+    ],
     "leafCount": 31,
-    "childCount": 4
+    "childCount": 4,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2013-02-28"
   },
   {
     "id": "127712",
@@ -2048,8 +5701,30 @@
     "studio": "Seven Stories",
     "addedAt": 1731353150,
     "updatedAt": 1745229340,
+    "genres": [
+      "Drama",
+      "Action"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Shazad Latif",
+        "role": ""
+      },
+      {
+        "name": "Georgia Flood",
+        "role": ""
+      },
+      {
+        "name": "C\u00e9line Menville",
+        "role": ""
+      }
+    ],
     "leafCount": 10,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "",
+    "originallyAvailableAt": "2024-06-12"
   },
   {
     "id": "95864",
@@ -2060,8 +5735,30 @@
     "studio": "When Pigs Fly Productions",
     "addedAt": 1678402342,
     "updatedAt": 1745229325,
+    "genres": [
+      "Drama",
+      "Comedy"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Scott Bakula",
+        "role": ""
+      },
+      {
+        "name": "Rob Kerkovich",
+        "role": ""
+      },
+      {
+        "name": "CCH Pounder",
+        "role": ""
+      }
+    ],
     "leafCount": 153,
-    "childCount": 7
+    "childCount": 7,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2014-09-23"
   },
   {
     "id": "123636",
@@ -2072,8 +5769,30 @@
     "studio": "Apple Studios",
     "addedAt": 1707880716,
     "updatedAt": 1745229336,
+    "genres": [
+      "Drama",
+      "Biography"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Ben Mendelsohn",
+        "role": ""
+      },
+      {
+        "name": "Juliette Binoche",
+        "role": ""
+      },
+      {
+        "name": "Maisie Williams",
+        "role": ""
+      }
+    ],
     "leafCount": 10,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2024-02-13"
   },
   {
     "id": "86442",
@@ -2084,8 +5803,29 @@
     "studio": "Warner Bros. Television",
     "addedAt": 1678401584,
     "updatedAt": 1745229318,
+    "genres": [
+      "Comedy"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Harry Anderson",
+        "role": ""
+      },
+      {
+        "name": "John Larroquette",
+        "role": ""
+      },
+      {
+        "name": "Richard Moll",
+        "role": ""
+      }
+    ],
     "leafCount": 193,
-    "childCount": 9
+    "childCount": 9,
+    "contentRating": "TV-PG",
+    "originallyAvailableAt": "1984-01-04"
   },
   {
     "id": "114238",
@@ -2096,8 +5836,29 @@
     "studio": "Warner Bros. Television",
     "addedAt": 1692983457,
     "updatedAt": 1746262592,
+    "genres": [
+      "Comedy"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Melissa Rauch",
+        "role": ""
+      },
+      {
+        "name": "John Larroquette",
+        "role": ""
+      },
+      {
+        "name": "Lacretta",
+        "role": ""
+      }
+    ],
     "leafCount": 45,
-    "childCount": 3
+    "childCount": 3,
+    "contentRating": "TV-PG",
+    "originallyAvailableAt": "2023-01-17"
   },
   {
     "id": "128601",
@@ -2108,8 +5869,30 @@
     "studio": "3 Arts Entertainment",
     "addedAt": 1735838989,
     "updatedAt": 1745229341,
+    "genres": [
+      "Comedy",
+      "Romance"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Kristen Bell",
+        "role": ""
+      },
+      {
+        "name": "Adam Brody",
+        "role": ""
+      },
+      {
+        "name": "Justine Lupe",
+        "role": ""
+      }
+    ],
     "leafCount": 10,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2024-09-26"
   },
   {
     "id": "97701",
@@ -2120,8 +5903,30 @@
     "studio": "Falahey/Austin Street Productions",
     "addedAt": 1678402513,
     "updatedAt": 1745229326,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Rob Morrow",
+        "role": ""
+      },
+      {
+        "name": "Janine Turner",
+        "role": ""
+      },
+      {
+        "name": "Barry Corbin",
+        "role": ""
+      }
+    ],
     "leafCount": 110,
-    "childCount": 6
+    "childCount": 6,
+    "contentRating": "TV-PG",
+    "originallyAvailableAt": "1990-07-12"
   },
   {
     "id": "114226",
@@ -2132,8 +5937,30 @@
     "studio": "Lucasfilm Ltd.",
     "addedAt": 1692982290,
     "updatedAt": 1745229333,
+    "genres": [
+      "Drama",
+      "Action"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Ewan McGregor",
+        "role": ""
+      },
+      {
+        "name": "Vivien Lyra Blair",
+        "role": ""
+      },
+      {
+        "name": "Moses Ingram",
+        "role": ""
+      }
+    ],
     "leafCount": 6,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2022-05-27"
   },
   {
     "id": "119506",
@@ -2144,8 +5971,30 @@
     "studio": "DXD Films",
     "addedAt": 1697065918,
     "updatedAt": 1745229334,
+    "genres": [
+      "Drama",
+      "Biography"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Miles Teller",
+        "role": ""
+      },
+      {
+        "name": "Matthew Goode",
+        "role": ""
+      },
+      {
+        "name": "Dan Fogler",
+        "role": ""
+      }
+    ],
     "leafCount": 10,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2022-04-28"
   },
   {
     "id": "96438",
@@ -2156,8 +6005,29 @@
     "studio": "Universal Television",
     "addedAt": 1678402393,
     "updatedAt": 1745229325,
+    "genres": [
+      "Comedy"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Brian Baumgartner",
+        "role": ""
+      },
+      {
+        "name": "Angela Kinsey",
+        "role": ""
+      },
+      {
+        "name": "Oscar Nu\u00f1ez",
+        "role": ""
+      }
+    ],
     "leafCount": 195,
-    "childCount": 9
+    "childCount": 9,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2005-03-24"
   },
   {
     "id": "127486",
@@ -2168,8 +6038,30 @@
     "studio": "The Littlefield Company",
     "addedAt": 1728509915,
     "updatedAt": 1745229340,
+    "genres": [
+      "Drama",
+      "Action"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Jeff Bridges",
+        "role": ""
+      },
+      {
+        "name": "John Lithgow",
+        "role": ""
+      },
+      {
+        "name": "Alia Shawkat",
+        "role": ""
+      }
+    ],
     "leafCount": 15,
-    "childCount": 2
+    "childCount": 2,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2022-06-16"
   },
   {
     "id": "119258",
@@ -2180,8 +6072,30 @@
     "studio": "Kitsis/Horowitz",
     "addedAt": 1696647818,
     "updatedAt": 1745229334,
+    "genres": [
+      "Drama",
+      "Adventure"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Lana Parrilla",
+        "role": ""
+      },
+      {
+        "name": "Robert Carlyle",
+        "role": ""
+      },
+      {
+        "name": "Jared Gilmore",
+        "role": ""
+      }
+    ],
     "leafCount": 156,
-    "childCount": 7
+    "childCount": 7,
+    "contentRating": "TV-PG",
+    "originallyAvailableAt": "2011-10-23"
   },
   {
     "id": "91516",
@@ -2192,8 +6106,30 @@
     "studio": "Rhode Island Ave. Productions",
     "addedAt": 1678402019,
     "updatedAt": 1745229321,
+    "genres": [
+      "Comedy",
+      "Mystery"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Steve Martin",
+        "role": ""
+      },
+      {
+        "name": "Martin Short",
+        "role": ""
+      },
+      {
+        "name": "Selena Gomez",
+        "role": ""
+      }
+    ],
     "leafCount": 40,
-    "childCount": 4
+    "childCount": 4,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2021-08-31"
   },
   {
     "id": "92322",
@@ -2204,8 +6140,30 @@
     "studio": "20th Century Fox Television",
     "addedAt": 1678402083,
     "updatedAt": 1745229322,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Seth MacFarlane",
+        "role": ""
+      },
+      {
+        "name": "Adrianne Palicki",
+        "role": ""
+      },
+      {
+        "name": "Penny Johnson Jerald",
+        "role": ""
+      }
+    ],
     "leafCount": 36,
-    "childCount": 3
+    "childCount": 3,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2017-09-10"
   },
   {
     "id": "114142",
@@ -2216,8 +6174,30 @@
     "studio": "Plan B Entertainment",
     "addedAt": 1692930429,
     "updatedAt": 1745229332,
+    "genres": [
+      "Mystery",
+      "Drama"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Josh Brolin",
+        "role": ""
+      },
+      {
+        "name": "Imogen Poots",
+        "role": ""
+      },
+      {
+        "name": "Lili Taylor",
+        "role": ""
+      }
+    ],
     "leafCount": 15,
-    "childCount": 2
+    "childCount": 2,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2022-04-15"
   },
   {
     "id": "114129",
@@ -2228,8 +6208,30 @@
     "studio": "Cartoon Network Studios",
     "addedAt": 1692929227,
     "updatedAt": 1745229332,
+    "genres": [
+      "Animation",
+      "Family"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Elijah Wood",
+        "role": ""
+      },
+      {
+        "name": "Collin Dean",
+        "role": ""
+      },
+      {
+        "name": "Melanie Lynskey",
+        "role": ""
+      }
+    ],
     "leafCount": 10,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-PG",
+    "originallyAvailableAt": "2014-11-03"
   },
   {
     "id": "117807",
@@ -2240,8 +6242,29 @@
     "studio": "Universal Television",
     "addedAt": 1694651915,
     "updatedAt": 1745229334,
+    "genres": [
+      "Comedy"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Amy Poehler",
+        "role": ""
+      },
+      {
+        "name": "Aziz Ansari",
+        "role": ""
+      },
+      {
+        "name": "Nick Offerman",
+        "role": ""
+      }
+    ],
     "leafCount": 125,
-    "childCount": 7
+    "childCount": 7,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2009-04-09"
   },
   {
     "id": "85864",
@@ -2252,8 +6275,30 @@
     "studio": "Slaverats",
     "addedAt": 1678401529,
     "updatedAt": 1745229316,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Adam Scott",
+        "role": ""
+      },
+      {
+        "name": "Ken Marino",
+        "role": ""
+      },
+      {
+        "name": "Ryan Hansen",
+        "role": ""
+      }
+    ],
     "leafCount": 26,
-    "childCount": 3
+    "childCount": 3,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2009-03-20"
   },
   {
     "id": "114114",
@@ -2264,8 +6309,30 @@
     "studio": "FX Productions",
     "addedAt": 1692928223,
     "updatedAt": 1745229332,
+    "genres": [
+      "Drama",
+      "Crime"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Steve Carell",
+        "role": ""
+      },
+      {
+        "name": "Domhnall Gleeson",
+        "role": ""
+      },
+      {
+        "name": "Linda Emond",
+        "role": ""
+      }
+    ],
     "leafCount": 10,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2022-08-30"
   },
   {
     "id": "114095",
@@ -2276,8 +6343,30 @@
     "studio": "Warner Bros. Television",
     "addedAt": 1692926803,
     "updatedAt": 1745229332,
+    "genres": [
+      "Drama",
+      "Action"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "John Cena",
+        "role": ""
+      },
+      {
+        "name": "Danielle Brooks",
+        "role": ""
+      },
+      {
+        "name": "Freddie Stroma",
+        "role": ""
+      }
+    ],
     "leafCount": 8,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2022-01-12"
   },
   {
     "id": "90800",
@@ -2288,8 +6377,30 @@
     "studio": "Tiger Aspect",
     "addedAt": 1678401957,
     "updatedAt": 1745229320,
+    "genres": [
+      "Drama",
+      "Crime"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Cillian Murphy",
+        "role": ""
+      },
+      {
+        "name": "Paul Anderson",
+        "role": ""
+      },
+      {
+        "name": "Sophie Rundle",
+        "role": ""
+      }
+    ],
     "leafCount": 36,
-    "childCount": 6
+    "childCount": 6,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2013-09-12"
   },
   {
     "id": "127337",
@@ -2300,8 +6411,30 @@
     "studio": "6th & Idaho Motion Picture Company",
     "addedAt": 1727744961,
     "updatedAt": 1745229339,
+    "genres": [
+      "Crime",
+      "Drama"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Colin Farrell",
+        "role": ""
+      },
+      {
+        "name": "Cristin Milioti",
+        "role": ""
+      },
+      {
+        "name": "Rhenzy Feliz",
+        "role": ""
+      }
+    ],
     "leafCount": 8,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2024-09-19"
   },
   {
     "id": "130846",
@@ -2312,8 +6445,30 @@
     "studio": "September Films",
     "addedAt": 1741581796,
     "updatedAt": 1744529584,
+    "genres": [
+      "Reality",
+      "Comedy"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Penn Jillette",
+        "role": ""
+      },
+      {
+        "name": "Teller",
+        "role": ""
+      },
+      {
+        "name": "Alyson Hannigan",
+        "role": ""
+      }
+    ],
     "leafCount": 162,
-    "childCount": 11
+    "childCount": 11,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2011-01-07"
   },
   {
     "id": "120564",
@@ -2324,8 +6479,30 @@
     "studio": "The Gotham Group",
     "addedAt": 1703039444,
     "updatedAt": 1745229335,
+    "genres": [
+      "Fantasy",
+      "Family"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Walker Scobell",
+        "role": ""
+      },
+      {
+        "name": "Leah Sava Jeffries",
+        "role": ""
+      },
+      {
+        "name": "Aryan Simhadri",
+        "role": ""
+      }
+    ],
     "leafCount": 8,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-PG",
+    "originallyAvailableAt": "2023-12-19"
   },
   {
     "id": "126930",
@@ -2336,8 +6513,30 @@
     "studio": "21 Laps Entertainment",
     "addedAt": 1725590422,
     "updatedAt": 1745229337,
+    "genres": [
+      "Crime",
+      "Drama"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Nicole Kidman",
+        "role": ""
+      },
+      {
+        "name": "Eve Hewson",
+        "role": ""
+      },
+      {
+        "name": "Liev Schreiber",
+        "role": ""
+      }
+    ],
     "leafCount": 6,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2024-09-05"
   },
   {
     "id": "106782",
@@ -2348,8 +6547,30 @@
     "studio": "Team Downey",
     "addedAt": 1686490212,
     "updatedAt": 1742484597,
+    "genres": [
+      "Crime",
+      "Drama"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Matthew Rhys",
+        "role": ""
+      },
+      {
+        "name": "Juliet Rylance",
+        "role": ""
+      },
+      {
+        "name": "Chris Chalk",
+        "role": ""
+      }
+    ],
     "leafCount": 16,
-    "childCount": 2
+    "childCount": 2,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2020-06-21"
   },
   {
     "id": "122999",
@@ -2360,8 +6581,30 @@
     "studio": "Disney Television Animation",
     "addedAt": 1707064934,
     "updatedAt": 1745229336,
+    "genres": [
+      "Family",
+      "Animation"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Vincent Martella",
+        "role": ""
+      },
+      {
+        "name": "Ashley Tisdale",
+        "role": ""
+      },
+      {
+        "name": "Caroline Rhea",
+        "role": ""
+      }
+    ],
     "leafCount": 223,
-    "childCount": 4
+    "childCount": 4,
+    "contentRating": "TV-G",
+    "originallyAvailableAt": "2007-08-17"
   },
   {
     "id": "114013",
@@ -2372,8 +6615,30 @@
     "studio": "wiip",
     "addedAt": 1692905136,
     "updatedAt": 1745229332,
+    "genres": [
+      "Drama",
+      "Biography"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Toby Wallace",
+        "role": ""
+      },
+      {
+        "name": "Anson Boon",
+        "role": ""
+      },
+      {
+        "name": "Christian Lees",
+        "role": ""
+      }
+    ],
     "leafCount": 6,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2022-05-31"
   },
   {
     "id": "98707",
@@ -2384,8 +6649,30 @@
     "studio": "20th Century Fox Television",
     "addedAt": 1678402606,
     "updatedAt": 1745229327,
+    "genres": [
+      "Science Fiction",
+      "Drama"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Roddy McDowall",
+        "role": ""
+      },
+      {
+        "name": "Ron Harper",
+        "role": ""
+      },
+      {
+        "name": "James Naughton",
+        "role": ""
+      }
+    ],
     "leafCount": 14,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "Not Rated",
+    "originallyAvailableAt": "1974-09-13"
   },
   {
     "id": "93555",
@@ -2396,8 +6683,30 @@
     "studio": "D.S. Pictures",
     "addedAt": 1678402181,
     "updatedAt": 1745229323,
+    "genres": [
+      "Documentary",
+      "Adventure"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Nigel Marven",
+        "role": ""
+      },
+      {
+        "name": "David Jason",
+        "role": ""
+      },
+      {
+        "name": "Saba Douglas-Hamilton",
+        "role": ""
+      }
+    ],
     "leafCount": 6,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "",
+    "originallyAvailableAt": "2006-08-20"
   },
   {
     "id": "92271",
@@ -2408,8 +6717,22 @@
     "studio": "BBC Studios Natural History Unit",
     "addedAt": 1678402080,
     "updatedAt": 1745229321,
+    "genres": [
+      "Documentary",
+      "Animation"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "David Attenborough",
+        "role": ""
+      }
+    ],
     "leafCount": 10,
-    "childCount": 2
+    "childCount": 2,
+    "contentRating": "TV-PG",
+    "originallyAvailableAt": "2022-05-23"
   },
   {
     "id": "90843",
@@ -2420,8 +6743,30 @@
     "studio": "BBC",
     "addedAt": 1678401961,
     "updatedAt": 1745658222,
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Colin Firth",
+        "role": ""
+      },
+      {
+        "name": "Jennifer Ehle",
+        "role": ""
+      },
+      {
+        "name": "Susannah Harker",
+        "role": ""
+      }
+    ],
     "leafCount": 6,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "1995-09-24"
   },
   {
     "id": "120352",
@@ -2432,8 +6777,30 @@
     "studio": "WETA",
     "addedAt": 1701220542,
     "updatedAt": 1745658224,
+    "genres": [
+      "Documentary",
+      "Crime"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Peter Coyote",
+        "role": ""
+      },
+      {
+        "name": "Daniel Okrent",
+        "role": ""
+      },
+      {
+        "name": "Pete Hamill",
+        "role": ""
+      }
+    ],
     "leafCount": 3,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2011-10-02"
   },
   {
     "id": "92731",
@@ -2444,8 +6811,30 @@
     "studio": "A+E Studios",
     "addedAt": 1678402110,
     "updatedAt": 1745229323,
+    "genres": [
+      "Mystery",
+      "Drama"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Aidan Gillen",
+        "role": ""
+      },
+      {
+        "name": "Michael Malarkey",
+        "role": ""
+      },
+      {
+        "name": "Laura Mennell",
+        "role": ""
+      }
+    ],
     "leafCount": 20,
-    "childCount": 2
+    "childCount": 2,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2019-01-08"
   },
   {
     "id": "113964",
@@ -2456,8 +6845,29 @@
     "studio": "ABC Signature",
     "addedAt": 1692895629,
     "updatedAt": 1745229332,
+    "genres": [
+      "Drama"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "John Ortiz",
+        "role": ""
+      },
+      {
+        "name": "Cecilia Su\u00e1rez",
+        "role": ""
+      },
+      {
+        "name": "Augusto Aguilera",
+        "role": ""
+      }
+    ],
     "leafCount": 10,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2022-01-24"
   },
   {
     "id": "97573",
@@ -2468,8 +6878,30 @@
     "studio": "Universal Television",
     "addedAt": 1678402504,
     "updatedAt": 1745229326,
+    "genres": [
+      "Drama",
+      "Action"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Scott Bakula",
+        "role": ""
+      },
+      {
+        "name": "Dean Stockwell",
+        "role": ""
+      },
+      {
+        "name": "Fran Bennett",
+        "role": ""
+      }
+    ],
     "leafCount": 97,
-    "childCount": 5
+    "childCount": 5,
+    "contentRating": "TV-PG",
+    "originallyAvailableAt": "1989-03-26"
   },
   {
     "id": "113943",
@@ -2480,8 +6912,30 @@
     "studio": "Universal Television",
     "addedAt": 1692892842,
     "updatedAt": 1745229331,
+    "genres": [
+      "Science Fiction",
+      "Drama"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Raymond Lee",
+        "role": ""
+      },
+      {
+        "name": "Caitlin Bassett",
+        "role": ""
+      },
+      {
+        "name": "Mason Alexander Park",
+        "role": ""
+      }
+    ],
     "leafCount": 31,
-    "childCount": 2
+    "childCount": 2,
+    "contentRating": "TV-PG",
+    "originallyAvailableAt": "2022-09-19"
   },
   {
     "id": "132705",
@@ -2492,8 +6946,30 @@
     "studio": "shondaland",
     "addedAt": 1745548874,
     "updatedAt": 1745548875,
+    "genres": [
+      "Drama",
+      "History"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "India Ria Amarteifio",
+        "role": ""
+      },
+      {
+        "name": "Corey Mylchreest",
+        "role": ""
+      },
+      {
+        "name": "Golda Rosheuvel",
+        "role": ""
+      }
+    ],
     "leafCount": 6,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2023-05-04"
   },
   {
     "id": "113933",
@@ -2504,8 +6980,30 @@
     "studio": "Flitcraft",
     "addedAt": 1692888146,
     "updatedAt": 1745229331,
+    "genres": [
+      "Drama",
+      "History"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Anya Taylor-Joy",
+        "role": ""
+      },
+      {
+        "name": "Chloe Pirrie",
+        "role": ""
+      },
+      {
+        "name": "Marcin Doroci\u0144ski",
+        "role": ""
+      }
+    ],
     "leafCount": 7,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2020-10-23"
   },
   {
     "id": "96761",
@@ -2516,8 +7014,29 @@
     "studio": "Big Talk Studios",
     "addedAt": 1678402422,
     "updatedAt": 1745229325,
+    "genres": [
+      "Comedy"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Helen Monks",
+        "role": ""
+      },
+      {
+        "name": "Alexa Davies",
+        "role": ""
+      },
+      {
+        "name": "Molly Risker",
+        "role": ""
+      }
+    ],
     "leafCount": 12,
-    "childCount": 2
+    "childCount": 2,
+    "contentRating": "",
+    "originallyAvailableAt": "2013-12-22"
   },
   {
     "id": "113922",
@@ -2528,8 +7047,30 @@
     "studio": "Amazon Studios",
     "addedAt": 1692882337,
     "updatedAt": 1746262592,
+    "genres": [
+      "Crime",
+      "Drama"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Alan Ritchson",
+        "role": ""
+      },
+      {
+        "name": "Maria Sten",
+        "role": ""
+      },
+      {
+        "name": "Malcolm Goodwin",
+        "role": ""
+      }
+    ],
     "leafCount": 24,
-    "childCount": 3
+    "childCount": 3,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2022-02-03"
   },
   {
     "id": "126145",
@@ -2540,8 +7081,26 @@
     "studio": "JBTV Chicago",
     "addedAt": 1721577933,
     "updatedAt": 1741851059,
+    "genres": [
+      "Crime",
+      "Documentary"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Crux Conception",
+        "role": ""
+      },
+      {
+        "name": "Rick Moretti",
+        "role": ""
+      }
+    ],
     "leafCount": 10,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2024-06-26"
   },
   {
     "id": "113913",
@@ -2552,8 +7111,30 @@
     "studio": "Rise Management",
     "addedAt": 1692876253,
     "updatedAt": 1746429572,
+    "genres": [
+      "Comedy",
+      "Documentary"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Nathan Fielder",
+        "role": ""
+      },
+      {
+        "name": "Joshua Benard",
+        "role": ""
+      },
+      {
+        "name": "Thomas McNamara",
+        "role": ""
+      }
+    ],
     "leafCount": 9,
-    "childCount": 2
+    "childCount": 2,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2022-07-15"
   },
   {
     "id": "113904",
@@ -2564,8 +7145,30 @@
     "studio": "Boardwalk Pictures",
     "addedAt": 1692846060,
     "updatedAt": 1745229330,
+    "genres": [
+      "Documentary",
+      "Reality"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Jeremy Renner",
+        "role": ""
+      },
+      {
+        "name": "Rory Millikin",
+        "role": ""
+      },
+      {
+        "name": "Corey Wardleig",
+        "role": ""
+      }
+    ],
     "leafCount": 4,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-PG",
+    "originallyAvailableAt": "2023-04-12"
   },
   {
     "id": "91984",
@@ -2576,8 +7179,30 @@
     "studio": "FX Productions",
     "addedAt": 1678402058,
     "updatedAt": 1745229321,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Devery Jacobs",
+        "role": ""
+      },
+      {
+        "name": "D'Pharaoh Woon-A-Tai",
+        "role": ""
+      },
+      {
+        "name": "Lane Factor",
+        "role": ""
+      }
+    ],
     "leafCount": 28,
-    "childCount": 3
+    "childCount": 3,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2021-08-08"
   },
   {
     "id": "102001",
@@ -2588,8 +7213,30 @@
     "studio": "Williams Street",
     "addedAt": 1679629293,
     "updatedAt": 1745229328,
+    "genres": [
+      "Animation",
+      "Comedy"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Spencer Grammer",
+        "role": ""
+      },
+      {
+        "name": "Chris Parnell",
+        "role": ""
+      },
+      {
+        "name": "Sarah Chalke",
+        "role": ""
+      }
+    ],
     "leafCount": 71,
-    "childCount": 7
+    "childCount": 7,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2013-12-02"
   },
   {
     "id": "94376",
@@ -2600,8 +7247,30 @@
     "studio": "Rough House Pictures",
     "addedAt": 1678402241,
     "updatedAt": 1746001427,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Danny McBride",
+        "role": ""
+      },
+      {
+        "name": "Adam Devine",
+        "role": ""
+      },
+      {
+        "name": "Edi Patterson",
+        "role": ""
+      }
+    ],
     "leafCount": 36,
-    "childCount": 4
+    "childCount": 4,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2019-08-18"
   },
   {
     "id": "106520",
@@ -2612,8 +7281,29 @@
     "studio": "Bud Yorkin Productions",
     "addedAt": 1685385743,
     "updatedAt": 1745229328,
+    "genres": [
+      "Comedy"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Redd Foxx",
+        "role": ""
+      },
+      {
+        "name": "Demond Wilson",
+        "role": ""
+      },
+      {
+        "name": "LaWanda Page",
+        "role": ""
+      }
+    ],
     "leafCount": 135,
-    "childCount": 6
+    "childCount": 6,
+    "contentRating": "TV-PG",
+    "originallyAvailableAt": "1972-01-14"
   },
   {
     "id": "113820",
@@ -2624,8 +7314,30 @@
     "studio": "Small Dog Picture Company",
     "addedAt": 1692830610,
     "updatedAt": 1745229330,
+    "genres": [
+      "Family",
+      "Comedy"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Tim Allen",
+        "role": ""
+      },
+      {
+        "name": "Elizabeth Mitchell",
+        "role": ""
+      },
+      {
+        "name": "Austin Kane",
+        "role": ""
+      }
+    ],
     "leafCount": 12,
-    "childCount": 2
+    "childCount": 2,
+    "contentRating": "TV-PG",
+    "originallyAvailableAt": "2022-11-08"
   },
   {
     "id": "132028",
@@ -2636,8 +7348,30 @@
     "studio": "Broadway Video",
     "addedAt": 1745159867,
     "updatedAt": 1746429573,
+    "genres": [
+      "Comedy",
+      "News"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Kenan Thompson",
+        "role": ""
+      },
+      {
+        "name": "Darrell Hammond",
+        "role": ""
+      },
+      {
+        "name": "Seth Meyers",
+        "role": ""
+      }
+    ],
     "leafCount": 700,
-    "childCount": 35
+    "childCount": 35,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "1975-10-11"
   },
   {
     "id": "105462",
@@ -2648,8 +7382,30 @@
     "studio": "Peter Engel Productions",
     "addedAt": 1682731701,
     "updatedAt": 1745229328,
+    "genres": [
+      "Comedy",
+      "Family"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Mark-Paul Gosselaar",
+        "role": ""
+      },
+      {
+        "name": "Mario L\u00f3pez",
+        "role": ""
+      },
+      {
+        "name": "Dustin Diamond",
+        "role": ""
+      }
+    ],
     "leafCount": 86,
-    "childCount": 4
+    "childCount": 4,
+    "contentRating": "TV-G",
+    "originallyAvailableAt": "1989-08-20"
   },
   {
     "id": "90959",
@@ -2660,8 +7416,29 @@
     "studio": "Not A Real Company",
     "addedAt": 1678401971,
     "updatedAt": 1745229320,
+    "genres": [
+      "Comedy"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Eugene Levy",
+        "role": ""
+      },
+      {
+        "name": "Catherine O'Hara",
+        "role": ""
+      },
+      {
+        "name": "Dan Levy",
+        "role": ""
+      }
+    ],
     "leafCount": 79,
-    "childCount": 6
+    "childCount": 6,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2015-01-13"
   },
   {
     "id": "92589",
@@ -2672,8 +7449,30 @@
     "studio": "Warner Bros. Animation",
     "addedAt": 1678402102,
     "updatedAt": 1745229322,
+    "genres": [
+      "Mystery",
+      "Animation"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Frank Welker",
+        "role": ""
+      },
+      {
+        "name": "Grey DeLisle",
+        "role": ""
+      },
+      {
+        "name": "Mindy Cohn",
+        "role": ""
+      }
+    ],
     "leafCount": 52,
-    "childCount": 2
+    "childCount": 2,
+    "contentRating": "TV-PG",
+    "originallyAvailableAt": "2010-04-05"
   },
   {
     "id": "110287",
@@ -2684,8 +7483,30 @@
     "studio": "Marvel Studios",
     "addedAt": 1692634853,
     "updatedAt": 1745229330,
+    "genres": [
+      "Drama",
+      "Action"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Samuel L. Jackson",
+        "role": ""
+      },
+      {
+        "name": "Ben Mendelsohn",
+        "role": ""
+      },
+      {
+        "name": "Kingsley Ben-Adir",
+        "role": ""
+      }
+    ],
     "leafCount": 6,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2023-06-21"
   },
   {
     "id": "128296",
@@ -2696,8 +7517,30 @@
     "studio": "Jeff Jenkins Productions",
     "addedAt": 1733700166,
     "updatedAt": 1741964238,
+    "genres": [
+      "Reality",
+      "Family"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Whitney Leavitt",
+        "role": ""
+      },
+      {
+        "name": "Mikayla Matthews",
+        "role": ""
+      },
+      {
+        "name": "Jen Affleck",
+        "role": ""
+      }
+    ],
     "leafCount": 8,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2024-09-06"
   },
   {
     "id": "99013",
@@ -2708,8 +7551,29 @@
     "studio": "Castle Rock Entertainment",
     "addedAt": 1678402631,
     "updatedAt": 1745229327,
+    "genres": [
+      "Comedy"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Jerry Seinfeld",
+        "role": ""
+      },
+      {
+        "name": "Jason Alexander",
+        "role": ""
+      },
+      {
+        "name": "Michael Richards",
+        "role": ""
+      }
+    ],
     "leafCount": 171,
-    "childCount": 9
+    "childCount": 9,
+    "contentRating": "TV-PG",
+    "originallyAvailableAt": "1989-07-05"
   },
   {
     "id": "110275",
@@ -2720,8 +7584,30 @@
     "studio": "Lionsgate Television",
     "addedAt": 1692633569,
     "updatedAt": 1745229330,
+    "genres": [
+      "Drama",
+      "History"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Samantha Morton",
+        "role": ""
+      },
+      {
+        "name": "Amrita Acharia",
+        "role": ""
+      },
+      {
+        "name": "Barry Atsma",
+        "role": ""
+      }
+    ],
     "leafCount": 16,
-    "childCount": 2
+    "childCount": 2,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2022-09-11"
   },
   {
     "id": "110263",
@@ -2732,8 +7618,30 @@
     "studio": "Endeavor Content",
     "addedAt": 1692628133,
     "updatedAt": 1745658223,
+    "genres": [
+      "Drama",
+      "Science Fiction"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Adam Scott",
+        "role": ""
+      },
+      {
+        "name": "Britt Lower",
+        "role": ""
+      },
+      {
+        "name": "Tramell Tillman",
+        "role": ""
+      }
+    ],
     "leafCount": 19,
-    "childCount": 2
+    "childCount": 2,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2022-02-18"
   },
   {
     "id": "110246",
@@ -2744,8 +7652,30 @@
     "studio": "Marvel Studios",
     "addedAt": 1692625235,
     "updatedAt": 1745229330,
+    "genres": [
+      "Comedy",
+      "Action"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Tatiana Maslany",
+        "role": ""
+      },
+      {
+        "name": "Ginger Gonzaga",
+        "role": ""
+      },
+      {
+        "name": "Jameela Jamil",
+        "role": ""
+      }
+    ],
     "leafCount": 9,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2022-08-18"
   },
   {
     "id": "110227",
@@ -2756,8 +7686,30 @@
     "studio": "Hartswood Films",
     "addedAt": 1692623035,
     "updatedAt": 1745229329,
+    "genres": [
+      "Crime",
+      "Drama"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Benedict Cumberbatch",
+        "role": ""
+      },
+      {
+        "name": "Louise Brealey",
+        "role": ""
+      },
+      {
+        "name": "Una Stubbs",
+        "role": ""
+      }
+    ],
     "leafCount": 12,
-    "childCount": 4
+    "childCount": 4,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2010-07-25"
   },
   {
     "id": "124047",
@@ -2768,8 +7720,30 @@
     "studio": "FX Productions",
     "addedAt": 1709571556,
     "updatedAt": 1745229336,
+    "genres": [
+      "Drama",
+      "Action"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Hiroyuki Sanada",
+        "role": ""
+      },
+      {
+        "name": "Cosmo Jarvis",
+        "role": ""
+      },
+      {
+        "name": "Anna Sawai",
+        "role": ""
+      }
+    ],
     "leafCount": 10,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2024-02-27"
   },
   {
     "id": "110215",
@@ -2780,8 +7754,30 @@
     "studio": "Gloria Sanchez Productions",
     "addedAt": 1692620706,
     "updatedAt": 1745229329,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Paul Rudd",
+        "role": ""
+      },
+      {
+        "name": "Will Ferrell",
+        "role": ""
+      },
+      {
+        "name": "Kathryn Hahn",
+        "role": ""
+      }
+    ],
     "leafCount": 8,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2021-11-12"
   },
   {
     "id": "130650",
@@ -2792,8 +7788,30 @@
     "studio": "Doozer",
     "addedAt": 1741222784,
     "updatedAt": 1744494588,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Harrison Ford",
+        "role": ""
+      },
+      {
+        "name": "Jason Segel",
+        "role": ""
+      },
+      {
+        "name": "Jessica Williams",
+        "role": ""
+      }
+    ],
     "leafCount": 22,
-    "childCount": 2
+    "childCount": 2,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2023-01-27"
   },
   {
     "id": "86667",
@@ -2804,8 +7822,30 @@
     "studio": "Advanced Medical Productions",
     "addedAt": 1678401602,
     "updatedAt": 1745229318,
+    "genres": [
+      "Reality",
+      "Drama"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Kody Brown",
+        "role": ""
+      },
+      {
+        "name": "Meri Brown",
+        "role": ""
+      },
+      {
+        "name": "Janelle Brown",
+        "role": ""
+      }
+    ],
     "leafCount": 250,
-    "childCount": 19
+    "childCount": 19,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2010-09-26"
   },
   {
     "id": "89813",
@@ -2816,8 +7856,30 @@
     "studio": "HBO",
     "addedAt": 1678401858,
     "updatedAt": 1745229320,
+    "genres": [
+      "Drama",
+      "Crime"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "James Gandolfini",
+        "role": ""
+      },
+      {
+        "name": "Edie Falco",
+        "role": ""
+      },
+      {
+        "name": "Jamie-Lynn Sigler",
+        "role": ""
+      }
+    ],
     "leafCount": 86,
-    "childCount": 6
+    "childCount": 6,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "1999-01-10"
   },
   {
     "id": "94024",
@@ -2828,8 +7890,30 @@
     "studio": "3 Arts Entertainment",
     "addedAt": 1678402216,
     "updatedAt": 1745229324,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Steve Carell",
+        "role": ""
+      },
+      {
+        "name": "John Malkovich",
+        "role": ""
+      },
+      {
+        "name": "Ben Schwartz",
+        "role": ""
+      }
+    ],
     "leafCount": 17,
-    "childCount": 2
+    "childCount": 2,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2020-05-29"
   },
   {
     "id": "95148",
@@ -2840,8 +7924,30 @@
     "studio": "New Pictures",
     "addedAt": 1678402292,
     "updatedAt": 1745229324,
+    "genres": [
+      "Drama",
+      "History"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Charlotte Hope",
+        "role": ""
+      },
+      {
+        "name": "Ruair\u00ed O'Connor",
+        "role": ""
+      },
+      {
+        "name": "Laura Carmichael",
+        "role": ""
+      }
+    ],
     "leafCount": 16,
-    "childCount": 2
+    "childCount": 2,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2019-05-04"
   },
   {
     "id": "110142",
@@ -2852,8 +7958,30 @@
     "studio": "Siren Pictures",
     "addedAt": 1692580471,
     "updatedAt": 1745229329,
+    "genres": [
+      "Drama",
+      "Mystery"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Lee Jung-jae",
+        "role": ""
+      },
+      {
+        "name": "Jeon Young-soo",
+        "role": ""
+      },
+      {
+        "name": "Wi Ha-jun",
+        "role": ""
+      }
+    ],
     "leafCount": 16,
-    "childCount": 2
+    "childCount": 2,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2021-09-17"
   },
   {
     "id": "128279",
@@ -2864,8 +7992,30 @@
     "studio": "Lucasfilm Ltd.",
     "addedAt": 1733671120,
     "updatedAt": 1745229340,
+    "genres": [
+      "Science Fiction",
+      "Action"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Jude Law",
+        "role": ""
+      },
+      {
+        "name": "Ravi Cabot-Conyers",
+        "role": ""
+      },
+      {
+        "name": "Ryan Kiera Armstrong",
+        "role": ""
+      }
+    ],
     "leafCount": 8,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-PG",
+    "originallyAvailableAt": "2024-12-02"
   },
   {
     "id": "86329",
@@ -2876,8 +8026,30 @@
     "studio": "Lucasfilm Animation",
     "addedAt": 1678401576,
     "updatedAt": 1745229317,
+    "genres": [
+      "Animation",
+      "Action"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Dee Bradley Baker",
+        "role": ""
+      },
+      {
+        "name": "Michelle Ang",
+        "role": ""
+      },
+      {
+        "name": "Noshir Dalal",
+        "role": ""
+      }
+    ],
     "leafCount": 47,
-    "childCount": 3
+    "childCount": 3,
+    "contentRating": "TV-PG",
+    "originallyAvailableAt": "2021-05-04"
   },
   {
     "id": "128624",
@@ -2888,8 +8060,30 @@
     "studio": "Lucasfilm Animation",
     "addedAt": 1736014330,
     "updatedAt": 1745229341,
+    "genres": [
+      "Animation",
+      "Action"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Tom Kane",
+        "role": ""
+      },
+      {
+        "name": "Matt Lanter",
+        "role": ""
+      },
+      {
+        "name": "James Arnold Taylor",
+        "role": ""
+      }
+    ],
     "leafCount": 133,
-    "childCount": 7
+    "childCount": 7,
+    "contentRating": "TV-PG",
+    "originallyAvailableAt": "2008-10-03"
   },
   {
     "id": "95479",
@@ -2900,8 +8094,30 @@
     "studio": "Cartoon Network Studios",
     "addedAt": 1678402315,
     "updatedAt": 1745229325,
+    "genres": [
+      "Animation",
+      "Comedy"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Zach Callison",
+        "role": ""
+      },
+      {
+        "name": "Estelle",
+        "role": ""
+      },
+      {
+        "name": "Michaela Dietz",
+        "role": ""
+      }
+    ],
     "leafCount": 155,
-    "childCount": 6
+    "childCount": 6,
+    "contentRating": "TV-PG",
+    "originallyAvailableAt": "2013-07-27"
   },
   {
     "id": "95644",
@@ -2912,8 +8128,30 @@
     "studio": "Cartoon Network Studios",
     "addedAt": 1678402325,
     "updatedAt": 1745229325,
+    "genres": [
+      "Animation",
+      "Comedy"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Michaela Dietz",
+        "role": ""
+      },
+      {
+        "name": "Deedee Magno",
+        "role": ""
+      },
+      {
+        "name": "Zach Callison",
+        "role": ""
+      }
+    ],
     "leafCount": 20,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-PG",
+    "originallyAvailableAt": "2019-12-07"
   },
   {
     "id": "92493",
@@ -2924,8 +8162,30 @@
     "studio": "21 Laps Entertainment",
     "addedAt": 1678402096,
     "updatedAt": 1745229322,
+    "genres": [
+      "Drama",
+      "Fantasy"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Millie Bobby Brown",
+        "role": ""
+      },
+      {
+        "name": "Finn Wolfhard",
+        "role": ""
+      },
+      {
+        "name": "Gaten Matarazzo",
+        "role": ""
+      }
+    ],
     "leafCount": 34,
-    "childCount": 4
+    "childCount": 4,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2016-07-15"
   },
   {
     "id": "132016",
@@ -2936,8 +8196,30 @@
     "studio": "Point Grey Pictures",
     "addedAt": 1745111857,
     "updatedAt": 1746346687,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Seth Rogen",
+        "role": ""
+      },
+      {
+        "name": "Catherine O'Hara",
+        "role": ""
+      },
+      {
+        "name": "Ike Barinholtz",
+        "role": ""
+      }
+    ],
     "leafCount": 7,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2025-03-26"
   },
   {
     "id": "87077",
@@ -2948,8 +8230,30 @@
     "studio": "Gary Sanchez Productions",
     "addedAt": 1678401636,
     "updatedAt": 1745229318,
+    "genres": [
+      "Drama",
+      "Comedy"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Jeremy Strong",
+        "role": ""
+      },
+      {
+        "name": "Kieran Culkin",
+        "role": ""
+      },
+      {
+        "name": "Sarah Snook",
+        "role": ""
+      }
+    ],
     "leafCount": 39,
-    "childCount": 4
+    "childCount": 4,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2018-05-06"
   },
   {
     "id": "97685",
@@ -2960,8 +8264,30 @@
     "studio": "Silver River Productions",
     "addedAt": 1678402511,
     "updatedAt": 1745229326,
+    "genres": [
+      "Documentary",
+      "Comedy"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Sue Perkins",
+        "role": ""
+      },
+      {
+        "name": "Giles Coren",
+        "role": ""
+      },
+      {
+        "name": "Martin Blunos",
+        "role": ""
+      }
+    ],
     "leafCount": 14,
-    "childCount": 3
+    "childCount": 3,
+    "contentRating": "",
+    "originallyAvailableAt": "2007-04-16"
   },
   {
     "id": "87766",
@@ -2972,8 +8298,30 @@
     "studio": "Doozer",
     "addedAt": 1678401686,
     "updatedAt": 1745229319,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Jason Sudeikis",
+        "role": ""
+      },
+      {
+        "name": "Hannah Waddingham",
+        "role": ""
+      },
+      {
+        "name": "Jeremy Swift",
+        "role": ""
+      }
+    ],
     "leafCount": 34,
-    "childCount": 3
+    "childCount": 3,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2020-08-14"
   },
   {
     "id": "127865",
@@ -2984,8 +8332,30 @@
     "studio": "Hera Pictures",
     "addedAt": 1732587857,
     "updatedAt": 1745229340,
+    "genres": [
+      "Drama",
+      "Mystery"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Mark Strong",
+        "role": ""
+      },
+      {
+        "name": "Carice van Houten",
+        "role": ""
+      },
+      {
+        "name": "Daniel Mays",
+        "role": ""
+      }
+    ],
     "leafCount": 15,
-    "childCount": 2
+    "childCount": 2,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2019-09-13"
   },
   {
     "id": "107245",
@@ -2996,8 +8366,22 @@
     "studio": "Banijay Studios North America",
     "addedAt": 1688004194,
     "updatedAt": 1742109017,
+    "genres": [
+      "Reality",
+      "Game Show"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Mark L. Walberg",
+        "role": ""
+      }
+    ],
     "leafCount": 69,
-    "childCount": 6
+    "childCount": 6,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2019-01-15"
   },
   {
     "id": "109975",
@@ -3008,8 +8392,29 @@
     "studio": "Blink Films",
     "addedAt": 1692487024,
     "updatedAt": 1745229329,
+    "genres": [
+      "Documentary"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Charles Hagerty",
+        "role": ""
+      },
+      {
+        "name": "Demetri Goritsas",
+        "role": ""
+      },
+      {
+        "name": "Mica Endsley",
+        "role": ""
+      }
+    ],
     "leafCount": 12,
-    "childCount": 2
+    "childCount": 2,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2021-09-06"
   },
   {
     "id": "126491",
@@ -3020,8 +8425,21 @@
     "studio": "Runway",
     "addedAt": 1723208637,
     "updatedAt": 1743000116,
+    "genres": [
+      "Comedy"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Ari Shaffir",
+        "role": ""
+      }
+    ],
     "leafCount": 69,
-    "childCount": 6
+    "childCount": 6,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2013-06-04"
   },
   {
     "id": "132862",
@@ -3032,8 +8450,30 @@
     "studio": "Nitrogen Studios Canada",
     "addedAt": 1745700335,
     "updatedAt": 1745887749,
+    "genres": [
+      "Animation",
+      "Short"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Michael Angelis",
+        "role": ""
+      },
+      {
+        "name": "Michael Brandon",
+        "role": ""
+      },
+      {
+        "name": "George Carlin",
+        "role": ""
+      }
+    ],
     "leafCount": 583,
-    "childCount": 24
+    "childCount": 24,
+    "contentRating": "TV-Y",
+    "originallyAvailableAt": "1984-09-04"
   },
   {
     "id": "126153",
@@ -3044,8 +8484,30 @@
     "studio": "Hollywood Gang Productions",
     "addedAt": 1721694557,
     "updatedAt": 1745392962,
+    "genres": [
+      "Drama",
+      "Action"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Anthony Hopkins",
+        "role": ""
+      },
+      {
+        "name": "Tom Hughes",
+        "role": ""
+      },
+      {
+        "name": "Jojo Macari",
+        "role": ""
+      }
+    ],
     "leafCount": 10,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2024-07-18"
   },
   {
     "id": "105129",
@@ -3056,8 +8518,29 @@
     "studio": "Columbia Pictures Television",
     "addedAt": 1682445919,
     "updatedAt": 1738922727,
+    "genres": [
+      "Comedy"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Moe Howard",
+        "role": ""
+      },
+      {
+        "name": "Larry Fine",
+        "role": ""
+      },
+      {
+        "name": "Curly Howard",
+        "role": ""
+      }
+    ],
     "leafCount": 252,
-    "childCount": 27
+    "childCount": 27,
+    "contentRating": "TV-G",
+    "originallyAvailableAt": "1934-05-05"
   },
   {
     "id": "120681",
@@ -3068,8 +8551,30 @@
     "studio": "Rankin/Bass Productions",
     "addedAt": 1703435162,
     "updatedAt": 1745392960,
+    "genres": [
+      "Animation",
+      "Science Fiction"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Larry Kenney",
+        "role": ""
+      },
+      {
+        "name": "Peter Newman",
+        "role": ""
+      },
+      {
+        "name": "Earle Hyman",
+        "role": ""
+      }
+    ],
     "leafCount": 125,
-    "childCount": 4
+    "childCount": 4,
+    "contentRating": "TV-Y7",
+    "originallyAvailableAt": "1985-01-23"
   },
   {
     "id": "86951",
@@ -3080,8 +8585,30 @@
     "studio": "Amazon Studios",
     "addedAt": 1678401628,
     "updatedAt": 1745392954,
+    "genres": [
+      "Drama",
+      "Action"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "John Krasinski",
+        "role": ""
+      },
+      {
+        "name": "Wendell Pierce",
+        "role": ""
+      },
+      {
+        "name": "Michael Kelly",
+        "role": ""
+      }
+    ],
     "leafCount": 30,
-    "childCount": 4
+    "childCount": 4,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2018-08-31"
   },
   {
     "id": "93637",
@@ -3092,8 +8619,30 @@
     "studio": "Magical Elves",
     "addedAt": 1678402186,
     "updatedAt": 1746001427,
+    "genres": [
+      "Reality",
+      "Game Show"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Tom Colicchio",
+        "role": ""
+      },
+      {
+        "name": "Gail Simmons",
+        "role": ""
+      },
+      {
+        "name": "Padma Lakshmi",
+        "role": ""
+      }
+    ],
     "leafCount": 323,
-    "childCount": 22
+    "childCount": 22,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2006-02-15"
   },
   {
     "id": "89105",
@@ -3104,8 +8653,30 @@
     "studio": "BBC",
     "addedAt": 1678401800,
     "updatedAt": 1745392955,
+    "genres": [
+      "Talk Show",
+      "Reality"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Jeremy Clarkson",
+        "role": ""
+      },
+      {
+        "name": "Richard Hammond",
+        "role": ""
+      },
+      {
+        "name": "James May",
+        "role": ""
+      }
+    ],
     "leafCount": 170,
-    "childCount": 22
+    "childCount": 22,
+    "contentRating": "TV-PG",
+    "originallyAvailableAt": "2002-10-20"
   },
   {
     "id": "127121",
@@ -3116,8 +8687,30 @@
     "studio": "Studio Lambert",
     "addedAt": 1726457930,
     "updatedAt": 1745392962,
+    "genres": [
+      "Reality",
+      "Game Show"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Alan Cumming",
+        "role": ""
+      },
+      {
+        "name": "Kate Chastain",
+        "role": ""
+      },
+      {
+        "name": "Trishelle Cannatella",
+        "role": ""
+      }
+    ],
     "leafCount": 35,
-    "childCount": 3
+    "childCount": 3,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2023-01-12"
   },
   {
     "id": "121313",
@@ -3128,8 +8721,30 @@
     "studio": "Passenger",
     "addedAt": 1705767773,
     "updatedAt": 1745392961,
+    "genres": [
+      "Drama",
+      "Mystery"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Matthew McConaughey",
+        "role": ""
+      },
+      {
+        "name": "Colin Farrell",
+        "role": ""
+      },
+      {
+        "name": "Mahershala Ali",
+        "role": ""
+      }
+    ],
     "leafCount": 30,
-    "childCount": 4
+    "childCount": 4,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2014-01-12"
   },
   {
     "id": "90760",
@@ -3140,8 +8755,30 @@
     "studio": "101 Studios",
     "addedAt": 1678401953,
     "updatedAt": 1745392955,
+    "genres": [
+      "Drama",
+      "Crime"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Sylvester Stallone",
+        "role": ""
+      },
+      {
+        "name": "Martin Starr",
+        "role": ""
+      },
+      {
+        "name": "Jay Will",
+        "role": ""
+      }
+    ],
     "leafCount": 19,
-    "childCount": 2
+    "childCount": 2,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2022-11-13"
   },
   {
     "id": "127272",
@@ -3152,8 +8789,30 @@
     "studio": "Studio Xilam",
     "addedAt": 1726950693,
     "updatedAt": 1745392963,
+    "genres": [
+      "Animation",
+      "Action"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Sylvia Hoeks",
+        "role": ""
+      },
+      {
+        "name": "Stuart Martin",
+        "role": ""
+      },
+      {
+        "name": "Pilou Asb\u00e6k",
+        "role": ""
+      }
+    ],
     "leafCount": 8,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2024-09-19"
   },
   {
     "id": "120923",
@@ -3164,8 +8823,30 @@
     "studio": "Six West Media",
     "addedAt": 1703649507,
     "updatedAt": 1745392961,
+    "genres": [
+      "Documentary",
+      "Drama"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Dan Aykroyd",
+        "role": ""
+      },
+      {
+        "name": "Adam Richman",
+        "role": ""
+      },
+      {
+        "name": "Hakeem Muata Oluseyi",
+        "role": ""
+      }
+    ],
     "leafCount": 26,
-    "childCount": 2
+    "childCount": 2,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2023-12-01"
   },
   {
     "id": "120359",
@@ -3176,8 +8857,30 @@
     "studio": "",
     "addedAt": 1701222251,
     "updatedAt": 1741964388,
+    "genres": [
+      "Documentary",
+      "Reality"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Yannick Benjamin",
+        "role": ""
+      },
+      {
+        "name": "Morgan Harris",
+        "role": ""
+      },
+      {
+        "name": "Jack Mason",
+        "role": ""
+      }
+    ],
     "leafCount": 6,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2015-11-10"
   },
   {
     "id": "109930",
@@ -3188,8 +8891,30 @@
     "studio": "Imagine Television Studios",
     "addedAt": 1692394430,
     "updatedAt": 1745392959,
+    "genres": [
+      "Drama",
+      "Crime"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Andrew Garfield",
+        "role": ""
+      },
+      {
+        "name": "Sam Worthington",
+        "role": ""
+      },
+      {
+        "name": "Daisy Edgar-Jones",
+        "role": ""
+      }
+    ],
     "leafCount": 7,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2022-04-28"
   },
   {
     "id": "95769",
@@ -3200,8 +8925,30 @@
     "studio": "BBC Comedy",
     "addedAt": 1678402335,
     "updatedAt": 1742484642,
+    "genres": [
+      "Comedy",
+      "History"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "David Mitchell",
+        "role": ""
+      },
+      {
+        "name": "Liza Tarbuck",
+        "role": ""
+      },
+      {
+        "name": "Paula Wilcox",
+        "role": ""
+      }
+    ],
     "leafCount": 21,
-    "childCount": 4
+    "childCount": 4,
+    "contentRating": "TV-PG",
+    "originallyAvailableAt": "2016-05-09"
   },
   {
     "id": "88552",
@@ -3212,8 +8959,30 @@
     "studio": "Kudos",
     "addedAt": 1678401751,
     "updatedAt": 1745392955,
+    "genres": [
+      "Drama",
+      "Mystery"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Adeel Akhtar",
+        "role": ""
+      },
+      {
+        "name": "Paul Higgins",
+        "role": ""
+      },
+      {
+        "name": "Neil Maskell",
+        "role": ""
+      }
+    ],
     "leafCount": 12,
-    "childCount": 2
+    "childCount": 2,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2013-01-14"
   },
   {
     "id": "107331",
@@ -3224,8 +8993,30 @@
     "studio": "Warner Bros. Television",
     "addedAt": 1688263252,
     "updatedAt": 1745392957,
+    "genres": [
+      "Action",
+      "Adventure"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Jane Badler",
+        "role": ""
+      },
+      {
+        "name": "June Chadwick",
+        "role": ""
+      },
+      {
+        "name": "Jennifer Cooke",
+        "role": ""
+      }
+    ],
     "leafCount": 23,
-    "childCount": 2
+    "childCount": 2,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "1984-10-07"
   },
   {
     "id": "121127",
@@ -3236,8 +9027,30 @@
     "studio": "Incendo Productions",
     "addedAt": 1705358843,
     "updatedAt": 1745392961,
+    "genres": [
+      "Drama",
+      "Biography"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "George Blagden",
+        "role": ""
+      },
+      {
+        "name": "Alexander Vlahos",
+        "role": ""
+      },
+      {
+        "name": "Tygh Runyan",
+        "role": ""
+      }
+    ],
     "leafCount": 30,
-    "childCount": 3
+    "childCount": 3,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2015-11-16"
   },
   {
     "id": "131650",
@@ -3248,8 +9061,29 @@
     "studio": "Rough House Pictures",
     "addedAt": 1742500489,
     "updatedAt": 1744419450,
+    "genres": [
+      "Comedy"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Danny McBride",
+        "role": ""
+      },
+      {
+        "name": "Walton Goggins",
+        "role": ""
+      },
+      {
+        "name": "Georgia King",
+        "role": ""
+      }
+    ],
     "leafCount": 18,
-    "childCount": 2
+    "childCount": 2,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2016-07-17"
   },
   {
     "id": "125534",
@@ -3260,8 +9094,30 @@
     "studio": "Shaw Media",
     "addedAt": 1720579786,
     "updatedAt": 1745392962,
+    "genres": [
+      "Drama",
+      "Action"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Katheryn Winnick",
+        "role": ""
+      },
+      {
+        "name": "Gustaf Skarsg\u00e5rd",
+        "role": ""
+      },
+      {
+        "name": "Alexander Ludwig",
+        "role": ""
+      }
+    ],
     "leafCount": 89,
-    "childCount": 6
+    "childCount": 6,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2013-03-03"
   },
   {
     "id": "109886",
@@ -3272,8 +9128,30 @@
     "studio": "Brothers Dowdle Productions",
     "addedAt": 1692380393,
     "updatedAt": 1745392959,
+    "genres": [
+      "Drama",
+      "Crime"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Michael Shannon",
+        "role": ""
+      },
+      {
+        "name": "Taylor Kitsch",
+        "role": ""
+      },
+      {
+        "name": "Rory Culkin",
+        "role": ""
+      }
+    ],
     "leafCount": 6,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2018-01-24"
   },
   {
     "id": "109879",
@@ -3284,8 +9162,30 @@
     "studio": "MTV Entertainment Studios",
     "addedAt": 1692371804,
     "updatedAt": 1745392959,
+    "genres": [
+      "Drama",
+      "Crime"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Michael Shannon",
+        "role": ""
+      },
+      {
+        "name": "Giovanni Ribisi",
+        "role": ""
+      },
+      {
+        "name": "Keean Johnson",
+        "role": ""
+      }
+    ],
     "leafCount": 5,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2023-04-14"
   },
   {
     "id": "109861",
@@ -3296,8 +9196,30 @@
     "studio": "Marvel Studios",
     "addedAt": 1692368933,
     "updatedAt": 1745392958,
+    "genres": [
+      "Drama",
+      "Mystery"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Elizabeth Olsen",
+        "role": ""
+      },
+      {
+        "name": "Paul Bettany",
+        "role": ""
+      },
+      {
+        "name": "Kathryn Hahn",
+        "role": ""
+      }
+    ],
     "leafCount": 9,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2021-01-15"
   },
   {
     "id": "109824",
@@ -3308,8 +9230,30 @@
     "studio": "Boardwalk Pictures",
     "addedAt": 1692363908,
     "updatedAt": 1744196971,
+    "genres": [
+      "Documentary",
+      "Reality"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Ryan Reynolds",
+        "role": ""
+      },
+      {
+        "name": "Rob McElhenney",
+        "role": ""
+      },
+      {
+        "name": "Humphrey Ker",
+        "role": ""
+      }
+    ],
     "leafCount": 41,
-    "childCount": 3
+    "childCount": 3,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2022-08-24"
   },
   {
     "id": "92208",
@@ -3320,8 +9264,30 @@
     "studio": "Warner Bros. Television",
     "addedAt": 1678402076,
     "updatedAt": 1744197174,
+    "genres": [
+      "Western",
+      "Drama"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Evan Rachel Wood",
+        "role": ""
+      },
+      {
+        "name": "Thandiwe Newton",
+        "role": ""
+      },
+      {
+        "name": "Jeffrey Wright",
+        "role": ""
+      }
+    ],
     "leafCount": 36,
-    "childCount": 4
+    "childCount": 4,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2016-10-01"
   },
   {
     "id": "109810",
@@ -3332,8 +9298,30 @@
     "studio": "Marvel Studios",
     "addedAt": 1692362412,
     "updatedAt": 1744903758,
+    "genres": [
+      "Animation",
+      "Action"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Jeffrey Wright",
+        "role": ""
+      },
+      {
+        "name": "Terri Douglas",
+        "role": ""
+      },
+      {
+        "name": "Matthew Wood",
+        "role": ""
+      }
+    ],
     "leafCount": 26,
-    "childCount": 3
+    "childCount": 3,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2021-08-11"
   },
   {
     "id": "92145",
@@ -3344,8 +9332,30 @@
     "studio": "FX Productions",
     "addedAt": 1678402071,
     "updatedAt": 1744664452,
+    "genres": [
+      "Comedy",
+      "Fantasy"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Kayvan Novak",
+        "role": ""
+      },
+      {
+        "name": "Matt Berry",
+        "role": ""
+      },
+      {
+        "name": "Natasia Demetriou",
+        "role": ""
+      }
+    ],
     "leafCount": 61,
-    "childCount": 6
+    "childCount": 6,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2019-03-26"
   },
   {
     "id": "119238",
@@ -3356,8 +9366,30 @@
     "studio": "Sony Pictures Television",
     "addedAt": 1696646431,
     "updatedAt": 1745392960,
+    "genres": [
+      "Drama",
+      "Action"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Rosamund Pike",
+        "role": ""
+      },
+      {
+        "name": "Daniel Henney",
+        "role": ""
+      },
+      {
+        "name": "Josha Stradowski",
+        "role": ""
+      }
+    ],
     "leafCount": 24,
-    "childCount": 3
+    "childCount": 3,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2021-11-18"
   },
   {
     "id": "109803",
@@ -3368,8 +9400,30 @@
     "studio": "HBO",
     "addedAt": 1692357997,
     "updatedAt": 1745392958,
+    "genres": [
+      "Drama",
+      "Biography"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Woody Harrelson",
+        "role": ""
+      },
+      {
+        "name": "Justin Theroux",
+        "role": ""
+      },
+      {
+        "name": "Lena Headey",
+        "role": ""
+      }
+    ],
     "leafCount": 5,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2023-05-01"
   },
   {
     "id": "109784",
@@ -3380,8 +9434,30 @@
     "studio": "Rip Cord Productions",
     "addedAt": 1692329644,
     "updatedAt": 1744902667,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Natasha Rothwell",
+        "role": ""
+      },
+      {
+        "name": "Jon Gries",
+        "role": ""
+      },
+      {
+        "name": "Jennifer Coolidge",
+        "role": ""
+      }
+    ],
     "leafCount": 21,
-    "childCount": 3
+    "childCount": 3,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2021-07-11"
   },
   {
     "id": "109770",
@@ -3392,8 +9468,30 @@
     "studio": "Lucasfilm Ltd.",
     "addedAt": 1692327808,
     "updatedAt": 1745392958,
+    "genres": [
+      "Drama",
+      "Action"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Warwick Davis",
+        "role": ""
+      },
+      {
+        "name": "Ellie Bamber",
+        "role": ""
+      },
+      {
+        "name": "Ruby Cruz",
+        "role": ""
+      }
+    ],
     "leafCount": 8,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2022-11-30"
   },
   {
     "id": "102606",
@@ -3404,8 +9502,30 @@
     "studio": "Paramount Television",
     "addedAt": 1680822839,
     "updatedAt": 1744902444,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Tim Daly",
+        "role": ""
+      },
+      {
+        "name": "Steven Weber",
+        "role": ""
+      },
+      {
+        "name": "Crystal Bernard",
+        "role": ""
+      }
+    ],
     "leafCount": 171,
-    "childCount": 8
+    "childCount": 8,
+    "contentRating": "TV-PG",
+    "originallyAvailableAt": "1990-04-19"
   },
   {
     "id": "108358",
@@ -3416,8 +9536,30 @@
     "studio": "Hyperobject Industries",
     "addedAt": 1691609302,
     "updatedAt": 1745392957,
+    "genres": [
+      "Drama",
+      "Sport"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "John C. Reilly",
+        "role": ""
+      },
+      {
+        "name": "Quincy Isaiah",
+        "role": ""
+      },
+      {
+        "name": "Jason Clarke",
+        "role": ""
+      }
+    ],
     "leafCount": 17,
-    "childCount": 2
+    "childCount": 2,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2022-03-05"
   },
   {
     "id": "120911",
@@ -3428,8 +9570,30 @@
     "studio": "Bad Wolf",
     "addedAt": 1703645459,
     "updatedAt": 1745392960,
+    "genres": [
+      "Drama",
+      "Fantasy"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Iain De Caestecker",
+        "role": ""
+      },
+      {
+        "name": "Stuart Campbell",
+        "role": ""
+      },
+      {
+        "name": "Ellie James",
+        "role": ""
+      }
+    ],
     "leafCount": 10,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2023-08-20"
   },
   {
     "id": "91159",
@@ -3440,8 +9604,30 @@
     "studio": "Sean Daniel Company",
     "addedAt": 1678401990,
     "updatedAt": 1745392955,
+    "genres": [
+      "Drama",
+      "Action"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Henry Cavill",
+        "role": ""
+      },
+      {
+        "name": "Anya Chalotra",
+        "role": ""
+      },
+      {
+        "name": "Freya Allan",
+        "role": ""
+      }
+    ],
     "leafCount": 24,
-    "childCount": 3
+    "childCount": 3,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2019-12-20"
   },
   {
     "id": "109763",
@@ -3452,8 +9638,30 @@
     "studio": "Hivemind",
     "addedAt": 1692326796,
     "updatedAt": 1745392958,
+    "genres": [
+      "Drama",
+      "Action"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Sophia Brown",
+        "role": ""
+      },
+      {
+        "name": "Laurence O'Fuarain",
+        "role": ""
+      },
+      {
+        "name": "Mirren Mack",
+        "role": ""
+      }
+    ],
     "leafCount": 4,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2022-12-25"
   },
   {
     "id": "131741",
@@ -3464,8 +9672,30 @@
     "studio": "Company Pictures",
     "addedAt": 1743383459,
     "updatedAt": 1744129261,
+    "genres": [
+      "Drama",
+      "Biography"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Mark Rylance",
+        "role": ""
+      },
+      {
+        "name": "Damian Lewis",
+        "role": ""
+      },
+      {
+        "name": "Thomas Brodie-Sangster",
+        "role": ""
+      }
+    ],
     "leafCount": 12,
-    "childCount": 2
+    "childCount": 2,
+    "contentRating": "TV-14",
+    "originallyAvailableAt": "2015-01-21"
   },
   {
     "id": "131860",
@@ -3476,8 +9706,29 @@
     "studio": "Apple Studios",
     "addedAt": 1744340320,
     "updatedAt": 1746346687,
+    "genres": [
+      "Drama"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Jon Hamm",
+        "role": ""
+      },
+      {
+        "name": "Amanda Peet",
+        "role": ""
+      },
+      {
+        "name": "Olivia Munn",
+        "role": ""
+      }
+    ],
     "leafCount": 5,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2025-04-11"
   },
   {
     "id": "130595",
@@ -3488,7 +9739,29 @@
     "studio": "Grand Electric",
     "addedAt": 1741076458,
     "updatedAt": 1745392964,
+    "genres": [
+      "Drama",
+      "Thriller"
+    ],
+    "directors": [],
+    "writers": [],
+    "actors": [
+      {
+        "name": "Robert De Niro",
+        "role": ""
+      },
+      {
+        "name": "Jesse Plemons",
+        "role": ""
+      },
+      {
+        "name": "Lizzy Caplan",
+        "role": ""
+      }
+    ],
     "leafCount": 6,
-    "childCount": 1
+    "childCount": 1,
+    "contentRating": "TV-MA",
+    "originallyAvailableAt": "2025-02-19"
   }
 ]
