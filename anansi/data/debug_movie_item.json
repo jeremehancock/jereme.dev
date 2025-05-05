@@ -1,0 +1,116 @@
+{
+  "ratingKey": "78657",
+  "key": "/library/metadata/78657",
+  "guid": "plex://movie/5d7768374de0ee001fccc04a",
+  "slug": "the-burbs",
+  "studio": "Universal Pictures",
+  "type": "movie",
+  "title": "The 'Burbs",
+  "titleSort": "'Burbs",
+  "contentRating": "PG",
+  "summary": "He's a man of peace in a savage land: Suburbia. When secretive new neighbors move in next door, suburbanite Ray Peterson and his friends let their paranoia get the best of them as they start to suspect the newcomers of evil doings and commence an investigation.But it's hardly how Ray, who much prefers to drink beer, read his newspaper, and watch a ballgame on the tube, expected to spend his vacation.",
+  "rating": 5.6,
+  "audienceRating": 7.1,
+  "viewOffset": 348000,
+  "viewCount": 3,
+  "skipCount": 1,
+  "lastViewedAt": 1746305324,
+  "year": 1989,
+  "tagline": "He's a man of peace in a savage land... Suburbia.",
+  "thumb": "/library/metadata/78657/thumb/1744750391",
+  "art": "/library/metadata/78657/art/1744750391",
+  "duration": 6100385,
+  "originallyAvailableAt": "1989-02-17",
+  "addedAt": 1678401340,
+  "updatedAt": 1744750391,
+  "audienceRatingImage": "rottentomatoes://image.rating.upright",
+  "chapterSource": "media",
+  "primaryExtraKey": "/library/metadata/78680",
+  "ratingImage": "rottentomatoes://image.rating.rotten",
+  "Media": [
+    {
+      "id": 184283,
+      "duration": 6100385,
+      "bitrate": 18390,
+      "width": 1920,
+      "height": 1036,
+      "aspectRatio": 1.85,
+      "audioChannels": 2,
+      "audioCodec": "flac",
+      "videoCodec": "h264",
+      "videoResolution": "1080",
+      "container": "mkv",
+      "videoFrameRate": "24p",
+      "videoProfile": "main",
+      "hasVoiceActivity": false,
+      "Part": [
+        {
+          "id": 186250,
+          "key": "/library/parts/186250/1509577899/file.mkv",
+          "duration": 6100385,
+          "file": "/home/jereme/plex/movies/The 'Burbs (1989)/The 'Burbs (1989) Remux-1080p.mkv",
+          "size": 14026331496,
+          "container": "mkv",
+          "videoProfile": "main"
+        }
+      ]
+    }
+  ],
+  "Image": [
+    {
+      "alt": "The 'Burbs",
+      "type": "coverPoster",
+      "url": "/library/metadata/78657/thumb/1744750391"
+    },
+    {
+      "alt": "The 'Burbs",
+      "type": "background",
+      "url": "/library/metadata/78657/art/1744750391"
+    },
+    {
+      "alt": "The 'Burbs",
+      "type": "clearLogo",
+      "url": "/library/metadata/78657/clearLogo/1744750391"
+    }
+  ],
+  "UltraBlurColors": {
+    "topLeft": "1a2c53",
+    "topRight": "2c447b",
+    "bottomRight": "3d5a9e",
+    "bottomLeft": "293e74"
+  },
+  "Genre": [
+    {
+      "tag": "Comedy"
+    },
+    {
+      "tag": "Thriller"
+    }
+  ],
+  "Country": [
+    {
+      "tag": "United States of America"
+    }
+  ],
+  "Director": [
+    {
+      "tag": "Joe Dante"
+    }
+  ],
+  "Writer": [
+    {
+      "tag": "Dana Olsen"
+    }
+  ],
+  "Role": [
+    {
+      "tag": "Tom Hanks"
+    },
+    {
+      "tag": "Bruce Dern"
+    },
+    {
+      "tag": "Carrie Fisher"
+    }
+  ]
+}

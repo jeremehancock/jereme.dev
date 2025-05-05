@@ -1,0 +1,71 @@
+{
+  "ratingKey": "132716",
+  "key": "/library/metadata/132716/children",
+  "guid": "plex://show/5d9c086fffd9ef001e994da8",
+  "slug": "30-rock",
+  "studio": "Broadway Video",
+  "type": "show",
+  "title": "30 Rock",
+  "contentRating": "TV-14",
+  "summary": "Liz Lemon, head writer of the sketch-comedy show \"TGS with Tracy Jordan\", must deal with an arrogant new boss and a crazy new star while trying to run a successful television show without losing her mind.",
+  "index": 1,
+  "audienceRating": 7.4,
+  "year": 2006,
+  "tagline": "Work can be such a production.",
+  "thumb": "/library/metadata/132716/thumb/1745894850",
+  "art": "/library/metadata/132716/art/1745894850",
+  "theme": "/library/metadata/132716/theme/1745894850",
+  "duration": 1320000,
+  "originallyAvailableAt": "2006-10-11",
+  "leafCount": 136,
+  "viewedLeafCount": 0,
+  "childCount": 7,
+  "addedAt": 1745671082,
+  "updatedAt": 1745894850,
+  "audienceRatingImage": "themoviedb://image.rating",
+  "primaryExtraKey": "/library/metadata/132722",
+  "Image": [
+    {
+      "alt": "30 Rock",
+      "type": "coverPoster",
+      "url": "/library/metadata/132716/thumb/1745894850"
+    },
+    {
+      "alt": "30 Rock",
+      "type": "background",
+      "url": "/library/metadata/132716/art/1745894850"
+    },
+    {
+      "alt": "30 Rock",
+      "type": "clearLogo",
+      "url": "/library/metadata/132716/clearLogo/1745894850"
+    }
+  ],
+  "UltraBlurColors": {
+    "topLeft": "1e285c",
+    "topRight": "993c22",
+    "bottomRight": "a91324",
+    "bottomLeft": "9d381a"
+  },
+  "Genre": [
+    {
+      "tag": "Comedy"
+    }
+  ],
+  "Country": [
+    {
+      "tag": "United States of America"
+    }
+  ],
+  "Role": [
+    {
+      "tag": "Tina Fey"
+    },
+    {
+      "tag": "Alec Baldwin"
+    },
+    {
+      "tag": "Tracy Morgan"
+    }
+  ]
+}
