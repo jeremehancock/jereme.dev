@@ -926,7 +926,7 @@
         
 		/* Enhanced media item hover effect */
 		.media-item {
-			/* Modify the existing transition to be smoother and include transform */
+			/* Modify the existing transition to be smoother */
 			transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
 				        box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 		}
@@ -936,24 +936,6 @@
 			transform: translateY(-10px);
 			/* Enhance the shadow to reinforce the "lifting" effect */
 			box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
-		}
-
-		/* Add a subtle highlight border on hover */
-		.media-item::after {
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			border-radius: 12px;
-			border: 2px solid transparent;
-			transition: border-color 0.4s ease;
-			pointer-events: none;
-		}
-
-		.media-item:hover::after {
-			border-color: var(--primary-color);
 		}
     </style>
 </head>
