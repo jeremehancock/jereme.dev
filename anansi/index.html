@@ -1149,6 +1149,7 @@
                 mediaItem.dataset.id = item.id;
                 mediaItem.dataset.type = type;
                 mediaItem.style.opacity = '0';
+                mediaItem.style.transition = `opacity 0.3s ease ${index * 0.03}s, transform 0.3s ease ${index * 0.03}s`;
                 
                 const posterPath = type === 'movies' ? 
                     `data/posters/movies/${item.id}.jpg` : 
@@ -1176,7 +1177,6 @@
                 // Trigger animation after a small delay
                 setTimeout(() => {
                     mediaItem.style.opacity = '1';
-                    mediaItem.style.transform = 'translateY(0)';
                 }, 10);
                 
                 // Observe the image for lazy loading
