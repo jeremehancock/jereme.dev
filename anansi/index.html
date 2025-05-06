@@ -389,12 +389,19 @@
             text-align: center;
             font-size: 1.2em;
             color: var(--primary-color);
-            padding: 30px 0;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-direction: column;
             gap: 15px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: calc(100vh - var(--header-height));
+            width: 100%;
+            margin-top: var(--header-height);
         }
         
         .loading .loading-spinner {
@@ -922,13 +929,6 @@
                 padding: 12px;
             }
         }
-        
-        /* Hide scroll-to-top when modal is open */
-		.modal-overlay.active ~ .scroll-to-top {
-			display: none !important;
-			opacity: 0;
-			visibility: hidden;
-		}
     </style>
 </head>
 <body>
