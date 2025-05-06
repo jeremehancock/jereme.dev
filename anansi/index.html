@@ -922,6 +922,13 @@
                 padding: 12px;
             }
         }
+        
+        /* Hide scroll-to-top when modal is open */
+		.modal-overlay.active ~ .scroll-to-top {
+			display: none !important;
+			opacity: 0;
+			visibility: hidden;
+		}
     </style>
 </head>
 <body>
