@@ -975,7 +975,7 @@
         const modalOverlay = document.querySelector('.modal-overlay');
         const modalClose = document.querySelector('.modal-close');
         
-		// Open modal with media details
+		// Function to open modal with media details
 		function openModal(item, type) {
 			// Set poster image
 			const posterPath = type === 'movies' ? 
@@ -1070,12 +1070,27 @@
 				castContainer.innerHTML = '<div>No cast information available</div>';
 			}
 			
-			// Reset modal body scroll position
-			document.querySelector('.modal-body').scrollTop = 0;
+			// Make sure any previous modal content is reset before showing new modal
+			const modalBody = document.querySelector('.modal-body');
+			modalBody.scrollTop = 0;
 			
 			// Show modal
 			document.body.style.overflow = 'hidden'; // Prevent background scrolling
 			modalOverlay.classList.add('active');
+			
+			// Double attempt to reset scroll after modal is visible
+			// This addresses timing issues on mobile devices
+			setTimeout(() => {
+				// First reset
+				modalBody.scrollTop = 0;
+				
+				// Second delayed reset with forced reflow (critical for mobile browsers)
+				setTimeout(() => {
+				    modalBody.scrollTop = 0;
+				    // Force layout recalculation on mobile
+				    void modalBody.offsetHeight;
+				}, 50);
+			}, 10);
 		}
         
         // Close modal functionality
