@@ -743,14 +743,15 @@
             padding: 15px;
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
             transform: translateY(-100%);
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
             opacity: 0;
-            display: none;
+            visibility: hidden;
         }
         
         .mobile-menu.open {
             transform: translateY(0);
             opacity: 1;
+            visibility: visible;
         }
         
         .mobile-menu .tabs {
