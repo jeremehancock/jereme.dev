@@ -10365,7 +10365,7 @@
     "rating": 5.7,
     "studio": "Silver Pictures",
     "addedAt": 1738285377,
-    "updatedAt": 1743604771,
+    "updatedAt": 1746519068,
     "genres": [
       "Action",
       "Drama"
@@ -10621,7 +10621,7 @@
     "rating": 5.7,
     "studio": "Columbia Pictures",
     "addedAt": 1678401288,
-    "updatedAt": 1743604772,
+    "updatedAt": 1746519043,
     "genres": [
       "Horror",
       "Fantasy"
@@ -10653,7 +10653,7 @@
     "rating": 6.8,
     "studio": "New Regency Pictures",
     "addedAt": 1699986838,
-    "updatedAt": 1743604772,
+    "updatedAt": 1746519064,
     "genres": [
       "Drama",
       "Romance"
@@ -10685,7 +10685,7 @@
     "rating": 9.5,
     "studio": "Metro-Goldwyn-Mayer",
     "addedAt": 1678401360,
-    "updatedAt": 1743604772,
+    "updatedAt": 1746519050,
     "genres": [
       "Drama",
       "Action"
@@ -10707,7 +10707,7 @@
     "duration": 7990016,
     "contentRating": "PG-13",
     "originallyAvailableAt": "2015-11-25",
-    "tagline": "Your legacy is more than a name"
+    "tagline": "Your legacy is more than a name."
   },
   {
     "id": "78347",
@@ -10717,7 +10717,7 @@
     "rating": 8.3,
     "studio": "Metro-Goldwyn-Mayer",
     "addedAt": 1678401328,
-    "updatedAt": 1743604772,
+    "updatedAt": 1746519047,
     "genres": [
       "Drama",
       "Action"
@@ -10749,7 +10749,7 @@
     "rating": 8.9,
     "studio": "Metro-Goldwyn-Mayer",
     "addedAt": 1680450602,
-    "updatedAt": 1743604772,
+    "updatedAt": 1746519063,
     "genres": [
       "Drama",
       "Action"
@@ -10777,11 +10777,11 @@
     "id": "82955",
     "title": "Crocodile Dundee",
     "year": 1986,
-    "summary": "American reporter Sue Charlton travels to the Australian outback to meet eccentric poacher Mick \"Crocodile\" Dundee and invites him to New York City, where he comes face-to-face with the complexities of modern life. Can this bushman adapt?",
+    "summary": "An American reporter travels to the Australian outback to meet eccentric poacher Mick \"Crocodile\" Dundee and invites him to New York City, where he comes face-to-face with the complexities of modern life.",
     "rating": 8.9,
     "studio": "Rimfire Films",
     "addedAt": 1678401425,
-    "updatedAt": 1741579275,
+    "updatedAt": 1746519058,
     "genres": [
       "Adventure",
       "Comedy"
@@ -10813,7 +10813,7 @@
     "rating": "",
     "studio": "Paramount Pictures",
     "addedAt": 1678401380,
-    "updatedAt": 1743604772,
+    "updatedAt": 1746519052,
     "genres": [
       "Action",
       "Adventure"
@@ -10845,7 +10845,7 @@
     "rating": 1.1,
     "studio": "Bungalow Productions",
     "addedAt": 1678401379,
-    "updatedAt": 1743604772,
+    "updatedAt": 1746519051,
     "genres": [
       "Adventure",
       "Comedy"
@@ -10877,7 +10877,7 @@
     "rating": 9.8,
     "studio": "Good Machine",
     "addedAt": 1678401284,
-    "updatedAt": 1743604773,
+    "updatedAt": 1746519043,
     "genres": [
       "Action",
       "Adventure"
@@ -10909,7 +10909,7 @@
     "rating": 7.5,
     "studio": "Walt Disney Pictures",
     "addedAt": 1678401379,
-    "updatedAt": 1743604772,
+    "updatedAt": 1746519052,
     "genres": [
       "Comedy",
       "Crime"
@@ -10931,7 +10931,7 @@
     "duration": 8035744,
     "contentRating": "PG-13",
     "originallyAvailableAt": "2021-05-26",
-    "tagline": "Hello Cruel World"
+    "tagline": "Hello cruel world."
   },
   {
     "id": "76663",
@@ -10941,7 +10941,7 @@
     "rating": "",
     "studio": "House of Tomorrow",
     "addedAt": 1678401280,
-    "updatedAt": 1743604773,
+    "updatedAt": 1746519043,
     "genres": [
       "Comedy",
       "Documentary"
@@ -10973,7 +10973,7 @@
     "rating": 10.0,
     "studio": "Broke and Bones",
     "addedAt": 1735839922,
-    "updatedAt": 1743604773,
+    "updatedAt": 1746519066,
     "genres": [
       "Comedy",
       "Documentary"
@@ -11037,7 +11037,7 @@
     "rating": 7.0,
     "studio": "Universal Pictures",
     "addedAt": 1678401476,
-    "updatedAt": 1743604773,
+    "updatedAt": 1746519061,
     "genres": [
       "Family",
       "Adventure"
@@ -11069,7 +11069,7 @@
     "rating": 2.6,
     "studio": "Atomic Monster",
     "addedAt": 1690894301,
-    "updatedAt": 1741579371,
+    "updatedAt": 1746519064,
     "genres": [
       "Thriller",
       "Horror"
@@ -11101,7 +11101,7 @@
     "rating": 5.7,
     "studio": "Interscope Communications",
     "addedAt": 1678401478,
-    "updatedAt": 1741579371,
+    "updatedAt": 1746519061,
     "genres": [
       "Drama",
       "Comedy"
@@ -11133,7 +11133,7 @@
     "rating": 2.5,
     "studio": "Imagine Entertainment",
     "addedAt": 1678401441,
-    "updatedAt": 1743604773,
+    "updatedAt": 1746519059,
     "genres": [
       "Thriller",
       "Mystery"
@@ -11165,7 +11165,7 @@
     "rating": 5.6,
     "studio": "PCMA Productions",
     "addedAt": 1709950778,
-    "updatedAt": 1743604773,
+    "updatedAt": 1746519065,
     "genres": [
       "Action",
       "Adventure"
@@ -11197,7 +11197,7 @@
     "rating": 9.4,
     "studio": "Lorimar Film Entertainment",
     "addedAt": 1678401103,
-    "updatedAt": 1743604774,
+    "updatedAt": 1746519039,
     "genres": [
       "Drama",
       "Romance"
@@ -11229,7 +11229,7 @@
     "rating": 4.3,
     "studio": "Marvel Enterprises",
     "addedAt": 1678401306,
-    "updatedAt": 1743604774,
+    "updatedAt": 1746519045,
     "genres": [
       "Fantasy",
       "Action"
@@ -11261,7 +11261,7 @@
     "rating": 9.4,
     "studio": "Warner Bros. Pictures",
     "addedAt": 1678401417,
-    "updatedAt": 1743604774,
+    "updatedAt": 1746519057,
     "genres": [
       "Drama",
       "Action"
@@ -11293,7 +11293,7 @@
     "rating": 8.7,
     "studio": "Syncopy",
     "addedAt": 1678401385,
-    "updatedAt": 1743604774,
+    "updatedAt": 1746519053,
     "genres": [
       "Action",
       "Crime"
@@ -11325,7 +11325,7 @@
     "rating": 8.4,
     "studio": "Working Title Films",
     "addedAt": 1678401397,
-    "updatedAt": 1743604774,
+    "updatedAt": 1746519054,
     "genres": [
       "Drama",
       "Biography"
@@ -11336,11 +11336,11 @@
         "role": ""
       },
       {
-        "name": "Kristin Scott Thomas",
+        "name": "Stephen Dillane",
         "role": ""
       },
       {
-        "name": "Ben Mendelsohn",
+        "name": "Lily James",
         "role": ""
       }
     ],
@@ -11357,7 +11357,7 @@
     "rating": 6.7,
     "studio": "Dune Entertainment",
     "addedAt": 1678401438,
-    "updatedAt": 1743604774,
+    "updatedAt": 1746519059,
     "genres": [
       "Comedy",
       "Crime"
@@ -11389,7 +11389,7 @@
     "rating": 9.1,
     "studio": "TSG Entertainment",
     "addedAt": 1678401383,
-    "updatedAt": 1743604774,
+    "updatedAt": 1746519052,
     "genres": [
       "Action",
       "Adventure"
@@ -11453,7 +11453,7 @@
     "rating": 9.4,
     "studio": "Gramercy Pictures",
     "addedAt": 1678401403,
-    "updatedAt": 1743604774,
+    "updatedAt": 1746519054,
     "genres": [
       "Comedy",
       "Drama"
@@ -11485,7 +11485,7 @@
     "rating": 8.5,
     "studio": "A Steven Haft Production",
     "addedAt": 1678401095,
-    "updatedAt": 1743604775,
+    "updatedAt": 1746519039,
     "genres": [
       "Drama",
       "Comedy"
@@ -11517,7 +11517,7 @@
     "rating": 8.5,
     "studio": "20th Century Fox",
     "addedAt": 1678401378,
-    "updatedAt": 1743604775,
+    "updatedAt": 1746519051,
     "genres": [
       "Action",
       "Adventure"
@@ -11549,7 +11549,7 @@
     "rating": 7.8,
     "studio": "Marvel Studios",
     "addedAt": 1727800515,
-    "updatedAt": 1743604775,
+    "updatedAt": 1746519066,
     "genres": [
       "Comedy",
       "Action"
@@ -11581,7 +11581,7 @@
     "rating": 8.4,
     "studio": "Maximum Effort",
     "addedAt": 1678401391,
-    "updatedAt": 1743604775,
+    "updatedAt": 1746519053,
     "genres": [
       "Action",
       "Adventure"
@@ -11613,7 +11613,7 @@
     "rating": 5.8,
     "studio": "Universal Pictures",
     "addedAt": 1728356185,
-    "updatedAt": 1743604775,
+    "updatedAt": 1746519066,
     "genres": [
       "Comedy",
       "Fantasy"
@@ -11677,7 +11677,7 @@
     "rating": 6.2,
     "studio": "The Mark Gordon Company",
     "addedAt": 1678401298,
-    "updatedAt": 1743604775,
+    "updatedAt": 1746519044,
     "genres": [
       "Crime",
       "Drama"
@@ -11709,7 +11709,7 @@
     "rating": "",
     "studio": "New Regency Pictures",
     "addedAt": 1678401420,
-    "updatedAt": 1743604775,
+    "updatedAt": 1746519057,
     "genres": [
       "Comedy",
       "Family"
@@ -11741,7 +11741,7 @@
     "rating": 7.1,
     "studio": "Ringerike Erste Filmproduktion",
     "addedAt": 1678401455,
-    "updatedAt": 1743604775,
+    "updatedAt": 1746519061,
     "genres": [
       "Comedy",
       "Romance"
@@ -11773,7 +11773,7 @@
     "rating": 5.4,
     "studio": "Sidney Kimmel Entertainment",
     "addedAt": 1737560224,
-    "updatedAt": 1743604775,
+    "updatedAt": 1746519067,
     "genres": [
       "Comedy",
       "Drama"
@@ -11805,7 +11805,7 @@
     "rating": 9.1,
     "studio": "Warner Bros. Pictures",
     "addedAt": 1678401402,
-    "updatedAt": 1743604775,
+    "updatedAt": 1746519054,
     "genres": [
       "Drama",
       "Thriller"
@@ -11837,7 +11837,7 @@
     "rating": 8.6,
     "studio": "Orion Pictures",
     "addedAt": 1678401417,
-    "updatedAt": 1743604776,
+    "updatedAt": 1746519057,
     "genres": [
       "Comedy",
       "Drama"
@@ -11869,7 +11869,7 @@
     "rating": 8.2,
     "studio": "TOHO",
     "addedAt": 1678401505,
-    "updatedAt": 1743604776,
+    "updatedAt": 1746519062,
     "genres": [
       "Action",
       "Science Fiction"
@@ -11901,7 +11901,7 @@
     "rating": 5.1,
     "studio": "Universal Pictures",
     "addedAt": 1717771732,
-    "updatedAt": 1743604776,
+    "updatedAt": 1746519066,
     "genres": [
       "Thriller",
       "Horror"
@@ -11933,7 +11933,7 @@
     "rating": 7.5,
     "studio": "Fox 2000 Pictures",
     "addedAt": 1678401397,
-    "updatedAt": 1743604776,
+    "updatedAt": 1746519053,
     "genres": [
       "Comedy",
       "Drama"
@@ -11965,7 +11965,7 @@
     "rating": 6.3,
     "studio": "Monarchy Enterprises B.V.",
     "addedAt": 1678401396,
-    "updatedAt": 1743604776,
+    "updatedAt": 1746519053,
     "genres": [
       "Drama",
       "Horror"
@@ -11997,7 +11997,7 @@
     "rating": 6.4,
     "studio": "EON Productions",
     "addedAt": 1678401325,
-    "updatedAt": 1743604776,
+    "updatedAt": 1746519046,
     "genres": [
       "Action",
       "Adventure"
@@ -12029,7 +12029,7 @@
     "rating": 5.6,
     "studio": "EON Productions",
     "addedAt": 1678401325,
-    "updatedAt": 1743604776,
+    "updatedAt": 1746519047,
     "genres": [
       "Action",
       "Adventure"
@@ -12061,7 +12061,7 @@
     "rating": 9.4,
     "studio": "Gordon Company",
     "addedAt": 1678401460,
-    "updatedAt": 1743604776,
+    "updatedAt": 1746519061,
     "genres": [
       "Action",
       "Thriller"
@@ -12093,7 +12093,7 @@
     "rating": 6.9,
     "studio": "Gordon Company",
     "addedAt": 1678401369,
-    "updatedAt": 1743604776,
+    "updatedAt": 1746519051,
     "genres": [
       "Action",
       "Thriller"
@@ -12125,7 +12125,7 @@
     "rating": 6.0,
     "studio": "20th Century Fox",
     "addedAt": 1678401369,
-    "updatedAt": 1743604777,
+    "updatedAt": 1746519050,
     "genres": [
       "Action",
       "Adventure"
@@ -12189,7 +12189,7 @@
     "rating": 2.4,
     "studio": "Wild West Picture Show Productions",
     "addedAt": 1738376441,
-    "updatedAt": 1743604777,
+    "updatedAt": 1746519068,
     "genres": [
       "Comedy",
       "Drama"
@@ -12221,7 +12221,7 @@
     "rating": 7.2,
     "studio": "Great American Films Limited Partnership",
     "addedAt": 1678401454,
-    "updatedAt": 1743604777,
+    "updatedAt": 1746519060,
     "genres": [
       "Drama",
       "Romance"
@@ -12253,7 +12253,7 @@
     "rating": 9.1,
     "studio": "New Line Cinema",
     "addedAt": 1679185920,
-    "updatedAt": 1743604777,
+    "updatedAt": 1746519062,
     "genres": [
       "Drama",
       "Comedy"
@@ -12285,7 +12285,7 @@
     "rating": 9.6,
     "studio": "Working Dog",
     "addedAt": 1678401407,
-    "updatedAt": 1743604777,
+    "updatedAt": 1746519055,
     "genres": [
       "History",
       "Comedy"
@@ -12317,7 +12317,7 @@
     "rating": 8.7,
     "studio": "The Weinstein Company",
     "addedAt": 1678401337,
-    "updatedAt": 1743604777,
+    "updatedAt": 1746519048,
     "genres": [
       "Drama",
       "Western"
@@ -12349,7 +12349,7 @@
     "rating": 8.6,
     "studio": "Likely Story",
     "addedAt": 1678401257,
-    "updatedAt": 1743604777,
+    "updatedAt": 1746519040,
     "genres": [
       "Comedy",
       "Thriller"
@@ -12381,7 +12381,7 @@
     "rating": 9.2,
     "studio": "Universal Pictures",
     "addedAt": 1736909814,
-    "updatedAt": 1743604777,
+    "updatedAt": 1746519067,
     "genres": [
       "Drama",
       "Comedy"
@@ -12392,11 +12392,11 @@
         "role": ""
       },
       {
-        "name": "Spike Lee",
+        "name": "Ossie Davis",
         "role": ""
       },
       {
-        "name": "Ossie Davis",
+        "name": "Ruby Dee",
         "role": ""
       }
     ],
@@ -12413,7 +12413,7 @@
     "rating": 6.6,
     "studio": "Warner Bros. Pictures",
     "addedAt": 1678401436,
-    "updatedAt": 1743604777,
+    "updatedAt": 1746519058,
     "genres": [
       "Comedy",
       "Romance"
@@ -12445,7 +12445,7 @@
     "rating": 7.8,
     "studio": "Vertigo Entertainment",
     "addedAt": 1678401327,
-    "updatedAt": 1743604778,
+    "updatedAt": 1746519047,
     "genres": [
       "Horror",
       "Drama"
@@ -12477,7 +12477,7 @@
     "rating": 8.9,
     "studio": "Marvel Studios",
     "addedAt": 1678401360,
-    "updatedAt": 1743604778,
+    "updatedAt": 1746519050,
     "genres": [
       "Action",
       "Adventure"
@@ -12509,7 +12509,7 @@
     "rating": 7.4,
     "studio": "Marvel Studios",
     "addedAt": 1678401258,
-    "updatedAt": 1743604778,
+    "updatedAt": 1746519040,
     "genres": [
       "Fantasy",
       "Science Fiction"
@@ -12541,7 +12541,7 @@
     "rating": 7.2,
     "studio": "20th Century Fox",
     "addedAt": 1678401455,
-    "updatedAt": 1743604778,
+    "updatedAt": 1746519060,
     "genres": [
       "Comedy",
       "Sport"
@@ -12573,7 +12573,7 @@
     "rating": 6.8,
     "studio": "View Askew Productions",
     "addedAt": 1678401444,
-    "updatedAt": 1743604778,
+    "updatedAt": 1746519059,
     "genres": [
       "Fantasy",
       "Comedy"
@@ -12605,7 +12605,7 @@
     "rating": 9.7,
     "studio": "Davis Entertainment",
     "addedAt": 1678401410,
-    "updatedAt": 1743604778,
+    "updatedAt": 1746519056,
     "genres": [
       "Biography",
       "Drama"
@@ -12637,7 +12637,7 @@
     "rating": 5.6,
     "studio": "Hyperobject Industries",
     "addedAt": 1678401447,
-    "updatedAt": 1743604778,
+    "updatedAt": 1746519060,
     "genres": [
       "Comedy",
       "Science Fiction"
@@ -12669,7 +12669,7 @@
     "rating": 3.5,
     "studio": "Cinema Plus",
     "addedAt": 1678401429,
-    "updatedAt": 1741579278,
+    "updatedAt": 1746519058,
     "genres": [
       "Comedy",
       "Family"
@@ -12701,7 +12701,7 @@
     "rating": 3.8,
     "studio": "Vertigo Entertainment",
     "addedAt": 1678401106,
-    "updatedAt": 1743604778,
+    "updatedAt": 1746519040,
     "genres": [
       "Thriller",
       "Mystery"
@@ -12765,7 +12765,7 @@
     "rating": 8.4,
     "studio": "Focus Features",
     "addedAt": 1678401276,
-    "updatedAt": 1743604778,
+    "updatedAt": 1746519041,
     "genres": [
       "Drama",
       "Romance"
@@ -12797,7 +12797,7 @@
     "rating": 8.6,
     "studio": "Carnival Films",
     "addedAt": 1678401275,
-    "updatedAt": 1743604779,
+    "updatedAt": 1746519041,
     "genres": [
       "Drama",
       "Romance"
@@ -12829,7 +12829,7 @@
     "rating": 9.5,
     "studio": "EON Productions",
     "addedAt": 1678401324,
-    "updatedAt": 1743604779,
+    "updatedAt": 1746519046,
     "genres": [
       "Action",
       "Adventure"
@@ -12861,7 +12861,7 @@
     "rating": 9.8,
     "studio": "Hawk Films",
     "addedAt": 1678401338,
-    "updatedAt": 1742994469,
+    "updatedAt": 1746519048,
     "genres": [
       "Drama",
       "Comedy"
@@ -12893,7 +12893,7 @@
     "rating": 9.1,
     "studio": "A24",
     "addedAt": 1703221734,
-    "updatedAt": 1743604779,
+    "updatedAt": 1746519065,
     "genres": [
       "Comedy",
       "Fantasy"
@@ -12925,7 +12925,7 @@
     "rating": 9.3,
     "studio": "FilmDistrict",
     "addedAt": 1678401310,
-    "updatedAt": 1743604779,
+    "updatedAt": 1746519046,
     "genres": [
       "Action",
       "Drama"
@@ -12957,7 +12957,7 @@
     "rating": 9.7,
     "studio": "Bitters End",
     "addedAt": 1678401299,
-    "updatedAt": 1743604779,
+    "updatedAt": 1746519045,
     "genres": [
       "Drama"
     ],
@@ -12988,7 +12988,7 @@
     "rating": "",
     "studio": "Seasonal Film Corporation",
     "addedAt": 1678401407,
-    "updatedAt": 1741579278,
+    "updatedAt": 1746519055,
     "genres": [
       "Action",
       "Comedy"
@@ -12999,7 +12999,7 @@
         "role": ""
       },
       {
-        "name": "Yuen Siu-Tien",
+        "name": "Simon Yuen Siu-Tien",
         "role": ""
       },
       {
@@ -13020,7 +13020,7 @@
     "rating": 6.7,
     "studio": "New Line Cinema",
     "addedAt": 1678401297,
-    "updatedAt": 1743604779,
+    "updatedAt": 1746519043,
     "genres": [
       "Comedy"
     ],
@@ -13051,7 +13051,7 @@
     "rating": 3.0,
     "studio": "New Line Cinema",
     "addedAt": 1678401298,
-    "updatedAt": 1743604779,
+    "updatedAt": 1746519044,
     "genres": [
       "Comedy"
     ],
@@ -13082,7 +13082,7 @@
     "rating": 1.0,
     "studio": "New Line Cinema",
     "addedAt": 1678401298,
-    "updatedAt": 1743604779,
+    "updatedAt": 1746519044,
     "genres": [
       "Comedy"
     ],
@@ -13113,7 +13113,7 @@
     "rating": 8.4,
     "studio": "Black Bear Pictures",
     "addedAt": 1699414068,
-    "updatedAt": 1743604780,
+    "updatedAt": 1746519064,
     "genres": [
       "Biography",
       "Comedy"
@@ -13145,7 +13145,7 @@
     "rating": 3.6,
     "studio": "The De Laurentiis Company",
     "addedAt": 1678401481,
-    "updatedAt": 1743604780,
+    "updatedAt": 1746519062,
     "genres": [
       "Action",
       "Adventure"
@@ -13177,7 +13177,7 @@
     "rating": 8.3,
     "studio": "Legendary Pictures",
     "addedAt": 1678401482,
-    "updatedAt": 1743604780,
+    "updatedAt": 1746519062,
     "genres": [
       "Science Fiction",
       "Action"
@@ -13209,7 +13209,7 @@
     "rating": 9.2,
     "studio": "Legendary Pictures",
     "addedAt": 1713287783,
-    "updatedAt": 1743604780,
+    "updatedAt": 1746519065,
     "genres": [
       "Action",
       "Adventure"
@@ -13241,7 +13241,7 @@
     "rating": 9.1,
     "studio": "Entertainment One",
     "addedAt": 1683139183,
-    "updatedAt": 1743604780,
+    "updatedAt": 1746519063,
     "genres": [
       "Action",
       "Adventure"
@@ -13273,7 +13273,7 @@
     "rating": 9.2,
     "studio": "Warner Bros. Pictures",
     "addedAt": 1678401354,
-    "updatedAt": 1743604780,
+    "updatedAt": 1746519049,
     "genres": [
       "Action",
       "Drama"
@@ -13305,7 +13305,7 @@
     "rating": 9.9,
     "studio": "Universal Pictures",
     "addedAt": 1678401308,
-    "updatedAt": 1743604780,
+    "updatedAt": 1746519045,
     "genres": [
       "Family",
       "Science Fiction"
@@ -13337,7 +13337,7 @@
     "rating": 6.8,
     "studio": "Earth Girls",
     "addedAt": 1678401356,
-    "updatedAt": 1743604780,
+    "updatedAt": 1746519049,
     "genres": [
       "Comedy",
       "Musical"
@@ -13369,7 +13369,7 @@
     "rating": 2.8,
     "studio": "Studio Ghibli",
     "addedAt": 1737560223,
-    "updatedAt": 1743604780,
+    "updatedAt": 1746519067,
     "genres": [
       "Family",
       "Fantasy"
@@ -13401,7 +13401,7 @@
     "rating": "",
     "studio": "TOHO",
     "addedAt": 1695004583,
-    "updatedAt": 1743604780,
+    "updatedAt": 1746519064,
     "genres": [
       "Fantasy",
       "Adventure"
@@ -13416,14 +13416,14 @@
         "role": ""
       },
       {
-        "name": "Ch\u014dtar\u014d T\u014dgin",
+        "name": "Akihiko Hirata",
         "role": ""
       }
     ],
     "duration": 5217465,
     "contentRating": "PG",
     "originallyAvailableAt": "1966-12-17",
-    "tagline": "The Crushing Battle of Godzilla, Mothra, Ebirah! Who Will Win?"
+    "tagline": "The atrocious new monster Ebirah! Three giant monsters of the land, sea, and sky take part in the confrontation of the century!"
   },
   {
     "id": "78269",
@@ -13433,7 +13433,7 @@
     "rating": 8.2,
     "studio": "Studio Babelsberg",
     "addedAt": 1678401325,
-    "updatedAt": 1743604781,
+    "updatedAt": 1746519047,
     "genres": [
       "Comedy",
       "History"
@@ -13465,7 +13465,7 @@
     "rating": 9.1,
     "studio": "RatPac Entertainment",
     "addedAt": 1678401360,
-    "updatedAt": 1743604781,
+    "updatedAt": 1746519049,
     "genres": [
       "Science Fiction",
       "Action"
@@ -13497,7 +13497,7 @@
     "rating": 9.0,
     "studio": "20th Century Fox",
     "addedAt": 1678401432,
-    "updatedAt": 1743604781,
+    "updatedAt": 1746519058,
     "genres": [
       "Fantasy",
       "Drama"
@@ -13529,7 +13529,7 @@
     "rating": 8.7,
     "studio": "Orion Pictures",
     "addedAt": 1678401256,
-    "updatedAt": 1743604781,
+    "updatedAt": 1746519040,
     "genres": [
       "Drama",
       "History"
@@ -13561,7 +13561,7 @@
     "rating": 1.1,
     "studio": "Regency Enterprises",
     "addedAt": 1678401304,
-    "updatedAt": 1743604781,
+    "updatedAt": 1746519045,
     "genres": [
       "Action",
       "Adventure"
@@ -13593,7 +13593,7 @@
     "rating": 8.6,
     "studio": "New Line Cinema",
     "addedAt": 1678401335,
-    "updatedAt": 1743604781,
+    "updatedAt": 1746519048,
     "genres": [
       "Romance",
       "Comedy"
@@ -13625,7 +13625,7 @@
     "rating": 7.7,
     "studio": "Warner Bros. Pictures",
     "addedAt": 1678401263,
-    "updatedAt": 1743604782,
+    "updatedAt": 1746519041,
     "genres": [
       "Biography",
       "Drama"
@@ -13657,7 +13657,7 @@
     "rating": 8.7,
     "studio": "Tempo Productions",
     "addedAt": 1686438455,
-    "updatedAt": 1741579281,
+    "updatedAt": 1746519063,
     "genres": [
       "Biography",
       "Drama"
@@ -13689,7 +13689,7 @@
     "rating": 9.2,
     "studio": "Walt Disney Animation Studios",
     "addedAt": 1678401412,
-    "updatedAt": 1743604781,
+    "updatedAt": 1746519056,
     "genres": [
       "Animation",
       "Comedy"
@@ -13721,7 +13721,7 @@
     "rating": 1.7,
     "studio": "Hollywood Pictures",
     "addedAt": 1678401350,
-    "updatedAt": 1743604782,
+    "updatedAt": 1746519049,
     "genres": [
       "Comedy",
       "Family"
@@ -13785,7 +13785,7 @@
     "rating": 10.0,
     "studio": "Bruce Brown Films",
     "addedAt": 1678401416,
-    "updatedAt": 1741579372,
+    "updatedAt": 1746519056,
     "genres": [
       "Documentary",
       "Sport"
@@ -13849,7 +13849,7 @@
     "rating": 9.1,
     "studio": "PCMA Productions",
     "addedAt": 1678401410,
-    "updatedAt": 1743604782,
+    "updatedAt": 1746519056,
     "genres": [
       "Drama",
       "Mystery"
@@ -13881,7 +13881,7 @@
     "rating": 9.3,
     "studio": "Legendary Pictures",
     "addedAt": 1678401102,
-    "updatedAt": 1743604782,
+    "updatedAt": 1746519039,
     "genres": [
       "Mystery",
       "Action"
@@ -13913,7 +13913,7 @@
     "rating": 8.8,
     "studio": "Concord Productions",
     "addedAt": 1678401406,
-    "updatedAt": 1743604782,
+    "updatedAt": 1746519055,
     "genres": [
       "Action",
       "Crime"
@@ -13945,7 +13945,7 @@
     "rating": "",
     "studio": "DreamWorks Pictures",
     "addedAt": 1678401377,
-    "updatedAt": 1743604782,
+    "updatedAt": 1746519051,
     "genres": [
       "Comedy"
     ],
@@ -32795,7 +32795,7 @@
     "rating": 7.7,
     "studio": "Warner Bros. Pictures",
     "addedAt": 1744168046,
-    "updatedAt": 1745829078,
+    "updatedAt": 1746519068,
     "genres": [
       "Adventure",
       "Science Fiction"
@@ -42245,10 +42245,10 @@
     "title": "Rust",
     "year": 2025,
     "summary": "A boy left to fend for himself and his younger brother following their parents' deaths in 1880s Wyoming goes on the run with his long-estranged grandfather after he is sentenced to hang for the accidental killing of a local rancher.",
-    "rating": 4.6,
+    "rating": 4.2,
     "studio": "El Dorado Pictures",
     "addedAt": 1746297198,
-    "updatedAt": 1746429570,
+    "updatedAt": 1746519069,
     "genres": [
       "Western",
       "Action"
