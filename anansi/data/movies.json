@@ -20276,7 +20276,7 @@
     "rating": 9.2,
     "studio": "Fox Searchlight Pictures",
     "addedAt": 1678401383,
-    "updatedAt": 1743604805,
+    "updatedAt": 1746775961,
     "genres": [
       "Comedy",
       "Drama"
@@ -20308,7 +20308,7 @@
     "rating": 7.8,
     "studio": "Sil-Metropole Organisation",
     "addedAt": 1678401404,
-    "updatedAt": 1743604805,
+    "updatedAt": 1746775963,
     "genres": [
       "Action",
       "Drama"
@@ -20340,7 +20340,7 @@
     "rating": 10.0,
     "studio": "Studio Ghibli",
     "addedAt": 1678401268,
-    "updatedAt": 1743604805,
+    "updatedAt": 1746775951,
     "genres": [
       "War",
       "Drama"
@@ -20372,7 +20372,7 @@
     "rating": 4.0,
     "studio": "Universal Pictures",
     "addedAt": 1678401457,
-    "updatedAt": 1741579375,
+    "updatedAt": 1746775969,
     "genres": [
       "Comedy"
     ],
@@ -20435,7 +20435,7 @@
     "rating": 6.2,
     "studio": "Walt Disney Pictures",
     "addedAt": 1683170303,
-    "updatedAt": 1743604805,
+    "updatedAt": 1746775974,
     "genres": [
       "Drama",
       "Biography"
@@ -20467,7 +20467,7 @@
     "rating": 5.6,
     "studio": "Chernin Entertainment",
     "addedAt": 1678401436,
-    "updatedAt": 1743604805,
+    "updatedAt": 1746775967,
     "genres": [
       "Musical",
       "Drama"
@@ -20499,7 +20499,7 @@
     "rating": 7.7,
     "studio": "Participant",
     "addedAt": 1678401260,
-    "updatedAt": 1743604805,
+    "updatedAt": 1746775951,
     "genres": [
       "Drama",
       "Comedy"
@@ -20531,7 +20531,7 @@
     "rating": 2.5,
     "studio": "DC Entertainment",
     "addedAt": 1678401307,
-    "updatedAt": 1743604805,
+    "updatedAt": 1746775953,
     "genres": [
       "Action",
       "Adventure"
@@ -20559,11 +20559,11 @@
     "id": "77597",
     "title": "Gremlins",
     "year": 1984,
-    "summary": "When Billy Peltzer is given a strange but adorable pet named Gizmo for Christmas, he inadvertently breaks the three important rules of caring for a Mogwai, unleashing a horde of mischievous gremlins on a small town.",
-    "rating": 8.6,
+    "summary": "After receiving an exotic small animal as a Christmas gift, a young man inadvertently breaks three important rules concerning his new pet, which unleashes a horde of malevolently mischievous creatures on a small town.",
+    "rating": 8.7,
     "studio": "Amblin Entertainment",
     "addedAt": 1678401308,
-    "updatedAt": 1743604805,
+    "updatedAt": 1746775953,
     "genres": [
       "Fantasy",
       "Horror"
@@ -20595,7 +20595,7 @@
     "rating": 7.1,
     "studio": "Amblin Entertainment",
     "addedAt": 1678401308,
-    "updatedAt": 1743604806,
+    "updatedAt": 1746775953,
     "genres": [
       "Comedy",
       "Horror"
@@ -20627,7 +20627,7 @@
     "rating": 7.8,
     "studio": "Playtone",
     "addedAt": 1737560222,
-    "updatedAt": 1743604806,
+    "updatedAt": 1746775979,
     "genres": [
       "Drama",
       "War"
@@ -20659,7 +20659,7 @@
     "rating": 9.2,
     "studio": "Cineplex-Odeon Films",
     "addedAt": 1736050934,
-    "updatedAt": 1743604806,
+    "updatedAt": 1746775978,
     "genres": [
       "Drama",
       "Crime"
@@ -20691,7 +20691,7 @@
     "rating": 8.2,
     "studio": "Caravan Pictures",
     "addedAt": 1678401444,
-    "updatedAt": 1743604806,
+    "updatedAt": 1746775968,
     "genres": [
       "Action",
       "Comedy"
@@ -20723,7 +20723,7 @@
     "rating": 9.4,
     "studio": "Columbia Pictures",
     "addedAt": 1678401280,
-    "updatedAt": 1741579298,
+    "updatedAt": 1746775952,
     "genres": [
       "Romance",
       "Fantasy"
@@ -20755,7 +20755,7 @@
     "rating": 1.0,
     "studio": "Columbia Pictures",
     "addedAt": 1678401436,
-    "updatedAt": 1743604806,
+    "updatedAt": 1746775966,
     "genres": [
       "Comedy"
     ],
@@ -20786,7 +20786,7 @@
     "rating": "",
     "studio": "Columbia Pictures",
     "addedAt": 1678401364,
-    "updatedAt": 1743604806,
+    "updatedAt": 1746775957,
     "genres": [
       "Comedy"
     ],
@@ -20814,10 +20814,10 @@
     "title": "Grumpier Old Men",
     "year": 1995,
     "summary": "A family wedding reignites the ancient feud between next-door neighbors and fishing buddies John and Max. Meanwhile, a sultry Italian divorc\u00e9e opens a restaurant at the local bait shop, alarming the locals who worry she'll scare the fish away. But she's less interested in seafood than she is in cooking up a hot time with Max.",
-    "rating": 2.1,
+    "rating": 2.0,
     "studio": "Lancaster Gate",
     "addedAt": 1678401446,
-    "updatedAt": 1743604806,
+    "updatedAt": 1746775968,
     "genres": [
       "Comedy",
       "Romance"
@@ -20846,10 +20846,10 @@
     "title": "Grumpy Old Men",
     "year": 1993,
     "summary": "John and Max are elderly men living next door to each other. They're continuously arguing and insulting each other, and have been this way for over 50 years. One day, Ariel, moves into the street. Both men are attracted to her, and their rivalry steps up a gear.",
-    "rating": 6.5,
+    "rating": 6.6,
     "studio": "John Davis",
     "addedAt": 1678401359,
-    "updatedAt": 1741579298,
+    "updatedAt": 1746775956,
     "genres": [
       "Comedy",
       "Romance"
@@ -20881,7 +20881,7 @@
     "rating": 9.2,
     "studio": "Marvel Studios",
     "addedAt": 1678401439,
-    "updatedAt": 1743604807,
+    "updatedAt": 1746775967,
     "genres": [
       "Action",
       "Adventure"
@@ -20913,7 +20913,7 @@
     "rating": 9.4,
     "studio": "Marvel Studios",
     "addedAt": 1691668090,
-    "updatedAt": 1743604807,
+    "updatedAt": 1746775975,
     "genres": [
       "Action",
       "Adventure"
@@ -20945,7 +20945,7 @@
     "rating": 8.5,
     "studio": "Marvel Studios",
     "addedAt": 1678401385,
-    "updatedAt": 1743604807,
+    "updatedAt": 1746775962,
     "genres": [
       "Action",
       "Adventure"
@@ -20977,7 +20977,7 @@
     "rating": 8.2,
     "studio": "Marvel Studios",
     "addedAt": 1688728618,
-    "updatedAt": 1743604807,
+    "updatedAt": 1746775974,
     "genres": [
       "Action",
       "Adventure"
@@ -21009,7 +21009,7 @@
     "rating": 3.9,
     "studio": "Independent Pictures",
     "addedAt": 1736877410,
-    "updatedAt": 1743604807,
+    "updatedAt": 1746775978,
     "genres": [
       "Drama",
       "Comedy"
@@ -21073,7 +21073,7 @@
     "rating": 3.3,
     "studio": "Suftley",
     "addedAt": 1678401285,
-    "updatedAt": 1741579299,
+    "updatedAt": 1746775952,
     "genres": [
       "Action",
       "Crime"
@@ -21105,7 +21105,7 @@
     "rating": 8.4,
     "studio": "Summit Entertainment",
     "addedAt": 1678401092,
-    "updatedAt": 1743604807,
+    "updatedAt": 1746775950,
     "genres": [
       "Drama",
       "History"
@@ -21137,7 +21137,7 @@
     "rating": 2.8,
     "studio": "Universal Pictures",
     "addedAt": 1678401407,
-    "updatedAt": 1741579299,
+    "updatedAt": 1746775964,
     "genres": [
       "Comedy",
       "Crime"
@@ -21169,7 +21169,7 @@
     "rating": 3.3,
     "studio": "New Line Cinema",
     "addedAt": 1678401396,
-    "updatedAt": 1743604808,
+    "updatedAt": 1746775963,
     "genres": [
       "Comedy",
       "Romance"
@@ -21201,7 +21201,7 @@
     "rating": 9.7,
     "studio": "Compass International Pictures",
     "addedAt": 1678401485,
-    "updatedAt": 1743604808,
+    "updatedAt": 1746775971,
     "genres": [
       "Horror",
       "Thriller"
@@ -21233,21 +21233,21 @@
     "rating": 2.8,
     "studio": "Dimension Films",
     "addedAt": 1678401483,
-    "updatedAt": 1743604808,
+    "updatedAt": 1746775970,
     "genres": [
       "Horror"
     ],
     "actors": [
+      {
+        "name": "Tyler Mane",
+        "role": ""
+      },
       {
         "name": "Malcolm McDowell",
         "role": ""
       },
       {
         "name": "Sheri Moon Zombie",
-        "role": ""
-      },
-      {
-        "name": "William Forsythe",
         "role": ""
       }
     ],
@@ -21264,7 +21264,7 @@
     "rating": 7.9,
     "studio": "Universal Pictures",
     "addedAt": 1678401484,
-    "updatedAt": 1743604808,
+    "updatedAt": 1746775971,
     "genres": [
       "Horror",
       "Thriller"
@@ -21296,7 +21296,7 @@
     "rating": 3.9,
     "studio": "Trancas International Films",
     "addedAt": 1678401486,
-    "updatedAt": 1743604808,
+    "updatedAt": 1746775972,
     "genres": [
       "Horror",
       "Thriller"
@@ -21328,7 +21328,7 @@
     "rating": 1.2,
     "studio": "Magnum Pictures Inc.",
     "addedAt": 1678401483,
-    "updatedAt": 1743604808,
+    "updatedAt": 1746775970,
     "genres": [
       "Horror",
       "Thriller"
@@ -21360,7 +21360,7 @@
     "rating": 4.0,
     "studio": "Universal Pictures",
     "addedAt": 1678401255,
-    "updatedAt": 1743604808,
+    "updatedAt": 1746775951,
     "genres": [
       "Horror",
       "Thriller"
@@ -21392,7 +21392,7 @@
     "rating": 5.6,
     "studio": "Dimension Films",
     "addedAt": 1678401484,
-    "updatedAt": 1743604808,
+    "updatedAt": 1746775971,
     "genres": [
       "Horror",
       "Thriller"
@@ -21424,7 +21424,7 @@
     "rating": 3.3,
     "studio": "Universal Pictures",
     "addedAt": 1678401481,
-    "updatedAt": 1743604808,
+    "updatedAt": 1746775969,
     "genres": [
       "Horror",
       "Thriller"
@@ -21456,7 +21456,7 @@
     "rating": 2.5,
     "studio": "Dimension Films",
     "addedAt": 1678401484,
-    "updatedAt": 1743604808,
+    "updatedAt": 1746775971,
     "genres": [
       "Horror"
     ],
@@ -21487,7 +21487,7 @@
     "rating": 5.1,
     "studio": "Universal Pictures",
     "addedAt": 1678401481,
-    "updatedAt": 1741579299,
+    "updatedAt": 1746775969,
     "genres": [
       "Horror",
       "Mystery"
@@ -21519,7 +21519,7 @@
     "rating": 3.9,
     "studio": "Blumhouse Productions",
     "addedAt": 1678401485,
-    "updatedAt": 1743604809,
+    "updatedAt": 1746775972,
     "genres": [
       "Horror",
       "Thriller"
@@ -21551,7 +21551,7 @@
     "rating": 1.0,
     "studio": "Dimension Films",
     "addedAt": 1678401484,
-    "updatedAt": 1743604809,
+    "updatedAt": 1746775970,
     "genres": [
       "Horror",
       "Thriller"
@@ -21583,7 +21583,7 @@
     "rating": "",
     "studio": "Halloween VI Productions",
     "addedAt": 1678401484,
-    "updatedAt": 1743604809,
+    "updatedAt": 1746775970,
     "genres": [
       "Horror",
       "Thriller"
@@ -21615,7 +21615,7 @@
     "rating": 4.2,
     "studio": "Columbia Pictures",
     "addedAt": 1678401492,
-    "updatedAt": 1743604809,
+    "updatedAt": 1746775972,
     "genres": [
       "Fantasy",
       "Action"
@@ -21647,7 +21647,7 @@
     "rating": 7.9,
     "studio": "Legendary Pictures",
     "addedAt": 1678401428,
-    "updatedAt": 1743604809,
+    "updatedAt": 1746775966,
     "genres": [
       "Comedy"
     ],
@@ -21678,7 +21678,7 @@
     "rating": 3.4,
     "studio": "Legendary Pictures",
     "addedAt": 1678401425,
-    "updatedAt": 1743604809,
+    "updatedAt": 1746775965,
     "genres": [
       "Comedy"
     ],
@@ -21709,7 +21709,7 @@
     "rating": 2.1,
     "studio": "Green Hat Films",
     "addedAt": 1678401424,
-    "updatedAt": 1743604809,
+    "updatedAt": 1746775965,
     "genres": [
       "Comedy",
       "Crime"
@@ -21741,7 +21741,7 @@
     "rating": 7.1,
     "studio": "Holleran Company",
     "addedAt": 1700780641,
-    "updatedAt": 1743604809,
+    "updatedAt": 1746775976,
     "genres": [
       "Thriller",
       "Action"
@@ -21773,7 +21773,7 @@
     "rating": 8.2,
     "studio": "Temple Hill Entertainment",
     "addedAt": 1734923285,
-    "updatedAt": 1743604809,
+    "updatedAt": 1746775977,
     "genres": [
       "Comedy",
       "Romance"
@@ -21802,10 +21802,10 @@
     "title": "Happy Gilmore",
     "year": 1996,
     "summary": "A Hockey player wannabe finds out that he has the most powerful golf drive in history. He joins the P.G.A. tour to make some money to save grandma's house. The downside is that his hockey player mentality doesn't really go on the P.G.A. tour. Especially with the favorite to win the championship.",
-    "rating": 6.1,
+    "rating": 6.3,
     "studio": "Universal Pictures",
     "addedAt": 1678401368,
-    "updatedAt": 1743604810,
+    "updatedAt": 1746775958,
     "genres": [
       "Comedy",
       "Sport"
@@ -21837,7 +21837,7 @@
     "rating": 5.1,
     "studio": "Bazelevs Production",
     "addedAt": 1678401276,
-    "updatedAt": 1743604810,
+    "updatedAt": 1746775951,
     "genres": [
       "Action",
       "Adventure"
@@ -21869,7 +21869,7 @@
     "rating": 5.3,
     "studio": "New Line Cinema",
     "addedAt": 1678401396,
-    "updatedAt": 1743604810,
+    "updatedAt": 1746775963,
     "genres": [
       "Comedy",
       "Adventure"
@@ -21901,7 +21901,7 @@
     "rating": 7.4,
     "studio": "Senator International",
     "addedAt": 1678401339,
-    "updatedAt": 1743604810,
+    "updatedAt": 1746775955,
     "genres": [
       "Comedy",
       "Adventure"
@@ -21933,7 +21933,7 @@
     "rating": 7.4,
     "studio": "Stay Gold Features",
     "addedAt": 1732811986,
-    "updatedAt": 1743604810,
+    "updatedAt": 1746775977,
     "genres": [
       "History",
       "Drama"
@@ -21965,7 +21965,7 @@
     "rating": 8.2,
     "studio": "Warner Bros. Pictures",
     "addedAt": 1678401368,
-    "updatedAt": 1743604810,
+    "updatedAt": 1746775958,
     "genres": [
       "Adventure",
       "Fantasy"
@@ -21997,7 +21997,7 @@
     "rating": 7.7,
     "studio": "Warner Bros. Pictures",
     "addedAt": 1678401378,
-    "updatedAt": 1743604810,
+    "updatedAt": 1746775960,
     "genres": [
       "Adventure",
       "Action"
@@ -22029,7 +22029,7 @@
     "rating": 9.6,
     "studio": "Warner Bros. Pictures",
     "addedAt": 1678401384,
-    "updatedAt": 1743604810,
+    "updatedAt": 1746775961,
     "genres": [
       "Adventure",
       "Fantasy"
@@ -22061,7 +22061,7 @@
     "rating": 8.8,
     "studio": "Warner Bros. Pictures",
     "addedAt": 1678401368,
-    "updatedAt": 1741579302,
+    "updatedAt": 1746775958,
     "genres": [
       "Adventure",
       "Fantasy"
@@ -22093,7 +22093,7 @@
     "rating": 8.3,
     "studio": "Warner Bros. Pictures",
     "addedAt": 1678401374,
-    "updatedAt": 1743604811,
+    "updatedAt": 1746775959,
     "genres": [
       "Action",
       "Adventure"
@@ -22125,7 +22125,7 @@
     "rating": 7.8,
     "studio": "Warner Bros. Pictures",
     "addedAt": 1678401379,
-    "updatedAt": 1741579302,
+    "updatedAt": 1746775960,
     "genres": [
       "Action",
       "Adventure"
@@ -22157,7 +22157,7 @@
     "rating": 9.1,
     "studio": "Warner Bros. Pictures",
     "addedAt": 1678401378,
-    "updatedAt": 1743604811,
+    "updatedAt": 1746775960,
     "genres": [
       "Adventure",
       "Fantasy"
@@ -22189,7 +22189,7 @@
     "rating": 8.0,
     "studio": "Warner Bros. Pictures",
     "addedAt": 1678401374,
-    "updatedAt": 1743604811,
+    "updatedAt": 1746775959,
     "genres": [
       "Adventure",
       "Fantasy"
@@ -22221,7 +22221,7 @@
     "rating": 7.4,
     "studio": "The Weinstein Company",
     "addedAt": 1678401319,
-    "updatedAt": 1741579375,
+    "updatedAt": 1746775954,
     "genres": [
       "Western",
       "Crime"
@@ -22253,7 +22253,7 @@
     "rating": 1.4,
     "studio": "Doom Buggy Productions",
     "addedAt": 1737560215,
-    "updatedAt": 1743604811,
+    "updatedAt": 1746775978,
     "genres": [
       "Thriller",
       "Fantasy"
@@ -22285,7 +22285,7 @@
     "rating": 3.8,
     "studio": "Walt Disney Pictures",
     "addedAt": 1696540305,
-    "updatedAt": 1743604811,
+    "updatedAt": 1746775975,
     "genres": [
       "Comedy",
       "Drama"
@@ -22317,7 +22317,7 @@
     "rating": 7.5,
     "studio": "20th Century Studios",
     "addedAt": 1699243262,
-    "updatedAt": 1743604811,
+    "updatedAt": 1746775975,
     "genres": [
       "Crime",
       "Drama"
@@ -22349,7 +22349,7 @@
     "rating": 4.2,
     "studio": "Flower Films",
     "addedAt": 1678401340,
-    "updatedAt": 1743604811,
+    "updatedAt": 1746775955,
     "genres": [
       "Comedy",
       "Romance"
@@ -22381,7 +22381,7 @@
     "rating": 2.9,
     "studio": "Conundrum Entertainment",
     "addedAt": 1678401340,
-    "updatedAt": 1743604811,
+    "updatedAt": 1746775955,
     "genres": [
       "Comedy",
       "Romance"
@@ -22413,7 +22413,7 @@
     "rating": 8.3,
     "studio": "Warner Bros. Pictures",
     "addedAt": 1678401092,
-    "updatedAt": 1743604811,
+    "updatedAt": 1746775950,
     "genres": [
       "Action",
       "Crime"
@@ -22445,7 +22445,7 @@
     "rating": 6.5,
     "studio": "Chernin Entertainment",
     "addedAt": 1678401316,
-    "updatedAt": 1743604812,
+    "updatedAt": 1746775954,
     "genres": [
       "Comedy",
       "Action"
@@ -22472,12 +22472,12 @@
   {
     "id": "78654",
     "title": "Heathers",
-    "year": 1988,
+    "year": 1989,
     "summary": "A regular girl, Veronica, tries to survive the social jungle of high school by sticking with the three most popular girls at school who are all called Heather. As she meets a new kid named JD, her life spirals into a continuous cycle of hate, indifference, and murder as she exacts revenge on her enemies, also known as her best friends.",
     "rating": "",
     "studio": "New World Pictures",
     "addedAt": 1678401340,
-    "updatedAt": 1741579303,
+    "updatedAt": 1746775955,
     "genres": [
       "Comedy",
       "Crime"
@@ -22498,7 +22498,7 @@
     ],
     "duration": 6182092,
     "contentRating": "R",
-    "originallyAvailableAt": "1988-10-01",
+    "originallyAvailableAt": "1989-03-31",
     "tagline": "Best friends, social trends, and occasional murder."
   },
   {
@@ -22509,7 +22509,7 @@
     "rating": 9.5,
     "studio": "Annapurna Pictures",
     "addedAt": 1739636416,
-    "updatedAt": 1743604812,
+    "updatedAt": 1746775979,
     "genres": [
       "Drama",
       "Romance"
@@ -22541,7 +22541,7 @@
     "rating": 4.1,
     "studio": "Broken Road Productions",
     "addedAt": 1678401443,
-    "updatedAt": 1743604812,
+    "updatedAt": 1746775967,
     "genres": [
       "Comedy",
       "Action"
@@ -22573,7 +22573,7 @@
     "rating": 9.0,
     "studio": "PalmStar Media",
     "addedAt": 1678401395,
-    "updatedAt": 1743604812,
+    "updatedAt": 1746775962,
     "genres": [
       "Horror",
       "Drama"
@@ -22605,7 +22605,7 @@
     "rating": 9.1,
     "studio": "A24",
     "addedAt": 1734395215,
-    "updatedAt": 1743604812,
+    "updatedAt": 1746775977,
     "genres": [
       "Horror",
       "Thriller"
@@ -22637,7 +22637,7 @@
     "rating": 6.5,
     "studio": "4th Row Films",
     "addedAt": 1701222272,
-    "updatedAt": 1743008797,
+    "updatedAt": 1746775976,
     "genres": [
       "Documentary"
     ],
@@ -22668,7 +22668,7 @@
     "rating": 9.3,
     "studio": "Fox 2000 Pictures",
     "addedAt": 1678401384,
-    "updatedAt": 1743604812,
+    "updatedAt": 1746775961,
     "genres": [
       "Drama",
       "History"
@@ -22700,7 +22700,7 @@
     "rating": 4.3,
     "studio": "DEG",
     "addedAt": 1700767287,
-    "updatedAt": 1743604813,
+    "updatedAt": 1746775976,
     "genres": [
       "Comedy",
       "Action"
@@ -22732,7 +22732,7 @@
     "rating": 9.1,
     "studio": "Touchstone Pictures",
     "addedAt": 1678401443,
-    "updatedAt": 1743604813,
+    "updatedAt": 1746775968,
     "genres": [
       "Comedy",
       "Drama"
@@ -22764,7 +22764,7 @@
     "rating": 6.9,
     "studio": "Davis-Panzer Productions",
     "addedAt": 1678401371,
-    "updatedAt": 1743604813,
+    "updatedAt": 1746775959,
     "genres": [
       "Action",
       "Adventure"
@@ -22796,7 +22796,7 @@
     "rating": "",
     "studio": "Davis-Panzer Productions",
     "addedAt": 1678401367,
-    "updatedAt": 1743604813,
+    "updatedAt": 1746775957,
     "genres": [
       "Action",
       "Adventure"
@@ -22828,7 +22828,7 @@
     "rating": 1.1,
     "studio": "Davis-Panzer Productions",
     "addedAt": 1678401367,
-    "updatedAt": 1743604813,
+    "updatedAt": 1746775957,
     "genres": [
       "Science Fiction",
       "Action"
@@ -22860,7 +22860,7 @@
     "rating": "",
     "studio": "Trans-Film",
     "addedAt": 1678401368,
-    "updatedAt": 1743604813,
+    "updatedAt": 1746775958,
     "genres": [
       "Action",
       "Adventure"
@@ -22892,7 +22892,7 @@
     "rating": "",
     "studio": "Davis-Panzer Productions",
     "addedAt": 1678401367,
-    "updatedAt": 1741579303,
+    "updatedAt": 1746775957,
     "genres": [
       "Action",
       "Adventure"
@@ -22924,7 +22924,7 @@
     "rating": 5.8,
     "studio": "Casey Silver Productions",
     "addedAt": 1737560211,
-    "updatedAt": 1743604813,
+    "updatedAt": 1746775978,
     "genres": [
       "Crime",
       "Drama"
@@ -22956,7 +22956,7 @@
     "rating": 6.1,
     "studio": "Brooksfilms",
     "addedAt": 1678401087,
-    "updatedAt": 1743604813,
+    "updatedAt": 1746775950,
     "genres": [
       "Comedy",
       "History"
@@ -23020,7 +23020,7 @@
     "rating": 6.8,
     "studio": "Columbia Pictures",
     "addedAt": 1684378752,
-    "updatedAt": 1743604814,
+    "updatedAt": 1746775974,
     "genres": [
       "Comedy",
       "Drama"
@@ -23052,7 +23052,7 @@
     "rating": 6.1,
     "studio": "Spyglass Entertainment",
     "addedAt": 1678401305,
-    "updatedAt": 1743604814,
+    "updatedAt": 1746775953,
     "genres": [
       "Adventure",
       "Comedy"
@@ -23084,7 +23084,7 @@
     "rating": 4.4,
     "studio": "Campbell Grobman Films",
     "addedAt": 1678401375,
-    "updatedAt": 1743604814,
+    "updatedAt": 1746775960,
     "genres": [
       "Action",
       "Comedy"
@@ -23116,7 +23116,7 @@
     "rating": 2.5,
     "studio": "Nu Boyana Film Studios",
     "addedAt": 1678401388,
-    "updatedAt": 1743604814,
+    "updatedAt": 1746775962,
     "genres": [
       "Comedy",
       "Thriller"
@@ -23148,7 +23148,7 @@
     "rating": 6.4,
     "studio": "New Line Cinema",
     "addedAt": 1678401493,
-    "updatedAt": 1743604814,
+    "updatedAt": 1746775973,
     "genres": [
       "Adventure",
       "Action"
@@ -23178,9 +23178,9 @@
     "year": 2014,
     "summary": "After the Dragon leaves the Lonely Mountain, the people of Lake-town see a threat coming. Orcs, dwarves, elves and people prepare for war. Bilbo sees Thorin going mad and tries to help. Meanwhile, Gandalf is rescued from the Necromancer's prison and his rescuers realize who the Necromancer is.",
     "rating": 5.9,
-    "studio": "Warner Bros. Pictures",
+    "studio": "New Line Cinema",
     "addedAt": 1678401493,
-    "updatedAt": 1743604814,
+    "updatedAt": 1746775973,
     "genres": [
       "Adventure",
       "Action"
@@ -23212,7 +23212,7 @@
     "rating": 7.4,
     "studio": "New Line Cinema",
     "addedAt": 1678401493,
-    "updatedAt": 1743604814,
+    "updatedAt": 1746775973,
     "genres": [
       "Adventure",
       "Action"
@@ -23244,7 +23244,7 @@
     "rating": 4.1,
     "studio": "Walt Disney Pictures",
     "addedAt": 1678401363,
-    "updatedAt": 1743604814,
+    "updatedAt": 1746775956,
     "genres": [
       "Comedy",
       "Family"
@@ -23276,7 +23276,7 @@
     "rating": 6.5,
     "studio": "Walt Disney Pictures",
     "addedAt": 1678401283,
-    "updatedAt": 1741579303,
+    "updatedAt": 1746775952,
     "genres": [
       "Comedy",
       "Fantasy"
@@ -23340,7 +23340,7 @@
     "rating": 7.8,
     "studio": "Phoenix Pictures",
     "addedAt": 1678401428,
-    "updatedAt": 1743604815,
+    "updatedAt": 1746775966,
     "genres": [
       "Adventure",
       "Family"
@@ -23372,7 +23372,7 @@
     "rating": 1.0,
     "studio": "Columbia Pictures",
     "addedAt": 1678401363,
-    "updatedAt": 1743604815,
+    "updatedAt": 1746775956,
     "genres": [
       "Mystery",
       "Adventure"
@@ -23404,7 +23404,7 @@
     "rating": 6.6,
     "studio": "Hughes Entertainment",
     "addedAt": 1678401416,
-    "updatedAt": 1741579303,
+    "updatedAt": 1746775964,
     "genres": [
       "Comedy",
       "Family"
@@ -23436,7 +23436,7 @@
     "rating": 3.5,
     "studio": "20th Century Fox",
     "addedAt": 1678401409,
-    "updatedAt": 1741579303,
+    "updatedAt": 1746775964,
     "genres": [
       "Comedy",
       "Family"
@@ -23464,11 +23464,11 @@
     "id": "84931",
     "title": "Hoosiers",
     "year": 1986,
-    "summary": "Based on the true story of a small-town Indiana team that made the state finals in 1954, this movie chronicles the attempts of a coach with a spotty past, and the town's basketball-loving drunk to lead their high school team to victory.",
+    "summary": "Failed college coach Norman Dale gets a chance at redemption when he is hired to coach a high school basketball team in a tiny Indiana town. After a teacher persuades star player Jimmy Chitwood to quit and focus on his long-neglected studies, Dale struggles to develop a winning team in the face of community criticism for his temper and his unconventional choice of assistant coach: Shooter, a notorious alcoholic.",
     "rating": 9.2,
     "studio": "Orion Pictures",
     "addedAt": 1678401478,
-    "updatedAt": 1743604815,
+    "updatedAt": 1746775969,
     "genres": [
       "Drama",
       "Family"
@@ -23532,7 +23532,7 @@
     "rating": 6.9,
     "studio": "New Line Cinema",
     "addedAt": 1678401318,
-    "updatedAt": 1743604815,
+    "updatedAt": 1746775954,
     "genres": [
       "Comedy",
       "Crime"
@@ -23564,7 +23564,7 @@
     "rating": 3.6,
     "studio": "New Line Cinema",
     "addedAt": 1678401424,
-    "updatedAt": 1743604815,
+    "updatedAt": 1746775964,
     "genres": [
       "Comedy",
       "Crime"
@@ -23596,7 +23596,7 @@
     "rating": 9.1,
     "studio": "Big Talk Studios",
     "addedAt": 1678401428,
-    "updatedAt": 1743604815,
+    "updatedAt": 1746775965,
     "genres": [
       "Crime",
       "Action"
@@ -42248,7 +42248,7 @@
     "rating": 4.5,
     "studio": "El Dorado Pictures",
     "addedAt": 1746297198,
-    "updatedAt": 1746696064,
+    "updatedAt": 1746775979,
     "genres": [
       "Western",
       "Action"
@@ -52862,6 +52862,37 @@
     "contentRating": "R",
     "originallyAvailableAt": "2016-12-22",
     "tagline": "Of all the guys his daughter could have chosen..."
+  },
+  {
+    "id": "133958",
+    "title": "Wick Is Pain",
+    "year": 2025,
+    "summary": "Witness the never-before-seen footage and story behind the John Wick phenomenon, starring Keanu Reeves - from independent film to billion-dollar franchise.",
+    "rating": "",
+    "studio": "Lionsgate",
+    "addedAt": 1746845257,
+    "updatedAt": 1746845257,
+    "genres": [
+      "Documentary"
+    ],
+    "actors": [
+      {
+        "name": "Keanu Reeves",
+        "role": ""
+      },
+      {
+        "name": "Chad Stahelski",
+        "role": ""
+      },
+      {
+        "name": "David Leitch",
+        "role": ""
+      }
+    ],
+    "duration": 7575904,
+    "contentRating": "Not Rated",
+    "originallyAvailableAt": "2025-05-09",
+    "tagline": "How the legend was made."
   },
   {
     "id": "128527",
