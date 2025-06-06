@@ -1,6 +1,38 @@
 <?php defined('BLUDIT') or die('Bludit CMS.'); ?>
 [
     {
+        "date": "2025-06-06 09:51:13",
+        "dictionaryKey": "plugin-configured",
+        "notes": "Links",
+        "idExecution": "6843006182589",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
+        "date": "2025-06-06 09:51:06",
+        "dictionaryKey": "plugin-configured",
+        "notes": "Links",
+        "idExecution": "6843005a741e7",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
+        "date": "2025-06-06 09:50:52",
+        "dictionaryKey": "plugin-configured",
+        "notes": "Links",
+        "idExecution": "6843004c03b70",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
+        "date": "2025-06-06 09:50:37",
+        "dictionaryKey": "plugin-configured",
+        "notes": "Links",
+        "idExecution": "6843003d77ea6",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
         "date": "2025-03-06 00:03:48",
         "dictionaryKey": "content-edited",
         "notes": "Introducing Posteria",
@@ -45,38 +77,6 @@
         "dictionaryKey": "content-edited",
         "notes": "Introducing Posteria",
         "idExecution": "67c89ec2f2b75",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2025-03-05 12:57:47",
-        "dictionaryKey": "content-edited",
-        "notes": "Introducing Posteria",
-        "idExecution": "67c89eab47dbc",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2025-03-05 12:56:45",
-        "dictionaryKey": "content-edited",
-        "notes": "Introducing Posteria",
-        "idExecution": "67c89e6cb92b0",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2025-03-05 12:47:29",
-        "dictionaryKey": "content-edited",
-        "notes": "Introducing Posteria",
-        "idExecution": "67c89c40b6044",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2025-03-05 12:47:03",
-        "dictionaryKey": "content-edited",
-        "notes": "Introducing Posteria",
-        "idExecution": "67c89c26b9995",
         "method": "POST",
         "username": "admin"
     }
