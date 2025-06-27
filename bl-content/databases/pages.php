@@ -29,7 +29,7 @@
         }
     },
     "libretto-plex-library-metadata-exporter": {
-        "title": "Libretto: Plex Library Metadata Exporter",
+        "title": "Introducing: Libretto",
         "description": "",
         "username": "admin",
         "tags": {
@@ -38,7 +38,7 @@
         },
         "type": "published",
         "date": "2025-02-06 09:47:53",
-        "dateModified": "2025-02-06 09:56:03",
+        "dateModified": "2025-06-27 08:07:50",
         "position": 133,
         "coverImage": "libretto.png",
         "category": "media-servers",
