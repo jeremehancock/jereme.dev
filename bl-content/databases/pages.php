@@ -87,7 +87,7 @@
         }
     },
     "the-perfect-travel-tv-setup": {
-        "title": "The Perfect Travel TV Setup",
+        "title": "Perfect Travel TV Setup",
         "description": "",
         "username": "admin",
         "tags": {
@@ -99,7 +99,7 @@
         },
         "type": "published",
         "date": "2024-09-26 12:07:07",
-        "dateModified": "2024-09-27 11:41:08",
+        "dateModified": "2025-06-27 08:06:34",
         "position": 131,
         "coverImage": "onn-4k-2.png",
         "category": "media-servers",

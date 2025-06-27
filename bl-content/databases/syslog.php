@@ -1,6 +1,14 @@
 <?php defined('BLUDIT') or die('Bludit CMS.'); ?>
 [
     {
+        "date": "2025-06-27 08:06:34",
+        "dictionaryKey": "content-edited",
+        "notes": "Perfect Travel TV Setup",
+        "idExecution": "685e975a4e5e5",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
         "date": "2025-06-06 09:51:13",
         "dictionaryKey": "plugin-configured",
         "notes": "Links",
@@ -69,14 +77,6 @@
         "dictionaryKey": "content-edited",
         "notes": "Introducing Posteria",
         "idExecution": "67c89ed23d697",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2025-03-05 12:58:12",
-        "dictionaryKey": "content-edited",
-        "notes": "Introducing Posteria",
-        "idExecution": "67c89ec2f2b75",
         "method": "POST",
         "username": "admin"
     }

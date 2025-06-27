@@ -5,7 +5,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Thu, 06 Mar 2025 00:03:48 -0600</lastBuildDate>
+    <lastBuildDate>Fri, 27 Jun 2025 08:06:34 -0500</lastBuildDate>
     <item>
       <title>Introducing Posteria</title>
       <link>https://pilab.dev/introducing-posteria</link>
@@ -161,7 +161,7 @@ Fully mobile-responsive and installable as a Progressive Web App (PWA), Posteria
       <guid isPermaLink="false">b76e72cdd1ec17ffdf9eab71f7338e98</guid>
     </item>
     <item>
-      <title>The Perfect Travel TV Setup</title>
+      <title>Perfect Travel TV Setup</title>
       <link>https://pilab.dev/the-perfect-travel-tv-setup</link>
       <image>https://pilab.dev/bl-content/uploads/pages/2e2762b3524a642f87e1dda68eabfc0d/onn-4k-2.png</image>
       <description>&lt;p&gt;One of the best benefits of running your own Plex server is being able to watch your movies and shows wherever you are. Many folks will just log in to Plex on the hotel TV (assuming it has the Plex app) while traveling. I don't like doing this. For one thing smart TVs are generally underpowered and that can cause issues streaming. The other issue is I don't like to log in to a TV that isn't mine.&lt;/p&gt;
