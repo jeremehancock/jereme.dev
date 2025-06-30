@@ -1,6 +1,22 @@
 <?php defined('BLUDIT') or die('Bludit CMS.'); ?>
 [
     {
+        "date": "2025-06-30 07:50:12",
+        "dictionaryKey": "content-edited",
+        "notes": "Specs",
+        "idExecution": "68628803c8f8a",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
+        "date": "2025-06-30 07:49:53",
+        "dictionaryKey": "content-edited",
+        "notes": "Specs",
+        "idExecution": "686287eef1264",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
         "date": "2025-06-27 08:07:50",
         "dictionaryKey": "content-edited",
         "notes": "Introducing: Libretto",
@@ -61,22 +77,6 @@
         "dictionaryKey": "content-edited",
         "notes": "Introducing Posteria",
         "idExecution": "67c89f08eadda",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2025-03-05 12:59:00",
-        "dictionaryKey": "content-edited",
-        "notes": "Introducing Posteria",
-        "idExecution": "67c89ef431dc0",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2025-03-05 12:58:40",
-        "dictionaryKey": "content-edited",
-        "notes": "Introducing Posteria",
-        "idExecution": "67c89ee0334bb",
         "method": "POST",
         "username": "admin"
     }

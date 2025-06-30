@@ -87,7 +87,7 @@
 *   Dell OptiPlex 3060 Small Form Factor
 	* [Intel Core i3-8100 CPU @ 3.60GHz](https://ark.intel.com/content/www/us/en/ark/products/126688/intel-core-i38100-processor-6m-cache-3-60-ghz.html)
 	*   **Operating System:** [Ubuntu Server 22.04.3 LTS](https://ubuntu.com/download/server)
-	* 24GB DDR4 SDRAM 2133 MT/s
+	* 8GB DDR4 SDRAM 2133 MT/s
 	* [SABRENT NVMe M.2 SSD to PCIe](https://www.amazon.com/dp/B084GDY2PW)
 		*   [WD Blue SN580 NVMe 1TB Solid State Drive](https://www.amazon.com/dp/B0C8XMH264) (OS)
 				* [Portainer](https://www.portainer.io/) (Docker)
