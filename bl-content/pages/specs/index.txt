@@ -343,4 +343,4 @@ RAIDZ2 Array
 
 ---
 
-*For more detailed Pi Lab setup information, visit the [Pi Lab Setup Guide](pi-lab-setup).*
+*For more detailed Pi Lab setup information, visit the [Pi Lab Setup Guide](pi-lab-setup).
