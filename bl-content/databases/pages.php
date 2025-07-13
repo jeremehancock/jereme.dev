@@ -1,5 +1,27 @@
 <?php defined('BLUDIT') or die('Bludit CMS.'); ?>
 {
+    "autosave-ae6baedd36be1d5b3fa9ec0d872cc735": {
+        "title": "Specs",
+        "description": "",
+        "username": "admin",
+        "tags": [],
+        "type": "autosave",
+        "date": "2025-07-13 17:18:29",
+        "dateModified": "",
+        "position": 0,
+        "coverImage": "",
+        "category": "",
+        "md5file": "10417a133adcce9c8641cb6718a2d9ac",
+        "uuid": "autosave-ae6baedd36be1d5b3fa9ec0d872cc735",
+        "allowComments": true,
+        "template": "",
+        "noindex": false,
+        "nofollow": false,
+        "noarchive": false,
+        "custom": [
+            false
+        ]
+    },
     "introducing-posteria": {
         "title": "Introducing Posteria",
         "description": "",
@@ -1495,11 +1517,11 @@
         },
         "type": "static",
         "date": "2019-05-09 21:13:56",
-        "dateModified": "2025-07-13 15:29:07",
+        "dateModified": "2025-07-13 17:18:27",
         "position": 2,
         "coverImage": "picluster-v3.jpg",
         "category": "raspberry-pi",
-        "md5file": "8c137e1a6b06bd33e17c4670666e8c5c",
+        "md5file": "3e56ce2651a711df8f305ba116384531",
         "uuid": "ae6baedd36be1d5b3fa9ec0d872cc735",
         "allowComments": true,
         "template": "",
