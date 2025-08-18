@@ -300,7 +300,6 @@ RAIDZ2 Array
 | [Node-RED](https://community-scripts.github.io//Proxmox/#node-red-lxc) | Automation | [Setup Guide](https://community-scripts.github.io//Proxmox/#node-red-lxc) |
 | [Vaultwarden](https://github.com/dani-garcia/vaultwarden) | Password manager | [Repository](https://github.com/dani-garcia/vaultwarden) |
 | Whoogle| Private search |  |
-| [Tandoor Recipes](https://community-scripts.github.io/ProxmoxVE/scripts?id=tandoor) | Recipe management | [Setup Guide](https://community-scripts.github.io/ProxmoxVE/scripts?id=tandoor) |
 
 ---
 
