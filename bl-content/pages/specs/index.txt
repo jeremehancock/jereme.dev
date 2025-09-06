@@ -83,7 +83,8 @@
 | Service | Purpose | Type |
 |---------|---------|------|
 | [xTeVe](https://github.com/xteve-project/xTeVe) | IPTV proxy | Docker |
-| [ErsatzTV](https://github.com/ErsatzTV/ErsatzTV) | Custom TV channels | Docker |
+| [ErsatzTV](https://ersatztv.org) | Custom TV channels | Docker |
+| [Tunarr](https://tunarr.com) | Custom TV channels | Docker |
 
 **Content Acquisition**
 
