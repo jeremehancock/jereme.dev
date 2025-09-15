@@ -4,6 +4,20 @@
 
 ---
 
+## <span class="emoji">📝</span> Legend & Quick Navigation
+
+| Symbol | Meaning | Jump to Section |
+|--------|---------|-----------------|
+| <span class="emoji">🍓</span> | Raspberry Pi | [Raspberry Pi Cluster](#raspberry-pi-cluster) |
+| <span class="emoji">🎬</span> | Media Server | [Plex Media Server](#plex) |
+| <span class="emoji">📊</span> | Monitoring | [Monitoring & Backup Server](#monitoring-backup-server) |
+| <span class="emoji">💾</span> | Storage/NAS | [TrueNAS Storage Server](#truenas) |
+| <span class="emoji">🚀</span> | Hosting/Platform | [TrueNAS Hosting Server](#truenas-hosting) |
+| <span class="emoji">⚡</span> | Virtualization | [Proxmox Server](#proxmox) |
+| <span class="emoji">🌐</span> | Networking | [Networking & Infrastructure](#networking-infrastructure) |
+
+---
+
 ## <span class="emoji">🍓</span> Raspberry Pi Cluster <span id="raspberry-pi-cluster"/>
 
 ### Common Specifications
@@ -83,7 +97,6 @@
 | Service | Purpose | Type |
 |---------|---------|------|
 | [xTeVe](https://github.com/xteve-project/xTeVe) | IPTV proxy | Docker |
-| [ErsatzTV](https://ersatztv.org) | Custom TV channels | Docker |
 | [Tunarr](https://tunarr.com) | Custom TV channels | Docker |
 
 **Content Acquisition**
@@ -300,7 +313,6 @@ RAIDZ2 Array
 | [Grafana](https://community-scripts.github.io/ProxmoxVE/scripts?id=grafana) | Data visualization | [Setup Guide](https://community-scripts.github.io/ProxmoxVE/scripts?id=grafana) |
 | [Node-RED](https://community-scripts.github.io//Proxmox/#node-red-lxc) | Automation | [Setup Guide](https://community-scripts.github.io//Proxmox/#node-red-lxc) |
 | [Vaultwarden](https://github.com/dani-garcia/vaultwarden) | Password manager | [Repository](https://github.com/dani-garcia/vaultwarden) |
-| Whoogle| Private search |  |
 
 ---
 
@@ -326,20 +338,6 @@ RAIDZ2 Array
 | Component | Model | Capacity | Quantity |
 |-----------|-------|----------|----------|
 | **UPS** | [CyberPower CP1000PFCLCD](https://www.amazon.com/CyberPower-CP1000PFCLCD-Sinewave-Outlets-Mini-Tower/dp/B00429N192) | 1000VA | 2 units |
-
----
-
-## <span class="emoji">📝</span> Legend & Quick Navigation
-
-| Symbol | Meaning | Jump to Section |
-|--------|---------|-----------------|
-| <span class="emoji">🍓</span> | Raspberry Pi | [Raspberry Pi Cluster](#raspberry-pi-cluster) |
-| <span class="emoji">🎬</span> | Media Server | [Plex Media Server](#plex) |
-| <span class="emoji">📊</span> | Monitoring | [Monitoring & Backup Server](#monitoring-backup-server) |
-| <span class="emoji">💾</span> | Storage/NAS | [TrueNAS Storage Server](#truenas) |
-| <span class="emoji">🚀</span> | Hosting/Platform | [TrueNAS Hosting Server](#truenas-hosting) |
-| <span class="emoji">⚡</span> | Virtualization | [Proxmox Server](#proxmox) |
-| <span class="emoji">🌐</span> | Networking | [Networking & Infrastructure](#networking-infrastructure) |
 
 ---
 
