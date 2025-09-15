@@ -124,6 +124,7 @@
 | [FlareSolverr](https://github.com/FlareSolverr/FlareSolverr) | Cloudflare solver | Docker |
 | [Unpackerr](https://github.com/davidnewhall/unpackerr) | Archive extractor | Docker |
 | [Posteria](https://posteria.app/) | Poster management | Docker |
+| [Glimpse](https://github.com/jeremehancock/Glimpse) | Media server viewer | Docker |
 
 **Monitoring & Sync**
 
