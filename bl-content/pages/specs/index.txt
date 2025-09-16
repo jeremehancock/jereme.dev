@@ -252,7 +252,8 @@
 | Purpose | Drive | Capacity | Configuration |
 |---------|--------|----------|---------------|
 | **OS Drive** | ORICO 128GB M.2 NVMe SSD | 128GB | PCIe Gen3x4 2280 SSD |
-| **Storage Array** | Seagate HDD | 1TB x4 | RAIDZ1 Array |
+| **Storage Array** | Seagate HDD | 1TB x3 | RAIDZ1 Array |
+| **Storage Array** | Samsung HDD | 1.5TB | RAIDZ1 Array |
 
 #### TrueNAS Apps
 | App | Purpose |
