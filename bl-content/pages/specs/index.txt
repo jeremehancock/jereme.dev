@@ -196,7 +196,7 @@
 | **RAM** | 128GB DDR4 ECC SDRAM |
 | **GPU** | NVIDIA GeForce 8400 GS Rev. 3 |
 | **PSU** | 950W |
-| **OS** | [TrueNAS Scale](https://www.truenas.com/truenas-scale/) |
+| **OS** | [TrueNAS Community Edition](https://www.truenas.com/truenas-community-edition/) |
 
 #### Storage Configuration
 
@@ -242,9 +242,10 @@
 
 | Component | Specification |
 |-----------|--------------|
+| **System** | Custom system in Fractal case. |
 | **CPU** | [AMD Ryzen 5 3400G with Radeon Vega Graphics](https://www.amd.com/en/products/processors/desktops/ryzen/3000-series/amd-ryzen-5-3400g.html) |
 | **RAM** | [64GB GIGASTONE Game PRO DDR4 3200MHz](https://www.amazon.com/dp/B0D5R7PJCJ) |
-| **OS** | [TrueNAS Scale](https://www.truenas.com/truenas-scale/) |
+| **OS** | [TrueNAS Community Edition](https://www.truenas.com/truenas-community-edition/) |
 
 #### Storage Configuration
 
