@@ -252,10 +252,9 @@
 | Purpose | Drive | Capacity | Configuration |
 |---------|--------|----------|---------------|
 | **OS Drive** | ORICO 128GB M.2 NVMe SSD | 128GB | PCIe Gen3x4 2280 SSD |
-| **Storage Array** | Seagate HDD | 1TB x4 | RAIDZ2 Array |
+| **Storage Array** | Seagate HDD | 1TB x4 | RAIDZ1 Array |
 
 #### TrueNAS Apps
-RAIDZ2 Array
 | App | Purpose |
 |-----|---------|
 | [Tailscale](https://github.com/truenas/charts/tree/master/community/tailscale) | VPN access |
