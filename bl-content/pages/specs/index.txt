@@ -315,6 +315,7 @@
 | [Grafana](https://community-scripts.github.io/ProxmoxVE/scripts?id=grafana) | Data visualization | [Setup Guide](https://community-scripts.github.io/ProxmoxVE/scripts?id=grafana) |
 | [Node-RED](https://community-scripts.github.io//Proxmox/#node-red-lxc) | Automation | [Setup Guide](https://community-scripts.github.io//Proxmox/#node-red-lxc) |
 | [Vaultwarden](https://github.com/dani-garcia/vaultwarden) | Password manager | [Repository](https://github.com/dani-garcia/vaultwarden) |
+| [SearXNG](https://community-scripts.github.io/ProxmoxVE/scripts?id=searxng) | Password manager | [Setup Guide](https://community-scripts.github.io/ProxmoxVE/scripts?id=searxng) |
 
 ---
 
