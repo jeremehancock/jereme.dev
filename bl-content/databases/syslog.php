@@ -1,6 +1,30 @@
 <?php defined('BLUDIT') or die('Bludit CMS.'); ?>
 [
     {
+        "date": "2025-11-05 11:36:08",
+        "dictionaryKey": "content-edited",
+        "notes": "Specs",
+        "idExecution": "690b8b07896f2",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
+        "date": "2025-11-05 11:36:07",
+        "dictionaryKey": "content-deleted",
+        "notes": "autosave-ae6baedd36be1d5b3fa9ec0d872cc735",
+        "idExecution": "690b8b07896f2",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
+        "date": "2025-11-05 11:35:51",
+        "dictionaryKey": "new-content-created",
+        "notes": "Specs[Autosave]",
+        "idExecution": "690b8af6b2054",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
         "date": "2025-09-24 13:50:34",
         "dictionaryKey": "content-edited",
         "notes": "Specs",
@@ -53,30 +77,6 @@
         "dictionaryKey": "content-edited",
         "notes": "Specs",
         "idExecution": "68c9de0201cbd",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2025-09-15 15:36:32",
-        "dictionaryKey": "content-edited",
-        "notes": "Specs",
-        "idExecution": "68c878d069b3f",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2025-09-15 15:34:54",
-        "dictionaryKey": "content-edited",
-        "notes": "Specs",
-        "idExecution": "68c8786daa46a",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2025-09-15 15:34:12",
-        "dictionaryKey": "content-edited",
-        "notes": "Specs",
-        "idExecution": "68c87843c3d31",
         "method": "POST",
         "username": "admin"
     }

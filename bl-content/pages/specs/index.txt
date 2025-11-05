@@ -212,7 +212,8 @@
 
 | App | Purpose |
 |-----|---------|
-| [Tailscale](https://github.com/truenas/charts/tree/master/community/tailscale) | VPN access |
+| [Tailscale](https://apps.truenas.com/catalog/tailscale/) | VPN access |
+| [Scrutiny](https://apps.truenas.com/catalog/scrutiny/) | SMART Monitoring |
 | [Syncthing](https://syncthing.net/) | File synchronization |
 
 #### Virtual Machines
@@ -258,7 +259,8 @@
 #### TrueNAS Apps
 | App | Purpose |
 |-----|---------|
-| [Tailscale](https://github.com/truenas/charts/tree/master/community/tailscale) | VPN access |
+| [Tailscale](https://apps.truenas.com/catalog/tailscale/) | VPN access |
+| [Scrutiny](https://apps.truenas.com/catalog/scrutiny/) | SMART Monitoring |
 
 #### Virtual Machines
 
