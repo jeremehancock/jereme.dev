@@ -216,9 +216,9 @@
 | [Scrutiny](https://apps.truenas.com/catalog/scrutiny/) | SMART Monitoring |
 | [Syncthing](https://syncthing.net/) | File synchronization |
 
-#### Virtual Machines
+#### Virtual Machines (Containers)
 
-**Ubuntu 22.04 Server VM**
+**Ubuntu 22.04 Server**
 
 | Service | Purpose | Type |
 |---------|---------|------|
@@ -229,7 +229,7 @@
 | [Dozzle](https://dozzle.dev/) | Log viewer | Docker |
 | [Watchtower](https://github.com/containrrr/watchtower) | Auto-updates | Docker |
 
-**Other VMs**
+**Other VMs (Containers)**
 
 | VM | Purpose |
 |----|---------|
@@ -262,9 +262,9 @@
 | [Tailscale](https://apps.truenas.com/catalog/tailscale/) | VPN access |
 | [Scrutiny](https://apps.truenas.com/catalog/scrutiny/) | SMART Monitoring |
 
-#### Virtual Machines
+#### Virtual Machines (Containers)
 
-**Ubuntu Focal AMD64 VM**
+**Ubuntu Focal AMD64**
 
 | Service | Purpose | Type |
 |---------|---------|------|
@@ -293,7 +293,7 @@
 
 #### Virtual Machines
 
-**Ubuntu 22.04 Server VM**
+**Ubuntu 22.04 Server**
 
 | Service | Purpose | Type |
 |---------|---------|------|
