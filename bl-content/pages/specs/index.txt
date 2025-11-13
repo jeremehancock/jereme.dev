@@ -244,7 +244,7 @@
 | Component | Specification |
 |-----------|--------------|
 | **System** | Custom system in Fractal case |
-| **CPU** | [AMD Ryzen 5 3400G with Radeon Vega Graphics](https://www.amd.com/en/products/processors/desktops/ryzen/3000-series/amd-ryzen-5-3400g.html) |
+| **CPU** | [AMD Ryzen 5 3400G with Radeon Vega Graphics](https://www.cpubenchmark.net/cpu.php?cpu=AMD+Ryzen+5+3400G&id=3498) |
 | **RAM** | [64GB GIGASTONE Game PRO DDR4 3200MHz](https://www.amazon.com/dp/B0D5R7PJCJ) |
 | **OS** | [TrueNAS Community Edition](https://www.truenas.com/truenas-community-edition/) |
 
