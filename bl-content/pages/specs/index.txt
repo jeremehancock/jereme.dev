@@ -96,7 +96,8 @@
 
 | Service | Purpose | Type |
 |---------|---------|------|
-| [xTeVe](https://github.com/xteve-project/xTeVe) | IPTV proxy | Docker |
+| [Dispatcharr](https://github.com/Dispatcharr/Dispatcharr) | IPTV proxy | Docker |
+| [xTeVe](https://github.com/xteve-project/xTeVe) | IPTV proxy (backup) | Docker |
 | [Tunarr](https://tunarr.com) | Custom TV channels | Docker |
 
 **Content Acquisition**
