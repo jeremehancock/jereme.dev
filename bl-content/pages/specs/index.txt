@@ -230,12 +230,6 @@
 | [Dozzle](https://dozzle.dev/) | Log viewer | Docker |
 | [Watchtower](https://github.com/containrrr/watchtower) | Auto-updates | Docker |
 
-**Other VMs (Containers)**
-
-| VM | Purpose |
-|----|---------|
-| [Proxmox Backup Server](https://www.proxmox.com/en/proxmox-backup-server/overview) | Backup management |
-
 ---
 
 ### <span class="emoji">🚀</span> TrueNAS Hosting Server <span id="truenas-hosting"/>
