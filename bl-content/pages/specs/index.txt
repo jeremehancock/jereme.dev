@@ -75,7 +75,7 @@
 |---------|--------|----------|--------|
 | **OS Drive** | [WD Blue SN570 NVMe SSD](https://www.amazon.com/Western-Digital-SN570-Internal-Solid/dp/B09HKDQ1RN) | 1TB | Primary boot drive |
 | **Cache Drive** | [WD Blue SN570 NVMe SSD](https://www.amazon.com/Western-Digital-SN570-Internal-Solid/dp/B09HKDQ1RN) | 1TB | Via [SABRENT PCIe Adapter](https://www.amazon.com/dp/B084GDY2PW) |
-| **Movies** | WD_Black 12TB | 12TB | Shucked WD Ultrastar DC HC520 |
+| **Movies** | WD_Black | 12TB | Shucked WD Ultrastar DC HC520 |
 | **Movies 2** | WD Elements | 14TB | Shucked WD140EDGZ |
 | **TV Shows** | WD easystore | 14TB | Shucked WD140EDGZ |
 | **TV Shows 2** | WD easystore | 16TB | Shucked WD160EDGZ |
