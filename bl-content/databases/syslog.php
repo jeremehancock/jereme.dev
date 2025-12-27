@@ -1,6 +1,30 @@
 <?php defined('BLUDIT') or die('Bludit CMS.'); ?>
 [
     {
+        "date": "2025-12-27 11:07:15",
+        "dictionaryKey": "content-edited",
+        "notes": "Specs",
+        "idExecution": "6950124247a7d",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
+        "date": "2025-12-27 11:07:14",
+        "dictionaryKey": "content-deleted",
+        "notes": "autosave-ae6baedd36be1d5b3fa9ec0d872cc735",
+        "idExecution": "6950124247a7d",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
+        "date": "2025-12-27 11:06:27",
+        "dictionaryKey": "new-content-created",
+        "notes": "Specs[Autosave]",
+        "idExecution": "695012129ad19",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
         "date": "2025-11-21 20:40:42",
         "dictionaryKey": "content-edited",
         "notes": "Specs",
@@ -53,30 +77,6 @@
         "dictionaryKey": "new-content-created",
         "notes": "Specs[Autosave]",
         "idExecution": "690e561b5b7f9",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2025-11-06 21:41:17",
-        "dictionaryKey": "content-edited",
-        "notes": "Specs",
-        "idExecution": "690d6a5c88798",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2025-11-06 21:41:16",
-        "dictionaryKey": "content-deleted",
-        "notes": "autosave-ae6baedd36be1d5b3fa9ec0d872cc735",
-        "idExecution": "690d6a5c88798",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2025-11-06 21:39:58",
-        "dictionaryKey": "content-edited",
-        "notes": "Specs[Autosave]",
-        "idExecution": "690d6a0d91d3a",
         "method": "POST",
         "username": "admin"
     }

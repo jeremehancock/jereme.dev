@@ -79,6 +79,8 @@
 | **Movies 2** | WD Elements 14TB | 14TB | Shucked WD140EDGZ |
 | **TV Shows** | WD easystore 14TB | 14TB | Shucked WD140EDGZ |
 | **TV Shows 2** | WD easystore 16TB | 16TB | Shucked WD160EDGZ |
+| **TV Shows 3** | Seagate Ironwolf 8TB | 8TB |
+| **TV Shows 4** | WD easystore 20TB | 20TB | Shucked WD200EDGZ |
 | **Music** | Seagate BarraCuda | 2TB | ST2000DM008-2FR102 |
 | **Enclosure** | [Syba 8 Bay HDD Enclosure](https://www.amazon.com/dp/B07MD2LNYX) | - | External storage |
 
