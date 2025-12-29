@@ -1,5 +1,49 @@
 <?php defined('BLUDIT') or die('Bludit CMS.'); ?>
 {
+    "autosave-50f6c83ff27271e2a59a3ae144479710": {
+        "title": "Bouncing Trump!",
+        "description": "",
+        "username": "admin",
+        "tags": [],
+        "type": "autosave",
+        "date": "2025-12-29 14:04:14",
+        "dateModified": "",
+        "position": 0,
+        "coverImage": "",
+        "category": "",
+        "md5file": "55a9c9b2fe3b6bf9fbe22dca9ff669f0",
+        "uuid": "autosave-50f6c83ff27271e2a59a3ae144479710",
+        "allowComments": true,
+        "template": "",
+        "noindex": false,
+        "nofollow": false,
+        "noarchive": false,
+        "custom": [
+            false
+        ]
+    },
+    "autosave-b9abbd96c3524243ca17d09abdeaddf9": {
+        "title": "Weather Dashboard",
+        "description": "",
+        "username": "admin",
+        "tags": [],
+        "type": "autosave",
+        "date": "2025-12-29 14:03:55",
+        "dateModified": "",
+        "position": 0,
+        "coverImage": "",
+        "category": "",
+        "md5file": "09cdd1458726444983311a89c7b9165d",
+        "uuid": "autosave-b9abbd96c3524243ca17d09abdeaddf9",
+        "allowComments": true,
+        "template": "",
+        "noindex": false,
+        "nofollow": false,
+        "noarchive": false,
+        "custom": [
+            false
+        ]
+    },
     "introducing-posteria": {
         "title": "Introducing Posteria",
         "description": "",
@@ -762,33 +806,6 @@
             }
         }
     },
-    "weather-dashboard": {
-        "title": "Weather Dashboard",
-        "description": "",
-        "username": "admin",
-        "tags": {
-            "raspberry-pi": "Raspberry Pi",
-            "pi": "Pi"
-        },
-        "type": "draft",
-        "date": "2020-01-29 21:56:59",
-        "dateModified": "2024-10-16 09:26:03",
-        "position": 31,
-        "coverImage": "pi-lab-weather-1-compressed.jpg",
-        "category": "raspberry-pi",
-        "md5file": "ea9d375def1514bbc56ed8ada2a79567",
-        "uuid": "b9abbd96c3524243ca17d09abdeaddf9",
-        "allowComments": true,
-        "template": "",
-        "noindex": false,
-        "nofollow": false,
-        "noarchive": false,
-        "custom": {
-            "_amper": {
-                "value": false
-            }
-        }
-    },
     "pi-dashboard-ui": {
         "title": "Pi Dashboard",
         "description": "",
@@ -1067,33 +1084,6 @@
             "0": false,
             "_amper": {
                 "value": ""
-            }
-        }
-    },
-    "bouncing-trump": {
-        "title": "Bouncing Trump!",
-        "description": "",
-        "username": "admin",
-        "tags": {
-            "trump": "Trump",
-            "silly": "Silly"
-        },
-        "type": "draft",
-        "date": "2019-09-07 21:08:21",
-        "dateModified": "2024-09-26 23:01:27",
-        "position": 20,
-        "coverImage": "trump-embed.png",
-        "category": "general",
-        "md5file": "bc22e53a667f68d60b7ff5845ce6abc9",
-        "uuid": "50f6c83ff27271e2a59a3ae144479710",
-        "allowComments": true,
-        "template": "",
-        "noindex": false,
-        "nofollow": false,
-        "noarchive": false,
-        "custom": {
-            "_amper": {
-                "value": false
             }
         }
     },
