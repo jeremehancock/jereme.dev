@@ -151,10 +151,10 @@
 
 | Tool | Purpose |
 |------|---------|
-| [yt-dlp](https://github.com/yt-dlp/yt-dlp) | Video downloading |
+| [yt-dlp](https://github.com/yt-dlp/yt-dlp) | Music/Video downloading |
+| [deno](https://deno.com/) | JavaScript runtime for `yt-dlp` |
 | [abcde](https://manpages.ubuntu.com/manpages/jammy/en/man1/abcde.1.html) | CD ripping |
-| [plex-nowplaying](https://github.com/arcadellama/plex-nowplaying) | Now playing script |
-| [Jellyfin-NowPlaying](https://github.com/jeremehancock/Jellyfin-NowPlaying) | Jellyfin now playing |
+| [Ludanta](https://github.com/jeremehancock/Ludanta) | Plex/Jellyfin Now playing script |
 
 ---
 
