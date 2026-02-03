@@ -67,7 +67,7 @@
         "template": "",
         "description": "Stuff about the Raspberry Pi",
         "list": [
-            "dual-pi-hole-tailscale",
+            "pi-hole-tailscale",
             "node-red-upgrades-v3",
             "pi-hole-upgrades",
             "pi-lab-upgrades",

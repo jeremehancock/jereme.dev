@@ -293,8 +293,8 @@
             }
         }
     },
-    "dual-pi-hole-tailscale": {
-        "title": "Dual Pi-hole + Tailscale",
+    "pi-hole-tailscale": {
+        "title": "Pi-hole + Tailscale",
         "description": "",
         "username": "admin",
         "tags": {
@@ -304,11 +304,11 @@
         },
         "type": "published",
         "date": "2022-09-30 21:28:01",
-        "dateModified": "2025-07-07 17:42:36",
+        "dateModified": "2026-02-03 11:23:34",
         "position": 126,
         "coverImage": "dual-pi-holetailscale.png",
         "category": "raspberry-pi",
-        "md5file": "c5d2730304b9f1487a11a43d817d746b",
+        "md5file": "f3cea15d61926949d544e80d71959180",
         "uuid": "b2824f25debdfd4c320c3717545b05c8",
         "allowComments": true,
         "template": "",

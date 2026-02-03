@@ -153,7 +153,7 @@
     "pi": {
         "name": "pi",
         "list": [
-            "dual-pi-hole-tailscale",
+            "pi-hole-tailscale",
             "node-red-upgrades-v3",
             "pi-hole-upgrades",
             "pi-lab-upgrades",
@@ -185,7 +185,7 @@
     "pi-hole": {
         "name": "pi-hole",
         "list": [
-            "dual-pi-hole-tailscale",
+            "pi-hole-tailscale",
             "pi-hole-upgrades",
             "pi-hole-is-amazing"
         ]
@@ -227,7 +227,7 @@
     "raspberry-pi": {
         "name": "raspberry pi",
         "list": [
-            "dual-pi-hole-tailscale",
+            "pi-hole-tailscale",
             "node-red-upgrades-v3",
             "pi-hole-upgrades",
             "pi-lab-upgrades",
