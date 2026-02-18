@@ -64,7 +64,7 @@
 
 | Component | Specification |
 |-----------|--------------|
-| **System** | [Aspire TC-1750-UR11](https://www.acer.com/us-en/desktops-and-all-in-ones/aspire-classic-desktops/aspire-tc/pdp/DT.BJUAA.001) |
+| **System** | [Aspire TC-1750-UR11](https://store.acer.com/en-us/aspire-tc-desktop-tc-1750-ur11) |
 | **CPU** | [Intel Core i5-12400 (up to 4.4GHz)](https://ark.intel.com/content/www/us/en/ark/products/134586/intel-core-i5-12400-processor-18m-cache-up-to-4-40-ghz.html) |
 | **RAM** | [32GB Corsair VENGEANCE LPX DDR4 3200MHz](https://www.amazon.com/Corsair-VENGEANCE-3200MHz-Compatible-Computer/dp/B07RS1G6XW) |
 | **OS** | [Ubuntu Server 22.04.3 LTS](https://ubuntu.com/download/server) |
@@ -92,7 +92,7 @@
 |---------|---------|------|
 | [Plex Media Server](https://www.plex.tv/) | Primary media server | Native |
 | [Jellyfin](https://hub.docker.com/r/linuxserver/jellyfin) | Backup media server | Docker |
-| [Overseerr](https://overseerr.dev/) | Media request management | Docker |
+| [Seerr](https://seerr.dev/) | Media request management | Docker |
 
 **TV/Streaming Services**
 
