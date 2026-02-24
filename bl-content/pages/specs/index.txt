@@ -108,6 +108,7 @@
 | [Radarr](https://hub.docker.com/r/linuxserver/radarr) | Movie management | Docker |
 | [Sonarr](https://hub.docker.com/r/linuxserver/sonarr) | TV show management | Docker |
 | [Lidarr](https://hub.docker.com/r/linuxserver/lidarr) | Music management | Docker |
+| [Aurral](https://github.com/lklynet/aurral) | Music discovery | Docker |
 | [LidaTube](https://github.com/TheWicklowWolf/LidaTube) | YouTube integration | Docker |
 | [Prowlarr](https://hub.docker.com/r/linuxserver/prowlarr) | Indexer management | Docker |
 
