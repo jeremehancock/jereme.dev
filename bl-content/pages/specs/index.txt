@@ -227,7 +227,7 @@
 |---------|---------|------|
 | [Paperless-ngx](https://docs.paperless-ngx.com/) | Document management | Docker |
 | [Nextcloud](https://hub.docker.com/_/nextcloud) | Cloud storage | Docker |
-| [Hoarder](https://hoarder.app) | Bookmark manager | Docker |
+| [KaraKeep](https://karakeep.app) | Bookmark manager | Docker |
 | [Portainer](https://www.portainer.io/) | Container management | Docker |
 | [Dozzle](https://dozzle.dev/) | Log viewer | Docker |
 | [Watchtower](https://github.com/containrrr/watchtower) | Auto-updates | Docker |

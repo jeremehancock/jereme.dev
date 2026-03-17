@@ -1,6 +1,14 @@
 <?php defined('BLUDIT') or die('Bludit CMS.'); ?>
 [
     {
+        "date": "2026-03-17 10:47:26",
+        "dictionaryKey": "content-edited",
+        "notes": "Specs",
+        "idExecution": "69b9778daa747",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
         "date": "2026-02-23 19:25:10",
         "dictionaryKey": "content-edited",
         "notes": "Specs",
@@ -69,14 +77,6 @@
         "dictionaryKey": "content-edited",
         "notes": "Pi-hole + Tailscale",
         "idExecution": "69822e853aac8",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2026-02-03 11:19:53",
-        "dictionaryKey": "content-edited",
-        "notes": "Pi-hole + Tailscale",
-        "idExecution": "69822e394d482",
         "method": "POST",
         "username": "admin"
     }
