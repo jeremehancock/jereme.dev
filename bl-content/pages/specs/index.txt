@@ -175,7 +175,7 @@
 | Purpose | Drive | Capacity | Connection |
 |---------|--------|----------|------------|
 | **OS Drive** | [WD Blue SN580 NVMe SSD](https://www.amazon.com/dp/B0C8XMH264) | 1TB | Via [SABRENT PCIe Adapter](https://www.amazon.com/dp/B084GDY2PW) |
-| **Backup Storage** | [Seagate BarraCuda HDD](https://www.amazon.com/dp/B07D9C7SQH) | 4TB | Internal SATA |
+| **Backup Storage** | [Seagate BarraCuda HDD](https://www.amazon.com/Seagate-Barracuda-ST4000LM024-Internal-Drive/dp/B01LXCE9W9/) | 4TB | Internal SATA |
 
 #### Services
 
