@@ -1,10 +1,10 @@
 <?php defined('BLUDIT') or die('Bludit CMS.');
 
 // Bludit version
-define('BLUDIT_VERSION',        '3.16.2');
-define('BLUDIT_CODENAME',       'Valencia');
-define('BLUDIT_RELEASE_DATE',   '2024-08-23');
-define('BLUDIT_BUILD',          '20240806');
+define('BLUDIT_VERSION',        '3.20.0');
+define('BLUDIT_CODENAME',       'LoboIberico');
+define('BLUDIT_RELEASE_DATE',   '2026-04-09');
+define('BLUDIT_BUILD',          '20260409');
 
 // Change to TRUE for debugging
 define('DEBUG_MODE', TRUE);
@@ -121,10 +121,19 @@ include(PATH_HELPERS . 'image.class.php');
 include(PATH_HELPERS . 'tcp.class.php');
 include(PATH_HELPERS . 'dom.class.php');
 include(PATH_HELPERS . 'cookie.class.php');
-
-if (file_exists(PATH_KERNEL . 'bludit.pro.php')) {
-	include(PATH_KERNEL . 'bludit.pro.php');
+/**
+ * ---------------------------------------------------------------------------
+ * If you have bypassed the license check, I understand.
+ * But please consider supporting the project on Patreon if you use this
+ * commercially. It helps me keep the core free for everyone.
+ * ---------------------------------------------------------------------------
+ */
+define('BLUDIT_PRO_HASH', substr(md5(BLUDIT_BUILD), 0, 8));
+$_bluditProFile = PATH_KERNEL . 'bludit.pro.' . BLUDIT_PRO_HASH . '.php';
+if (file_exists($_bluditProFile)) {
+	include($_bluditProFile);
 }
+unset($_bluditProFile);
 
 // Objects
 $pages 		= new Pages();

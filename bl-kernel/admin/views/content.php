@@ -296,6 +296,7 @@ $(document).ready(function() {
 
 	// Event from button accept from the modal
 	$(".deletePageModalAcceptButton").on("click", function() {
+		var currentTab = window.location.hash ? window.location.hash.substring(1) : 'pages';
 
 		var form = jQuery('<form>', {
 			'action': HTML_PATH_ADMIN_ROOT+'edit-content/'+key,
@@ -305,15 +306,19 @@ $(document).ready(function() {
 			'type': 'hidden',
 			'name': 'tokenCSRF',
 			'value': tokenCSRF
-		}).append(jQuery('<input>', {
+		})).append(jQuery('<input>', {
 			'type': 'hidden',
 			'name': 'key',
 			'value': key
-		}).append(jQuery('<input>', {
+		})).append(jQuery('<input>', {
 			'type': 'hidden',
 			'name': 'type',
 			'value': 'delete'
-		}))));
+		})).append(jQuery('<input>', {
+			'type': 'hidden',
+			'name': 'tab',
+			'value': currentTab
+		}));
 
 		form.hide().appendTo("body").submit();
 	});

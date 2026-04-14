@@ -24,7 +24,7 @@ echo Bootstrap::formInputHidden(array(
 // Type = published, draft, sticky, static
 echo Bootstrap::formInputHidden(array(
 	'name' => 'type',
-	'value' => 'published'
+	'value' => $site->defaultContentStatus()
 ));
 
 // Cover image
@@ -44,13 +44,18 @@ echo Bootstrap::formInputHidden(array(
 <div id="jseditorToolbar" class="mb-1">
 	<div id="jseditorToolbarRight" class="btn-group btn-group-sm float-right" role="group" aria-label="Toolbar right">
 		<button type="button" class="btn btn-light" id="jsmediaManagerOpenModal" data-toggle="modal" data-target="#jsmediaManagerModal"><span class="fa fa-image"></span> <?php $L->p('Images') ?></button>
+		<?php Theme::plugins('editorToolbar') ?>
 		<button type="button" class="btn btn-light" id="jsoptionsSidebar" style="z-index:30"><span class="fa fa-cog"></span> <?php $L->p('Options') ?></button>
 	</div>
 
 	<div id="jseditorToolbarLeft">
 		<button id="jsbuttonSave" type="button" class="btn btn-sm btn-primary"><?php $L->p('Save') ?></button>
 		<button id="jsbuttonPreview" type="button" class="btn btn-sm btn-secondary"><?php $L->p('Preview') ?></button>
+		<?php if ($site->defaultContentStatus() == 'draft'): ?>
+		<span id="jsbuttonSwitch" data-switch="draft" class="ml-2 text-secondary switch-button"><i class="fa fa-square switch-icon-draft"></i> <?php $L->p('Draft') ?></span>
+		<?php else: ?>
 		<span id="jsbuttonSwitch" data-switch="publish" class="ml-2 text-secondary switch-button"><i class="fa fa-square switch-icon-publish"></i> <?php $L->p('Publish') ?></span>
+		<?php endif; ?>
 	</div>
 </div>
 <script>
@@ -168,7 +173,7 @@ echo Bootstrap::formInputHidden(array(
 				'name' => 'tags',
 				'label' => $L->g('Tags'),
 				'placeholder' => '',
-				'tip' => $L->g('Write the tags separated by comma')
+				'tip' => $L->g('Write the tags separated by commas')
 			));
 
 			// Parent
@@ -459,7 +464,7 @@ foreach ($customFields as $field => $options) {
 			var title = $("#jstitle").val();
 			var content = editorGetContent();
 			bluditAjax.saveAsDraft(uuid, title, content).then(function(data) {
-				var preview = window.open("<?php echo DOMAIN_PAGES . 'autosave-' . $uuid . '?preview=' . md5('autosave-' . $uuid) ?>", "bludit-preview");
+				var preview = window.open("<?php echo DOMAIN_PAGES . 'autosave-' . $uuid . '?preview=' . hash_hmac('sha256', 'autosave-' . $uuid, DB_SITE) ?>", "bludit-preview");
 				preview.focus();
 			});
 		});

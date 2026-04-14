@@ -44,15 +44,13 @@ class pluginSimpleStats extends Plugin
 		$html .= '</select>';
 		$html .= '</div>';
 
-		if (defined('BLUDIT_PRO')) {
-			$html .= '<div>';
-			$html .= '<label>' . $L->get('Exclude administrators users') . '</label>';
-			$html .= '<select name="excludeAdmins">';
-			$html .= '<option value="true" ' . ($this->getValue('excludeAdmins') === true ? 'selected' : '') . '>' . $L->get('Enabled') . '</option>';
-			$html .= '<option value="false" ' . ($this->getValue('excludeAdmins') === false ? 'selected' : '') . '>' . $L->get('Disabled') . '</option>';
-			$html .= '</select>';
-			$html .= '</div>';
-		}
+		$html .= '<div>';
+		$html .= '<label>' . $L->get('Exclude administrators users') . '</label>';
+		$html .= '<select name="excludeAdmins">';
+		$html .= '<option value="true" ' . ($this->getValue('excludeAdmins') === true ? 'selected' : '') . '>' . $L->get('Enabled') . '</option>';
+		$html .= '<option value="false" ' . ($this->getValue('excludeAdmins') === false ? 'selected' : '') . '>' . $L->get('Disabled') . '</option>';
+		$html .= '</select>';
+		$html .= '</div>';
 
 		return $html;
 	}
@@ -205,7 +203,7 @@ EOF;
 	// The line is a json array with the hash IP of the visitor and the time
 	public function addVisitor()
 	{
-		if (Cookie::get('BLUDIT-KEY') && defined('BLUDIT_PRO') && $this->getValue('excludeAdmins')) {
+		if (Cookie::get('BLUDIT-KEY') && $this->getValue('excludeAdmins')) {
 			return false;
 		}
 		$currentTime = Date::current('Y-m-d H:i:s');

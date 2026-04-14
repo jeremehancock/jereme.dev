@@ -36,7 +36,10 @@ class Site extends dbJSON
 		'mastodon' =>		'',
 		'dribbble' =>		'',
 		'vk' =>			'',
+		'youtube' =>		'',
+		'bluesky' =>		'',
 		'orderBy' =>		'date', // date or position
+		'defaultContentStatus' => 'published', // published or draft
 		'extremeFriendly' =>	true,
 		'autosaveInterval' =>	2, // minutes
 		'titleFormatHomepage' =>	'{{site-slogan}} | {{site-title}}',
@@ -45,6 +48,7 @@ class Site extends dbJSON
 		'titleFormatTag' => 	'{{tag-name}} | {{site-title}}',
 		'imageRestrict' =>	true,
 		'imageRelativeToAbsolute' => false,
+		'thumbnailEnable' =>	true,
 		'thumbnailWidth' => 	400, // px
 		'thumbnailHeight' => 	400, // px
 		'thumbnailQuality' => 	100,
@@ -122,6 +126,11 @@ class Site extends dbJSON
 	public function sitemap()
 	{
 		return DOMAIN_BASE . 'sitemap.xml';
+	}
+
+	public function thumbnailEnable()
+	{
+		return $this->getField('thumbnailEnable');
 	}
 
 	public function thumbnailWidth()
@@ -214,9 +223,24 @@ class Site extends dbJSON
 		return $this->getField('vk');
 	}
 
+	public function youtube()
+	{
+		return $this->getField('youtube');
+	}
+
+	public function bluesky()
+	{
+		return $this->getField('bluesky');
+	}
+
 	public function orderBy()
 	{
 		return $this->getField('orderBy');
+	}
+
+	public function defaultContentStatus()
+	{
+		return $this->getField('defaultContentStatus');
 	}
 
 	public function imageRestrict()

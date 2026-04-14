@@ -1,0 +1,8 @@
+{
+	"plugin-data": {
+		"name": "TimeMachine X",
+		"description": "TimeMachine X mahdollistaa palaamisen sivustosi menneisyyteen kohtaan, jossa olet tehnyt muutoksia. Tästä on hyötyä, jos olet poistanut sisältöä tai tehnyt muutoksia asetuksiin ja haluat palata takaisin."
+	},
+	"there-are-no-recovery-points": "Palautuspisteitä ei ole.",
+	"go-back-to-this-point": "Palaa tähän pisteeseen"
+}

@@ -50,6 +50,7 @@ echo Bootstrap::formInputHidden(array(
 <div id="jseditorToolbar" class="mb-1">
 	<div id="jseditorToolbarRight" class="btn-group btn-group-sm float-right" role="group" aria-label="Toolbar right">
 		<button type="button" class="btn btn-light" id="jsmediaManagerOpenModal" data-toggle="modal" data-target="#jsmediaManagerModal"><span class="fa fa-image"></span> <?php $L->p('Images') ?></button>
+		<?php Theme::plugins('editorToolbar') ?>
 		<button type="button" class="btn btn-light" id="jsoptionsSidebar" style="z-index:30"><span class="fa fa-cog"></span> <?php $L->p('Options') ?></button>
 	</div>
 
@@ -186,7 +187,7 @@ echo Bootstrap::formInputHidden(array(
 				'name' => 'tags',
 				'label' => $L->g('Tags'),
 				'placeholder' => '',
-				'tip' => $L->g('Write the tags separated by comma'),
+				'tip' => $L->g('Write the tags separated by commas'),
 				'value' => $page->tags()
 			));
 
@@ -504,7 +505,7 @@ foreach ($customFields as $field => $options) {
 			var content = editorGetContent();
 			var ajax = new bluditAjax();
 			bluditAjax.saveAsDraft(uuid, title, content).then(function(data) {
-				var preview = window.open("<?php echo DOMAIN_PAGES . 'autosave-' . $page->uuid() . '?preview=' . md5('autosave-' . $page->uuid()) ?>", "bludit-preview");
+				var preview = window.open("<?php echo DOMAIN_PAGES . 'autosave-' . $page->uuid() . '?preview=' . hash_hmac('sha256', 'autosave-' . $page->uuid(), DB_SITE) ?>", "bludit-preview");
 				preview.focus();
 			});
 		});

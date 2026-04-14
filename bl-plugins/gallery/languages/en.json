@@ -1,0 +1,33 @@
+{
+  "plugin-data": {
+    "name": "Gallery",
+    "description": "Manage image galleries. Upload images, generate thumbnails, and insert galleries into your content."
+  },
+  "galleries": "Galleries",
+  "gallery-name": "Gallery name",
+  "gallery-description": "Gallery description",
+  "create-gallery": "Create gallery",
+  "edit-gallery": "Edit gallery",
+  "delete-gallery": "Delete gallery",
+  "delete-gallery-confirm": "Are you sure you want to delete this gallery and all its images?",
+  "upload-images": "Upload images",
+  "drop-images-here": "Drop images here or click to select",
+  "delete-image": "Delete image",
+  "delete-image-confirm": "Are you sure you want to delete this image?",
+  "insert-gallery": "Insert gallery",
+  "no-galleries": "No galleries created yet.",
+  "no-images": "No images in this gallery.",
+  "images-count": "images",
+  "gallery-created": "Gallery created successfully.",
+  "gallery-updated": "Gallery updated successfully.",
+  "gallery-deleted": "Gallery deleted successfully.",
+  "image-deleted": "Image deleted successfully.",
+  "images-uploaded": "Images uploaded successfully.",
+  "invalid-gallery-name": "Please provide a gallery name.",
+  "gallery-already-exists": "A gallery with this name already exists.",
+  "gallery-not-found": "Gallery not found.",
+  "manage-images": "Manage images",
+  "back-to-galleries": "Back to galleries",
+  "gallery-slug": "Slug",
+  "select-gallery": "Select a gallery to insert"
+}

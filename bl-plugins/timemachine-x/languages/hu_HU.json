@@ -1,0 +1,8 @@
+{
+	"plugin-data": {
+		"name": "TimeMachine X",
+		"description": "A TimeMachine X lehetővé teszi, hogy visszamenj a múltba a webhelyeden, ahol változtatásokat hajtottál végre. Ez hasznos, ha törölted a tartalmat vagy változtatásokat hajtottál végre a beállításokban és vissza szeretnél menni."
+	},
+	"there-are-no-recovery-points": "Nincsenek helyreállítási pontok.",
+	"go-back-to-this-point": "Vissza ehhez a ponthoz"
+}

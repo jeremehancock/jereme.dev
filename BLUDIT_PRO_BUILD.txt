@@ -1,0 +1,5 @@
+Bludit PRO
+Version:    3.20.0
+Build:      20260409
+Commit:     e3c8582649eea5adc51bd61743a2885a8efd62e4
+Built:      2026-04-11 18:49:41 UTC

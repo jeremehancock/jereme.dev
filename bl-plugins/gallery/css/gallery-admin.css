@@ -1,0 +1,56 @@
+/* Gallery plugin admin styles */
+
+/* Upload dropzone */
+.gallery-upload-area .gallery-upload-inner {
+	border: 2px dashed #ccc;
+	background: #fafafa;
+	cursor: pointer;
+	transition: border-color 0.2s, background-color 0.2s;
+}
+
+.gallery-upload-area .gallery-upload-inner:hover,
+.gallery-upload-area .gallery-upload-inner.dragover {
+	border-color: #007bff;
+	background: #f0f7ff;
+}
+
+/* Image grid cards */
+.gallery-admin-card .card-img-top {
+	height: 150px;
+	object-fit: cover;
+}
+
+/* Gallery select modal - thumbnails */
+#jsGallerySelectBody .gallery-select-item {
+	cursor: pointer;
+	border: 2px solid transparent;
+	border-radius: 4px;
+	padding: 10px;
+	margin-bottom: 10px;
+	transition: border-color 0.2s;
+}
+
+#jsGallerySelectBody .gallery-select-item:hover {
+	border-color: #007bff;
+	background: #f8f9fa;
+}
+
+#jsGallerySelectBody .gallery-thumb-grid {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 5px;
+	margin-top: 8px;
+}
+
+#jsGallerySelectBody .gallery-thumb-grid img {
+	width: 60px;
+	height: 60px;
+	object-fit: cover;
+	border-radius: 3px;
+}
+
+/* Card in management view */
+#jsGalleryImageGrid .card-img-top {
+	height: 150px;
+	object-fit: cover;
+}

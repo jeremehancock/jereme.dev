@@ -1,0 +1,8 @@
+{
+	"plugin-data": {
+		"name": "TimeMachine X",
+		"description": "TimeMachine X vám umožňuje vrátit se na váš web v určitém bodě v minulosti, kde jste provedli nějaké změny. To je užitečné, pokud jste smazali nějaký obsah nebo provedli změny v nastavení a chcete se vrátit zpět."
+	},
+	"there-are-no-recovery-points": "Nejsou k dispozici žádné body obnovení.",
+	"go-back-to-this-point": "Vrátit se k tomuto bodu"
+}

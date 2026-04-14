@@ -1,0 +1,8 @@
+{
+	"plugin-data": {
+		"name": "TimeMachine X",
+		"description": "TimeMachine X ermöglicht es Ihnen, zu einem Zeitpunkt in der Vergangenheit zurückzukehren, an dem Sie Änderungen vorgenommen haben. Dies ist nützlich, wenn Sie Inhalte gelöscht oder Einstellungen geändert haben und zurückgehen möchten."
+	},
+	"there-are-no-recovery-points": "Es gibt keine Wiederherstellungspunkte.",
+	"go-back-to-this-point": "Zu diesem Punkt zurückkehren"
+}

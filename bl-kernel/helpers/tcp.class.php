@@ -10,7 +10,6 @@ class TCP {
 			curl_setopt($ch, CURLOPT_HEADER, $headers);
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, $followRedirections);
-			curl_setopt($ch, CURLOPT_BINARYTRANSFER, $binary);
 			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, $verifySSL);
 			curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeOut);
 			curl_setopt($ch, CURLOPT_TIMEOUT, $timeOut);
@@ -30,8 +29,8 @@ class TCP {
 					'follow_location'=>$followRedirections
 				),
 				"ssl"=>array(
-					"verify_peer"=>false,
-					"verify_peer_name"=>false
+					"verify_peer"=>$verifySSL,
+					"verify_peer_name"=>$verifySSL
 				)
 			);
 			$stream = stream_context_create($options);
@@ -49,8 +48,9 @@ class TCP {
 
 	public static function getIP()
 	{
-		if (getenv('HTTP_CLIENT_IP'))
-			$ip = getenv('HTTP_CLIENT_IP');
+		// REMOTE_ADDR is the only trusted source; proxy headers can be forged by clients.
+		if (getenv('REMOTE_ADDR'))
+			$ip = getenv('REMOTE_ADDR');
 		else if(getenv('HTTP_X_FORWARDED_FOR'))
 			$ip = getenv('HTTP_X_FORWARDED_FOR');
 		else if(getenv('HTTP_X_FORWARDED'))
@@ -59,10 +59,10 @@ class TCP {
 			$ip = getenv('HTTP_FORWARDED_FOR');
 		else if(getenv('HTTP_FORWARDED'))
 			$ip = getenv('HTTP_FORWARDED');
-		else if(getenv('REMOTE_ADDR'))
-			$ip = getenv('REMOTE_ADDR');
+		else if(getenv('HTTP_CLIENT_IP'))
+			$ip = getenv('HTTP_CLIENT_IP');
 		else
-		    return false;
+			return false;
 
 		return $ip;
 	}

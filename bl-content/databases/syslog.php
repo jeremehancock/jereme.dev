@@ -1,6 +1,30 @@
 <?php defined('BLUDIT') or die('Bludit CMS.'); ?>
 [
     {
+        "date": "2026-04-14 08:15:09",
+        "dictionaryKey": "plugin-deactivated",
+        "notes": "Lightbox",
+        "idExecution": "69de3ddd5e2fb",
+        "method": "GET",
+        "username": "admin"
+    },
+    {
+        "date": "2026-04-14 08:15:04",
+        "dictionaryKey": "plugin-deactivated",
+        "notes": "Maintenance mode Extended",
+        "idExecution": "69de3dd8e4605",
+        "method": "GET",
+        "username": "admin"
+    },
+    {
+        "date": "2026-04-14 08:04:02",
+        "dictionaryKey": "system-updated",
+        "notes": "Bludit v3.20.0",
+        "idExecution": "69de3b425ea4c",
+        "method": "GET",
+        "username": "admin"
+    },
+    {
         "date": "2026-04-07 15:15:04",
         "dictionaryKey": "content-edited",
         "notes": "Specs",
@@ -53,30 +77,6 @@
         "dictionaryKey": "new-content-created",
         "notes": "Pi-hole + Tailscale",
         "idExecution": "69822ef21fa3c",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2026-02-03 11:22:50",
-        "dictionaryKey": "content-edited",
-        "notes": "Pi-hole + Tailscale",
-        "idExecution": "69822ee99d0e8",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2026-02-03 11:22:49",
-        "dictionaryKey": "content-deleted",
-        "notes": "autosave-b2824f25debdfd4c320c3717545b05c8",
-        "idExecution": "69822ee99d0e8",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2026-02-03 11:21:51",
-        "dictionaryKey": "content-edited",
-        "notes": "Pi-hole + Tailscale[Autosave]",
-        "idExecution": "69822eae9c09c",
         "method": "POST",
         "username": "admin"
     }

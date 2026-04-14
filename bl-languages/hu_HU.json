@@ -8,7 +8,8 @@
             "Dávid Eredics",
             "",
             ""
-        ]
+        ],
+        "locale": "hu, hu_HU"
     },
     "dates": {
         "Mon": "H",
@@ -348,7 +349,7 @@
     "insert": "Beszúrás",
     "upload": "Feltöltés",
     "autosave": "Automatikus mentés",
-    "the-content-is-saved-as-a-draft-to-publish-it": "A tartalom vázlatként mentve. A közzétételhez kattintson a <b>Közzététel</b> gombra, vagy ha továbbra is dolgozik rajta, kattintson a <b>Mentés piszkozatként</b> gombra.",
+    "the-content-is-saved-as-a-draft-to-publish-it": "A tartalom vázlatként mentve. A közzétételhez kattintson a <b>Közzététel<\/b> gombra, vagy ha továbbra is dolgozik rajta, kattintson a <b>Mentés piszkozatként<\/b> gombra.",
     "site": "Webhely",
     "first": "Első",
     "last": "Utolsó",
@@ -390,5 +391,20 @@
     "custom-fields": "Egyéni mezők",
     "define-custom-fields-for-the-content": "Definiáljon egyéni mezőket a tartalomhoz. Tudjon meg többet az egyéni mezőkről a <a href='https:\/\/docs.bludit.com\/en\/content\/custom-fields'>dokumentációban<\/a>.",
     "start-typing-to-see-a-list-of-suggestions": "Kezdjen el írni, hogy megjelenjen a javaslatok listája.",
-    "view": "Nézet"
+    "view": "Nézet",
+    "no-tags": "Nincsenek címkék",
+    "insert-thumbnail": "Bélyegkép beszúrása",
+    "visits-today": "Látogatások ma",
+    "no-categories": "Nincsenek kategóriák",
+    "quick-search-pages-and-menu": "Gyorskeresés oldalak és menü",
+    "analytics": "Analitika",
+    "unique-visitors": "Egyedi látogatók",
+    "insert-linked-thumbnail": "Linkelt bélyegkép beszúrása",
+    "search-placeholder": "Oldalak, tartalmak és menüpontok keresése...",
+    "no-results-found": "Nincs találat",
+    "navigation": "Navigáció",
+    "default-content-status": "Alapértelmezett tartalom állapot",
+    "default-status-for-new-content": "Válassza ki, hogy az új tartalom alapértelmezés szerint Közzétett vagy Piszkozat legyen.",
+    "thumbnail-generation": "Bélyegkép generálás",
+    "enable-disable-automatic-thumbnail-generation-on-image-upload": "Automatikus bélyegkép-generálás engedélyezése vagy letiltása képfeltöltéskor."
 }

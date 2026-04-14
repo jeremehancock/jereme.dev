@@ -29,7 +29,6 @@ class Filesystem
 	// $chunk = amount of chunks, FALSE if you don't want to chunk
 	public static function listFiles($path, $regex = '*', $extension = '*', $sortByDate = false, $chunk = false)
 	{
-		error_log($path . $regex . '.' . $extension);
 		$files = glob($path . $regex . '.' . $extension);
 
 		if (empty($files)) {
@@ -69,7 +68,20 @@ class Filesystem
 	public static function mv($oldname, $newname)
 	{
 		Log::set('mv ' . $oldname . ' ' . $newname, LOG_TYPE_INFO);
-		return rename($oldname, $newname);
+		// Try rename first (faster, works on same filesystem)
+		if (@rename($oldname, $newname)) {
+			return true;
+		}
+		// Fallback to copy+delete for cross-partition moves
+		if (copy($oldname, $newname)) {
+			if (unlink($oldname)) {
+				return true;
+			}
+			// Copy succeeded but delete failed - remove the copy to avoid duplicates
+			@unlink($newname);
+			return false;
+		}
+		return false;
 	}
 
 	public static function rmfile($filename)

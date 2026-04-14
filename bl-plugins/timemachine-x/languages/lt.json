@@ -1,0 +1,8 @@
+{
+	"plugin-data": {
+		"name": "TimeMachine X",
+		"description": "TimeMachine X leidžia grįžti į savo svetainę tam tikru praeities momentu, kai atlikote tam tikrų pakeitimų. Tai naudinga, jei ištrynėte kokį nors turinį arba atlikus pakeitimus nustatymuose ir norite grįžti atgal."
+	},
+	"there-are-no-recovery-points": "Nėra atkūrimo taškų.",
+	"go-back-to-this-point": "Grįžti į šį tašką"
+}

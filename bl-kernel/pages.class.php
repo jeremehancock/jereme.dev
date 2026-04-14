@@ -261,7 +261,7 @@ class Pages extends dbJSON
 		}
 
 		// If the content was passed via arguments replace the content
-		if (isset($args['content'])) {
+		if (isset($args['content']) && $args['content'] !== '') {
 			// Make the index.txt and save the file.
 			if (file_put_contents(PATH_PAGES . $newKey . DS . FILENAME, $args['content']) === false) {
 				Log::set(__METHOD__ . LOG_SEP . 'Error occurred when trying to put the content in the file ' . FILENAME);
@@ -329,6 +329,14 @@ class Pages extends dbJSON
 		if (($uuid = $this->getUUID($key))) {
 			if (Filesystem::deleteRecursive(PATH_UPLOADS_PAGES . $uuid) === false) {
 				Log::set(__METHOD__ . LOG_SEP . 'Directory with images not found ' . PATH_UPLOADS_PAGES . $uuid);
+			}
+		}
+
+		// Delete symlink for page uploads directory
+		$symlinkPath = PATH_UPLOADS_PAGES . $key;
+		if (is_link($symlinkPath)) {
+			if (unlink($symlinkPath) === false) {
+				Log::set(__METHOD__ . LOG_SEP . 'Error occurred when trying to delete the symlink ' . $symlinkPath, LOG_TYPE_ERROR);
 			}
 		}
 
@@ -665,11 +673,11 @@ class Pages extends dbJSON
 
 	private function sortByDateLowToHigh($a, $b)
 	{
-		return $a['date'] > $b['date'];
+		return $a['date'] <=> $b['date'];
 	}
 	private function sortByDateHighToLow($a, $b)
 	{
-		return $a['date'] < $b['date'];
+		return $b['date'] <=> $a['date'];
 	}
 
 	function generateUUID()

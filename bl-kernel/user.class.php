@@ -148,7 +148,7 @@ class User
 
 	public function telegram()
 	{
-		return $this->getValue('xing');
+		return $this->getValue('telegram');
 	}
 
 	public function mastodon()
@@ -161,9 +161,25 @@ class User
 		return $this->getValue('vk');
 	}
 
+	public function youtube()
+	{
+		return $this->getValue('youtube');
+	}
+
+	public function bluesky()
+	{
+		return $this->getValue('bluesky');
+	}
+
 	public function profilePicture()
 	{
-		$filename = $this->getValue('username') . '.png';
+		// Sanitize username for filename to prevent issues with special characters
+		$username = $this->getValue('username');
+		$sanitizedUsername = Text::removeSpecialCharacters($username, '-');
+		$sanitizedUsername = Text::removeQuotes($sanitizedUsername);
+		$sanitizedUsername = Text::removeSpaces($sanitizedUsername, '-');
+		
+		$filename = $sanitizedUsername . '.png';
 		if (!file_exists(PATH_UPLOADS_PROFILES . $filename)) {
 			return false;
 		}
@@ -188,6 +204,8 @@ class User
 		$tmp['telegram'] 		= $this->telegram();
 		$tmp['mastodon']	= $this->mastodon();
 		$tmp['vk']		= $this->vk();
+		$tmp['youtube'] 	= $this->youtube();
+		$tmp['bluesky'] 	= $this->bluesky();
 		$tmp['profilePicture']	= $this->profilePicture();
 
 		if ($returnsArray) {

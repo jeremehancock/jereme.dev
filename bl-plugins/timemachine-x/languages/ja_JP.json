@@ -1,0 +1,8 @@
+{
+	"plugin-data": {
+		"name": "TimeMachine X",
+		"description": "TimeMachine Xを使用すると、過去のある時点でサイトに加えた変更に戻ることができます。コンテンツを削除したり、設定を変更したりして、元に戻したい場合に便利です。"
+	},
+	"there-are-no-recovery-points": "復元ポイントがありません。",
+	"go-back-to-this-point": "この時点に戻る"
+}

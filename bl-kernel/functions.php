@@ -51,7 +51,7 @@ function buildThePage()
   }
 
   if ($page->draft() || $page->scheduled() || $page->autosave()) {
-    if ($url->parameter('preview') !== md5($page->uuid())) {
+    if (!hash_equals(hash_hmac('sha256', 'autosave-' . $page->uuid(), DB_SITE), $url->parameter('preview'))) {
       $url->setNotFound();
       return false;
     }
@@ -123,6 +123,7 @@ function buildPagesFor($for, $categoryKey = false, $tagKey = false)
   }
 
   $content = array();
+  $invalidPageFound = false;
   foreach ($list as $pageKey) {
     try {
       $page = new Page($pageKey);
@@ -133,7 +134,35 @@ function buildPagesFor($for, $categoryKey = false, $tagKey = false)
         array_push($content, $page);
       }
     } catch (Exception $e) {
+      $invalidPageFound = true;
       // continue
+    }
+  }
+
+  if (($for === 'category' || $for === 'tag') && (!empty($list)) && (empty($content) || $invalidPageFound)) {
+    if ($for === 'category') {
+      reindexCategories();
+      $list = $categories->getList($categoryKey, $pageNumber, $numberOfItems);
+    } else {
+      reindexTags();
+      $list = $tags->getList($tagKey, $pageNumber, $numberOfItems);
+    }
+
+    if (is_array($list)) {
+      $content = array();
+      foreach ($list as $pageKey) {
+        try {
+          $page = new Page($pageKey);
+          if (($page->type() == 'published') ||
+            ($page->type() == 'sticky') ||
+            ($page->type() == 'static')
+          ) {
+            array_push($content, $page);
+          }
+        } catch (Exception $e) {
+          // continue
+        }
+      }
     }
   }
 
@@ -552,7 +581,7 @@ function createUser($args)
   }
 
   // Check new password and confirm password are equal
-  if ($args['new_password'] != $args['confirm_password']) {
+  if ($args['new_password'] !== $args['confirm_password']) {
     Alert::set($L->g('The password and confirmation password do not match'), ALERT_STATUS_FAIL);
     return false;
   }
@@ -668,11 +697,18 @@ function editSettings($args)
 function changeUserPassword($args)
 {
   global $users;
+  global $login;
   global $L;
   global $syslog;
 
   // Arguments
   $username = $args['username'];
+
+  // Authorization: only admins or the user themselves can change a password
+  if ($login->role() !== 'admin' && $login->username() !== $username) {
+    Alert::set($L->g('You do not have permissions to access this page'), ALERT_STATUS_FAIL);
+    return false;
+  }
   $newPassword = $args['newPassword'];
   $confirmPassword = $args['confirmPassword'];
 
@@ -709,7 +745,7 @@ function checkRole($allowRoles, $redirect = true)
   global $syslog;
 
   $userRole = $login->role();
-  if (in_array($userRole, $allowRoles)) {
+  if (in_array($userRole, $allowRoles, true)) {
     return true;
   }
 
@@ -914,6 +950,14 @@ function transformImage($file, $imageDir, $thumbnailDir = false)
 {
   global $site;
 
+  // Block dotfiles
+  if (strpos(basename($file), '.') === 0) {
+    if (file_exists($file)) {
+      @unlink($file);
+    }
+    return false;
+  }
+
   // Check image extension
   $fileExtension = Filesystem::extension($file);
   $fileExtension = Text::lowercase($fileExtension);
@@ -923,6 +967,14 @@ function transformImage($file, $imageDir, $thumbnailDir = false)
 
   // Generate a filename to not overwrite current image if exists
   $filename = Filesystem::filename($file);
+
+  // Additional sanitization for filenames to prevent issues with special characters
+  $filenameWithoutExt = pathinfo($filename, PATHINFO_FILENAME);
+  $filenameWithoutExt = Text::removeSpecialCharacters($filenameWithoutExt, '-');
+  $filenameWithoutExt = Text::removeQuotes($filenameWithoutExt);
+  $filenameWithoutExt = Text::removeSpaces($filenameWithoutExt, '-');
+  $filename = $filenameWithoutExt . '.' . $fileExtension;
+
   $nextFilename = Filesystem::nextFilename($filename, $imageDir);
 
   // Move the image to a proper place and rename
@@ -931,7 +983,7 @@ function transformImage($file, $imageDir, $thumbnailDir = false)
   chmod($image, 0644);
 
   // Generate Thumbnail
-  if (!empty($thumbnailDir)) {
+  if (!empty($thumbnailDir) && $site->thumbnailEnable()) {
     if (($fileExtension == 'svg')) {
       Filesystem::symlink($image, $thumbnailDir . $nextFilename);
     } else {

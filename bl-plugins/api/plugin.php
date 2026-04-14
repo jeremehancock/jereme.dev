@@ -8,7 +8,7 @@ class pluginAPI extends Plugin
 	public function init()
 	{
 		// Generate the API Token
-		$token = md5(uniqid() . time() . DOMAIN);
+		$token = bin2hex( openssl_random_pseudo_bytes(64) );
 
 		$this->dbFields = array(
 			'token' => $token,	// API Token
@@ -201,7 +201,7 @@ class pluginAPI extends Plugin
 			$data = $this->getFiles($pageKey);
 		}
 		// (POST) /api/files/<page-key>
-		elseif (($method === 'POST') && ($parameters[0] === 'files') && !empty($parameters[1])) {
+		elseif (($method === 'POST') && ($parameters[0] === 'files') && !empty($parameters[1]) && $writePermissions) {
 			$pageKey = $parameters[1];
 			$data = $this->uploadFile($pageKey);
 		} else {
@@ -359,7 +359,7 @@ class pluginAPI extends Plugin
 		$scheduled 	= (isset($args['scheduled']) ? $args['scheduled'] == 'true' : false);
 		$untagged 	= (isset($args['untagged']) ? $args['untagged'] == 'true' : false);
 
-		$numberOfItems = (isset($args['numberOfItems']) ? $args['numberOfItems'] : 10);
+		$numberOfItems = (isset($args['numberOfItems']) ? $args['numberOfItems'] : (int)$this->getValue('numberOfItems'));
 		$pageNumber = (isset($args['pageNumber']) ? $args['pageNumber'] : 1);
 		$list = $pages->getList($pageNumber, $numberOfItems, $published, $static, $sticky, $draft, $scheduled);
 
@@ -746,7 +746,27 @@ class pluginAPI extends Plugin
 		}
 
 		$filename = $_FILES['file']['name'];
-		$absoluteURL = DOMAIN_UPLOADS_PAGES . $pageKey . DS . $filename;
+
+		// Block dotfiles
+		if (strpos($filename, '.') === 0) {
+			return array('status' => '1', 'message' => 'File type not allowed.');
+		}
+
+		// Check file extension
+		$fileExtension = Filesystem::extension($filename);
+		$fileExtension = Text::lowercase($fileExtension);
+		if (!in_array($fileExtension, $GLOBALS['ALLOWED_FILE_EXTENSIONS'])) {
+			return array('status' => '1', 'message' => 'File type not allowed.');
+		}
+
+		// Sanitize filename to prevent issues with special characters
+		$filenameWithoutExt = Filesystem::filename($filename);
+		$filenameWithoutExt = Text::removeSpecialCharacters($filenameWithoutExt, '-');
+		$filenameWithoutExt = Text::removeQuotes($filenameWithoutExt);
+		$filenameWithoutExt = Text::removeSpaces($filenameWithoutExt, '-');
+		$filename = $filenameWithoutExt . '.' . $fileExtension;
+
+		$absoluteURL = DOMAIN_UPLOADS_PAGES . $pageKey . '/' . $filename;
 		$absolutePath = PATH_UPLOADS_PAGES . $pageKey . DS . $filename;
 		if (Filesystem::mv($_FILES['file']['tmp_name'], $absolutePath)) {
 			return array(
