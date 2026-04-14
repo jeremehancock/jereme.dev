@@ -1,6 +1,22 @@
 <?php defined('BLUDIT') or die('Bludit CMS.'); ?>
 [
     {
+        "date": "2026-04-14 09:33:59",
+        "dictionaryKey": "plugin-activated",
+        "notes": "Show Node - Pi Lab",
+        "idExecution": "69de5057ccc98",
+        "method": "GET",
+        "username": "admin"
+    },
+    {
+        "date": "2026-04-14 09:33:53",
+        "dictionaryKey": "plugin-deactivated",
+        "notes": "Show Node - Pi Lab",
+        "idExecution": "69de50515a97e",
+        "method": "GET",
+        "username": "admin"
+    },
+    {
         "date": "2026-04-14 08:15:09",
         "dictionaryKey": "plugin-deactivated",
         "notes": "Lightbox",
@@ -61,22 +77,6 @@
         "dictionaryKey": "content-edited",
         "notes": "Pi-hole + Tailscale",
         "idExecution": "69822f1637db8",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2026-02-03 11:23:34",
-        "dictionaryKey": "content-deleted",
-        "notes": "autosave-b2824f25debdfd4c320c3717545b05c8",
-        "idExecution": "69822f1637db8",
-        "method": "POST",
-        "username": "admin"
-    },
-    {
-        "date": "2026-02-03 11:22:58",
-        "dictionaryKey": "new-content-created",
-        "notes": "Pi-hole + Tailscale",
-        "idExecution": "69822ef21fa3c",
         "method": "POST",
         "username": "admin"
     }
