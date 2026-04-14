@@ -1,8 +1,0 @@
-{
-	"plugin-data": {
-		"name": "TimeMachine X",
-		"description": "TimeMachine X允许您返回到过去的某个时间点，在那里您进行了一些更改。如果您删除了某些内容或对设置进行了更改并想要返回，这将非常有用。"
-	},
-	"there-are-no-recovery-points": "没有恢复点。",
-	"go-back-to-this-point": "返回到这个时间点"
-}

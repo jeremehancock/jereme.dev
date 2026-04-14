@@ -1,8 +1,0 @@
-{
-	"plugin-data": {
-		"name": "TimeMachine X",
-		"description": "TimeMachine X låter dig gå tillbaka till din webbplats vid någon tidpunkt i det förflutna där du gjorde några ändringar. Detta är användbart om du har raderat något innehåll eller gjort några ändringar i inställningarna och vill gå tillbaka."
-	},
-	"there-are-no-recovery-points": "Det finns inga återställningspunkter.",
-	"go-back-to-this-point": "Gå tillbaka till denna punkt"
-}
