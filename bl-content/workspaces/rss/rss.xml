@@ -5,7 +5,7 @@
     <title>Pi Lab</title>
     <link>https://pilab.dev</link>
     <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Tue, 07 Apr 2026 15:15:04 -0500</lastBuildDate>
+    <lastBuildDate>Tue, 14 Apr 2026 11:47:11 -0500</lastBuildDate>
     <item>
       <title>Introducing Posteria</title>
       <link>https://pilab.dev/introducing-posteria</link>
@@ -109,7 +109,7 @@ Fully mobile-responsive and installable as a Progressive Web App (PWA), Posteria
 &lt;/ul&gt;
 &lt;p&gt;Libretto fetches all this valuable metadata and saves it into tidy CSV files, giving you a full backup of your library details at the time of export.&lt;/p&gt;
 &lt;h2&gt;The Importance of Metadata Backups &lt;span class="emoji"&gt;💡&lt;/span&gt;&lt;/h2&gt;
-&lt;p&gt;You might be thinking, &amp;quot;I already back up my media files themselves. Why do I need a separate metadata backup?&amp;quot;&lt;/p&gt;
+&lt;p&gt;You might be thinking, "I already back up my media files themselves. Why do I need a separate metadata backup?"&lt;/p&gt;
 &lt;p&gt;While your media files do contain the actual content, it's the metadata that truly makes your Plex library unique. Details like summaries, ratings, original air dates - these are what could be lost if something goes wrong with your Plex server.&lt;/p&gt;
 &lt;p&gt;With Libretto, you'll have a metadata backup at the ready. If you ever need to rebuild your Plex library from the ground up, you can use these CSV files to restore key details. Think of it as an insurance policy for your Plex library metadata!&lt;/p&gt;
 &lt;h2&gt;Using Libretto is a Breeze &lt;span class="emoji"&gt;🍃&lt;/span&gt;&lt;/h2&gt;
@@ -168,14 +168,14 @@ Fully mobile-responsive and installable as a Progressive Web App (PWA), Posteria
 &lt;p&gt;I have seen a ton of posts on Reddit over the years with different solutions for this. Many of them seem very complicated. I like to keep things simple.&lt;/p&gt;
 &lt;h2&gt;Here is my current travel setup&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://www.amazon.com/Android-Streaming-Device-Remote-Control/dp/B0BRBLG3W6/ref=sr_1_1"&gt;ONN 4K Android TV Box&lt;/a&gt;
-&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.amazon.com/Android-Streaming-Device-Remote-Control/dp/B0BRBLG3W6/ref=sr_1_1"&gt;ONN 4K Android TV Box&lt;/a&gt;&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href="https://play.google.com/store/apps/details?id=com.plexapp.android"&gt;Plex&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href="https://play.google.com/store/apps/details?id=org.xbmc.kodi"&gt;Kodi&lt;/a&gt;&lt;/strong&gt; - In case my location doesn't have decent internet connection.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href="https://play.google.com/store/apps/details?id=org.jellyfin.mobile"&gt;Jellyfin&lt;/a&gt;&lt;/strong&gt; - In case Plex has any issues.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href="https://play.google.com/store/apps/details?id=com.google.android.apps.youtube.unplugged"&gt;YouTube TV&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href="https://play.google.com/store/apps/details?id=com.tailscale.ipn"&gt;Tailscale&lt;/a&gt;&lt;/strong&gt; - I have this setup to auto connect and use one of my home servers (could be the Plex server) as an exit node. I have Plex, Kodi, and JellyFin added to the exceptions list so that they don't route through Tailscale. This is only really used for YouTube TV.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.amazon.com/WD-1TB-Elements-Compatible-WDBAYN0010BBK-WESN/dp/B097TTZD48"&gt;WD 1TB External SSD&lt;/a&gt; (Offline Media)&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.amazon.com/dp/B083KJ1B5H"&gt;OTG Cable&lt;/a&gt; - For connecting the SSD&lt;/li&gt;
 &lt;/ul&gt;
@@ -192,7 +192,7 @@ Fully mobile-responsive and installable as a Progressive Web App (PWA), Posteria
       <link>https://pilab.dev/i-won-a-server</link>
       <image>https://pilab.dev/bl-content/uploads/pages/89e9143555d071d55ac2daaebd4f2a00/minisforum-ms-a1-thumb2.png</image>
       <description>&lt;p&gt;I thought my recent good luck with my &lt;a href="/plex-server-upgrade"&gt;Plex server upgrade&lt;/a&gt; was great, then I won a &lt;a href="https://store.minisforum.com/products/minisforum-ms-a1?variant=45707673338101"&gt;Minisforum MS-A1&lt;/a&gt;!&lt;/p&gt;
-&lt;p&gt;I was listening to some YouTube videos while working the other day. I came across a channel &lt;a href="https://www.youtube.com/@VirtualizationHowto"&gt;@VirtualizationHowto&lt;/a&gt; that I hadn't seen before. The title &amp;quot;Perfect Home Lab 2024 and Minisforum Giveaway!&amp;quot; caught my eye. So I decided to watch. The contest rules were simple so I decided to put my name in the hat. I typed &amp;quot;Fingers crossed :)&amp;quot; into the comments and went on with my day.&lt;/p&gt;
+&lt;p&gt;I was listening to some YouTube videos while working the other day. I came across a channel &lt;a href="https://www.youtube.com/@VirtualizationHowto"&gt;@VirtualizationHowto&lt;/a&gt; that I hadn't seen before. The title "Perfect Home Lab 2024 and Minisforum Giveaway!" caught my eye. So I decided to watch. The contest rules were simple so I decided to put my name in the hat. I typed "Fingers crossed :)" into the comments and went on with my day.&lt;/p&gt;
 &lt;p&gt;I had completely forgotten about the contest until a week or so later when I saw a notification with a reply to my comment. It took me a few minutes to figure out what it even was. Then once I remembered I thought for sure I was being scammed. &lt;/p&gt;
 &lt;p&gt;So I reached out as requested and I was pleasantly surprised to learn that I had indeed won!&lt;/p&gt;
 &lt;p&gt;Brandon from &lt;a href="https://www.youtube.com/@VirtualizationHowto"&gt;@VirtualizationHowto&lt;/a&gt; was great and got the server shipped super quick. It arrived in great condition and has been a marvelous addition to my setup.&lt;/p&gt;
