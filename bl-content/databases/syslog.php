@@ -1,6 +1,14 @@
 <?php defined('BLUDIT') or die('Bludit CMS.'); ?>
 [
     {
+        "date": "2026-04-27 09:39:26",
+        "dictionaryKey": "content-edited",
+        "notes": "Specs",
+        "idExecution": "69ef751e71d40",
+        "method": "POST",
+        "username": "admin"
+    },
+    {
         "date": "2026-04-14 11:47:12",
         "dictionaryKey": "content-edited",
         "notes": "Pi Lab Setup",
@@ -70,14 +78,6 @@
         "notes": "Site Redirect - Pi Lab",
         "idExecution": "69de5cf3ecba0",
         "method": "GET",
-        "username": "admin"
-    },
-    {
-        "date": "2026-04-14 10:20:58",
-        "dictionaryKey": "plugin-configured",
-        "notes": "Pi Lab - Navigation",
-        "idExecution": "69de5b5a6d6dd",
-        "method": "POST",
         "username": "admin"
     }
 ]

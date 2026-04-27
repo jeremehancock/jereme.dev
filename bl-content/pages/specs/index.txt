@@ -184,7 +184,7 @@
 | [Portainer](https://www.portainer.io/) | Container management | Docker |
 | [Dozzle](https://dozzle.dev/) | Log viewer | Docker |
 | [Scrutiny](https://github.com/AnalogJ/scrutiny) | Drive monitoring | Docker |
-| [Watchtower](https://containrrr.dev/watchtower/) | Auto-updates | Docker |
+| [Watchtower](https://hub.docker.com/r/nickfedor/watchtower) | Auto-updates | Docker |
 
 ---
 
@@ -230,7 +230,7 @@
 | [KaraKeep](https://karakeep.app) | Bookmark manager | Docker |
 | [Portainer](https://www.portainer.io/) | Container management | Docker |
 | [Dozzle](https://dozzle.dev/) | Log viewer | Docker |
-| [Watchtower](https://github.com/containrrr/watchtower) | Auto-updates | Docker |
+| [Watchtower](https://hub.docker.com/r/nickfedor/watchtower) | Auto-updates | Docker |
 
 ---
 
@@ -304,7 +304,7 @@
 | [Restreamer](https://github.com/datarhei/restreamer) | Video streaming | Docker |
 | [Portainer](https://www.portainer.io/) | Container management | Docker |
 | [Dozzle](https://dozzle.dev/) | Log viewer | Docker |
-| [Watchtower](https://containrrr.dev/watchtower/) | Auto-updates | Docker |
+| [Watchtower](https://hub.docker.com/r/nickfedor/watchtower) | Auto-updates | Docker |
 
 #### LXC Containers
 
