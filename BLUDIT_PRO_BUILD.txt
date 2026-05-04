@@ -1,5 +1,5 @@
 Bludit PRO
-Version:    3.20.0
-Build:      20260409
-Commit:     e3c8582649eea5adc51bd61743a2885a8efd62e4
-Built:      2026-04-11 18:49:41 UTC
+Version:    3.21.1
+Build:      20260501
+Commit:     9f0fff3668be39691db054427ff117d30144899a
+Built:      2026-05-01 22:23:05 UTC

@@ -218,6 +218,7 @@
 | [Tailscale](https://apps.truenas.com/catalog/tailscale/) | VPN access |
 | [Scrutiny](https://apps.truenas.com/catalog/scrutiny/) | SMART Monitoring |
 | [Syncthing](https://syncthing.net/) | File synchronization |
+| [Pi-Hole](https://pi-hole.net/) | DNS filtering |
 
 #### Virtual Machines (Containers)
 

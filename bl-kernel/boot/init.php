@@ -1,13 +1,13 @@
 <?php defined('BLUDIT') or die('Bludit CMS.');
 
 // Bludit version
-define('BLUDIT_VERSION',        '3.20.0');
-define('BLUDIT_CODENAME',       'LoboIberico');
-define('BLUDIT_RELEASE_DATE',   '2026-04-09');
-define('BLUDIT_BUILD',          '20260409');
+define('BLUDIT_VERSION',        '3.21.1');
+define('BLUDIT_CODENAME',       'ImperialEagle');
+define('BLUDIT_RELEASE_DATE',   '2026-05-01');
+define('BLUDIT_BUILD',          '20260501');
 
 // Change to TRUE for debugging
-define('DEBUG_MODE', TRUE);
+define('DEBUG_MODE', FALSE);
 define('DEBUG_TYPE', 'INFO'); // INFO, TRACE
 
 //  This determines whether errors should be printed to the screen as part of the output or if they should be hidden from the user.
@@ -146,7 +146,7 @@ $security	= new Security();
 $syslog 	= new Syslog();
 
 // --- Relative paths ---
-// This paths are relative for the user / web browsing.
+// These paths are relative for the user / web browsing.
 
 // Base URL
 // The user can define the base URL.
@@ -225,7 +225,7 @@ define('IMAGE_RELATIVE_TO_ABSOLUTE', $site->imageRelativeToAbsolute());
 define('MARKDOWN_PARSER', $site->markdownParser());
 
 // --- PHP paths with dependency ---
-// This paths are absolutes for the OS
+// These paths are absolutes for the OS
 define('THEME_DIR',			PATH_ROOT . 'bl-themes' . DS . $site->theme() . DS);
 define('THEME_DIR_PHP',			THEME_DIR . 'php' . DS);
 define('THEME_DIR_CSS',			THEME_DIR . 'css' . DS);
@@ -234,7 +234,7 @@ define('THEME_DIR_IMG',			THEME_DIR . 'img' . DS);
 define('THEME_DIR_LANG',		THEME_DIR . 'languages' . DS);
 
 // --- Absolute paths with domain ---
-// This paths are absolutes for the user / web browsing.
+// These paths are absolutes for the user / web browsing.
 define('DOMAIN',			$site->domain());
 define('DOMAIN_BASE',			DOMAIN . HTML_PATH_ROOT);
 define('DOMAIN_CORE_JS',		DOMAIN . HTML_PATH_CORE_JS);
