@@ -1,9 +1,9 @@
 <footer class="site-footer main-padding smaller-font-size" id="footbar">
     <div class="site-info main-width">
         <div class="copyright text-white text-uppercase">
-            <?php echo $site->footer(); ?>
+            <!-- <?php echo $site->footer(); ?>
             <span class="sep"> | </span>
-            <?php Theme::plugins('siteShowNode'); ?>
+            <?php Theme::plugins('siteShowNode'); ?> -->
             <label class="dark-toggle">
                 <input id="dark-toggle" class="dark-toggle-checkbox" type="checkbox" onclick="darkmode.toggle();">
                 <div class="dark-toggle-switch"></div>
