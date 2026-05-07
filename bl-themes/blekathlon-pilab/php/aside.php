@@ -40,7 +40,7 @@
 						 if(Text::stringContains($staticPage->key(),'404')) continue;
 						?>
                         <li class="menu-item">
-                            <a href="<?php echo $staticPage->permalink(FALSE); ?>" <?php if($staticPage->title() === 'Specs') echo 'target=_blank'?>>
+                            <a href="<?php echo $staticPage->permalink(FALSE); ?>" <?php if($staticPage->title() === 'Homelab' || $staticPage->title() === 'DumbProjects' || $staticPage->title() === 'Resumé') echo 'target=_blank'; ?>>
                                 <?php echo $staticPage->title(); ?>
                             </a>
                         </li>
