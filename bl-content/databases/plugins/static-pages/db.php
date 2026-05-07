@@ -1,2 +1,2 @@
 <?php defined('BLUDIT') or die('Bludit CMS.'); ?>
-{"label":"About","homeLink":false,"position":"4"}
+{"label":"About","homeLink":false,"position":1}

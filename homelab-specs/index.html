@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jereme.dev Specs</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230a0e14'/%3E%3Crect x='4' y='6' width='24' height='8' rx='2' fill='%23141b24' stroke='%2339c5bb' stroke-width='1.5'/%3E%3Ccircle cx='8.5' cy='10' r='1.5' fill='%234bc77a'/%3E%3Ccircle cx='13' cy='10' r='1.5' fill='%2339c5bb'/%3E%3Crect x='18' y='9' width='7' height='2' rx='1' fill='%233d4f63'/%3E%3Crect x='4' y='18' width='24' height='8' rx='2' fill='%23141b24' stroke='%2339c5bb' stroke-width='1.5'/%3E%3Ccircle cx='8.5' cy='22' r='1.5' fill='%234bc77a'/%3E%3Ccircle cx='13' cy='22' r='1.5' fill='%2339c5bb'/%3E%3Crect x='18' y='21' width='7' height='2' rx='1' fill='%233d4f63'/%3E%3C/svg%3E">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap');
+:root{--bg-primary:#0a0e14;--bg-secondary:#111820;--bg-tertiary:#1a2130;--bg-card:#141b24;--border:#1e2a3a;--border-active:#2d4a6f;--text-primary:#c8d6e5;--text-secondary:#95a8be;--text-muted:#738aa3;--accent:#39c5bb;--accent-dim:#2a9d95;--accent-glow:rgba(57,197,187,0.15);--success:#4bc77a;--tag-bg:rgba(57,197,187,0.1);--tag-border:rgba(57,197,187,0.25);--purple:#b478e6;--purple-bg:rgba(180,120,230,0.15);--blue:#648ce6;--blue-bg:rgba(100,140,230,0.15);--radius:6px;--shadow:0 2px 12px rgba(0,0,0,0.3);}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'IBM Plex Sans',sans-serif;background:var(--bg-primary);color:var(--text-primary);min-height:100vh;line-height:1.6;}
+::-webkit-scrollbar{width:6px;}::-webkit-scrollbar-track{background:var(--bg-primary);}::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}::-webkit-scrollbar-thumb:hover{background:var(--border-active);}
+.header{background:var(--bg-secondary);border-bottom:1px solid var(--border);padding:16px 32px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
+.logo{font-family:'JetBrains Mono',monospace;font-size:20px;font-weight:700;color:var(--accent);letter-spacing:-0.5px;}
+.main{max-width:1200px;margin:0 auto;padding:24px 32px;}
+.toolbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;gap:12px;flex-wrap:wrap;}
+.search-wrap{position:relative;display:inline-block;}
+.search-box{font-family:'JetBrains Mono',monospace;font-size:15px;padding:8px 34px 8px 14px;border-radius:var(--radius);border:1px solid var(--border);background:var(--bg-secondary);color:var(--text-primary);width:320px;outline:none;transition:border-color 0.15s ease;}
+.search-box::placeholder{color:var(--text-muted);}.search-box:focus{border-color:var(--accent);}
+.search-clear{display:none;position:absolute;top:50%;right:6px;transform:translateY(-50%);width:22px;height:22px;border:none;background:transparent;color:var(--text-muted);cursor:pointer;border-radius:50%;padding:0;font-size:14px;line-height:1;align-items:center;justify-content:center;transition:color 0.15s,background 0.15s;}
+.search-clear:hover{color:var(--text-primary);background:var(--bg-tertiary);}
+.search-wrap.has-value .search-clear{display:inline-flex;}
+.filter-group{display:flex;gap:4px;flex-wrap:wrap;}
+.filter-btn{font-family:'JetBrains Mono',monospace;font-size:13px;padding:5px 12px;border-radius:20px;border:1px solid var(--border);background:transparent;color:var(--text-secondary);cursor:pointer;transition:all 0.15s ease;text-transform:uppercase;letter-spacing:0.5px;}
+.filter-btn:hover{border-color:var(--border-active);color:var(--text-primary);}.filter-btn.active{border-color:var(--accent);color:var(--accent);background:var(--accent-glow);}
+.stats-bar{display:flex;gap:24px;margin-bottom:24px;padding:14px 20px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius);flex-wrap:wrap;}
+.stat{display:flex;align-items:baseline;gap:6px;}.stat-value{font-family:'JetBrains Mono',monospace;font-size:24px;font-weight:700;color:var(--accent);}.stat-label{font-size:14px;color:var(--text-secondary);text-transform:uppercase;letter-spacing:0.5px;}
+.device-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:14px;}
+.device-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:18px;transition:all 0.15s ease;cursor:pointer;position:relative;}
+.device-card:hover,.device-card:focus-visible{border-color:var(--border-active);box-shadow:var(--shadow);}.device-card:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}.device-card.has-children{border-left:3px solid var(--accent);}
+.device-card-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;}
+.device-name{font-family:'JetBrains Mono',monospace;font-size:17px;font-weight:600;color:var(--text-primary);}
+.device-type-badge{font-family:'JetBrains Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.8px;padding:3px 8px;border-radius:3px;font-weight:600;white-space:nowrap;}
+.badge-server{background:rgba(57,197,187,0.15);color:var(--accent);}.badge-vm{background:var(--blue-bg);color:var(--blue);}.badge-container{background:var(--purple-bg);color:var(--purple);}.badge-network{background:rgba(230,180,60,0.15);color:#e6b43c;}.badge-storage{background:rgba(230,120,80,0.15);color:#e67850;}.badge-other{background:rgba(150,150,170,0.15);color:#9696aa;}
+.device-parent-link{font-size:13px;color:var(--text-muted);margin-bottom:8px;}.device-parent-link strong{color:var(--text-secondary);}
+.device-meta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:8px;}.meta-item{font-size:14px;color:var(--text-secondary);}.meta-item strong{color:var(--text-primary);font-weight:500;}
+.device-services{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px;}
+.service-tag{font-family:'JetBrains Mono',monospace;font-size:12px;padding:2px 8px;border-radius:3px;background:var(--tag-bg);border:1px solid var(--tag-border);color:var(--accent);}
+.child-count-badge{font-family:'JetBrains Mono',monospace;font-size:12px;padding:2px 8px;border-radius:3px;background:var(--blue-bg);color:var(--blue);margin-top:8px;display:inline-block;}
+.detail-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:200;align-items:center;justify-content:center;backdrop-filter:blur(4px);}.detail-overlay.open{display:flex;}
+.detail-panel{background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;width:85%;max-width:1000px;max-height:90vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,0.5);}
+.detail-header{display:flex;justify-content:space-between;align-items:flex-start;padding:22px;border-bottom:1px solid var(--border);}
+.detail-body{padding:22px;}.detail-section{margin-bottom:20px;}
+.detail-section-title{font-family:'JetBrains Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--border);}
+.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}.detail-field-label{font-size:13px;color:var(--text-secondary);text-transform:uppercase;letter-spacing:0.5px;}.detail-field-value{font-family:'JetBrains Mono',monospace;font-size:15px;color:var(--text-primary);}
+.detail-notes{font-size:15px;color:var(--text-secondary);line-height:1.7;white-space:pre-wrap;}
+.btn{font-family:'IBM Plex Sans',sans-serif;font-size:15px;font-weight:500;padding:8px 16px;border-radius:var(--radius);border:1px solid var(--border);background:var(--bg-tertiary);color:var(--text-primary);cursor:pointer;transition:all 0.15s ease;display:inline-flex;align-items:center;gap:6px;}.btn:hover{border-color:var(--border-active);background:var(--bg-card);}.btn-ghost{border-color:transparent;background:transparent;}.btn-ghost:hover{background:var(--bg-tertiary);}.btn-sm{padding:5px 10px;font-size:14px;}
+.service-table{width:100%;border-collapse:collapse;}.service-table th{font-family:'JetBrains Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-muted);text-align:left;padding:6px 10px;border-bottom:1px solid var(--border);}.service-table td{font-family:'JetBrains Mono',monospace;font-size:14px;padding:8px 10px;color:var(--text-primary);border-bottom:1px solid var(--border);}.service-table td.svc-notes{color:var(--text-secondary);font-family:'IBM Plex Sans',sans-serif;}.service-table tr:last-child td{border-bottom:none;}
+.child-device{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border:1px solid var(--border);border-radius:var(--radius);margin-bottom:6px;cursor:pointer;transition:all 0.15s;}.child-device:hover{border-color:var(--border-active);background:var(--bg-tertiary);}.child-device-name{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:500;}.child-device-info{font-size:13px;color:var(--text-secondary);}
+.empty-state{text-align:center;padding:80px 20px;}.empty-icon{font-size:52px;margin-bottom:16px;opacity:0.3;}.empty-title{font-family:'JetBrains Mono',monospace;font-size:18px;color:var(--text-secondary);margin-bottom:8px;}.empty-text{font-size:15px;color:var(--text-muted);margin-bottom:20px;}
+.footer{text-align:center;padding:24px 16px;border-top:1px solid var(--border);margin-top:40px;}.footer-link{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--text-muted);text-decoration:none;transition:color 0.15s;}.footer-link:hover{color:var(--accent);}
+@media (max-width:640px){.header{padding:12px 16px;}.main{padding:16px;}.device-grid{grid-template-columns:1fr;}.detail-grid{grid-template-columns:1fr;}.toolbar{flex-direction:column;align-items:stretch;}.search-wrap{display:block;}.search-box{width:100%;}.stats-bar{flex-wrap:wrap;gap:16px;}}
+</style>
+</head>
+<body>
+<header class="header"><div class="logo">jereme.dev Specs</div></header>
+<div class="main">
+  <div class="stats-bar" id="statsBar"></div>
+  <div class="toolbar">
+    <div class="search-wrap" id="searchWrap">
+      <input type="text" class="search-box" id="searchBox" placeholder="Search...">
+      <button type="button" class="search-clear" id="searchClear" aria-label="Clear search" title="Clear search">✕</button>
+    </div>
+    <div class="filter-group" id="filterGroup"></div>
+  </div>
+  <div class="device-grid" id="deviceGrid"></div>
+</div>
+<footer class="footer"><a href="https://github.com/jeremehancock/homelab.md" target="_blank" rel="noopener" class="footer-link">Generated by homelab.md</a></footer>
+<div class="detail-overlay" id="detailOverlay"><div class="detail-panel" id="detailPanel"></div></div>
+<script>
+"use strict";
+var DEVICES = [{"id":"plexmedia1","parentId":null,"name":"anansi","type":"server","system":"Acer Aspire TC-1750-UR11","os":"Ubuntu Server 22.04.3 LTS","cpu":"Intel Core i5-12400 (up to 4.4GHz)","ram":"32GB Corsair VENGEANCE LPX DDR4 3200MHz","storage":[{"type":"WD Blue SN570 NVMe SSD","size":"1TB","notes":"OS Drive"},{"type":"WD Blue SN570 NVMe SSD","size":"1TB","notes":"Cache Drive via SABRENT PCIe Adapter"},{"type":"WD_Black","size":"12TB","notes":"Movies - Shucked WD Ultrastar DC HC520"},{"type":"WD Elements","size":"14TB","notes":"Movies 2 - Shucked WD140EDGZ"},{"type":"WD easystore","size":"14TB","notes":"TV Shows - Shucked WD140EDGZ"},{"type":"WD easystore","size":"16TB","notes":"TV Shows 2 - Shucked WD160EDGZ"},{"type":"Seagate Ironwolf","size":"8TB","notes":"TV Shows 3 - Internal Drive"},{"type":"WD easystore","size":"20TB","notes":"TV Shows 4 - Shucked WD200EDGZ"},{"type":"Seagate BarraCuda","size":"2TB","notes":"Music - ST2000DM008-2FR102"}],"services":[{"name":"Plex Media Server","notes":"Primary media server"},{"name":"Jellyfin","notes":"Backup media server (Docker)"},{"name":"Seerr","notes":"Media request management (Docker)"},{"name":"Dispatcharr","notes":"IPTV proxy (Docker)"},{"name":"Tunarr","notes":"Custom TV channels (Docker)"},{"name":"Radarr","notes":"Movie management (Docker)"},{"name":"Sonarr","notes":"TV show management (Docker)"},{"name":"Lidarr","notes":"Music management (Docker)"},{"name":"Aurral","notes":"Music discovery (Docker)"},{"name":"LidaTube","notes":"YouTube integration (Docker)"},{"name":"Prowlarr","notes":"Indexer management (Docker)"},{"name":"qBittorrent","notes":"Torrent client (Docker)"},{"name":"SABnzbd","notes":"Usenet client (Docker)"},{"name":"Gluetun","notes":"VPN client (Docker)"},{"name":"FlareSolverr","notes":"Cloudflare solver (Docker)"},{"name":"Posteria","notes":"Poster management (Docker)"},{"name":"Glimpse","notes":"Media server viewer (Docker)"},{"name":"Tautulli","notes":"Plex monitoring (Docker)"},{"name":"Jellystat","notes":"Jellyfin statistics (Docker)"},{"name":"PlexTraktSync","notes":"Trakt.tv sync (Docker)"},{"name":"JellyPlex-Watched","notes":"Cross-platform sync (Docker)"},{"name":"Plex Exporter","notes":"Prometheus metrics (Docker)"},{"name":"Portainer","notes":"Container management (Docker)"},{"name":"Dozzle","notes":"Log viewer (Docker)"},{"name":"Scrutiny","notes":"Drive monitoring (Docker)"},{"name":"Lidarr Exportarr","notes":"Lidarr metrics (Docker)"},{"name":"Radarr Exportarr","notes":"Radarr metrics (Docker)"},{"name":"Sonarr Exportarr","notes":"Sonarr metrics (Docker)"},{"name":"Unpackerr (Movies)","notes":"Archive extractor (Docker)"},{"name":"Unpackerr (TV)","notes":"Archive extractor (Docker)"},{"name":"Sonarr (Private)","notes":"Private TV Show management (Docker)"},{"name":"Radarr (Private)","notes":"Private Movie management (Docker)"},{"name":"Jackett","notes":"Indexer management (Docker)"}],"notes":"CLI Tools: yt-dlp, deno, abcde (CD ripping), Ludanta (Plex/Jellyfin now playing script)"},{"id":"monbackup1","parentId":null,"name":"optimus","type":"server","system":"Dell OptiPlex 3060 Small Form Factor","os":"Ubuntu Server 22.04.3 LTS","cpu":"Intel Core i3-8100 @ 3.60GHz","ram":"32GB DDR4 SDRAM 2133 MT/s","storage":[{"type":"WD Blue SN580 NVMe SSD","size":"1TB","notes":"OS Drive via SABRENT PCIe Adapter"},{"type":"Seagate BarraCuda HDD","size":"4TB","notes":"Backup Storage - Internal SATA"}],"services":[{"name":"Portainer","notes":"Container management (Docker)"},{"name":"Dozzle","notes":"Log viewer (Docker)"},{"name":"Scrutiny","notes":"Drive monitoring (Docker)"},{"name":"Watchtower","notes":"Auto-updates (Docker)"}],"notes":""},{"id":"tnasstor01","parentId":null,"name":"truenas","type":"server","system":"Dell Precision 5820","os":"TrueNAS Community Edition","cpu":"Intel Xeon W-2135 @ 3.70GHz","ram":"128GB DDR4 ECC SDRAM","storage":[{"type":"Crucial SSD","size":"500GB","notes":"Boot Drive via Sedna PCIe SATA Adapter"},{"type":"Seagate IronWolf","size":"4TB x2","notes":"RAIDZ2 Array"},{"type":"Seagate Internal","size":"4TB","notes":"RAIDZ2 Array"},{"type":"HGST Ultrastar","size":"4TB x2","notes":"RAIDZ2 Array"}],"services":[{"name":"Tailscale","notes":"VPN access (TrueNAS App)"},{"name":"Scrutiny","notes":"SMART Monitoring (TrueNAS App)"},{"name":"Syncthing","notes":"File synchronization (TrueNAS App)"},{"name":"Pi-hole","notes":"DNS Filtering (TrueNAS App)"}],"notes":"GPU: NVIDIA GeForce 8400 GS Rev. 3\nPSU: 950W\nDrive Bay: 3.5\" to 5.25\" Cage Adapter for additional mounting"},{"id":"tnasstrvm1","parentId":"tnasstor01","name":"docker-vm","type":"container","system":"","os":"Ubuntu Server 22.04","cpu":"","ram":"","storage":[],"services":[{"name":"Paperless-ngx","notes":"Document management (Docker)"},{"name":"Nextcloud","notes":"Cloud storage (Docker)"},{"name":"KaraKeep","notes":"Bookmark manager (Docker)"},{"name":"Portainer","notes":"Container management (Docker)"},{"name":"Dozzle","notes":"Log viewer (Docker)"},{"name":"Watchtower","notes":"Auto-updates (Docker)"}],"notes":""},{"id":"tnashost01","parentId":null,"name":"truenas-hosting","type":"server","system":"Custom (Fractal case)","os":"TrueNAS Community Edition","cpu":"AMD Ryzen 5 3400G with Radeon Vega Graphics","ram":"64GB GIGASTONE Game PRO DDR4 3200MHz","storage":[{"type":"ORICO M.2 NVMe SSD","size":"128GB","notes":"OS Drive - PCIe Gen3x4 2280"},{"type":"WD Blue Mobile Hard Drives","size":"1TB x4","notes":"RAIDZ1 Array"}],"services":[{"name":"Tailscale","notes":"VPN access (TrueNAS App)"},{"name":"Scrutiny","notes":"SMART Monitoring (TrueNAS App)"}],"notes":""},{"id":"tnashstvm1","parentId":"tnashost01","name":"coolify","type":"container","system":"","os":"Ubuntu Focal AMD64","cpu":"","ram":"16GB","storage":[],"services":[{"name":"Coolify","notes":"Self-hosting platform (Docker)"}],"notes":""},{"id":"proxmox001","parentId":null,"name":"proxmox","type":"server","system":"Minisforum MS-A1","os":"Proxmox VE","cpu":"AMD Ryzen 7 8700G","ram":"64GB DDR5","storage":[{"type":"NVMe SSD","size":"512GB","notes":"OS / Boot drive"},{"type":"NVMe SSD","size":"1TB x2","notes":"VM Storage - Mirrored"},{"type":"WD Blue SN580 NVMe SSD","size":"1TB","notes":"VM Backups"}],"services":[],"notes":""},{"id":"proxmoxvm1","parentId":"proxmox001","name":"omega","type":"vm","system":"","os":"Ubuntu Server 22.04","cpu":"8 (2 sockets, 4 cores) [x86-64-v4]","ram":"16GB","storage":[],"services":[{"name":"Nginx Proxy Manager","notes":"Reverse proxy (Docker)"},{"name":"Homarr","notes":"Dashboard (Docker)"},{"name":"Uptime Kuma","notes":"Uptime monitoring (Docker)"},{"name":"Speed Tracker","notes":"Speed monitoring (Docker)"},{"name":"OpenSpeedTest","notes":"Speed testing (Docker)"},{"name":"Prometheus","notes":"Metrics collection (Docker)"},{"name":"Portainer","notes":"Container management (Docker)"},{"name":"Dozzle","notes":"Log viewer (Docker)"},{"name":"Watchtower","notes":"Auto-updates (Docker)"},{"name":"AI Game Collection","notes":"AI Games (Docker)"}],"notes":"Uses Pushover for notifications"},{"id":"piholelxc1","parentId":"proxmox001","name":"pihole","type":"container","system":"","os":"","cpu":"2 CPUs","ram":"512MB","storage":[],"services":[{"name":"Pi-hole","notes":"DNS filtering"}],"notes":"Proxmox LXC container"},{"id":"grafnalxc1","parentId":"proxmox001","name":"grafana","type":"container","system":"","os":"","cpu":"1 CPU","ram":"512MB","storage":[],"services":[{"name":"Grafana","notes":"Data visualization"}],"notes":"Proxmox LXC container"},{"id":"noderedlx1","parentId":"proxmox001","name":"nodered","type":"container","system":"","os":"","cpu":"1 CPU","ram":"1GB","storage":[],"services":[{"name":"Node-RED","notes":"Automation"}],"notes":"Proxmox LXC container"},{"id":"vaultlxc01","parentId":"proxmox001","name":"vaultwarden","type":"container","system":"","os":"","cpu":"4 CPUs","ram":"6GB","storage":[],"services":[{"name":"Vaultwarden","notes":"Password manager"}],"notes":"Proxmox LXC container"},{"id":"searxnglx1","parentId":"proxmox001","name":"searxng","type":"container","system":"","os":"","cpu":"2 CPUs","ram":"2GB","storage":[],"services":[{"name":"SearXNG","notes":"Search engine"}],"notes":"Proxmox LXC container"},{"id":"gateway001","parentId":null,"name":"ATT Gateway","type":"network","system":"AT\u0026T BGW-320","os":"","cpu":"","ram":"","storage":[],"services":[{"name":"Fiber Gateway","notes":"Passthrough mode to mesh network"}],"notes":"ISP: AT\u0026T 1 GIG Fiber\nMode: Passthrough Mode"},{"id":"nestwifi01","parentId":null,"name":"Nest Mesh WiFi","type":"network","system":"Google Nest WiFi Pro (4-pack)","os":"","cpu":"","ram":"","storage":[],"services":[],"notes":"Mesh WiFi network covering the home"},{"id":"tplink1601","parentId":null,"name":"Main Switch","type":"network","system":"TP-Link 16 Port Gigabit Ethernet Switch","os":"","cpu":"","ram":"","storage":[],"services":[],"notes":"Primary network switch"},{"id":"netgear051","parentId":null,"name":"Secondary Switch","type":"network","system":"NETGEAR 5-Port Gigabit Ethernet Switch (GS105NA)","os":"","cpu":"","ram":"","storage":[],"services":[],"notes":"Additional network ports"},{"id":"cyberups01","parentId":null,"name":"UPS 1","type":"other","system":"CyberPower CP1000PFCLCD","os":"","cpu":"","ram":"","storage":[],"services":[],"notes":"1000VA Pure Sine Wave UPS - Unit 1"},{"id":"cyberups02","parentId":null,"name":"UPS 2","type":"other","system":"CyberPower CP1000PFCLCD","os":"","cpu":"","ram":"","storage":[],"services":[],"notes":"1000VA Pure Sine Wave UPS - Unit 2"},{"id":"mmuslkrj8ka766","parentId":"plexmedia1","name":"Storage Tower","type":"storage","system":"Syba 8 Bay HDD Enclosure","os":"","cpu":"","ram":"","storage":[],"services":[],"notes":""}];
+var currentFilter = "all";
+function esc(str){if(!str&&str!==0)return "";var d=document.createElement("div");d.textContent=String(str);return d.innerHTML;}
+function getTypeClass(type){var map={server:"badge-server",vm:"badge-vm",container:"badge-container",network:"badge-network",storage:"badge-storage"};return map[type]||"badge-other";}
+function getDevice(id){for(var i=0;i<DEVICES.length;i++)if(DEVICES[i].id===id)return DEVICES[i];return null;}
+function getChildren(parentId){return DEVICES.filter(function(d){return d.parentId===parentId;});}
+function renderStats(){
+  var hosts=DEVICES.filter(function(d){return !d.parentId;}).length;
+  var vmsAndContainers=DEVICES.filter(function(d){return d.type==="vm"||d.type==="container";}).length;
+  var totalServices=DEVICES.reduce(function(sum,d){return sum+(d.services?d.services.length:0);},0);
+  document.getElementById("statsBar").innerHTML=
+    '<div class="stat"><span class="stat-value">'+DEVICES.length+'</span><span class="stat-label">Devices</span></div>'+
+    '<div class="stat"><span class="stat-value">'+hosts+'</span><span class="stat-label">Hosts</span></div>'+
+    '<div class="stat"><span class="stat-value">'+vmsAndContainers+'</span><span class="stat-label">VMs/Containers</span></div>'+
+    '<div class="stat"><span class="stat-value">'+totalServices+'</span><span class="stat-label">Services</span></div>';
+}
+function renderFilters(){
+  var seen={},types=["all"];
+  DEVICES.forEach(function(d){if(!seen[d.type]){seen[d.type]=1;types.push(d.type);}});
+  document.getElementById("filterGroup").innerHTML=types.map(function(t){
+    return '<button class="filter-btn '+(t===currentFilter?"active":"")+'" data-filter="'+esc(t)+'">'+esc(t)+'</button>';
+  }).join("");
+}
+function setFilter(f){currentFilter=f;renderFilters();renderDevices();}
+function renderDevices(){
+  var query=document.getElementById("searchBox").value.toLowerCase();
+  var filtered=DEVICES.filter(function(d){
+    if(currentFilter!=="all"&&d.type!==currentFilter)return false;
+    if(query){
+      var svcText=(d.services||[]).map(function(s){return s.name+" "+s.notes;}).join(" ");
+      var storageText=(d.storage||[]).map(function(s){return s.type+" "+s.size+" "+s.notes;}).join(" ");
+      var hay=[d.name,d.os,d.system,d.type,d.cpu,d.ram,d.notes,svcText,storageText].join(" ").toLowerCase();
+      return hay.indexOf(query)!==-1;
+    }
+    return true;
+  });
+  filtered.sort(function(a,b){return (a.name||"").localeCompare(b.name||"",undefined,{sensitivity:"base"});});
+  var grid=document.getElementById("deviceGrid");
+  if(!filtered.length){
+    grid.innerHTML='<div class="empty-state" style="grid-column:1/-1;"><div class="empty-icon">\u29E1</div><div class="empty-title">'+(DEVICES.length===0?"No devices":"No matches")+'</div><div class="empty-text">'+(DEVICES.length===0?"":"Try adjusting your search or filter.")+'</div></div>';
+    return;
+  }
+  grid.innerHTML=filtered.map(function(d){
+    var children=getChildren(d.id);
+    var parent=d.parentId?getDevice(d.parentId):null;
+    var svcs=d.services||[];
+    var storage=d.storage||[];
+    var storageHtml="";
+    if(storage.length){
+      var first=storage[0];
+      var firstLabel=esc(first.size?first.type+" "+first.size:first.type);
+      if(storage.length>2){storageHtml=firstLabel+", +"+(storage.length-1)+" more";}
+      else{storageHtml=storage.map(function(s){return esc(s.size?s.type+" "+s.size:s.type);}).join(", ");}
+    }
+    return '<div class="device-card '+(children.length?"has-children":"")+'" tabindex="0" role="button" data-id="'+esc(d.id)+'">'+
+      '<div class="device-card-header"><div><div class="device-name">'+esc(d.name)+'</div></div>'+
+      '<span class="device-type-badge '+getTypeClass(d.type)+'">'+esc(d.type)+'</span></div>'+
+      (parent?'<div class="device-parent-link">on <strong>'+esc(parent.name)+'</strong></div>':"")+
+      '<div class="device-meta">'+
+        (d.system?'<span class="meta-item"><strong>System:</strong> '+esc(d.system)+'</span>':"")+
+        (d.os?'<span class="meta-item"><strong>OS:</strong> '+esc(d.os)+'</span>':"")+
+        (d.cpu?'<span class="meta-item"><strong>CPU:</strong> '+esc(d.cpu)+'</span>':"")+
+        (d.ram?'<span class="meta-item"><strong>RAM:</strong> '+esc(d.ram)+'</span>':"")+
+        (storageHtml?'<span class="meta-item"><strong>Storage:</strong> '+storageHtml+'</span>':"")+
+      '</div>'+
+      (svcs.length?'<div class="device-services">'+
+        svcs.slice(0,3).map(function(s){return '<span class="service-tag">'+esc(s.name)+'</span>';}).join("")+
+        (svcs.length>3?'<span class="service-tag">+'+(svcs.length-3)+' more</span>':"")+
+      '</div>':"")+
+      (children.length?'<span class="child-count-badge">'+children.length+" "+(children.length===1?"child":"children")+'</span>':"")+
+    '</div>';
+  }).join("");
+}
+function showDetail(id){
+  var d=getDevice(id);if(!d)return;
+  var children=getChildren(d.id);
+  var parent=d.parentId?getDevice(d.parentId):null;
+  var html='<div class="detail-header"><div>'+
+    '<div style="font-family:\'JetBrains Mono\',monospace;font-size:22px;font-weight:700;margin-bottom:4px;">'+esc(d.name)+'</div>'+
+    '<span class="device-type-badge '+getTypeClass(d.type)+'" style="display:inline-block;">'+esc(d.type)+'</span>'+
+    (parent?' <span style="font-size:14px;color:var(--text-secondary);margin-left:10px;">on <strong>'+esc(parent.name)+'</strong></span>':"")+
+  '</div><button class="btn btn-ghost btn-sm" data-action="close-detail">\u2715</button></div>';
+  var hasOverview=d.system||d.os;
+  var hasHardware=d.cpu||d.ram;
+  html+='<div class="detail-body">';
+  if(hasOverview){
+    html+='<div class="detail-section"><div class="detail-section-title">Overview</div><div class="detail-grid">'+
+      '<div><div class="detail-field-label">System</div><div class="detail-field-value">'+(esc(d.system)||"\u2014")+'</div></div>'+
+      '<div><div class="detail-field-label">OS</div><div class="detail-field-value">'+(esc(d.os)||"\u2014")+'</div></div>'+
+    '</div></div>';
+  }
+  if(hasHardware){
+    html+='<div class="detail-section"><div class="detail-section-title">Hardware</div><div class="detail-grid">'+
+      '<div><div class="detail-field-label">CPU</div><div class="detail-field-value">'+(esc(d.cpu)||"\u2014")+'</div></div>'+
+      '<div><div class="detail-field-label">RAM</div><div class="detail-field-value">'+(esc(d.ram)||"\u2014")+'</div></div>'+
+    '</div></div>';
+  }
+  if(d.storage&&d.storage.length){
+    html+='<div class="detail-section"><div class="detail-section-title">Storage ('+d.storage.length+')</div>'+
+      '<table class="service-table"><thead><tr><th>Type / Device</th><th>Size</th><th>Notes</th></tr></thead><tbody>'+
+      d.storage.map(function(s){return '<tr><td>'+esc(s.type)+'</td><td>'+(esc(s.size)||"\u2014")+'</td><td class="svc-notes">'+(esc(s.notes)||"\u2014")+'</td></tr>';}).join("")+
+      '</tbody></table></div>';
+  }
+  if(d.services&&d.services.length){
+    html+='<div class="detail-section"><div class="detail-section-title">Services ('+d.services.length+')</div>'+
+      '<table class="service-table"><thead><tr><th>Service</th><th>Notes</th></tr></thead><tbody>'+
+      d.services.map(function(s){return '<tr><td>'+esc(s.name)+'</td><td class="svc-notes">'+(esc(s.notes)||"\u2014")+'</td></tr>';}).join("")+
+      '</tbody></table></div>';
+  }
+  if(children.length){
+    html+='<div class="detail-section"><div class="detail-section-title">Running on this host ('+children.length+')</div>'+
+      children.map(function(c){return '<div class="child-device" data-detail-id="'+esc(c.id)+'"><div><div class="child-device-name">'+esc(c.name)+'</div><div class="child-device-info">'+esc(c.type)+(c.services&&c.services.length?" \u00B7 "+c.services.length+" services":"")+'</div></div><span class="device-type-badge '+getTypeClass(c.type)+'">'+esc(c.type)+'</span></div>';}).join("")+
+    '</div>';
+  }
+  if(parent){
+    html+='<div class="detail-section"><div class="detail-section-title">Host</div>'+
+      '<div class="child-device" data-detail-id="'+esc(parent.id)+'"><div><div class="child-device-name">'+esc(parent.name)+'</div><div class="child-device-info">'+esc(parent.type)+'</div></div><span class="device-type-badge '+getTypeClass(parent.type)+'">'+esc(parent.type)+'</span></div>'+
+    '</div>';
+  }
+  if(d.notes){
+    html+='<div class="detail-section"><div class="detail-section-title">Notes</div><div class="detail-notes">'+esc(d.notes)+'</div></div>';
+  }
+  html+='</div>';
+  document.getElementById("detailPanel").innerHTML=html;
+  document.getElementById("detailOverlay").classList.add("open");
+}
+function closeDetail(){document.getElementById("detailOverlay").classList.remove("open");}
+document.getElementById("searchBox").addEventListener("input",function(){document.getElementById("searchWrap").classList.toggle("has-value",!!this.value);renderDevices();});
+document.getElementById("searchClear").addEventListener("click",function(){var b=document.getElementById("searchBox");b.value="";document.getElementById("searchWrap").classList.remove("has-value");b.focus();renderDevices();});
+document.getElementById("filterGroup").addEventListener("click",function(e){var b=e.target.closest("[data-filter]");if(b)setFilter(b.getAttribute("data-filter"));});
+document.getElementById("deviceGrid").addEventListener("click",function(e){var c=e.target.closest("[data-id]");if(c)showDetail(c.getAttribute("data-id"));});
+document.getElementById("deviceGrid").addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){var c=e.target.closest("[data-id]");if(c){e.preventDefault();showDetail(c.getAttribute("data-id"));}}});
+document.getElementById("detailPanel").addEventListener("click",function(e){var n=e.target.closest("[data-detail-id]");if(n){showDetail(n.getAttribute("data-detail-id"));return;}if(e.target.closest("[data-action=close-detail]"))closeDetail();});
+document.getElementById("detailOverlay").addEventListener("click",function(e){if(e.target.id==="detailOverlay")closeDetail();});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")closeDetail();});
+renderStats();renderFilters();renderDevices();
+</script>
+</body>
+</html>

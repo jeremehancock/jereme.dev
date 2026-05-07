@@ -8,6 +8,12 @@ RewriteEngine on
 # Base directory
 RewriteBase /
 
+# Redirect /resume to external URL
+RewriteRule ^resume/?$ https://jeremehancock.com [R=301,L]
+
+# Redirect /dumb-projects to external URL
+RewriteRule ^dumbprojects/?$ https://dumbprojects.com [R=301,L]
+
 # Deny direct access to the next directories
 RewriteRule ^bl-content/(databases|workspaces|pages|tmp)/.*$ - [R=404,L]
 

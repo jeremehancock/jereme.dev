@@ -1,202 +1,210 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://pilab.dev</loc>
+    <loc>http://localhost:8080</loc>
   </url>
   <url>
-    <loc>https://pilab.dev/introducing-posteria</loc>
+    <loc>http://localhost:8080/dumbprojects</loc>
+    <lastmod>2026-05-07</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:8080/resume</loc>
+    <lastmod>2026-05-07</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:8080/homelab-specs</loc>
+    <lastmod>2026-05-07</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:8080/introducing-posteria</loc>
     <lastmod>2025-02-26</lastmod>
   </url>
   <url>
-    <loc>https://pilab.dev/libretto-plex-library-metadata-exporter</loc>
+    <loc>http://localhost:8080/libretto-plex-library-metadata-exporter</loc>
     <lastmod>2025-02-06</lastmod>
   </url>
   <url>
-    <loc>https://pilab.dev/ai-game-collection</loc>
+    <loc>http://localhost:8080/ai-game-collection</loc>
     <lastmod>2024-12-10</lastmod>
   </url>
   <url>
-    <loc>https://pilab.dev/the-perfect-travel-tv-setup</loc>
+    <loc>http://localhost:8080/the-perfect-travel-tv-setup</loc>
     <lastmod>2024-09-26</lastmod>
   </url>
   <url>
-    <loc>https://pilab.dev/i-won-a-server</loc>
+    <loc>http://localhost:8080/i-won-a-server</loc>
     <lastmod>2024-09-26</lastmod>
   </url>
   <url>
-    <loc>https://pilab.dev/plex-server-upgrade</loc>
+    <loc>http://localhost:8080/plex-server-upgrade</loc>
     <lastmod>2024-09-26</lastmod>
   </url>
   <url>
-    <loc>https://pilab.dev/jellyfin-nowplaying</loc>
+    <loc>http://localhost:8080/jellyfin-nowplaying</loc>
     <lastmod>2023-09-29</lastmod>
   </url>
   <url>
-    <loc>https://pilab.dev/moviecli</loc>
+    <loc>http://localhost:8080/moviecli</loc>
     <lastmod>2023-05-15</lastmod>
   </url>
   <url>
-    <loc>https://pilab.dev/pi-hole-tailscale</loc>
+    <loc>http://localhost:8080/pi-hole-tailscale</loc>
     <lastmod>2022-09-30</lastmod>
   </url>
   <url>
-    <loc>https://pilab.dev/node-red-upgrades-v3</loc>
+    <loc>http://localhost:8080/node-red-upgrades-v3</loc>
     <lastmod>2022-08-01</lastmod>
   </url>
   <url>
-    <loc>https://pilab.dev/pi-hole-upgrades</loc>
+    <loc>http://localhost:8080/pi-hole-upgrades</loc>
     <lastmod>2022-03-28</lastmod>
   </url>
   <url>
-    <loc>https://pilab.dev/octoprint-node-live-stream</loc>
+    <loc>http://localhost:8080/octoprint-node-live-stream</loc>
     <lastmod>2022-02-08</lastmod>
   </url>
   <url>
-    <loc>https://pilab.dev/ubuntuce-resurrected</loc>
+    <loc>http://localhost:8080/ubuntuce-resurrected</loc>
     <lastmod>2021-08-12</lastmod>
   </url>
   <url>
-    <loc>https://pilab.dev/pi-lab-upgrades</loc>
+    <loc>http://localhost:8080/pi-lab-upgrades</loc>
     <lastmod>2021-06-14</lastmod>
   </url>
   <url>
-    <loc>https://pilab.dev/gatsby-bludit</loc>
+    <loc>http://localhost:8080/gatsby-bludit</loc>
     <lastmod>2021-05-13</lastmod>
   </url>
   <url>
-    <loc>https://pilab.dev/octoprint-node</loc>
+    <loc>http://localhost:8080/octoprint-node</loc>
     <lastmod>2021-02-24</lastmod>
   </url>
   <url>
-    <loc>https://pilab.dev/roadside-america</loc>
+    <loc>http://localhost:8080/roadside-america</loc>
     <lastmod>2020-12-16</lastmod>
   </url>
   <url>
-    <loc>https://pilab.dev/restreamer</loc>
+    <loc>http://localhost:8080/restreamer</loc>
     <lastmod>2020-08-09</lastmod>
   </url>
   <url>
-    <loc>https://pilab.dev/pi-lab-monitor-node</loc>
+    <loc>http://localhost:8080/pi-lab-monitor-node</loc>
     <lastmod>2020-07-12</lastmod>
   </url>
   <url>
-    <loc>https://pilab.dev/new-pi-lab-media-nodes</loc>
+    <loc>http://localhost:8080/new-pi-lab-media-nodes</loc>
     <lastmod>2020-07-08</lastmod>
   </url>
   <url>
-    <loc>https://pilab.dev/node-red-twitter-bot</loc>
+    <loc>http://localhost:8080/node-red-twitter-bot</loc>
     <lastmod>2020-06-23</lastmod>
   </url>
   <url>
-    <loc>https://pilab.dev/fold-for-covid</loc>
+    <loc>http://localhost:8080/fold-for-covid</loc>
     <lastmod>2020-06-14</lastmod>
   </url>
   <url>
-    <loc>https://pilab.dev/seti-home-hibernation</loc>
+    <loc>http://localhost:8080/seti-home-hibernation</loc>
     <lastmod>2020-03-30</lastmod>
   </url>
   <url>
-    <loc>https://pilab.dev/pi-lab-live-stream</loc>
+    <loc>http://localhost:8080/pi-lab-live-stream</loc>
     <lastmod>2020-03-16</lastmod>
   </url>
   <url>
-    <loc>https://pilab.dev/pi-dashboard-ui</loc>
+    <loc>http://localhost:8080/pi-dashboard-ui</loc>
     <lastmod>2020-01-10</lastmod>
   </url>
   <url>
-    <loc>https://pilab.dev/prometheus-grafana</loc>
+    <loc>http://localhost:8080/prometheus-grafana</loc>
     <lastmod>2019-12-04</lastmod>
   </url>
   <url>
-    <loc>https://pilab.dev/resources</loc>
+    <loc>http://localhost:8080/resources</loc>
     <lastmod>2019-11-23</lastmod>
   </url>
   <url>
-    <loc>https://pilab.dev/raspcontroller-android-app</loc>
+    <loc>http://localhost:8080/raspcontroller-android-app</loc>
     <lastmod>2019-11-21</lastmod>
   </url>
   <url>
-    <loc>https://pilab.dev/pi-zero-wall-plug-web-server</loc>
+    <loc>http://localhost:8080/pi-zero-wall-plug-web-server</loc>
     <lastmod>2019-11-17</lastmod>
   </url>
   <url>
-    <loc>https://pilab.dev/quick-wordpress</loc>
+    <loc>http://localhost:8080/quick-wordpress</loc>
     <lastmod>2019-11-10</lastmod>
   </url>
   <url>
-    <loc>https://pilab.dev/bludit-pi</loc>
+    <loc>http://localhost:8080/bludit-pi</loc>
     <lastmod>2019-10-21</lastmod>
   </url>
   <url>
-    <loc>https://pilab.dev/bludit-vagrant</loc>
+    <loc>http://localhost:8080/bludit-vagrant</loc>
     <lastmod>2019-10-21</lastmod>
   </url>
   <url>
-    <loc>https://pilab.dev/dev-dashboard-build-tool</loc>
+    <loc>http://localhost:8080/dev-dashboard-build-tool</loc>
     <lastmod>2019-10-09</lastmod>
   </url>
   <url>
-    <loc>https://pilab.dev/raspberry-pi-portable-dev-server</loc>
+    <loc>http://localhost:8080/raspberry-pi-portable-dev-server</loc>
     <lastmod>2019-09-20</lastmod>
   </url>
   <url>
-    <loc>https://pilab.dev/raspberry-pi-random-goat-tv</loc>
+    <loc>http://localhost:8080/raspberry-pi-random-goat-tv</loc>
     <lastmod>2019-08-21</lastmod>
   </url>
   <url>
-    <loc>https://pilab.dev/pi-lab-twitter-bot</loc>
+    <loc>http://localhost:8080/pi-lab-twitter-bot</loc>
     <lastmod>2019-06-30</lastmod>
   </url>
   <url>
-    <loc>https://pilab.dev/pi-lab-seti-home-node</loc>
+    <loc>http://localhost:8080/pi-lab-seti-home-node</loc>
     <lastmod>2019-06-27</lastmod>
   </url>
   <url>
-    <loc>https://pilab.dev/pi-lab-sd-card-upgrade</loc>
+    <loc>http://localhost:8080/pi-lab-sd-card-upgrade</loc>
     <lastmod>2019-06-23</lastmod>
   </url>
   <url>
-    <loc>https://pilab.dev/bludit-api-php-example</loc>
+    <loc>http://localhost:8080/bludit-api-php-example</loc>
     <lastmod>2019-06-11</lastmod>
   </url>
   <url>
-    <loc>https://pilab.dev/plugins</loc>
+    <loc>http://localhost:8080/plugins</loc>
     <lastmod>2019-06-01</lastmod>
   </url>
   <url>
-    <loc>https://pilab.dev/pi-lab-setup</loc>
+    <loc>http://localhost:8080/pi-lab-setup</loc>
     <lastmod>2019-05-28</lastmod>
   </url>
   <url>
-    <loc>https://pilab.dev/first-cms-upgrade</loc>
+    <loc>http://localhost:8080/first-cms-upgrade</loc>
     <lastmod>2019-05-27</lastmod>
   </url>
   <url>
-    <loc>https://pilab.dev/randomgoat</loc>
+    <loc>http://localhost:8080/randomgoat</loc>
     <lastmod>2019-05-16</lastmod>
   </url>
   <url>
-    <loc>https://pilab.dev/bludit-mention</loc>
+    <loc>http://localhost:8080/bludit-mention</loc>
     <lastmod>2019-05-15</lastmod>
   </url>
   <url>
-    <loc>https://pilab.dev/bludit-flat-file-cms</loc>
+    <loc>http://localhost:8080/bludit-flat-file-cms</loc>
     <lastmod>2019-05-13</lastmod>
   </url>
   <url>
-    <loc>https://pilab.dev/stats</loc>
-    <lastmod>2019-05-12</lastmod>
-  </url>
-  <url>
-    <loc>https://pilab.dev/pi-hole-is-amazing</loc>
+    <loc>http://localhost:8080/pi-hole-is-amazing</loc>
     <lastmod>2019-05-11</lastmod>
   </url>
   <url>
-    <loc>https://pilab.dev/sysk-podcast</loc>
+    <loc>http://localhost:8080/sysk-podcast</loc>
     <lastmod>2019-05-10</lastmod>
   </url>
   <url>
-    <loc>https://pilab.dev/specs</loc>
+    <loc>http://localhost:8080/specs</loc>
     <lastmod>2019-05-09</lastmod>
   </url>
 </urlset>

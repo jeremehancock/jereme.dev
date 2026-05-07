@@ -1,7 +1,15 @@
+<?php
+// =============================================================
+// CONFIG: Hidden categories (used for archived banner + prev/next nav)
+// Keep this in sync with home.php
+// =============================================================
+$hiddenCategories = ['archived'];
+?>
 <div class="single">
 	<main class="site-content" role="main">
 		<article class="hentry body-padding">
 			<?php Theme::plugins('pageBegin'); ?>
+
 			<header class="entry-header page-header text-center">
 				<h1 class="entry-title title-font text-italic">
 					<?php
@@ -33,6 +41,15 @@
 <!--			--><?php //endif; ?>
 
 			<div class="entry-content">
+				<?php if (!$page->isStatic() && in_array($page->categoryKey(), $hiddenCategories, true)): ?>
+				<div class="archived-banner" role="note">
+					<svg class="archived-banner__icon" viewBox="0 0 16 16" aria-hidden="true" width="16" height="16">
+						<path fill-rule="evenodd" d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v1.5A1.75 1.75 0 0 1 14.25 5H1.75A1.75 1.75 0 0 1 0 3.25v-1.5zM1.75 1.5a.25.25 0 0 0-.25.25v1.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25v-1.5a.25.25 0 0 0-.25-.25H1.75zM1.5 6.75a.75.75 0 0 1 1.5 0v6.75c0 .138.112.25.25.25h9.5a.25.25 0 0 0 .25-.25V6.75a.75.75 0 0 1 1.5 0v6.75A1.75 1.75 0 0 1 12.75 15.5h-9.5A1.75 1.75 0 0 1 1.5 13.5V6.75zm4 .75a.75.75 0 0 0 0 1.5h5a.75.75 0 0 0 0-1.5h-5z"></path>
+					</svg>
+					<span>This post has been archived. The content may be out of date or no longer maintained.</span>
+				</div>
+				<?php endif; ?>
+
 				<div class="page-content">
 					<?php echo $page->content(); ?>
 				</div>
@@ -90,8 +107,34 @@
 				<?php endif; ?>
 			</footer>
 			<?php
-            $prevKey = $helper->previousKey();
-            $nextKey = $helper->nextKey();
+            // Build prev/next keys, skipping posts in hidden categories
+            if (!empty($hiddenCategories)) {
+                $allKeys = $pages->getList(1, -1, true);
+                $visibleKeys = array();
+                foreach ($allKeys as $k) {
+                    $p = buildPage($k);
+                    if ($p->isStatic()) continue;
+                    if (in_array($p->categoryKey(), $hiddenCategories, true)) continue;
+                    $visibleKeys[] = $k;
+                }
+
+                $currentIndex = array_search($page->key(), $visibleKeys, true);
+                $prevKey = false;
+                $nextKey = false;
+                if ($currentIndex !== false) {
+                    // getList returns newest-first: older = higher index, newer = lower index
+                    if (isset($visibleKeys[$currentIndex + 1])) {
+                        $prevKey = $visibleKeys[$currentIndex + 1];
+                    }
+                    if (isset($visibleKeys[$currentIndex - 1])) {
+                        $nextKey = $visibleKeys[$currentIndex - 1];
+                    }
+                }
+            } else {
+                $prevKey = $helper->previousKey();
+                $nextKey = $helper->nextKey();
+            }
+
             if( $prevKey || $nextKey):
             ?>
 			<nav class="navigation post-navigation" role="navigation">

@@ -1,6 +1,50 @@
+<?php
+// =============================================================
+// CONFIG: Categories to hide from the homepage
+// Use the category KEY (slug), not the display name.
+// Example: ['archived']  or  ['archived', 'drafts']
+// Leave empty to disable filtering: []
+// =============================================================
+$hiddenCategories = ['archived'	];
+
+// --- Filter logic (no need to edit below) ---
+if (!empty($hiddenCategories) && $WHERE_AM_I === 'home') {
+    $itemsPerPage = (int)$site->itemsPerPage();
+    $currentPage  = Paginator::currentPage();
+
+    // Get keys of ALL published pages
+    $allKeys = $pages->getList(1, -1, true);
+
+    // Filter out hidden categories
+    $filteredKeys = array();
+    foreach ($allKeys as $key) {
+        $p = buildPage($key);
+        if (!in_array($p->categoryKey(), $hiddenCategories, true)) {
+            $filteredKeys[] = $key;
+        }
+    }
+
+    // Compute pagination from filtered list
+    $totalItems    = count($filteredKeys);
+    $totalPages    = (int)max(1, ceil($totalItems / $itemsPerPage));
+    $offset        = ($currentPage - 1) * $itemsPerPage;
+    $paginatedKeys = array_slice($filteredKeys, $offset, $itemsPerPage);
+
+    // Replace $content with our filtered, paginated set
+    $content = array();
+    foreach ($paginatedKeys as $key) {
+        $content[] = buildPage($key);
+    }
+} else {
+    // No filtering — fall back to Bludit's defaults
+    $currentPage = Paginator::currentPage();
+    $totalPages  = Paginator::numberOfPages();
+}
+?>
 <?php Theme::plugins('pageBegin'); ?>
 <div class="content-area site-content main-padding">
 	<main class="site-main main-width blog-wrapper body-padding" role="main">
+		<?php if ($WHERE_AM_I === 'category'): ?>
 		<header class="page-header">
 			<!-- Site title -->
 			<?php if ($site->slogan()): ?>
@@ -14,6 +58,7 @@
 			</p>
 			<?php endif ?>
 		</header>
+		<?php endif ?>
 		<?php foreach ($content as $page): ?>
 		<article class="home-page hentry hentry-border">
 			<?php $coverImage = $helper->get_thumb();?>
@@ -67,14 +112,14 @@
 		</article>
 		<?php endforeach ?>
 
-		<?php if (Paginator::numberOfPages()>1): ?>
+		<?php if ($totalPages > 1): ?>
 
 		<nav class="navigation pagination" role="navigation" aria-label="Page navigation">
 			<h3 class="screen-reader-text">Posts navigation</h3>
 			<div class="nav-links">
 
-				<?php if (Paginator::showPrev()):?>
-				<a class="prev page-numbers" href="<?php echo Paginator::previousPageUrl() ?>" tabindex="-1">
+				<?php if ($currentPage > 1): ?>
+				<a class="prev page-numbers" href="<?php echo Paginator::numberUrl($currentPage - 1) ?>" tabindex="-1">
                     <span id="mobile-text"><?php echo $L->get('Previous'); ?></span>
                     <svg id="mobile-arrows" class="icon icon-arrow-circle-left" aria-hidden="true" role="img" viewBox="0 0 27 32">
                         <path d="M23 17v-2q0 0 0-1t-1 0h-9l3-3q0 0 0-1t0-1l-2-2q0 0-1 0t-1 0l-8 8q0 0 0 1t0 1l8 8q0 0 1 0t1 0l2-2q0 0 0-1t0-1l-3-3h9q0 0 1 0t0-1zM27 16q0 4-2 7t-5 5-7 2-7-2-5-5-2-7 2-7 5-5 7-2 7 2 5 5 2 7z"></path>
@@ -84,11 +129,11 @@
 
 				<?php
                   //max 9 pages with move
-                  $pmax = max(Paginator::currentPage() + 4, 9);
-                  $pmin = min(Paginator::currentPage() - 4, Paginator::numberOfPages()-8);
+                  $pmax = max($currentPage + 4, 9);
+                  $pmin = min($currentPage - 4, $totalPages - 8);
                 ?>
-				<?php for ($i = max(1, $pmin); $i <= min($pmax,Paginator::numberOfPages()); $i++): ?>
-				<?php if(Paginator::currentPage() == $i): ?>
+				<?php for ($i = max(1, $pmin); $i <= min($pmax, $totalPages); $i++): ?>
+				<?php if($currentPage == $i): ?>
 				<span class="page-numbers current">
 					<?php echo $i ?>
 				</span>
@@ -99,8 +144,8 @@
 				<?php endif; ?>
 				<?php endfor; ?>
 
-				<?php if (Paginator::showNext()):?>
-				<a class="next page-numbers" href="<?php echo Paginator::nextPageUrl() ?>">
+				<?php if ($currentPage < $totalPages): ?>
+				<a class="next page-numbers" href="<?php echo Paginator::numberUrl($currentPage + 1) ?>">
                     <span id="mobile-text"><?php echo $L->get('Next'); ?></span>
                     <svg id="mobile-arrows" class="icon icon-arrow-circle-right" aria-hidden="true" role="img" viewBox="0 0 27 32">
                         <path d="M23 16q0 0 0-1l-8-8q0 0-1 0t-1 0l-2 2q0 0 0 1t0 1l3 3h-9q0 0-1 0t0 1v2q0 0 0 1t1 0h9l-3 3q0 0 0 1t0 1l2 2q0 0 1 0t1 0l8-8q0 0 0-1zM27 16q0 4-2 7t-5 5-7 2-7-2-5-5-2-7 2-7 5-5 7-2 7 2 5 5 2 7z"></path>
@@ -114,4 +159,3 @@
 		<?php //Theme::plugins('pageEnd'); ?>
 	</main>
 </div>
-

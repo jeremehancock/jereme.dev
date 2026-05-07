@@ -1,15 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
-    <atom:link href="https://pilab.dev/rss.xml" rel="self" type="application/rss+xml"/>
-    <title>Pi Lab</title>
-    <link>https://pilab.dev</link>
-    <description>Raspberry Pi Cluster</description>
-    <lastBuildDate>Sun, 03 May 2026 22:47:10 -0500</lastBuildDate>
+    <atom:link href="http://localhost:8080/rss.xml" rel="self" type="application/rss+xml"/>
+    <title>jereme.dev</title>
+    <link>http://localhost:8080</link>
+    <description>My Homelab &amp; More ...</description>
+    <lastBuildDate>Thu, 07 May 2026 14:53:29 -0500</lastBuildDate>
+    <item>
+      <title>DumbProjects</title>
+      <link>http://localhost:8080/dumbprojects</link>
+      <image/>
+      <description>&lt;p&gt;DumbProjects&lt;/p&gt;</description>
+      <pubDate>Thu, 07 May 2026 14:42:48 -0500</pubDate>
+      <guid isPermaLink="false">1213030fd51f9706218002e25da4e455</guid>
+    </item>
+    <item>
+      <title>Resumé</title>
+      <link>http://localhost:8080/resume</link>
+      <image/>
+      <description>&lt;p&gt;Resumé&lt;/p&gt;</description>
+      <pubDate>Thu, 07 May 2026 14:37:17 -0500</pubDate>
+      <guid isPermaLink="false">5504cdae561f4c719b266de478a8abe5</guid>
+    </item>
+    <item>
+      <title>Homelab</title>
+      <link>http://localhost:8080/homelab-specs</link>
+      <image/>
+      <description>&lt;p&gt;Homelab Specs&lt;/p&gt;</description>
+      <pubDate>Thu, 07 May 2026 13:56:42 -0500</pubDate>
+      <guid isPermaLink="false">e92f2c4221a2d0c4efe0c53eb9171cf7</guid>
+    </item>
     <item>
       <title>Introducing Posteria</title>
-      <link>https://pilab.dev/introducing-posteria</link>
-      <image>https://pilab.dev/bl-content/uploads/pages/782e531ab637451cf79a40ca150604c5/posteria.png</image>
+      <link>http://localhost:8080/introducing-posteria</link>
+      <image>http://localhost:8080/bl-content/uploads/pages/782e531ab637451cf79a40ca150604c5/posteria.png</image>
       <description>&lt;p&gt;Imagine a world where your Plex media library looks as professional as it feels. Posteria is the solution Plex enthusiasts have been waiting for – a sleek, intuitive platform that transforms how you organize and showcase your movie, TV show, and collection artwork.&lt;/p&gt;
 &lt;h2&gt;Why Posteria Matters&lt;/h2&gt;
 &lt;p&gt;For anyone with a growing Plex media collection, poster management can quickly become a frustrating mess. Mismatched artwork, cluttered folders, and inconsistent designs can turn your digital library into a visual nightmare. Posteria changes all that.&lt;/p&gt;
@@ -76,8 +100,8 @@ Fully mobile-responsive and installable as a Progressive Web App (PWA), Posteria
     </item>
     <item>
       <title>Introducing: Libretto</title>
-      <link>https://pilab.dev/libretto-plex-library-metadata-exporter</link>
-      <image>https://pilab.dev/bl-content/uploads/pages/2dcc539255956b2c8ec293f1ea620010/libretto.png</image>
+      <link>http://localhost:8080/libretto-plex-library-metadata-exporter</link>
+      <image>http://localhost:8080/bl-content/uploads/pages/2dcc539255956b2c8ec293f1ea620010/libretto.png</image>
       <description>&lt;p&gt;Hello, fellow Plex enthusiasts! If you're anything like me, you've poured countless hours into organizing your Plex media libraries just the way you like them. Carefully filling in movie details, series summaries, episode titles - it's a true labor of love. &lt;span class="emoji"&gt;😊&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;But have you considered what would happen if you lost all that painstakingly curated metadata? Server crashes, database corruptions - these things happen, and they could wipe out all your hard work in a heartbeat! &lt;span class="emoji"&gt;😱&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;Fear not, for Libretto is here to save the day! &lt;span class="emoji"&gt;🦸‍♂️&lt;/span&gt;&lt;/p&gt;
@@ -121,93 +145,6 @@ Fully mobile-responsive and installable as a Progressive Web App (PWA), Posteria
 &lt;p&gt;Happy backing up, Plex friends!&lt;span class="emoji"&gt; 🤗📚🎬🎵&lt;/span&gt;&lt;/p&gt;</description>
       <pubDate>Thu, 06 Feb 2025 09:47:53 -0600</pubDate>
       <guid isPermaLink="false">2dcc539255956b2c8ec293f1ea620010</guid>
-    </item>
-    <item>
-      <title>AI Game Collection</title>
-      <link>https://pilab.dev/ai-game-collection</link>
-      <image>https://pilab.dev/bl-content/uploads/pages/b76e72cdd1ec17ffdf9eab71f7338e98/ai-game-collection.webp</image>
-      <description>&lt;h2&gt;&lt;span class="emoji"&gt;🤖&lt;/span&gt; Unleashing the Power of AI in Gaming: The AI Game Collection!&lt;/h2&gt;
-&lt;p&gt;Get ready for a wild ride into the world of AI-powered gaming! I've been on a mission to see if I could create entire JavaScript games using almost nothing but the magic of artificial intelligence. &lt;/p&gt;
-&lt;h3&gt;&lt;span class="emoji"&gt;🌟&lt;/span&gt; Introducing the AI Game Collection&lt;/h3&gt;
-&lt;p&gt;The &lt;strong&gt;&lt;a href="https://aigamecollection.com/"&gt;AI Game Collection&lt;/a&gt;&lt;/strong&gt; is my latest passion project, and I'm thrilled to share it with you all. It's an experiment that brings together the realms of gaming and machine learning in the most unexpected ways! &lt;/p&gt;
-&lt;p&gt;Picture this: classic games reimagined with a futuristic AI twist. I wanted to explore the untapped potential of combining gaming and AI, and let me tell you, it's been an absolute blast!&lt;/p&gt;
-&lt;h3&gt;&lt;span class="emoji"&gt;🎨&lt;/span&gt; Self-Contained HTML Files&lt;/h3&gt;
-&lt;p&gt;The best part? Each game is a self-contained HTML file, making it a breeze for anyone to jump in and start playing around with the code. Whether you're a seasoned programmer or just taking your first steps into the coding world, you'll have a ton of fun exploring these AI-infused creations. &lt;/p&gt;
-&lt;h3&gt;&lt;span class="emoji"&gt;🚀&lt;/span&gt; Join the Adventure on GitHub&lt;/h3&gt;
-&lt;p&gt;I've made all the code and resources available on &lt;a href="https://github.com/jeremehancock/AI-Game-Collection"&gt;GitHub&lt;/a&gt;, so you can join the adventure and add your own unique spin to the games. Tweak the AI, come up with new features, or even build your own AI-powered gaming masterpieces from scratch. The sky's the limit! &lt;/p&gt;
-&lt;h3&gt;&lt;span class="emoji"&gt;🤯&lt;/span&gt; Igniting the Conversation Around AI in Gaming&lt;/h3&gt;
-&lt;p&gt;But here's the thing: this project isn't just about making cool games. It's about igniting a conversation around the awe-inspiring potential of AI in the gaming industry. Imagine games that can adapt to your playstyle, learn from your decisions, and generate brand new content on the fly! &lt;/p&gt;
-&lt;h3&gt;&lt;span class="emoji"&gt;🎢&lt;/span&gt; Embark on the Mind-Bending Journey&lt;/h3&gt;
-&lt;p&gt;So, what are you waiting for? Head over to &lt;strong&gt;&lt;a href="https://aigamecollection.com/"&gt;AI Game Collection&lt;/a&gt;&lt;/strong&gt;, pick your favorite game, and dive into a world where artificial intelligence meets pure gaming fun! Get ready to have your gaming skills put to the test and be amazed by the power of AI! &lt;/p&gt;
-&lt;p&gt;The future is now, and it's powered by AI! &lt;/p&gt;
-&lt;h3&gt;&lt;span class="emoji"&gt;📸&lt;/span&gt; Screenshots&lt;/h3&gt;
-&lt;div align="center"&gt;
-    &lt;img src="https://raw.githubusercontent.com/jeremehancock/AI-Game-Collection/refs/heads/main/images/screenshots/home.png" width="300" alt="Game Menu"/&gt;
-    &lt;img src="https://raw.githubusercontent.com/jeremehancock/AI-Game-Collection/refs/heads/main/images/screenshots/nerdle-game.png" width="300" alt="Nerdle"/&gt;
-    &lt;img src="https://raw.githubusercontent.com/jeremehancock/AI-Game-Collection/refs/heads/main/images/screenshots/pipes.png" width="300" alt="Pipes Puzzle"/&gt;
-    &lt;img src="https://raw.githubusercontent.com/jeremehancock/AI-Game-Collection/refs/heads/main/images/screenshots/memory.png" width="300" alt="Memory Game"/&gt;
-    &lt;img src="https://raw.githubusercontent.com/jeremehancock/AI-Game-Collection/refs/heads/main/images/screenshots/minesweeper.png" width="300" alt="Minesweeper"/&gt;
-    &lt;img src="https://raw.githubusercontent.com/jeremehancock/AI-Game-Collection/refs/heads/main/images/screenshots/snake-game.png" width="300" alt="Snake Game"/&gt;
-    &lt;img src="https://raw.githubusercontent.com/jeremehancock/AI-Game-Collection/refs/heads/main/images/screenshots/soccer-juggle.png" width="300" alt="Soccer Juggle Game"/&gt;
-    &lt;img src="https://raw.githubusercontent.com/jeremehancock/AI-Game-Collection/refs/heads/main/images/screenshots/water-ring-toss-game.png" width="300" alt="Water Ring Toss"/&gt;
-    &lt;img src="https://raw.githubusercontent.com/jeremehancock/AI-Game-Collection/refs/heads/main/images/screenshots/waveform-game.png" width="300" alt="Waveform"/&gt;
-     &lt;img src="https://raw.githubusercontent.com/jeremehancock/AI-Game-Collection/refs/heads/main/images/screenshots/bubble-pop-game.png" width="300" alt="Bubble Pop"/&gt;
-    &lt;img src="https://raw.githubusercontent.com/jeremehancock/AI-Game-Collection/refs/heads/main/images/screenshots/breakout.png" width="300" alt="Breakout"/&gt;
-    &lt;img src="https://raw.githubusercontent.com/jeremehancock/AI-Game-Collection/refs/heads/main/images/screenshots/space-shooter-game.png" width="300" alt="Space Shooter"/&gt;
-&lt;/div&gt;
-&lt;h3&gt;&lt;span class="emoji"&gt;📝&lt;/span&gt; A Note About This Post&lt;/h3&gt;
-&lt;p&gt;This blog post including the post thumbnail was crafted with the help of artificial intelligence. That's right, even the words you're reading right now were generated by an AI! It's a testament to the incredible potential of AI technology and how it can be used to create engaging, informative, and entertaining content. So, not only are the games in the AI Game Collection powered by AI, but the very post that brought you here is too! &lt;/p&gt;</description>
-      <pubDate>Tue, 10 Dec 2024 10:22:22 -0600</pubDate>
-      <guid isPermaLink="false">b76e72cdd1ec17ffdf9eab71f7338e98</guid>
-    </item>
-    <item>
-      <title>Perfect Travel TV Setup</title>
-      <link>https://pilab.dev/the-perfect-travel-tv-setup</link>
-      <image>https://pilab.dev/bl-content/uploads/pages/2e2762b3524a642f87e1dda68eabfc0d/onn-4k-2.png</image>
-      <description>&lt;p&gt;One of the best benefits of running your own Plex server is being able to watch your movies and shows wherever you are. Many folks will just log in to Plex on the hotel TV (assuming it has the Plex app) while traveling. I don't like doing this. For one thing smart TVs are generally underpowered and that can cause issues streaming. The other issue is I don't like to log in to a TV that isn't mine.&lt;/p&gt;
-&lt;p&gt;I have seen a ton of posts on Reddit over the years with different solutions for this. Many of them seem very complicated. I like to keep things simple.&lt;/p&gt;
-&lt;h2&gt;Here is my current travel setup&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://www.amazon.com/Android-Streaming-Device-Remote-Control/dp/B0BRBLG3W6/ref=sr_1_1"&gt;ONN 4K Android TV Box&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href="https://play.google.com/store/apps/details?id=com.plexapp.android"&gt;Plex&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href="https://play.google.com/store/apps/details?id=org.xbmc.kodi"&gt;Kodi&lt;/a&gt;&lt;/strong&gt; - In case my location doesn't have decent internet connection.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href="https://play.google.com/store/apps/details?id=org.jellyfin.mobile"&gt;Jellyfin&lt;/a&gt;&lt;/strong&gt; - In case Plex has any issues.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href="https://play.google.com/store/apps/details?id=com.google.android.apps.youtube.unplugged"&gt;YouTube TV&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href="https://play.google.com/store/apps/details?id=com.tailscale.ipn"&gt;Tailscale&lt;/a&gt;&lt;/strong&gt; - I have this setup to auto connect and use one of my home servers (could be the Plex server) as an exit node. I have Plex, Kodi, and JellyFin added to the exceptions list so that they don't route through Tailscale. This is only really used for YouTube TV.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.amazon.com/WD-1TB-Elements-Compatible-WDBAYN0010BBK-WESN/dp/B097TTZD48"&gt;WD 1TB External SSD&lt;/a&gt; (Offline Media)&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.amazon.com/dp/B083KJ1B5H"&gt;OTG Cable&lt;/a&gt; - For connecting the SSD&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;In this setup I have Plex (Jellyfin as backup) for when I have a good internet connection and can stream from my server. I have Kodi setup to point to the local SSD that has been pre-loaded with a selection of movies and shows in case the internet is not good enough for connecting to my Plex server. I have Tailscale setup to use one of my home servers as an exit node so that I can watch YouTube TV as if I were at home.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Note: I chose the ONN 4K 2023 box because it is cheap and it supports connecting an SSD via OTG cable. I had issues with other cheap boxes not recognizing the connection.&lt;/em&gt;&lt;/p&gt;
-&lt;div class="centered"&gt;
-    &lt;img src="/bl-content/uploads/pages/2e2762b3524a642f87e1dda68eabfc0d/travel-tv-box.png" class="image-border" /&gt;&lt;br&gt;&lt;br&gt;
-&lt;/div&gt;</description>
-      <pubDate>Thu, 26 Sep 2024 12:07:07 -0500</pubDate>
-      <guid isPermaLink="false">2e2762b3524a642f87e1dda68eabfc0d</guid>
-    </item>
-    <item>
-      <title>I won a server!</title>
-      <link>https://pilab.dev/i-won-a-server</link>
-      <image>https://pilab.dev/bl-content/uploads/pages/89e9143555d071d55ac2daaebd4f2a00/minisforum-ms-a1-thumb2.png</image>
-      <description>&lt;p&gt;I thought my recent good luck with my &lt;a href="/plex-server-upgrade"&gt;Plex server upgrade&lt;/a&gt; was great, then I won a &lt;a href="https://store.minisforum.com/products/minisforum-ms-a1?variant=45707673338101"&gt;Minisforum MS-A1&lt;/a&gt;!&lt;/p&gt;
-&lt;p&gt;I was listening to some YouTube videos while working the other day. I came across a channel &lt;a href="https://www.youtube.com/@VirtualizationHowto"&gt;@VirtualizationHowto&lt;/a&gt; that I hadn't seen before. The title "Perfect Home Lab 2024 and Minisforum Giveaway!" caught my eye. So I decided to watch. The contest rules were simple so I decided to put my name in the hat. I typed "Fingers crossed :)" into the comments and went on with my day.&lt;/p&gt;
-&lt;p&gt;I had completely forgotten about the contest until a week or so later when I saw a notification with a reply to my comment. It took me a few minutes to figure out what it even was. Then once I remembered I thought for sure I was being scammed. &lt;/p&gt;
-&lt;p&gt;So I reached out as requested and I was pleasantly surprised to learn that I had indeed won!&lt;/p&gt;
-&lt;p&gt;Brandon from &lt;a href="https://www.youtube.com/@VirtualizationHowto"&gt;@VirtualizationHowto&lt;/a&gt; was great and got the server shipped super quick. It arrived in great condition and has been a marvelous addition to my setup.&lt;/p&gt;
-&lt;p&gt;I have also really enjoyed the channel. I am sure I will be watching many more videos to get more tips on using my new server!&lt;/p&gt;
-&lt;div class="centered"&gt;
-    &lt;img src="/bl-content/uploads/pages/89e9143555d071d55ac2daaebd4f2a00/minisforum-ms-a1.png" class="image-border" /&gt;&lt;br&gt;&lt;br&gt;
-&lt;/div&gt;
-&lt;h4&gt;So what am I using it for?&lt;/h4&gt;
-&lt;p&gt;I have set it up as a &lt;a href="https://proxmox.com/en/"&gt;Proxmox&lt;/a&gt; server. I have the OS installed on a 512GB NVMe SSD and have 2 1TB NVMe SSDs setup as a mirror for VM storage. I have migrated a setup that was previously on a Dell OptiPlex to an Ubuntu VM running on the new server. It is working great and I have a ton of overhead to add more VMs and services. Full specs are &lt;a href="/specs#proxmox"&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;h4&gt;Here is the video announcing the winner.&lt;/h4&gt;
-&lt;div class="centered"&gt;
-&lt;iframe class="iframe-border" width="100%" height="500" src="https://www.youtube-nocookie.com/embed/szL4OrvSbG8?si=Qlbq4NTARhyiizwN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen&gt;&lt;/iframe&gt;
-&lt;/div&gt;</description>
-      <pubDate>Thu, 26 Sep 2024 12:06:45 -0500</pubDate>
-      <guid isPermaLink="false">89e9143555d071d55ac2daaebd4f2a00</guid>
     </item>
   </channel>
 </rss>

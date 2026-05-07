@@ -1,3 +1,36 @@
+.archived-banner {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.625rem;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1.5rem;
+    background-color: #fff8c5;
+    border: 1px solid rgba(212, 167, 44, 0.4);
+    border-radius: 6px;
+    color: #59470d;
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    justify-content: center
+}
+
+.archived-banner__icon {
+    flex-shrink: 0;
+    margin-top: 2px;
+    fill: currentColor;
+}
+
+.navbar-brand .site-logo {
+    max-width: 230px;
+}
+
+.title-font, .page-title, .after-content-widget-area .widget:first-of-type .widget-title, .front-page-widget-area .widget:first-of-type .widget-title, blockquote {
+    font-family: "Arial", sans-serif;
+}
+
+.widget ul, .widget ol, .blekathlon_widget_pricing ul, .blekathlon_widget_pricing ol {
+    font-family: "Arial", sans-serif;
+}
+
 img:not([src]) {
   visibility: hidden;
 }

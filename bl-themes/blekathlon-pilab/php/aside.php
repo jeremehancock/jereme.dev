@@ -15,7 +15,7 @@
                     <ul class="menu">
                         <?php
 
-                        $listOfKeys = $pages->getList(1, 5);
+                        $listOfKeys = $pages->getList(1, 3);
 
                         if ($listOfKeys) :
                             foreach ($listOfKeys as $key) :
@@ -40,7 +40,7 @@
 						 if(Text::stringContains($staticPage->key(),'404')) continue;
 						?>
                         <li class="menu-item">
-                            <a href="<?php echo $staticPage->permalink(FALSE); ?>" <?php if($staticPage->title() === 'Status') echo 'target=_blank'?>>
+                            <a href="<?php echo $staticPage->permalink(FALSE); ?>" <?php if($staticPage->title() === 'Specs') echo 'target=_blank'?>>
                                 <?php echo $staticPage->title(); ?>
                             </a>
                         </li>
@@ -64,9 +64,9 @@
 						</li>
 						<?php endforeach; ?>
                     </ul>
-                    <img class="lozad" data-src="<?php echo HTML_PATH_THEME; ?>img/poweredby.png" />
+                    <img class="lozad" data-src="<?php echo HTML_PATH_THEME; ?>img/bludit.png" width="60%" />
                     <span class="clear">
-                        Powered By: <a target="_blank" class="text-white" href="https://www.raspberrypi.org">Raspberry Pi</a> & <a target="_blank" class="text-white" href="https://www.bludit.com">Bludit PRO</a>
+                        Powered By: <a target="_blank" class="text-white" href="https://www.bludit.com">Bludit PRO</a>
                     </span>
                 </div>
             </nav>

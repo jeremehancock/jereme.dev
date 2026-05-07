@@ -1,2 +1,0 @@
-<?php defined('BLUDIT') or die('Bludit CMS.'); ?>
-{"label":"Links","jsondb":"{&quot;Resum\\u00e9&quot;:&quot;https:\\\/\\\/jeremehancock.com&quot;,&quot;Ooglester&quot;:&quot;https:\\\/\\\/ooglester.com\\\/&quot;,&quot;Dumb Projects&quot;:&quot;https:\\\/\\\/dumbprojects.com&quot;}","position":"3"}
