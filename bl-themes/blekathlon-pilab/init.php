@@ -15,6 +15,12 @@ $pubList = $pages->getDB(false);
 foreach ($pubList as $key=>$fields) {
 	if ($fields['type']!='published' && $fields['type']!='sticky' && $fields['type']!='static') {
 		unset($pubList[$key]);
+		continue;
+	}
+	// Exclude pages with no category (uncategorized) or in the "Archived" category
+	$cat = isset($fields['category']) ? $fields['category'] : '';
+	if ($cat === '' || $cat === 'archived') {
+		unset($pubList[$key]);
 	}
 }
 $pubList = array_keys($pubList);
