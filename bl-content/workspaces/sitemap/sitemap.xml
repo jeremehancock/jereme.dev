@@ -4,6 +4,10 @@
     <loc>http://localhost:8080</loc>
   </url>
   <url>
+    <loc>http://localhost:8080/checkout-clix</loc>
+    <lastmod>2026-05-08</lastmod>
+  </url>
+  <url>
     <loc>http://localhost:8080/dumbprojects</loc>
     <lastmod>2026-05-07</lastmod>
   </url>
