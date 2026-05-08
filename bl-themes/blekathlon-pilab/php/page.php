@@ -51,7 +51,7 @@ $hiddenCategories = ['archived'];
 				<?php endif; ?>
 
 				<div class="page-content">
-					<?php echo $page->content(); ?>
+					<?php echo $helper->withImageDimensions($page->content()); ?>
 				</div>
 				<?php if(!$page->isStatic()):?>
 				<span class="posted-on">
