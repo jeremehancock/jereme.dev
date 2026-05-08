@@ -1,5 +1,5 @@
 <div class="centered">
-    <img src="/bl-content/uploads/pages/e678e6a723a26a5ecb7a5f79030f0ab7/homelab-large-png.png" class="image-border" /><br><br>
+    <img src="/bl-content/uploads/pages/e678e6a723a26a5ecb7a5f79030f0ab7/homelab-large-png.png" /><br><br>
 </div>
 
 If you've run a homelab for any length of time, you've probably had the same thought I have: "I should really write this down." You spin up a Proxmox host, throw a few LXCs on it, add a NAS, layer in some VMs, expose a handful of services, and a year later you can't remember which container is running what or which port maps to which app. The fix is documentation. The reason no one does it is that documentation tools tend to be heavier than the thing being documented.
