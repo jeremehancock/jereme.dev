@@ -50,3 +50,4 @@ It's the kind of tool that turns "let me check if I have it" into something you 
 ## Links
 
 - Project on GitHub: [jeremehancock/Glimpse](https://github.com/jeremehancock/Glimpse)
+- Checkout out my Glimpse here:  [My Glimpse](https://glimpse.vitaminsocks.com/)
