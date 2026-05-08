@@ -1,6 +1,6 @@
 # CLIX: A Plex Media Player That Lives in Your Terminal
 
-![Image description](http://localhost:8080/bl-content/uploads/pages/75ff222ff48e1b3cb6982211e6d72987/CLIX-large-png.png)
+![Image description](bl-content/uploads/pages/75ff222ff48e1b3cb6982211e6d72987/CLIX-large-png.png)
 
 If you run a Plex server, you already know the routine. You sit down, open the app, scroll through your library, pick something, hit play. It works, and it works well. But there's a particular kind of moment, usually late at night, often over an SSH session into a home server, when you don't want to fire up a browser or wait for a desktop client to launch. You just want to play something. That's the gap [CLIX](https://github.com/jeremehancock/CLIX) was built to fill.
 
