@@ -23,8 +23,8 @@
     max-width: 230px;
 }
 
-a:active, .main-navigation .current-menu-item>a, .main-navigation .current-menu-ancestor>a {
-    color: #fff !important;
+.main-navigation a:focus, .main-navigation a:active {
+    color: #8e8e8e !important;
 }
 
 .title-font, .page-title, .after-content-widget-area .widget:first-of-type .widget-title, .front-page-widget-area .widget:first-of-type .widget-title, blockquote {
