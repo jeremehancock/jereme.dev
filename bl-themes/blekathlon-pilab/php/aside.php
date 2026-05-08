@@ -64,7 +64,7 @@
 						</li>
 						<?php endforeach; ?>
                     </ul>
-                    <img class="lozad" data-src="<?php echo HTML_PATH_THEME; ?>img/bludit.png" width="60%" />
+                    <img loading="lazy" decoding="async" src="<?php echo HTML_PATH_THEME; ?>img/bludit.png" width="60%" alt="Bludit" />
                     <span class="clear">
                         Powered By: <a target="_blank" class="text-white" href="https://www.bludit.com">Bludit PRO</a>
                     </span>
