@@ -55,11 +55,18 @@
             });
 
             function markLoaded(el) {
-                el.classList.add('is-loaded');
-                var wrap = el.closest && el.closest('.lozad-wrap');
-                if (wrap) wrap.classList.add('is-loaded');
-                var relIcon = el.closest && el.closest('.rel-item__icon');
-                if (relIcon) relIcon.classList.add('is-loaded');
+                // Defer one frame so the unloaded/placeholder state has a
+                // chance to paint before we transition to loaded — otherwise
+                // cached images would skip the fade entirely.
+                requestAnimationFrame(function () {
+                    requestAnimationFrame(function () {
+                        el.classList.add('is-loaded');
+                        var wrap = el.closest && el.closest('.lozad-wrap');
+                        if (wrap) wrap.classList.add('is-loaded');
+                        var relIcon = el.closest && el.closest('.rel-item__icon');
+                        if (relIcon) relIcon.classList.add('is-loaded');
+                    });
+                });
             }
 
             var observer = lozad('.lozad', {
