@@ -41,6 +41,9 @@
                     if (!src) return;
                     // Skip data URIs (already inline, no network load)
                     if (src.indexOf('data:') === 0) return;
+                    // Skip images the browser has already loaded — stripping
+                    // their src to re-fetch via lozad causes a visible flicker.
+                    if (img.complete && img.naturalWidth > 0) return;
                     img.setAttribute('data-src', src);
                     img.removeAttribute('src');
                     img.classList.add('lozad');
