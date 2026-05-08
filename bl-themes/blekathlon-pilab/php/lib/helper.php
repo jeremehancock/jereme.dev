@@ -250,6 +250,161 @@ class Helper
     }
 
     /**
+     * Walk an HTML fragment and inject width/height attributes into every
+     * <img> tag that doesn't already have them, so the browser can reserve
+     * the correct space and lazy-loading doesn't cause layout shift.
+     * Dimensions are looked up via getimagesize() (local files preferred,
+     * remote URLs fall back to an HTTP fetch) and cached on disk so the
+     * lookup is a one-time cost per image URL.
+     */
+    public function withImageDimensions($html)
+    {
+        if (empty($html) || stripos($html, '<img') === false) return $html;
+        $self = $this;
+        return preg_replace_callback(
+            '/<img\b[^>]*>/i',
+            function ($m) use ($self) {
+                $tag = $m[0];
+                $existingW = preg_match('/\swidth\s*=\s*"(\d+)"|\swidth\s*=\s*\'(\d+)\'/i', $tag, $wm)
+                    ? (int)(!empty($wm[1]) ? $wm[1] : $wm[2]) : null;
+                $existingH = preg_match('/\sheight\s*=\s*"(\d+)"|\sheight\s*=\s*\'(\d+)\'/i', $tag, $hm)
+                    ? (int)(!empty($hm[1]) ? $hm[1] : $hm[2]) : null;
+                $hasAnyW = (bool)preg_match('/\swidth\s*=/i', $tag);
+                $hasAnyH = (bool)preg_match('/\sheight\s*=/i', $tag);
+                if ($hasAnyW && $hasAnyH) return $tag;
+                // Pull src from either src or data-src
+                $src = null;
+                if (preg_match('/\ssrc\s*=\s*"([^"]+)"|\ssrc\s*=\s*\'([^\']+)\'/i', $tag, $sm)) {
+                    $src = !empty($sm[1]) ? $sm[1] : $sm[2];
+                } elseif (preg_match('/\sdata-src\s*=\s*"([^"]+)"|\sdata-src\s*=\s*\'([^\']+)\'/i', $tag, $sm)) {
+                    $src = !empty($sm[1]) ? $sm[1] : $sm[2];
+                }
+                if (empty($src)) return $tag;
+                if (strpos($src, 'data:') === 0) return $tag;
+                $size = $self->getCachedImageSize($src);
+                if (empty($size)) return $tag;
+                list($natW, $natH) = $size;
+                if ($natW <= 0 || $natH <= 0) return $tag;
+                // Decide which dimensions to write so the browser ends up
+                // with a correct aspect ratio. If one side is already
+                // pinned by the author, scale the other to match the
+                // natural ratio rather than emitting raw natural pixels.
+                $inject = '';
+                if (!$hasAnyW && !$hasAnyH) {
+                    $inject .= ' width="' . $natW . '" height="' . $natH . '"';
+                } elseif (!$hasAnyH && $existingW !== null) {
+                    $h = (int)round($natH * ($existingW / $natW));
+                    if ($h > 0) $inject .= ' height="' . $h . '"';
+                } elseif (!$hasAnyW && $existingH !== null) {
+                    $w = (int)round($natW * ($existingH / $natH));
+                    if ($w > 0) $inject .= ' width="' . $w . '"';
+                } else {
+                    // One side is set in non-pixel units (e.g. "100%") —
+                    // can't compute the other safely without layout, skip.
+                    return $tag;
+                }
+                if ($inject === '') return $tag;
+                // Insert the new attrs just before the closing > (or />).
+                if (substr($tag, -2) === '/>') {
+                    return substr($tag, 0, -2) . $inject . ' />';
+                }
+                return substr($tag, 0, -1) . $inject . '>';
+            },
+            $html
+        );
+    }
+
+    public function getCachedImageSize($src)
+    {
+        static $cache = null;
+        static $dirty = false;
+        $cacheFile = PATH_TMP . 'image-dimensions.json';
+        if ($cache === null) {
+            $cache = array();
+            if (is_file($cacheFile)) {
+                $raw = @file_get_contents($cacheFile);
+                $decoded = @json_decode($raw, true);
+                if (is_array($decoded)) $cache = $decoded;
+            }
+            register_shutdown_function(function () use (&$cache, &$dirty, $cacheFile) {
+                if (!$dirty) return;
+                if (!is_dir(PATH_TMP)) @mkdir(PATH_TMP, 0755, true);
+                // Re-merge with whatever's on disk to avoid clobbering
+                // entries written by a concurrent request.
+                $existing = array();
+                if (is_file($cacheFile)) {
+                    $raw = @file_get_contents($cacheFile);
+                    $decoded = @json_decode($raw, true);
+                    if (is_array($decoded)) $existing = $decoded;
+                }
+                @file_put_contents(
+                    $cacheFile,
+                    json_encode(array_merge($existing, $cache)),
+                    LOCK_EX
+                );
+            });
+        }
+        if (array_key_exists($src, $cache)) {
+            $entry = $cache[$src];
+            if (is_array($entry) && isset($entry[0], $entry[1])) return $entry;
+            // Negative cache entry — stop retrying broken URLs forever.
+            // Delete bl-content/tmp/image-dimensions.json to force a recheck.
+            if ($entry === false) return null;
+        }
+        $size = $this->resolveImageSize($src);
+        $cache[$src] = $size ? $size : false;
+        $dirty = true;
+        return $size;
+    }
+
+    private function resolveImageSize($src)
+    {
+        // Strip query string and fragment for local file resolution.
+        $clean = preg_replace('/[\?#].*$/', '', $src);
+        $local = $this->urlToLocalPath($clean);
+        if ($local !== null && is_file($local)) {
+            $info = @getimagesize($local);
+            if (is_array($info) && !empty($info[0]) && !empty($info[1])) {
+                return array((int)$info[0], (int)$info[1]);
+            }
+        }
+        if (preg_match('#^https?://#i', $src) && ini_get('allow_url_fopen')) {
+            // Cap remote lookups so a slow/unreachable host can't stall
+            // the page render (PHP's default socket timeout is 60s).
+            $oldTimeout = ini_get('default_socket_timeout');
+            ini_set('default_socket_timeout', 3);
+            $info = @getimagesize($src);
+            ini_set('default_socket_timeout', $oldTimeout);
+            if (is_array($info) && !empty($info[0]) && !empty($info[1])) {
+                return array((int)$info[0], (int)$info[1]);
+            }
+        }
+        return null;
+    }
+
+    private function urlToLocalPath($src)
+    {
+        if ($src === '' || $src === null) return null;
+        // Drop our own site URL prefix so we treat it as a site-root path.
+        $domain = defined('DOMAIN') ? rtrim(DOMAIN, '/') : '';
+        if ($domain && strpos($src, $domain) === 0) {
+            $src = substr($src, strlen($domain));
+        } elseif (strpos($src, '//') === 0) {
+            // Protocol-relative — only treat as local if the host matches.
+            $parts = @parse_url('http:' . $src);
+            $host  = isset($parts['host']) ? $parts['host'] : '';
+            if ($domain && $host && strpos($domain, $host) !== false) {
+                $src = isset($parts['path']) ? $parts['path'] : '';
+            } else {
+                return null;
+            }
+        }
+        if (preg_match('#^https?://#i', $src)) return null;
+        if ($src === '' || $src[0] !== '/') return null;
+        return PATH_ROOT . ltrim($src, '/');
+    }
+
+	/**
 	 * Summary of getRelated
 	 * @param mixed $max
 	 * @param mixed $similar

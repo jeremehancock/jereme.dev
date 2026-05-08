@@ -35,6 +35,148 @@ img:not([src]) {
   visibility: hidden;
 }
 
+/* ============================================
+   Lazy-load spinner + fade-in for images
+   ============================================ */
+@keyframes lozad-spin {
+    to { transform: rotate(360deg); }
+}
+
+.lozad-wrap {
+    position: relative;
+    display: inline-block;
+    line-height: 0;
+    min-width: 40px;
+    min-height: 40px;
+    max-width: 100%;
+}
+
+.lozad-wrap::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 28px;
+    height: 28px;
+    margin: -14px 0 0 -14px;
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    border-top-color: #888;
+    border-radius: 50%;
+    animation: lozad-spin 0.8s linear infinite;
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+}
+
+.lozad-wrap.is-loaded::after {
+    opacity: 0;
+    animation: none;
+}
+
+.lozad-wrap > img {
+    position: relative;
+    z-index: 1;
+    max-width: 100%;
+}
+
+img.lozad {
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+img.lozad.is-loaded {
+    opacity: 1;
+}
+
+/* Background-image lozad containers (e.g., home/category card covers) */
+.lozad:not(img)[data-background-image] {
+    position: relative;
+}
+
+/* Placeholder overlay: covers the card while loading, fades out when ready.
+   Also gives cached images a smooth fade-in instead of an instant pop. */
+.lozad:not(img)[data-background-image]::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #d4d4d4;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.lozad:not(img)[data-background-image].is-loaded::before {
+    opacity: 0;
+}
+
+/* Spinner sits on top of the placeholder overlay until is-loaded */
+.lozad:not(img)[data-background-image]::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 36px;
+    height: 36px;
+    margin: -18px 0 0 -18px;
+    border: 3px solid rgba(0, 0, 0, 0.15);
+    border-top-color: #666;
+    border-radius: 50%;
+    animation: lozad-spin 0.8s linear infinite;
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+    z-index: 3;
+}
+
+.lozad:not(img)[data-background-image].is-loaded::after {
+    opacity: 0;
+    animation: none;
+}
+
+.darkmode--activated .lozad-wrap::after,
+.darkmode--activated .lozad:not(img)[data-background-image]::after {
+    border-color: rgba(255, 255, 255, 0.15);
+    border-top-color: #ccc;
+}
+
+.darkmode--activated .lozad:not(img)[data-background-image]::before {
+    background-color: #2a2a2a;
+}
+
+/* Spinner for the related-post thumbnails (img.lozad inside .rel-item__icon) */
+.rel-item__icon::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 24px;
+    height: 24px;
+    margin: -12px 0 0 -12px;
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    border-top-color: #888;
+    border-radius: 50%;
+    animation: lozad-spin 0.8s linear infinite;
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+}
+
+.rel-item__icon.is-loaded::before {
+    opacity: 0;
+    animation: none;
+}
+
+.darkmode--activated .rel-item__icon::before {
+    border-color: rgba(255, 255, 255, 0.15);
+    border-top-color: #ccc;
+}
+
 .darkmode--activated .dark-enabled {
     filter: invert(100%);
 }
