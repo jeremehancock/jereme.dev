@@ -2,10 +2,6 @@ I have upgraded the BOINC Node to a [Raspberry Pi 4 Model B (2GB)](https://deviw
  
 I have kept [SETI@home](https://setiathome.berkeley.edu/) setup just in case it starts sending out jobs again. However, the primary purpose of the BOINC node for now is to run [Rosetta@home](https://boinc.bakerlab.org/) to help with COVID-19 research.
 
-##### Checkout Pi Lab's BOINC Node progress. 
-
-<iframe width="100%" height="360" data-src="boincpi" frameborder="0" class="iframe-no-border-no-padding-no-isolate lozad" scrolling="no"></iframe>
-
 -----
 
 Here are the basic steps that I used to setup [Rosetta@home](https://boinc.bakerlab.org/) on the BOINC node.

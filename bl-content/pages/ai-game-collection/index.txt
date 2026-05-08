@@ -28,18 +28,12 @@ The future is now, and it's powered by AI!
 
 ### <span class="emoji">📸</span> Screenshots
 <div align="center">
-    <img src="https://raw.githubusercontent.com/jeremehancock/AI-Game-Collection/refs/heads/main/images/screenshots/home.png" width="300" alt="Game Menu"/>
-    <img src="https://raw.githubusercontent.com/jeremehancock/AI-Game-Collection/refs/heads/main/images/screenshots/nerdle-game.png" width="300" alt="Nerdle"/>
+    <img src="https://raw.githubusercontent.com/jeremehancock/AI-Game-Collection/refs/heads/main/images/screenshots/home-updated-3.png" width="300" alt="Game Menu"/>
     <img src="https://raw.githubusercontent.com/jeremehancock/AI-Game-Collection/refs/heads/main/images/screenshots/pipes.png" width="300" alt="Pipes Puzzle"/>
-    <img src="https://raw.githubusercontent.com/jeremehancock/AI-Game-Collection/refs/heads/main/images/screenshots/memory.png" width="300" alt="Memory Game"/>
     <img src="https://raw.githubusercontent.com/jeremehancock/AI-Game-Collection/refs/heads/main/images/screenshots/minesweeper.png" width="300" alt="Minesweeper"/>
-    <img src="https://raw.githubusercontent.com/jeremehancock/AI-Game-Collection/refs/heads/main/images/screenshots/snake-game.png" width="300" alt="Snake Game"/>
     <img src="https://raw.githubusercontent.com/jeremehancock/AI-Game-Collection/refs/heads/main/images/screenshots/soccer-juggle.png" width="300" alt="Soccer Juggle Game"/>
-    <img src="https://raw.githubusercontent.com/jeremehancock/AI-Game-Collection/refs/heads/main/images/screenshots/water-ring-toss-game.png" width="300" alt="Water Ring Toss"/>
     <img src="https://raw.githubusercontent.com/jeremehancock/AI-Game-Collection/refs/heads/main/images/screenshots/waveform-game.png" width="300" alt="Waveform"/>
-     <img src="https://raw.githubusercontent.com/jeremehancock/AI-Game-Collection/refs/heads/main/images/screenshots/bubble-pop-game.png" width="300" alt="Bubble Pop"/>
     <img src="https://raw.githubusercontent.com/jeremehancock/AI-Game-Collection/refs/heads/main/images/screenshots/breakout.png" width="300" alt="Breakout"/>
-    <img src="https://raw.githubusercontent.com/jeremehancock/AI-Game-Collection/refs/heads/main/images/screenshots/space-shooter-game.png" width="300" alt="Space Shooter"/>
 </div>
 
 ### <span class="emoji">📝</span> A Note About This Post

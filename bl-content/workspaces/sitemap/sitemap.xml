@@ -108,10 +108,6 @@
     <lastmod>2020-03-30</lastmod>
   </url>
   <url>
-    <loc>http://localhost:8080/pi-lab-live-stream</loc>
-    <lastmod>2020-03-16</lastmod>
-  </url>
-  <url>
     <loc>http://localhost:8080/pi-dashboard-ui</loc>
     <lastmod>2020-01-10</lastmod>
   </url>
@@ -150,10 +146,6 @@
   <url>
     <loc>http://localhost:8080/raspberry-pi-portable-dev-server</loc>
     <lastmod>2019-09-20</lastmod>
-  </url>
-  <url>
-    <loc>http://localhost:8080/raspberry-pi-random-goat-tv</loc>
-    <lastmod>2019-08-21</lastmod>
   </url>
   <url>
     <loc>http://localhost:8080/pi-lab-twitter-bot</loc>
