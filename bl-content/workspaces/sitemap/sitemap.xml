@@ -4,6 +4,10 @@
     <loc>http://localhost:8080</loc>
   </url>
   <url>
+    <loc>http://localhost:8080/the-evolution-of-a-site-and-a-homelab</loc>
+    <lastmod>2026-05-08</lastmod>
+  </url>
+  <url>
     <loc>http://localhost:8080/homelab-md-offline-homelab-documentatioin</loc>
     <lastmod>2026-05-08</lastmod>
   </url>
