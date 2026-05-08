@@ -1,7 +1,7 @@
 {
 	"plugin-data":
 	{
-		"name": "target='_blank' - Pi Lab",
+		"name": "target='_blank' - jereme.dev",
 		"description": "Set all external links to open in new tabs."
 	}
 }
