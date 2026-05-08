@@ -2,11 +2,36 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=https://dumbprojects.com">
+    <meta http-equiv="refresh" content="1; url=https://dumbprojects.com">
     <link rel="canonical" href="https://dumbprojects.com">
     <title>Redirecting...</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background: #000;
+            overflow: hidden;
+        }
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .spinner {
+            width: 32px;
+            height: 32px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-top-color: rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
 </head>
 <body>
-    <p>Redirecting to <a href="https://dumbprojects.com">https://dumbprojects.com</a></p>
+    <div class="spinner"></div>
 </body>
 </html>
