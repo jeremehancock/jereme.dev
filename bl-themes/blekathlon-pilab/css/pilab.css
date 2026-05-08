@@ -31,10 +31,6 @@
     font-family: "Arial", sans-serif;
 }
 
-img:not([src]) {
-  visibility: hidden;
-}
-
 /* ============================================
    Lazy-load spinner + fade-in for images
    ============================================ */
