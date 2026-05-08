@@ -265,8 +265,15 @@ pre {
     background: transparent !important;
 }
 
-body.darkmode--activated {
-    overscroll-behavior-y: none;
+/* darkmode-js sizes its fixed overlay to the layout viewport (URL bar
+   visible). On Android, fast scroll retracts the URL bar and a strip at
+   the bottom falls outside the overlay, exposing the un-inverted body
+   background. Anchor top+bottom and force large-viewport height so the
+   overlay always covers the full visible area. */
+.darkmode-layer--simple {
+    top: 0 !important;
+    bottom: 0 !important;
+    height: 100lvh !important;
 }
 
 .dark-toggle {
