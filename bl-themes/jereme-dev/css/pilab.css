@@ -265,6 +265,10 @@ pre {
     background: transparent !important;
 }
 
+body.darkmode--activated {
+    overscroll-behavior-y: none;
+}
+
 .dark-toggle {
     cursor: pointer;
     display: inline-block;
