@@ -33,6 +33,7 @@
                 '.entry-summary'
             ];
             var contentRoots = document.querySelectorAll(contentSelectors.join(','));
+            var viewportH = window.innerHeight || document.documentElement.clientHeight;
             contentRoots.forEach(function (root) {
                 root.querySelectorAll('img').forEach(function (img) {
                     if (img.classList.contains('lozad')) return;
@@ -41,6 +42,13 @@
                     if (!src) return;
                     // Skip data URIs (already inline, no network load)
                     if (src.indexOf('data:') === 0) return;
+                    // Skip images already in the initial viewport. Delaying
+                    // their src causes a visible layout shift once they
+                    // finally load (especially for images without explicit
+                    // width/height, like the 404 hero). Let the browser
+                    // load them eagerly as it always has.
+                    var rect = img.getBoundingClientRect();
+                    if (rect.top < viewportH && rect.bottom > 0) return;
                     img.setAttribute('data-src', src);
                     img.removeAttribute('src');
                     img.classList.add('lozad');
