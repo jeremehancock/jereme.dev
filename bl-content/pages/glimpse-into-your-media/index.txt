@@ -1,5 +1,3 @@
-# Glimpse: A Window Into Your Media Library
-
 <div class="centered">
     <img src="/bl-content/uploads/pages/403721c70917a1fdddf11e33a1fa0365/glimpse-large-png.png" class="image-border" /><br><br>
 </div>

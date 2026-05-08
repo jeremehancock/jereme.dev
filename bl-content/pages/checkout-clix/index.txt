@@ -1,5 +1,3 @@
-# CLIX: A Plex Media Player That Lives in Your Terminal
-
 <div class="centered">
     <img src="/bl-content/uploads/pages/75ff222ff48e1b3cb6982211e6d72987/CLIX-large-png.png" class="image-border" /><br><br>
 </div>
