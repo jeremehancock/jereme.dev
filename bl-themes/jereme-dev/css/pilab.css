@@ -23,6 +23,10 @@
     max-width: 230px;
 }
 
+a:active, .main-navigation .current-menu-item>a, .main-navigation .current-menu-ancestor>a {
+    color: #fff !important;
+}
+
 .title-font, .page-title, .after-content-widget-area .widget:first-of-type .widget-title, .front-page-widget-area .widget:first-of-type .widget-title, blockquote {
     font-family: "Arial", sans-serif;
 }
@@ -573,12 +577,8 @@ table td {
 
 .image-border {
     border-radius: .5em;
-    border: 5px solid #f2f2f2;
     background-color: transparent
-    padding: 5px;
-    transition: all 0.3s ease 0s;
     box-shadow: rgba(0, 0, 0, 0.25) 3px 4px 5px;
-    isolation: isolate;
 }
 
 .iframe-border {
