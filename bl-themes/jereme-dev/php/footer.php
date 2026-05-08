@@ -11,7 +11,7 @@
             </label>
         </div>
         <div class="backer">
-            <a href="https://www.patreon.com/bludit">Bludit Backer <img loading="lazy" decoding="async" src="<?php echo HTML_PATH_THEME; ?>img/patreon.png" class="backer-logo" alt="Patreon" /></a>
+            <a href="https://www.patreon.com/bludit">Bludit Backer <img data-src="<?php echo HTML_PATH_THEME; ?>img/patreon.png" class="backer-logo lozad"/></a>
         </div>
     </div>
 </footer>

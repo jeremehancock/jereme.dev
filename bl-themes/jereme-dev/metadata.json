@@ -1,9 +1,9 @@
 {
-	"author": "Pi Lab",
+	"author": "Jereme",
 	"email": "",
-	"website": "https://pilab.dev",
-	"version": "x.x.x",
-	"releaseDate": "2019-05-30",
+	"website": "https://jereme.dev",
+	"version": "1.0.0",
+	"releaseDate": "2026-05-08",
 	"license": "MIT",
 	"compatible": "3.0",
 	"notes": "Credit to BlThemes for the original version."
