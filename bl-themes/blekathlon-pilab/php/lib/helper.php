@@ -369,7 +369,12 @@ class Helper
             }
         }
         if (preg_match('#^https?://#i', $src) && ini_get('allow_url_fopen')) {
+            // Cap remote lookups so a slow/unreachable host can't stall
+            // the page render (PHP's default socket timeout is 60s).
+            $oldTimeout = ini_get('default_socket_timeout');
+            ini_set('default_socket_timeout', 3);
             $info = @getimagesize($src);
+            ini_set('default_socket_timeout', $oldTimeout);
             if (is_array($info) && !empty($info[0]) && !empty($info[1])) {
                 return array((int)$info[0], (int)$info[1]);
             }
