@@ -191,7 +191,7 @@ $hiddenCategories = ['archived'];
 					<a href="<?php echo $relpage->permalink(FALSE); ?>"></a>
 					<?php if($relpage->thumbCoverImage()): ?>
 					<div class="rel-item__icon">
-						<img class="lozad" data-src="<?php echo $helper->cdn_cover_image( $relpage->thumbCoverImage(),60,60); ?>" />
+						<img loading="lazy" decoding="async" width="80" height="80" alt="" src="<?php echo $helper->cdn_cover_image( $relpage->thumbCoverImage(),60,60); ?>" />
 					</div>
 					<?php endif ?>
 					<div class="rel-item__title">
