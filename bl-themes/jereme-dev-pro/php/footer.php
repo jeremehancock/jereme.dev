@@ -8,11 +8,17 @@
         </div>
 
         <div class="footer-right">
-            <?php $footerText = $site->footer(); if (!empty($footerText)): ?>
-                <span class="footer-custom"><?php echo $footerText; ?></span>
-                <span class="footer-sep" aria-hidden="true">&middot;</span>
-            <?php endif; ?>
-            <span class="footer-copy">&copy; <?php echo date('Y'); ?> <?php echo $site->title(); ?></span>
+            <span class="footer-copy">
+		        <script>
+					today = new Date();
+					y0 = today.getFullYear();
+					document.write('© 2019-' + y0);
+				</script>
+                <?php $footerText = $site->footer(); if (!empty($footerText)): ?>
+                    <span class="footer-sep" aria-hidden="true">&middot;</span>
+                	<span class="footer-custom"><?php echo $footerText; ?></span>
+                <?php endif; ?>
+            </span>
         </div>
     </div>
 </footer>

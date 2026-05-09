@@ -22,7 +22,10 @@
     --transition-slow: 400ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-/* Light palette */
+/* =========================================
+   LIGHT PALETTE
+========================================= */
+
 [data-theme="light"], :root {
     --bg: #f6f4f0;
     --bg-alt: #ffffff;
@@ -30,35 +33,72 @@
     --bg-soft: #ece8e0;
     --bg-aside: #0a0c10;
     --bg-footer: #04060a;
-    --bg-header: rgba(246, 244, 240, 0.92);
+
+    --bg-header: rgba(246, 248, 247, 0.92);
     --bg-header-solid: #ffffff;
+
     --border: #e0dbd2;
     --border-strong: #c8c2b6;
+
     --text: #14171c;
     --text-soft: #4a4f5a;
     --text-mute: #7b7468;
     --text-invert: #f9fafb;
-    --accent: #ff1654;
-    --accent-soft: #ffe1ea;
-    --accent-hover: #d6113f;
+
+    /* =====================================
+       SUBTLE EMERALD (LIGHT)
+    ===================================== */
+    --accent: #0f6b3e;
+    --accent-soft: #e8f5ee;
+    --accent-hover: #0c5a34;
     --accent-ink: #ffffff;
-    --link: #ff1654;
-    --link-hover: #d6113f;
+
+    --link: #0f6b3e;
+    --link-hover: #0c5a34;
+
+    /* Code */
     --code-bg: #f0ebe2;
     --code-text: #1f2330;
-    --banner-bg: #fff8c5;
-    --banner-border: #d4a72c;
-    --banner-text: #59470d;
-    --tag-bg: #ffffff;
-    --tag-text: #14171c;
-    --tag-border: #e0dbd2;
+
+    /* Banner */
+    --banner-bg: #f3faf6;
+    --banner-border: #0f6b3e;
+    --banner-text: #1f3d2b;
+
+    /* Tags / Badges */
+    --tag-bg: #f3f4f6;
+    --tag-text: #1f2933;
+    --tag-border: #e5e7eb;
+
+    /* Pagination */
+    --pagination-bg: #ffffff;
+    --pagination-text: #1f3d2b;
+    --pagination-border: #e5e7eb;
+    --pagination-active-bg: #0f6b3e;
+    --pagination-active-text: #ffffff;
+
+    /* Header Ribbon */
+    --header-gradient: linear-gradient(
+        90deg,
+        rgba(15, 107, 62, 0.06) 0%,
+        rgba(246, 248, 247, 0.95) 70%
+    );
+
+    /* Aside Overlay */
+    --aside-overlay: rgba(15, 107, 62, 0.08);
+
     --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06), 0 1px 3px rgba(15, 23, 42, 0.04);
     --shadow-md: 0 6px 18px rgba(15, 23, 42, 0.08), 0 2px 4px rgba(15, 23, 42, 0.04);
     --shadow-lg: 0 18px 42px rgba(15, 23, 42, 0.14), 0 4px 8px rgba(15, 23, 42, 0.04);
+
     --overlay: rgba(15, 23, 42, 0.55);
 }
 
-/* Dark palette */
+
+/* =========================================
+   DARK PALETTE
+========================================= */
+
 [data-theme="dark"] {
     --bg: #0a0c10;
     --bg-alt: #11141a;
@@ -66,31 +106,64 @@
     --bg-soft: #1a1e26;
     --bg-aside: #04060a;
     --bg-footer: #04060a;
-    --bg-header: rgba(10, 12, 16, 0.85);
+
+    --bg-header: rgba(10, 12, 16, 0.88);
     --bg-header-solid: #0a0c10;
+
     --border: #232831;
     --border-strong: #353a44;
+
     --text: #ebedf2;
     --text-soft: #b1b6c0;
     --text-mute: #828893;
     --text-invert: #14171c;
-    --accent: #ff4773;
-    --accent-soft: rgba(255, 71, 115, 0.14);
-    --accent-hover: #ff6b8e;
-    --accent-ink: #ffffff;
-    --link: #ff6b8e;
-    --link-hover: #ff8aa6;
+
+    /* =====================================
+       SOFT MINT (DARK)
+    ===================================== */
+    --accent: #34d399;
+    --accent-soft: rgba(52, 211, 153, 0.12);
+    --accent-hover: #6ee7b7;
+    --accent-ink: #0a0c10;
+
+    --link: #34d399;
+    --link-hover: #6ee7b7;
+
+    /* Code */
     --code-bg: #14181f;
     --code-text: #ebedf2;
-    --banner-bg: rgba(212, 167, 44, 0.10);
-    --banner-border: #d4a72c;
-    --banner-text: #f0d97a;
-    --tag-bg: #1a1e26;
-    --tag-text: #d8dbe2;
+
+    /* Banner */
+    --banner-bg: rgba(52, 211, 153, 0.08);
+    --banner-border: #34d399;
+    --banner-text: #a7f3d0;
+
+    /* Tags / Badges */
+    --tag-bg: #14181f;
+    --tag-text: #d1fae5;
     --tag-border: #2a303b;
+
+    /* Pagination */
+    --pagination-bg: #14181f;
+    --pagination-text: #a7f3d0;
+    --pagination-border: #2a303b;
+    --pagination-active-bg: #34d399;
+    --pagination-active-text: #0a0c10;
+
+    /* Header Ribbon */
+    --header-gradient: linear-gradient(
+        90deg,
+        rgba(52, 211, 153, 0.08) 0%,
+        rgba(20, 24, 31, 1) 75%
+    );
+
+    /* Aside Overlay */
+    --aside-overlay: rgba(52, 211, 153, 0.06);
+
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.5);
     --shadow-md: 0 6px 18px rgba(0, 0, 0, 0.5);
     --shadow-lg: 0 18px 42px rgba(0, 0, 0, 0.6);
+
     --overlay: rgba(0, 0, 0, 0.7);
 }
 
@@ -247,7 +320,7 @@ li { margin: 0.25rem 0; }
 
 .site-header-ribbon {
     height: 4px;
-    background: linear-gradient(90deg, var(--accent) 0%, #ff4773 60%, #ff8aa6 100%);
+    background: linear-gradient(90deg, var(--accent) 0%, rgba(15, 107, 62, 0.85) 100%);
 }
 
 .header-inner {
@@ -656,8 +729,8 @@ body.menu-open .main-navigation {
 .post-feature-cover {
     display: block;
     aspect-ratio: 1 / 1;
-    width: 100%;
-    max-height: 460px;
+    width: auto;
+    max-height: 400px;
     background-color: var(--bg-soft);
     background-size: cover;
     background-position: center;
@@ -669,7 +742,7 @@ body.menu-open .main-navigation {
 }
 
 .post-feature-body {
-    padding: 2rem 2.5rem;
+    padding-right: 3rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -770,10 +843,10 @@ body.menu-open .main-navigation {
 .post-card-cover {
     display: block;
     width: 100%;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 2 / 1;
     background-color: var(--bg-soft);
     background-size: cover;
-    background-position: center;
+    background-position: top;
     position: relative;
     overflow: hidden;
     color: var(--text-mute);
@@ -1074,7 +1147,7 @@ body.menu-open .main-navigation {
     left: 0;
     width: 100%;
     height: 4px;
-    background: linear-gradient(90deg, var(--accent) 0%, #ff4773 60%, #ff8aa6 100%);
+    background: linear-gradient(90deg, var(--accent) 0%, rgba(15, 107, 62, 0.85) 100%);
 }
 .aside-grid {
     display: grid;
