@@ -34,7 +34,7 @@ Fully mobile-responsive and installable as a Progressive Web App (PWA), Posteria
 ## Screenshot
 
 <div class="centered">
-    <img src="https://raw.githubusercontent.com/jeremehancock/Posteria/main/images/posteria.png" class="image-border" /><br><br>
+    <img src="https://raw.githubusercontent.com/jeremehancock/Posteria/main/images/posteria.png" class="image-border" />
 </div>
 
 ## More Than Just an App
