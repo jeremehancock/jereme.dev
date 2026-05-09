@@ -1,12 +1,21 @@
 <?php
-// Keep in sync with home.php
 $hiddenCategories = ['archived'];
+$cover = null;
+if (!$page->isStatic()) {
+    $cover = $helper->get_thumb();
+}
 ?>
-<main class="site-main site-main-single" id="main" role="main">
+<main class="site-main site-main-single<?php echo $cover ? ' has-cover' : ''; ?>" id="main" role="main">
+    <?php if ($cover): ?>
+    <div class="entry-cover lozad" data-background-image="<?php echo htmlspecialchars($cover); ?>" aria-hidden="true">
+        <div class="entry-cover-fade"></div>
+    </div>
+    <?php endif; ?>
+
     <article class="entry">
         <?php Theme::plugins('pageBegin'); ?>
 
-        <header class="entry-header container">
+        <header class="entry-header container<?php echo $cover ? ' entry-header-on-cover' : ''; ?>">
             <?php if ($page->category() && !$page->isStatic()): ?>
             <div class="entry-eyebrow">
                 <a href="<?php echo DOMAIN_CATEGORIES.$page->categoryKey(); ?>"><?php echo $page->category(); ?></a>
@@ -14,11 +23,7 @@ $hiddenCategories = ['archived'];
             <?php endif; ?>
 
             <h1 class="entry-title">
-                <?php
-                if ($page->title() != "404 Not Found") {
-                    echo $page->title();
-                }
-                ?>
+                <?php if ($page->title() != "404 Not Found") echo $page->title(); ?>
                 <?php if ($login->isLogged() && checkRole(array('admin', 'editor'))): ?>
                 <a class="edit-link" href="<?php echo HTML_PATH_ADMIN_ROOT.'edit-content/'.$page->slug(); ?>" target="_blank" aria-label="Edit">
                     <svg viewBox="0 0 27 32" width="18" height="18" aria-hidden="true"><use xlink:href="#icon-pencil"></use></svg>
@@ -28,13 +33,8 @@ $hiddenCategories = ['archived'];
 
             <?php if (!$page->isStatic()): ?>
             <div class="entry-meta">
-                <time class="entry-date" datetime="<?php echo $page->dateRaw('c'); ?>">
-                    <?php echo $page->date(); ?>
-                </time>
-                <?php
-                $lastmod = $page->dateModified();
-                if (!empty($lastmod)):
-                ?>
+                <time class="entry-date" datetime="<?php echo $page->dateRaw('c'); ?>"><?php echo $page->date(); ?></time>
+                <?php $lastmod = $page->dateModified(); if (!empty($lastmod)): ?>
                 <time class="entry-updated" datetime="<?php echo Date::format($lastmod, DB_DATE_FORMAT, 'c'); ?>"></time>
                 <?php endif; ?>
             </div>
@@ -67,7 +67,6 @@ $hiddenCategories = ['archived'];
             <?php endif; ?>
 
             <?php
-            // Build prev/next, skipping hidden categories
             if (!empty($hiddenCategories)) {
                 $allKeys = $pages->getList(1, -1, true);
                 $visibleKeys = array();
@@ -78,8 +77,7 @@ $hiddenCategories = ['archived'];
                     $visibleKeys[] = $k;
                 }
                 $currentIndex = array_search($page->key(), $visibleKeys, true);
-                $prevKey = false;
-                $nextKey = false;
+                $prevKey = false; $nextKey = false;
                 if ($currentIndex !== false) {
                     if (isset($visibleKeys[$currentIndex + 1])) $prevKey = $visibleKeys[$currentIndex + 1];
                     if (isset($visibleKeys[$currentIndex - 1])) $nextKey = $visibleKeys[$currentIndex - 1];
@@ -88,25 +86,18 @@ $hiddenCategories = ['archived'];
                 $prevKey = $helper->previousKey();
                 $nextKey = $helper->nextKey();
             }
-
             if ($prevKey || $nextKey):
             ?>
             <nav class="post-navigation" role="navigation" aria-label="Post navigation">
                 <?php if ($prevKey): $prevPage = new Page($prevKey); ?>
                 <a class="nav-prev" href="<?php echo $prevPage->permalink(FALSE); ?>" rel="prev">
-                    <span class="nav-direction">
-                        <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><use xlink:href="#icon-arrow-left"></use></svg>
-                        <?php echo $L->get('Previous'); ?>
-                    </span>
+                    <span class="nav-direction"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><use xlink:href="#icon-arrow-left"></use></svg> <?php echo $L->get('Previous'); ?></span>
                     <span class="nav-title"><?php echo $prevPage->title(); ?></span>
                 </a>
                 <?php endif; ?>
                 <?php if ($nextKey): $nextPage = new Page($nextKey); ?>
                 <a class="nav-next" href="<?php echo $nextPage->permalink(FALSE); ?>" rel="next">
-                    <span class="nav-direction">
-                        <?php echo $L->get('Next'); ?>
-                        <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><use xlink:href="#icon-arrow-right"></use></svg>
-                    </span>
+                    <span class="nav-direction"><?php echo $L->get('Next'); ?> <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><use xlink:href="#icon-arrow-right"></use></svg></span>
                     <span class="nav-title"><?php echo $nextPage->title(); ?></span>
                 </a>
                 <?php endif; ?>

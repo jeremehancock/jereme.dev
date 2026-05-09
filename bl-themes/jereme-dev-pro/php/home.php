@@ -1,7 +1,6 @@
 <?php
 // =============================================================
 // CONFIG: Categories to hide from the homepage
-// Use the category KEY (slug), not the display name.
 // =============================================================
 $hiddenCategories = ['archived'];
 
@@ -10,7 +9,6 @@ if (!empty($hiddenCategories) && $WHERE_AM_I === 'home') {
     $currentPage  = Paginator::currentPage();
 
     $allKeys = $pages->getList(1, -1, true);
-
     $filteredKeys = array();
     foreach ($allKeys as $key) {
         $p = buildPage($key);
@@ -18,12 +16,10 @@ if (!empty($hiddenCategories) && $WHERE_AM_I === 'home') {
             $filteredKeys[] = $key;
         }
     }
-
     $totalItems    = count($filteredKeys);
     $totalPages    = (int)max(1, ceil($totalItems / $itemsPerPage));
     $offset        = ($currentPage - 1) * $itemsPerPage;
     $paginatedKeys = array_slice($filteredKeys, $offset, $itemsPerPage);
-
     $content = array();
     foreach ($paginatedKeys as $key) {
         $content[] = buildPage($key);
@@ -36,69 +32,121 @@ if (!empty($hiddenCategories) && $WHERE_AM_I === 'home') {
 <?php Theme::plugins('pageBegin'); ?>
 
 <main class="site-main" id="main" role="main">
-    <div class="container">
-        <?php if ($WHERE_AM_I === 'category'): ?>
-        <header class="page-intro">
-            <?php if ($site->slogan()): ?>
-            <h1 class="page-intro-title"><?php echo $helper->slogan(); ?></h1>
-            <?php endif ?>
+    <?php if ($WHERE_AM_I === 'home' && $currentPage === 1 && !empty($content)): ?>
+    <section class="home-hero" aria-label="Featured">
+        <div class="container">
+            <p class="home-hero-eyebrow">
+                <span class="hero-bullet" aria-hidden="true"></span>
+                <span><?php echo $site->slogan() ? $helper->slogan() : $site->title(); ?></span>
+            </p>
+            <h1 class="home-hero-title"><?php echo $site->description() ? $helper->description() : $L->get('Latest posts'); ?></h1>
+        </div>
+    </section>
+    <?php elseif ($WHERE_AM_I === 'category'): ?>
+    <section class="home-hero home-hero-cat" aria-label="Category">
+        <div class="container">
+            <p class="home-hero-eyebrow"><span class="hero-bullet" aria-hidden="true"></span><span>Category</span></p>
+            <h1 class="home-hero-title"><?php echo $helper->slogan(); ?></h1>
             <?php if ($site->description()): ?>
-            <p class="page-intro-desc"><?php echo $helper->description(); ?></p>
-            <?php endif ?>
-        </header>
-        <?php endif ?>
+            <p class="home-hero-desc"><?php echo $helper->description(); ?></p>
+            <?php endif; ?>
+        </div>
+    </section>
+    <?php endif; ?>
 
-        <div class="post-grid">
-            <?php foreach ($content as $page): ?>
-                <?php $coverImage = $helper->get_thumb(); ?>
-                <article class="post-card">
-                    <a class="post-card-cover lozad" href="<?php echo $page->permalink(FALSE); ?>"
-                       <?php if (!empty($coverImage)) echo 'data-background-image="'.htmlspecialchars($coverImage).'"'; ?>
-                       aria-label="<?php echo htmlspecialchars($page->title()); ?>">
-                        <?php if (empty($coverImage)): ?>
-                            <span class="post-card-cover-placeholder">
-                                <svg viewBox="0 0 27 32" width="40" height="40" aria-hidden="true">
-                                    <use xlink:href="#icon-pencil"></use>
-                                </svg>
-                            </span>
-                        <?php endif; ?>
+    <div class="container">
+        <?php
+        $isFirstPage = ($WHERE_AM_I === 'home' && $currentPage === 1);
+        $featured = ($isFirstPage && !empty($content)) ? array_shift($content) : null;
+        ?>
+
+        <?php if ($featured): $page = $featured; $coverImage = $helper->get_thumb(); ?>
+        <article class="post-feature">
+            <a class="post-feature-cover lozad" href="<?php echo $featured->permalink(FALSE); ?>"
+               <?php if (!empty($coverImage)) echo 'data-background-image="'.htmlspecialchars($coverImage).'"'; ?>
+               aria-label="<?php echo htmlspecialchars($featured->title()); ?>">
+                <?php if (empty($coverImage)): ?>
+                <span class="post-card-cover-placeholder">
+                    <svg viewBox="0 0 27 32" width="64" height="64" aria-hidden="true">
+                        <use xlink:href="#icon-pencil"></use>
+                    </svg>
+                </span>
+                <?php endif; ?>
+            </a>
+            <div class="post-feature-body">
+                <p class="post-feature-eyebrow">
+                    <span class="post-feature-badge">Featured</span>
+                    <?php if ($featured->category()): ?>
+                    <a class="post-feature-cat" href="<?php echo DOMAIN_CATEGORIES.$featured->categoryKey(); ?>"><?php echo $featured->category(); ?></a>
+                    <?php endif; ?>
+                </p>
+                <h2 class="post-feature-title">
+                    <a href="<?php echo $featured->permalink(FALSE); ?>" rel="bookmark"><?php echo $featured->title(); ?></a>
+                </h2>
+                <div class="post-feature-excerpt">
+                    <?php
+                    if (strlen($featured->description()) > 0) {
+                        echo $featured->description();
+                    } else {
+                        echo $helper->content2excerpt($featured->content(false), 320);
+                    }
+                    ?>
+                </div>
+                <div class="post-feature-meta">
+                    <time datetime="<?php echo $featured->dateRaw('c'); ?>"><?php echo $featured->date(); ?></time>
+                    <a class="post-feature-more" href="<?php echo $featured->permalink(FALSE); ?>">
+                        <?php echo $L->get('Read more'); ?>
+                        <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><use xlink:href="#icon-arrow-right"></use></svg>
                     </a>
-                    <div class="post-card-body">
-                        <div class="post-meta">
-                            <time class="post-date" datetime="<?php echo $page->dateRaw('c'); ?>">
-                                <?php echo $page->date(); ?>
-                            </time>
-                            <?php if ($page->category()): ?>
-                                <span class="post-meta-sep">&middot;</span>
-                                <a class="post-cat" href="<?php echo DOMAIN_CATEGORIES.$page->categoryKey(); ?>">
-                                    <?php echo $page->category(); ?>
-                                </a>
-                            <?php endif; ?>
-                        </div>
-                        <h2 class="post-card-title">
-                            <a href="<?php echo $page->permalink(FALSE); ?>" rel="bookmark">
-                                <?php echo $page->title(); ?>
-                            </a>
-                        </h2>
-                        <div class="post-card-excerpt">
-                            <?php
-                            if (strlen($page->description()) > 0) {
-                                echo $page->description();
-                            } else {
-                                echo $helper->content2excerpt($page->content(false));
-                            }
-                            ?>
-                        </div>
-                        <a class="post-card-more" href="<?php echo $page->permalink(FALSE); ?>" aria-label="<?php echo $L->get('Continue reading'); ?> <?php echo htmlspecialchars($page->title()); ?>">
-                            <?php echo $L->get('Read more'); ?>
-                            <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true">
-                                <use xlink:href="#icon-arrow-right"></use>
-                            </svg>
-                        </a>
+                </div>
+            </div>
+        </article>
+        <?php endif; ?>
+
+        <?php if (!empty($content)): ?>
+        <div class="post-grid <?php echo $featured ? 'post-grid-after-feature' : ''; ?>">
+            <?php foreach ($content as $page): $coverImage = $helper->get_thumb(); ?>
+            <article class="post-card">
+                <a class="post-card-cover lozad" href="<?php echo $page->permalink(FALSE); ?>"
+                   <?php if (!empty($coverImage)) echo 'data-background-image="'.htmlspecialchars($coverImage).'"'; ?>
+                   aria-label="<?php echo htmlspecialchars($page->title()); ?>">
+                    <?php if (empty($coverImage)): ?>
+                    <span class="post-card-cover-placeholder">
+                        <svg viewBox="0 0 27 32" width="40" height="40" aria-hidden="true">
+                            <use xlink:href="#icon-pencil"></use>
+                        </svg>
+                    </span>
+                    <?php endif; ?>
+                </a>
+                <div class="post-card-body">
+                    <div class="post-meta">
+                        <time class="post-date" datetime="<?php echo $page->dateRaw('c'); ?>"><?php echo $page->date(); ?></time>
+                        <?php if ($page->category()): ?>
+                        <span class="post-meta-sep">&middot;</span>
+                        <a class="post-cat" href="<?php echo DOMAIN_CATEGORIES.$page->categoryKey(); ?>"><?php echo $page->category(); ?></a>
+                        <?php endif; ?>
                     </div>
-                </article>
+                    <h2 class="post-card-title">
+                        <a href="<?php echo $page->permalink(FALSE); ?>" rel="bookmark"><?php echo $page->title(); ?></a>
+                    </h2>
+                    <div class="post-card-excerpt">
+                        <?php
+                        if (strlen($page->description()) > 0) {
+                            echo $page->description();
+                        } else {
+                            echo $helper->content2excerpt($page->content(false));
+                        }
+                        ?>
+                    </div>
+                    <a class="post-card-more" href="<?php echo $page->permalink(FALSE); ?>">
+                        <?php echo $L->get('Read more'); ?>
+                        <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><use xlink:href="#icon-arrow-right"></use></svg>
+                    </a>
+                </div>
+            </article>
             <?php endforeach; ?>
         </div>
+        <?php endif; ?>
 
         <?php if ($totalPages > 1): ?>
         <nav class="pagination" role="navigation" aria-label="Page navigation">
@@ -110,7 +158,6 @@ if (!empty($hiddenCategories) && $WHERE_AM_I === 'home') {
                     <span class="page-btn-text"><?php echo $L->get('Previous'); ?></span>
                 </a>
                 <?php endif; ?>
-
                 <?php
                 $pmax = max($currentPage + 4, 9);
                 $pmin = min($currentPage - 4, $totalPages - 8);
@@ -122,7 +169,6 @@ if (!empty($hiddenCategories) && $WHERE_AM_I === 'home') {
                     <a class="page-btn" href="<?php echo Paginator::numberUrl($i); ?>"><?php echo $i; ?></a>
                     <?php endif; ?>
                 <?php endfor; ?>
-
                 <?php if ($currentPage < $totalPages): ?>
                 <a class="page-btn page-btn-arrow" href="<?php echo Paginator::numberUrl($currentPage + 1); ?>" rel="next" aria-label="<?php echo $L->get('Next'); ?>">
                     <span class="page-btn-text"><?php echo $L->get('Next'); ?></span>

@@ -1,9 +1,10 @@
 <header class="site-header" id="site-header">
+    <div class="site-header-ribbon" aria-hidden="true"></div>
     <div class="header-inner">
         <div class="site-branding">
             <a class="navbar-brand" href="<?php echo $site->url(); ?>" rel="home">
                 <?php if (method_exists($site, 'logo') && $site->logo()): ?>
-                    <img class="site-logo" src="<?php echo $helper->cdn_that_image($site->logo(), 260); ?>" alt="<?php echo $site->title(); ?>" />
+                    <img class="site-logo" src="<?php echo $helper->cdn_that_image($site->logo(), 320); ?>" alt="<?php echo htmlspecialchars($site->title(), ENT_QUOTES); ?>" />
                 <?php else: ?>
                     <span class="site-title-text"><?php echo $site->title(); ?></span>
                     <svg class="brand-mark" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16" aria-hidden="true">

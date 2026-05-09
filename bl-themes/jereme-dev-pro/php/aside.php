@@ -4,6 +4,7 @@
             <div class="aside-col aside-brand">
                 <p class="aside-title"><?php echo $site->title(); ?></p>
                 <p class="aside-desc"><?php echo $site->description(); ?></p>
+                <img class="aside-bludit-logo lozad" data-src="<?php echo HTML_PATH_THEME; ?>img/bludit.png" alt="Bludit" width="140" />
             </div>
 
             <div class="aside-col">
@@ -36,6 +37,7 @@
             </div>
 
             <div class="aside-col aside-social">
+                <h3 class="aside-heading">Follow</h3>
                 <nav class="social-nav" aria-label="Social Menu">
                     <ul class="social-list">
                         <?php foreach (Theme::socialNetworks() as $key => $label): ?>
@@ -49,10 +51,6 @@
                         <?php endforeach; ?>
                     </ul>
                 </nav>
-                <p class="aside-powered">
-                    <?php echo $L->get('Powered by'); ?>
-                    <a target="_blank" rel="noopener" href="https://www.bludit.com">Bludit</a>
-                </p>
             </div>
         </div>
     </div>
