@@ -1032,7 +1032,6 @@ body.menu-open .main-navigation {
 .entry-content video,
 .entry-content iframe {
     max-width: 100%;
-    height: auto;
     border-radius: var(--radius-md);
     margin: 1.5rem 0;
 }
