@@ -5,11 +5,6 @@
                 <img class="patreon-icon lozad" data-src="<?php echo HTML_PATH_THEME; ?>img/patreon.png" alt="Patreon" width="20" height="20" />
                 <span>Bludit Backer</span>
             </a>
-            <span class="footer-sep" aria-hidden="true">&middot;</span>
-            <span class="footer-powered">
-                <?php echo $L->get('Powered by'); ?>
-                <a href="https://www.bludit.com" target="_blank" rel="noopener">Bludit</a>
-            </span>
         </div>
 
         <div class="footer-right">

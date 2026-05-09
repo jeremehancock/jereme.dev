@@ -41,13 +41,6 @@
         </div>
     </div>
 
-    <nav id="site-navigation" class="main-navigation" role="navigation" aria-label="Primary">
-        <div class="main-navigation-inner">
-            <p class="main-navigation-title">Menu</p>
-            <?php Theme::plugins('siteSidebar'); ?>
-        </div>
-    </nav>
-
     <div class="search-panel" id="search-panel" hidden>
         <div class="search-inner" role="search">
             <form class="search-form" name="search" onsubmit="return false;">

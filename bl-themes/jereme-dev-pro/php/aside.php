@@ -35,28 +35,13 @@
                 </ul>
             </div>
 
-            <div class="aside-col aside-social">
-                <h3 class="aside-heading">Follow</h3>
-                <nav class="social-nav" aria-label="Social Menu">
-                    <ul class="social-list">
-                        <?php foreach (Theme::socialNetworks() as $key => $label): ?>
-                        <li>
-                            <a class="social-link" href="<?php echo $site->{$key}(); ?>" target="_blank" rel="noopener nofollow" aria-label="<?php echo $label; ?>">
-                                <svg class="social-icon" aria-hidden="true" role="img">
-                                    <use xlink:href="#icon-<?php echo $key; ?>"></use>
-                                </svg>
-                            </a>
-                        </li>
-                        <?php endforeach; ?>
-                    </ul>
-                </nav>
-                <div class="aside-bludit">
-                    <img class="aside-bludit-logo lozad" data-src="<?php echo HTML_PATH_THEME; ?>img/bludit.png" alt="Bludit" width="120" />
+            <div class="aside-col aside-bludit-col">
+                <a class="aside-bludit-link" href="https://www.bludit.com" target="_blank" rel="noopener">
+                    <img class="aside-bludit-logo lozad" data-src="<?php echo HTML_PATH_THEME; ?>img/bludit.png" alt="Bludit" width="140" />
                     <p class="aside-powered">
-                        <?php echo $L->get('Powered by'); ?>
-                        <a href="https://www.bludit.com" target="_blank" rel="noopener">Bludit</a>
+                        <?php echo $L->get('Powered by'); ?> Bludit
                     </p>
-                </div>
+                </a>
             </div>
         </div>
     </div>

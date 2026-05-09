@@ -1,21 +1,11 @@
 <?php
 $hiddenCategories = ['archived'];
-$cover = null;
-if (!$page->isStatic()) {
-    $cover = $helper->get_thumb();
-}
 ?>
-<main class="site-main site-main-single<?php echo $cover ? ' has-cover' : ''; ?>" id="main" role="main">
-    <?php if ($cover): ?>
-    <div class="entry-cover lozad" data-background-image="<?php echo htmlspecialchars($cover); ?>" aria-hidden="true">
-        <div class="entry-cover-fade"></div>
-    </div>
-    <?php endif; ?>
-
+<main class="site-main site-main-single" id="main" role="main">
     <article class="entry">
         <?php Theme::plugins('pageBegin'); ?>
 
-        <header class="entry-header container<?php echo $cover ? ' entry-header-on-cover' : ''; ?>">
+        <header class="entry-header container">
             <?php if ($page->category() && !$page->isStatic()): ?>
             <div class="entry-eyebrow">
                 <a href="<?php echo DOMAIN_CATEGORIES.$page->categoryKey(); ?>"><?php echo $page->category(); ?></a>
@@ -102,24 +92,6 @@ if (!$page->isStatic()) {
                 </a>
                 <?php endif; ?>
             </nav>
-            <?php endif; ?>
-
-            <?php if ($related = $helper->getRelated()): ?>
-            <section class="related-section">
-                <h3 class="related-heading"><?php echo $L->get('Related posts'); ?></h3>
-                <div class="related-grid">
-                    <?php foreach ($related as $relpage): ?>
-                    <a class="related-card" href="<?php echo $relpage->permalink(FALSE); ?>">
-                        <?php if ($relpage->thumbCoverImage()): ?>
-                        <span class="related-card-thumb">
-                            <img class="lozad" data-src="<?php echo $helper->cdn_cover_image($relpage->thumbCoverImage(), 120, 120); ?>" alt="" />
-                        </span>
-                        <?php endif; ?>
-                        <span class="related-card-title"><?php echo $relpage->title(); ?></span>
-                    </a>
-                    <?php endforeach; ?>
-                </div>
-            </section>
             <?php endif; ?>
 
             <?php Theme::plugins('pageEnd'); ?>

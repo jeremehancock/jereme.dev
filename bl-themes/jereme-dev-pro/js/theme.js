@@ -40,16 +40,19 @@
 
     var menuBtn = document.getElementById('menu-toggle');
     var nav = document.getElementById('site-navigation');
+    var navClose = document.getElementById('nav-close');
     var overlay = document.getElementById('body-overlay');
 
     function closeMenu() {
         body.classList.remove('menu-open', 'no-scroll');
         if (menuBtn) menuBtn.setAttribute('aria-expanded', 'false');
+        if (nav) nav.setAttribute('aria-hidden', 'true');
     }
 
     function openMenu() {
         body.classList.add('menu-open', 'no-scroll');
         if (menuBtn) menuBtn.setAttribute('aria-expanded', 'true');
+        if (nav) nav.setAttribute('aria-hidden', 'false');
     }
 
     if (menuBtn && nav) {
@@ -61,6 +64,7 @@
             if (e.target.tagName === 'A') closeMenu();
         });
     }
+    if (navClose) navClose.addEventListener('click', closeMenu);
 
     /* ---------------- Search panel ---------------- */
 
