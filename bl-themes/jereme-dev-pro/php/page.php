@@ -5,31 +5,39 @@ $hiddenCategories = ['archived'];
     <article class="entry">
         <?php Theme::plugins('pageBegin'); ?>
 
-        <header class="entry-header container">
-            <?php if ($page->category() && !$page->isStatic()): ?>
-            <div class="entry-eyebrow">
-                <a href="<?php echo DOMAIN_CATEGORIES.$page->categoryKey(); ?>"><?php echo $page->category(); ?></a>
-            </div>
-            <?php endif; ?>
+		<?php if ($page->title() !== "404 Not Found"): ?>
+		<header class="entry-header container">
+			<?php if ($page->category() && !$page->isStatic()): ?>
+			<div class="entry-eyebrow">
+				<a href="<?php echo DOMAIN_CATEGORIES.$page->categoryKey(); ?>"><?php echo $page->category(); ?></a>
+			</div>
+			<?php endif; ?>
 
-            <h1 class="entry-title">
-                <?php if ($page->title() != "404 Not Found") echo $page->title(); ?>
-                <?php if ($login->isLogged() && checkRole(array('admin', 'editor'))): ?>
-                <a class="edit-link" href="<?php echo HTML_PATH_ADMIN_ROOT.'edit-content/'.$page->slug(); ?>" target="_blank" aria-label="Edit">
-                    <svg viewBox="0 0 27 32" width="18" height="18" aria-hidden="true"><use xlink:href="#icon-pencil"></use></svg>
-                </a>
-                <?php endif; ?>
-            </h1>
+			<h1 class="entry-title">
+				<?php echo $page->title(); ?>
 
-            <?php if (!$page->isStatic()): ?>
-            <div class="entry-meta">
-                <time class="entry-date" datetime="<?php echo $page->dateRaw('c'); ?>"><?php echo $page->date(); ?></time>
-                <?php $lastmod = $page->dateModified(); if (!empty($lastmod)): ?>
-                <time class="entry-updated" datetime="<?php echo Date::format($lastmod, DB_DATE_FORMAT, 'c'); ?>"></time>
-                <?php endif; ?>
-            </div>
-            <?php endif; ?>
-        </header>
+				<?php if ($login->isLogged() && checkRole(array('admin', 'editor'))): ?>
+				<a class="edit-link" href="<?php echo HTML_PATH_ADMIN_ROOT.'edit-content/'.$page->slug(); ?>" target="_blank" aria-label="Edit">
+				    <svg viewBox="0 0 27 32" width="18" height="18" aria-hidden="true">
+				        <use xlink:href="#icon-pencil"></use>
+				    </svg>
+				</a>
+				<?php endif; ?>
+			</h1>
+
+			<?php if (!$page->isStatic()): ?>
+			<div class="entry-meta">
+				<time class="entry-date" datetime="<?php echo $page->dateRaw('c'); ?>">
+				    <?php echo $page->date(); ?>
+				</time>
+
+				<?php $lastmod = $page->dateModified(); if (!empty($lastmod)): ?>
+				<time class="entry-updated" datetime="<?php echo Date::format($lastmod, DB_DATE_FORMAT, 'c'); ?>"></time>
+				<?php endif; ?>
+			</div>
+			<?php endif; ?>
+		</header>
+		<?php endif; ?>
 
         <div class="entry-content container">
             <?php if (!$page->isStatic() && in_array($page->categoryKey(), $hiddenCategories, true)): ?>

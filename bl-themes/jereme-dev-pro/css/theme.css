@@ -843,10 +843,10 @@ body.menu-open .main-navigation {
 .post-card-cover {
     display: block;
     width: 100%;
-    aspect-ratio: 2 / 1;
+    aspect-ratio: 16 / 9;
     background-color: var(--bg-soft);
     background-size: cover;
-    background-position: top;
+    background-position: center;
     position: relative;
     overflow: hidden;
     color: var(--text-mute);
@@ -1432,7 +1432,7 @@ body.no-scroll { overflow: hidden; }
     position: fixed;
     inset: 0;
     background: var(--overlay);
-    z-index: 150;
+    z-index: 1;
     opacity: 0;
     pointer-events: none;
     transition: opacity var(--transition-med);
