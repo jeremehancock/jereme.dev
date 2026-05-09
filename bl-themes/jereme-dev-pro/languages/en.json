@@ -1,0 +1,20 @@
+{
+  "theme-data": {
+    "name": "jereme.dev Pro Theme",
+    "description": "Polished, fully responsive Bludit theme for <a href='https://jereme.dev' target='_blank'>jereme.dev</a> with first-class light &amp; dark mode."
+  },
+  "menu": "Menu",
+  "blog": "Blog",
+  "continue-reading": "Continue reading",
+  "type-to-start-searching": "Type at least 3 characters to search",
+  "search": "Search",
+  "latest-posts": "Latest Posts",
+  "related-posts": "More From jereme.dev",
+  "about": "About",
+  "previous": "Previous",
+  "next": "Next",
+  "toggle-theme": "Toggle light/dark mode",
+  "toggle-menu": "Toggle menu",
+  "skip-to-content": "Skip to content",
+  "powered-by": "Powered by"
+}

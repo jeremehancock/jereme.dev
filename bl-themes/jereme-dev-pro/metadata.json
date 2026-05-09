@@ -1,0 +1,10 @@
+{
+	"author": "Jereme",
+	"email": "",
+	"website": "https://jereme.dev",
+	"version": "1.0.0",
+	"releaseDate": "2026-05-09",
+	"license": "MIT",
+	"compatible": "3.0",
+	"notes": "Polished, responsive Bludit theme for jereme.dev with first-class light & dark mode."
+}
