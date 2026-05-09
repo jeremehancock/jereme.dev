@@ -4,35 +4,58 @@
 // =============================================================
 $hiddenCategories = ['archived'];
 
-if (!empty($hiddenCategories) && $WHERE_AM_I === 'home') {
-    $itemsPerPage = (int)$site->itemsPerPage();
-    $currentPage  = Paginator::currentPage();
+$itemsPerPage = (int)$site->itemsPerPage();
+if ($itemsPerPage < 1) { $itemsPerPage = 6; }
+$currentPage = Paginator::currentPage();
+$isHome      = ($WHERE_AM_I === 'home');
+$isFirstPage = ($isHome && $currentPage === 1);
 
+// On the home, page 1 shows: 1 featured + itemsPerPage grid cards.
+// On every other page (and category pages): itemsPerPage grid cards, no featured.
+$pageSize = ($isFirstPage ? $itemsPerPage + 1 : $itemsPerPage);
+
+if ($isHome) {
+    // Build the visible-keys list (exclude hidden categories) and paginate ourselves
+    // so the featured-card offset doesn't break page math.
     $allKeys = $pages->getList(1, -1, true);
     $filteredKeys = array();
     foreach ($allKeys as $key) {
         $p = buildPage($key);
-        if (!in_array($p->categoryKey(), $hiddenCategories, true)) {
-            $filteredKeys[] = $key;
-        }
+        if (in_array($p->categoryKey(), $hiddenCategories, true)) continue;
+        $filteredKeys[] = $key;
     }
-    $totalItems    = count($filteredKeys);
-    $totalPages    = (int)max(1, ceil($totalItems / $itemsPerPage));
-    $offset        = ($currentPage - 1) * $itemsPerPage;
-    $paginatedKeys = array_slice($filteredKeys, $offset, $itemsPerPage);
+
+    $totalItems = count($filteredKeys);
+
+    // Total pages: page 1 holds (itemsPerPage + 1) items, every other page holds itemsPerPage.
+    if ($totalItems <= $itemsPerPage + 1) {
+        $totalPages = 1;
+    } else {
+        $totalPages = 1 + (int)ceil(($totalItems - $itemsPerPage - 1) / $itemsPerPage);
+    }
+
+    // Slice for the current page.
+    if ($isFirstPage) {
+        $offset = 0;
+        $sliceLen = min($itemsPerPage + 1, $totalItems);
+    } else {
+        $offset = ($itemsPerPage + 1) + ($currentPage - 2) * $itemsPerPage;
+        $sliceLen = $itemsPerPage;
+    }
+    $paginatedKeys = array_slice($filteredKeys, $offset, $sliceLen);
+
     $content = array();
     foreach ($paginatedKeys as $key) {
         $content[] = buildPage($key);
     }
 } else {
-    $currentPage = Paginator::currentPage();
-    $totalPages  = Paginator::numberOfPages();
+    $totalPages = Paginator::numberOfPages();
 }
 ?>
 <?php Theme::plugins('pageBegin'); ?>
 
-<main class="site-main" id="main" role="main">
-    <?php if ($WHERE_AM_I === 'home' && $currentPage === 1): ?>
+<main class="site-main<?php echo (!$isFirstPage && $WHERE_AM_I !== 'category') ? ' site-main-padded' : ''; ?>" id="main" role="main">
+    <?php if ($isFirstPage): ?>
     <section class="page-band" aria-label="Latest">
         <div class="container">
             <p class="page-band-eyebrow"><span class="band-tick" aria-hidden="true"></span><?php echo $L->get('Latest posts'); ?></p>
@@ -54,10 +77,7 @@ if (!empty($hiddenCategories) && $WHERE_AM_I === 'home') {
     <?php endif; ?>
 
     <div class="container">
-        <?php
-        $isFirstPage = ($WHERE_AM_I === 'home' && $currentPage === 1);
-        $featured = ($isFirstPage && !empty($content)) ? array_shift($content) : null;
-        ?>
+        <?php $featured = ($isFirstPage && !empty($content)) ? array_shift($content) : null; ?>
 
         <?php if ($featured): $page = $featured; $coverImage = $helper->get_thumb(); ?>
         <article class="post-feature">
