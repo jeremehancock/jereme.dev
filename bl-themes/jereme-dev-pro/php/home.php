@@ -32,23 +32,22 @@ if (!empty($hiddenCategories) && $WHERE_AM_I === 'home') {
 <?php Theme::plugins('pageBegin'); ?>
 
 <main class="site-main" id="main" role="main">
-    <?php if ($WHERE_AM_I === 'home' && $currentPage === 1 && !empty($content)): ?>
-    <section class="home-hero" aria-label="Featured">
+    <?php if ($WHERE_AM_I === 'home' && $currentPage === 1): ?>
+    <section class="page-band" aria-label="Latest">
         <div class="container">
-            <p class="home-hero-eyebrow">
-                <span class="hero-bullet" aria-hidden="true"></span>
-                <span><?php echo $site->slogan() ? $helper->slogan() : $site->title(); ?></span>
-            </p>
-            <h1 class="home-hero-title"><?php echo $site->description() ? $helper->description() : $L->get('Latest posts'); ?></h1>
+            <p class="page-band-eyebrow"><span class="band-tick" aria-hidden="true"></span><?php echo $L->get('Latest posts'); ?></p>
+            <?php if ($site->slogan()): ?>
+            <h1 class="page-band-title"><?php echo $helper->slogan(); ?></h1>
+            <?php endif; ?>
         </div>
     </section>
     <?php elseif ($WHERE_AM_I === 'category'): ?>
-    <section class="home-hero home-hero-cat" aria-label="Category">
+    <section class="page-band" aria-label="Category">
         <div class="container">
-            <p class="home-hero-eyebrow"><span class="hero-bullet" aria-hidden="true"></span><span>Category</span></p>
-            <h1 class="home-hero-title"><?php echo $helper->slogan(); ?></h1>
+            <p class="page-band-eyebrow"><span class="band-tick" aria-hidden="true"></span>Category</p>
+            <h1 class="page-band-title"><?php echo $helper->slogan(); ?></h1>
             <?php if ($site->description()): ?>
-            <p class="home-hero-desc"><?php echo $helper->description(); ?></p>
+            <p class="page-band-desc"><?php echo $helper->description(); ?></p>
             <?php endif; ?>
         </div>
     </section>

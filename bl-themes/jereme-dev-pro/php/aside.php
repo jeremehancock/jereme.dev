@@ -4,7 +4,6 @@
             <div class="aside-col aside-brand">
                 <p class="aside-title"><?php echo $site->title(); ?></p>
                 <p class="aside-desc"><?php echo $site->description(); ?></p>
-                <img class="aside-bludit-logo lozad" data-src="<?php echo HTML_PATH_THEME; ?>img/bludit.png" alt="Bludit" width="140" />
             </div>
 
             <div class="aside-col">
@@ -51,6 +50,13 @@
                         <?php endforeach; ?>
                     </ul>
                 </nav>
+                <div class="aside-bludit">
+                    <img class="aside-bludit-logo lozad" data-src="<?php echo HTML_PATH_THEME; ?>img/bludit.png" alt="Bludit" width="120" />
+                    <p class="aside-powered">
+                        <?php echo $L->get('Powered by'); ?>
+                        <a href="https://www.bludit.com" target="_blank" rel="noopener">Bludit</a>
+                    </p>
+                </div>
             </div>
         </div>
     </div>

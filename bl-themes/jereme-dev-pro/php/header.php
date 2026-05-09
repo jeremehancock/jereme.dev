@@ -15,10 +15,6 @@
             </a>
         </div>
 
-        <nav id="site-navigation" class="main-navigation" role="navigation" aria-label="Primary">
-            <?php Theme::plugins('siteSidebar'); ?>
-        </nav>
-
         <div class="header-actions">
             <button type="button" class="icon-btn search-toggle" id="search-toggle" aria-controls="search-panel" aria-expanded="false" aria-label="<?php echo $L->get('Search'); ?>">
                 <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -44,6 +40,13 @@
             </button>
         </div>
     </div>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation" aria-label="Primary">
+        <div class="main-navigation-inner">
+            <p class="main-navigation-title">Menu</p>
+            <?php Theme::plugins('siteSidebar'); ?>
+        </div>
+    </nav>
 
     <div class="search-panel" id="search-panel" hidden>
         <div class="search-inner" role="search">
