@@ -156,14 +156,50 @@ a.text-danger:hover {
 }
 
 .btn-danger {
-	background: var(--color-danger, #DC2626);
-	border: none;
+	background: rgba(239, 68, 68, 0.16);
+	border: 1px solid rgba(239, 68, 68, 0.45);
+	color: #fecaca;
 	font-weight: var(--font-weight-semibold, 650);
 }
 
-.btn-danger:hover {
-	background: var(--color-danger-dark, #B91C1C);
-	border: none;
+.btn-danger:hover,
+.btn-danger:focus,
+.btn-danger:not(:disabled):not(.disabled):active {
+	background: rgba(239, 68, 68, 0.28);
+	border-color: rgba(239, 68, 68, 0.65);
+	color: #ffffff;
+	transform: translateY(-1px);
+}
+
+.btn-warning {
+	background: rgba(245, 158, 11, 0.16);
+	border: 1px solid rgba(245, 158, 11, 0.45);
+	color: #fde68a;
+	font-weight: var(--font-weight-semibold, 650);
+}
+
+.btn-warning:hover,
+.btn-warning:focus,
+.btn-warning:not(:disabled):not(.disabled):active {
+	background: rgba(245, 158, 11, 0.28);
+	border-color: rgba(245, 158, 11, 0.65);
+	color: #fef3c7;
+	transform: translateY(-1px);
+}
+
+.btn-info {
+	background: rgba(14, 165, 233, 0.16);
+	border: 1px solid rgba(14, 165, 233, 0.45);
+	color: #bae6fd;
+	font-weight: var(--font-weight-semibold, 650);
+}
+
+.btn-info:hover,
+.btn-info:focus,
+.btn-info:not(:disabled):not(.disabled):active {
+	background: rgba(14, 165, 233, 0.28);
+	border-color: rgba(14, 165, 233, 0.65);
+	color: #e0f2fe;
 	transform: translateY(-1px);
 }
 
