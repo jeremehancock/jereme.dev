@@ -1047,6 +1047,7 @@ body.menu-open .main-navigation {
     color: var(--banner-text);
     font-size: 0.95rem;
     line-height: 1.5;
+    justify-content: center;
 }
 .archived-banner-icon { flex-shrink: 0; margin-top: 2px; fill: currentColor; }
 
