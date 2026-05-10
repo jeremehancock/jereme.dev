@@ -591,6 +591,11 @@ select {
 	border-color: var(--border-color, #232831);
 }
 
+select,
+.custom-select {
+	accent-color: var(--primary-blue, #34d399);
+}
+
 select option,
 .custom-select option {
 	background-color: var(--bg-card, #14181f);
@@ -598,13 +603,7 @@ select option,
 }
 
 select option:checked,
-select option:hover,
-select option:focus,
-select option:active,
-.custom-select option:checked,
-.custom-select option:hover,
-.custom-select option:focus,
-.custom-select option:active {
+.custom-select option:checked {
 	background: var(--primary-blue, #34d399) linear-gradient(0deg, var(--primary-blue, #34d399) 0%, var(--primary-blue, #34d399) 100%);
 	color: var(--accent-ink, #0a0c10);
 }
