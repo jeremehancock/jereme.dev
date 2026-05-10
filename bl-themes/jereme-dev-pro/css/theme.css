@@ -1478,8 +1478,7 @@ body.search-open .body-overlay {
     .entry-content { font-size: 1rem; }
 
     .post-navigation { grid-template-columns: 1fr; }
-    .nav-next { grid-column: 1; text-align: left; }
-    .nav-next .nav-direction { justify-content: flex-start; }
+    .nav-next { grid-column: 1; }
 
     .aside-grid { grid-template-columns: 1fr; gap: 2rem; }
 
