@@ -546,7 +546,6 @@ body.menu-open .main-navigation {
     color: var(--text);
     padding-left: 1.1rem;
 }
-.main-navigation li.parent > a { font-weight: 600; color: var(--text); }
 .main-navigation .plugin-content ul ul {
     margin: 0.15rem 0 0;
     padding-left: 0.85rem;
