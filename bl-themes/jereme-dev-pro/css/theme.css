@@ -1431,7 +1431,7 @@ body.no-scroll { overflow: hidden; }
     position: fixed;
     inset: 0;
     background: var(--overlay);
-    z-index: 2;
+    z-index: 3;
     opacity: 0;
     pointer-events: none;
     transition: opacity var(--transition-med);
