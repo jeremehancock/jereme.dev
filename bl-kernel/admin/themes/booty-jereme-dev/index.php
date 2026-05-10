@@ -94,5 +94,21 @@
 <!-- Plugins -->
 <?php Theme::plugins('adminBodyEnd') ?>
 
+<script>
+	$(function() {
+		$('select.custom-select').each(function() {
+			var $el = $(this);
+			if ($el.data('select2') || $el.is('[data-no-select2]')) {
+				return;
+			}
+			$el.select2({
+				theme: 'bootstrap4',
+				minimumResultsForSearch: 10,
+				width: '100%'
+			});
+		});
+	});
+</script>
+
 </body>
 </html>
