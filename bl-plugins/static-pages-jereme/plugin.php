@@ -75,7 +75,7 @@ class pluginStaticPages extends Plugin
                 } else {
                     $html .= '<li class="subpage" style="margin-left: 10px">';
                 }
-                if ($page->title() === "Homelab" || $page->title() === "Resumé" || $page->title() === "DumbProjects") {
+                if ($page->description() === "external") {
 				    $html .= '<a href="' . $page->permalink() . '" target="_blank">' . $page->title() . '</a>';
                 } else {
                 	$html .= '<a href="' . $page->permalink() . '">' . $page->title() . '</a>';

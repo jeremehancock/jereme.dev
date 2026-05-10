@@ -27,7 +27,7 @@
                         if (Text::stringContains($staticPage->key(), '404')) continue;
                     ?>
                     <li>
-                        <a href="<?php echo $staticPage->permalink(FALSE); ?>" <?php if ($staticPage->title() === 'Homelab' || $staticPage->title() === 'DumbProjects' || $staticPage->title() === 'Resumé') echo 'target="_blank" rel="noopener"'; ?>>
+                        <a href="<?php echo $staticPage->permalink(FALSE); ?>" <?php if ($staticPage->description() === 'external') echo 'target="_blank" rel="noopener"'; ?>>
                             <?php echo $staticPage->title(); ?>
                         </a>
                     </li>
