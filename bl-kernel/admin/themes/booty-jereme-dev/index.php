@@ -96,7 +96,7 @@
 
 <script>
 	$(function() {
-		$('select.custom-select').each(function() {
+		$('select').each(function() {
 			var $el = $(this);
 			if ($el.data('select2') || $el.is('[data-no-select2]')) {
 				return;
