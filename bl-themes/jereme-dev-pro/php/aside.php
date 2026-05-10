@@ -24,7 +24,7 @@
                 <h3 class="aside-heading"><?php echo $L->get('About'); ?></h3>
                 <ul class="aside-list">
                     <?php foreach ($staticContent as $staticPage):
-                        if ($staticPage->title() === '404 Not Found') continue;
+                        if ($staticPage->description() === '404') continue;
                     ?>
                     <li>
                         <a href="<?php echo $staticPage->permalink(FALSE); ?>" <?php if ($staticPage->description() === 'external') echo 'target="_blank" rel="noopener"'; ?>>

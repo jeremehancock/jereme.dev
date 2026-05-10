@@ -69,7 +69,7 @@ class pluginStaticPages extends Plugin
 		// Show static pages
 		$staticPages = buildStaticPages();
 		foreach ($staticPages as $page) {
-		    if ($page->title() != "404 Not Found") {
+		    if ($page->description() != "404") {
 		        if ($page->isParent()) {
 				    $html .= '<li class="parent">';
                 } else {
