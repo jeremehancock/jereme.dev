@@ -1,0 +1,8 @@
+{
+	"plugin-data":
+	{
+		"name": "Categories - jereme.dev",
+		"description": "Shows all categories on the sidebar. Arhived category will be forced to the bottom of the list."
+	},
+	"hide-categories-without-content": "Hide Categories without content"
+}
