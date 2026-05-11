@@ -22,14 +22,17 @@ class pluginJeremeDevProCompanion extends Plugin
 	{
 		$this->dbFields = array(
 			// Categories widget
+			'categoriesEnabled'      => true,
 			'categoriesLabel'        => 'Categories',
 			'categoriesHideEmpty'    => true,
 
 			// Latest Posts widget
+			'latestEnabled'          => true,
 			'latestLabel'            => 'Latest Posts',
 			'latestNumberOfItems'    => 3,
 
 			// About widget (static pages)
+			'staticEnabled'          => true,
 			'staticLabel'            => 'About',
 
 			// External link behavior
@@ -53,7 +56,11 @@ class pluginJeremeDevProCompanion extends Plugin
 			'htmlAdminBodyEnd'       => '',
 
 			// RSS feed
+			'rssEnabled'             => true,
 			'rssNumberOfItems'       => 5,
+
+			// Sitemap
+			'sitemapEnabled'         => true,
 		);
 	}
 
@@ -73,11 +80,13 @@ class pluginJeremeDevProCompanion extends Plugin
 
 		// Categories sub-section
 		$html .= $this->subHeading('jdpc-section-categories');
+		$html .= $this->selectField('categoriesEnabled', $L->get('jdpc-show-widget'));
 		$html .= $this->textField('categoriesLabel', $L->get('Label'));
 		$html .= $this->selectField('categoriesHideEmpty', $L->get('jdpc-hide-empty-categories'));
 
 		// Latest Posts sub-section
 		$html .= $this->subHeading('jdpc-section-latest');
+		$html .= $this->selectField('latestEnabled', $L->get('jdpc-show-widget'));
 		$html .= $this->textField('latestLabel', $L->get('Label'));
 		if (defined('ORDER_BY') && ORDER_BY === 'date') {
 			$html .= $this->numberField('latestNumberOfItems', $L->get('jdpc-amount-of-items'), 1);
@@ -85,6 +94,7 @@ class pluginJeremeDevProCompanion extends Plugin
 
 		// About sub-section
 		$html .= $this->subHeading('jdpc-section-static');
+		$html .= $this->selectField('staticEnabled', $L->get('jdpc-show-widget'));
 		$html .= $this->textField('staticLabel', $L->get('Label'));
 
 		$html .= $this->closeCard();
@@ -99,11 +109,13 @@ class pluginJeremeDevProCompanion extends Plugin
 
 		// RSS sub-section
 		$html .= $this->subHeading('jdpc-subsection-rss');
+		$html .= $this->selectField('rssEnabled', $L->get('jdpc-enable-feed'));
 		$html .= $this->readonlyUrlField('jdpc-rss-url-label', DOMAIN_BASE . 'rss.xml');
 		$html .= $this->numberField('rssNumberOfItems', $L->get('jdpc-rss-items-label'), 1, $L->get('jdpc-rss-items-tip'));
 
 		// Sitemap sub-section
 		$html .= $this->subHeading('jdpc-subsection-sitemap');
+		$html .= $this->selectField('sitemapEnabled', $L->get('jdpc-enable-feed'));
 		$html .= $this->readonlyUrlField('jdpc-sitemap-url-label', DOMAIN_BASE . 'sitemap.xml');
 
 		$html .= $this->closeCard();
@@ -263,9 +275,11 @@ class pluginJeremeDevProCompanion extends Plugin
 	// ------------------------------------------------------------------
 	public function siteSidebar()
 	{
-		return $this->renderCategoriesWidget()
-		     . $this->renderLatestPostsWidget()
-		     . $this->renderStaticPagesWidget();
+		$out = '';
+		if ($this->getValue('categoriesEnabled')) { $out .= $this->renderCategoriesWidget(); }
+		if ($this->getValue('latestEnabled'))     { $out .= $this->renderLatestPostsWidget(); }
+		if ($this->getValue('staticEnabled'))     { $out .= $this->renderStaticPagesWidget(); }
+		return $out;
 	}
 
 	private function renderCategoriesWidget()
@@ -400,8 +414,12 @@ class pluginJeremeDevProCompanion extends Plugin
 	// ------------------------------------------------------------------
 	public function siteHead()
 	{
-		// RSS feed discovery link so readers can auto-discover the feed.
-		$out  = '<link rel="alternate" type="application/rss+xml" href="' . DOMAIN_BASE . 'rss.xml" title="RSS Feed">' . PHP_EOL;
+		$out = '';
+		// RSS feed discovery link — only emit it when the feed is actually enabled,
+		// otherwise readers would follow it to a 404.
+		if ($this->getValue('rssEnabled')) {
+			$out .= '<link rel="alternate" type="application/rss+xml" href="' . DOMAIN_BASE . 'rss.xml" title="RSS Feed">' . PHP_EOL;
+		}
 		$out .= $this->decodedValue('htmlHead');
 		return $out;
 	}
@@ -413,10 +431,12 @@ class pluginJeremeDevProCompanion extends Plugin
 	// ------------------------------------------------------------------
 	public function beforeAll()
 	{
-		if ($this->webhook('rss.xml')) {
+		// When a feed is disabled, don't intercept its URL — Bludit's normal page
+		// router takes over and the URL 404s (no slug matches "rss.xml"/"sitemap.xml").
+		if ($this->getValue('rssEnabled') && $this->webhook('rss.xml')) {
 			$this->serveXml($this->workspace() . 'rss.xml');
 		}
-		if ($this->webhook('sitemap.xml')) {
+		if ($this->getValue('sitemapEnabled') && $this->webhook('sitemap.xml')) {
 			$this->serveXml($this->workspace() . 'sitemap.xml');
 		}
 	}
@@ -448,24 +468,25 @@ class pluginJeremeDevProCompanion extends Plugin
 
 	private function regenerateFeeds()
 	{
-		$this->createRssXml();
-		$this->createSitemapXml();
+		// Don't regenerate a feed while it's disabled — leaves the on-disk XML
+		// untouched so a re-enable doesn't require an intervening page edit.
+		if ($this->getValue('rssEnabled'))     { $this->createRssXml(); }
+		if ($this->getValue('sitemapEnabled')) { $this->createSitemapXml(); }
 	}
 
 	// Regenerate XML when settings are saved or the plugin is installed.
+	// Routes through regenerateFeeds() so the enable toggles are respected.
 	public function post()
 	{
 		$result = parent::post();
-		$this->createRssXml();
-		$this->createSitemapXml();
+		$this->regenerateFeeds();
 		return $result;
 	}
 
 	public function install($position = 1)
 	{
 		parent::install($position);
-		$this->createRssXml();
-		$this->createSitemapXml();
+		$this->regenerateFeeds();
 		return true;
 	}
 

@@ -38,6 +38,8 @@
 	"jdpc-html-adminbodyend-tip": "Emitted just before &lt;/body&gt; on every admin page. Runs in addition to the version check script above.",
 	"jdpc-section-howitworks": "How this plays with the theme",
 	"jdpc-hide-empty-categories": "Hide categories without content",
+	"jdpc-show-widget": "Show widget",
+	"jdpc-enable-feed": "Enable feed",
 	"jdpc-enable-external-target-blank": "Open external links in a new tab",
 	"jdpc-enable-version-check": "Show the version chip in the admin sidebar",
 	"jdpc-amount-of-items": "Amount of items",
