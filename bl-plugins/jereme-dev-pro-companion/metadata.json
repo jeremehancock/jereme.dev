@@ -1,0 +1,10 @@
+{
+	"author": "Jereme",
+	"email": "",
+	"website": "https://jereme.dev",
+	"version": "1.0.0",
+	"releaseDate": "2026-05-11",
+	"license": "MIT",
+	"compatible": "3.21",
+	"notes": "Companion plugin for the jereme-dev-pro theme. Replaces categories-jereme, navigation, static-pages-jereme, open-links-new-tab-jereme, version-jereme, and web-stats-jereme."
+}
