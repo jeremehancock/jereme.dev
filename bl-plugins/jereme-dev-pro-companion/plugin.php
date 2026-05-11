@@ -51,6 +51,9 @@ class pluginJeremeDevProCompanion extends Plugin
 			'htmlAdminHead'          => '',
 			'htmlAdminBodyBegin'     => '',
 			'htmlAdminBodyEnd'       => '',
+
+			// RSS feed
+			'rssNumberOfItems'       => 5,
 		);
 	}
 
@@ -89,6 +92,20 @@ class pluginJeremeDevProCompanion extends Plugin
 		// ============ SECTION: External links =============================
 		$html .= $this->openCard('jdpc-section-external', 'external-link-alt', 'jdpc-section-external-subtitle');
 		$html .= $this->selectField('targetBlankEnabled', $L->get('jdpc-enable-external-target-blank'));
+		$html .= $this->closeCard();
+
+		// ============ SECTION: Feeds & sitemap ============================
+		$html .= $this->openCard('jdpc-section-feeds', 'rss', 'jdpc-section-feeds-subtitle');
+
+		// RSS sub-section
+		$html .= $this->subHeading('jdpc-subsection-rss');
+		$html .= $this->readonlyUrlField('jdpc-rss-url-label', DOMAIN_BASE . 'rss.xml');
+		$html .= $this->numberField('rssNumberOfItems', $L->get('jdpc-rss-items-label'), 1, $L->get('jdpc-rss-items-tip'));
+
+		// Sitemap sub-section
+		$html .= $this->subHeading('jdpc-subsection-sitemap');
+		$html .= $this->readonlyUrlField('jdpc-sitemap-url-label', DOMAIN_BASE . 'sitemap.xml');
+
 		$html .= $this->closeCard();
 
 		// ============ SECTION: Web stats ==================================
@@ -197,6 +214,17 @@ class pluginJeremeDevProCompanion extends Plugin
 		if ($tip) {
 			$html .= '<small class="form-text text-muted">' . $tip . '</small>';
 		}
+		$html .= '</div>';
+		return $html;
+	}
+
+	private function readonlyUrlField($labelKey, $url)
+	{
+		global $L;
+		$safeUrl = htmlspecialchars($url, ENT_QUOTES, 'UTF-8');
+		$html  = '<div class="form-group">';
+		$html .= '<label><strong>' . $L->get($labelKey) . '</strong></label>';
+		$html .= '<div><a href="' . $safeUrl . '" target="_blank" rel="noopener noreferrer">' . $safeUrl . '</a></div>';
 		$html .= '</div>';
 		return $html;
 	}
@@ -372,7 +400,73 @@ class pluginJeremeDevProCompanion extends Plugin
 	// ------------------------------------------------------------------
 	public function siteHead()
 	{
-		return $this->decodedValue('htmlHead');
+		// RSS feed discovery link so readers can auto-discover the feed.
+		$out  = '<link rel="alternate" type="application/rss+xml" href="' . DOMAIN_BASE . 'rss.xml" title="RSS Feed">' . PHP_EOL;
+		$out .= $this->decodedValue('htmlHead');
+		return $out;
+	}
+
+	// ------------------------------------------------------------------
+	// Webhooks: intercept /rss.xml and /sitemap.xml requests and stream
+	// the cached XML files. Bludit's normal page router never sees these
+	// paths because we exit() before it runs.
+	// ------------------------------------------------------------------
+	public function beforeAll()
+	{
+		if ($this->webhook('rss.xml')) {
+			$this->serveXml($this->workspace() . 'rss.xml');
+		}
+		if ($this->webhook('sitemap.xml')) {
+			$this->serveXml($this->workspace() . 'sitemap.xml');
+		}
+	}
+
+	private function serveXml($file)
+	{
+		if (!file_exists($file)) {
+			// File missing — regenerate on the fly so the URL never 404s.
+			if (basename($file) === 'rss.xml') {
+				$this->createRssXml();
+			} else {
+				$this->createSitemapXml();
+			}
+		}
+		header('Content-type: text/xml');
+		$doc = new DOMDocument();
+		// External entity loading is disabled by default in PHP 8.0+; no XXE risk.
+		$doc->load($file);
+		echo $doc->saveXML();
+		exit(0);
+	}
+
+	// ------------------------------------------------------------------
+	// Page lifecycle: regenerate both XML files whenever the page set changes.
+	// ------------------------------------------------------------------
+	public function afterPageCreate() { $this->regenerateFeeds(); }
+	public function afterPageModify() { $this->regenerateFeeds(); }
+	public function afterPageDelete() { $this->regenerateFeeds(); }
+
+	private function regenerateFeeds()
+	{
+		$this->createRssXml();
+		$this->createSitemapXml();
+	}
+
+	// Regenerate XML when settings are saved or the plugin is installed.
+	public function post()
+	{
+		$result = parent::post();
+		$this->createRssXml();
+		$this->createSitemapXml();
+		return $result;
+	}
+
+	public function install($position = 1)
+	{
+		parent::install($position);
+		$this->createRssXml();
+		$this->createSitemapXml();
+		return true;
 	}
 
 	public function siteBodyBegin()
@@ -476,4 +570,150 @@ class pluginJeremeDevProCompanion extends Plugin
 		$val = $this->getValue($key);
 		return ($val === '' || $val === null) ? '' : html_entity_decode($val);
 	}
+
+	// ------------------------------------------------------------------
+	// XML generation (RSS feed + sitemap)
+	//
+	// The upstream rss/sitemap plugins concatenated dynamic values into XML
+	// without escaping, so any '&' in $site->description() or a page title
+	// silently broke loadXML(), and save() then truncated the file to just
+	// the prolog. This implementation routes every dynamic value through
+	// xmlText() / xmlAttr() so the XML always parses.
+	// ------------------------------------------------------------------
+
+	// Escape arbitrary string for XML text content or attribute.
+	private function xmlText($s)
+	{
+		return htmlspecialchars((string) $s, ENT_XML1 | ENT_QUOTES, 'UTF-8');
+	}
+
+	// URL-encode any non-ASCII byte in a URL so it's valid in an XML context.
+	// Mirrors what the upstream rss plugin did with its private encodeURL().
+	private function encodeUrlBytes($url)
+	{
+		return preg_replace_callback('/[^\x20-\x7f]/', function ($m) {
+			return urlencode($m[0]);
+		}, (string) $url);
+	}
+
+	private function ensureWorkspace()
+	{
+		$ws = $this->workspace();
+		if (!is_dir($ws)) {
+			mkdir($ws, 0755, true);
+		}
+		return $ws;
+	}
+
+	private function createRssXml()
+	{
+		global $site;
+		global $pages;
+
+		$ws = $this->ensureWorkspace();
+
+		$n = (int) $this->getValue('rssNumberOfItems');
+		if ($n < 1) { $n = 5; }
+
+		$list = $pages->getList(
+			$pageNumber    = 1,
+			$numberOfItems = $n,
+			$published     = true,
+			$static        = true,
+			$sticky        = true,
+			$draft         = false,
+			$scheduled     = false
+		);
+
+		$xml  = '<?xml version="1.0" encoding="UTF-8" ?>';
+		$xml .= '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">';
+		$xml .= '<channel>';
+		$xml .= '<atom:link href="' . $this->xmlText(DOMAIN_BASE . 'rss.xml') . '" rel="self" type="application/rss+xml" />';
+		$xml .= '<title>'       . $this->xmlText($site->title())                       . '</title>';
+		$xml .= '<link>'        . $this->xmlText($this->encodeUrlBytes($site->url())) . '</link>';
+		$xml .= '<description>' . $this->xmlText($site->description())                 . '</description>';
+		$xml .= '<lastBuildDate>' . date(DATE_RSS) . '</lastBuildDate>';
+
+		foreach ($list as $pageKey) {
+			try {
+				$page = new Page($pageKey);
+				$xml .= '<item>';
+				$xml .= '<title>' . $this->xmlText($page->title()) . '</title>';
+				$xml .= '<link>'  . $this->xmlText($this->encodeUrlBytes($page->permalink())) . '</link>';
+				$cover = $page->coverImage(true);
+				if (!empty($cover)) {
+					$xml .= '<image>' . $this->xmlText($cover) . '</image>';
+				}
+				// contentBreak() returns text/HTML. We escape it for safe inclusion as
+				// text content (same approach the upstream plugin used via Sanitize::html).
+				$xml .= '<description>' . $this->xmlText($page->contentBreak()) . '</description>';
+				$xml .= '<pubDate>' . date(DATE_RSS, strtotime($page->getValue('dateRaw'))) . '</pubDate>';
+				$xml .= '<guid isPermaLink="false">' . $this->xmlText($page->uuid()) . '</guid>';
+				$xml .= '</item>';
+			} catch (Exception $e) {
+				// Skip pages that fail to construct
+			}
+		}
+
+		$xml .= '</channel></rss>';
+
+		$doc = new DOMDocument();
+		$doc->formatOutput = true;
+		// Use libxml errors so we can decide what to do on failure rather than silently truncating.
+		libxml_use_internal_errors(true);
+		$loaded = $doc->loadXML($xml);
+		libxml_clear_errors();
+		if (!$loaded) {
+			// Don't overwrite an existing-good file with truncated garbage.
+			return false;
+		}
+		return $doc->save($ws . 'rss.xml');
+	}
+
+	private function createSitemapXml()
+	{
+		global $site;
+		global $pages;
+
+		$ws = $this->ensureWorkspace();
+
+		$xml  = '<?xml version="1.0" encoding="UTF-8" ?>';
+		$xml .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
+		$xml .= '<url><loc>' . $this->xmlText($site->url()) . '</loc></url>';
+
+		$list = $pages->getList(
+			$pageNumber    = 1,
+			$numberOfItems = -1,
+			$published     = true,
+			$static        = true,
+			$sticky        = true,
+			$draft         = false,
+			$scheduled     = false
+		);
+		foreach ($list as $pageKey) {
+			try {
+				$page = new Page($pageKey);
+				if ($page->noindex()) { continue; }
+				$xml .= '<url>';
+				$xml .= '<loc>' . $this->xmlText($page->permalink()) . '</loc>';
+				$xml .= '<lastmod>' . $this->xmlText($page->date(SITEMAP_DATE_FORMAT)) . '</lastmod>';
+				$xml .= '</url>';
+			} catch (Exception $e) {
+				// Skip pages that fail to construct
+			}
+		}
+
+		$xml .= '</urlset>';
+
+		$doc = new DOMDocument();
+		$doc->formatOutput = true;
+		libxml_use_internal_errors(true);
+		$loaded = $doc->loadXML($xml);
+		libxml_clear_errors();
+		if (!$loaded) {
+			return false;
+		}
+		return $doc->save($ws . 'sitemap.xml');
+	}
+
 }
