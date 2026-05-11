@@ -41,6 +41,16 @@ class pluginJeremeDevProCompanion extends Plugin
 
 			// Admin version check
 			'versionCheckEnabled'    => true,
+
+			// Custom HTML injection — website
+			'htmlHead'               => '',
+			'htmlBodyBegin'          => '',
+			'htmlBodyEnd'            => '',
+
+			// Custom HTML injection — admin
+			'htmlAdminHead'          => '',
+			'htmlAdminBodyBegin'     => '',
+			'htmlAdminBodyEnd'       => '',
 		);
 	}
 
@@ -89,6 +99,21 @@ class pluginJeremeDevProCompanion extends Plugin
 		$html .= '<textarea id="jdpcStatsCode" class="form-control" name="webStatsCode" rows="8" style="font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 0.85rem;">' . $this->getValue('webStatsCode') . '</textarea>';
 		$html .= '<small class="form-text text-muted">' . $L->get('jdpc-stats-code-tip') . '</small>';
 		$html .= '</div>';
+		$html .= $this->closeCard();
+
+		// ============ SECTION: Custom HTML injection ======================
+		$html .= $this->openCard('jdpc-section-html', 'code', 'jdpc-section-html-subtitle');
+
+		$html .= $this->subHeading('jdpc-section-html-website');
+		$html .= $this->textareaField('htmlHead',      $L->get('jdpc-html-head-label'),       $L->get('jdpc-html-head-tip'));
+		$html .= $this->textareaField('htmlBodyBegin', $L->get('jdpc-html-bodybegin-label'),  $L->get('jdpc-html-bodybegin-tip'));
+		$html .= $this->textareaField('htmlBodyEnd',   $L->get('jdpc-html-bodyend-label'),    $L->get('jdpc-html-bodyend-tip'));
+
+		$html .= $this->subHeading('jdpc-section-html-admin');
+		$html .= $this->textareaField('htmlAdminHead',      $L->get('jdpc-html-head-label'),      $L->get('jdpc-html-adminhead-tip'));
+		$html .= $this->textareaField('htmlAdminBodyBegin', $L->get('jdpc-html-bodybegin-label'), $L->get('jdpc-html-adminbodybegin-tip'));
+		$html .= $this->textareaField('htmlAdminBodyEnd',   $L->get('jdpc-html-bodyend-label'),   $L->get('jdpc-html-adminbodyend-tip'));
+
 		$html .= $this->closeCard();
 
 		// ============ SECTION: Admin version check ========================
@@ -169,6 +194,18 @@ class pluginJeremeDevProCompanion extends Plugin
 		$html  = '<div class="form-group">';
 		$html .= '<label for="jdpc_' . $name . '"><strong>' . $labelText . '</strong></label>';
 		$html .= '<input id="jdpc_' . $name . '" class="form-control" name="' . $name . '" type="number"' . $attrs . ' value="' . $this->getValue($name) . '">';
+		if ($tip) {
+			$html .= '<small class="form-text text-muted">' . $tip . '</small>';
+		}
+		$html .= '</div>';
+		return $html;
+	}
+
+	private function textareaField($name, $labelText, $tip = null, $rows = 4)
+	{
+		$html  = '<div class="form-group">';
+		$html .= '<label for="jdpc_' . $name . '"><strong>' . $labelText . '</strong></label>';
+		$html .= '<textarea id="jdpc_' . $name . '" class="form-control" name="' . $name . '" rows="' . (int) $rows . '" style="font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 0.85rem;">' . $this->getValue($name) . '</textarea>';
 		if ($tip) {
 			$html .= '<small class="form-text text-muted">' . $tip . '</small>';
 		}
@@ -326,10 +363,23 @@ class pluginJeremeDevProCompanion extends Plugin
 	}
 
 	// ------------------------------------------------------------------
-	// Frontend: body end
+	// Frontend: head / body begin / body end
+	//
+	// siteBodyEnd combines three things:
 	//   - target=_blank script for external anchors (with rel=noopener noreferrer)
 	//   - web stats code (skipped when SERVER_PORT matches the configured dev port)
+	//   - custom HTML from the "Body end" injection field
 	// ------------------------------------------------------------------
+	public function siteHead()
+	{
+		return $this->decodedValue('htmlHead');
+	}
+
+	public function siteBodyBegin()
+	{
+		return $this->decodedValue('htmlBodyBegin');
+	}
+
 	public function siteBodyEnd()
 	{
 		$out = '';
@@ -364,6 +414,8 @@ class pluginJeremeDevProCompanion extends Plugin
 			}
 		}
 
+		$out .= $this->decodedValue('htmlBodyEnd');
+
 		return $out;
 	}
 
@@ -390,15 +442,38 @@ class pluginJeremeDevProCompanion extends Plugin
 		return $html;
 	}
 
+	public function adminHead()
+	{
+		return $this->decodedValue('htmlAdminHead');
+	}
+
+	public function adminBodyBegin()
+	{
+		return $this->decodedValue('htmlAdminBodyBegin');
+	}
+
 	public function adminBodyEnd()
 	{
-		if (!$this->getValue('versionCheckEnabled')) {
-			return '';
+		$out = '';
+
+		if ($this->getValue('versionCheckEnabled')) {
+			$jsPath = $this->phpPath() . 'js' . DS . 'version.js';
+			if (file_exists($jsPath)) {
+				$out .= '<script>' . file_get_contents($jsPath) . '</script>';
+			}
 		}
-		$jsPath = $this->phpPath() . 'js' . DS . 'version.js';
-		if (!file_exists($jsPath)) {
-			return '';
-		}
-		return '<script>' . file_get_contents($jsPath) . '</script>';
+
+		$out .= $this->decodedValue('htmlAdminBodyEnd');
+
+		return $out;
+	}
+
+	// Decode a stored html-coded value for output. Stored values were entity-encoded
+	// on save via Plugin::post() -> Sanitize::html; this reverses that to emit the
+	// original raw markup. Returns '' for empty values so concatenation is harmless.
+	private function decodedValue($key)
+	{
+		$val = $this->getValue($key);
+		return ($val === '' || $val === null) ? '' : html_entity_decode($val);
 	}
 }
