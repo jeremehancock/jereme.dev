@@ -53,3 +53,6 @@ Ready to give your Plex metadata the safety net it deserves? Snag Libretto from 
 With Libretto in your corner, you'll never need to stress over losing your lovingly curated Plex library details again. <span class="emoji">🎉</span>
 
 Happy backing up, Plex friends!<span class="emoji"> 🤗📚🎬🎵</span>
+
+## AI Assistance Disclosure
+This tool was developed with assistance from AI language models.

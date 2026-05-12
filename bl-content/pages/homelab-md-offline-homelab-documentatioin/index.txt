@@ -53,3 +53,6 @@ It's also genuinely small. One HTML file. You can read the source, audit the san
 
 - Project on GitHub: [jeremehancock/homelab.md](https://github.com/jeremehancock/homelab.md)
 - Live example using the public HTML export: <a href="https://jereme.dev/homelab-specs" target="_blank">jereme.dev/homelab-specs</a>
+
+## AI Assistance Disclosure
+This tool was developed with assistance from AI language models.
