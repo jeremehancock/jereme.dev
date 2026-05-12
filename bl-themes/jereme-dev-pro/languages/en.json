@@ -1,20 +1,13 @@
 {
   "theme-data": {
     "name": "jereme.dev Pro Theme",
-    "description": "Polished, fully responsive Bludit theme for <a href='https://jereme.dev' target='_blank'>jereme.dev</a> with first-class light &amp; dark mode."
+    "description": "Polished, fully responsive Bludit theme for <a href='https://jereme.dev' target='_blank'>jereme.dev</a> with first-class light &amp; dark mode.<br/><br/><b>Special Features:</b><br/><br/> Posts placed in a category named \"Archived\" will not show in search results and will have an \"archived\" banner above the page content.<br/><br/>A static page whose Description field is set to external:https://somedomain.com will open the URL after the : and render with target=\"_blank\" rel=\"noopener\" in the theme's footer aside. Static pages with the external URL set will also not show in search results.<br/><br/>A static page whose Description field is set to 404 is hidden from the theme's footer aside, and search. The page is still served at its URL — it just stops appearing in navigation and search. Set the Description to 404 on the page (usually a Static page) you want to serve as your site's not-found page."
   },
   "menu": "Menu",
   "blog": "Blog",
-  "continue-reading": "Continue reading",
   "type-to-start-searching": "Type at least 3 characters to search",
   "search": "Search",
   "latest-posts": "Latest Posts",
   "related-posts": "More From jereme.dev",
-  "about": "About",
-  "previous": "Previous",
-  "next": "Next",
-  "toggle-theme": "Toggle light/dark mode",
-  "toggle-menu": "Toggle menu",
-  "skip-to-content": "Skip to content",
-  "powered-by": "Powered by"
+  "about": "About"
 }
