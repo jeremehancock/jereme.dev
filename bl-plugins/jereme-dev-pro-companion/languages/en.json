@@ -4,7 +4,7 @@
     "description": "Companion plugin for the jereme-dev-pro theme."
   },
   "jdpc-section-sidebar": "Sidebar widgets",
-  "jdpc-section-sidebar-subtitle": "Three widgets that render in your sidebar, in this order: Categories → Latest Posts → About.",
+  "jdpc-section-sidebar-subtitle": "Three widgets that render in your sidebar, in this order: Categories → Latest Posts → About. <br/><br/> Latest Posts and About will also render in the footer aside.",
   "jdpc-section-categories": "Categories",
   "jdpc-section-latest": "Latest Posts",
   "jdpc-section-static": "About (static pages)",
