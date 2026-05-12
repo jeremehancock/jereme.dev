@@ -64,14 +64,14 @@ class pluginJeremeDevProCompanion extends Plugin
 
 			// Open Graph meta tags — off by default; user must fill in defaults before enabling.
 			'ogEnabled' => false,
-			'ogDefaultImage' => '',
+			'ogDefaultImage' => DOMAIN_BASE . 'bl-themes/jereme-dev-pro/img/jereme-meta.png',
 			'ogFbAppId' => '',
 
 			// Twitter / X Card meta tags — off by default; user must fill in defaults before enabling.
 			'twitterCardsEnabled' => false,
 			'twitterCardType' => 'summary_large_image',
 			'twitterSite' => '',
-			'twitterDefaultImage' => '',
+			'twitterDefaultImage' => DOMAIN_BASE . 'bl-themes/jereme-dev-pro/img/jereme-meta.png',
 
 			// EasyMDE markdown editor — off by default; opt-in.
 			'easymdeEnabled' => false,
