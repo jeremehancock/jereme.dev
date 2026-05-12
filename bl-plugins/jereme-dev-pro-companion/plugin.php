@@ -61,8 +61,28 @@ class pluginJeremeDevProCompanion extends Plugin
 
 			// Sitemap
 			'sitemapEnabled'         => true,
+
+			// Open Graph meta tags — off by default; user must fill in defaults before enabling.
+			'ogEnabled'              => false,
+			'ogDefaultImage'         => '',
+			'ogFbAppId'              => '',
+
+			// Twitter / X Card meta tags — off by default; user must fill in defaults before enabling.
+			'twitterCardsEnabled'    => false,
+			'twitterCardType'        => 'summary_large_image',
+			'twitterSite'            => '',
+			'twitterDefaultImage'    => '',
+
+			// EasyMDE markdown editor — off by default; opt-in.
+			'easymdeEnabled'         => false,
+			'easymdeTabSize'         => '2',
+			'easymdeToolbar'         => '"bold", "italic", "heading", "|", "quote", "unordered-list", "|", "link", "image", "code", "horizontal-rule", "|", "preview", "side-by-side", "fullscreen"',
+			'easymdeSpellChecker'    => true,
 		);
 	}
+
+	// EasyMDE only loads on these two admin views (create/edit pages).
+	private $easymdeViews = array('new-content', 'edit-content');
 
 	// ------------------------------------------------------------------
 	// Admin settings form
@@ -120,6 +140,35 @@ class pluginJeremeDevProCompanion extends Plugin
 
 		$html .= $this->closeCard();
 
+		// ============ SECTION: Social previews ============================
+		$html .= $this->openCard('jdpc-section-social', 'share-alt', 'jdpc-section-social-subtitle');
+
+		// Open Graph sub-section
+		$html .= $this->subHeading('jdpc-subsection-og');
+		$html .= $this->selectField('ogEnabled',      $L->get('jdpc-enable-meta'));
+		$html .= $this->textField('ogDefaultImage',   $L->get('jdpc-default-image-label'), $L->get('jdpc-og-default-image-tip'));
+		$html .= $this->textField('ogFbAppId',        $L->get('jdpc-og-fb-appid-label'),   $L->get('jdpc-og-fb-appid-tip'));
+
+		// Twitter / X Card sub-section
+		$html .= $this->subHeading('jdpc-subsection-twitter');
+		$html .= $this->selectField('twitterCardsEnabled', $L->get('jdpc-enable-meta'));
+
+		// Card type — non-binary select, inline since selectField is Enabled/Disabled only.
+		$cardType = $this->getValue('twitterCardType');
+		$html .= '<div class="form-group">';
+		$html .= '<label for="jdpc_twitterCardType"><strong>' . $L->get('jdpc-twitter-card-type-label') . '</strong></label>';
+		$html .= '<select id="jdpc_twitterCardType" class="form-control" name="twitterCardType">';
+		$html .= '<option value="summary_large_image"' . ($cardType === 'summary_large_image' ? ' selected' : '') . '>' . $L->get('jdpc-twitter-card-type-large') . '</option>';
+		$html .= '<option value="summary"'             . ($cardType === 'summary'             ? ' selected' : '') . '>' . $L->get('jdpc-twitter-card-type-summary') . '</option>';
+		$html .= '</select>';
+		$html .= '<small class="form-text text-muted">' . $L->get('jdpc-twitter-card-type-tip') . '</small>';
+		$html .= '</div>';
+
+		$html .= $this->textField('twitterSite',          $L->get('jdpc-twitter-site-label'),    $L->get('jdpc-twitter-site-tip'));
+		$html .= $this->textField('twitterDefaultImage',  $L->get('jdpc-default-image-label'),   $L->get('jdpc-twitter-default-image-tip'));
+
+		$html .= $this->closeCard();
+
 		// ============ SECTION: Web stats ==================================
 		$html .= $this->openCard('jdpc-section-stats', 'chart-bar', 'jdpc-section-stats-subtitle');
 		$html .= $this->numberField('webStatsDevport', $L->get('jdpc-dev-port'), null, $L->get('jdpc-dev-port-tip'));
@@ -143,6 +192,14 @@ class pluginJeremeDevProCompanion extends Plugin
 		$html .= $this->textareaField('htmlAdminBodyBegin', $L->get('jdpc-html-bodybegin-label'), $L->get('jdpc-html-adminbodybegin-tip'));
 		$html .= $this->textareaField('htmlAdminBodyEnd',   $L->get('jdpc-html-bodyend-label'),   $L->get('jdpc-html-adminbodyend-tip'));
 
+		$html .= $this->closeCard();
+
+		// ============ SECTION: Markdown editor (EasyMDE) ==================
+		$html .= $this->openCard('jdpc-section-easymde', 'edit', 'jdpc-section-easymde-subtitle');
+		$html .= $this->selectField('easymdeEnabled', $L->get('jdpc-enable-easymde'));
+		$html .= $this->textField('easymdeTabSize',   $L->get('jdpc-easymde-tabsize-label'),  $L->get('jdpc-easymde-tabsize-tip'));
+		$html .= $this->textField('easymdeToolbar',   $L->get('jdpc-easymde-toolbar-label'),  $L->get('jdpc-easymde-toolbar-tip'));
+		$html .= $this->selectField('easymdeSpellChecker', $L->get('jdpc-easymde-spellchecker-label'));
 		$html .= $this->closeCard();
 
 		// ============ SECTION: Admin version check ========================
@@ -420,6 +477,12 @@ class pluginJeremeDevProCompanion extends Plugin
 		if ($this->getValue('rssEnabled')) {
 			$out .= '<link rel="alternate" type="application/rss+xml" href="' . DOMAIN_BASE . 'rss.xml" title="RSS Feed">' . PHP_EOL;
 		}
+		if ($this->getValue('ogEnabled')) {
+			$out .= $this->renderOpenGraphTags();
+		}
+		if ($this->getValue('twitterCardsEnabled')) {
+			$out .= $this->renderTwitterCardTags();
+		}
 		$out .= $this->decodedValue('htmlHead');
 		return $out;
 	}
@@ -559,7 +622,19 @@ class pluginJeremeDevProCompanion extends Plugin
 
 	public function adminHead()
 	{
-		return $this->decodedValue('htmlAdminHead');
+		$out = '';
+		// EasyMDE CSS — only on page create/edit views, only when enabled.
+		if ($this->getValue('easymdeEnabled') && $this->onEasymdeView()) {
+			$out .= $this->includeCSS('easymde.min.css');
+			$out .= $this->includeCSS('easymde-bludit.css');
+		}
+		$out .= $this->decodedValue('htmlAdminHead');
+		return $out;
+	}
+
+	private function onEasymdeView()
+	{
+		return isset($GLOBALS['ADMIN_VIEW']) && in_array($GLOBALS['ADMIN_VIEW'], $this->easymdeViews, true);
 	}
 
 	public function adminBodyBegin()
@@ -578,9 +653,74 @@ class pluginJeremeDevProCompanion extends Plugin
 			}
 		}
 
+		// EasyMDE init script — only on page create/edit views, only when enabled.
+		if ($this->getValue('easymdeEnabled') && $this->onEasymdeView()) {
+			$out .= $this->renderEasymdeInit();
+		}
+
 		$out .= $this->decodedValue('htmlAdminBodyEnd');
 
 		return $out;
+	}
+
+	private function renderEasymdeInit()
+	{
+		global $L;
+
+		$spellChecker = $this->getValue('easymdeSpellChecker') ? 'true' : 'false';
+		$tabSize      = (int) $this->getValue('easymdeTabSize');
+		if ($tabSize < 1) { $tabSize = 2; }
+		// Toolbar string was stored html-entity encoded by Sanitize::html on save;
+		// decode here so the raw JS array literal is emitted into the script.
+		$toolbar      = Sanitize::htmlDecode($this->getValue('easymdeToolbar'));
+		$pageBreak    = defined('PAGE_BREAK') ? PAGE_BREAK : '<!-- pagebreak -->';
+		$jsEasyMDE    = $this->domainPath() . 'js/easymde.min.js?version=' . BLUDIT_VERSION;
+		$langImage    = $L->g('Image description');
+
+		return <<<EOF
+<script charset="utf-8" src="$jsEasyMDE"></script>
+<script>
+	var easymde = null;
+
+	// Insert an image in the editor at the cursor position (required by Bludit).
+	function editorInsertMedia(filename) {
+		var text = easymde.value();
+		easymde.value(text + "![$langImage]("+filename+")" + "\\n");
+		easymde.codemirror.refresh();
+	}
+
+	// Returns the content of the editor (required by Bludit).
+	function editorGetContent() {
+		return easymde.value();
+	}
+
+	easymde = new EasyMDE({
+		element: document.getElementById("jseditor"),
+		status: false,
+		toolbarTips: true,
+		toolbarGuideIcon: true,
+		autofocus: false,
+		placeholder: "",
+		lineWrapping: true,
+		autoDownloadFontAwesome: false,
+		indentWithTabs: true,
+		tabSize: $tabSize,
+		spellChecker: $spellChecker,
+		toolbar: [$toolbar,
+			"|",
+			{
+				name: "pageBreak",
+				action: function addPageBreak(editor){
+					var cm = editor.codemirror;
+					output = "$pageBreak";
+					cm.replaceSelection(output);
+				},
+				className: "fa fa-crop",
+				title: "Page break",
+			}]
+	});
+</script>
+EOF;
 	}
 
 	// Decode a stored html-coded value for output. Stored values were entity-encoded
@@ -590,6 +730,191 @@ class pluginJeremeDevProCompanion extends Plugin
 	{
 		$val = $this->getValue($key);
 		return ($val === '' || $val === null) ? '' : html_entity_decode($val);
+	}
+
+	// ------------------------------------------------------------------
+	// Social previews — Open Graph + Twitter/X Card meta tags
+	//
+	// Ported from the upstream `opengraph` and `twitter-cards` plugins. Both
+	// hook into <head>; we gate them in siteHead() on their enable toggles.
+	// All dynamic text is sanitized via metaSanitize() so unescaped quotes
+	// or markup in page/site values can't break attribute parsing.
+	// ------------------------------------------------------------------
+
+	private function metaSanitize($text, $maxLength = 0)
+	{
+		$text = strip_tags((string) $text);
+		$text = html_entity_decode($text, ENT_QUOTES, 'UTF-8');
+		$text = trim($text);
+		if ($maxLength > 0 && mb_strlen($text, 'UTF-8') > $maxLength) {
+			$text = mb_substr($text, 0, $maxLength, 'UTF-8') . '...';
+		}
+		return htmlspecialchars($text, ENT_QUOTES, 'UTF-8');
+	}
+
+	// Attribute-safe escape for URL values that may already be partially encoded.
+	private function attrEscape($s)
+	{
+		return htmlspecialchars((string) $s, ENT_QUOTES, 'UTF-8');
+	}
+
+	private function renderOpenGraphTags()
+	{
+		global $site;
+		global $WHERE_AM_I;
+		global $page;
+		global $content;
+
+		$og = array(
+			'locale'        => $site->locale(),
+			'type'          => 'website',
+			'title'         => $this->metaSanitize($site->title()),
+			'description'   => $this->metaSanitize($site->description(), 200),
+			'url'           => $site->url(),
+			'image'         => '',
+			'siteName'      => $this->metaSanitize($site->title()),
+			'publishedTime' => '',
+			'modifiedTime'  => '',
+			'author'        => '',
+		);
+
+		$pageContent = '';
+		if ($WHERE_AM_I === 'page' && isset($page)) {
+			$og['type']  = 'article';
+			$og['title'] = $this->metaSanitize($page->title());
+			$description = $page->description();
+			if (empty($description)) {
+				$description = Text::truncate(strip_tags($page->contentRaw()), 160);
+			}
+			$og['description']   = $this->metaSanitize($description, 200);
+			$og['url']           = $page->permalink(true);
+			$og['image']         = $page->coverImage(true);
+			$og['publishedTime'] = $page->date('c');
+			$mod                 = $page->dateModified('c');
+			if (!empty($mod)) { $og['modifiedTime'] = $mod; }
+			$og['author']        = $this->metaSanitize($page->user('nickname'));
+			$pageContent         = $page->content();
+		} else {
+			$default = $this->getValue('ogDefaultImage');
+			if (!empty($default)) {
+				$og['image'] = $default;
+			} elseif (isset($content[0])) {
+				$og['image'] = $content[0]->coverImage(true);
+				$pageContent = $content[0]->content();
+			}
+		}
+
+		$out  = PHP_EOL . '<!-- Open Graph -->' . PHP_EOL;
+		$out .= '<meta property="og:locale" content="'    . $this->attrEscape($og['locale'])   . '">' . PHP_EOL;
+		$out .= '<meta property="og:type" content="'      . $this->attrEscape($og['type'])     . '">' . PHP_EOL;
+		$out .= '<meta property="og:title" content="'     . $og['title']                       . '">' . PHP_EOL;
+		$out .= '<meta property="og:description" content="' . $og['description']               . '">' . PHP_EOL;
+		$out .= '<meta property="og:url" content="'       . $this->attrEscape($og['url'])      . '">' . PHP_EOL;
+		$out .= '<meta property="og:site_name" content="' . $og['siteName']                    . '">' . PHP_EOL;
+
+		if ($og['type'] === 'article') {
+			if (!empty($og['publishedTime'])) {
+				$out .= '<meta property="article:published_time" content="' . $this->attrEscape($og['publishedTime']) . '">' . PHP_EOL;
+			}
+			if (!empty($og['modifiedTime'])) {
+				$out .= '<meta property="article:modified_time" content="' . $this->attrEscape($og['modifiedTime']) . '">' . PHP_EOL;
+			}
+			if (!empty($og['author'])) {
+				$out .= '<meta property="article:author" content="' . $og['author'] . '">' . PHP_EOL;
+			}
+		}
+
+		// Fallback to the first <img> in content if no cover image is set.
+		if (empty($og['image'])) {
+			$src = class_exists('DOM') ? DOM::getFirstImage($pageContent) : false;
+			if ($src !== false) {
+				$og['image'] = $src;
+			} else {
+				$default = $this->getValue('ogDefaultImage');
+				if (!empty($default)) { $og['image'] = $default; }
+			}
+		}
+		if (!empty($og['image'])) {
+			$out .= '<meta property="og:image" content="'     . $this->attrEscape($og['image']) . '">' . PHP_EOL;
+			$out .= '<meta property="og:image:alt" content="' . $og['title']                    . '">' . PHP_EOL;
+		}
+
+		$fbAppId = $this->getValue('ogFbAppId');
+		if (!empty($fbAppId)) {
+			$out .= '<meta property="fb:app_id" content="' . $this->attrEscape($fbAppId) . '">' . PHP_EOL;
+		}
+
+		return $out;
+	}
+
+	private function renderTwitterCardTags()
+	{
+		global $site;
+		global $WHERE_AM_I;
+		global $page;
+		global $content;
+
+		$cardType = $this->getValue('twitterCardType');
+		if (empty($cardType)) { $cardType = 'summary_large_image'; }
+
+		$data = array(
+			'card'        => $cardType,
+			'site'        => $this->getValue('twitterSite'),
+			'title'       => $this->metaSanitize($site->title(), 70),
+			'description' => $this->metaSanitize($site->description(), 200),
+			'image'       => '',
+			'imageAlt'    => '',
+		);
+
+		$pageContent = '';
+		if ($WHERE_AM_I === 'page' && isset($page)) {
+			$data['title'] = $this->metaSanitize($page->title(), 70);
+			$description = $page->description();
+			if (empty($description)) {
+				$description = Text::truncate(strip_tags($page->contentRaw()), 160);
+			}
+			$data['description'] = $this->metaSanitize($description, 200);
+			$data['image']       = $page->coverImage(true);
+			$data['imageAlt']    = $data['title'];
+			$pageContent         = $page->content();
+		} else {
+			$default = $this->getValue('twitterDefaultImage');
+			if (!empty($default)) {
+				$data['image'] = $default;
+			} elseif (isset($content[0])) {
+				$data['image']    = $content[0]->coverImage(true);
+				$data['imageAlt'] = $this->metaSanitize($content[0]->title(), 70);
+				$pageContent      = $content[0]->content();
+			}
+		}
+
+		$out  = PHP_EOL . '<!-- Twitter Card -->' . PHP_EOL;
+		$out .= '<meta name="twitter:card" content="' . $this->attrEscape($data['card']) . '">' . PHP_EOL;
+
+		if (!empty($data['site'])) {
+			// Normalize: ensure leading @ is preserved as-is.
+			$out .= '<meta name="twitter:site" content="' . $this->metaSanitize($data['site']) . '">' . PHP_EOL;
+		}
+		$out .= '<meta name="twitter:title" content="'       . $data['title']       . '">' . PHP_EOL;
+		$out .= '<meta name="twitter:description" content="' . $data['description'] . '">' . PHP_EOL;
+
+		if (empty($data['image'])) {
+			$src = class_exists('DOM') ? DOM::getFirstImage($pageContent) : false;
+			if ($src !== false) {
+				$data['image'] = $src;
+			} else {
+				$default = $this->getValue('twitterDefaultImage');
+				if (!empty($default)) { $data['image'] = $default; }
+			}
+		}
+		if (!empty($data['image'])) {
+			$out .= '<meta name="twitter:image" content="' . $this->attrEscape($data['image']) . '">' . PHP_EOL;
+			if (!empty($data['imageAlt'])) {
+				$out .= '<meta name="twitter:image:alt" content="' . $data['imageAlt'] . '">' . PHP_EOL;
+			}
+		}
+
+		return $out;
 	}
 
 	// ------------------------------------------------------------------
