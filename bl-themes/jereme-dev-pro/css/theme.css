@@ -318,21 +318,6 @@ li {
   word-wrap: normal !important;
 }
 
-.skip-link {
-  position: absolute;
-  left: -9999px;
-  top: 0;
-  background: var(--accent);
-  color: #fff;
-  padding: 0.5rem 1rem;
-  z-index: 9999;
-  border-radius: 0 0 var(--radius-md) 0;
-}
-.skip-link:focus {
-  left: 0;
-  color: #fff;
-}
-
 .container {
   width: 100%;
   max-width: var(--container-max);
