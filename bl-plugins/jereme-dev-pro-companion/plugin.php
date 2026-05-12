@@ -4,12 +4,12 @@
  * jereme-dev-pro Companion
  *
  * Single plugin that replaces six older -jereme / navigation plugins:
- *   - categories-jereme           (sidebar Categories widget, Archived sorted last)
- *   - navigation                  (sidebar Latest Posts widget)
- *   - static-pages-jereme         (sidebar About widget for static pages)
- *   - open-links-new-tab-jereme   (target=_blank on external anchors)
- *   - version-jereme              (admin sidebar version chip + AJAX update check)
- *   - web-stats-jereme            (Statcounter / similar injected at body end)
+ * - categories-jereme           (sidebar Categories widget, Archived sorted last)
+ * - navigation                  (sidebar Latest Posts widget)
+ * - static-pages-jereme         (sidebar About widget for static pages)
+ * - open-links-new-tab-jereme   (target=_blank on external anchors)
+ * - version-jereme              (admin sidebar version chip + AJAX update check)
+ * - web-stats-jereme            (Statcounter / similar injected at body end)
  *
  * Pair this plugin with the jereme-dev-pro theme. The theme's php/aside.php
  * already reads the same description=='external'/'404' conventions on static
@@ -62,16 +62,16 @@ class pluginJeremeDevProCompanion extends Plugin
 			// Sitemap
 			'sitemapEnabled' => true,
 
-			// Open Graph meta tags — off by default; user must fill in defaults before enabling.
+			// Open Graph meta tags — Defaults are relative to avoid hardcoding localhost/domain in DB.
 			'ogEnabled' => false,
-			'ogDefaultImage' => DOMAIN_BASE . 'bl-themes/jereme-dev-pro/img/jereme-meta.png',
+			'ogDefaultImage' => 'bl-themes/jereme-dev-pro/img/jereme-meta.png',
 			'ogFbAppId' => '',
 
-			// Twitter / X Card meta tags — off by default; user must fill in defaults before enabling.
+			// Twitter / X Card meta tags
 			'twitterCardsEnabled' => false,
 			'twitterCardType' => 'summary_large_image',
 			'twitterSite' => '',
-			'twitterDefaultImage' => DOMAIN_BASE . 'bl-themes/jereme-dev-pro/img/jereme-meta.png',
+			'twitterDefaultImage' => 'bl-themes/jereme-dev-pro/img/jereme-meta.png',
 
 			// EasyMDE markdown editor — off by default; opt-in.
 			'easymdeEnabled' => false,
@@ -83,6 +83,16 @@ class pluginJeremeDevProCompanion extends Plugin
 
 	// EasyMDE only loads on these two admin views (create/edit pages).
 	private $easymdeViews = array('new-content', 'edit-content');
+
+	// Helper to convert relative DB paths to absolute URLs at runtime.
+	private function makeAbsolute($path)
+	{
+		if (empty($path) || filter_var($path, FILTER_VALIDATE_URL)) {
+			return $path;
+		}
+		global $site;
+		return rtrim($site->url(), '/') . '/' . ltrim($path, '/');
+	}
 
 	// ------------------------------------------------------------------
 	// Admin settings form
@@ -698,7 +708,7 @@ class pluginJeremeDevProCompanion extends Plugin
 		// Toolbar string was stored html-entity encoded by Sanitize::html on save;
 		// decode here so the raw JS array literal is emitted into the script.
 		$toolbar = Sanitize::htmlDecode($this->getValue('easymdeToolbar'));
-		$pageBreak = defined('PAGE_BREAK') ? PAGE_BREAK : '<!-- pagebreak -->';
+		$pageBreak = defined('PAGE_BREAK') ? PAGE_BREAK : '';
 		$jsEasyMDE = $this->domainPath() . 'js/easymde.min.js?version=' . BLUDIT_VERSION;
 		$langImage = $L->g('Image description');
 
@@ -822,7 +832,7 @@ EOF;
 			$og['author'] = $this->metaSanitize($page->user('nickname'));
 			$pageContent = $page->content();
 		} else {
-			$default = $this->getValue('ogDefaultImage');
+			$default = $this->makeAbsolute($this->getValue('ogDefaultImage'));
 			if (!empty($default)) {
 				$og['image'] = $default;
 			} elseif (isset($content[0])) {
@@ -831,7 +841,7 @@ EOF;
 			}
 		}
 
-		$out = PHP_EOL . '<!-- Open Graph -->' . PHP_EOL;
+		$out = PHP_EOL . '' . PHP_EOL;
 		$out .= '<meta property="og:locale" content="' . $this->attrEscape($og['locale']) . '">' . PHP_EOL;
 		$out .= '<meta property="og:type" content="' . $this->attrEscape($og['type']) . '">' . PHP_EOL;
 		$out .= '<meta property="og:title" content="' . $og['title'] . '">' . PHP_EOL;
@@ -857,7 +867,7 @@ EOF;
 			if ($src !== false) {
 				$og['image'] = $src;
 			} else {
-				$default = $this->getValue('ogDefaultImage');
+				$default = $this->makeAbsolute($this->getValue('ogDefaultImage'));
 				if (!empty($default)) {
 					$og['image'] = $default;
 				}
@@ -909,7 +919,7 @@ EOF;
 			$data['imageAlt'] = $data['title'];
 			$pageContent = $page->content();
 		} else {
-			$default = $this->getValue('twitterDefaultImage');
+			$default = $this->makeAbsolute($this->getValue('twitterDefaultImage'));
 			if (!empty($default)) {
 				$data['image'] = $default;
 			} elseif (isset($content[0])) {
@@ -919,7 +929,7 @@ EOF;
 			}
 		}
 
-		$out = PHP_EOL . '<!-- Twitter Card -->' . PHP_EOL;
+		$out = PHP_EOL . '' . PHP_EOL;
 		$out .= '<meta name="twitter:card" content="' . $this->attrEscape($data['card']) . '">' . PHP_EOL;
 
 		if (!empty($data['site'])) {
@@ -934,7 +944,7 @@ EOF;
 			if ($src !== false) {
 				$data['image'] = $src;
 			} else {
-				$default = $this->getValue('twitterDefaultImage');
+				$default = $this->makeAbsolute($this->getValue('twitterDefaultImage'));
 				if (!empty($default)) {
 					$data['image'] = $default;
 				}
