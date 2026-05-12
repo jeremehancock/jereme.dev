@@ -22,7 +22,7 @@
   "jdpc-section-social-subtitle": "Meta tags consumed by social platforms when someone shares one of your URLs — Open Graph (Facebook, LinkedIn, Discord, Slack, Mastodon, iMessage) and Twitter/X Card (the legacy twitter:* tags that X still honors and falls back to OG for the rest). Both render in the page <head>.",
   "jdpc-subsection-og": "Open Graph",
   "jdpc-subsection-twitter": "X / Twitter Card",
-  "jdpc-enable-meta": "Emit meta tags",
+  "jdpc-enable-meta": "Enable meta tags",
   "jdpc-default-image-label": "Default image URL",
   "jdpc-og-default-image-tip": "Fallback image used on the home page and anywhere a specific page has no cover image. Should be an absolute URL.",
   "jdpc-og-fb-appid-label": "Facebook App ID",
