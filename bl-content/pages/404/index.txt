@@ -2,7 +2,7 @@
 
 <div style="text-align: center; padding: 40px 20px;">
   <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap " rel="stylesheet">
-  <img src="/bl-themes/jereme-dev/img/404.gif" alt="Page not found" style="max-width: 100%; height: auto;" />
+  <img src="/bl-themes/jereme-dev-pro/img/404.gif" alt="Page not found" style="max-width: 100%; height: auto;" />
   <h1 style="font-family: 'Special Elite', monospace; font-size: 2.5em; margin: 20px 0 0 0; font-weight: normal; letter-spacing: 1px;">Yeah, whatever. The page isn't here.</h1>
 </div>
 
