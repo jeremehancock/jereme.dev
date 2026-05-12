@@ -77,5 +77,5 @@ Now you should have a fully functional web server that you can use for a persona
 
 **Updates:**
 > *I have updated the instructions in this post to use the [Onn Universal Wall Charger](https://www.walmart.com/ip/Onn-Universal-Wall-Charger-Black/620837164) which provides my originally intended configuration.*
-> 
+
 > *I have added a [Gosund Smart Plug](https://www.amazon.com/Outlet-Required-Gosund-Upgraded-Version/dp/B07GRLQV47/) to my setup so I can easily restart the server in the event that it crashes and I can't SSH into it to reboot.*

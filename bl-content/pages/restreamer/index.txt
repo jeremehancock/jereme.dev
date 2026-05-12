@@ -28,22 +28,22 @@ If you are looking to get into running a live stream for something like a pet de
 
 **Updates:**
 > *I have managed to get the [YouTube](https://www.youtube.com/) live streams to not stop after 12 hours. Apparently if you use the "Schedule Stream" option it allows you to stream past the 12 hour mark. The [Pi Lab Live Stream](pi-lab-live-stream) was setup this way during the initial setup which is why it hadn't stopped. I have now set them all up this way.*
-> 
+ 
 > *I have updated my tortoise cam with its own URL, [TortoiseCam.com](https://tortoisecam.com). ~~It is setup to use [EarthCam](https://www.earthcam.com/) which it turns out [Restreamer](https://datarhei.github.io/restreamer/) also works with.~~*
->
+
 > *I have updated the [TortoiseCam.com](https://tortoisecam.com) site to use [YouTube](https://www.youtube.com/) since I noticed [EarthCam](https://www.earthcam.com/) uses ugly ads that seemed sketchy.*
->
+
 > *I have continued to have issues with [YouTube](https://www.youtube.com/) ending the tortoise cam stream. So I have gone back to [EarthCam](https://www.earthcam.com/). To get around the sketchy ads in the [EarthCam](https://www.earthcam.com/) embed I have setup a scraper to grab the m3u8 file directly for [TortoiseCam.com](https://tortoisecam.com).*
->
+
 > *I have upgraded the Restreamer Node to a [Raspberry Pi 4 Model B (4GB)](https://deviwiki.com/wiki/RPF_Raspberry_Pi_4_Model_B_4GB).*
-> 
+ 
 > *I have added the  [OctoPrint Node Live Stream](octoprint-node-live-stream)*.
->
+
 > *I have extended the Restreamer node to act as a secondary Pi-hole. Check out my new dual Pi-hole + Tailscale setup [here](dual-pi-hole-tailscale).
->
+
 > *I shutdown the Pi Lab Live Stream as well as the OctoPrint Node Live Stream due to some YouTube Copyright Infringement claims that make no sense.
-> 
+ 
 > *I have shutdown the Restreamer Node as part of an effort to simplify my setup.*
-> 
+ 
 > *I have relaunched the Restreamer Node using Docker in a VM on my Proxmox Node.*
 

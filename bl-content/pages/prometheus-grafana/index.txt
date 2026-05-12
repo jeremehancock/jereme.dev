@@ -14,11 +14,11 @@ https://github.com/bhemar/raspberry-metrics.
 
 **Updates:**
 > *I have made some updates to the Pi Lab Metrics dashboard to include more graphs. I have also finally added the Pi-hole Node to the dashboard.*
->
+
 > *I have created a [Grafana](https://grafana.com/) Playlist to cycle through each node in Pi Lab.*
-> 
+
 > *I have upgraded the Pi used for the Pi Lab Metrics node to a Raspberry Pi 3 Model B.*
->
+
 > *I have added a Plex metrics dashboard to the [Pi Lab Stats](/pi-lab-stats) page.*
-> 
+
 > *I have moved the Pi Lab Metrics node to an LXC container running in Proxmox.*

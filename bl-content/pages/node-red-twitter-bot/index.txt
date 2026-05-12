@@ -18,27 +18,27 @@ I am very impressed with [Node-RED](https://nodered.org/). I definitely recommen
 
 **Updates:**
 > *Thanks to some great feedback from [r/nodered](https://www.reddit.com/r/nodered/comments/hetcu6/my_first_nodered_flow/) I have re-factored the flow to use the `join` node so I can remove the use of flow variables. This should fix the issues I was seeing when a request to the flow would occur before the previous request had completed.  *
-> 
+ 
 > *I have added a new flow that tweets the current [BOINC Node](/fold-for-covid) Rosetta@home stats. This flow is setup to be completely powered by [Node-RED](https://nodered.org/) and is run on a 30 minute interval.*
->
+
 > *I have updated this blog post with the latest information on this project.*
->
+
 > *I have added Node CPU temperature checks to alert me if a node has exceeded a configurable threshold.*
-> 
+ 
 > *I have added a new flow that tweets the current average web stats from the [Pi Lab Statcounter account](https://statcounter.com/p12007932/summary/?account_id=324824&login_id=1&code=8be480ebcbd8fbe290785aac26c3ab68&guest_login=1).*
-> 
+ 
 > *I have updated the flow to have better formatting of the message payload.*
-> 
+ 
 > *I have added a new flow that tweets a JPEG snapshot of the [Pi Lab Live Stream](pi-lab-live-stream) every 30 minutes.*
-> 
+ 
 > *I have added a Current Date/Time node to ensure that the Tweets are unique.*
->
+
 > *I have downgraded the Node-RED Node to a [Raspberry Pi 3 Model B](https://deviwiki.com/wiki/RPF_Raspberry_Pi_3_Model_B) and repurpsed the original Node-RED Node into a Pi Lab Web Cluster production node.*
-> 
+ 
 > *I have moved the `ping` checks to [Uptime Kuma](https://github.com/louislam/uptime-kuma) that I have setup on another server on my network. It uses [IFTTT](https://ifttt.com/) for the notifications which is much better than the AT&T SMS method. I have also updated the Twitter Bot to use [IFTTT](https://ifttt.com/) for the temperature checks.*
->
+
 > *I have upgraded to Node-RED v3. I ran into a few issues during the upgrade. [Read more](node-red-upgrades-v3)*
-> 
+ 
 > *Twitter has suspended the Pi Lab Twitter account. They didn't give any specific reason. Not going to put any effort into fixing it since Twitter is a total dumpster fire at this point.*
-> 
+ 
 > *I have moved my Node-RED node to an LXC container running in Proxmox.*

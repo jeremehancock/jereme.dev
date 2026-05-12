@@ -76,11 +76,11 @@ Now I can use the `padd` command to startup PADD.
 
 **Updates:**
 > *I originally had Tailscale setup to use Pi-hole as an Exit Node. I found that I was having issues resolving hostnames. I have updated the setup to not use the Pi-hole as the Exit Node. I still get the ad-blocking, and now the hostname resolution issues have been resolved.*
-> 
+ 
 > *I started having odd issues where the internet speeds from the Pi 4 running Pi-hole would drop off significantly around 2am everyday. I have since moved back to Pi-hole's default installation.*
-> 
+ 
 > *Check out my new dual Pi-hole + Tailscale setup [here](dual-pi-hole-tailscale).
-> 
+ 
 > *I have moved my Pi-hole setup to an older Pi 2 Model B so that I could free the Pi 4 up for some retro gaming.
->
+
 > *I have moved my Pi-hole setup to an LXC container running in Proxmox.
