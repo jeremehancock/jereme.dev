@@ -47,11 +47,23 @@
                             }
 
                             $asideHref = ($asideExternalUrl !== '') ? $asideExternalUrl : $staticPage->permalink(FALSE);
-                            $target = ($asideExternalUrl !== '') ? ' target="_blank" rel="noopener noreferrer"' : '';
+                            $isExternal = ($asideExternalUrl !== '');
+                            $target = $isExternal ? ' target="_blank" rel="noopener noreferrer"' : '';
                             ?>
                             <li>
-                                <a href="<?php echo htmlspecialchars($asideHref, ENT_QUOTES); ?>" <?php echo $target; ?>>
+                                <a href="<?php echo htmlspecialchars($asideHref, ENT_QUOTES); ?>" <?php echo $target; ?>
+                                    style="display: inline-flex; align-items: baseline; gap: 0.35em;">
                                     <?php echo $staticPage->title(); ?>
+
+                                    <?php if ($isExternal): ?>
+                                        <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
+                                            style="display: block;">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                            <polyline points="15 3 21 3 21 9"></polyline>
+                                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                                        </svg>
+                                    <?php endif; ?>
                                 </a>
                             </li>
                         <?php endforeach; ?>
