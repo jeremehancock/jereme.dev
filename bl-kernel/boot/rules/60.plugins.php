@@ -23,6 +23,7 @@ $plugins = array(
 	'adminSidebar'=>array(),
 	'adminContentSidebar'=>array(),
 	'dashboard'=>array(),
+	'editorToolbar'=>array(),
 
 	'beforeAll'=>array(),
 	'afterAll'=>array(),
@@ -121,7 +122,7 @@ function buildPlugins()
 
 		// Sort the plugins by the position for the site sidebar
 		uasort($plugins['siteSidebar'], function ($a, $b) {
-				return $a->position()>$b->position();
+				return $a->position() <=> $b->position();
 			}
 		);
 	}

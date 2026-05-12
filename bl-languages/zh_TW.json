@@ -8,7 +8,8 @@
             "",
             "",
             ""
-        ]
+        ],
+        "locale": "zh, zh_TW"
     },
     "dates": {
         "Mon": "Mon",
@@ -129,6 +130,13 @@
     "add-a-new-category": "新增一個新分類",
     "name": "名稱",
     "username": "使用者名稱",
+    "quick-search-pages-and-menu": "快速搜尋頁面和選單",
+    "click-here-for-quick-search": "Click here for quick search",
+    "analytics": "分析",
+    "visits-today": "今日訪問",
+    "unique-visitors": "獨立訪客",
+    "search-placeholder": "搜尋頁面、內容和選單項...",
+    "no-results-found": "未找到結果",
     "first-name": "名",
     "last-name": "姓",
     "to-schedule-the-content-select-the-date-and-time": "選取時間日期來進行此內容發表排程，狀態必須設定成\"發表\"",
@@ -187,6 +195,8 @@
     "order-content-by": "依序甚麼規格排序內容",
     "edit-or-delete-content-from-your-site": "從您的網站編輯或刪除內容",
     "order-the-content-by-date-to-build-a-blog": "依照時間排序建構一個部落個或使用位置排序來建構一個網站",
+    "default-content-status": "預設內容狀態",
+    "default-status-for-new-content": "選擇新內容預設建立為已發布或草稿。",
     "page-not-found-content": "嘿! 這看起來像是不存在此頁面",
     "page-not-found": "找不到此頁面",
     "predefined-pages": "預先定義頁面",
@@ -390,5 +400,12 @@
     "custom-fields": "自訂欄位",
     "define-custom-fields-for-the-content": "自行定義內容的欄位。欲學習如何自訂欄位，請造訪<a href='https:\/\/docs.bludit.com\/en\/content\/custom-fields'>文件<\/a>.",
     "start-typing-to-see-a-list-of-suggestions": "開始輸入以查看建議列表",
-    "view": "查看"
+    "view": "查看",
+    "no-tags": "沒有標籤",
+    "insert-thumbnail": "插入縮圖",
+    "no-categories": "沒有分類",
+    "insert-linked-thumbnail": "插入連結縮圖",
+    "navigation": "導覽",
+    "thumbnail-generation": "縮略圖生成",
+    "enable-disable-automatic-thumbnail-generation-on-image-upload": "啟用或禁用上傳圖片時自動生成縮略圖。"
 }

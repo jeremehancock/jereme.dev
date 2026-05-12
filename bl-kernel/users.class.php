@@ -23,7 +23,9 @@ class Users extends dbJSON {
 		'gitlab'=>'',
 		'linkedin'=>'',
 		'mastodon'=>'',
-		'vk'=>''
+		'vk'=>'',
+		'youtube'=>'',
+		'bluesky'=>''
 	);
 
 	function __construct()
@@ -64,7 +66,7 @@ class Users extends dbJSON {
 		// The username is store as key and not as field
 		$username = $args['username'];
 
-		// The password is hashed, the password doesn't need to be sanitize in the next step
+		// The password is hashed, the password doesn't need to be sanitized in the next step
 		$password = $args['password'];
 
 		$row = array();
@@ -93,7 +95,7 @@ class Users extends dbJSON {
 		return $this->save();
 	}
 
-	// Edit an user
+	// Edit a user
 	public function set($args)
 	{
 		// The username is store as key and not as field
@@ -130,7 +132,7 @@ class Users extends dbJSON {
 		return $this->save();
 	}
 
-	// Delete an user
+	// Delete a user
 	public function delete($username)
 	{
 		unset($this->db[$username]);
@@ -139,7 +141,7 @@ class Users extends dbJSON {
 
 	public function generateAuthToken()
 	{
-		return md5( uniqid().time().DOMAIN );
+		return bin2hex( openssl_random_pseudo_bytes(64) );
 	}
 
 	public function generateRememberToken()
@@ -175,7 +177,7 @@ class Users extends dbJSON {
 	public function getByEmail($email)
 	{
 		foreach ($this->db as $username=>$values) {
-			if ($values['email']==$email) {
+			if ($values['email']===$email) {
 				return $username;
 			}
 		}
@@ -186,7 +188,7 @@ class Users extends dbJSON {
 	public function getByAuthToken($token)
 	{
 		foreach ($this->db as $username=>$fields) {
-			if ($fields['tokenAuth']==$token) {
+			if ($fields['tokenAuth']===$token) {
 				return $username;
 			}
 		}
@@ -198,7 +200,7 @@ class Users extends dbJSON {
 	{
 		foreach ($this->db as $username=>$fields) {
 			if (!empty($fields['tokenRemember'])) {
-				if ($fields['tokenRemember']==$token) {
+				if ($fields['tokenRemember']===$token) {
 					return $username;
 				}
 			}

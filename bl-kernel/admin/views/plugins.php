@@ -12,7 +12,7 @@ echo Bootstrap::formTitle(array('title' => $L->g('Search plugins')));
 
 ?>
 
-<input type="text" class="form-control" id="search" placeholder="<?php $L->p('Search') ?>">
+<input type="text" dir="auto" class="form-control" id="search" placeholder="<?php $L->p('Search') ?>">
 <script>
 	$(document).ready(function() {
 		$("#search").on("keyup", function() {
@@ -66,6 +66,9 @@ foreach ($pluginsInstalled as $plugin) {
 
 	echo '<td class="text-center align-middle d-none d-lg-table-cell">';
 	echo '<span>' . $plugin->version() . '</span>';
+	if (!$plugin->isCompatible()) {
+		echo ' <span class="badge badge-pill badge-warning" title="' . $L->g('This plugin may not be supported by this version of Bludit') . '">' . $L->g('Update') . '</span>';
+	}
 	echo '</td>';
 
 	echo '<td class="text-center align-middle d-none d-lg-table-cell">

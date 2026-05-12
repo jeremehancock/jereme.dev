@@ -391,5 +391,21 @@
     "custom-fields": "Custom fields",
     "define-custom-fields-for-the-content": "Ορισμός custom fields για το περιεχόμενο. Μάθε περισσότερα για τα custom fields στο <a href='https:\/\/docs.bludit.com\/en\/content\/custom-fields'>documentation<\/a>.",
     "start-typing-to-see-a-list-of-suggestions": "Ξεκίνα την πληκτρολόγηση και θα δεις μια λίστα προτάσεων.",
-    "view": "Προβολή"
+    "view": "Προβολή",
+    "no-tags": "Χωρίς ετικέτες",
+    "insert-thumbnail": "Εισαγωγή μικρογραφίας",
+    "visits-today": "Επισκέψεις σήμερα",
+    "no-categories": "Χωρίς κατηγορίες",
+    "quick-search-pages-and-menu": "Γρήγορη αναζήτηση σελίδων και μενού",
+    "click-here-for-quick-search": "Click here for quick search",
+    "analytics": "Αναλυτικά στοιχεία",
+    "unique-visitors": "Μοναδικοί επισκέπτες",
+    "insert-linked-thumbnail": "Εισαγωγή συνδεδεμένης μικρογραφίας",
+    "search-placeholder": "Αναζήτηση σελίδων, περιεχομένου και στοιχείων μενού...",
+    "no-results-found": "Δεν βρέθηκαν αποτελέσματα",
+    "navigation": "Πλοήγηση",
+    "default-content-status": "Προεπιλεγμένη κατάσταση περιεχομένου",
+    "default-status-for-new-content": "Επιλέξτε αν το νέο περιεχόμενο θα δημιουργείται ως Δημοσιευμένο ή Πρόχειρο από προεπιλογή.",
+    "thumbnail-generation": "Δημιουργία μικρογραφιών",
+    "enable-disable-automatic-thumbnail-generation-on-image-upload": "Ενεργοποίηση ή απενεργοποίηση αυτόματης δημιουργίας μικρογραφιών κατά τη μεταφόρτωση εικόνων."
 }

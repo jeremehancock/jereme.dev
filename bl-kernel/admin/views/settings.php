@@ -99,6 +99,15 @@ echo Bootstrap::formInputHidden(array(
 		'tip' => $L->g('order-the-content-by-date-to-build-a-blog')
 	));
 
+	echo Bootstrap::formSelect(array(
+		'name' => 'defaultContentStatus',
+		'label' => $L->g('Default content status'),
+		'options' => array('published' => $L->g('Published'), 'draft' => $L->g('Draft')),
+		'selected' => $site->defaultContentStatus(),
+		'class' => '',
+		'tip' => $L->g('default-status-for-new-content')
+	));
+
 	echo Bootstrap::formTitle(array('title' => $L->g('Predefined pages')));
 
 	// Homepage
@@ -416,6 +425,15 @@ echo Bootstrap::formInputHidden(array(
 	));
 
 	echo Bootstrap::formInputText(array(
+		'name' => 'telegram',
+		'label' => 'Telegram',
+		'value' => $site->telegram(),
+		'class' => '',
+		'placeholder' => '',
+		'tip' => ''
+	));
+
+	echo Bootstrap::formInputText(array(
 		'name' => 'mastodon',
 		'label' => 'Mastodon',
 		'value' => $site->mastodon(),
@@ -441,6 +459,24 @@ echo Bootstrap::formInputHidden(array(
 		'placeholder' => '',
 		'tip' => ''
 	));
+
+	echo Bootstrap::formInputText(array(
+		'name' => 'youtube',
+		'label' => 'Youtube',
+		'value' => $site->youtube(),
+		'class' => '',
+		'placeholder' => '',
+		'tip' => ''
+	));
+
+	echo Bootstrap::formInputText(array(
+		'name' => 'bluesky',
+		'label' => 'Bluesky',
+		'value' => $site->bluesky(),
+		'class' => '',
+		'placeholder' => '',
+		'tip' => ''
+	));
 	?>
 </div>
 
@@ -448,6 +484,15 @@ echo Bootstrap::formInputHidden(array(
 <div class="tab-pane fade" id="images" role="tabpanel" aria-labelledby="images-tab">
 	<?php
 	echo Bootstrap::formTitle(array('title' => $L->g('Thumbnails')));
+
+	echo Bootstrap::formSelect(array(
+		'name' => 'thumbnailEnable',
+		'label' => $L->g('Thumbnail generation'),
+		'options' => array('true' => $L->g('Enabled'), 'false' => $L->g('Disabled')),
+		'selected' => ($site->thumbnailEnable() ? 'true' : 'false'),
+		'class' => '',
+		'tip' => $L->g('Enable or disable automatic thumbnail generation on image upload.')
+	));
 
 	echo Bootstrap::formInputText(array(
 		'name' => 'thumbnailWidth',

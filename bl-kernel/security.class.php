@@ -20,7 +20,7 @@ class Security extends dbJSON
 	// Generate and save the token in Session
 	public function generateTokenCSRF()
 	{
-		$token = sha1( uniqid().time() );
+		$token = bin2hex( openssl_random_pseudo_bytes(64) );
 		Session::set('tokenCSRF', $token);
 		Log::set(__METHOD__.LOG_SEP.'New Token CSRF ['.$token.']');
 	}
@@ -105,8 +105,19 @@ class Security extends dbJSON
 		}
 	}
 
+	// Single source of truth for the client IP across all of Bludit (core + plugins).
+	// Reads REMOTE_ADDR only: proxy headers (X-Forwarded-For, HTTP_CLIENT_IP, etc.)
+	// are client-controlled and forgeable. Deployments behind a reverse proxy
+	// (Cloudflare, nginx, Apache) should rewrite REMOTE_ADDR at the web server
+	// (mod_remoteip, real_ip_module, etc.), not in PHP.
+	// Returns '' when REMOTE_ADDR is missing or not a valid IP, so callers can
+	// safely use the result as an array key or hash input without null checks.
 	public function getUserIp()
 	{
-		return getenv('REMOTE_ADDR');
+		$ip = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : '';
+		if (filter_var($ip, FILTER_VALIDATE_IP)) {
+			return $ip;
+		}
+		return '';
 	}
 }
