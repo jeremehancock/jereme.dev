@@ -59,7 +59,7 @@
   "jdpc-html-adminhead-tip": "Emitted inside the &lt;head&gt; tag of every admin page. Generally only useful for custom admin styling.",
   "jdpc-html-adminbodybegin-tip": "Emitted immediately after &lt;body&gt; on every admin page.",
   "jdpc-html-adminbodyend-tip": "Emitted just before &lt;/body&gt; on every admin page. Runs in addition to the version check script above.",
-  "jdpc-section-howitworks": "How this plays with the theme",
+  "jdpc-section-howitworks": "How this companion plugin works with the theme",
   "jdpc-hide-empty-categories": "Hide categories without content",
   "jdpc-show-widget": "Show widget",
   "jdpc-enable-feed": "Enable feed",
