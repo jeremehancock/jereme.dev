@@ -1,21 +1,5 @@
 <?php
 
-/*
- * jereme-dev-pro Companion
- *
- * Single plugin that replaces six older -jereme / navigation plugins:
- * - categories-jereme           (sidebar Categories widget, Archived sorted last)
- * - navigation                  (sidebar Latest Posts widget)
- * - static-pages-jereme         (sidebar About widget for static pages)
- * - open-links-new-tab-jereme   (target=_blank on external anchors)
- * - version-jereme              (admin sidebar version chip + AJAX update check)
- * - web-stats-jereme            (Statcounter / similar injected at body end)
- *
- * Pair this plugin with the jereme-dev-pro theme. The theme's php/aside.php
- * already reads the same description=='external'/'404' conventions on static
- * pages; this plugin mirrors them in the sidebar widget.
- */
-
 class pluginJeremeDevProCompanion extends Plugin
 {
 	public function init()
@@ -54,13 +38,6 @@ class pluginJeremeDevProCompanion extends Plugin
 			'htmlAdminHead' => '',
 			'htmlAdminBodyBegin' => '',
 			'htmlAdminBodyEnd' => '',
-
-			// RSS feed
-			'rssEnabled' => true,
-			'rssNumberOfItems' => 5,
-
-			// Sitemap
-			'sitemapEnabled' => true,
 
 			// Open Graph meta tags — Defaults are relative to avoid hardcoding localhost/domain in DB.
 			'ogEnabled' => false,
@@ -132,23 +109,6 @@ class pluginJeremeDevProCompanion extends Plugin
 		// ============ SECTION: External links =============================
 		$html .= $this->openCard('jdpc-section-external', 'external-link-alt', 'jdpc-section-external-subtitle');
 		$html .= $this->selectField('targetBlankEnabled', $L->get('jdpc-enable-external-target-blank'));
-		$html .= $this->closeCard();
-
-		// ============ SECTION: Feeds & sitemap ============================
-		$html .= $this->openCard('jdpc-section-feeds', 'rss', 'jdpc-section-feeds-subtitle');
-
-		// RSS sub-section
-		$html .= $this->subHeading('jdpc-subsection-rss');
-		$html .= $this->selectField('rssEnabled', $L->get('jdpc-enable-feed'));
-		// Displayed as physical root file
-		$html .= $this->readonlyUrlField('jdpc-rss-url-label', HTML_PATH_ROOT . 'rss.xml');
-		$html .= $this->numberField('rssNumberOfItems', $L->get('jdpc-rss-items-label'), 1, $L->get('jdpc-rss-items-tip'));
-
-		// Sitemap sub-section
-		$html .= $this->subHeading('jdpc-subsection-sitemap');
-		$html .= $this->selectField('sitemapEnabled', $L->get('jdpc-enable-feed'));
-		// Displayed as physical root file
-		$html .= $this->readonlyUrlField('jdpc-sitemap-url-label', HTML_PATH_ROOT . 'sitemap.xml');
 
 		$html .= $this->closeCard();
 
@@ -494,10 +454,6 @@ class pluginJeremeDevProCompanion extends Plugin
 	public function siteHead()
 	{
 		$out = '';
-		// RSS feed discovery link — only emit it when the feed is actually enabled.
-		if ($this->getValue('rssEnabled')) {
-			$out .= '<link rel="alternate" type="application/rss+xml" href="' . DOMAIN_BASE . 'rss.xml" title="RSS Feed">' . PHP_EOL;
-		}
 		if ($this->getValue('ogEnabled')) {
 			$out .= $this->renderOpenGraphTags();
 		}
@@ -515,47 +471,6 @@ class pluginJeremeDevProCompanion extends Plugin
 	public function beforeAll()
 	{
 		// Interception removed to allow Nginx to serve physical files from root.
-	}
-
-	// ------------------------------------------------------------------
-	// Page lifecycle: regenerate both XML files whenever the page set changes.
-	// ------------------------------------------------------------------
-	public function afterPageCreate()
-	{
-		$this->regenerateFeeds();
-	}
-	public function afterPageModify()
-	{
-		$this->regenerateFeeds();
-	}
-	public function afterPageDelete()
-	{
-		$this->regenerateFeeds();
-	}
-
-	private function regenerateFeeds()
-	{
-		if ($this->getValue('rssEnabled')) {
-			$this->createRssXml();
-		}
-		if ($this->getValue('sitemapEnabled')) {
-			$this->createSitemapXml();
-		}
-	}
-
-	// Regenerate XML when settings are saved or the plugin is installed.
-	public function post()
-	{
-		$result = parent::post();
-		$this->regenerateFeeds();
-		return $result;
-	}
-
-	public function install($position = 1)
-	{
-		parent::install($position);
-		$this->regenerateFeeds();
-		return true;
 	}
 
 	public function siteBodyBegin()
@@ -906,112 +821,5 @@ EOF;
 		}
 
 		return $out;
-	}
-
-	// ------------------------------------------------------------------
-	// XML generation (RSS feed + sitemap)
-	// ------------------------------------------------------------------
-
-	private function xmlText($s)
-	{
-		return htmlspecialchars((string) $s, ENT_XML1 | ENT_QUOTES, 'UTF-8');
-	}
-
-	private function encodeUrlBytes($url)
-	{
-		return preg_replace_callback('/[^\x20-\x7f]/', function ($m) {
-			return urlencode($m[0]);
-		}, (string) $url);
-	}
-
-	private function createRssXml()
-	{
-		global $site;
-		global $pages;
-
-		$n = (int) $this->getValue('rssNumberOfItems');
-		if ($n < 1) {
-			$n = 5;
-		}
-
-		$list = $pages->getList(1, $n, true, true, true, false, false);
-
-		$xml = '<?xml version="1.0" encoding="UTF-8" ?>';
-		$xml .= '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">';
-		$xml .= '<channel>';
-		$xml .= '<atom:link href="' . $this->xmlText(DOMAIN_BASE . 'rss.xml') . '" rel="self" type="application/rss+xml" />';
-		$xml .= '<title>' . $this->xmlText($site->title()) . '</title>';
-		$xml .= '<link>' . $this->xmlText($this->encodeUrlBytes($site->url())) . '</link>';
-		$xml .= '<description>' . $this->xmlText($site->description()) . '</description>';
-		$xml .= '<lastBuildDate>' . date(DATE_RSS) . '</lastBuildDate>';
-
-		foreach ($list as $pageKey) {
-			try {
-				$page = new Page($pageKey);
-				$xml .= '<item>';
-				$xml .= '<title>' . $this->xmlText($page->title()) . '</title>';
-				$xml .= '<link>' . $this->xmlText($this->encodeUrlBytes($page->permalink())) . '</link>';
-				$cover = $page->coverImage(true);
-				if (!empty($cover)) {
-					$xml .= '<image>' . $this->xmlText($cover) . '</image>';
-				}
-				$xml .= '<description>' . $this->xmlText($page->contentBreak()) . '</description>';
-				$xml .= '<pubDate>' . date(DATE_RSS, strtotime($page->getValue('dateRaw'))) . '</pubDate>';
-				$xml .= '<guid isPermaLink="false">' . $this->xmlText($page->uuid()) . '</guid>';
-				$xml .= '</item>';
-			} catch (Exception $e) {
-			}
-		}
-
-		$xml .= '</channel></rss>';
-
-		$doc = new DOMDocument();
-		$doc->formatOutput = true;
-		libxml_use_internal_errors(true);
-		$loaded = $doc->loadXML($xml);
-		libxml_clear_errors();
-		if (!$loaded) {
-			return false;
-		}
-		// Saved to PATH_ROOT
-		return $doc->save(PATH_ROOT . 'rss.xml');
-	}
-
-	private function createSitemapXml()
-	{
-		global $site;
-		global $pages;
-
-		$xml = '<?xml version="1.0" encoding="UTF-8" ?>';
-		$xml .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
-		$xml .= '<url><loc>' . $this->xmlText($site->url()) . '</loc></url>';
-
-		$list = $pages->getList(1, -1, true, true, true, false, false);
-		foreach ($list as $pageKey) {
-			try {
-				$page = new Page($pageKey);
-				if ($page->noindex()) {
-					continue;
-				}
-				$xml .= '<url>';
-				$xml .= '<loc>' . $this->xmlText($page->permalink()) . '</loc>';
-				$xml .= '<lastmod>' . $this->xmlText($page->date(SITEMAP_DATE_FORMAT)) . '</lastmod>';
-				$xml .= '</url>';
-			} catch (Exception $e) {
-			}
-		}
-
-		$xml .= '</urlset>';
-
-		$doc = new DOMDocument();
-		$doc->formatOutput = true;
-		libxml_use_internal_errors(true);
-		$loaded = $doc->loadXML($xml);
-		libxml_clear_errors();
-		if (!$loaded) {
-			return false;
-		}
-		// Saved to PATH_ROOT
-		return $doc->save(PATH_ROOT . 'sitemap.xml');
 	}
 }
