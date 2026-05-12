@@ -14,9 +14,9 @@
                     if ($listOfKeys):
                         foreach ($listOfKeys as $key):
                             $lPage = new Page($key);
-                    ?>
-                    <li><a href="<?php echo $lPage->permalink(FALSE); ?>"><?php echo $lPage->title(); ?></a></li>
-                    <?php endforeach; endif; ?>
+                            ?>
+                            <li><a href="<?php echo $lPage->permalink(FALSE); ?>"><?php echo $lPage->title(); ?></a></li>
+                        <?php endforeach; endif; ?>
                 </ul>
             </div>
 
@@ -25,27 +25,30 @@
                 <ul class="aside-list">
                     <?php foreach ($staticContent as $staticPage):
                         $asideDesc = trim($staticPage->description());
-                        if ($asideDesc === '404') continue;
+                        if ($asideDesc === '404')
+                            continue;
                         $asideExternalUrl = '';
                         if (stripos($asideDesc, 'external:') === 0) {
                             $asideExternalUrl = trim(substr($asideDesc, 9));
                         }
                         $asideHref = $asideExternalUrl !== '' ? $asideExternalUrl : $staticPage->permalink(FALSE);
-                    ?>
-                    <li>
-                        <a href="<?php echo htmlspecialchars($asideHref, ENT_QUOTES); ?>" <?php if ($asideExternalUrl !== '') echo 'target="_blank" rel="noopener noreferrer"'; ?>>
-                            <?php echo $staticPage->title(); ?>
-                        </a>
-                    </li>
+                        ?>
+                        <li>
+                            <a href="<?php echo htmlspecialchars($asideHref, ENT_QUOTES); ?>" <?php if ($asideExternalUrl !== '')
+                                    echo 'target="_blank" rel="noopener noreferrer"'; ?>>
+                                <?php echo $staticPage->title(); ?>
+                            </a>
+                        </li>
                     <?php endforeach; ?>
                 </ul>
             </div>
 
             <div class="aside-col aside-bludit-col">
                 <a class="aside-bludit-link" href="https://www.bludit.com" target="_blank" rel="noopener">
-                    <img class="aside-bludit-logo lozad" data-src="<?php echo HTML_PATH_THEME; ?>img/bludit.png" alt="Bludit" width="140" />
+                    <img class="aside-bludit-logo lozad" data-src="<?php echo HTML_PATH_THEME; ?>img/bludit.png"
+                        alt="Bludit" width="140" />
                     <p class="aside-powered">
-                        <?php echo $L->get('Powered by'); ?> Bludit
+                        <?php echo $L->get('Powered by'); ?>
                     </p>
                 </a>
             </div>
