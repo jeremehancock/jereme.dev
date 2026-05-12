@@ -17,6 +17,15 @@ foreach ($pubList as $key=>$fields) {
 		unset($pubList[$key]);
 		continue;
 	}
+	if ($fields['type'] === 'static') {
+		// Static pages flagged as off-site shortcuts ("external:<url>") have no
+		// local content to search, and the "404" marker page is hidden too.
+		$desc = isset($fields['description']) ? trim($fields['description']) : '';
+		if ($desc === '404' || stripos($desc, 'external:') === 0) {
+			unset($pubList[$key]);
+		}
+		continue;
+	}
 	// Exclude pages with no category (uncategorized) or in the "Archived" category
 	$cat = isset($fields['category']) ? $fields['category'] : '';
 	if ($cat === '' || $cat === 'archived') {

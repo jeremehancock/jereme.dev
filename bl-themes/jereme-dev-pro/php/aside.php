@@ -24,10 +24,16 @@
                 <h3 class="aside-heading"><?php echo $L->get('About'); ?></h3>
                 <ul class="aside-list">
                     <?php foreach ($staticContent as $staticPage):
-                        if ($staticPage->description() === '404') continue;
+                        $asideDesc = trim($staticPage->description());
+                        if ($asideDesc === '404') continue;
+                        $asideExternalUrl = '';
+                        if (stripos($asideDesc, 'external:') === 0) {
+                            $asideExternalUrl = trim(substr($asideDesc, 9));
+                        }
+                        $asideHref = $asideExternalUrl !== '' ? $asideExternalUrl : $staticPage->permalink(FALSE);
                     ?>
                     <li>
-                        <a href="<?php echo $staticPage->permalink(FALSE); ?>" <?php if ($staticPage->description() === 'external') echo 'target="_blank" rel="noopener"'; ?>>
+                        <a href="<?php echo htmlspecialchars($asideHref, ENT_QUOTES); ?>" <?php if ($asideExternalUrl !== '') echo 'target="_blank" rel="noopener noreferrer"'; ?>>
                             <?php echo $staticPage->title(); ?>
                         </a>
                     </li>

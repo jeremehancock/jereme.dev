@@ -438,19 +438,23 @@ class pluginJeremeDevProCompanion extends Plugin
 		$html .= '<ul>';
 
 		// Static pages whose description is set to special markers:
-		//   "404"      -> hidden from this widget (theme also hides them)
-		//   "external" -> rendered with target=_blank rel=noopener (theme matches)
+		//   "404"               -> hidden from this widget (theme also hides them)
+		//   "external:<url>"    -> link points to <url>, opens in a new tab (theme matches)
 		$staticPages = buildStaticPages();
 		foreach ($staticPages as $p) {
-			$desc = $p->description();
+			$desc = trim($p->description());
 			if ($desc === '404') {
 				continue;
+			}
+			$externalUrl = '';
+			if (stripos($desc, 'external:') === 0) {
+				$externalUrl = trim(substr($desc, 9));
 			}
 			$liClass = $p->isParent() ? 'parent' : 'subpage';
 			$liStyle = $p->isParent() ? '' : ' style="margin-left: 10px"';
 			$html .= '<li class="' . $liClass . '"' . $liStyle . '>';
-			if ($desc === 'external') {
-				$html .= '<a href="' . $p->permalink() . '" target="_blank" rel="noopener noreferrer">' . $p->title() . '</a>';
+			if ($externalUrl !== '') {
+				$html .= '<a href="' . htmlspecialchars($externalUrl, ENT_QUOTES) . '" target="_blank" rel="noopener noreferrer">' . $p->title() . '</a>';
 			} else {
 				$html .= '<a href="' . $p->permalink() . '">' . $p->title() . '</a>';
 			}
