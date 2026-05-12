@@ -8,10 +8,7 @@ header('Content-Type: application/json');
 | @_POST['path']	string	Pre-defined name for the directory to read, its pre-defined to avoid security issues
 | @_POST['uuid']	string	Page UUID
 |
-| @return	array	Each file is an object with 'filename' (original) and
-|			'thumbnail' (resolved preview filename — may differ from
-|			the original for legacy pairs or fall back to it when no
-|			thumbnail exists).
+| @return	array
 */
 
 // $_POST
@@ -24,31 +21,36 @@ $path = empty($_POST['path']) ? false : $_POST['path'];
 $uuid = empty($_POST['uuid']) ? false : $_POST['uuid'];
 // ----------------------------------------------------------------------------
 
-// The only accepted value is kept for backward-compat with clients that
-// preserve the old contract; the server now scans originals regardless.
-if ($path !== 'thumbnails') {
+// Set the path to get the file list
+if ($path=='thumbnails') {
+	if ($uuid && IMAGE_RESTRICT) {
+		$path = PATH_UPLOADS_PAGES.$uuid.DS.'thumbnails'.DS;
+	} else {
+		$path = PATH_UPLOADS_THUMBNAILS;
+	}
+} else {
 	ajaxResponse(1, 'Invalid path.');
 }
 
-// Resolve the originals and thumbnails directories
-if ($uuid && IMAGE_RESTRICT) {
-	if (Text::stringContains($uuid, DS, false)) {
-		ajaxResponse(1, 'Invalid uuid.');
-	}
-	$imagePath = PATH_UPLOADS_PAGES.$uuid.DS;
-	$thumbnailPath = PATH_UPLOADS_PAGES.$uuid.DS.'thumbnails'.DS;
-} else {
-	$imagePath = PATH_UPLOADS;
-	$thumbnailPath = PATH_UPLOADS_THUMBNAILS;
-}
+// Get all files from the directory $path, also split the array by numberOfItems
+// The function listFiles split in chunks
+$listOfFilesByPage = Filesystem::listFiles($path, '*', '*', MEDIA_MANAGER_SORT_BY_DATE, MEDIA_MANAGER_NUMBER_OF_FILES);
 
-// Scan originals and pair each with its matching thumbnail
-$listOfFilesByPage = mediaManagerListImages($imagePath, $thumbnailPath, MEDIA_MANAGER_NUMBER_OF_FILES);
-
+// Check if the page number exists in the chunks
 if (isset($listOfFilesByPage[$pageNumber])) {
+
+	// Get only the filename from the chunk
+	$files = array();
+	foreach ($listOfFilesByPage[$pageNumber] as $file) {
+		$filename = basename($file);
+		array_push($files, $filename);
+	}
+
+	// Returns the number of chunks for the paginator
+	// Returns the files inside the chunk
 	ajaxResponse(0, 'List of files and number of chunks.', array(
 		'numberOfPages'=>count($listOfFilesByPage),
-		'files'=>$listOfFilesByPage[$pageNumber]
+		'files'=>$files
 	));
 }
 

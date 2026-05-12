@@ -189,8 +189,6 @@
     "order-content-by": "Inhalte anzeigen nach",
     "edit-or-delete-content-from-your-site": "Inhalte bearbeiten oder löschen.",
     "order-the-content-by-date-to-build-a-blog": "Für einen Blog Inhalte nach Datum anzeigen, für eine Website nach Position.",
-    "default-content-status": "Standard-Inhaltsstatus",
-    "default-status-for-new-content": "Wählen Sie, ob neue Inhalte standardmäßig als Veröffentlicht oder Entwurf erstellt werden.",
     "page-not-found-content": "Es sieht so aus, als würde es diese Seite nicht geben!",
     "page-not-found": "Seite nicht gefunden",
     "predefined-pages": "Zugewiesene Seiten",
@@ -396,17 +394,5 @@
     "start-typing-to-see-a-list-of-suggestions": "Beginne mit dem Tippen für eine Liste mit Vorschlägen.",
     "view": "Anschauen",
     "insert-thumbnail": "Vorschau einfügen",
-    "insert-linked-thumbnail": "Verlinkte Vorschau einfügen",
-    "no-tags": "Keine Tags",
-    "visits-today": "Besuche heute",
-    "no-categories": "Keine Kategorien",
-    "quick-search-pages-and-menu": "Schnellsuche Seiten und Menü",
-    "click-here-for-quick-search": "Click here for quick search",
-    "analytics": "Analytik",
-    "unique-visitors": "Einzigartige Besucher",
-    "search-placeholder": "Seiten, Inhalt und Menüpunkte durchsuchen...",
-    "no-results-found": "Keine Ergebnisse gefunden",
-    "navigation": "Navigation",
-    "thumbnail-generation": "Vorschaubild-Erstellung",
-    "enable-disable-automatic-thumbnail-generation-on-image-upload": "Aktivieren oder Deaktivieren der automatischen Vorschaubild-Erstellung beim Hochladen von Bildern."
+    "insert-linked-thumbnail": "Verlinkte Vorschau einfügen"
 }

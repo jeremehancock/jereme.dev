@@ -26,18 +26,6 @@ if (Text::stringContains($username, DS, false)) {
 	ajaxResponse(1, $message);
 }
 
-// Block dotfiles
-if (strpos($_FILES['profilePictureInputFile']['name'], '.') === 0) {
-	$message = 'File type not allowed.';
-	Log::set($message, LOG_TYPE_ERROR);
-	ajaxResponse(1, $message);
-}
-
-// Sanitize username for filename to prevent issues with special characters
-$sanitizedUsername = Text::removeSpecialCharacters($username, '-');
-$sanitizedUsername = Text::removeQuotes($sanitizedUsername);
-$sanitizedUsername = Text::removeSpaces($sanitizedUsername, '-');
-
 // Check file extension
 $fileExtension = Filesystem::extension($_FILES['profilePictureInputFile']['name']);
 $fileExtension = Text::lowercase($fileExtension);
@@ -58,36 +46,17 @@ if ($fileMimeType!==false) {
 }
 
 // Tmp filename
-$tmpFilename = $sanitizedUsername.'.'.$fileExtension;
+$tmpFilename = $username.'.'.$fileExtension;
 
 // Final filename
-$filename = $sanitizedUsername.'.png';
-
-// Ensure Bludit tmp directory exists
-if (!Filesystem::directoryExists(PATH_TMP)) {
-	if (!Filesystem::mkdir(PATH_TMP, true)) {
-		$message = 'Temporary directory does not exist and cannot be created.';
-		Log::set($message, LOG_TYPE_ERROR);
-		ajaxResponse(1, $message);
-	}
-}
+$filename = $username.'.png';
 
 // Move from temporary directory to uploads folder
-$moved = rename($_FILES['profilePictureInputFile']['tmp_name'], PATH_TMP.$tmpFilename);
-if (!$moved) {
-	$message = 'Error moving uploaded file to temporary directory.';
-	Log::set($message, LOG_TYPE_ERROR);
-	ajaxResponse(1, $message);
-}
+rename($_FILES['profilePictureInputFile']['tmp_name'], PATH_TMP.$tmpFilename);
 
 // Resize and convert to png
 $image = new Image();
-if ($image->setImage(PATH_TMP.$tmpFilename, PROFILE_IMG_WIDTH, PROFILE_IMG_HEIGHT, 'crop') === false) {
-	Filesystem::rmfile(PATH_TMP.$tmpFilename);
-	$message = 'Profile picture upload failed: GD cannot decode the image (unsupported format or corrupted file).';
-	Log::set($message, LOG_TYPE_ERROR);
-	ajaxResponse(1, $message);
-}
+$image->setImage(PATH_TMP.$tmpFilename, PROFILE_IMG_WIDTH, PROFILE_IMG_HEIGHT, 'crop');
 $image->saveImage(PATH_UPLOADS_PROFILES.$filename, PROFILE_IMG_QUALITY, false, true);
 
 // Delete temporary file

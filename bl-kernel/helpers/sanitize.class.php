@@ -52,14 +52,8 @@ class Sanitize {
 			return false;
 		}
 
-		// Resolve the base directory to validate against path traversal.
-		$basePath = realpath($path);
-		if ($basePath===false) {
-			return false;
-		}
-
-		// If the resolved path does not start with the base directory then this is Path Traversal.
-		if ($real !== $basePath && strpos($real, $basePath . DS) !== 0) {
+		// If the $real path does not start with the systemPath then this is Path Traversal.
+		if (strpos($fullPath, $real)!==0) {
 			return false;
 		}
 

@@ -26,14 +26,11 @@ class Session {
             'path' => $path,
             'domain' => $cookieParams["domain"],
             'secure' => $secure,
-            'httponly' => true,
-            'samesite' => 'Lax'
+            'httponly' => true
         ]);
 
 		// Sets the session name to the one set above.
-		// Use the __Secure- prefix when served over HTTPS to prevent cookie hijacking.
-		$sessionName = $secure ? '__Secure-' . self::$sessionName : self::$sessionName;
-		session_name($sessionName);
+		session_name(self::$sessionName);
 
 		// Start session.
 		self::$started = session_start();
@@ -53,11 +50,10 @@ class Session {
 
 	public static function destroy()
 	{
-		$sessionName = session_name();
 		session_destroy();
 		unset($_SESSION);
-		unset($_COOKIE[$sessionName]);
-		Cookie::set($sessionName, '', -1);
+		unset($_COOKIE[self::$sessionName]);
+		Cookie::set(self::$sessionName, '', -1);
 		self::$started = false;
 		Log::set(__METHOD__.LOG_SEP.'Session destroyed.');
 		return !isset($_SESSION);

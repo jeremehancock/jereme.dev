@@ -26,7 +26,7 @@ class dbJSON {
 			}
 
 			// Regenerate the JSON file
-			$implode = implode('', $lines);
+			$implode = implode($lines);
 
 			// Unserialize, JSON to Array
 			$array = $this->unserialize($implode);
@@ -58,10 +58,7 @@ class dbJSON {
 		if (isset($this->db[$field])) {
 			return $this->db[$field];
 		}
-		if (isset($this->dbFields[$field])) {
-			return $this->dbFields[$field];
-		}
-		return null;
+		return $this->dbFields[$field];
 	}
 
 	// Save the JSON file

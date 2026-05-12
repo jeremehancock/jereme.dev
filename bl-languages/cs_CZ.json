@@ -391,21 +391,5 @@
     "custom-fields": "Vlastní pole",
     "define-custom-fields-for-the-content": "Definujte vlastní datová pole obsahu. Jak s vlastními poli pracovat naleznete v <a target='_blank' href='https:\/\/docs.bludit.com\/en\/content\/custom-fields'>dokumentaci<\/a>.",
     "start-typing-to-see-a-list-of-suggestions": "Začněte psát pro zobrazení našeptávače.",
-    "view": "Zobrazit",
-    "no-tags": "Žádné štítky",
-    "insert-thumbnail": "Vložit náhled",
-    "visits-today": "Dnešní návštěvy",
-    "no-categories": "Žádné kategorie",
-    "quick-search-pages-and-menu": "Rychlé vyhledávání stránek a menu",
-    "click-here-for-quick-search": "Click here for quick search",
-    "analytics": "Analytika",
-    "unique-visitors": "Unikátní návštěvníci",
-    "insert-linked-thumbnail": "Vložit odkazovaný náhled",
-    "search-placeholder": "Hledat stránky, obsah a položky menu...",
-    "no-results-found": "Nebyly nalezeny žádné výsledky",
-    "navigation": "Navigace",
-    "default-content-status": "Výchozí stav obsahu",
-    "default-status-for-new-content": "Vyberte, zda má být nový obsah ve výchozím nastavení vytvořen jako Publikovaný nebo jako Koncept.",
-    "thumbnail-generation": "Generování náhledů",
-    "enable-disable-automatic-thumbnail-generation-on-image-upload": "Povolit nebo zakázat automatické generování náhledů při nahrávání obrázků."
+    "view": "Zobrazit"
 }
