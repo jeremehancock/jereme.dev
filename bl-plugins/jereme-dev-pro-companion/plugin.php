@@ -140,13 +140,15 @@ class pluginJeremeDevProCompanion extends Plugin
 		// RSS sub-section
 		$html .= $this->subHeading('jdpc-subsection-rss');
 		$html .= $this->selectField('rssEnabled', $L->get('jdpc-enable-feed'));
-		$html .= $this->readonlyUrlField('jdpc-rss-url-label', DOMAIN_BASE . 'rss.xml');
+		// Displayed as physical root file
+		$html .= $this->readonlyUrlField('jdpc-rss-url-label', HTML_PATH_ROOT . 'rss.xml');
 		$html .= $this->numberField('rssNumberOfItems', $L->get('jdpc-rss-items-label'), 1, $L->get('jdpc-rss-items-tip'));
 
 		// Sitemap sub-section
 		$html .= $this->subHeading('jdpc-subsection-sitemap');
 		$html .= $this->selectField('sitemapEnabled', $L->get('jdpc-enable-feed'));
-		$html .= $this->readonlyUrlField('jdpc-sitemap-url-label', DOMAIN_BASE . 'sitemap.xml');
+		// Displayed as physical root file
+		$html .= $this->readonlyUrlField('jdpc-sitemap-url-label', HTML_PATH_ROOT . 'sitemap.xml');
 
 		$html .= $this->closeCard();
 
@@ -492,8 +494,7 @@ class pluginJeremeDevProCompanion extends Plugin
 	public function siteHead()
 	{
 		$out = '';
-		// RSS feed discovery link — only emit it when the feed is actually enabled,
-		// otherwise readers would follow it to a 404.
+		// RSS feed discovery link — only emit it when the feed is actually enabled.
 		if ($this->getValue('rssEnabled')) {
 			$out .= '<link rel="alternate" type="application/rss+xml" href="' . DOMAIN_BASE . 'rss.xml" title="RSS Feed">' . PHP_EOL;
 		}
@@ -508,38 +509,12 @@ class pluginJeremeDevProCompanion extends Plugin
 	}
 
 	// ------------------------------------------------------------------
-	// Webhooks: intercept /rss.xml and /sitemap.xml requests and stream
-	// the cached XML files. Bludit's normal page router never sees these
-	// paths because we exit() before it runs.
+	// Webhooks: INTERCEPTION REMOVED.
+	// We no longer exit() here because Nginx serves the physical files.
 	// ------------------------------------------------------------------
 	public function beforeAll()
 	{
-		// When a feed is disabled, don't intercept its URL — Bludit's normal page
-		// router takes over and the URL 404s (no slug matches "rss.xml"/"sitemap.xml").
-		if ($this->getValue('rssEnabled') && $this->webhook('rss.xml')) {
-			$this->serveXml($this->workspace() . 'rss.xml');
-		}
-		if ($this->getValue('sitemapEnabled') && $this->webhook('sitemap.xml')) {
-			$this->serveXml($this->workspace() . 'sitemap.xml');
-		}
-	}
-
-	private function serveXml($file)
-	{
-		if (!file_exists($file)) {
-			// File missing — regenerate on the fly so the URL never 404s.
-			if (basename($file) === 'rss.xml') {
-				$this->createRssXml();
-			} else {
-				$this->createSitemapXml();
-			}
-		}
-		header('Content-type: text/xml');
-		$doc = new DOMDocument();
-		// External entity loading is disabled by default in PHP 8.0+; no XXE risk.
-		$doc->load($file);
-		echo $doc->saveXML();
-		exit(0);
+		// Interception removed to allow Nginx to serve physical files from root.
 	}
 
 	// ------------------------------------------------------------------
@@ -560,8 +535,6 @@ class pluginJeremeDevProCompanion extends Plugin
 
 	private function regenerateFeeds()
 	{
-		// Don't regenerate a feed while it's disabled — leaves the on-disk XML
-		// untouched so a re-enable doesn't require an intervening page edit.
 		if ($this->getValue('rssEnabled')) {
 			$this->createRssXml();
 		}
@@ -571,7 +544,6 @@ class pluginJeremeDevProCompanion extends Plugin
 	}
 
 	// Regenerate XML when settings are saved or the plugin is installed.
-	// Routes through regenerateFeeds() so the enable toggles are respected.
 	public function post()
 	{
 		$result = parent::post();
@@ -596,11 +568,6 @@ class pluginJeremeDevProCompanion extends Plugin
 		$out = '';
 
 		if ($this->getValue('targetBlankEnabled')) {
-			// External-link normalizer. Runs once at body-end (parser has reached
-			// every <a> by then). For any anchor whose hostname differs from the
-			// page's, sets target=_blank and ensures rel includes both noopener
-			// and noreferrer — prevents reverse-tabnabbing on links from post
-			// content (theme-rendered external anchors already set rel inline).
 			$out .= '<script>'
 				. '(function(){var ls=document.querySelectorAll("a[href]");'
 				. 'for(var i=0,n=ls.length;i<n;i++){var a=ls[i];'
@@ -619,8 +586,6 @@ class pluginJeremeDevProCompanion extends Plugin
 			$serverPort = isset($_SERVER['SERVER_PORT']) ? (string) $_SERVER['SERVER_PORT'] : '';
 			$onDevPort = ($devport !== '' && $serverPort === (string) $devport);
 			if (!$onDevPort) {
-				// Stored value was entity-encoded on save by Plugin::post() ->
-				// Sanitize::html; decode here to emit the original markup.
 				$out .= html_entity_decode($code);
 			}
 		}
@@ -656,7 +621,6 @@ class pluginJeremeDevProCompanion extends Plugin
 	public function adminHead()
 	{
 		$out = '';
-		// EasyMDE CSS — only on page create/edit views, only when enabled.
 		if ($this->getValue('easymdeEnabled') && $this->onEasymdeView()) {
 			$out .= $this->includeCSS('easymde.min.css');
 			$out .= $this->includeCSS('easymde-bludit.css');
@@ -686,7 +650,6 @@ class pluginJeremeDevProCompanion extends Plugin
 			}
 		}
 
-		// EasyMDE init script — only on page create/edit views, only when enabled.
 		if ($this->getValue('easymdeEnabled') && $this->onEasymdeView()) {
 			$out .= $this->renderEasymdeInit();
 		}
@@ -705,8 +668,6 @@ class pluginJeremeDevProCompanion extends Plugin
 		if ($tabSize < 1) {
 			$tabSize = 2;
 		}
-		// Toolbar string was stored html-entity encoded by Sanitize::html on save;
-		// decode here so the raw JS array literal is emitted into the script.
 		$toolbar = Sanitize::htmlDecode($this->getValue('easymdeToolbar'));
 		$pageBreak = defined('PAGE_BREAK') ? PAGE_BREAK : '';
 		$jsEasyMDE = $this->domainPath() . 'js/easymde.min.js?version=' . BLUDIT_VERSION;
@@ -717,14 +678,12 @@ class pluginJeremeDevProCompanion extends Plugin
 <script>
 	var easymde = null;
 
-	// Insert an image in the editor at the cursor position (required by Bludit).
 	function editorInsertMedia(filename) {
 		var text = easymde.value();
 		easymde.value(text + "![$langImage]("+filename+")" + "\\n");
 		easymde.codemirror.refresh();
 	}
 
-	// Returns the content of the editor (required by Bludit).
 	function editorGetContent() {
 		return easymde.value();
 	}
@@ -758,9 +717,6 @@ class pluginJeremeDevProCompanion extends Plugin
 EOF;
 	}
 
-	// Decode a stored html-coded value for output. Stored values were entity-encoded
-	// on save via Plugin::post() -> Sanitize::html; this reverses that to emit the
-	// original raw markup. Returns '' for empty values so concatenation is harmless.
 	private function decodedValue($key)
 	{
 		$val = $this->getValue($key);
@@ -769,11 +725,6 @@ EOF;
 
 	// ------------------------------------------------------------------
 	// Social previews — Open Graph + Twitter/X Card meta tags
-	//
-	// Ported from the upstream `opengraph` and `twitter-cards` plugins. Both
-	// hook into <head>; we gate them in siteHead() on their enable toggles.
-	// All dynamic text is sanitized via metaSanitize() so unescaped quotes
-	// or markup in page/site values can't break attribute parsing.
 	// ------------------------------------------------------------------
 
 	private function metaSanitize($text, $maxLength = 0)
@@ -787,7 +738,6 @@ EOF;
 		return htmlspecialchars($text, ENT_QUOTES, 'UTF-8');
 	}
 
-	// Attribute-safe escape for URL values that may already be partially encoded.
 	private function attrEscape($s)
 	{
 		return htmlspecialchars((string) $s, ENT_QUOTES, 'UTF-8');
@@ -861,7 +811,6 @@ EOF;
 			}
 		}
 
-		// Fallback to the first <img> in content if no cover image is set.
 		if (empty($og['image'])) {
 			$src = class_exists('DOM') ? DOM::getFirstImage($pageContent) : false;
 			if ($src !== false) {
@@ -933,7 +882,6 @@ EOF;
 		$out .= '<meta name="twitter:card" content="' . $this->attrEscape($data['card']) . '">' . PHP_EOL;
 
 		if (!empty($data['site'])) {
-			// Normalize: ensure leading @ is preserved as-is.
 			$out .= '<meta name="twitter:site" content="' . $this->metaSanitize($data['site']) . '">' . PHP_EOL;
 		}
 		$out .= '<meta name="twitter:title" content="' . $data['title'] . '">' . PHP_EOL;
@@ -962,22 +910,13 @@ EOF;
 
 	// ------------------------------------------------------------------
 	// XML generation (RSS feed + sitemap)
-	//
-	// The upstream rss/sitemap plugins concatenated dynamic values into XML
-	// without escaping, so any '&' in $site->description() or a page title
-	// silently broke loadXML(), and save() then truncated the file to just
-	// the prolog. This implementation routes every dynamic value through
-	// xmlText() / xmlAttr() so the XML always parses.
 	// ------------------------------------------------------------------
 
-	// Escape arbitrary string for XML text content or attribute.
 	private function xmlText($s)
 	{
 		return htmlspecialchars((string) $s, ENT_XML1 | ENT_QUOTES, 'UTF-8');
 	}
 
-	// URL-encode any non-ASCII byte in a URL so it's valid in an XML context.
-	// Mirrors what the upstream rss plugin did with its private encodeURL().
 	private function encodeUrlBytes($url)
 	{
 		return preg_replace_callback('/[^\x20-\x7f]/', function ($m) {
@@ -985,36 +924,17 @@ EOF;
 		}, (string) $url);
 	}
 
-	private function ensureWorkspace()
-	{
-		$ws = $this->workspace();
-		if (!is_dir($ws)) {
-			mkdir($ws, 0755, true);
-		}
-		return $ws;
-	}
-
 	private function createRssXml()
 	{
 		global $site;
 		global $pages;
-
-		$ws = $this->ensureWorkspace();
 
 		$n = (int) $this->getValue('rssNumberOfItems');
 		if ($n < 1) {
 			$n = 5;
 		}
 
-		$list = $pages->getList(
-			$pageNumber = 1,
-			$numberOfItems = $n,
-			$published = true,
-			$static = true,
-			$sticky = true,
-			$draft = false,
-			$scheduled = false
-		);
+		$list = $pages->getList(1, $n, true, true, true, false, false);
 
 		$xml = '<?xml version="1.0" encoding="UTF-8" ?>';
 		$xml .= '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">';
@@ -1035,14 +955,11 @@ EOF;
 				if (!empty($cover)) {
 					$xml .= '<image>' . $this->xmlText($cover) . '</image>';
 				}
-				// contentBreak() returns text/HTML. We escape it for safe inclusion as
-				// text content (same approach the upstream plugin used via Sanitize::html).
 				$xml .= '<description>' . $this->xmlText($page->contentBreak()) . '</description>';
 				$xml .= '<pubDate>' . date(DATE_RSS, strtotime($page->getValue('dateRaw'))) . '</pubDate>';
 				$xml .= '<guid isPermaLink="false">' . $this->xmlText($page->uuid()) . '</guid>';
 				$xml .= '</item>';
 			} catch (Exception $e) {
-				// Skip pages that fail to construct
 			}
 		}
 
@@ -1050,15 +967,14 @@ EOF;
 
 		$doc = new DOMDocument();
 		$doc->formatOutput = true;
-		// Use libxml errors so we can decide what to do on failure rather than silently truncating.
 		libxml_use_internal_errors(true);
 		$loaded = $doc->loadXML($xml);
 		libxml_clear_errors();
 		if (!$loaded) {
-			// Don't overwrite an existing-good file with truncated garbage.
 			return false;
 		}
-		return $doc->save($ws . 'rss.xml');
+		// Saved to PATH_ROOT
+		return $doc->save(PATH_ROOT . 'rss.xml');
 	}
 
 	private function createSitemapXml()
@@ -1066,21 +982,11 @@ EOF;
 		global $site;
 		global $pages;
 
-		$ws = $this->ensureWorkspace();
-
 		$xml = '<?xml version="1.0" encoding="UTF-8" ?>';
 		$xml .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
 		$xml .= '<url><loc>' . $this->xmlText($site->url()) . '</loc></url>';
 
-		$list = $pages->getList(
-			$pageNumber = 1,
-			$numberOfItems = -1,
-			$published = true,
-			$static = true,
-			$sticky = true,
-			$draft = false,
-			$scheduled = false
-		);
+		$list = $pages->getList(1, -1, true, true, true, false, false);
 		foreach ($list as $pageKey) {
 			try {
 				$page = new Page($pageKey);
@@ -1092,7 +998,6 @@ EOF;
 				$xml .= '<lastmod>' . $this->xmlText($page->date(SITEMAP_DATE_FORMAT)) . '</lastmod>';
 				$xml .= '</url>';
 			} catch (Exception $e) {
-				// Skip pages that fail to construct
 			}
 		}
 
@@ -1106,7 +1011,7 @@ EOF;
 		if (!$loaded) {
 			return false;
 		}
-		return $doc->save($ws . 'sitemap.xml');
+		// Saved to PATH_ROOT
+		return $doc->save(PATH_ROOT . 'sitemap.xml');
 	}
-
 }
