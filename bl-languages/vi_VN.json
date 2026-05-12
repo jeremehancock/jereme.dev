@@ -8,8 +8,7 @@
             "",
             "",
             ""
-        ],
-        "locale": "vi, vi_VN"
+        ]
     },
     "dates": {
         "Mon": "T2",
@@ -391,21 +390,5 @@
     "custom-fields": "Trường tùy biến",
     "define-custom-fields-for-the-content": "Xác định các trường tùy chỉnh cho nội dung. Tìm hiểu thêm về các trường tùy chỉnh trong <a href='https:\/\/docs.bludit.com\/en\/content\/custom-fields'>tài liệu<\/a>.",
     "start-typing-to-see-a-list-of-suggestions": "Hãy nhập gì đó để xem danh sách gợi ý.",
-    "view": "Xem",
-    "no-tags": "Không có thẻ",
-    "insert-thumbnail": "Chèn hình thu nhỏ",
-    "visits-today": "Lượt truy cập hôm nay",
-    "no-categories": "Không có danh mục",
-    "quick-search-pages-and-menu": "Tìm kiếm nhanh trang và menu",
-    "click-here-for-quick-search": "Click here for quick search",
-    "analytics": "Phân tích",
-    "unique-visitors": "Khách truy cập duy nhất",
-    "insert-linked-thumbnail": "Chèn hình thu nhỏ được liên kết",
-    "search-placeholder": "Tìm kiếm trang, nội dung và các mục menu...",
-    "no-results-found": "Không tìm thấy kết quả",
-    "navigation": "Điều hướng",
-    "default-content-status": "Trạng thái nội dung mặc định",
-    "default-status-for-new-content": "Chọn xem nội dung mới được tạo dưới dạng Đã xuất bản hay Bản nháp theo mặc định.",
-    "thumbnail-generation": "Tạo ảnh thu nhỏ",
-    "enable-disable-automatic-thumbnail-generation-on-image-upload": "Bật hoặc tắt tính năng tự động tạo ảnh thu nhỏ khi tải ảnh lên."
+    "view": "Xem"
 }

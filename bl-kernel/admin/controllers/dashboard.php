@@ -12,14 +12,14 @@ function updateBludit() {
 		$site->set(array('currentBuild'=>BLUDIT_BUILD));
 	}
 
-	// Check if Bludit need to be updated
+	// Check if Bludit need to be update
 	if ( ($site->currentBuild() < BLUDIT_BUILD) || isset($_GET['update']) ) {
 		Log::set('UPDATE SYSTEM - Starting.');
 
 		// Updates only for version less than Bludit v3.0 rc-3
 		if ($site->currentBuild()<='20180910') {
 			@mkdir(PATH_WORKSPACES, DIR_PERMISSIONS, true);
-			$plugins = array('pluginVisitsStats', 'pluginRSS', 'pluginSitemap', 'pluginTimeMachineX', 'pluginBackup');
+			$plugins = array('simple-stats', 'pluginRSS', 'pluginSitemap', 'pluginTimeMachineX', 'pluginBackup');
 			foreach ($plugins as $plugin) {
 				if (pluginActivated($plugin)) {
 					Log::set('UPDATE SYSTEM - Re-enable plugin: '.$plugin);

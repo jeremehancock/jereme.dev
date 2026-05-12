@@ -1,10 +1,10 @@
 <?php defined('BLUDIT') or die('Bludit CMS.');
 
 // Bludit version
-define('BLUDIT_VERSION',        '3.21.1');
-define('BLUDIT_CODENAME',       'ImperialEagle');
-define('BLUDIT_RELEASE_DATE',   '2026-05-01');
-define('BLUDIT_BUILD',          '20260501');
+define('BLUDIT_VERSION',        '3.15.0');
+define('BLUDIT_CODENAME',       'Krakow');
+define('BLUDIT_RELEASE_DATE',   '2023-07-15');
+define('BLUDIT_BUILD',          '20230715');
 
 // Change to TRUE for debugging
 define('DEBUG_MODE', FALSE);
@@ -121,19 +121,10 @@ include(PATH_HELPERS . 'image.class.php');
 include(PATH_HELPERS . 'tcp.class.php');
 include(PATH_HELPERS . 'dom.class.php');
 include(PATH_HELPERS . 'cookie.class.php');
-/**
- * ---------------------------------------------------------------------------
- * If you have bypassed the license check, I understand.
- * But please consider supporting the project on Patreon if you use this
- * commercially. It helps me keep the core free for everyone.
- * ---------------------------------------------------------------------------
- */
-define('BLUDIT_PRO_HASH', substr(md5(BLUDIT_BUILD), 0, 8));
-$_bluditProFile = PATH_KERNEL . 'bludit.pro.' . BLUDIT_PRO_HASH . '.php';
-if (file_exists($_bluditProFile)) {
-	include($_bluditProFile);
+
+if (file_exists(PATH_KERNEL . 'bludit.pro.php')) {
+	include(PATH_KERNEL . 'bludit.pro.php');
 }
-unset($_bluditProFile);
 
 // Objects
 $pages 		= new Pages();
@@ -146,7 +137,7 @@ $security	= new Security();
 $syslog 	= new Syslog();
 
 // --- Relative paths ---
-// These paths are relative for the user / web browsing.
+// This paths are relative for the user / web browsing.
 
 // Base URL
 // The user can define the base URL.
@@ -225,7 +216,7 @@ define('IMAGE_RELATIVE_TO_ABSOLUTE', $site->imageRelativeToAbsolute());
 define('MARKDOWN_PARSER', $site->markdownParser());
 
 // --- PHP paths with dependency ---
-// These paths are absolutes for the OS
+// This paths are absolutes for the OS
 define('THEME_DIR',			PATH_ROOT . 'bl-themes' . DS . $site->theme() . DS);
 define('THEME_DIR_PHP',			THEME_DIR . 'php' . DS);
 define('THEME_DIR_CSS',			THEME_DIR . 'css' . DS);
@@ -234,7 +225,7 @@ define('THEME_DIR_IMG',			THEME_DIR . 'img' . DS);
 define('THEME_DIR_LANG',		THEME_DIR . 'languages' . DS);
 
 // --- Absolute paths with domain ---
-// These paths are absolutes for the user / web browsing.
+// This paths are absolutes for the user / web browsing.
 define('DOMAIN',			$site->domain());
 define('DOMAIN_BASE',			DOMAIN . HTML_PATH_ROOT);
 define('DOMAIN_CORE_JS',		DOMAIN . HTML_PATH_CORE_JS);

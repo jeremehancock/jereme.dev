@@ -1,7 +1,6 @@
 <?php defined('BLUDIT') or die('Bludit CMS.');
 
-class User
-{
+class User {
 	protected $vars;
 
 	function __construct($username)
@@ -10,18 +9,18 @@ class User
 
 		$this->vars['username'] = $username;
 
-		if ($username === false) {
+		if ($username===false) {
 			$row = $users->getDefaultFields();
 		} else {
 			if (Text::isEmpty($username) || !$users->exists($username)) {
-				$errorMessage = 'User not found in the database by username [' . $username . ']';
-				Log::set(__METHOD__ . LOG_SEP . $errorMessage);
+				$errorMessage = 'User not found in the database by username ['.$username.']';
+				Log::set(__METHOD__.LOG_SEP.$errorMessage);
 				throw new Exception($errorMessage);
 			}
 			$row = $users->getUserDB($username);
 		}
 
-		foreach ($row as $field => $value) {
+		foreach ($row as $field=>$value) {
 			$this->setField($field, $value);
 		}
 	}
@@ -146,11 +145,6 @@ class User
 		return $this->getValue('xing');
 	}
 
-	public function telegram()
-	{
-		return $this->getValue('telegram');
-	}
-
 	public function mastodon()
 	{
 		return $this->getValue('mastodon');
@@ -161,32 +155,16 @@ class User
 		return $this->getValue('vk');
 	}
 
-	public function youtube()
-	{
-		return $this->getValue('youtube');
-	}
-
-	public function bluesky()
-	{
-		return $this->getValue('bluesky');
-	}
-
 	public function profilePicture()
 	{
-		// Sanitize username for filename to prevent issues with special characters
-		$username = $this->getValue('username');
-		$sanitizedUsername = Text::removeSpecialCharacters($username, '-');
-		$sanitizedUsername = Text::removeQuotes($sanitizedUsername);
-		$sanitizedUsername = Text::removeSpaces($sanitizedUsername, '-');
-		
-		$filename = $sanitizedUsername . '.png';
-		if (!file_exists(PATH_UPLOADS_PROFILES . $filename)) {
+		$filename = $this->getValue('username').'.png';
+		if (!file_exists(PATH_UPLOADS_PROFILES.$filename)) {
 			return false;
 		}
-		return DOMAIN_UPLOADS_PROFILES . $filename;
+		return DOMAIN_UPLOADS_PROFILES.$filename;
 	}
 
-	public function json($returnsArray = false)
+	public function json($returnsArray=false)
 	{
 		$tmp['username'] 	= $this->username();
 		$tmp['firstName'] 	= $this->firstName();
@@ -201,11 +179,8 @@ class User
 		$tmp['gitlab'] 		= $this->gitlab();
 		$tmp['linkedin'] 	= $this->linkedin();
 		$tmp['xing'] 		= $this->xing();
-		$tmp['telegram'] 		= $this->telegram();
 		$tmp['mastodon']	= $this->mastodon();
 		$tmp['vk']		= $this->vk();
-		$tmp['youtube'] 	= $this->youtube();
-		$tmp['bluesky'] 	= $this->bluesky();
 		$tmp['profilePicture']	= $this->profilePicture();
 
 		if ($returnsArray) {
@@ -214,4 +189,5 @@ class User
 
 		return json_encode($tmp);
 	}
+
 }

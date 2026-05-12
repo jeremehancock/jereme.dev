@@ -55,12 +55,12 @@ if ($site->homepage() && $url->whereAmI()==='home') {
 	$pageKey = $site->homepage();
 	if ($pages->exists($pageKey)) {
 		$url->setSlug($pageKey);
-		$content[0] = $page = buildThePage();
+		$url->setWhereAmI('page');
 	}
 }
 
 // Build specific page
-elseif ($url->whereAmI()==='page') {
+if ($url->whereAmI()==='page') {
 	$content[0] = $page = buildThePage();
 }
 // Build content by tag
