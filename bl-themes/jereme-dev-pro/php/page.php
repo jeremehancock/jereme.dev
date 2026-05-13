@@ -5,7 +5,7 @@ $hiddenCategories = ['archived'];
     <article class="entry">
         <?php Theme::plugins('pageBegin'); ?>
 
-        <?php if ($page->title() !== "404 Not Found"): ?>
+        <?php if ($page->description() !== "404"): ?>
             <header class="entry-header container">
                 <?php if ($page->category() && !$page->isStatic()): ?>
                     <div class="entry-eyebrow">
