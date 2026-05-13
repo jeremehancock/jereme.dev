@@ -814,16 +814,6 @@ body.menu-open .main-navigation {
   box-shadow: var(--shadow-md);
   position: relative;
 }
-.post-feature::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 4px;
-  height: 100%;
-  background: var(--accent);
-  z-index: 2;
-}
 
 .post-feature-cover {
   display: block;
