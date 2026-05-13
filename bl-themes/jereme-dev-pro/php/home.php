@@ -54,7 +54,7 @@ if ($isHome) {
 ?>
 <?php Theme::plugins('pageBegin'); ?>
 
-<main class="site-main<?php echo (!$isFirstPage && $WHERE_AM_I !== 'category') ? ' site-main-padded' : ''; ?>" id="main" role="main">
+<main class="site-main<?php echo (!$isFirstPage && $WHERE_AM_I !== 'category' && $WHERE_AM_I !== 'tag') ? ' site-main-padded' : ''; ?>" id="main" role="main">
     <?php if ($isFirstPage): ?>
     <section class="page-band" aria-label="Latest">
         <div class="container">
@@ -72,6 +72,14 @@ if ($isHome) {
             <?php if ($site->description()): ?>
             <p class="page-band-desc"><?php echo $helper->description(); ?></p>
             <?php endif; ?>
+        </div>
+    </section>
+
+    <?php elseif ($WHERE_AM_I === 'tag'): ?>
+    <section class="page-band" aria-label="Tag">
+        <div class="container">
+            <p class="page-band-eyebrow"><span class="band-tick" aria-hidden="true"></span>Tag</p>
+            <h1 class="page-band-title"><?php echo $helper->tagName(); ?></h1>
         </div>
     </section>
     <?php endif; ?>
