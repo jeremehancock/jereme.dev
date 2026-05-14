@@ -25,13 +25,16 @@ class pluginStaticGeneratorJereme extends Plugin
 	const LOCK_FILENAME = 'build.lock';
 	const LOG_FILENAME = 'build.log';
 	const MAX_LOG_LINES = 100;
-	const DEFAULT_MAX_URLS = 500;
+	// Hard cap on URLs per build — purely a runaway-safety net, not a
+	// user-facing setting. The build is expected to cover every page on
+	// the site; this is just here so a pathological link loop can't make
+	// PHP run forever.
+	const URL_HARD_CAP = 10000;
 
 	public function init()
 	{
 		$this->dbFields = array(
 			'excludePaths' => '',
-			'maxUrls' => self::DEFAULT_MAX_URLS,
 
 			// Written by runBuild() — not user-editable.
 			'lastBuildTime' => '',
@@ -57,18 +60,16 @@ class pluginStaticGeneratorJereme extends Plugin
 		// ============ SECTION: Generate ===================================
 		$html .= $this->openCard('sgj-section-action', 'hammer', 'sgj-section-action-subtitle');
 
-		$confirmAttr = htmlspecialchars($L->get('sgj-build-confirm'), ENT_QUOTES, 'UTF-8');
 		$buildLabel = htmlspecialchars($L->get('sgj-build-button'), ENT_QUOTES, 'UTF-8');
-		$html .= '<button type="submit" class="btn btn-primary" name="action" value="build"'
-			. ' onclick="return confirm(\'' . $confirmAttr . '\');">'
-			. '<span class="fa fa-bolt mr-2"></span>' . $buildLabel
+		$html .= '<button type="submit" id="sgj-build-btn" class="btn btn-primary"'
+			. ' name="action" value="build">'
+			. $buildLabel
 			. '</button>';
 
 		$html .= $this->closeCard();
 
 		// ============ SECTION: Settings ===================================
 		$html .= $this->openCard('sgj-section-settings', 'cog');
-		$html .= $this->numberField('maxUrls', $L->get('sgj-max-urls-label'), 1, $L->get('sgj-max-urls-tip'));
 		$html .= $this->textareaField('excludePaths', $L->get('sgj-exclude-paths-label'), $L->get('sgj-exclude-paths-tip'), 4);
 		$html .= $this->closeCard();
 
@@ -93,7 +94,193 @@ class pluginStaticGeneratorJereme extends Plugin
 		$html .= '</div>';
 		$html .= '</div>';
 
+		// Confirmation modal + full-page loading overlay + JS that wires the
+		// "Generate static site" button to them. Self-contained styles so we
+		// don't depend on Bootstrap modal JS being available.
+		$html .= $this->renderConfirmAndLoading();
+
 		return $html;
+	}
+
+	private function renderConfirmAndLoading()
+	{
+		global $L;
+		$confirmTitle = htmlspecialchars($L->get('sgj-confirm-title'), ENT_QUOTES, 'UTF-8');
+		$confirmBody = htmlspecialchars($L->get('sgj-confirm-body'), ENT_QUOTES, 'UTF-8');
+		$confirmYes = htmlspecialchars($L->get('sgj-confirm-yes'), ENT_QUOTES, 'UTF-8');
+		$confirmCancel = htmlspecialchars($L->get('sgj-confirm-cancel'), ENT_QUOTES, 'UTF-8');
+		$loadingTitle = htmlspecialchars($L->get('sgj-loading-title'), ENT_QUOTES, 'UTF-8');
+		$loadingBody = htmlspecialchars($L->get('sgj-loading-body'), ENT_QUOTES, 'UTF-8');
+		// JSON-encoded so the label is safe to drop straight into JS even
+		// if it contains quotes or unicode.
+		$buildingJson = json_encode($L->get('sgj-building-button'), JSON_UNESCAPED_UNICODE);
+
+		return <<<HTML
+
+<style>
+	.sgj-modal-overlay,
+	.sgj-loading-overlay {
+		position: fixed;
+		inset: 0;
+		display: none;
+		align-items: center;
+		justify-content: center;
+		background: rgba(15, 18, 22, 0.62);
+		z-index: 2147483000;
+	}
+	.sgj-modal-overlay.is-open,
+	.sgj-loading-overlay.is-open { display: flex; }
+	.sgj-modal {
+		background: #fff;
+		border-radius: 8px;
+		box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+		max-width: 460px;
+		width: calc(100% - 2rem);
+		padding: 1.5rem 1.5rem 1.25rem;
+		font-family: inherit;
+	}
+	.sgj-modal h3 {
+		margin: 0 0 0.5rem;
+		font-size: 1.15rem;
+		font-weight: 600;
+		color: #212529;
+	}
+	.sgj-modal p {
+		margin: 0 0 1.25rem;
+		color: #495057;
+		line-height: 1.5;
+	}
+	.sgj-modal-actions {
+		display: flex;
+		justify-content: flex-end;
+		gap: 0.5rem;
+	}
+	.sgj-loading {
+		background: #fff;
+		border-radius: 8px;
+		box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+		padding: 2rem 2.5rem;
+		text-align: center;
+		max-width: 420px;
+		width: calc(100% - 2rem);
+	}
+	.sgj-spinner {
+		width: 48px;
+		height: 48px;
+		margin: 0 auto 1rem;
+		border: 4px solid rgba(0, 0, 0, 0.1);
+		border-top-color: #007bff;
+		border-radius: 50%;
+		animation: sgj-spin 0.9s linear infinite;
+	}
+	@keyframes sgj-spin { to { transform: rotate(360deg); } }
+	.sgj-loading h3 {
+		margin: 0 0 0.35rem;
+		font-size: 1.1rem;
+		font-weight: 600;
+		color: #212529;
+	}
+	.sgj-loading p {
+		margin: 0;
+		color: #6c757d;
+		font-size: 0.9rem;
+		line-height: 1.45;
+	}
+	#sgj-build-btn[disabled] { cursor: not-allowed; opacity: 0.65; }
+</style>
+
+<div id="sgj-confirm" class="sgj-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="sgj-confirm-title" aria-hidden="true">
+	<div class="sgj-modal">
+		<h3 id="sgj-confirm-title">{$confirmTitle}</h3>
+		<p>{$confirmBody}</p>
+		<div class="sgj-modal-actions">
+			<button type="button" class="btn btn-secondary btn-sm" id="sgj-confirm-cancel">{$confirmCancel}</button>
+			<button type="button" class="btn btn-primary btn-sm" id="sgj-confirm-yes">{$confirmYes}</button>
+		</div>
+	</div>
+</div>
+
+<div id="sgj-loading" class="sgj-loading-overlay" role="alertdialog" aria-modal="true" aria-labelledby="sgj-loading-title" aria-hidden="true">
+	<div class="sgj-loading">
+		<div class="sgj-spinner" aria-hidden="true"></div>
+		<h3 id="sgj-loading-title">{$loadingTitle}</h3>
+		<p>{$loadingBody}</p>
+	</div>
+</div>
+
+<script>
+(function () {
+	var btn = document.getElementById('sgj-build-btn');
+	if (!btn) return;
+	var form = btn.closest('form');
+	var confirmEl = document.getElementById('sgj-confirm');
+	var confirmYes = document.getElementById('sgj-confirm-yes');
+	var confirmCancel = document.getElementById('sgj-confirm-cancel');
+	var loadingEl = document.getElementById('sgj-loading');
+	var BUILDING_LABEL = {$buildingJson};
+	var armed = false;
+
+	function openConfirm(e) {
+		if (armed) { return; }
+		e.preventDefault();
+		confirmEl.classList.add('is-open');
+		confirmEl.setAttribute('aria-hidden', 'false');
+		confirmYes.focus();
+	}
+
+	function closeConfirm() {
+		confirmEl.classList.remove('is-open');
+		confirmEl.setAttribute('aria-hidden', 'true');
+		btn.focus();
+	}
+
+	function startBuild() {
+		closeConfirm();
+		armed = true;
+		// Disable every submit-style control on the page so the user
+		// cannot click Save (or Generate) twice while the build runs.
+		var controls = form ? form.querySelectorAll('button, input[type=submit]') : [];
+		for (var i = 0; i < controls.length; i++) { controls[i].disabled = true; }
+		btn.textContent = BUILDING_LABEL;
+		loadingEl.classList.add('is-open');
+		loadingEl.setAttribute('aria-hidden', 'false');
+		// Re-trigger the original submit. requestSubmit() preserves the
+		// button's name/value (action=build) where supported; if not, we
+		// add a hidden input so the post() handler still sees action=build.
+		if (form) {
+			if (typeof form.requestSubmit === 'function') {
+				try { form.requestSubmit(btn); return; } catch (_) {}
+			}
+			var hidden = document.createElement('input');
+			hidden.type = 'hidden';
+			hidden.name = 'action';
+			hidden.value = 'build';
+			form.appendChild(hidden);
+			form.submit();
+		}
+	}
+
+	btn.addEventListener('click', openConfirm);
+	confirmCancel.addEventListener('click', closeConfirm);
+	confirmEl.addEventListener('click', function (e) {
+		if (e.target === confirmEl) { closeConfirm(); }
+	});
+	confirmYes.addEventListener('click', startBuild);
+	document.addEventListener('keydown', function (e) {
+		if (e.key === 'Escape' && confirmEl.classList.contains('is-open')) { closeConfirm(); }
+	});
+
+	// Guard against accidental tab-close while a build is running.
+	window.addEventListener('beforeunload', function (e) {
+		if (armed) {
+			e.preventDefault();
+			e.returnValue = '';
+		}
+	});
+})();
+</script>
+
+HTML;
 	}
 
 	private function renderStatus()
@@ -156,7 +343,7 @@ class pluginStaticGeneratorJereme extends Plugin
 		$action = isset($_POST['action']) ? Sanitize::html($_POST['action']) : '';
 		// Always persist any edited settings first, even when the user
 		// clicked "Generate static site" instead of "Save" — otherwise a
-		// changed maxUrls / excludePaths value silently reverts.
+		// changed excludePaths value silently reverts.
 		parent::post();
 		if ($action === 'build') {
 			$this->runBuild();
@@ -219,7 +406,7 @@ class pluginStaticGeneratorJereme extends Plugin
 			'urlsFetched' => 0,
 			'bytesWritten' => 0,
 			'errors' => 0,
-			'maxUrls' => max(1, (int) $this->getValue('maxUrls')),
+			'maxUrls' => self::URL_HARD_CAP,
 			'excludePaths' => $this->parseExcludePaths(),
 		);
 
