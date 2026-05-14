@@ -1,0 +1,10 @@
+{
+	"author": "Jereme",
+	"email": "",
+	"website": "https://jereme.dev",
+	"version": "1.0.0",
+	"releaseDate": "2026-05-14",
+	"license": "MIT",
+	"compatible": "3.21",
+	"notes": "Generate a fully static HTML copy of the site by crawling rendered URLs. Output is written to bl-content/static-build/."
+}
