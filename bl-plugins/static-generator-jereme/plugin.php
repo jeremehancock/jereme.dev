@@ -202,37 +202,38 @@ class pluginStaticGeneratorJereme extends Plugin
 
 	/* The stock admin theme styles .btn-light / .btn-form but leaves
 	   .btn-primary and .btn-secondary at Bootstrap's hardcoded blues
-	   and greys, which clash with the dark mint palette. These rules
-	   scope to the plugin's configure page (this <style> only renders
-	   inside form()) and route hover/focus/active states through the
-	   same CSS vars the rest of the admin uses. */
-	.sgj-cfg .btn-primary,
-	.sgj-cfg .btn-primary:not(:disabled):not(.disabled) {
+	   and greys, which clash with the dark mint palette. This <style>
+	   block is rendered only inside form() on the plugin's
+	   configure-plugin page, so the rules are scoped to that one page
+	   — including the Save / Cancel buttons the configure-plugin view
+	   emits at the top, which we want themed the same way. */
+	.btn-primary,
+	.btn-primary:not(:disabled):not(.disabled) {
 		background-color: var(--primary-blue, #007bff);
 		border-color: var(--primary-blue, #007bff);
 		color: var(--accent-ink, #fff);
 	}
-	.sgj-cfg .btn-primary:hover,
-	.sgj-cfg .btn-primary:focus,
-	.sgj-cfg .btn-primary:focus-visible,
-	.sgj-cfg .btn-primary:not(:disabled):not(.disabled):active,
-	.sgj-cfg .btn-primary:not(:disabled):not(.disabled).active {
+	.btn-primary:hover,
+	.btn-primary:focus,
+	.btn-primary:focus-visible,
+	.btn-primary:not(:disabled):not(.disabled):active,
+	.btn-primary:not(:disabled):not(.disabled).active {
 		background-color: var(--primary-blue-darker, #0056b3) !important;
 		border-color: var(--primary-blue-darker, #0056b3) !important;
 		color: var(--accent-ink, #fff) !important;
 		box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.18) !important;
 	}
-	.sgj-cfg .btn-secondary,
-	.sgj-cfg .btn-secondary:not(:disabled):not(.disabled) {
+	.btn-secondary,
+	.btn-secondary:not(:disabled):not(.disabled) {
 		background-color: var(--bg-light, #6c757d);
 		border-color: var(--border-color, #6c757d);
 		color: var(--text-primary, #fff);
 	}
-	.sgj-cfg .btn-secondary:hover,
-	.sgj-cfg .btn-secondary:focus,
-	.sgj-cfg .btn-secondary:focus-visible,
-	.sgj-cfg .btn-secondary:not(:disabled):not(.disabled):active,
-	.sgj-cfg .btn-secondary:not(:disabled):not(.disabled).active {
+	.btn-secondary:hover,
+	.btn-secondary:focus,
+	.btn-secondary:focus-visible,
+	.btn-secondary:not(:disabled):not(.disabled):active,
+	.btn-secondary:not(:disabled):not(.disabled).active {
 		background-color: var(--bg-warm-card, #5a6268) !important;
 		border-color: var(--border-light, #5a6268) !important;
 		color: var(--text-primary, #fff) !important;
