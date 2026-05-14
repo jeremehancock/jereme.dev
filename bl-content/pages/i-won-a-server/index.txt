@@ -16,7 +16,7 @@ I have also really enjoyed the channel. I am sure I will be watching many more v
 
 #### So what am I using it for?
 
-I have set it up as a [Proxmox](https://proxmox.com/en/) server. I have the OS installed on a 512GB NVMe SSD and have 2 1TB NVMe SSDs setup as a mirror for VM storage. I have migrated a setup that was previously on a Dell OptiPlex to an Ubuntu VM running on the new server. It is working great and I have a ton of overhead to add more VMs and services. Full specs are [here](/specs#proxmox).
+I have set it up as a [Proxmox](https://proxmox.com/en/) server. I have the OS installed on a 512GB NVMe SSD and have 2 1TB NVMe SSDs setup as a mirror for VM storage. I have migrated a setup that was previously on a Dell OptiPlex to an Ubuntu VM running on the new server. It is working great and I have a ton of overhead to add more VMs and services. Full specs are <a href="https://jereme.dev/homelab" target="_blank">here</a>.
 
 #### Here is the video announcing the winner.
 
