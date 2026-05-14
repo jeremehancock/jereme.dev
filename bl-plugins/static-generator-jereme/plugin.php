@@ -53,7 +53,13 @@ class pluginStaticGeneratorJereme extends Plugin
 	{
 		global $L;
 
-		$html = '<div class="alert alert-primary mb-4" role="alert">';
+		// The wrapper class scopes the theme-aware button/details CSS in
+		// renderConfirmAndLoading() so we don't accidentally restyle the
+		// "Save" / "Cancel" buttons the configure-plugin view emits
+		// outside the plugin's own form contents.
+		$html = '<div class="sgj-cfg">';
+
+		$html .= '<div class="alert alert-primary mb-4" role="alert">';
 		$html .= $this->description();
 		$html .= '</div>';
 
@@ -99,6 +105,7 @@ class pluginStaticGeneratorJereme extends Plugin
 		// don't depend on Bootstrap modal JS being available.
 		$html .= $this->renderConfirmAndLoading();
 
+		$html .= '</div>'; // .sgj-cfg
 		return $html;
 	}
 
@@ -192,6 +199,57 @@ class pluginStaticGeneratorJereme extends Plugin
 		line-height: 1.45;
 	}
 	#sgj-build-btn[disabled] { cursor: not-allowed; opacity: 0.65; }
+
+	/* The stock admin theme styles .btn-light / .btn-form but leaves
+	   .btn-primary and .btn-secondary at Bootstrap's hardcoded blues
+	   and greys, which clash with the dark mint palette. These rules
+	   scope to the plugin's configure page (this <style> only renders
+	   inside form()) and route hover/focus/active states through the
+	   same CSS vars the rest of the admin uses. */
+	.sgj-cfg .btn-primary,
+	.sgj-cfg .btn-primary:not(:disabled):not(.disabled) {
+		background-color: var(--primary-blue, #007bff);
+		border-color: var(--primary-blue, #007bff);
+		color: var(--accent-ink, #fff);
+	}
+	.sgj-cfg .btn-primary:hover,
+	.sgj-cfg .btn-primary:focus,
+	.sgj-cfg .btn-primary:focus-visible,
+	.sgj-cfg .btn-primary:not(:disabled):not(.disabled):active,
+	.sgj-cfg .btn-primary:not(:disabled):not(.disabled).active {
+		background-color: var(--primary-blue-darker, #0056b3) !important;
+		border-color: var(--primary-blue-darker, #0056b3) !important;
+		color: var(--accent-ink, #fff) !important;
+		box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.18) !important;
+	}
+	.sgj-cfg .btn-secondary,
+	.sgj-cfg .btn-secondary:not(:disabled):not(.disabled) {
+		background-color: var(--bg-light, #6c757d);
+		border-color: var(--border-color, #6c757d);
+		color: var(--text-primary, #fff);
+	}
+	.sgj-cfg .btn-secondary:hover,
+	.sgj-cfg .btn-secondary:focus,
+	.sgj-cfg .btn-secondary:focus-visible,
+	.sgj-cfg .btn-secondary:not(:disabled):not(.disabled):active,
+	.sgj-cfg .btn-secondary:not(:disabled):not(.disabled).active {
+		background-color: var(--bg-warm-card, #5a6268) !important;
+		border-color: var(--border-light, #5a6268) !important;
+		color: var(--text-primary, #fff) !important;
+		box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.12) !important;
+	}
+
+	/* The build-log preview lives inside a <details>; style its summary
+	   so it picks up the theme's text colour and looks clickable. */
+	.sgj-cfg details > summary {
+		cursor: pointer;
+		color: var(--text-primary, #212529);
+		font-weight: var(--font-weight-medium, 500);
+		margin-bottom: 0.5rem;
+	}
+	.sgj-cfg details > summary:hover {
+		color: var(--primary-blue, #007bff);
+	}
 </style>
 
 <div id="sgj-confirm" class="sgj-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="sgj-confirm-title" aria-hidden="true">
@@ -321,7 +379,7 @@ HTML;
 
 		$log = $this->readLogTail();
 		if ($log !== '') {
-			$html .= '<details><summary>' . $L->get('sgj-status-log') . '</summary>';
+			$html .= '<details open><summary>' . $L->get('sgj-status-log') . '</summary>';
 			$html .= '<pre style="max-height: 320px; overflow: auto;'
 				. ' background: var(--bg-warm, #f8f9fa);'
 				. ' color: var(--text-primary, #212529);'
@@ -660,6 +718,21 @@ HTML;
 	// ----------------------------------------------------------------------
 	private function processItem(array &$state, array $item)
 	{
+		// Catch-all so a single broken page (uncaught exception in the
+		// theme, a Throwable from a plugin hook, etc.) never aborts the
+		// whole build silently. The recorded error count then reflects
+		// reality and the run is correctly reported as "Completed with
+		// errors" rather than "Success".
+		try {
+			$this->processItemInner($state, $item);
+		} catch (Throwable $e) {
+			$state['errors']++;
+			$this->log('ERROR exception processing ' . $item['path'] . ': ' . $e->getMessage());
+		}
+	}
+
+	private function processItemInner(array &$state, array $item)
+	{
 		$path = $item['path'];
 		$kind = $item['kind'];
 
@@ -701,6 +774,10 @@ HTML;
 		}
 		$rewritten = $this->rewriteHtml($state, $path, $result['body']);
 		$bytes = $this->writeFile($savePath, $rewritten);
+		if ($bytes === false) {
+			$state['errors']++;
+			return;
+		}
 		$state['bytesWritten'] += $bytes;
 	}
 
@@ -720,6 +797,10 @@ HTML;
 			}
 			$rewritten = $this->rewriteCss($state, $path, $body);
 			$bytes = $this->writeFile($savePath, $rewritten);
+			if ($bytes === false) {
+				$state['errors']++;
+				return;
+			}
 			$state['urlsFetched']++;
 			$state['bytesWritten'] += $bytes;
 			$this->log('OK  disk  ' . $path . ' [text/css]');
@@ -727,6 +808,7 @@ HTML;
 		}
 		if (!$this->ensureDir(dirname($savePath))) {
 			$state['errors']++;
+			$this->log('ERROR mkdir ' . dirname($savePath));
 			return;
 		}
 		if (!@copy($diskPath, $savePath)) {
@@ -1363,22 +1445,29 @@ HTML;
 		return @mkdir($dir, defined('DIR_PERMISSIONS') ? DIR_PERMISSIONS : 0755, true);
 	}
 
+	/**
+	 * Atomically write a file. Returns the number of bytes written on
+	 * success, or FALSE on any failure (mkdir, write, or rename). The
+	 * boolean false (rather than int 0) is what lets callers distinguish
+	 * "wrote an empty file" from "couldn't write" and bump the error
+	 * counter accordingly.
+	 */
 	private function writeFile($path, $contents)
 	{
 		if (!$this->ensureDir(dirname($path))) {
 			$this->log('ERROR mkdir ' . dirname($path));
-			return 0;
+			return false;
 		}
 		$tmp = $path . '.part';
 		$wrote = @file_put_contents($tmp, $contents);
 		if ($wrote === false) {
 			$this->log('ERROR write ' . $path);
-			return 0;
+			return false;
 		}
 		if (!@rename($tmp, $path)) {
 			@unlink($tmp);
 			$this->log('ERROR rename ' . $path);
-			return 0;
+			return false;
 		}
 		return $wrote;
 	}
