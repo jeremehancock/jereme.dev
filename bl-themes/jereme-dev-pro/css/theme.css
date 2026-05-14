@@ -1782,19 +1782,3 @@ body.search-open .body-overlay {
     margin-top: -0.1rem;
   }
 }
-
-@media print {
-  .site-header,
-  .site-aside,
-  .site-footer,
-  .post-navigation,
-  .page-band,
-  .body-overlay,
-  .main-navigation {
-    display: none !important;
-  }
-  body {
-    background: #fff;
-    color: #000;
-  }
-}
