@@ -28,8 +28,8 @@
 	"sgj-build-locked": "Another build appears to be in progress. If this is wrong, remove the lock file from the workspace and try again.",
 	"sgj-build-no-output-dir": "Could not create the output directory.",
 	"sgj-section-howitworks": "How it works",
-	"sgj-howitworks-1": "The crawler fetches each public URL via cURL as an anonymous visitor — your admin session is not forwarded.",
+	"sgj-howitworks-1": "Pages are rendered in-process by Bludit itself — the plugin does not make any HTTP requests, so the build works the same way locally, inside Vagrant, and in production.",
 	"sgj-howitworks-2": "HTML pages are written as <code>path/index.html</code> so clean URLs keep working; all absolute and root-relative links are rewritten to document-relative paths.",
-	"sgj-howitworks-3": "Referenced theme, upload, and core assets are copied verbatim from disk when possible; everything else falls back to an HTTP fetch.",
-	"sgj-howitworks-4": "Admin URLs, the bl-content/databases JSON, and any path you list under <em>Exclude paths</em> are never written to the build."
+	"sgj-howitworks-3": "Referenced theme, upload, and other public assets are copied verbatim from disk; anything under the admin URI or bl-content/databases is always skipped.",
+	"sgj-howitworks-4": "Drafts, scheduled pages, and any path you list under <em>Exclude paths</em> are never written to the build."
 }

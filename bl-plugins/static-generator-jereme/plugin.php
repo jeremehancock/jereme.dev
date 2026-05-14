@@ -26,8 +26,6 @@ class pluginStaticGeneratorJereme extends Plugin
 	const LOG_FILENAME = 'build.log';
 	const MAX_LOG_LINES = 100;
 	const DEFAULT_MAX_URLS = 500;
-	const CRAWL_TIMEOUT = 30;
-	const CRAWL_USER_AGENT = 'BluditStaticGenerator/1.0';
 
 	public function init()
 	{
@@ -213,12 +211,7 @@ class pluginStaticGeneratorJereme extends Plugin
 		$this->log('Clearing output directory: ' . $outDir);
 		$this->clearDir($outDir);
 
-		$crawl = $this->resolveCrawlBase();
-		$this->log('Crawl base: ' . $crawl['url'] . ($crawl['host'] !== '' ? ' (Host: ' . $crawl['host'] . ')' : ''));
-
 		$state = array(
-			'crawlBase' => $crawl['url'],
-			'crawlHost' => $crawl['host'],
 			'sitePathPrefix' => $this->sitePathPrefix(),
 			'outDir' => $outDir,
 			'queue' => array(),
@@ -466,62 +459,61 @@ class pluginStaticGeneratorJereme extends Plugin
 
 	// ----------------------------------------------------------------------
 	// Per-item processing
+	//
+	// Two paths:
+	//   - Pages are rendered in-process using Bludit's own theme dispatch.
+	//     No HTTP is involved, so the build works inside Vagrant /
+	//     containers where the PHP process cannot reach the public
+	//     hostname.
+	//   - Assets are copied straight from disk. mapToDisk() returns a real
+	//     file path under PATH_ROOT only after path-traversal and
+	//     allow-list checks, so we never expose anything outside the
+	//     public webroot.
 	// ----------------------------------------------------------------------
 	private function processItem(array &$state, array $item)
 	{
 		$path = $item['path'];
 		$kind = $item['kind'];
 
-		// Try to serve from disk for asset paths (theme, uploads, kernel, plugins).
-		$diskPath = $this->mapToDisk($path);
-		if ($diskPath !== null && is_file($diskPath) && $kind !== 'page') {
-			$this->saveAssetFromDisk($state, $path, $diskPath);
+		// Assets first — fastest path, no rendering needed.
+		if ($kind !== 'page') {
+			$diskPath = $this->mapToDisk($path);
+			if ($diskPath !== null && is_file($diskPath)) {
+				$this->saveAssetFromDisk($state, $path, $diskPath);
+				return;
+			}
+			$state['errors']++;
+			$this->log('ERROR asset not on disk: ' . $path);
 			return;
 		}
 
-		// Fetch via HTTP.
-		$url = $this->joinUrl($state['crawlBase'], $path);
-		$fetch = $this->httpFetch($url, $state['crawlHost']);
-		if (!$fetch['ok']) {
+		// Page render via the kernel.
+		$result = $this->renderInternal($path);
+		if (!$result['ok']) {
 			$state['errors']++;
-			$this->log('ERROR ' . $fetch['status'] . ' ' . $url . ' (' . $fetch['error'] . ')');
+			$this->log('ERROR render ' . $path . ' (' . $result['error'] . ')');
+			return;
+		}
+		// Bludit's 404 page has the right HTML but the page-not-found
+		// content. We still write it so /404 works in the build, but skip
+		// any URL that resolved to "not found" via an actual missing slug.
+		if ($result['notFound'] && $path !== '/404' && $path !== '/page-not-found') {
+			$state['errors']++;
+			$this->log('ERROR 404 ' . $path);
 			return;
 		}
 		$state['urlsFetched']++;
-		$this->log('OK  ' . $fetch['status'] . ' ' . $url . ' [' . $fetch['contentType'] . ']');
+		$this->log('OK  render ' . $path);
 
-		$body = $fetch['body'];
-		$ct = strtolower($fetch['contentType']);
-		$isHtml = (strpos($ct, 'text/html') !== false) || ($kind === 'page' && $body !== '' && stripos($body, '<html') !== false);
-
-		if ($isHtml) {
-			$savePath = $this->htmlSavePath($state['outDir'], $path);
-			if ($savePath === null) {
-				$state['errors']++;
-				$this->log('ERROR refusing unsafe save path for ' . $path);
-				return;
-			}
-			$rewritten = $this->rewriteHtml($state, $path, $body);
-			$bytes = $this->writeFile($savePath, $rewritten);
-			$state['bytesWritten'] += $bytes;
-		} elseif (strpos($ct, 'text/css') !== false || preg_match('#\.css($|\?)#i', $path)) {
-			$savePath = $this->fileSavePath($state['outDir'], $path);
-			if ($savePath === null) {
-				$state['errors']++;
-				return;
-			}
-			$rewritten = $this->rewriteCss($state, $path, $body);
-			$bytes = $this->writeFile($savePath, $rewritten);
-			$state['bytesWritten'] += $bytes;
-		} else {
-			$savePath = $this->fileSavePath($state['outDir'], $path);
-			if ($savePath === null) {
-				$state['errors']++;
-				return;
-			}
-			$bytes = $this->writeFile($savePath, $body);
-			$state['bytesWritten'] += $bytes;
+		$savePath = $this->htmlSavePath($state['outDir'], $path);
+		if ($savePath === null) {
+			$state['errors']++;
+			$this->log('ERROR refusing unsafe save path for ' . $path);
+			return;
 		}
+		$rewritten = $this->rewriteHtml($state, $path, $result['body']);
+		$bytes = $this->writeFile($savePath, $rewritten);
+		$state['bytesWritten'] += $bytes;
 	}
 
 	private function saveAssetFromDisk(array &$state, $path, $diskPath)
@@ -560,180 +552,174 @@ class pluginStaticGeneratorJereme extends Plugin
 	}
 
 	// ----------------------------------------------------------------------
-	// HTTP fetch
+	// Internal renderer
 	//
-	// $hostHeader, when non-empty, overrides the Host header — necessary
-	// when we cURL to a loopback address (e.g. 127.0.0.1:80) but need the
-	// webserver to route to the vhost the user is actually visiting. Cert
-	// verification is relaxed for loopback URLs since we're talking to
-	// ourselves; for any other host we keep full TLS validation.
+	// Renders a Bludit page in-process by manipulating the globals the
+	// kernel's site dispatch sets up — $url, $page, $content, $WHERE_AM_I,
+	// $staticContent — and including the active theme's index.php inside
+	// an output buffer. No HTTP request is made.
+	//
+	// We intentionally do NOT re-run the boot rules ($pages->scheduler()
+	// in 69.pages.php, the buildPlugins() in 60.plugins.php) so that
+	// rendering many URLs back-to-back has no compounding side effects.
+	// Plugin hooks the theme itself calls (siteHead, siteBodyBegin,
+	// siteBodyEnd, siteSidebar, pageBegin, pageEnd) still fire normally.
 	// ----------------------------------------------------------------------
-	private function httpFetch($url, $hostHeader = '')
+	private function renderInternal($path)
 	{
-		$isLoopback = $this->isLoopbackUrl($url);
-		$ch = curl_init();
-		$opts = array(
-			CURLOPT_URL => $url,
-			CURLOPT_RETURNTRANSFER => true,
-			CURLOPT_FOLLOWLOCATION => true,
-			CURLOPT_MAXREDIRS => 3,
-			CURLOPT_TIMEOUT => self::CRAWL_TIMEOUT,
-			CURLOPT_CONNECTTIMEOUT => 5,
-			CURLOPT_USERAGENT => self::CRAWL_USER_AGENT,
-			CURLOPT_HEADER => false,
-			CURLOPT_COOKIE => '',
-			CURLOPT_COOKIEFILE => '',
-			CURLOPT_COOKIEJAR => '',
-			CURLOPT_SSL_VERIFYPEER => $isLoopback ? false : true,
-			CURLOPT_SSL_VERIFYHOST => $isLoopback ? 0 : 2,
-			CURLOPT_PROTOCOLS => CURLPROTO_HTTP | CURLPROTO_HTTPS,
-			CURLOPT_REDIR_PROTOCOLS => CURLPROTO_HTTP | CURLPROTO_HTTPS,
+		global $site, $url, $page, $content, $pages, $categories, $tags, $L, $plugins, $WHERE_AM_I;
+		global $staticContent, $staticPages;
+		// Themes commonly stash $helper / $login / $searchJson in their
+		// init.php and then guard subsequent re-inits with isset() checks.
+		// Promoting those to globals lets the guards work across the many
+		// renderInternal() calls in one build, which is what prevents the
+		// "Cannot redeclare class Helper" fatal on the second page.
+		global $helper, $login, $searchJson;
+
+		// Snapshot everything we touch, so we restore cleanly even on error.
+		$saved = array(
+			'REQUEST_URI' => isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '/',
+			'QUERY_STRING' => isset($_SERVER['QUERY_STRING']) ? $_SERVER['QUERY_STRING'] : '',
+			'GET' => $_GET,
+			'url' => $url,
+			'page' => isset($GLOBALS['page']) ? $GLOBALS['page'] : null,
+			'content' => isset($GLOBALS['content']) ? $GLOBALS['content'] : null,
+			'staticContent' => isset($GLOBALS['staticContent']) ? $GLOBALS['staticContent'] : null,
+			'staticPages' => isset($GLOBALS['staticPages']) ? $GLOBALS['staticPages'] : null,
+			'WAI' => isset($GLOBALS['WHERE_AM_I']) ? $GLOBALS['WHERE_AM_I'] : null,
 		);
-		if ($hostHeader !== '') {
-			$opts[CURLOPT_HTTPHEADER] = array('Host: ' . $hostHeader);
-		}
-		curl_setopt_array($ch, $opts);
-		$body = curl_exec($ch);
-		$status = (int) curl_getinfo($ch, CURLINFO_HTTP_CODE);
-		$contentType = (string) curl_getinfo($ch, CURLINFO_CONTENT_TYPE);
-		$effective = (string) curl_getinfo($ch, CURLINFO_EFFECTIVE_URL);
-		$err = curl_error($ch);
-		curl_close($ch);
-		// If a redirect bounced us off-origin, refuse — we don't want to
-		// archive third-party content under our build dir.
-		if ($body !== false && $effective !== '') {
-			$originalOrigin = $this->originOf($url);
-			$effectiveOrigin = $this->originOf($effective);
-			if ($originalOrigin !== '' && $effectiveOrigin !== '' && strcasecmp($originalOrigin, $effectiveOrigin) !== 0) {
-				return array(
-					'ok' => false,
-					'status' => $status,
-					'contentType' => $contentType,
-					'body' => '',
-					'error' => 'cross-origin redirect to ' . $effective,
-				);
+
+		$bufLevel = ob_get_level();
+		try {
+			// Parse path + query into request shape.
+			$queryStr = '';
+			$qPos = strpos($path, '?');
+			if ($qPos !== false) {
+				$queryStr = substr($path, $qPos + 1);
+				$path = substr($path, 0, $qPos);
+			}
+			$_SERVER['REQUEST_URI'] = HTML_PATH_ROOT . ltrim($path, '/') . ($queryStr !== '' ? '?' . $queryStr : '');
+			$_SERVER['QUERY_STRING'] = $queryStr;
+			$_GET = array();
+			if ($queryStr !== '') {
+				parse_str($queryStr, $_GET);
+			}
+
+			// Re-derive Url state and replace the global.
+			$newUrl = new Url();
+			$newUrl->checkFilters($site->uriFilters());
+			$url = $GLOBALS['url'] = $newUrl;
+
+			// Replicate the page/content setup from 69.pages.php WITHOUT
+			// running $pages->scheduler() (we don't want scheduled-publish
+			// side effects during a build).
+			$page = false;
+			$content = array();
+			$staticContent = $staticPages = buildStaticPages();
+			$GLOBALS['staticContent'] = $staticContent;
+			$GLOBALS['staticPages'] = $staticPages;
+			$wai = $url->whereAmI();
+
+			if ($site->homepage() && $wai === 'home') {
+				$pageKey = $site->homepage();
+				if ($pages->exists($pageKey)) {
+					$url->setSlug($pageKey);
+					$content[0] = $page = buildThePage();
+				}
+			} elseif ($wai === 'page') {
+				$content[0] = $page = buildThePage();
+			} elseif ($wai === 'tag') {
+				$content = buildPagesByTag();
+			} elseif ($wai === 'category') {
+				$content = buildPagesByCategory();
+			} elseif ($wai === 'home' || $wai === 'blog') {
+				$content = buildPagesForHome();
+			}
+			if (isset($content[0])) {
+				$page = $content[0];
+			}
+			if ($url->notFound()) {
+				$content[0] = $page = buildErrorPage();
+			}
+			$GLOBALS['page'] = $page;
+			$GLOBALS['content'] = $content;
+
+			// Paginator state for this URL (mirrors 99.paginator.php).
+			$this->setupPaginator($url);
+
+			// Render the theme. The theme's init.php typically loads helper
+			// classes; since $helper / $login / $searchJson are now globals,
+			// the theme's `if (!isset($helper))` guards work across renders
+			// and we can include init.php every time (it's idempotent).
+			// index.php is the actual HTML template.
+			ob_start();
+			$themeDir = PATH_THEMES . $site->theme() . DS;
+			if (is_file($themeDir . 'init.php')) {
+				include $themeDir . 'init.php';
+			}
+			if (is_file($themeDir . 'index.php')) {
+				include $themeDir . 'index.php';
+			} else {
+				ob_end_clean();
+				return array('ok' => false, 'body' => '', 'notFound' => false, 'error' => 'theme index.php missing');
+			}
+			$body = ob_get_clean();
+
+			return array(
+				'ok' => true,
+				'body' => $body,
+				'notFound' => (bool) $url->notFound(),
+				'error' => '',
+			);
+		} catch (Exception $e) {
+			while (ob_get_level() > $bufLevel) {
+				ob_end_clean();
+			}
+			return array('ok' => false, 'body' => '', 'notFound' => false, 'error' => $e->getMessage());
+		} catch (Throwable $e) {
+			while (ob_get_level() > $bufLevel) {
+				ob_end_clean();
+			}
+			return array('ok' => false, 'body' => '', 'notFound' => false, 'error' => $e->getMessage());
+		} finally {
+			// Restore every snapshotted value so the surrounding admin
+			// request continues uninterrupted.
+			$_SERVER['REQUEST_URI'] = $saved['REQUEST_URI'];
+			$_SERVER['QUERY_STRING'] = $saved['QUERY_STRING'];
+			$_GET = $saved['GET'];
+			$GLOBALS['url'] = $saved['url'];
+			$GLOBALS['page'] = $saved['page'];
+			$GLOBALS['content'] = $saved['content'];
+			$GLOBALS['staticContent'] = $saved['staticContent'];
+			$GLOBALS['staticPages'] = $saved['staticPages'];
+			if ($saved['WAI'] !== null) {
+				$GLOBALS['WHERE_AM_I'] = $saved['WAI'];
 			}
 		}
-		return array(
-			'ok' => ($body !== false && $status >= 200 && $status < 400),
-			'status' => $status,
-			'contentType' => $contentType,
-			'body' => $body === false ? '' : $body,
-			'error' => $err,
-		);
 	}
 
-	private function joinUrl($base, $path)
+	private function setupPaginator($url)
 	{
-		return rtrim($base, '/') . $path;
-	}
+		global $site, $pages, $tags, $categories;
+		$wai = $url->whereAmI();
+		$currentPage = $url->pageNumber();
+		Paginator::set('currentPage', $currentPage);
 
-	/**
-	 * Pick a URL the crawler can actually reach. Tries (in order):
-	 *   1. http://127.0.0.1:SERVER_PORT  — works for `php -S`, Vagrant
-	 *      port-forwards (where HTTP_HOST is the host-side port and PHP
-	 *      sees the inside-VM port), and any setup where the webserver
-	 *      listens on TCP loopback.
-	 *   2. http://SERVER_ADDR:SERVER_PORT — if SERVER_ADDR is not 127.0.0.1.
-	 *   3. scheme://HTTP_HOST — the URL the admin is currently using;
-	 *      works for production where DNS resolves back to the same box.
-	 *   4. $site->url() as a final fallback.
-	 *
-	 * When the chosen URL is a loopback IP, we send a Host header matching
-	 * HTTP_HOST so the webserver routes to the right vhost and Bludit
-	 * renders canonical links using the configured site URL.
-	 *
-	 * Returns array{url:string, host:string} where host is '' when no
-	 * Host-header override is needed.
-	 */
-	private function resolveCrawlBase()
-	{
-		$candidates = $this->loopbackCandidates();
-		foreach ($candidates as $cand) {
-			if ($this->probeUrl($cand['url'], $cand['host'])) {
-				$this->log('Probe OK: ' . $cand['url'] . ($cand['host'] !== '' ? ' (Host: ' . $cand['host'] . ')' : ''));
-				return $cand;
-			}
-			$this->log('Probe failed: ' . $cand['url']);
+		if ($wai === 'tag') {
+			$itemsPerPage = $site->itemsPerPage();
+			$numberOfItems = $tags->numberOfPages($url->slug());
+		} elseif ($wai === 'category') {
+			$itemsPerPage = $site->itemsPerPage();
+			$numberOfItems = $categories->numberOfPages($url->slug());
+		} else {
+			$itemsPerPage = $site->itemsPerPage();
+			$numberOfItems = $pages->count(true);
 		}
-		global $site;
-		return array('url' => rtrim($site->url(), '/'), 'host' => '');
-	}
-
-	private function loopbackCandidates()
-	{
-		$port = isset($_SERVER['SERVER_PORT']) ? (int) $_SERVER['SERVER_PORT'] : 0;
-		$addr = isset($_SERVER['SERVER_ADDR']) ? $_SERVER['SERVER_ADDR'] : '';
-		$httpHost = isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : '';
-		// Reject malformed Host headers up front so we don't pass them
-		// through to cURL.
-		if ($httpHost !== '' && !preg_match('/^[A-Za-z0-9.\-]+(?::[0-9]{1,5})?$/', $httpHost) && !preg_match('/^\[[0-9A-Fa-f:]+\](?::[0-9]{1,5})?$/', $httpHost)) {
-			$httpHost = '';
-		}
-
-		$out = array();
-
-		// Loopback to whatever port PHP sees the server on. Use HTTP even
-		// if the public site is HTTPS — TLS to 127.0.0.1 with a public cert
-		// won't validate, and most stacks (Apache, nginx) listen on the
-		// same TCP port for both schemes only when explicitly configured.
-		if ($port > 0 && $port !== 443) {
-			$out[] = array('url' => 'http://127.0.0.1:' . $port, 'host' => $httpHost);
-			if ($addr !== '' && $addr !== '127.0.0.1' && filter_var($addr, FILTER_VALIDATE_IP) && !filter_var($addr, FILTER_VALIDATE_IP, FILTER_FLAG_IPV6)) {
-				$out[] = array('url' => 'http://' . $addr . ':' . $port, 'host' => $httpHost);
-			}
-		}
-
-		// The admin's own request URL.
-		if ($httpHost !== '') {
-			$scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
-			$out[] = array('url' => $scheme . '://' . $httpHost, 'host' => '');
-		}
-
-		return $out;
-	}
-
-	private function probeUrl($base, $hostHeader)
-	{
-		$ch = curl_init();
-		$opts = array(
-			CURLOPT_URL => $base . '/',
-			CURLOPT_RETURNTRANSFER => true,
-			CURLOPT_NOBODY => true,
-			CURLOPT_FOLLOWLOCATION => false,
-			CURLOPT_TIMEOUT => 3,
-			CURLOPT_CONNECTTIMEOUT => 2,
-			CURLOPT_USERAGENT => self::CRAWL_USER_AGENT,
-			CURLOPT_SSL_VERIFYPEER => false,
-			CURLOPT_SSL_VERIFYHOST => 0,
-			CURLOPT_PROTOCOLS => CURLPROTO_HTTP | CURLPROTO_HTTPS,
-		);
-		if ($hostHeader !== '') {
-			$opts[CURLOPT_HTTPHEADER] = array('Host: ' . $hostHeader);
-		}
-		curl_setopt_array($ch, $opts);
-		curl_exec($ch);
-		$status = (int) curl_getinfo($ch, CURLINFO_HTTP_CODE);
-		$errno = curl_errno($ch);
-		curl_close($ch);
-		// Connection refused / timeout: errno != 0 and status 0. Any real
-		// HTTP response (even a 4xx) means the server is reachable.
-		return ($errno === 0 && $status > 0 && $status < 600);
-	}
-
-	private function isLoopbackUrl($url)
-	{
-		$host = parse_url($url, PHP_URL_HOST);
-		if ($host === null) {
-			return false;
-		}
-		if ($host === '127.0.0.1' || $host === '::1' || strtolower($host) === 'localhost') {
-			return true;
-		}
-		if (filter_var($host, FILTER_VALIDATE_IP) && (strpos($host, '10.') === 0 || strpos($host, '192.168.') === 0 || preg_match('/^172\.(1[6-9]|2[0-9]|3[01])\./', $host))) {
-			return true;
-		}
-		return false;
+		Paginator::set('numberOfItems', $numberOfItems);
+		Paginator::set('itemsPerPage', $itemsPerPage);
+		$numberOfPages = ($itemsPerPage > 0) ? (int) ceil($numberOfItems / $itemsPerPage) : 1;
+		Paginator::set('numberOfPages', $numberOfPages);
+		Paginator::set('showItems', $itemsPerPage);
 	}
 
 	private function sitePathPrefix()
@@ -763,7 +749,7 @@ class pluginStaticGeneratorJereme extends Plugin
 	private function rewriteHtml(array &$state, $path, $html)
 	{
 		$prefix = $this->depthPrefix($path);
-		$crawlOrigin = $this->originOf($state['crawlBase']);
+		$crawlOrigin = '';
 		$siteOrigin = $this->originOf(DOMAIN_BASE);
 		$basePath = rtrim($state['sitePathPrefix'], '/');
 
@@ -946,7 +932,7 @@ class pluginStaticGeneratorJereme extends Plugin
 	public function rewriteCss(array &$state, $path, $css)
 	{
 		$prefix = $this->depthPrefix($path);
-		$crawlOrigin = $this->originOf($state['crawlBase']);
+		$crawlOrigin = '';
 		$siteOrigin = $this->originOf(DOMAIN_BASE);
 		$basePath = rtrim($state['sitePathPrefix'], '/');
 
@@ -1087,6 +1073,16 @@ class pluginStaticGeneratorJereme extends Plugin
 		return $isAbs ? DIRECTORY_SEPARATOR . $result : $result;
 	}
 
+	/**
+	 * Map a URL path to a file under PATH_ROOT, but only for paths that:
+	 *   - resolve lexically inside PATH_ROOT (no traversal),
+	 *   - are NOT under one of the deny prefixes (admin URI, the JSON
+	 *     databases, workspaces, tmp, dotfiles like .git),
+	 *   - have an asset-style extension we know how to serve statically.
+	 *
+	 * Returns the absolute filesystem path, or null if the URL doesn't
+	 * map to a publicly-servable file.
+	 */
 	private function mapToDisk($path)
 	{
 		$clean = $this->cleanPath($path);
@@ -1097,18 +1093,31 @@ class pluginStaticGeneratorJereme extends Plugin
 		if ($rel === '') {
 			return null;
 		}
-		// Only map a known set of static prefixes — never anything else.
-		$prefixes = array('bl-themes/', 'bl-content/uploads/', 'bl-kernel/', 'bl-plugins/');
-		$matched = false;
-		foreach ($prefixes as $p) {
-			if (strpos($rel, $p) === 0) {
-				$matched = true;
-				break;
-			}
-		}
-		if (!$matched) {
+
+		// Refuse anything that isn't an asset by extension.
+		if (!preg_match($this->fileExtRegex, $rel)) {
 			return null;
 		}
+
+		// Deny dotfiles, hidden dirs, and the private content dirs.
+		$denyPrefixes = array(
+			ADMIN_URI_FILTER . '/',
+			'bl-content/databases/',
+			'bl-content/workspaces/',
+			'bl-content/tmp/',
+		);
+		foreach ($denyPrefixes as $deny) {
+			if (strpos($rel, $deny) === 0) {
+				return null;
+			}
+		}
+		// Block .anything segments (.git, .env, .htaccess, etc.).
+		foreach (explode('/', $rel) as $seg) {
+			if ($seg !== '' && $seg[0] === '.') {
+				return null;
+			}
+		}
+
 		$candidate = $this->resolveSafePath(rtrim(PATH_ROOT, DIRECTORY_SEPARATOR), $rel);
 		return $candidate;
 	}
