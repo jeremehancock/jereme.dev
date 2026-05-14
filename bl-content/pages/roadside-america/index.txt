@@ -1,9 +1,16 @@
-A little over a year ago I saw a Reddit post about the [John Margolies Roadside America Photograph Archive](https://www.loc.gov/free-to-use/john-margolies-roadside-america-photograph-archive). The photos were taken between 1968 and 2008 and feature various roadside attractions in the United States. 
+Several years ago, I discovered the **John Margolies Roadside America Photograph Archive** from the Library of Congress — a collection of roadside attractions photographed between 1968 and 2008.
 
-My first thought was I should build some sort of API to allow someone to easily use these photos on a website. So I built out a very simple API of sorts and set it up here, [Roadside America API](https://roadside-america.dumbprojects.com/).
+- Archive: https://www.loc.gov/free-to-use/john-margolies-roadside-america-photograph-archive
 
-I started tweeting the pictures on my personal Twitter account and people seemed to like them. So I have setup a Roadside America Twitter account and new site to allow people to get a random picture from the archive wiith its description every hour.
+I wanted an easy way to use these images on websites, so I built a simple API that returns a random photo from the archive along with its description:
 
-Check it out here:
+- Roadside America API: https://roadside-america.dumbprojects.com/
 
-[Demo Site](https://roadside-america.dumbprojects.com/demo/)
+I also created a demo site that shows a random image from the collection:
+
+- Demo Site: https://roadside-america.dumbprojects.com/demo/
+
+It started as a small experiment — making historic archival photos easier to explore and reuse.
+
+### AI Disclaimer
+This project was originally developed without the use of AI. It has since been updated to a more modern stack with the help of AI.

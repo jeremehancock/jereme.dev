@@ -1,11 +1,27 @@
-Looking for random goat gifs? Look no further! 
+**Random Goat** is a simple website that shows random goat GIFs.
 
-Powered by: [Giphy ](https://giphy.com)
+That’s it — just goats.
 
--    [giphy.com/randomgoat](https://giphy.com/randomgoat) 
+Click or tap to see a new goat anytime. No ads, no tracking, no sign-ups. Just fun, fast goat content designed to make you smile.
 
-<div class="centered">
-<iframe src='//randomgoat.com/embed.php' width='100%' height='700' frameBorder='0' id='random-goat-embed' class="iframe-border" allowFullScreen></iframe>
-</div>
+---
 
-### Check it out at [randomgoat.com](https://randomgoat.com/)!
+### Features
+
+- 🎲 Endless random goat GIFs  
+- 📱 Works on all devices  
+- ⚡ Fast and lightweight  
+- 🎃 Seasonal holiday goats  
+- 🔗 Easy to embed  
+
+---
+
+**In a chaotic world, be someone’s random goat. 🐐**
+
+## Links
+
+- Project on GitHub: [jeremehancock/RandomGoat.com](https://github.com/jeremehancock/RandomGoat.com)
+- Visit Random Goat: [RandomGoat.com](https://randomgoat.com)
+
+## AI Disclaimer
+This project was originally developed without the use of AI. It has since been updated to a more modern stack with the help of AI.
