@@ -1139,6 +1139,49 @@ HTML;
 			$html
 		);
 
+		// Inline <script> bodies often contain string literals that hold
+		// in-site URLs — e.g. theme code that does
+		//     var uploadsFolder = '/bl-content/uploads/';
+		//     var siteRoot = 'https://example.com/';
+		// followed later by `fetch(uploadsFolder + 'index.json')` or
+		// `siteRoot + slug`. The attribute-rewriting pass above can't see
+		// those strings, so they survive into the static build as either
+		// root-relative paths (broken when the build isn't hosted at the
+		// webroot) or as the live site's absolute URL (which the
+		// origin-strip pass below would then turn into bare root-relative
+		// paths anyway). The rewriteJsUrl() helper handles two cases the
+		// attribute path does not:
+		//   1. Trailing-slash URLs are kept as directory prefixes (so
+		//      JS concat keeps working) and the disk directory's
+		//      contents are walked + enqueued so referenced JSON / data
+		//      files get copied even though no HTML element links them.
+		//   2. The crawl/site origins are stripped before relativising,
+		//      same as for attributes.
+		// Conservative match: only strings that look like in-site URLs
+		// (absolute on this origin, or starting with "/"), no whitespace.
+		$urlPattern = '(?:https?://[^\s"\'<>]+|/[^\s"\'<>]*)';
+		$jsRewrite = function ($url) use ($plugin, &$state, $prefix, $crawlOrigin, $siteOrigin, $basePath) {
+			return $plugin->rewriteJsUrl($state, $url, $prefix, $crawlOrigin, $siteOrigin, $basePath);
+		};
+		$html = preg_replace_callback(
+			'~(<script\b(?![^>]*\bsrc\s*=)[^>]*>)(.*?)(</script>)~is',
+			function ($m) use ($jsRewrite, $urlPattern) {
+				$body = $m[2];
+				$body = preg_replace_callback(
+					'~(")(' . $urlPattern . ')(")~',
+					function ($mm) use ($jsRewrite) { return $mm[1] . $jsRewrite($mm[2]) . $mm[3]; },
+					$body
+				);
+				$body = preg_replace_callback(
+					"~(')(" . $urlPattern . ")(')~",
+					function ($mm) use ($jsRewrite) { return $mm[1] . $jsRewrite($mm[2]) . $mm[3]; },
+					$body
+				);
+				return $m[1] . $body . $m[3];
+			},
+			$html
+		);
+
 		// Strip any remaining absolute-origin occurrences (e.g. inline JSON,
 		// JS-LD blocks, OG meta tag content already handled above but be
 		// safe). We only strip the origin, not paths, so JSON-LD URLs become
@@ -1251,6 +1294,166 @@ HTML;
 		}
 		// Collapse a leading "./" only if it's purely cosmetic.
 		return $ref === '' ? './' : $ref;
+	}
+
+	/**
+	 * Rewrite a URL that appears as a string literal inside an inline
+	 * <script> block. Differs from rewriteRef() in two important ways:
+	 *
+	 *   - URLs that end in "/" are kept as directory prefixes (no
+	 *     index.html appended). Theme JS commonly stores a folder URL
+	 *     in a variable and concatenates a filename onto it later;
+	 *     turning the prefix into a page link would corrupt every
+	 *     resulting URL.
+	 *
+	 *   - For directory-prefix URLs we walk the corresponding disk
+	 *     directory and enqueue every regular asset file underneath.
+	 *     The crawler can't follow JS string concatenation, so without
+	 *     this step files referenced only by JS (e.g. a search index
+	 *     JSON, a fonts manifest, an upload-listing JSON) would never
+	 *     be copied into the build dir.
+	 *
+	 * Non-directory URLs delegate straight to rewriteRef().
+	 */
+	public function rewriteJsUrl(array &$state, $url, $prefix, $crawlOrigin, $siteOrigin, $basePath)
+	{
+		$original = $url;
+		$url = trim($url);
+		if ($url === '' || $url[0] === '#') {
+			return $original;
+		}
+		if (preg_match('#^(mailto|tel|javascript|data):#i', $url)) {
+			return $original;
+		}
+
+		// Resolve to an in-site path-only URL, or bail if external.
+		if (preg_match('#^https?://#i', $url)) {
+			$urlOrigin = $this->originOf($url);
+			if (strcasecmp($urlOrigin, $crawlOrigin) !== 0 && strcasecmp($urlOrigin, $siteOrigin) !== 0) {
+				return $original;
+			}
+			$path = parse_url($url, PHP_URL_PATH);
+			$query = parse_url($url, PHP_URL_QUERY);
+			$frag = parse_url($url, PHP_URL_FRAGMENT);
+			$path = ($path === null || $path === '') ? '/' : $path;
+			$url = $path . ($query ? '?' . $query : '') . ($frag ? '#' . $frag : '');
+		} elseif ($url[0] !== '/') {
+			return $original;
+		}
+
+		// Strip the site base path (if installed in a subdirectory).
+		if ($basePath !== '' && $basePath !== '/' && strpos($url, $basePath . '/') === 0) {
+			$url = substr($url, strlen($basePath));
+		} elseif ($basePath !== '' && $basePath !== '/' && $url === $basePath) {
+			$url = '/';
+		}
+
+		// Split off query / fragment for the trailing-slash check.
+		$frag = '';
+		$hashPos = strpos($url, '#');
+		if ($hashPos !== false) {
+			$frag = substr($url, $hashPos);
+			$url = substr($url, 0, $hashPos);
+		}
+		$query = '';
+		$qPos = strpos($url, '?');
+		if ($qPos !== false) {
+			$query = substr($url, $qPos);
+			$url = substr($url, 0, $qPos);
+		}
+
+		// Directory prefix: keep as a relative directory path and walk the
+		// matching disk directory to make sure JS-referenced files are
+		// included in the build.
+		if (substr($url, -1) === '/') {
+			$diskDir = $this->mapToDiskDir($url);
+			if ($diskDir !== null && is_dir($diskDir)) {
+				$this->enqueueDirContents($state, $url, $diskDir);
+			}
+			$inner = ltrim($url, '/');
+			return $prefix . $inner . $query . $frag;
+		}
+
+		// Non-directory: hand off to the existing path that classifies
+		// file vs page, enqueues, and relativises.
+		return $this->rewriteRef($state, $original, $prefix, $crawlOrigin, $siteOrigin, $basePath, true);
+	}
+
+	/**
+	 * Like mapToDisk() but maps a URL DIRECTORY (no extension required)
+	 * to a disk directory under PATH_ROOT, applying the same denylist
+	 * (admin, databases, workspaces, tmp, dotfile segments) and lexical
+	 * traversal protection. Returns null if the URL doesn't map to a
+	 * publicly-walkable directory.
+	 */
+	private function mapToDiskDir($urlPath)
+	{
+		$clean = $this->cleanPath($urlPath);
+		if ($clean === null) {
+			return null;
+		}
+		$rel = trim(ltrim($clean['path'], '/'), '/');
+		if ($rel === '') {
+			return null;
+		}
+		$denyPrefixes = array(
+			ADMIN_URI_FILTER,
+			'bl-content/databases',
+			'bl-content/workspaces',
+			'bl-content/tmp',
+		);
+		foreach ($denyPrefixes as $deny) {
+			if ($rel === $deny || strpos($rel, $deny . '/') === 0) {
+				return null;
+			}
+		}
+		foreach (explode('/', $rel) as $seg) {
+			if ($seg !== '' && $seg[0] === '.') {
+				return null;
+			}
+		}
+		return $this->resolveSafePath(rtrim(PATH_ROOT, DIRECTORY_SEPARATOR), $rel);
+	}
+
+	/**
+	 * Walk a disk directory and enqueue every regular asset file inside
+	 * it. Asset extension matching uses the same regex as the rest of
+	 * the plugin so we don't accidentally copy things that aren't safe
+	 * to expose statically. Dedupe is handled by enqueue().
+	 */
+	private function enqueueDirContents(array &$state, $urlDirPath, $diskDir)
+	{
+		try {
+			$it = new RecursiveIteratorIterator(
+				new RecursiveDirectoryIterator($diskDir, RecursiveDirectoryIterator::SKIP_DOTS),
+				RecursiveIteratorIterator::SELF_FIRST
+			);
+		} catch (Throwable $e) {
+			return;
+		}
+		$rootLen = strlen(rtrim(PATH_ROOT, DIRECTORY_SEPARATOR)) + 1;
+		foreach ($it as $entry) {
+			if (!$entry->isFile()) {
+				continue;
+			}
+			$abs = $entry->getPathname();
+			if (strncmp($abs, rtrim(PATH_ROOT, DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR, $rootLen) !== 0) {
+				continue;
+			}
+			$relToRoot = substr($abs, $rootLen);
+			$relToRoot = str_replace(DIRECTORY_SEPARATOR, '/', $relToRoot);
+			if (!preg_match($this->fileExtRegex, $relToRoot)) {
+				continue;
+			}
+			$skip = false;
+			foreach (explode('/', $relToRoot) as $seg) {
+				if ($seg !== '' && $seg[0] === '.') { $skip = true; break; }
+			}
+			if ($skip) {
+				continue;
+			}
+			$this->enqueue($state, '/' . $relToRoot, 'asset');
+		}
 	}
 
 	// ----------------------------------------------------------------------
