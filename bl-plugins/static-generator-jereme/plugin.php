@@ -1283,16 +1283,20 @@ HTML;
 			$this->enqueue($state, $enqueuePath, $isFile ? 'asset' : 'page');
 		}
 
-		// Build the rewritten reference.
+		// Build the rewritten reference. File references keep their
+		// extension; page references point at the SAVED page's directory
+		// (htmlRelLinkTarget) rather than the directory's index.html,
+		// so the rendered HTML doesn't read like a sitemap. Directory
+		// indexing on the hosting webserver does the rest.
 		$inner = ltrim($url, '/');
 		if ($isFile) {
 			$ref = $prefix . $inner . $query . $frag;
 		} else {
 			$queryNoQ = $query === '' ? '' : ltrim($query, '?');
-			$rel = $this->htmlRelFilename($url, $queryNoQ);
+			$rel = $this->htmlRelLinkTarget($url, $queryNoQ);
 			$ref = $prefix . $rel . $frag;
 		}
-		// Collapse a leading "./" only if it's purely cosmetic.
+		// Collapse to "./" so href is never an empty string.
 		return $ref === '' ? './' : $ref;
 	}
 
@@ -1511,23 +1515,95 @@ HTML;
 	}
 
 	/**
-	 * Map a (path, query) pair to the relative filename used in the static
-	 * build. Pages without a query become "path/index.html"; pages with a
-	 * query (e.g. "?page=2") become "path/index.<query>.html" so the static
-	 * build does not rely on query strings — important for file:// hosting
-	 * and for static webservers that ignore the query when serving files.
+	 * Map a (path, query) pair to the relative filename used to STORE the
+	 * static copy on disk. Always ends in "index.html" so the file is
+	 * directly servable.
 	 *
-	 * Used by both htmlSavePath() (to decide where to write) and rewriteRef()
-	 * (to decide what to link to), so the two stay in lockstep.
+	 *   /                   -> index.html
+	 *   /foo                -> foo/index.html
+	 *   /?page=2            -> page/2/index.html
+	 *   /category/x?page=2  -> category/x/page/2/index.html
+	 *   /?page=1            -> index.html        (page 1 == unparameterised)
+	 *   /?preview=…         -> index.preview=….html  (unknown queries
+	 *                          keep the legacy slug-in-filename form so
+	 *                          they remain uniquely addressable)
+	 *
+	 * The companion htmlRelLinkTarget() returns the same locations as
+	 * DIRECTORY paths so internal page links can rely on the webserver's
+	 * directory-index resolution and don't need the explicit /index.html
+	 * suffix in every href.
 	 */
 	private function htmlRelFilename($path, $query)
 	{
 		$pathPart = trim($path, '/');
-		if ($query === '') {
+		$pageNum = $this->parsePageQuery($query);
+
+		// Page 1 collapses onto the unparameterised page; bytes are
+		// identical so there's no value in writing two copies.
+		if ($query === '' || $pageNum === 1) {
 			return $pathPart === '' ? 'index.html' : $pathPart . '/index.html';
+		}
+		if ($pageNum !== null) {
+			$sub = 'page/' . $pageNum . '/index.html';
+			return $pathPart === '' ? $sub : $pathPart . '/' . $sub;
+		}
+
+		// Unknown query - keep the legacy filename layout. These are rare
+		// (drafts, search filters, ad-hoc params) and don't have a
+		// natural directory translation.
+		$qSafe = preg_replace('/[^A-Za-z0-9_\-=&]/', '_', $query);
+		return $pathPart === '' ? 'index.' . $qSafe . '.html' : $pathPart . '/index.' . $qSafe . '.html';
+	}
+
+	/**
+	 * Map a (path, query) pair to the DIRECTORY URL used in <a href>
+	 * links inside rendered HTML. The directory's index.html is what
+	 * actually gets served by any directory-indexing webserver, so we
+	 * can drop the explicit suffix and produce cleaner-looking links.
+	 *
+	 *   /                   -> "./"
+	 *   /foo                -> "foo/"
+	 *   /?page=2            -> "page/2/"
+	 *   /category/x?page=2  -> "category/x/page/2/"
+	 *   /?page=1            -> "./"   (same target as /)
+	 *
+	 * For queries we don't know how to fold into a directory the link
+	 * falls back to the explicit .html filename so it still resolves.
+	 */
+	private function htmlRelLinkTarget($path, $query)
+	{
+		$pathPart = trim($path, '/');
+		$pageNum = $this->parsePageQuery($query);
+
+		// Root returns "" rather than "./" so that callers can concatenate
+		// it with a depth prefix without ending up with a noisy
+		// "../.././" — the surrounding rewriteRef() rule collapses an
+		// empty final result to "./".
+		if ($query === '' || $pageNum === 1) {
+			return $pathPart === '' ? '' : $pathPart . '/';
+		}
+		if ($pageNum !== null) {
+			$sub = 'page/' . $pageNum . '/';
+			return $pathPart === '' ? $sub : $pathPart . '/' . $sub;
 		}
 		$qSafe = preg_replace('/[^A-Za-z0-9_\-=&]/', '_', $query);
 		return $pathPart === '' ? 'index.' . $qSafe . '.html' : $pathPart . '/index.' . $qSafe . '.html';
+	}
+
+	/**
+	 * Recognise the "?page=N" pagination query. Returns the integer N or
+	 * null when the query isn't a pure page-number query (so callers
+	 * fall back to the generic filename form). Refuses queries that
+	 * include any other params — keeping them separate avoids silently
+	 * dropping data like "?page=2&preview=…".
+	 */
+	private function parsePageQuery($query)
+	{
+		if ($query === '' || !preg_match('/^page=(\d+)$/', $query, $m)) {
+			return null;
+		}
+		$n = (int) $m[1];
+		return $n > 0 ? $n : null;
 	}
 
 	private function fileSavePath($outDir, $path)
@@ -1652,28 +1728,32 @@ HTML;
 		return $candidate;
 	}
 
+	/**
+	 * Depth-prefix for document-relative URLs from the saved location of
+	 * the current resource. The depth is computed from the actual save
+	 * filename so that pages whose query expands into a subdirectory
+	 * (e.g. "?page=2" -> "page/2/index.html") get the right number of
+	 * leading "../" segments. Asset files (CSS/JS/etc.) are stored at
+	 * their request path verbatim, so their depth is just the number of
+	 * directory components above the file.
+	 */
 	private function depthPrefix($path)
 	{
-		// For a path like "/foo/bar" saved as "foo/bar/index.html", the
-		// depth (number of directories above the file) is 2 + 1 (index.html
-		// is itself inside foo/bar/), so we need "../../" to get back to
-		// the root. For files like "/foo/style.css" saved as "foo/style.css",
-		// depth is 1, so "../". For "/" saved as "index.html", depth is 0.
 		$clean = $this->cleanPath($path);
 		if ($clean === null) {
 			return '';
 		}
-		$p = trim($clean['path'], '/');
-		if ($p === '') {
-			return '';
+		if (preg_match($this->fileExtRegex, $clean['path'])) {
+			$p = trim($clean['path'], '/');
+			if ($p === '') {
+				return '';
+			}
+			$depth = count(explode('/', $p)) - 1;
+			return $depth > 0 ? str_repeat('../', $depth) : '';
 		}
-		$isFile = (bool) preg_match($this->fileExtRegex, $clean['path']);
-		$segments = explode('/', $p);
-		$depth = $isFile ? count($segments) - 1 : count($segments);
-		if ($depth <= 0) {
-			return '';
-		}
-		return str_repeat('../', $depth);
+		$rel = $this->htmlRelFilename($clean['path'], $clean['query']);
+		$depth = substr_count($rel, '/');
+		return $depth > 0 ? str_repeat('../', $depth) : '';
 	}
 
 	private function originOf($url)
