@@ -1772,7 +1772,7 @@ body.search-open .body-overlay {
     height: 38px;
   }
   .container {
-    padding: .2rem 1rem 1.4rem;
+    padding: .2rem 1rem .8rem;
   }
   .page-band {
     padding: .5rem 0 .3rem;
