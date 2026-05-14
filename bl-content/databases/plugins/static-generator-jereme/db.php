@@ -1,2 +1,2 @@
 <?php defined('BLUDIT') or die('Bludit CMS.'); ?>
-{"excludePaths":"\/homelab","lastBuildTime":"2026-05-14 18:16:33","lastBuildResult":"ok","lastBuildMessage":"Fetched 374 URLs (0 errors)","lastBuildUrls":374,"lastBuildBytes":57789892,"lastBuildDuration":42.340786933898926,"position":1}
+{"excludePaths":"\/homelab","lastBuildTime":"2026-05-14 18:26:59","lastBuildResult":"ok","lastBuildMessage":"Fetched 374 URLs (0 errors)","lastBuildUrls":374,"lastBuildBytes":57789892,"lastBuildDuration":34.367363929748535,"position":1}
