@@ -851,7 +851,7 @@ body.menu-open .main-navigation {
 .post-feature-badge {
   background: var(--accent);
   color: var(--accent-ink);
-  padding: 0.3rem 0.65rem;
+  padding: 0.35rem .5rem 0.3rem .65rem;
   border-radius: var(--radius-sm);
   font-size: 0.7rem;
   letter-spacing: 0.14em;
