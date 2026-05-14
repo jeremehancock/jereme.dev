@@ -604,23 +604,55 @@ HTML;
 
 	private function shouldSkip($path, array $excludePaths)
 	{
-		// Always skip admin + databases.
+		// Always-skipped admin / private dirs. These run through the same
+		// path-segment matcher as user excludes so /admin matches /admin
+		// itself and /admin/* but never /admin-something-else.
 		$alwaysSkip = array(
-			'/' . ADMIN_URI_FILTER . '/',
 			'/' . ADMIN_URI_FILTER,
-			'/bl-content/databases/',
-			'/bl-content/workspaces/',
-			'/bl-content/tmp/',
+			'/bl-content/databases',
+			'/bl-content/workspaces',
+			'/bl-content/tmp',
 		);
 		foreach ($alwaysSkip as $prefix) {
-			if (strpos($path, $prefix) === 0) {
+			if ($this->pathMatchesPrefix($path, $prefix)) {
 				return true;
 			}
 		}
 		foreach ($excludePaths as $prefix) {
-			if (strpos($path, $prefix) === 0) {
+			if ($this->pathMatchesPrefix($path, $prefix)) {
 				return true;
 			}
+		}
+		return false;
+	}
+
+	/**
+	 * Path-segment-aware prefix match.
+	 *   /homelab           matches  /homelab and /homelab/anything
+	 *   /homelab           does NOT match /homelab-md-offline-...
+	 *   /admin             matches  /admin and /admin/users
+	 *
+	 * Both args must start with "/". Trailing slashes on $prefix are
+	 * ignored. This is what every user-supplied exclude-path entry needs
+	 * — plain string startsWith() would also match unrelated slugs that
+	 * happen to share a textual prefix.
+	 */
+	private function pathMatchesPrefix($path, $prefix)
+	{
+		$prefix = rtrim($prefix, '/');
+		if ($prefix === '') {
+			return false;
+		}
+		// Drop the query string before comparing so /foo?x=1 matches /foo.
+		$qPos = strpos($path, '?');
+		if ($qPos !== false) {
+			$path = substr($path, 0, $qPos);
+		}
+		if ($path === $prefix) {
+			return true;
+		}
+		if (strncmp($path, $prefix . '/', strlen($prefix) + 1) === 0) {
+			return true;
 		}
 		return false;
 	}
