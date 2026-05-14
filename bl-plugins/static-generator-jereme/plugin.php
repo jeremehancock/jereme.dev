@@ -299,28 +299,27 @@ class pluginStaticGeneratorJereme extends Plugin
 
 	function startBuild() {
 		closeConfirm();
+		if (!form) { return; }
 		armed = true;
-		// Disable every submit-style control on the page so the user
-		// cannot click Save (or Generate) twice while the build runs.
-		var controls = form ? form.querySelectorAll('button, input[type=submit]') : [];
+		// IMPORTANT: inject the hidden action=build BEFORE disabling any
+		// controls. Browsers omit a disabled submitter's name/value from
+		// the form data, so if we instead relied on the Generate button
+		// being the submitter after we'd disabled it, post() would see
+		// no `action` field and silently fall through to "just save
+		// settings" — the build would never actually run.
+		var hidden = document.createElement('input');
+		hidden.type = 'hidden';
+		hidden.name = 'action';
+		hidden.value = 'build';
+		form.appendChild(hidden);
+		// Disable every submit-style control so the user cannot click
+		// Save (or Generate) twice while the build runs.
+		var controls = form.querySelectorAll('button, input[type=submit]');
 		for (var i = 0; i < controls.length; i++) { controls[i].disabled = true; }
 		btn.textContent = BUILDING_LABEL;
 		loadingEl.classList.add('is-open');
 		loadingEl.setAttribute('aria-hidden', 'false');
-		// Re-trigger the original submit. requestSubmit() preserves the
-		// button's name/value (action=build) where supported; if not, we
-		// add a hidden input so the post() handler still sees action=build.
-		if (form) {
-			if (typeof form.requestSubmit === 'function') {
-				try { form.requestSubmit(btn); return; } catch (_) {}
-			}
-			var hidden = document.createElement('input');
-			hidden.type = 'hidden';
-			hidden.name = 'action';
-			hidden.value = 'build';
-			form.appendChild(hidden);
-			form.submit();
-		}
+		form.submit();
 	}
 
 	btn.addEventListener('click', openConfirm);
