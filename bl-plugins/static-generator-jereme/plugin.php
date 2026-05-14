@@ -200,6 +200,31 @@ class pluginStaticGeneratorJereme extends Plugin
 	}
 	#sgj-build-btn[disabled] { cursor: not-allowed; opacity: 0.65; }
 
+	/* Disabled state: Bootstrap's .btn-primary:disabled / .btn-primary.disabled
+	   has higher specificity than our base .btn-primary rule, so we'd
+	   otherwise lose the mint palette the moment any button is disabled
+	   (which is exactly what happens to Save + Generate while the build
+	   runs). Explicit rules with !important keep the theme colours and
+	   just dim the button instead of flipping it back to Bootstrap blue. */
+	.btn-primary:disabled,
+	.btn-primary.disabled,
+	.btn-primary[disabled] {
+		background-color: var(--primary-blue, #007bff) !important;
+		border-color: var(--primary-blue, #007bff) !important;
+		color: var(--accent-ink, #fff) !important;
+		opacity: 0.6 !important;
+		cursor: not-allowed;
+	}
+	.btn-secondary:disabled,
+	.btn-secondary.disabled,
+	.btn-secondary[disabled] {
+		background-color: var(--bg-light, #6c757d) !important;
+		border-color: var(--border-color, #6c757d) !important;
+		color: var(--text-primary, #fff) !important;
+		opacity: 0.6 !important;
+		cursor: not-allowed;
+	}
+
 	/* The stock admin theme styles .btn-light / .btn-form but leaves
 	   .btn-primary and .btn-secondary at Bootstrap's hardcoded blues
 	   and greys, which clash with the dark mint palette. This <style>
