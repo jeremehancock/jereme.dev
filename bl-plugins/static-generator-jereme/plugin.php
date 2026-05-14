@@ -95,7 +95,8 @@ class pluginStaticGeneratorJereme extends Plugin
 		$html .= '<li class="mb-2">' . $L->get('sgj-howitworks-1') . '</li>';
 		$html .= '<li class="mb-2">' . $L->get('sgj-howitworks-2') . '</li>';
 		$html .= '<li class="mb-2">' . $L->get('sgj-howitworks-3') . '</li>';
-		$html .= '<li>' . $L->get('sgj-howitworks-4') . '</li>';
+		$html .= '<li class="mb-2">' . $L->get('sgj-howitworks-4') . '</li>';
+		$html .= '<li>' . $L->get('sgj-howitworks-5') . '</li>';
 		$html .= '</ul>';
 		$html .= '</div>';
 		$html .= '</div>';
@@ -505,6 +506,15 @@ HTML;
 			$this->processItem($state, $item);
 		}
 
+		// 404 page. Written to <build>/404.html at the build root so that
+		// directory-indexing webservers / static hosts (Apache via
+		// ErrorDocument, nginx via error_page, GitHub Pages / Netlify /
+		// Cloudflare Pages by convention) can serve it on any 404. A
+		// <base href> tag is injected into the page so relative asset and
+		// page URLs resolve correctly even when the browser address bar
+		// shows the URL that triggered the 404 rather than /404.html.
+		$this->writeNotFoundPage($state);
+
 		$duration = microtime(true) - $start;
 		$result = $state['errors'] === 0 ? 'ok' : 'partial';
 		$message = 'Fetched ' . $state['urlsFetched'] . ' URLs (' . $state['errors'] . ' errors)';
@@ -836,6 +846,74 @@ HTML;
 			return;
 		}
 		$state['bytesWritten'] += $bytes;
+	}
+
+	/**
+	 * Render Bludit's configured 404 page and write it to <build>/404.html.
+	 *
+	 * Two non-obvious bits:
+	 *
+	 *  1. We synthesise a request to a path that doesn't exist
+	 *     (/__sgj_notfound__) so Bludit's URL parser sets the notFound
+	 *     flag — that triggers renderInternal()'s buildErrorPage() path,
+	 *     which loads $site->pageNotFound() and renders the theme around
+	 *     it. Net effect: whichever page the admin has configured as
+	 *     "page not found" in the Bludit settings is what gets baked into
+	 *     404.html, with no hardcoding of slugs.
+	 *
+	 *  2. When Apache / nginx / a static host serves 404.html in response
+	 *     to a missing URL, the browser address bar keeps the original
+	 *     (missing) path. Any relative href in the rendered page would
+	 *     resolve against that path and produce broken links. Injecting
+	 *     <base href="<HTML_PATH_ROOT>"> right after <head> pins relative
+	 *     URL resolution to the site root for this one page only.
+	 */
+	private function writeNotFoundPage(array &$state)
+	{
+		$probe = '/__sgj_notfound__';
+		$result = $this->renderInternal($probe);
+		if (!$result['ok']) {
+			$state['errors']++;
+			$this->log('ERROR rendering 404 page: ' . $result['error']);
+			return;
+		}
+		// The 404's links/assets are rewritten as if the file sat at the
+		// build root (depth 0). The injected <base> below makes that
+		// produce correct URLs regardless of which path the browser
+		// thinks it's on.
+		$rewritten = $this->rewriteHtml($state, '/', $result['body']);
+
+		$baseHref = htmlspecialchars(HTML_PATH_ROOT, ENT_QUOTES, 'UTF-8');
+		$baseTag = '<base href="' . $baseHref . '">';
+		$injected = preg_replace(
+			'#(<head\b[^>]*>)#i',
+			'$1' . "\n\t" . $baseTag,
+			$rewritten,
+			1,
+			$count
+		);
+		if ($count > 0) {
+			$rewritten = $injected;
+		} else {
+			// Page somehow has no <head>; prepend the base tag wrapped in
+			// a minimal head so relative URLs still resolve from root.
+			$rewritten = '<head>' . $baseTag . '</head>' . $rewritten;
+		}
+
+		$savePath = $this->resolveSafePath($state['outDir'], '404.html');
+		if ($savePath === null) {
+			$state['errors']++;
+			$this->log('ERROR refusing unsafe save path for 404.html');
+			return;
+		}
+		$bytes = $this->writeFile($savePath, $rewritten);
+		if ($bytes === false) {
+			$state['errors']++;
+			return;
+		}
+		$state['bytesWritten'] += $bytes;
+		$state['urlsFetched']++;
+		$this->log('OK  render 404 -> 404.html');
 	}
 
 	private function saveAssetFromDisk(array &$state, $path, $diskPath)
