@@ -8,8 +8,6 @@
 	"sgj-build-button": "Generate static site",
 	"sgj-build-confirm": "Generate the static site now? Existing files in bl-content/static-build/ will be overwritten.",
 	"sgj-section-settings": "Settings",
-	"sgj-crawl-base-label": "Crawl base URL",
-	"sgj-crawl-base-tip": "Base URL that cURL will fetch pages from. Leave empty to use the site URL. For dev use http://127.0.0.1:8080 to hit the local PHP server directly.",
 	"sgj-exclude-paths-label": "Exclude paths",
 	"sgj-exclude-paths-tip": "One path per line. Any URL whose path starts with one of these is skipped (admin and bl-content/databases are always skipped).",
 	"sgj-max-urls-label": "Max URLs",

@@ -32,7 +32,6 @@ class pluginStaticGeneratorJereme extends Plugin
 	public function init()
 	{
 		$this->dbFields = array(
-			'crawlBase' => '',
 			'excludePaths' => '',
 			'maxUrls' => self::DEFAULT_MAX_URLS,
 
@@ -71,7 +70,6 @@ class pluginStaticGeneratorJereme extends Plugin
 
 		// ============ SECTION: Settings ===================================
 		$html .= $this->openCard('sgj-section-settings', 'cog');
-		$html .= $this->textField('crawlBase', $L->get('sgj-crawl-base-label'), $L->get('sgj-crawl-base-tip'));
 		$html .= $this->numberField('maxUrls', $L->get('sgj-max-urls-label'), 1, $L->get('sgj-max-urls-tip'));
 		$html .= $this->textareaField('excludePaths', $L->get('sgj-exclude-paths-label'), $L->get('sgj-exclude-paths-tip'), 4);
 		$html .= $this->closeCard();
@@ -158,11 +156,14 @@ class pluginStaticGeneratorJereme extends Plugin
 	public function post()
 	{
 		$action = isset($_POST['action']) ? Sanitize::html($_POST['action']) : '';
+		// Always persist any edited settings first, even when the user
+		// clicked "Generate static site" instead of "Save" — otherwise a
+		// changed maxUrls / excludePaths value silently reverts.
+		parent::post();
 		if ($action === 'build') {
 			$this->runBuild();
-			return true;
 		}
-		return parent::post();
+		return true;
 	}
 
 	// ----------------------------------------------------------------------
@@ -615,14 +616,41 @@ class pluginStaticGeneratorJereme extends Plugin
 		return rtrim($base, '/') . $path;
 	}
 
+	/**
+	 * Derive the URL the crawler should fetch from, based on the admin
+	 * request that triggered the build. Using the same scheme/host the
+	 * admin is currently on means the build works for both local dev
+	 * (e.g. http://127.0.0.1:8080) and production behind a reverse proxy
+	 * without any configuration.
+	 */
 	private function resolveCrawlBase()
 	{
-		global $site;
-		$configured = trim((string) $this->getValue('crawlBase', false));
-		if ($configured !== '' && preg_match('#^https?://[^\s]+$#i', $configured)) {
-			return rtrim($configured, '/');
+		// Honour the X-Forwarded-Proto header only when the request itself
+		// came in through TLS-terminating infrastructure (i.e. REMOTE_ADDR
+		// is loopback or private). The plain Host/HTTPS check is enough
+		// for `php -S` and for direct connections.
+		$scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
+		$remote = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : '';
+		$isLoopback = ($remote === '127.0.0.1' || $remote === '::1' || strpos($remote, '10.') === 0 || strpos($remote, '192.168.') === 0 || strpos($remote, '172.') === 0);
+		if ($isLoopback && !empty($_SERVER['HTTP_X_FORWARDED_PROTO'])) {
+			$fwd = strtolower(trim(explode(',', $_SERVER['HTTP_X_FORWARDED_PROTO'])[0]));
+			if ($fwd === 'http' || $fwd === 'https') {
+				$scheme = $fwd;
+			}
 		}
-		return rtrim($site->url(), '/');
+		$host = isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : '';
+		if ($host === '') {
+			// Fall back to the configured site URL if we somehow have no
+			// Host header (e.g. when the build is run from CLI).
+			global $site;
+			return rtrim($site->url(), '/');
+		}
+		// Validate the Host header is well-formed before we hand it to cURL.
+		if (!preg_match('/^[A-Za-z0-9.\-]+(?::[0-9]{1,5})?$/', $host) && !preg_match('/^\[[0-9A-Fa-f:]+\](?::[0-9]{1,5})?$/', $host)) {
+			global $site;
+			return rtrim($site->url(), '/');
+		}
+		return $scheme . '://' . $host;
 	}
 
 	private function sitePathPrefix()
@@ -661,10 +689,17 @@ class pluginStaticGeneratorJereme extends Plugin
 			return $plugin->rewriteRef($state, $url, $prefix, $crawlOrigin, $siteOrigin, $basePath, true);
 		};
 
-		// href / src / action / formaction / poster / data on certain tags.
-		// We treat double- and single-quoted attribute values separately so
-		// we never have to worry about embedded quotes.
-		$attrs = array('href', 'src', 'action', 'formaction', 'poster', 'data-src', 'data-href');
+		// href / src / action / formaction / poster / data-* attributes that
+		// hold URLs. The home/category cards use `data-background-image`
+		// (read by JS to set the card background); lozad lazy-load uses
+		// `data-src` / `data-background` / `data-iesrc`. We treat double-
+		// and single-quoted values separately so we never have to worry
+		// about embedded quotes.
+		$attrs = array(
+			'href', 'src', 'action', 'formaction', 'poster',
+			'data-src', 'data-href', 'data-background', 'data-background-image',
+			'data-bg', 'data-iesrc', 'data-poster',
+		);
 		foreach ($attrs as $attr) {
 			$html = preg_replace_callback(
 				'#(' . preg_quote($attr, '#') . '\s*=\s*)"([^"]*)"#i',
