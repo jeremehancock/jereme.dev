@@ -2,9 +2,9 @@
 	"author": "Jereme",
 	"email": "",
 	"website": "https://jereme.dev",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"releaseDate": "2026-05-11",
 	"license": "MIT",
-	"compatible": "3.21",
+	"compatible": "3.21,3.22",
 	"notes": "Companion plugin for the jereme-dev-pro theme."
 }
