@@ -118,6 +118,12 @@ class pluginStaticGeneratorJereme extends Plugin
 		return <<<HTML
 
 <style>
+	/* Inherit the admin theme's palette via CSS custom properties. When
+	   the active theme is a dark one (booty-jereme-dev), --bg-card,
+	   --text-primary, etc. resolve to dark values automatically. Each
+	   var() has a light-mode fallback so the modal also looks sensible
+	   under the stock booty admin theme or any theme that doesn't define
+	   these vars. */
 	.sgj-modal-overlay,
 	.sgj-loading-overlay {
 		position: fixed;
@@ -125,29 +131,32 @@ class pluginStaticGeneratorJereme extends Plugin
 		display: none;
 		align-items: center;
 		justify-content: center;
-		background: rgba(15, 18, 22, 0.62);
+		background: rgba(0, 0, 0, 0.72);
 		z-index: 2147483000;
 	}
 	.sgj-modal-overlay.is-open,
 	.sgj-loading-overlay.is-open { display: flex; }
-	.sgj-modal {
-		background: #fff;
-		border-radius: 8px;
-		box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+	.sgj-modal,
+	.sgj-loading {
+		background: var(--bg-card, #ffffff);
+		color: var(--text-primary, #212529);
+		border: 1px solid var(--border-color, #dee2e6);
+		border-radius: var(--radius-md, 8px);
+		box-shadow: var(--shadow-md, 0 20px 60px rgba(0, 0, 0, 0.35));
 		max-width: 460px;
 		width: calc(100% - 2rem);
-		padding: 1.5rem 1.5rem 1.25rem;
 		font-family: inherit;
 	}
+	.sgj-modal { padding: 1.5rem 1.5rem 1.25rem; }
 	.sgj-modal h3 {
 		margin: 0 0 0.5rem;
 		font-size: 1.15rem;
-		font-weight: 600;
-		color: #212529;
+		font-weight: var(--font-weight-semibold, 600);
+		color: var(--text-primary, #212529);
 	}
 	.sgj-modal p {
 		margin: 0 0 1.25rem;
-		color: #495057;
+		color: var(--text-secondary, #495057);
 		line-height: 1.5;
 	}
 	.sgj-modal-actions {
@@ -156,20 +165,16 @@ class pluginStaticGeneratorJereme extends Plugin
 		gap: 0.5rem;
 	}
 	.sgj-loading {
-		background: #fff;
-		border-radius: 8px;
-		box-shadow: 0 20px 60px rgba(0,0,0,0.35);
 		padding: 2rem 2.5rem;
 		text-align: center;
 		max-width: 420px;
-		width: calc(100% - 2rem);
 	}
 	.sgj-spinner {
 		width: 48px;
 		height: 48px;
 		margin: 0 auto 1rem;
-		border: 4px solid rgba(0, 0, 0, 0.1);
-		border-top-color: #007bff;
+		border: 4px solid var(--border-color, rgba(0, 0, 0, 0.1));
+		border-top-color: var(--primary-blue, #007bff);
 		border-radius: 50%;
 		animation: sgj-spin 0.9s linear infinite;
 	}
@@ -177,12 +182,12 @@ class pluginStaticGeneratorJereme extends Plugin
 	.sgj-loading h3 {
 		margin: 0 0 0.35rem;
 		font-size: 1.1rem;
-		font-weight: 600;
-		color: #212529;
+		font-weight: var(--font-weight-semibold, 600);
+		color: var(--text-primary, #212529);
 	}
 	.sgj-loading p {
 		margin: 0;
-		color: #6c757d;
+		color: var(--text-secondary, #6c757d);
 		font-size: 0.9rem;
 		line-height: 1.45;
 	}
@@ -269,14 +274,6 @@ class pluginStaticGeneratorJereme extends Plugin
 	document.addEventListener('keydown', function (e) {
 		if (e.key === 'Escape' && confirmEl.classList.contains('is-open')) { closeConfirm(); }
 	});
-
-	// Guard against accidental tab-close while a build is running.
-	window.addEventListener('beforeunload', function (e) {
-		if (armed) {
-			e.preventDefault();
-			e.returnValue = '';
-		}
-	});
 })();
 </script>
 
@@ -325,7 +322,11 @@ HTML;
 		$log = $this->readLogTail();
 		if ($log !== '') {
 			$html .= '<details><summary>' . $L->get('sgj-status-log') . '</summary>';
-			$html .= '<pre style="max-height: 320px; overflow: auto; background: #f8f9fa; padding: 0.75rem; border: 1px solid #dee2e6; font-size: 0.8rem;">'
+			$html .= '<pre style="max-height: 320px; overflow: auto;'
+				. ' background: var(--bg-warm, #f8f9fa);'
+				. ' color: var(--text-primary, #212529);'
+				. ' border: 1px solid var(--border-color, #dee2e6);'
+				. ' padding: 0.75rem; font-size: 0.8rem;">'
 				. htmlspecialchars($log, ENT_QUOTES, 'UTF-8')
 				. '</pre></details>';
 		}
