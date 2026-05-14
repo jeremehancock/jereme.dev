@@ -213,11 +213,12 @@ class pluginStaticGeneratorJereme extends Plugin
 		$this->log('Clearing output directory: ' . $outDir);
 		$this->clearDir($outDir);
 
-		$crawlBase = $this->resolveCrawlBase();
-		$this->log('Crawl base: ' . $crawlBase);
+		$crawl = $this->resolveCrawlBase();
+		$this->log('Crawl base: ' . $crawl['url'] . ($crawl['host'] !== '' ? ' (Host: ' . $crawl['host'] . ')' : ''));
 
 		$state = array(
-			'crawlBase' => $crawlBase,
+			'crawlBase' => $crawl['url'],
+			'crawlHost' => $crawl['host'],
 			'sitePathPrefix' => $this->sitePathPrefix(),
 			'outDir' => $outDir,
 			'queue' => array(),
@@ -480,7 +481,7 @@ class pluginStaticGeneratorJereme extends Plugin
 
 		// Fetch via HTTP.
 		$url = $this->joinUrl($state['crawlBase'], $path);
-		$fetch = $this->httpFetch($url);
+		$fetch = $this->httpFetch($url, $state['crawlHost']);
 		if (!$fetch['ok']) {
 			$state['errors']++;
 			$this->log('ERROR ' . $fetch['status'] . ' ' . $url . ' (' . $fetch['error'] . ')');
@@ -560,11 +561,18 @@ class pluginStaticGeneratorJereme extends Plugin
 
 	// ----------------------------------------------------------------------
 	// HTTP fetch
+	//
+	// $hostHeader, when non-empty, overrides the Host header — necessary
+	// when we cURL to a loopback address (e.g. 127.0.0.1:80) but need the
+	// webserver to route to the vhost the user is actually visiting. Cert
+	// verification is relaxed for loopback URLs since we're talking to
+	// ourselves; for any other host we keep full TLS validation.
 	// ----------------------------------------------------------------------
-	private function httpFetch($url)
+	private function httpFetch($url, $hostHeader = '')
 	{
+		$isLoopback = $this->isLoopbackUrl($url);
 		$ch = curl_init();
-		curl_setopt_array($ch, array(
+		$opts = array(
 			CURLOPT_URL => $url,
 			CURLOPT_RETURNTRANSFER => true,
 			CURLOPT_FOLLOWLOCATION => true,
@@ -576,11 +584,15 @@ class pluginStaticGeneratorJereme extends Plugin
 			CURLOPT_COOKIE => '',
 			CURLOPT_COOKIEFILE => '',
 			CURLOPT_COOKIEJAR => '',
-			CURLOPT_SSL_VERIFYPEER => true,
-			CURLOPT_SSL_VERIFYHOST => 2,
+			CURLOPT_SSL_VERIFYPEER => $isLoopback ? false : true,
+			CURLOPT_SSL_VERIFYHOST => $isLoopback ? 0 : 2,
 			CURLOPT_PROTOCOLS => CURLPROTO_HTTP | CURLPROTO_HTTPS,
 			CURLOPT_REDIR_PROTOCOLS => CURLPROTO_HTTP | CURLPROTO_HTTPS,
-		));
+		);
+		if ($hostHeader !== '') {
+			$opts[CURLOPT_HTTPHEADER] = array('Host: ' . $hostHeader);
+		}
+		curl_setopt_array($ch, $opts);
 		$body = curl_exec($ch);
 		$status = (int) curl_getinfo($ch, CURLINFO_HTTP_CODE);
 		$contentType = (string) curl_getinfo($ch, CURLINFO_CONTENT_TYPE);
@@ -617,40 +629,111 @@ class pluginStaticGeneratorJereme extends Plugin
 	}
 
 	/**
-	 * Derive the URL the crawler should fetch from, based on the admin
-	 * request that triggered the build. Using the same scheme/host the
-	 * admin is currently on means the build works for both local dev
-	 * (e.g. http://127.0.0.1:8080) and production behind a reverse proxy
-	 * without any configuration.
+	 * Pick a URL the crawler can actually reach. Tries (in order):
+	 *   1. http://127.0.0.1:SERVER_PORT  — works for `php -S`, Vagrant
+	 *      port-forwards (where HTTP_HOST is the host-side port and PHP
+	 *      sees the inside-VM port), and any setup where the webserver
+	 *      listens on TCP loopback.
+	 *   2. http://SERVER_ADDR:SERVER_PORT — if SERVER_ADDR is not 127.0.0.1.
+	 *   3. scheme://HTTP_HOST — the URL the admin is currently using;
+	 *      works for production where DNS resolves back to the same box.
+	 *   4. $site->url() as a final fallback.
+	 *
+	 * When the chosen URL is a loopback IP, we send a Host header matching
+	 * HTTP_HOST so the webserver routes to the right vhost and Bludit
+	 * renders canonical links using the configured site URL.
+	 *
+	 * Returns array{url:string, host:string} where host is '' when no
+	 * Host-header override is needed.
 	 */
 	private function resolveCrawlBase()
 	{
-		// Honour the X-Forwarded-Proto header only when the request itself
-		// came in through TLS-terminating infrastructure (i.e. REMOTE_ADDR
-		// is loopback or private). The plain Host/HTTPS check is enough
-		// for `php -S` and for direct connections.
-		$scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
-		$remote = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : '';
-		$isLoopback = ($remote === '127.0.0.1' || $remote === '::1' || strpos($remote, '10.') === 0 || strpos($remote, '192.168.') === 0 || strpos($remote, '172.') === 0);
-		if ($isLoopback && !empty($_SERVER['HTTP_X_FORWARDED_PROTO'])) {
-			$fwd = strtolower(trim(explode(',', $_SERVER['HTTP_X_FORWARDED_PROTO'])[0]));
-			if ($fwd === 'http' || $fwd === 'https') {
-				$scheme = $fwd;
+		$candidates = $this->loopbackCandidates();
+		foreach ($candidates as $cand) {
+			if ($this->probeUrl($cand['url'], $cand['host'])) {
+				$this->log('Probe OK: ' . $cand['url'] . ($cand['host'] !== '' ? ' (Host: ' . $cand['host'] . ')' : ''));
+				return $cand;
+			}
+			$this->log('Probe failed: ' . $cand['url']);
+		}
+		global $site;
+		return array('url' => rtrim($site->url(), '/'), 'host' => '');
+	}
+
+	private function loopbackCandidates()
+	{
+		$port = isset($_SERVER['SERVER_PORT']) ? (int) $_SERVER['SERVER_PORT'] : 0;
+		$addr = isset($_SERVER['SERVER_ADDR']) ? $_SERVER['SERVER_ADDR'] : '';
+		$httpHost = isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : '';
+		// Reject malformed Host headers up front so we don't pass them
+		// through to cURL.
+		if ($httpHost !== '' && !preg_match('/^[A-Za-z0-9.\-]+(?::[0-9]{1,5})?$/', $httpHost) && !preg_match('/^\[[0-9A-Fa-f:]+\](?::[0-9]{1,5})?$/', $httpHost)) {
+			$httpHost = '';
+		}
+
+		$out = array();
+
+		// Loopback to whatever port PHP sees the server on. Use HTTP even
+		// if the public site is HTTPS — TLS to 127.0.0.1 with a public cert
+		// won't validate, and most stacks (Apache, nginx) listen on the
+		// same TCP port for both schemes only when explicitly configured.
+		if ($port > 0 && $port !== 443) {
+			$out[] = array('url' => 'http://127.0.0.1:' . $port, 'host' => $httpHost);
+			if ($addr !== '' && $addr !== '127.0.0.1' && filter_var($addr, FILTER_VALIDATE_IP) && !filter_var($addr, FILTER_VALIDATE_IP, FILTER_FLAG_IPV6)) {
+				$out[] = array('url' => 'http://' . $addr . ':' . $port, 'host' => $httpHost);
 			}
 		}
-		$host = isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : '';
-		if ($host === '') {
-			// Fall back to the configured site URL if we somehow have no
-			// Host header (e.g. when the build is run from CLI).
-			global $site;
-			return rtrim($site->url(), '/');
+
+		// The admin's own request URL.
+		if ($httpHost !== '') {
+			$scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
+			$out[] = array('url' => $scheme . '://' . $httpHost, 'host' => '');
 		}
-		// Validate the Host header is well-formed before we hand it to cURL.
-		if (!preg_match('/^[A-Za-z0-9.\-]+(?::[0-9]{1,5})?$/', $host) && !preg_match('/^\[[0-9A-Fa-f:]+\](?::[0-9]{1,5})?$/', $host)) {
-			global $site;
-			return rtrim($site->url(), '/');
+
+		return $out;
+	}
+
+	private function probeUrl($base, $hostHeader)
+	{
+		$ch = curl_init();
+		$opts = array(
+			CURLOPT_URL => $base . '/',
+			CURLOPT_RETURNTRANSFER => true,
+			CURLOPT_NOBODY => true,
+			CURLOPT_FOLLOWLOCATION => false,
+			CURLOPT_TIMEOUT => 3,
+			CURLOPT_CONNECTTIMEOUT => 2,
+			CURLOPT_USERAGENT => self::CRAWL_USER_AGENT,
+			CURLOPT_SSL_VERIFYPEER => false,
+			CURLOPT_SSL_VERIFYHOST => 0,
+			CURLOPT_PROTOCOLS => CURLPROTO_HTTP | CURLPROTO_HTTPS,
+		);
+		if ($hostHeader !== '') {
+			$opts[CURLOPT_HTTPHEADER] = array('Host: ' . $hostHeader);
 		}
-		return $scheme . '://' . $host;
+		curl_setopt_array($ch, $opts);
+		curl_exec($ch);
+		$status = (int) curl_getinfo($ch, CURLINFO_HTTP_CODE);
+		$errno = curl_errno($ch);
+		curl_close($ch);
+		// Connection refused / timeout: errno != 0 and status 0. Any real
+		// HTTP response (even a 4xx) means the server is reachable.
+		return ($errno === 0 && $status > 0 && $status < 600);
+	}
+
+	private function isLoopbackUrl($url)
+	{
+		$host = parse_url($url, PHP_URL_HOST);
+		if ($host === null) {
+			return false;
+		}
+		if ($host === '127.0.0.1' || $host === '::1' || strtolower($host) === 'localhost') {
+			return true;
+		}
+		if (filter_var($host, FILTER_VALIDATE_IP) && (strpos($host, '10.') === 0 || strpos($host, '192.168.') === 0 || preg_match('/^172\.(1[6-9]|2[0-9]|3[01])\./', $host))) {
+			return true;
+		}
+		return false;
 	}
 
 	private function sitePathPrefix()
