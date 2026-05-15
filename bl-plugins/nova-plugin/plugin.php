@@ -69,6 +69,7 @@ class pluginNovaPlugin extends Plugin
 
 			// Static Site Generator (merged from static-generator-jereme)
 			'excludePaths' => '',
+			'extraDirs' => '',
 			'productionUrl' => '',
 			// Written by runStaticBuild() — not user-editable.
 			'lastBuildTime' => '',
@@ -932,6 +933,7 @@ EOF;
 		$html .= $this->openSgjCard('sgj-section-settings', 'cog');
 		$html .= $this->textField('productionUrl', $L->get('sgj-production-url-label'), $L->get('sgj-production-url-tip'));
 		$html .= $this->textareaField('excludePaths', $L->get('sgj-exclude-paths-label'), $L->get('sgj-exclude-paths-tip'), 4);
+		$html .= $this->textareaField('extraDirs', $L->get('sgj-extra-dirs-label'), $L->get('sgj-extra-dirs-tip'), 4);
 		$html .= $this->closeSgjCard();
 
 		// SECTION: Status
@@ -1326,7 +1328,13 @@ HTML;
 			'bytesWritten' => 0,
 			'errors' => 0,
 			'maxUrls' => self::SGJ_URL_HARD_CAP,
-			'excludePaths' => $this->sgjParseExcludePaths(),
+			'excludePaths' => array_merge(
+				$this->sgjParseExcludePaths(),
+				// Auto-exclude extra-copy dirs from the crawl: they're
+				// stand-alone HTML that gets copied verbatim at the end,
+				// so we don't want Bludit trying to render them.
+				array_map(function ($n) { return '/' . $n; }, $this->sgjParseExtraDirs())
+			),
 		);
 
 		// Seed.
@@ -1339,6 +1347,11 @@ HTML;
 			$item = array_shift($state['queue']);
 			$this->sgjProcessItem($state, $item);
 		}
+
+		// Copy user-supplied extra directories verbatim (e.g. resume/,
+		// dumbprojects/). These live at the site root next to bl-content
+		// and aren't Bludit-managed content.
+		$this->sgjCopyExtraDirs($state);
 
 		// 404 page.
 		$this->sgjWriteNotFoundPage($state);
@@ -1456,6 +1469,134 @@ HTML;
 			$out[] = $line;
 		}
 		return $out;
+	}
+
+	/**
+	 * Parse the user's "extra directories" list. Each entry is the name
+	 * of a directory at the site root (sibling of bl-content) that we
+	 * copy verbatim into the build. Strict validation:
+	 *   - flat name only — no path separators
+	 *   - no ".." anywhere
+	 *   - no leading dot (excludes .git, .env, etc.)
+	 */
+	private function sgjParseExtraDirs()
+	{
+		$raw = (string) $this->getValue('extraDirs', false);
+		$out = array();
+		foreach (preg_split('/\r?\n/', $raw) as $line) {
+			$line = trim($line);
+			if ($line === '' || $line[0] === '#') {
+				continue;
+			}
+			// Lenient on paste: strip leading/trailing slashes.
+			$line = trim($line, "/\\");
+			if ($line === '' || $line === '.' || $line === '..') {
+				continue;
+			}
+			if (strpbrk($line, "/\\") !== false || strpos($line, '..') !== false) {
+				continue;
+			}
+			if ($line[0] === '.') {
+				continue;
+			}
+			$out[] = $line;
+		}
+		return array_values(array_unique($out));
+	}
+
+	private function sgjCopyExtraDirs(array &$state)
+	{
+		$names = $this->sgjParseExtraDirs();
+		if (empty($names)) {
+			return;
+		}
+		$rootBase = rtrim(PATH_ROOT, DIRECTORY_SEPARATOR);
+		$outBase = rtrim($state['outDir'], DIRECTORY_SEPARATOR);
+		foreach ($names as $name) {
+			$srcDir = $rootBase . DIRECTORY_SEPARATOR . $name;
+			if (!is_dir($srcDir)) {
+				$this->sgjLog('WARN extra dir not found: ' . $name);
+				continue;
+			}
+			$dstDir = $outBase . DIRECTORY_SEPARATOR . $name;
+			$copied = $this->sgjCopyDirRecursive($srcDir, $dstDir, $state);
+			$this->sgjLog('OK  copy  /' . $name . '/ (' . $copied . ' files)');
+		}
+	}
+
+	/**
+	 * Recursive verbatim copy of $srcDir into $dstDir. Skips dotfile
+	 * segments (.git, .env, .DS_Store, etc.) and does not follow
+	 * symlinks. Updates $state['bytesWritten'] and $state['errors']
+	 * but does NOT touch $state['urlsFetched'] — these aren't URLs.
+	 * Returns the number of files successfully copied.
+	 */
+	private function sgjCopyDirRecursive($srcDir, $dstDir, array &$state)
+	{
+		if (!$this->sgjEnsureDir($dstDir)) {
+			$this->sgjLog('ERROR mkdir ' . $dstDir);
+			$state['errors']++;
+			return 0;
+		}
+		try {
+			$it = new RecursiveIteratorIterator(
+				new RecursiveDirectoryIterator($srcDir, RecursiveDirectoryIterator::SKIP_DOTS),
+				RecursiveIteratorIterator::SELF_FIRST
+			);
+		} catch (Throwable $e) {
+			$this->sgjLog('ERROR iterating ' . $srcDir . ': ' . $e->getMessage());
+			$state['errors']++;
+			return 0;
+		}
+		$srcLen = strlen(rtrim($srcDir, DIRECTORY_SEPARATOR)) + 1;
+		$copied = 0;
+		foreach ($it as $entry) {
+			$abs = $entry->getPathname();
+			$rel = substr($abs, $srcLen);
+
+			// Skip any dotfile/dot-directory segment for safety.
+			$skip = false;
+			foreach (explode(DIRECTORY_SEPARATOR, $rel) as $seg) {
+				if ($seg !== '' && $seg[0] === '.') {
+					$skip = true;
+					break;
+				}
+			}
+			if ($skip) {
+				continue;
+			}
+
+			$dst = $dstDir . DIRECTORY_SEPARATOR . $rel;
+			if ($entry->isLink()) {
+				// Don't follow symlinks — silently skip.
+				continue;
+			}
+			if ($entry->isDir()) {
+				if (!$this->sgjEnsureDir($dst)) {
+					$this->sgjLog('ERROR mkdir ' . $dst);
+					$state['errors']++;
+				}
+				continue;
+			}
+			if ($entry->isFile()) {
+				if (!$this->sgjEnsureDir(dirname($dst))) {
+					$this->sgjLog('ERROR mkdir ' . dirname($dst));
+					$state['errors']++;
+					continue;
+				}
+				if (!@copy($abs, $dst)) {
+					$this->sgjLog('ERROR copy ' . $abs);
+					$state['errors']++;
+					continue;
+				}
+				$size = @filesize($dst);
+				if ($size !== false) {
+					$state['bytesWritten'] += $size;
+				}
+				$copied++;
+			}
+		}
+		return $copied;
 	}
 
 	private function sgjShouldSkip($path, array $excludePaths)

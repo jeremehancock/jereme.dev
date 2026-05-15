@@ -76,6 +76,8 @@
   "sgj-production-url-tip": "Optional. Public URL the static build will be served from, e.g. <code>https://example.com</code>. When set, this overrides the site URL during the build: <code>$_SERVER</code> is faked to match (so plugins that branch on <code>SERVER_PORT</code> / <code>HTTPS</code> / <code>HTTP_HOST</code> — like the web-stats dev-port check — see production values), and Open Graph / Twitter / canonical URLs are re-absolutized against this host. Leave blank to use the site URL from <em>Settings → Advanced</em>.",
   "sgj-exclude-paths-label": "Exclude paths",
   "sgj-exclude-paths-tip": "One path per line. Any URL whose path starts with one of these is skipped (admin and bl-content/databases are always skipped).",
+  "sgj-extra-dirs-label": "Extra directories to copy",
+  "sgj-extra-dirs-tip": "One directory name per line. Each must live at the site root (next to <code>bl-content</code>) — e.g. <code>resume</code>, <code>dumbprojects</code>. Its contents are copied verbatim into the build with no rewriting, and the directory is auto-excluded from the crawl so Bludit doesn't try to render it. Use this for stand-alone HTML directories that aren't part of Bludit's pages. Flat names only (no slashes, no <code>..</code>); dotfiles are skipped.",
   "sgj-section-status": "Last build",
   "sgj-status-never": "No build has run yet.",
   "sgj-status-time": "Last build",
