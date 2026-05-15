@@ -65,7 +65,7 @@ After making the change, restore the guard (re-enable the path, or revert the ho
 
 ## AI Assistance Disclosure
 
-This project was developed with assistance from AI language models.
+Parts of this repository — code, configuration, and documentation — were drafted or edited in collaboration with [Claude Code](https://claude.ai/code), an agentic coding tool that reads files, runs commands, and proposes changes under direction. I review every change before it lands; the AI handles the typing, I'm responsible for the result.
 
 ## Disclaimer
 
