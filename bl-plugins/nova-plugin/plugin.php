@@ -3212,6 +3212,31 @@ HTML;
 		$siteHost = parse_url($siteUrl, PHP_URL_HOST);
 		$this->lcLog('Effective site URL: ' . $siteUrl);
 
+		// Build the set of known internal page paths so we can detect
+		// doc-relative hrefs that the SSG will resolve to a non-page path
+		// (e.g. `[x](pi-lab-setup)` on /parent/ becomes /parent/pi-lab-setup,
+		// but a top-level /pi-lab-setup page exists — the markdown is
+		// ambiguous and the SSG will emit a broken link).
+		$knownPaths = array();
+		$knownSlugs = array();
+		foreach ($pages as $kp) {
+			$kperm = $this->toProductionUrl((string) $kp->permalink(true));
+			$kpath = parse_url($kperm, PHP_URL_PATH);
+			if ($kpath === null || $kpath === false) {
+				continue;
+			}
+			$norm = '/' . trim($kpath, '/');
+			if ($norm === '/') {
+				continue;
+			}
+			$knownPaths[$norm] = true;
+			$segs = explode('/', trim($norm, '/'));
+			$leaf = end($segs);
+			if ($leaf !== '') {
+				$knownSlugs[$leaf] = $norm;
+			}
+		}
+
 		// Collect unique URLs and track which pages each was found on.
 		$linkMap = array(); // urlAbsolute => array('kind'=>internal|external,'sources'=>[ ['title','permalink'] ])
 		$totalLinkOccurrences = 0;
@@ -3242,13 +3267,22 @@ HTML;
 				if (!$isInternal && !$includeExternal) {
 					continue;
 				}
+
+				$ambiguousSuggestion = null;
+				if ($isInternal) {
+					$ambiguousSuggestion = $this->lcAmbiguousRelativeTarget($href, $absolute, $knownPaths, $knownSlugs);
+				}
+
 				$totalLinkOccurrences++;
 				if (!isset($linkMap[$absolute])) {
 					$linkMap[$absolute] = array(
 						'kind' => $isInternal ? 'internal' : 'external',
 						'sources' => array(),
 						'sourceKeys' => array(),
+						'ambiguousSuggestion' => $ambiguousSuggestion,
 					);
+				} elseif ($ambiguousSuggestion !== null && empty($linkMap[$absolute]['ambiguousSuggestion'])) {
+					$linkMap[$absolute]['ambiguousSuggestion'] = $ambiguousSuggestion;
 				}
 				if (!isset($linkMap[$absolute]['sourceKeys'][$pagePermalink])) {
 					$linkMap[$absolute]['sourceKeys'][$pagePermalink] = true;
@@ -3268,15 +3302,29 @@ HTML;
 			$linkMap = array_slice($linkMap, 0, self::LC_URL_HARD_CAP, true);
 		}
 
-		$urls = array_keys($linkMap);
-		$results = $this->lcCheckUrls($urls, $timeout, $userAgent);
+		// Ambiguous doc-relative links are reported as broken without an HTTP
+		// probe, because the runtime router may serve a 200 for them even
+		// though the SSG will write a broken link.
+		$urlsToCheck = array();
+		foreach ($linkMap as $url => $info) {
+			if (empty($info['ambiguousSuggestion'])) {
+				$urlsToCheck[] = $url;
+			}
+		}
+		$results = $this->lcCheckUrls($urlsToCheck, $timeout, $userAgent);
 
 		$broken = array();
 		foreach ($linkMap as $url => $info) {
-			$res = isset($results[$url]) ? $results[$url] : array('code' => 0, 'error' => 'no result');
-			$code = (int) $res['code'];
-			$err = isset($res['error']) ? (string) $res['error'] : '';
-			$isOk = ($code >= 200 && $code < 400);
+			if (!empty($info['ambiguousSuggestion'])) {
+				$code = 0;
+				$err = 'ambiguous relative link, did you mean ' . $info['ambiguousSuggestion'] . '?';
+				$isOk = false;
+			} else {
+				$res = isset($results[$url]) ? $results[$url] : array('code' => 0, 'error' => 'no result');
+				$code = (int) $res['code'];
+				$err = isset($res['error']) ? (string) $res['error'] : '';
+				$isOk = ($code >= 200 && $code < 400);
+			}
 			if ($isOk) {
 				$this->lcLog('OK  ' . $code . '  ' . $url);
 				continue;
@@ -3398,6 +3446,46 @@ HTML;
 			$out[] = $u;
 		}
 		return array_values(array_unique($out));
+	}
+
+	// Returns a suggested root-relative path (e.g. "/pi-lab-setup") if the
+	// raw href is doc-relative, the resolved absolute path is NOT a known
+	// page, but the href's leaf segment matches a known top-level page
+	// slug. Returns null otherwise. This catches markdown like
+	// `[x](pi-lab-setup)` written on a non-root page, where the SSG will
+	// emit /parent/pi-lab-setup even though the author meant /pi-lab-setup.
+	private function lcAmbiguousRelativeTarget($rawHref, $absoluteUrl, array $knownPaths, array $knownSlugs)
+	{
+		if ($rawHref === '' || $rawHref[0] === '/') {
+			return null;
+		}
+		if (substr($rawHref, 0, 2) === '//') {
+			return null;
+		}
+		if (preg_match('#^[a-z][a-z0-9+.\-]*:#i', $rawHref)) {
+			return null;
+		}
+		$resolvedPath = parse_url($absoluteUrl, PHP_URL_PATH);
+		if ($resolvedPath === null || $resolvedPath === false) {
+			return null;
+		}
+		$resolvedNorm = '/' . trim($resolvedPath, '/');
+		if (isset($knownPaths[$resolvedNorm])) {
+			return null;
+		}
+		$hrefPath = $rawHref;
+		$qPos = strpos($hrefPath, '?');
+		if ($qPos !== false) {
+			$hrefPath = substr($hrefPath, 0, $qPos);
+		}
+		$hrefPath = trim($hrefPath, '/');
+		if ($hrefPath === '' || strpos($hrefPath, '/') !== false) {
+			return null;
+		}
+		if (isset($knownSlugs[$hrefPath])) {
+			return $knownSlugs[$hrefPath];
+		}
+		return null;
 	}
 
 	private function lcResolveUrl($baseAbsolute, $url)
