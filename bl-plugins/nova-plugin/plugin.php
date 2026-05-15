@@ -1,43 +1,76 @@
-<?php defined('BLUDIT') or die('Bludit CMS.');
+<?php
 
-/**
- * Static Site Generator (jereme)
- *
- * Crawls the running Bludit instance and writes a fully static HTML mirror
- * to bl-content/static-build/. Pages are saved as path/index.html with all
- * absolute and root-relative URLs rewritten to document-relative form so the
- * output works on any host (and over file://).
- *
- * Security notes:
- *   - The form posts through the standard configure-plugin endpoint, so the
- *     kernel's checkRole(['admin']) + tokenCSRF rules already apply before
- *     post() runs.
- *   - The output directory is a hard-coded constant under PATH_CONTENT.
- *     Filesystem paths derived from URLs are validated to stay under it.
- *   - cURL self-requests intentionally do NOT forward cookies, so the crawl
- *     always runs as an anonymous visitor.
- *   - Admin URLs and bl-content/databases are always skipped, regardless of
- *     the exclude-paths setting.
- */
-class pluginStaticGeneratorJereme extends Plugin
+class pluginNovaPlugin extends Plugin
 {
-	const OUTPUT_DIRNAME = 'static-build';
-	const LOCK_FILENAME = 'build.lock';
-	const LOG_FILENAME = 'build.log';
-	const MAX_LOG_LINES = 100;
+	// ---- Static Site Generator (merged from static-generator-jereme) ----
+	const SGJ_OUTPUT_DIRNAME = 'static-build';
+	const SGJ_LOCK_FILENAME = 'build.lock';
+	const SGJ_LOG_FILENAME = 'build.log';
+	const SGJ_MAX_LOG_LINES = 100;
 	// Hard cap on URLs per build — purely a runaway-safety net, not a
-	// user-facing setting. The build is expected to cover every page on
-	// the site; this is just here so a pathological link loop can't make
-	// PHP run forever.
-	const URL_HARD_CAP = 10000;
+	// user-facing setting.
+	const SGJ_URL_HARD_CAP = 10000;
+
+	private $sgjFileExtRegex = '~\.(css|js|mjs|json|xml|txt|map|png|jpe?g|gif|webp|avif|svg|ico|bmp|tiff?|woff2?|ttf|otf|eot|mp4|webm|ogg|mp3|wav|flac|m4a|pdf|zip|gz|tar|br)([?#].*)?$~i';
 
 	public function init()
 	{
 		$this->dbFields = array(
+			// Categories widget
+			'categoriesEnabled' => true,
+			'categoriesLabel' => 'Categories',
+			'categoriesHideEmpty' => true,
+
+			// Latest Posts widget
+			'latestEnabled' => true,
+			'latestLabel' => 'Latest Posts',
+			'latestNumberOfItems' => 3,
+
+			// About widget (static pages)
+			'staticEnabled' => true,
+			'staticLabel' => 'About',
+
+			// External link behavior
+			'targetBlankEnabled' => true,
+
+			// Web stats
+			'webStatsDevport' => '',
+			'webStatsCode' => '',
+
+			// Admin version check
+			'versionCheckEnabled' => true,
+
+			// Custom HTML injection — website
+			'htmlHead' => '',
+			'htmlBodyBegin' => '',
+			'htmlBodyEnd' => '',
+
+			// Custom HTML injection — admin
+			'htmlAdminHead' => '',
+			'htmlAdminBodyBegin' => '',
+			'htmlAdminBodyEnd' => '',
+
+			// Open Graph meta tags — Defaults are relative to avoid hardcoding localhost/domain in DB.
+			'ogEnabled' => false,
+			'ogDefaultImage' => 'bl-themes/nova/img/jereme-meta.png',
+			'ogFbAppId' => '',
+
+			// Twitter / X Card meta tags
+			'twitterCardsEnabled' => false,
+			'twitterCardType' => 'summary_large_image',
+			'twitterSite' => '',
+			'twitterDefaultImage' => 'bl-themes/nova/img/jereme-meta.png',
+
+			// EasyMDE markdown editor — off by default; opt-in.
+			'easymdeEnabled' => false,
+			'easymdeTabSize' => '2',
+			'easymdeToolbar' => '"bold", "italic", "heading", "|", "quote", "unordered-list", "|", "link", "image", "code", "horizontal-rule", "|", "preview", "side-by-side", "fullscreen"',
+			'easymdeSpellChecker' => true,
+
+			// Static Site Generator (merged from static-generator-jereme)
 			'excludePaths' => '',
 			'productionUrl' => '',
-
-			// Written by runBuild() — not user-editable.
+			// Written by runStaticBuild() — not user-editable.
 			'lastBuildTime' => '',
 			'lastBuildResult' => '',
 			'lastBuildMessage' => '',
@@ -47,72 +80,896 @@ class pluginStaticGeneratorJereme extends Plugin
 		);
 	}
 
-	// ----------------------------------------------------------------------
-	// Admin form
-	// ----------------------------------------------------------------------
+	// EasyMDE only loads on these two admin views (create/edit pages).
+	private $easymdeViews = array('new-content', 'edit-content');
+
+	// Helper to convert relative DB paths to absolute URLs at runtime.
+	private function makeAbsolute($path)
+	{
+		if (empty($path) || filter_var($path, FILTER_VALIDATE_URL)) {
+			return $path;
+		}
+		global $site;
+		return rtrim($site->url(), '/') . '/' . ltrim($path, '/');
+	}
+
+	// ------------------------------------------------------------------
+	// Admin settings form
+	// ------------------------------------------------------------------
 	public function form()
 	{
 		global $L;
 
-		// The wrapper class scopes the theme-aware button/details CSS in
-		// renderConfirmAndLoading() so we don't accidentally restyle the
-		// "Save" / "Cancel" buttons the configure-plugin view emits
-		// outside the plugin's own form contents.
-		$html = '<div class="sgj-cfg">';
+		// Tab definitions: id => [labelKey, icon, subtitleKey|null]
+		$tabs = array(
+			'sidebar'     => array('jdpc-section-sidebar',     'list-alt',          'jdpc-section-sidebar-subtitle'),
+			'external'    => array('jdpc-section-external',    'external-link-alt', 'jdpc-section-external-subtitle'),
+			'social'      => array('jdpc-section-social',      'share-alt',         'jdpc-section-social-subtitle'),
+			'stats'       => array('jdpc-section-stats',       'chart-bar',         'jdpc-section-stats-subtitle'),
+			'html'        => array('jdpc-section-html',        'code',              'jdpc-section-html-subtitle'),
+			'easymde'     => array('jdpc-section-easymde',     'edit',              'jdpc-section-easymde-subtitle'),
+			'version'     => array('jdpc-section-version',     'tag',               'jdpc-section-version-subtitle'),
+			'staticgen'   => array('jdpc-section-staticgen',   'hammer',            'jdpc-section-staticgen-subtitle'),
+			'howitworks'  => array('jdpc-section-howitworks',  'info-circle',       null),
+		);
 
-		$html .= '<div class="alert alert-primary mb-4" role="alert">';
+		$html  = '<div class="alert alert-primary mb-4" role="alert">';
 		$html .= $this->description();
 		$html .= '</div>';
 
-		// ============ SECTION: Generate ===================================
-		$html .= $this->openCard('sgj-section-action', 'hammer', 'sgj-section-action-subtitle');
+		// Tab navigation
+		$html .= '<nav class="mb-3">';
+		$html .= '<div class="nav nav-tabs" id="jdpc-nav-tab" role="tablist">';
+		$first = true;
+		foreach ($tabs as $id => $meta) {
+			$activeCls = $first ? ' active' : '';
+			$selected  = $first ? 'true' : 'false';
+			$html .= '<a class="nav-item nav-link' . $activeCls . '"'
+				. ' id="jdpc-nav-' . $id . '-tab"'
+				. ' data-toggle="tab"'
+				. ' href="#jdpc-' . $id . '"'
+				. ' role="tab"'
+				. ' aria-controls="jdpc-' . $id . '"'
+				. ' aria-selected="' . $selected . '">'
+				. '<span class="fa fa-' . $meta[1] . ' mr-2"></span>'
+				. $L->get($meta[0])
+				. '</a>';
+			$first = false;
+		}
+		$html .= '</div>';
+		$html .= '</nav>';
 
+		// Tab content
+		$html .= '<div class="tab-content" id="jdpc-nav-tab-content">';
+
+		// --- Sidebar widgets tab ---
+		$html .= $this->openTabPane('sidebar', $tabs['sidebar'][2], true);
+
+		$html .= $this->subHeading('jdpc-section-categories');
+		$html .= $this->selectField('categoriesEnabled', $L->get('jdpc-show-widget'));
+		$html .= $this->textField('categoriesLabel', $L->get('Label'));
+		$html .= $this->selectField('categoriesHideEmpty', $L->get('jdpc-hide-empty-categories'));
+
+		$html .= $this->subHeading('jdpc-section-latest');
+		$html .= $this->selectField('latestEnabled', $L->get('jdpc-show-widget'));
+		$html .= $this->textField('latestLabel', $L->get('Label'));
+		if (defined('ORDER_BY') && ORDER_BY === 'date') {
+			$html .= $this->numberField('latestNumberOfItems', $L->get('jdpc-amount-of-items'), 1);
+		}
+
+		$html .= $this->subHeading('jdpc-section-static');
+		$html .= $this->selectField('staticEnabled', $L->get('jdpc-show-widget'));
+		$html .= $this->textField('staticLabel', $L->get('Label'));
+
+		$html .= $this->closeTabPane();
+
+		// --- External links tab ---
+		$html .= $this->openTabPane('external', $tabs['external'][2]);
+		$html .= $this->selectField('targetBlankEnabled', $L->get('jdpc-enable-external-target-blank'));
+		$html .= $this->closeTabPane();
+
+		// --- Social previews tab ---
+		$html .= $this->openTabPane('social', $tabs['social'][2]);
+
+		$html .= $this->subHeading('jdpc-subsection-og');
+		$html .= $this->selectField('ogEnabled', $L->get('jdpc-enable-meta'));
+		$html .= $this->textField('ogDefaultImage', $L->get('jdpc-default-image-label'), $L->get('jdpc-og-default-image-tip'));
+		$html .= $this->textField('ogFbAppId', $L->get('jdpc-og-fb-appid-label'), $L->get('jdpc-og-fb-appid-tip'));
+
+		$html .= $this->subHeading('jdpc-subsection-twitter');
+		$html .= $this->selectField('twitterCardsEnabled', $L->get('jdpc-enable-meta'));
+
+		// Card type — non-binary select, inline since selectField is Enabled/Disabled only.
+		$cardType = $this->getValue('twitterCardType');
+		$html .= '<div class="form-group">';
+		$html .= '<label for="jdpc_twitterCardType"><strong>' . $L->get('jdpc-twitter-card-type-label') . '</strong></label>';
+		$html .= '<select id="jdpc_twitterCardType" class="form-control" name="twitterCardType">';
+		$html .= '<option value="summary_large_image"' . ($cardType === 'summary_large_image' ? ' selected' : '') . '>' . $L->get('jdpc-twitter-card-type-large') . '</option>';
+		$html .= '<option value="summary"' . ($cardType === 'summary' ? ' selected' : '') . '>' . $L->get('jdpc-twitter-card-type-summary') . '</option>';
+		$html .= '</select>';
+		$html .= '<small class="form-text text-muted">' . $L->get('jdpc-twitter-card-type-tip') . '</small>';
+		$html .= '</div>';
+
+		$html .= $this->textField('twitterSite', $L->get('jdpc-twitter-site-label'), $L->get('jdpc-twitter-site-tip'));
+		$html .= $this->textField('twitterDefaultImage', $L->get('jdpc-default-image-label'), $L->get('jdpc-twitter-default-image-tip'));
+
+		$html .= $this->closeTabPane();
+
+		// --- Web stats tab ---
+		$html .= $this->openTabPane('stats', $tabs['stats'][2]);
+		$html .= $this->numberField('webStatsDevport', $L->get('jdpc-dev-port'), null, $L->get('jdpc-dev-port-tip'));
+		$html .= '<div class="form-group">';
+		$html .= '<label for="jdpcStatsCode"><strong>' . $L->get('jdpc-stats-code') . '</strong></label>';
+		$html .= '<textarea id="jdpcStatsCode" class="form-control" name="webStatsCode" rows="8" style="font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 0.85rem;">' . $this->getValue('webStatsCode') . '</textarea>';
+		$html .= '<small class="form-text text-muted">' . $L->get('jdpc-stats-code-tip') . '</small>';
+		$html .= '</div>';
+		$html .= $this->closeTabPane();
+
+		// --- Custom HTML tab ---
+		$html .= $this->openTabPane('html', $tabs['html'][2]);
+
+		$html .= $this->subHeading('jdpc-section-html-website');
+		$html .= $this->textareaField('htmlHead', $L->get('jdpc-html-head-label'), $L->get('jdpc-html-head-tip'));
+		$html .= $this->textareaField('htmlBodyBegin', $L->get('jdpc-html-bodybegin-label'), $L->get('jdpc-html-bodybegin-tip'));
+		$html .= $this->textareaField('htmlBodyEnd', $L->get('jdpc-html-bodyend-label'), $L->get('jdpc-html-bodyend-tip'));
+
+		$html .= $this->subHeading('jdpc-section-html-admin');
+		$html .= $this->textareaField('htmlAdminHead', $L->get('jdpc-html-head-label'), $L->get('jdpc-html-adminhead-tip'));
+		$html .= $this->textareaField('htmlAdminBodyBegin', $L->get('jdpc-html-bodybegin-label'), $L->get('jdpc-html-adminbodybegin-tip'));
+		$html .= $this->textareaField('htmlAdminBodyEnd', $L->get('jdpc-html-bodyend-label'), $L->get('jdpc-html-adminbodyend-tip'));
+
+		$html .= $this->closeTabPane();
+
+		// --- Markdown editor (EasyMDE) tab ---
+		$html .= $this->openTabPane('easymde', $tabs['easymde'][2]);
+		$html .= $this->selectField('easymdeEnabled', $L->get('jdpc-enable-easymde'));
+		$html .= $this->textField('easymdeTabSize', $L->get('jdpc-easymde-tabsize-label'), $L->get('jdpc-easymde-tabsize-tip'));
+		$html .= $this->textField('easymdeToolbar', $L->get('jdpc-easymde-toolbar-label'), $L->get('jdpc-easymde-toolbar-tip'));
+		$html .= $this->selectField('easymdeSpellChecker', $L->get('jdpc-easymde-spellchecker-label'));
+		$html .= $this->closeTabPane();
+
+		// --- Admin version check tab ---
+		$html .= $this->openTabPane('version', $tabs['version'][2]);
+		$html .= $this->selectField('versionCheckEnabled', $L->get('jdpc-enable-version-check'));
+		$html .= $this->closeTabPane();
+
+		// --- Static Site Generator tab ---
+		$html .= $this->openTabPane('staticgen', $tabs['staticgen'][2]);
+		$html .= $this->renderStaticGeneratorTab();
+		$html .= $this->closeTabPane();
+
+		// --- How it works tab ---
+		$html .= $this->openTabPane('howitworks', null);
+		$html .= '<ul class="mb-0" style="padding-left: 1.2rem; line-height: 1.7;">';
+		$html .= '<li class="mb-2">' . $L->get('jdpc-howitworks-external') . '</li>';
+		$html .= '<li class="mb-2">' . $L->get('jdpc-howitworks-404') . '</li>';
+		$html .= '<li class="mb-2">' . $L->get('jdpc-howitworks-archived') . '</li>';
+		$html .= '<li>' . $L->get('jdpc-howitworks-targetblank') . '</li>';
+		$html .= '</ul>';
+		$html .= $this->closeTabPane();
+
+		$html .= '</div>'; // /tab-content
+
+		// Remember the active tab across saves / refreshes
+		$html .= '<script>(function(){'
+			. 'var key="jdpcActiveTab";'
+			. 'var $tabs=$(\'#jdpc-nav-tab a[data-toggle="tab"]\');'
+			. '$tabs.on("click",function(e){window.localStorage.setItem(key,$(e.target).attr("href"));});'
+			. 'var active=window.localStorage.getItem(key);'
+			. 'if(active&&$(\'#jdpc-nav-tab a[href="\'+active+\'"]\').length){'
+			. '$(\'#jdpc-nav-tab a[href="\'+active+\'"]\').tab("show");'
+			. '}'
+			. '})();</script>';
+
+		return $html;
+	}
+
+	// ------------------------------------------------------------------
+	// Form rendering helpers
+	// ------------------------------------------------------------------
+	private function openTabPane($id, $subtitleKey = null, $active = false)
+	{
+		global $L;
+		$cls = 'tab-pane fade' . ($active ? ' show active' : '');
+		$html = '<div class="' . $cls . '" id="jdpc-' . $id . '" role="tabpanel" aria-labelledby="jdpc-nav-' . $id . '-tab">';
+		if ($subtitleKey) {
+			$html .= '<p class="text-muted mb-4">' . $L->get($subtitleKey) . '</p>';
+		}
+		return $html;
+	}
+
+	private function closeTabPane()
+	{
+		return '</div>';
+	}
+
+	private function subHeading($titleKey)
+	{
+		global $L;
+		return '<h6 class="text-uppercase text-muted mt-3 mb-2" style="letter-spacing: 0.05em; font-size: 0.75rem;">'
+			. $L->get($titleKey)
+			. '</h6><hr class="mt-1 mb-3">';
+	}
+
+	private function textField($name, $labelText, $tip = null)
+	{
+		$html = '<div class="form-group">';
+		$html .= '<label for="jdpc_' . $name . '"><strong>' . $labelText . '</strong></label>';
+		$html .= '<input id="jdpc_' . $name . '" class="form-control" name="' . $name . '" type="text" dir="auto" value="' . $this->getValue($name) . '">';
+		if ($tip) {
+			$html .= '<small class="form-text text-muted">' . $tip . '</small>';
+		}
+		$html .= '</div>';
+		return $html;
+	}
+
+	private function numberField($name, $labelText, $min = null, $tip = null)
+	{
+		$attrs = '';
+		if ($min !== null) {
+			$attrs .= ' min="' . (int) $min . '"';
+		}
+		$html = '<div class="form-group">';
+		$html .= '<label for="jdpc_' . $name . '"><strong>' . $labelText . '</strong></label>';
+		$html .= '<input id="jdpc_' . $name . '" class="form-control" name="' . $name . '" type="number"' . $attrs . ' value="' . $this->getValue($name) . '">';
+		if ($tip) {
+			$html .= '<small class="form-text text-muted">' . $tip . '</small>';
+		}
+		$html .= '</div>';
+		return $html;
+	}
+
+	private function readonlyUrlField($labelKey, $url)
+	{
+		global $L;
+		$safeUrl = htmlspecialchars($url, ENT_QUOTES, 'UTF-8');
+		$html = '<div class="form-group">';
+		$html .= '<label><strong>' . $L->get($labelKey) . '</strong></label>';
+		$html .= '<div><a href="' . $safeUrl . '" target="_blank" rel="noopener noreferrer">' . $safeUrl . '</a></div>';
+		$html .= '</div>';
+		return $html;
+	}
+
+	private function textareaField($name, $labelText, $tip = null, $rows = 4)
+	{
+		$html = '<div class="form-group">';
+		$html .= '<label for="jdpc_' . $name . '"><strong>' . $labelText . '</strong></label>';
+		$html .= '<textarea id="jdpc_' . $name . '" class="form-control" name="' . $name . '" rows="' . (int) $rows . '" style="font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 0.85rem;">' . $this->getValue($name) . '</textarea>';
+		if ($tip) {
+			$html .= '<small class="form-text text-muted">' . $tip . '</small>';
+		}
+		$html .= '</div>';
+		return $html;
+	}
+
+	private function selectField($name, $labelText, $tip = null)
+	{
+		global $L;
+		$val = $this->getValue($name);
+		$html = '<div class="form-group">';
+		$html .= '<label for="jdpc_' . $name . '"><strong>' . $labelText . '</strong></label>';
+		$html .= '<select id="jdpc_' . $name . '" class="form-control" name="' . $name . '">';
+		$html .= '<option value="true" ' . ($val === true ? 'selected' : '') . '>' . $L->get('Enabled') . '</option>';
+		$html .= '<option value="false" ' . ($val === false ? 'selected' : '') . '>' . $L->get('Disabled') . '</option>';
+		$html .= '</select>';
+		if ($tip) {
+			$html .= '<small class="form-text text-muted">' . $tip . '</small>';
+		}
+		$html .= '</div>';
+		return $html;
+	}
+
+	// ------------------------------------------------------------------
+	// Frontend: sidebar widgets (Categories -> Latest Posts -> About)
+	// ------------------------------------------------------------------
+	public function siteSidebar()
+	{
+		$out = '';
+		if ($this->getValue('categoriesEnabled')) {
+			$out .= $this->renderCategoriesWidget();
+		}
+		if ($this->getValue('latestEnabled')) {
+			$out .= $this->renderLatestPostsWidget();
+		}
+		if ($this->getValue('staticEnabled')) {
+			$out .= $this->renderStaticPagesWidget();
+		}
+		return $out;
+	}
+
+	private function renderCategoriesWidget()
+	{
+		global $categories;
+
+		$label = $this->getValue('categoriesLabel');
+		$hideZero = $this->getValue('categoriesHideEmpty');
+
+		$html = '<div class="plugin plugin-categories">';
+		if (!empty($label)) {
+			$html .= '<h2 class="plugin-label">' . $label . '</h2>';
+		}
+		$html .= '<div class="plugin-content">';
+		$html .= '<ul>';
+
+		// Separate "Archived" so it can be pinned to the bottom regardless of alphabetical order
+		$regular = array();
+		$archived = array();
+		foreach ($categories->db as $key => $fields) {
+			if (strcasecmp($fields['name'], 'Archived') === 0) {
+				$archived[$key] = $fields;
+			} else {
+				$regular[$key] = $fields;
+			}
+		}
+		$sorted = $regular + $archived;
+
+		foreach ($sorted as $key => $fields) {
+			$count = count($fields['list']);
+			if (!$hideZero || $count > 0) {
+				$html .= '<li>';
+				$html .= '<a href="' . DOMAIN_CATEGORIES . $key . '">';
+				$html .= $fields['name'] . ' (' . $count . ')';
+				$html .= '</a>';
+				$html .= '</li>';
+			}
+		}
+
+		$html .= '</ul></div></div>';
+		return $html;
+	}
+
+	public function renderLatestPostsWidget()
+	{
+		global $pages;
+
+		$label = $this->getValue('latestLabel');
+
+		$html = '<div class="plugin plugin-navigation">';
+		if (!empty($label)) {
+			$html .= '<h2 class="plugin-label">' . $label . '</h2>';
+		}
+		$html .= '<div class="plugin-content">';
+		$html .= '<ul>';
+
+		if (defined('ORDER_BY') && ORDER_BY === 'position') {
+			// Parent/child rendering for sites that order pages by manual position
+			$parents = buildParentPages();
+			foreach ($parents as $parent) {
+				$html .= '<li class="parent">';
+				$html .= '<a href="' . $parent->permalink() . '">' . $parent->title() . '</a>';
+				if ($parent->hasChildren()) {
+					$html .= '<ul class="child">';
+					foreach ($parent->children() as $child) {
+						$html .= '<li class="child"><a class="child" href="' . $child->permalink() . '">' . $child->title() . '</a></li>';
+					}
+					$html .= '</ul>';
+				}
+				$html .= '</li>';
+			}
+		} else {
+			$count = max(1, (int) $this->getValue('latestNumberOfItems'));
+			$onlyPublished = true;
+			$publishedPages = $pages->getList(1, $count, $onlyPublished);
+			foreach ($publishedPages as $pageKey) {
+				try {
+					$p = new Page($pageKey);
+					$html .= '<li><a href="' . $p->permalink() . '">' . $p->title() . '</a></li>';
+				} catch (Exception $e) {
+					// Skip pages that fail to construct
+				}
+			}
+		}
+
+		$html .= '</ul></div></div>';
+		return $html;
+	}
+
+	public function renderStaticPagesWidget()
+	{
+		$label = $this->getValue('staticLabel');
+
+		$html = '<div class="plugin plugin-static-pages">';
+		if (!empty($label)) {
+			$html .= '<h2 class="plugin-label">' . $label . '</h2>';
+		}
+		$html .= '<div class="plugin-content">';
+		$html .= '<ul>';
+
+		// Static pages whose description is set to special markers:
+		//   "404"               -> hidden from this widget (theme also hides them)
+		//   "external:<url>"    -> link points to <url>, opens in a new tab (theme matches)
+		$staticPages = buildStaticPages();
+		foreach ($staticPages as $p) {
+			$desc = trim($p->description());
+			if ($desc === '404') {
+				continue;
+			}
+			$externalUrl = '';
+			if (stripos($desc, 'external:') === 0) {
+				$externalUrl = trim(substr($desc, 9));
+			}
+			$liClass = $p->isParent() ? 'parent' : 'subpage';
+			$liStyle = $p->isParent() ? '' : ' style="margin-left: 10px"';
+			$html .= '<li class="' . $liClass . '"' . $liStyle . '>';
+			if ($externalUrl !== '') {
+				$html .= '<a href="' . htmlspecialchars($externalUrl, ENT_QUOTES) . '" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: baseline; gap: 4px;">';
+				$html .= $p->title();
+				$html .= '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0;">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>';
+				$html .= '</a>';
+			} else {
+				$html .= '<a href="' . $p->permalink() . '">' . $p->title() . '</a>';
+			}
+			$html .= '</li>';
+		}
+
+		$html .= '</ul></div></div>';
+		return $html;
+	}
+
+	// ------------------------------------------------------------------
+	// Frontend: head / body begin / body end
+	//
+	// siteBodyEnd combines three things:
+	//   - target=_blank script for external anchors (with rel=noopener noreferrer)
+	//   - web stats code (skipped when SERVER_PORT matches the configured dev port)
+	//   - custom HTML from the "Body end" injection field
+	// ------------------------------------------------------------------
+	public function siteHead()
+	{
+		$out = '';
+		if ($this->getValue('ogEnabled')) {
+			$out .= $this->renderOpenGraphTags();
+		}
+		if ($this->getValue('twitterCardsEnabled')) {
+			$out .= $this->renderTwitterCardTags();
+		}
+		$out .= $this->decodedValue('htmlHead');
+		return $out;
+	}
+
+	// ------------------------------------------------------------------
+	// Webhooks: INTERCEPTION REMOVED.
+	// We no longer exit() here because Nginx serves the physical files.
+	// ------------------------------------------------------------------
+	public function beforeAll()
+	{
+		// Interception removed to allow Nginx to serve physical files from root.
+	}
+
+	public function siteBodyBegin()
+	{
+		return $this->decodedValue('htmlBodyBegin');
+	}
+
+	public function siteBodyEnd()
+	{
+		$out = '';
+
+		if ($this->getValue('targetBlankEnabled')) {
+			$out .= '<script>'
+				. '(function(){var ls=document.querySelectorAll("a[href]");'
+				. 'for(var i=0,n=ls.length;i<n;i++){var a=ls[i];'
+				. 'if(!a.hostname||a.hostname===window.location.hostname)continue;'
+				. 'a.target="_blank";'
+				. 'var r=(a.getAttribute("rel")||"").split(/\s+/).filter(Boolean);'
+				. 'if(r.indexOf("noopener")===-1)r.push("noopener");'
+				. 'if(r.indexOf("noreferrer")===-1)r.push("noreferrer");'
+				. 'a.setAttribute("rel",r.join(" "));}})();'
+				. '</script>' . PHP_EOL;
+		}
+
+		$devport = $this->getValue('webStatsDevport');
+		$code = $this->getValue('webStatsCode');
+		if (!empty($code)) {
+			$serverPort = isset($_SERVER['SERVER_PORT']) ? (string) $_SERVER['SERVER_PORT'] : '';
+			$onDevPort = ($devport !== '' && $serverPort === (string) $devport);
+			if (!$onDevPort) {
+				$out .= html_entity_decode($code);
+			}
+		}
+
+		$out .= $this->decodedValue('htmlBodyEnd');
+
+		return $out;
+	}
+
+	// ------------------------------------------------------------------
+	// Admin: version chip in sidebar + AJAX check for newer Bludit releases
+	// ------------------------------------------------------------------
+	public function adminSidebar()
+	{
+		if (!$this->getValue('versionCheckEnabled')) {
+			return '';
+		}
+		global $L;
+		$isPro = defined('BLUDIT_PRO');
+		$heart = $isPro ? '<span class="fa fa-heart" style="color: #ffc107"></span>' : '';
+		$newHref = $isPro ? 'https://www.patreon.com/bludit/posts' : 'https://www.bludit.com';
+
+		$html = '<a id="current-version" class="nav-link" href="' . HTML_PATH_ADMIN_ROOT . 'about">';
+		$html .= 'Version ' . $heart;
+		$html .= '<span class="badge badge-warning badge-pill">' . BLUDIT_VERSION . '</span>';
+		$html .= '</a>';
+		$html .= '<a id="new-version" style="display: none;" target="_blank" rel="noopener" href="' . $newHref . '">';
+		$html .= $L->get('New version available') . ' <span class="fa fa-bell" style="color: red"></span>';
+		$html .= '</a>';
+		return $html;
+	}
+
+	public function adminHead()
+	{
+		$out = '';
+		if ($this->getValue('easymdeEnabled') && $this->onEasymdeView()) {
+			$out .= $this->includeCSS('easymde.min.css');
+			$out .= $this->includeCSS('easymde-bludit.css');
+		}
+		$out .= $this->decodedValue('htmlAdminHead');
+		return $out;
+	}
+
+	private function onEasymdeView()
+	{
+		return isset($GLOBALS['ADMIN_VIEW']) && in_array($GLOBALS['ADMIN_VIEW'], $this->easymdeViews, true);
+	}
+
+	public function adminBodyBegin()
+	{
+		return $this->decodedValue('htmlAdminBodyBegin');
+	}
+
+	public function adminBodyEnd()
+	{
+		$out = '';
+
+		if ($this->getValue('versionCheckEnabled')) {
+			$jsPath = $this->phpPath() . 'js' . DS . 'version.js';
+			if (file_exists($jsPath)) {
+				$out .= '<script>' . file_get_contents($jsPath) . '</script>';
+			}
+		}
+
+		if ($this->getValue('easymdeEnabled') && $this->onEasymdeView()) {
+			$out .= $this->renderEasymdeInit();
+		}
+
+		$out .= $this->decodedValue('htmlAdminBodyEnd');
+
+		return $out;
+	}
+
+	private function renderEasymdeInit()
+	{
+		global $L;
+
+		$spellChecker = $this->getValue('easymdeSpellChecker') ? 'true' : 'false';
+		$tabSize = (int) $this->getValue('easymdeTabSize');
+		if ($tabSize < 1) {
+			$tabSize = 2;
+		}
+		$toolbar = Sanitize::htmlDecode($this->getValue('easymdeToolbar'));
+		$pageBreak = defined('PAGE_BREAK') ? PAGE_BREAK : '';
+		$jsEasyMDE = $this->domainPath() . 'js/easymde.min.js?version=' . BLUDIT_VERSION;
+		$langImage = $L->g('Image description');
+
+		return <<<EOF
+<script charset="utf-8" src="$jsEasyMDE"></script>
+<script>
+	var easymde = null;
+
+	function editorInsertMedia(filename) {
+		var text = easymde.value();
+		easymde.value(text + "![$langImage]("+filename+")" + "\\n");
+		easymde.codemirror.refresh();
+	}
+
+	function editorGetContent() {
+		return easymde.value();
+	}
+
+	easymde = new EasyMDE({
+		element: document.getElementById("jseditor"),
+		status: false,
+		toolbarTips: true,
+		toolbarGuideIcon: true,
+		autofocus: false,
+		placeholder: "",
+		lineWrapping: true,
+		autoDownloadFontAwesome: false,
+		indentWithTabs: true,
+		tabSize: $tabSize,
+		spellChecker: $spellChecker,
+		toolbar: [$toolbar,
+			"|",
+			{
+				name: "pageBreak",
+				action: function addPageBreak(editor){
+					var cm = editor.codemirror;
+					output = "$pageBreak";
+					cm.replaceSelection(output);
+				},
+				className: "fa fa-crop",
+				title: "Page break",
+			}]
+	});
+</script>
+EOF;
+	}
+
+	private function decodedValue($key)
+	{
+		$val = $this->getValue($key);
+		return ($val === '' || $val === null) ? '' : html_entity_decode($val);
+	}
+
+	// ------------------------------------------------------------------
+	// Social previews — Open Graph + Twitter/X Card meta tags
+	// ------------------------------------------------------------------
+
+	private function metaSanitize($text, $maxLength = 0)
+	{
+		$text = strip_tags((string) $text);
+		$text = html_entity_decode($text, ENT_QUOTES, 'UTF-8');
+		$text = trim($text);
+		if ($maxLength > 0 && mb_strlen($text, 'UTF-8') > $maxLength) {
+			$text = mb_substr($text, 0, $maxLength, 'UTF-8') . '...';
+		}
+		return htmlspecialchars($text, ENT_QUOTES, 'UTF-8');
+	}
+
+	private function attrEscape($s)
+	{
+		return htmlspecialchars((string) $s, ENT_QUOTES, 'UTF-8');
+	}
+
+	private function renderOpenGraphTags()
+	{
+		global $site;
+		global $WHERE_AM_I;
+		global $page;
+		global $content;
+
+		$og = array(
+			'locale' => $site->locale(),
+			'type' => 'website',
+			'title' => $this->metaSanitize($site->title()),
+			'description' => $this->metaSanitize($site->description(), 200),
+			'url' => $site->url(),
+			'image' => '',
+			'siteName' => $this->metaSanitize($site->title()),
+			'publishedTime' => '',
+			'modifiedTime' => '',
+			'author' => '',
+		);
+
+		$pageContent = '';
+		if ($WHERE_AM_I === 'page' && isset($page)) {
+			$og['type'] = 'article';
+			$og['title'] = $this->metaSanitize($page->title());
+			$description = $page->description();
+			if (empty($description)) {
+				$description = Text::truncate(strip_tags($page->contentRaw()), 160);
+			}
+			$og['description'] = $this->metaSanitize($description, 200);
+			$og['url'] = $page->permalink(true);
+			$og['image'] = $page->coverImage(true);
+			$og['publishedTime'] = $page->date('c');
+			$mod = $page->dateModified('c');
+			if (!empty($mod)) {
+				$og['modifiedTime'] = $mod;
+			}
+			$og['author'] = $this->metaSanitize($page->user('nickname'));
+			$pageContent = $page->content();
+		} else {
+			$default = $this->makeAbsolute($this->getValue('ogDefaultImage'));
+			if (!empty($default)) {
+				$og['image'] = $default;
+			} elseif (isset($content[0])) {
+				$og['image'] = $content[0]->coverImage(true);
+				$pageContent = $content[0]->content();
+			}
+		}
+
+		$out = PHP_EOL . '' . PHP_EOL;
+		$out .= '<meta property="og:locale" content="' . $this->attrEscape($og['locale']) . '">' . PHP_EOL;
+		$out .= '<meta property="og:type" content="' . $this->attrEscape($og['type']) . '">' . PHP_EOL;
+		$out .= '<meta property="og:title" content="' . $og['title'] . '">' . PHP_EOL;
+		$out .= '<meta property="og:description" content="' . $og['description'] . '">' . PHP_EOL;
+		$out .= '<meta property="og:url" content="' . $this->attrEscape($og['url']) . '">' . PHP_EOL;
+		$out .= '<meta property="og:site_name" content="' . $og['siteName'] . '">' . PHP_EOL;
+
+		if ($og['type'] === 'article') {
+			if (!empty($og['publishedTime'])) {
+				$out .= '<meta property="article:published_time" content="' . $this->attrEscape($og['publishedTime']) . '">' . PHP_EOL;
+			}
+			if (!empty($og['modifiedTime'])) {
+				$out .= '<meta property="article:modified_time" content="' . $this->attrEscape($og['modifiedTime']) . '">' . PHP_EOL;
+			}
+			if (!empty($og['author'])) {
+				$out .= '<meta property="article:author" content="' . $og['author'] . '">' . PHP_EOL;
+			}
+		}
+
+		if (empty($og['image'])) {
+			$src = class_exists('DOM') ? DOM::getFirstImage($pageContent) : false;
+			if ($src !== false) {
+				$og['image'] = $src;
+			} else {
+				$default = $this->makeAbsolute($this->getValue('ogDefaultImage'));
+				if (!empty($default)) {
+					$og['image'] = $default;
+				}
+			}
+		}
+		if (!empty($og['image'])) {
+			$out .= '<meta property="og:image" content="' . $this->attrEscape($og['image']) . '">' . PHP_EOL;
+			$out .= '<meta property="og:image:alt" content="' . $og['title'] . '">' . PHP_EOL;
+		}
+
+		$fbAppId = $this->getValue('ogFbAppId');
+		if (!empty($fbAppId)) {
+			$out .= '<meta property="fb:app_id" content="' . $this->attrEscape($fbAppId) . '">' . PHP_EOL;
+		}
+
+		return $out;
+	}
+
+	private function renderTwitterCardTags()
+	{
+		global $site;
+		global $WHERE_AM_I;
+		global $page;
+		global $content;
+
+		$cardType = $this->getValue('twitterCardType');
+		if (empty($cardType)) {
+			$cardType = 'summary_large_image';
+		}
+
+		$data = array(
+			'card' => $cardType,
+			'site' => $this->getValue('twitterSite'),
+			'title' => $this->metaSanitize($site->title(), 70),
+			'description' => $this->metaSanitize($site->description(), 200),
+			'image' => '',
+			'imageAlt' => '',
+		);
+
+		$pageContent = '';
+		if ($WHERE_AM_I === 'page' && isset($page)) {
+			$data['title'] = $this->metaSanitize($page->title(), 70);
+			$description = $page->description();
+			if (empty($description)) {
+				$description = Text::truncate(strip_tags($page->contentRaw()), 160);
+			}
+			$data['description'] = $this->metaSanitize($description, 200);
+			$data['image'] = $page->coverImage(true);
+			$data['imageAlt'] = $data['title'];
+			$pageContent = $page->content();
+		} else {
+			$default = $this->makeAbsolute($this->getValue('twitterDefaultImage'));
+			if (!empty($default)) {
+				$data['image'] = $default;
+			} elseif (isset($content[0])) {
+				$data['image'] = $content[0]->coverImage(true);
+				$data['imageAlt'] = $this->metaSanitize($content[0]->title(), 70);
+				$pageContent = $content[0]->content();
+			}
+		}
+
+		$out = PHP_EOL . '' . PHP_EOL;
+		$out .= '<meta name="twitter:card" content="' . $this->attrEscape($data['card']) . '">' . PHP_EOL;
+
+		if (!empty($data['site'])) {
+			$out .= '<meta name="twitter:site" content="' . $this->metaSanitize($data['site']) . '">' . PHP_EOL;
+		}
+		$out .= '<meta name="twitter:title" content="' . $data['title'] . '">' . PHP_EOL;
+		$out .= '<meta name="twitter:description" content="' . $data['description'] . '">' . PHP_EOL;
+
+		if (empty($data['image'])) {
+			$src = class_exists('DOM') ? DOM::getFirstImage($pageContent) : false;
+			if ($src !== false) {
+				$data['image'] = $src;
+			} else {
+				$default = $this->makeAbsolute($this->getValue('twitterDefaultImage'));
+				if (!empty($default)) {
+					$data['image'] = $default;
+				}
+			}
+		}
+		if (!empty($data['image'])) {
+			$out .= '<meta name="twitter:image" content="' . $this->attrEscape($data['image']) . '">' . PHP_EOL;
+			if (!empty($data['imageAlt'])) {
+				$out .= '<meta name="twitter:image:alt" content="' . $data['imageAlt'] . '">' . PHP_EOL;
+			}
+		}
+
+		return $out;
+	}
+
+	// ==================================================================
+	// Static Site Generator (merged from static-generator-jereme)
+	//
+	// Crawls the running Bludit instance and writes a fully static HTML
+	// mirror to bl-content/static-build/. Pages are saved as
+	// path/index.html with all absolute and root-relative URLs rewritten
+	// to document-relative form so the output works on any host (and
+	// over file://).
+	//
+	// Security notes:
+	//   - The form posts through the standard configure-plugin endpoint,
+	//     so the kernel's checkRole(['admin']) + tokenCSRF rules already
+	//     apply before post() runs.
+	//   - The output directory is a hard-coded constant under PATH_CONTENT.
+	//     Filesystem paths derived from URLs are validated to stay under it.
+	//   - Admin URLs and bl-content/databases are always skipped, regardless
+	//     of the exclude-paths setting.
+	// ==================================================================
+
+	private function renderStaticGeneratorTab()
+	{
+		global $L;
+
+		// The wrapper class scopes the theme-aware button/details CSS in
+		// renderSgjConfirmAndLoading() so we don't accidentally restyle
+		// the "Save" / "Cancel" buttons the configure-plugin view emits
+		// outside the plugin's own form contents.
+		$html = '<div class="sgj-cfg">';
+
+		// SECTION: Generate
+		$html .= $this->openSgjCard('sgj-section-action', 'hammer', 'sgj-section-action-subtitle');
 		$buildLabel = htmlspecialchars($L->get('sgj-build-button'), ENT_QUOTES, 'UTF-8');
 		$html .= '<button type="submit" id="sgj-build-btn" class="btn btn-primary"'
 			. ' name="action" value="build">'
 			. $buildLabel
 			. '</button>';
+		$html .= $this->closeSgjCard();
 
-		$html .= $this->closeCard();
-
-		// ============ SECTION: Settings ===================================
-		$html .= $this->openCard('sgj-section-settings', 'cog');
+		// SECTION: Settings
+		$html .= $this->openSgjCard('sgj-section-settings', 'cog');
 		$html .= $this->textField('productionUrl', $L->get('sgj-production-url-label'), $L->get('sgj-production-url-tip'));
 		$html .= $this->textareaField('excludePaths', $L->get('sgj-exclude-paths-label'), $L->get('sgj-exclude-paths-tip'), 4);
-		$html .= $this->closeCard();
+		$html .= $this->closeSgjCard();
 
-		// ============ SECTION: Status =====================================
-		$html .= $this->openCard('sgj-section-status', 'history');
-		$html .= $this->renderStatus();
-		$html .= $this->closeCard();
+		// SECTION: Status
+		$html .= $this->openSgjCard('sgj-section-status', 'history');
+		$html .= $this->renderSgjStatus();
+		$html .= $this->closeSgjCard();
 
-		// ============ SECTION: How it works ===============================
-		$html .= '<div class="card mb-4 border-info">';
-		$html .= '<div class="card-header bg-info text-white">';
-		$html .= '<span class="fa fa-info-circle mr-2"></span>';
-		$html .= '<strong>' . $L->get('sgj-section-howitworks') . '</strong>';
-		$html .= '</div>';
-		$html .= '<div class="card-body">';
-		$html .= '<ul class="mb-0" style="padding-left: 1.2rem; line-height: 1.7;">';
-		$html .= '<li class="mb-2">' . $L->get('sgj-howitworks-1') . '</li>';
-		$html .= '<li class="mb-2">' . $L->get('sgj-howitworks-2') . '</li>';
-		$html .= '<li class="mb-2">' . $L->get('sgj-howitworks-3') . '</li>';
-		$html .= '<li class="mb-2">' . $L->get('sgj-howitworks-4') . '</li>';
-		$html .= '<li>' . $L->get('sgj-howitworks-5') . '</li>';
-		$html .= '</ul>';
-		$html .= '</div>';
-		$html .= '</div>';
-
-		// Confirmation modal + full-page loading overlay + JS that wires the
-		// "Generate static site" button to them. Self-contained styles so we
-		// don't depend on Bootstrap modal JS being available.
-		$html .= $this->renderConfirmAndLoading();
+		// Confirmation modal + full-page loading overlay + JS that wires
+		// the "Generate static site" button to them.
+		$html .= $this->renderSgjConfirmAndLoading();
 
 		$html .= '</div>'; // .sgj-cfg
 		return $html;
 	}
 
-	private function renderConfirmAndLoading()
+	private function openSgjCard($titleKey, $icon = null, $subtitleKey = null)
+	{
+		global $L;
+		$html = '<div class="card mb-4 shadow-sm">';
+		$html .= '<div class="card-header bg-light">';
+		if ($icon) {
+			$html .= '<span class="fa fa-' . $icon . ' mr-2"></span>';
+		}
+		$html .= '<strong>' . $L->get($titleKey) . '</strong>';
+		$html .= '</div>';
+		$html .= '<div class="card-body">';
+		if ($subtitleKey) {
+			$html .= '<p class="text-muted mb-4">' . $L->get($subtitleKey) . '</p>';
+		}
+		return $html;
+	}
+
+	private function closeSgjCard()
+	{
+		return '</div></div>';
+	}
+
+	private function renderSgjConfirmAndLoading()
 	{
 		global $L;
 		$confirmTitle = htmlspecialchars($L->get('sgj-confirm-title'), ENT_QUOTES, 'UTF-8');
@@ -121,19 +978,11 @@ class pluginStaticGeneratorJereme extends Plugin
 		$confirmCancel = htmlspecialchars($L->get('sgj-confirm-cancel'), ENT_QUOTES, 'UTF-8');
 		$loadingTitle = htmlspecialchars($L->get('sgj-loading-title'), ENT_QUOTES, 'UTF-8');
 		$loadingBody = htmlspecialchars($L->get('sgj-loading-body'), ENT_QUOTES, 'UTF-8');
-		// JSON-encoded so the label is safe to drop straight into JS even
-		// if it contains quotes or unicode.
 		$buildingJson = json_encode($L->get('sgj-building-button'), JSON_UNESCAPED_UNICODE);
 
 		return <<<HTML
 
 <style>
-	/* Inherit the admin theme's palette via CSS custom properties. When
-	   the active theme is a dark one (booty-jereme-dev), --bg-card,
-	   --text-primary, etc. resolve to dark values automatically. Each
-	   var() has a light-mode fallback so the modal also looks sensible
-	   under the stock booty admin theme or any theme that doesn't define
-	   these vars. */
 	.sgj-modal-overlay,
 	.sgj-loading-overlay {
 		position: fixed;
@@ -203,12 +1052,6 @@ class pluginStaticGeneratorJereme extends Plugin
 	}
 	#sgj-build-btn[disabled] { cursor: not-allowed; opacity: 0.65; }
 
-	/* Disabled state: Bootstrap's .btn-primary:disabled / .btn-primary.disabled
-	   has higher specificity than our base .btn-primary rule, so we'd
-	   otherwise lose the mint palette the moment any button is disabled
-	   (which is exactly what happens to Save + Generate while the build
-	   runs). Explicit rules with !important keep the theme colours and
-	   just dim the button instead of flipping it back to Bootstrap blue. */
 	.btn-primary:disabled,
 	.btn-primary.disabled,
 	.btn-primary[disabled] {
@@ -228,13 +1071,6 @@ class pluginStaticGeneratorJereme extends Plugin
 		cursor: not-allowed;
 	}
 
-	/* The stock admin theme styles .btn-light / .btn-form but leaves
-	   .btn-primary and .btn-secondary at Bootstrap's hardcoded blues
-	   and greys, which clash with the dark mint palette. This <style>
-	   block is rendered only inside form() on the plugin's
-	   configure-plugin page, so the rules are scoped to that one page
-	   — including the Save / Cancel buttons the configure-plugin view
-	   emits at the top, which we want themed the same way. */
 	.btn-primary,
 	.btn-primary:not(:disabled):not(.disabled) {
 		background-color: var(--primary-blue, #007bff);
@@ -268,8 +1104,6 @@ class pluginStaticGeneratorJereme extends Plugin
 		box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.12) !important;
 	}
 
-	/* The build-log preview lives inside a <details>; style its summary
-	   so it picks up the theme's text colour and looks clickable. */
 	.sgj-cfg details > summary {
 		cursor: pointer;
 		color: var(--text-primary, #212529);
@@ -341,8 +1175,6 @@ class pluginStaticGeneratorJereme extends Plugin
 		hidden.name = 'action';
 		hidden.value = 'build';
 		form.appendChild(hidden);
-		// Disable every submit-style control so the user cannot click
-		// Save (or Generate) twice while the build runs.
 		var controls = form.querySelectorAll('button, input[type=submit]');
 		for (var i = 0; i < controls.length; i++) { controls[i].disabled = true; }
 		btn.textContent = BUILDING_LABEL;
@@ -366,7 +1198,7 @@ class pluginStaticGeneratorJereme extends Plugin
 HTML;
 	}
 
-	private function renderStatus()
+	private function renderSgjStatus()
 	{
 		global $L;
 
@@ -405,7 +1237,7 @@ HTML;
 		}
 		$html .= '</tbody></table>';
 
-		$log = $this->readLogTail();
+		$log = $this->readSgjLogTail();
 		if ($log !== '') {
 			$html .= '<details open><summary>' . $L->get('sgj-status-log') . '</summary>';
 			$html .= '<pre style="max-height: 320px; overflow: auto;'
@@ -433,7 +1265,7 @@ HTML;
 		// changed excludePaths value silently reverts.
 		parent::post();
 		if ($action === 'build') {
-			$this->runBuild();
+			$this->runStaticBuild();
 		}
 		return true;
 	}
@@ -441,7 +1273,7 @@ HTML;
 	// ----------------------------------------------------------------------
 	// Build orchestration
 	// ----------------------------------------------------------------------
-	private function runBuild()
+	private function runStaticBuild()
 	{
 		global $L;
 
@@ -454,10 +1286,10 @@ HTML;
 			@mkdir($workspace, DIR_PERMISSIONS, true);
 		}
 
-		$lockPath = $workspace . self::LOCK_FILENAME;
+		$lockPath = $workspace . self::SGJ_LOCK_FILENAME;
 		$lockFp = @fopen($lockPath, 'c');
 		if (!$lockFp || !@flock($lockFp, LOCK_EX | LOCK_NB)) {
-			$this->recordResult('fail', $L->get('sgj-build-locked'), 0, 0, microtime(true) - $start);
+			$this->recordSgjResult('fail', $L->get('sgj-build-locked'), 0, 0, microtime(true) - $start);
 			if ($lockFp) {
 				@fclose($lockFp);
 			}
@@ -468,13 +1300,13 @@ HTML;
 		@fwrite($lockFp, (string) getmypid());
 
 		// Fresh log.
-		$this->logReset();
-		$this->log('Build started at ' . date('c'));
+		$this->sgjLogReset();
+		$this->sgjLog('Build started at ' . date('c'));
 
 		$outDir = $this->outputDir();
-		if (!$this->ensureDir($outDir)) {
-			$this->log('FATAL: could not create output directory: ' . $outDir);
-			$this->recordResult('fail', $L->get('sgj-build-no-output-dir'), 0, 0, microtime(true) - $start);
+		if (!$this->sgjEnsureDir($outDir)) {
+			$this->sgjLog('FATAL: could not create output directory: ' . $outDir);
+			$this->recordSgjResult('fail', $L->get('sgj-build-no-output-dir'), 0, 0, microtime(true) - $start);
 			@flock($lockFp, LOCK_UN);
 			@fclose($lockFp);
 			Alert::set($L->get('sgj-build-no-output-dir'), ALERT_STATUS_FAIL);
@@ -482,47 +1314,41 @@ HTML;
 		}
 
 		// Clear previous build so deleted pages don't linger.
-		$this->log('Clearing output directory: ' . $outDir);
-		$this->clearDir($outDir);
+		$this->sgjLog('Clearing output directory: ' . $outDir);
+		$this->sgjClearDir($outDir);
 
 		$state = array(
-			'sitePathPrefix' => $this->sitePathPrefix(),
+			'sitePathPrefix' => $this->sgjSitePathPrefix(),
 			'outDir' => $outDir,
 			'queue' => array(),
 			'enqueued' => array(),
 			'urlsFetched' => 0,
 			'bytesWritten' => 0,
 			'errors' => 0,
-			'maxUrls' => self::URL_HARD_CAP,
-			'excludePaths' => $this->parseExcludePaths(),
+			'maxUrls' => self::SGJ_URL_HARD_CAP,
+			'excludePaths' => $this->sgjParseExcludePaths(),
 		);
 
 		// Seed.
-		foreach ($this->seedPaths() as $path) {
-			$this->enqueue($state, $path, 'page');
+		foreach ($this->sgjSeedPaths() as $path) {
+			$this->sgjEnqueue($state, $path, 'page');
 		}
 
 		// BFS.
 		while (!empty($state['queue']) && $state['urlsFetched'] < $state['maxUrls']) {
 			$item = array_shift($state['queue']);
-			$this->processItem($state, $item);
+			$this->sgjProcessItem($state, $item);
 		}
 
-		// 404 page. Written to <build>/404.html at the build root so that
-		// directory-indexing webservers / static hosts (Apache via
-		// ErrorDocument, nginx via error_page, GitHub Pages / Netlify /
-		// Cloudflare Pages by convention) can serve it on any 404. A
-		// <base href> tag is injected into the page so relative asset and
-		// page URLs resolve correctly even when the browser address bar
-		// shows the URL that triggered the 404 rather than /404.html.
-		$this->writeNotFoundPage($state);
+		// 404 page.
+		$this->sgjWriteNotFoundPage($state);
 
 		$duration = microtime(true) - $start;
 		$result = $state['errors'] === 0 ? 'ok' : 'partial';
 		$message = 'Fetched ' . $state['urlsFetched'] . ' URLs (' . $state['errors'] . ' errors)';
-		$this->log('Build finished: ' . $message . ' in ' . number_format($duration, 2) . 's');
+		$this->sgjLog('Build finished: ' . $message . ' in ' . number_format($duration, 2) . 's');
 
-		$this->recordResult($result, $message, $state['urlsFetched'], $state['bytesWritten'], $duration);
+		$this->recordSgjResult($result, $message, $state['urlsFetched'], $state['bytesWritten'], $duration);
 
 		@flock($lockFp, LOCK_UN);
 		@fclose($lockFp);
@@ -531,7 +1357,7 @@ HTML;
 		Alert::set($message, $alertStatus);
 	}
 
-	private function recordResult($result, $message, $urls, $bytes, $duration)
+	private function recordSgjResult($result, $message, $urls, $bytes, $duration)
 	{
 		$this->db['lastBuildTime'] = date('Y-m-d H:i:s');
 		$this->db['lastBuildResult'] = $result;
@@ -545,13 +1371,12 @@ HTML;
 	// ----------------------------------------------------------------------
 	// URL discovery
 	// ----------------------------------------------------------------------
-	private function seedPaths()
+	private function sgjSeedPaths()
 	{
 		global $pages, $categories, $tags, $site;
 
 		$paths = array('/');
 
-		// Pagination of the home page.
 		$itemsPerPage = method_exists($site, 'itemsPerPage') ? max(1, (int) $site->itemsPerPage()) : 6;
 		try {
 			$publishedCount = $pages->count(true);
@@ -563,9 +1388,6 @@ HTML;
 			$paths[] = '/?page=' . $i;
 		}
 
-		// All pages, regardless of pagination position. We construct Page
-		// objects so we get the canonical permalink (handles parent/child
-		// slugs and the static vs. published path differences).
 		$keys = array_merge(
 			(array) $pages->getDB(true),
 			(array) $pages->getStaticDB(true),
@@ -574,13 +1396,12 @@ HTML;
 		foreach (array_unique($keys) as $key) {
 			try {
 				$page = new Page($key);
-				$paths[] = $this->urlToPath($page->permalink(true));
+				$paths[] = $this->sgjUrlToPath($page->permalink(true));
 			} catch (Exception $e) {
 				// Skip pages that fail to construct.
 			}
 		}
 
-		// Categories. CATEGORY_URI_FILTER is "category" (trimmed of slashes).
 		if (is_object($categories) && isset($categories->db) && is_array($categories->db)) {
 			foreach ($categories->db as $key => $fields) {
 				if (!empty($fields['list'])) {
@@ -589,7 +1410,6 @@ HTML;
 			}
 		}
 
-		// Tags.
 		if (is_object($tags) && isset($tags->db) && is_array($tags->db)) {
 			foreach ($tags->db as $key => $fields) {
 				if (!empty($fields['list'])) {
@@ -598,8 +1418,6 @@ HTML;
 			}
 		}
 
-		// Optional well-known plugin endpoints — only seeded when the plugin
-		// is enabled so we don't log spurious 404s.
 		foreach (array('sitemap' => '/sitemap.xml', 'rss' => '/rss.xml') as $pluginName => $endpoint) {
 			$pluginPath = PATH_PLUGINS . $pluginName;
 			if (is_dir($pluginPath)) {
@@ -613,7 +1431,7 @@ HTML;
 		return array_values(array_unique($paths));
 	}
 
-	private function urlToPath($url)
+	private function sgjUrlToPath($url)
 	{
 		$parsed = parse_url($url);
 		$path = isset($parsed['path']) ? $parsed['path'] : '/';
@@ -623,7 +1441,7 @@ HTML;
 		return $path === '' ? '/' : $path;
 	}
 
-	private function parseExcludePaths()
+	private function sgjParseExcludePaths()
 	{
 		$raw = (string) $this->getValue('excludePaths', false);
 		$out = array();
@@ -640,11 +1458,8 @@ HTML;
 		return $out;
 	}
 
-	private function shouldSkip($path, array $excludePaths)
+	private function sgjShouldSkip($path, array $excludePaths)
 	{
-		// Always-skipped admin / private dirs. These run through the same
-		// path-segment matcher as user excludes so /admin matches /admin
-		// itself and /admin/* but never /admin-something-else.
 		$alwaysSkip = array(
 			'/' . ADMIN_URI_FILTER,
 			'/bl-content/databases',
@@ -652,36 +1467,24 @@ HTML;
 			'/bl-content/tmp',
 		);
 		foreach ($alwaysSkip as $prefix) {
-			if ($this->pathMatchesPrefix($path, $prefix)) {
+			if ($this->sgjPathMatchesPrefix($path, $prefix)) {
 				return true;
 			}
 		}
 		foreach ($excludePaths as $prefix) {
-			if ($this->pathMatchesPrefix($path, $prefix)) {
+			if ($this->sgjPathMatchesPrefix($path, $prefix)) {
 				return true;
 			}
 		}
 		return false;
 	}
 
-	/**
-	 * Path-segment-aware prefix match.
-	 *   /homelab           matches  /homelab and /homelab/anything
-	 *   /homelab           does NOT match /homelab-md-offline-...
-	 *   /admin             matches  /admin and /admin/users
-	 *
-	 * Both args must start with "/". Trailing slashes on $prefix are
-	 * ignored. This is what every user-supplied exclude-path entry needs
-	 * — plain string startsWith() would also match unrelated slugs that
-	 * happen to share a textual prefix.
-	 */
-	private function pathMatchesPrefix($path, $prefix)
+	private function sgjPathMatchesPrefix($path, $prefix)
 	{
 		$prefix = rtrim($prefix, '/');
 		if ($prefix === '') {
 			return false;
 		}
-		// Drop the query string before comparing so /foo?x=1 matches /foo.
 		$qPos = strpos($path, '?');
 		if ($qPos !== false) {
 			$path = substr($path, 0, $qPos);
@@ -695,19 +1498,15 @@ HTML;
 		return false;
 	}
 
-	// ----------------------------------------------------------------------
-	// Queue
-	// ----------------------------------------------------------------------
-	private function enqueue(array &$state, $path, $kind)
+	private function sgjEnqueue(array &$state, $path, $kind)
 	{
-		$path = $this->normalizePath($path, $state['sitePathPrefix']);
+		$path = $this->sgjNormalizePath($path, $state['sitePathPrefix']);
 		if ($path === null) {
 			return;
 		}
-		if ($this->shouldSkip($path, $state['excludePaths'])) {
+		if ($this->sgjShouldSkip($path, $state['excludePaths'])) {
 			return;
 		}
-		// Dedupe by path; "page" wins over "asset" if both were enqueued.
 		if (isset($state['enqueued'][$path])) {
 			return;
 		}
@@ -715,18 +1514,12 @@ HTML;
 		$state['queue'][] = array('path' => $path, 'kind' => $kind);
 	}
 
-	/**
-	 * Normalize a candidate URL/path against the site's URL space.
-	 * Returns the in-site path (with leading "/") or null if the URL is
-	 * external, a fragment, an unsupported scheme, or otherwise out of scope.
-	 */
-	private function normalizePath($candidate, $sitePathPrefix)
+	private function sgjNormalizePath($candidate, $sitePathPrefix)
 	{
 		$candidate = trim((string) $candidate);
 		if ($candidate === '' || $candidate[0] === '#') {
 			return null;
 		}
-		// Reject unsupported schemes (mailto:, tel:, javascript:, data:).
 		if (preg_match('#^[a-z][a-z0-9+.\-]*:#i', $candidate)) {
 			if (!preg_match('#^https?://#i', $candidate)) {
 				return null;
@@ -745,7 +1538,6 @@ HTML;
 		} else {
 			$out = $candidate;
 		}
-		// Strip fragment.
 		$hash = strpos($out, '#');
 		if ($hash !== false) {
 			$out = substr($out, 0, $hash);
@@ -753,16 +1545,12 @@ HTML;
 		if ($out === '') {
 			$out = '/';
 		}
-		// Ensure leading slash.
 		if ($out[0] !== '/') {
 			return null;
 		}
-		// Reject any traversal in the URL component (the URL parser already
-		// resolved most cases, but be paranoid).
 		if (strpos($out, '/../') !== false || substr($out, -3) === '/..') {
 			return null;
 		}
-		// Strip the site base path prefix if installed in a subdirectory.
 		if ($sitePathPrefix !== '/' && strpos($out, $sitePathPrefix) === 0) {
 			$out = substr($out, strlen(rtrim($sitePathPrefix, '/')));
 			if ($out === '' || $out[0] !== '/') {
@@ -772,77 +1560,54 @@ HTML;
 		return $out;
 	}
 
-	// ----------------------------------------------------------------------
-	// Per-item processing
-	//
-	// Two paths:
-	//   - Pages are rendered in-process using Bludit's own theme dispatch.
-	//     No HTTP is involved, so the build works inside Vagrant /
-	//     containers where the PHP process cannot reach the public
-	//     hostname.
-	//   - Assets are copied straight from disk. mapToDisk() returns a real
-	//     file path under PATH_ROOT only after path-traversal and
-	//     allow-list checks, so we never expose anything outside the
-	//     public webroot.
-	// ----------------------------------------------------------------------
-	private function processItem(array &$state, array $item)
+	private function sgjProcessItem(array &$state, array $item)
 	{
-		// Catch-all so a single broken page (uncaught exception in the
-		// theme, a Throwable from a plugin hook, etc.) never aborts the
-		// whole build silently. The recorded error count then reflects
-		// reality and the run is correctly reported as "Completed with
-		// errors" rather than "Success".
 		try {
-			$this->processItemInner($state, $item);
+			$this->sgjProcessItemInner($state, $item);
 		} catch (Throwable $e) {
 			$state['errors']++;
-			$this->log('ERROR exception processing ' . $item['path'] . ': ' . $e->getMessage());
+			$this->sgjLog('ERROR exception processing ' . $item['path'] . ': ' . $e->getMessage());
 		}
 	}
 
-	private function processItemInner(array &$state, array $item)
+	private function sgjProcessItemInner(array &$state, array $item)
 	{
 		$path = $item['path'];
 		$kind = $item['kind'];
 
-		// Assets first — fastest path, no rendering needed.
 		if ($kind !== 'page') {
-			$diskPath = $this->mapToDisk($path);
+			$diskPath = $this->sgjMapToDisk($path);
 			if ($diskPath !== null && is_file($diskPath)) {
-				$this->saveAssetFromDisk($state, $path, $diskPath);
+				$this->sgjSaveAssetFromDisk($state, $path, $diskPath);
 				return;
 			}
 			$state['errors']++;
-			$this->log('ERROR asset not on disk: ' . $path);
+			$this->sgjLog('ERROR asset not on disk: ' . $path);
 			return;
 		}
 
-		// Page render via the kernel.
-		$result = $this->renderInternal($path);
+		$result = $this->sgjRenderInternal($path);
 		if (!$result['ok']) {
 			$state['errors']++;
-			$this->log('ERROR render ' . $path . ' (' . $result['error'] . ')');
+			$this->sgjLog('ERROR render ' . $path . ' (' . $result['error'] . ')');
 			return;
 		}
-		// Bludit's 404 page has the right HTML but the page-not-found
-		// content. We still write it so /404 works in the build, but skip
-		// any URL that resolved to "not found" via an actual missing slug.
 		if ($result['notFound'] && $path !== '/404' && $path !== '/page-not-found') {
 			$state['errors']++;
-			$this->log('ERROR 404 ' . $path);
+			$this->sgjLog('ERROR 404 ' . $path);
 			return;
 		}
 		$state['urlsFetched']++;
-		$this->log('OK  render ' . $path);
+		$this->sgjLog('OK  render ' . $path);
 
-		$savePath = $this->htmlSavePath($state['outDir'], $path);
+		$savePath = $this->sgjHtmlSavePath($state['outDir'], $path);
 		if ($savePath === null) {
 			$state['errors']++;
-			$this->log('ERROR refusing unsafe save path for ' . $path);
+			$this->sgjLog('ERROR refusing unsafe save path for ' . $path);
 			return;
 		}
-		$rewritten = $this->rewriteHtml($state, $path, $result['body']);
-		$bytes = $this->writeFile($savePath, $rewritten);
+		$rewritten = $this->sgjRewriteHtml($state, $path, $result['body']);
+		$bytes = $this->sgjWriteFile($savePath, $rewritten);
 		if ($bytes === false) {
 			$state['errors']++;
 			return;
@@ -852,38 +1617,17 @@ HTML;
 
 	/**
 	 * Render Bludit's configured 404 page and write it to <build>/404.html.
-	 *
-	 * Two non-obvious bits:
-	 *
-	 *  1. We synthesise a request to a path that doesn't exist
-	 *     (/__sgj_notfound__) so Bludit's URL parser sets the notFound
-	 *     flag — that triggers renderInternal()'s buildErrorPage() path,
-	 *     which loads $site->pageNotFound() and renders the theme around
-	 *     it. Net effect: whichever page the admin has configured as
-	 *     "page not found" in the Bludit settings is what gets baked into
-	 *     404.html, with no hardcoding of slugs.
-	 *
-	 *  2. When Apache / nginx / a static host serves 404.html in response
-	 *     to a missing URL, the browser address bar keeps the original
-	 *     (missing) path. Any relative href in the rendered page would
-	 *     resolve against that path and produce broken links. Injecting
-	 *     <base href="<HTML_PATH_ROOT>"> right after <head> pins relative
-	 *     URL resolution to the site root for this one page only.
 	 */
-	private function writeNotFoundPage(array &$state)
+	private function sgjWriteNotFoundPage(array &$state)
 	{
 		$probe = '/__sgj_notfound__';
-		$result = $this->renderInternal($probe);
+		$result = $this->sgjRenderInternal($probe);
 		if (!$result['ok']) {
 			$state['errors']++;
-			$this->log('ERROR rendering 404 page: ' . $result['error']);
+			$this->sgjLog('ERROR rendering 404 page: ' . $result['error']);
 			return;
 		}
-		// The 404's links/assets are rewritten as if the file sat at the
-		// build root (depth 0). The injected <base> below makes that
-		// produce correct URLs regardless of which path the browser
-		// thinks it's on.
-		$rewritten = $this->rewriteHtml($state, '/', $result['body']);
+		$rewritten = $this->sgjRewriteHtml($state, '/', $result['body']);
 
 		$baseHref = htmlspecialchars(HTML_PATH_ROOT, ENT_QUOTES, 'UTF-8');
 		$baseTag = '<base href="' . $baseHref . '">';
@@ -897,30 +1641,28 @@ HTML;
 		if ($count > 0) {
 			$rewritten = $injected;
 		} else {
-			// Page somehow has no <head>; prepend the base tag wrapped in
-			// a minimal head so relative URLs still resolve from root.
 			$rewritten = '<head>' . $baseTag . '</head>' . $rewritten;
 		}
 
-		$savePath = $this->resolveSafePath($state['outDir'], '404.html');
+		$savePath = $this->sgjResolveSafePath($state['outDir'], '404.html');
 		if ($savePath === null) {
 			$state['errors']++;
-			$this->log('ERROR refusing unsafe save path for 404.html');
+			$this->sgjLog('ERROR refusing unsafe save path for 404.html');
 			return;
 		}
-		$bytes = $this->writeFile($savePath, $rewritten);
+		$bytes = $this->sgjWriteFile($savePath, $rewritten);
 		if ($bytes === false) {
 			$state['errors']++;
 			return;
 		}
 		$state['bytesWritten'] += $bytes;
 		$state['urlsFetched']++;
-		$this->log('OK  render 404 -> 404.html');
+		$this->sgjLog('OK  render 404 -> 404.html');
 	}
 
-	private function saveAssetFromDisk(array &$state, $path, $diskPath)
+	private function sgjSaveAssetFromDisk(array &$state, $path, $diskPath)
 	{
-		$savePath = $this->fileSavePath($state['outDir'], $path);
+		$savePath = $this->sgjFileSavePath($state['outDir'], $path);
 		if ($savePath === null) {
 			$state['errors']++;
 			return;
@@ -929,61 +1671,44 @@ HTML;
 			$body = @file_get_contents($diskPath);
 			if ($body === false) {
 				$state['errors']++;
-				$this->log('ERROR reading ' . $diskPath);
+				$this->sgjLog('ERROR reading ' . $diskPath);
 				return;
 			}
 			$rewritten = $this->rewriteCss($state, $path, $body);
-			$bytes = $this->writeFile($savePath, $rewritten);
+			$bytes = $this->sgjWriteFile($savePath, $rewritten);
 			if ($bytes === false) {
 				$state['errors']++;
 				return;
 			}
 			$state['urlsFetched']++;
 			$state['bytesWritten'] += $bytes;
-			$this->log('OK  disk  ' . $path . ' [text/css]');
+			$this->sgjLog('OK  disk  ' . $path . ' [text/css]');
 			return;
 		}
-		if (!$this->ensureDir(dirname($savePath))) {
+		if (!$this->sgjEnsureDir(dirname($savePath))) {
 			$state['errors']++;
-			$this->log('ERROR mkdir ' . dirname($savePath));
+			$this->sgjLog('ERROR mkdir ' . dirname($savePath));
 			return;
 		}
 		if (!@copy($diskPath, $savePath)) {
 			$state['errors']++;
-			$this->log('ERROR copy ' . $diskPath . ' -> ' . $savePath);
+			$this->sgjLog('ERROR copy ' . $diskPath . ' -> ' . $savePath);
 			return;
 		}
 		$state['urlsFetched']++;
 		$state['bytesWritten'] += @filesize($savePath);
-		$this->log('OK  disk  ' . $path);
+		$this->sgjLog('OK  disk  ' . $path);
 	}
 
 	// ----------------------------------------------------------------------
 	// Internal renderer
-	//
-	// Renders a Bludit page in-process by manipulating the globals the
-	// kernel's site dispatch sets up — $url, $page, $content, $WHERE_AM_I,
-	// $staticContent — and including the active theme's index.php inside
-	// an output buffer. No HTTP request is made.
-	//
-	// We intentionally do NOT re-run the boot rules ($pages->scheduler()
-	// in 69.pages.php, the buildPlugins() in 60.plugins.php) so that
-	// rendering many URLs back-to-back has no compounding side effects.
-	// Plugin hooks the theme itself calls (siteHead, siteBodyBegin,
-	// siteBodyEnd, siteSidebar, pageBegin, pageEnd) still fire normally.
 	// ----------------------------------------------------------------------
-	private function renderInternal($path)
+	private function sgjRenderInternal($path)
 	{
 		global $site, $url, $page, $content, $pages, $categories, $tags, $L, $plugins, $WHERE_AM_I;
 		global $staticContent, $staticPages;
-		// Themes commonly stash $helper / $login / $searchJson in their
-		// init.php and then guard subsequent re-inits with isset() checks.
-		// Promoting those to globals lets the guards work across the many
-		// renderInternal() calls in one build, which is what prevents the
-		// "Cannot redeclare class Helper" fatal on the second page.
 		global $helper, $login, $searchJson;
 
-		// Snapshot everything we touch, so we restore cleanly even on error.
 		$saved = array(
 			'REQUEST_URI' => isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '/',
 			'QUERY_STRING' => isset($_SERVER['QUERY_STRING']) ? $_SERVER['QUERY_STRING'] : '',
@@ -1002,7 +1727,6 @@ HTML;
 
 		$bufLevel = ob_get_level();
 		try {
-			// Parse path + query into request shape.
 			$queryStr = '';
 			$qPos = strpos($path, '?');
 			if ($qPos !== false) {
@@ -1016,17 +1740,7 @@ HTML;
 				parse_str($queryStr, $_GET);
 			}
 
-			// Make $_SERVER reflect the production site URL during this render
-			// so plugin hooks see a "production" frontend request rather than
-			// the dev port / hostname the admin happens to be served on.
-			// Without this, the companion plugin's webStatsDevport check
-			// suppresses web stats on every page in the build when the admin
-			// runs on the dev port, and any other plugin that branches on
-			// SERVER_PORT / HTTPS / HTTP_HOST gets the wrong context too.
-			// The "Production URL" plugin setting takes precedence over
-			// $site->url() so a local install at http://localhost:8080 can
-			// still produce a build targeting the public domain.
-			$buildUrl = $this->effectiveBuildUrl();
+			$buildUrl = $this->sgjEffectiveBuildUrl();
 			$siteUrlParts = parse_url($buildUrl);
 			if (is_array($siteUrlParts) && isset($siteUrlParts['host'])) {
 				$scheme = isset($siteUrlParts['scheme']) ? $siteUrlParts['scheme'] : 'http';
@@ -1039,14 +1753,10 @@ HTML;
 				$_SERVER['SERVER_NAME'] = $siteUrlParts['host'];
 			}
 
-			// Re-derive Url state and replace the global.
 			$newUrl = new Url();
 			$newUrl->checkFilters($site->uriFilters());
 			$url = $GLOBALS['url'] = $newUrl;
 
-			// Replicate the page/content setup from 69.pages.php WITHOUT
-			// running $pages->scheduler() (we don't want scheduled-publish
-			// side effects during a build).
 			$page = false;
 			$content = array();
 			$staticContent = $staticPages = buildStaticPages();
@@ -1078,14 +1788,8 @@ HTML;
 			$GLOBALS['page'] = $page;
 			$GLOBALS['content'] = $content;
 
-			// Paginator state for this URL (mirrors 99.paginator.php).
-			$this->setupPaginator($url);
+			$this->sgjSetupPaginator($url);
 
-			// Render the theme. The theme's init.php typically loads helper
-			// classes; since $helper / $login / $searchJson are now globals,
-			// the theme's `if (!isset($helper))` guards work across renders
-			// and we can include init.php every time (it's idempotent).
-			// index.php is the actual HTML template.
 			ob_start();
 			$themeDir = PATH_THEMES . $site->theme() . DS;
 			if (is_file($themeDir . 'init.php')) {
@@ -1116,8 +1820,6 @@ HTML;
 			}
 			return array('ok' => false, 'body' => '', 'notFound' => false, 'error' => $e->getMessage());
 		} finally {
-			// Restore every snapshotted value so the surrounding admin
-			// request continues uninterrupted.
 			$_SERVER['REQUEST_URI'] = $saved['REQUEST_URI'];
 			$_SERVER['QUERY_STRING'] = $saved['QUERY_STRING'];
 			foreach (array('SERVER_PORT', 'HTTPS', 'HTTP_HOST', 'SERVER_NAME') as $k) {
@@ -1139,7 +1841,7 @@ HTML;
 		}
 	}
 
-	private function setupPaginator($url)
+	private function sgjSetupPaginator($url)
 	{
 		global $site, $pages, $tags, $categories;
 		$wai = $url->whereAmI();
@@ -1163,35 +1865,19 @@ HTML;
 		Paginator::set('showItems', $itemsPerPage);
 	}
 
-	private function sitePathPrefix()
+	private function sgjSitePathPrefix()
 	{
-		// HTML_PATH_ROOT is the URL prefix the site is mounted at (e.g. "/"
-		// or "/bludit/"). Pages may render either DOMAIN_BASE-prefixed or
-		// HTML_PATH_ROOT-prefixed URLs.
 		return HTML_PATH_ROOT;
 	}
 
 	// ----------------------------------------------------------------------
 	// HTML rewriting
-	//
-	// We rewrite three things in order:
-	//   1. Strip the absolute site origin from all URLs.
-	//   2. Strip the site's base path (HTML_PATH_ROOT) from root-relative
-	//      URLs.
-	//   3. Prepend the document-relative prefix for the current saved page.
-	//
-	// Pages are saved as path/index.html, so internal page links get
-	// "/foo/bar" -> "prefix + foo/bar/index.html". Anything that looks like
-	// a file (has a recognized extension) is kept as a file reference and
-	// queued for fetching.
 	// ----------------------------------------------------------------------
-	private $fileExtRegex = '~\.(css|js|mjs|json|xml|txt|map|png|jpe?g|gif|webp|avif|svg|ico|bmp|tiff?|woff2?|ttf|otf|eot|mp4|webm|ogg|mp3|wav|flac|m4a|pdf|zip|gz|tar|br)([?#].*)?$~i';
-
-	private function rewriteHtml(array &$state, $path, $html)
+	private function sgjRewriteHtml(array &$state, $path, $html)
 	{
-		$prefix = $this->depthPrefix($path);
+		$prefix = $this->sgjDepthPrefix($path);
 		$crawlOrigin = '';
-		$siteOrigin = $this->originOf(DOMAIN_BASE);
+		$siteOrigin = $this->sgjOriginOf(DOMAIN_BASE);
 		$basePath = rtrim($state['sitePathPrefix'], '/');
 
 		$plugin = $this;
@@ -1199,12 +1885,6 @@ HTML;
 			return $plugin->rewriteRef($state, $url, $prefix, $crawlOrigin, $siteOrigin, $basePath, true);
 		};
 
-		// href / src / action / formaction / poster / data-* attributes that
-		// hold URLs. The home/category cards use `data-background-image`
-		// (read by JS to set the card background); lozad lazy-load uses
-		// `data-src` / `data-background` / `data-iesrc`. We treat double-
-		// and single-quoted values separately so we never have to worry
-		// about embedded quotes.
 		$attrs = array(
 			'href', 'src', 'action', 'formaction', 'poster',
 			'data-src', 'data-href', 'data-background', 'data-background-image',
@@ -1223,20 +1903,17 @@ HTML;
 			);
 		}
 
-		// srcset: "url1 1x, url2 2x" or "url1 100w, url2 200w".
 		$html = preg_replace_callback(
 			'#(srcset\s*=\s*)"([^"]*)"#i',
-			function ($m) use ($rewrite) { return $m[1] . '"' . $this->rewriteSrcset($m[2], $rewrite) . '"'; },
+			function ($m) use ($rewrite) { return $m[1] . '"' . $this->sgjRewriteSrcset($m[2], $rewrite) . '"'; },
 			$html
 		);
 		$html = preg_replace_callback(
 			"#(srcset\s*=\s*)'([^']*)'#i",
-			function ($m) use ($rewrite) { return $m[1] . "'" . $this->rewriteSrcset($m[2], $rewrite) . "'"; },
+			function ($m) use ($rewrite) { return $m[1] . "'" . $this->sgjRewriteSrcset($m[2], $rewrite) . "'"; },
 			$html
 		);
 
-		// meta http-equiv refresh (rare but possible).
-		// CSS inside <style> tags + inline style="" attributes.
 		$html = preg_replace_callback(
 			'#(<style[^>]*>)(.*?)(</style>)#is',
 			function ($m) use ($plugin, &$state, $path) { return $m[1] . $plugin->rewriteCss($state, $path, $m[2]) . $m[3]; },
@@ -1253,26 +1930,6 @@ HTML;
 			$html
 		);
 
-		// Inline <script> bodies often contain string literals that hold
-		// in-site URLs — e.g. theme code that does
-		//     var uploadsFolder = '/bl-content/uploads/';
-		//     var siteRoot = 'https://example.com/';
-		// followed later by `fetch(uploadsFolder + 'index.json')` or
-		// `siteRoot + slug`. The attribute-rewriting pass above can't see
-		// those strings, so they survive into the static build as either
-		// root-relative paths (broken when the build isn't hosted at the
-		// webroot) or as the live site's absolute URL (which the
-		// origin-strip pass below would then turn into bare root-relative
-		// paths anyway). The rewriteJsUrl() helper handles two cases the
-		// attribute path does not:
-		//   1. Trailing-slash URLs are kept as directory prefixes (so
-		//      JS concat keeps working) and the disk directory's
-		//      contents are walked + enqueued so referenced JSON / data
-		//      files get copied even though no HTML element links them.
-		//   2. The crawl/site origins are stripped before relativising,
-		//      same as for attributes.
-		// Conservative match: only strings that look like in-site URLs
-		// (absolute on this origin, or starting with "/"), no whitespace.
 		$urlPattern = '(?:https?://[^\s"\'<>]+|/[^\s"\'<>]*)';
 		$jsRewrite = function ($url) use ($plugin, &$state, $prefix, $crawlOrigin, $siteOrigin, $basePath) {
 			return $plugin->rewriteJsUrl($state, $url, $prefix, $crawlOrigin, $siteOrigin, $basePath);
@@ -1296,10 +1953,6 @@ HTML;
 			$html
 		);
 
-		// Strip any remaining absolute-origin occurrences (e.g. inline JSON,
-		// JS-LD blocks, OG meta tag content already handled above but be
-		// safe). We only strip the origin, not paths, so JSON-LD URLs become
-		// root-relative which is usually acceptable.
 		if ($crawlOrigin !== '') {
 			$html = str_replace($crawlOrigin, '', $html);
 		}
@@ -1307,17 +1960,8 @@ HTML;
 			$html = str_replace($siteOrigin, '', $html);
 		}
 
-		// Social cards (Open Graph, Twitter) and <link rel="canonical") all
-		// REQUIRE absolute URLs — relative paths cause crawlers / link
-		// previewers to either ignore the value or resolve it against the
-		// wrong base. The origin-strip above turns those into bare paths
-		// (or, in the case of og:url that was just the bare origin, into
-		// an empty string). Re-absolutize them here using the effective
-		// build URL (the "Production URL" plugin setting if set, else
-		// $site->url()) so the static build's social previews work no
-		// matter what hostname the local install is running on.
-		$buildUrl = rtrim($this->effectiveBuildUrl(), '/');
-		$buildOrigin = $this->originOf($buildUrl);
+		$buildUrl = rtrim($this->sgjEffectiveBuildUrl(), '/');
+		$buildOrigin = $this->sgjOriginOf($buildUrl);
 		if ($buildOrigin !== '' && $buildOrigin !== $siteOrigin) {
 			$html = str_replace($buildOrigin, '', $html);
 		}
@@ -1327,16 +1971,9 @@ HTML;
 		$imageProps = '(?:og:image|og:image:url|og:image:secure_url|og:video|og:video:url|og:video:secure_url|og:audio|og:audio:url|og:audio:secure_url)';
 		$imageNames = '(?:twitter:image|twitter:image:src|twitter:player|twitter:player:stream)';
 
-		// The attribute-rewriting pass above only enqueues URLs found in
-		// href/src/etc. The companion plugin's "Open Graph default image"
-		// and "Twitter default image" settings reach the page as
-		// <meta property="og:image" content="…"> — so without this pass
-		// the image file itself never gets copied into the static build
-		// and previews end up broken. Scan the image-bearing OG / Twitter
-		// meta tags and enqueue any in-site URL as an asset.
 		$enqueueFromMeta = function ($m) use (&$state) {
 			$url = htmlspecialchars_decode($m[1], ENT_QUOTES);
-			$this->enqueue($state, $url, 'asset');
+			$this->sgjEnqueue($state, $url, 'asset');
 			return $m[0];
 		};
 		preg_replace_callback(
@@ -1408,7 +2045,7 @@ HTML;
 		return $html;
 	}
 
-	private function rewriteSrcset($value, callable $rewrite)
+	private function sgjRewriteSrcset($value, callable $rewrite)
 	{
 		$parts = explode(',', $value);
 		$out = array();
@@ -1425,13 +2062,6 @@ HTML;
 		return implode(', ', $out);
 	}
 
-	/**
-	 * Rewrite a single URL reference (href/src/etc.) AND enqueue it for the
-	 * crawler if it's an in-site resource.
-	 *
-	 * `$queue` controls whether we add to the BFS queue. Always true from
-	 * HTML; CSS sub-references also queue so background images get copied.
-	 */
 	public function rewriteRef(array &$state, $url, $prefix, $crawlOrigin, $siteOrigin, $basePath, $queue)
 	{
 		$original = $url;
@@ -1439,15 +2069,12 @@ HTML;
 		if ($url === '' || $url[0] === '#') {
 			return $original;
 		}
-		// Skip unsupported schemes outright.
 		if (preg_match('#^(mailto|tel|javascript|data):#i', $url)) {
 			return $original;
 		}
-		// Resolve absolute URLs.
 		if (preg_match('#^https?://#i', $url)) {
-			$urlOrigin = $this->originOf($url);
+			$urlOrigin = $this->sgjOriginOf($url);
 			if (strcasecmp($urlOrigin, $crawlOrigin) !== 0 && strcasecmp($urlOrigin, $siteOrigin) !== 0) {
-				// External — leave as-is.
 				return $original;
 			}
 			$path = parse_url($url, PHP_URL_PATH);
@@ -1457,18 +2084,15 @@ HTML;
 			$rebuilt = $path . ($query ? '?' . $query : '') . ($frag ? '#' . $frag : '');
 			$url = $rebuilt;
 		} elseif ($url[0] !== '/') {
-			// Already document-relative — leave as-is.
 			return $original;
 		}
 
-		// Strip site base path if present.
 		if ($basePath !== '' && $basePath !== '/' && strpos($url, $basePath . '/') === 0) {
 			$url = substr($url, strlen($basePath));
 		} elseif ($basePath !== '' && $basePath !== '/' && $url === $basePath) {
 			$url = '/';
 		}
 
-		// Split path/query/fragment.
 		$frag = '';
 		$hashPos = strpos($url, '#');
 		if ($hashPos !== false) {
@@ -1486,51 +2110,24 @@ HTML;
 			$url = '/';
 		}
 
-		// Classify as file vs. page.
-		$isFile = (bool) preg_match($this->fileExtRegex, $url);
+		$isFile = (bool) preg_match($this->sgjFileExtRegex, $url);
 
-		// Enqueue.
 		if ($queue) {
 			$enqueuePath = $url . $query;
-			$this->enqueue($state, $enqueuePath, $isFile ? 'asset' : 'page');
+			$this->sgjEnqueue($state, $enqueuePath, $isFile ? 'asset' : 'page');
 		}
 
-		// Build the rewritten reference. File references keep their
-		// extension; page references point at the SAVED page's directory
-		// (htmlRelLinkTarget) rather than the directory's index.html,
-		// so the rendered HTML doesn't read like a sitemap. Directory
-		// indexing on the hosting webserver does the rest.
 		$inner = ltrim($url, '/');
 		if ($isFile) {
 			$ref = $prefix . $inner . $query . $frag;
 		} else {
 			$queryNoQ = $query === '' ? '' : ltrim($query, '?');
-			$rel = $this->htmlRelLinkTarget($url, $queryNoQ);
+			$rel = $this->sgjHtmlRelLinkTarget($url, $queryNoQ);
 			$ref = $prefix . $rel . $frag;
 		}
-		// Collapse to "./" so href is never an empty string.
 		return $ref === '' ? './' : $ref;
 	}
 
-	/**
-	 * Rewrite a URL that appears as a string literal inside an inline
-	 * <script> block. Differs from rewriteRef() in two important ways:
-	 *
-	 *   - URLs that end in "/" are kept as directory prefixes (no
-	 *     index.html appended). Theme JS commonly stores a folder URL
-	 *     in a variable and concatenates a filename onto it later;
-	 *     turning the prefix into a page link would corrupt every
-	 *     resulting URL.
-	 *
-	 *   - For directory-prefix URLs we walk the corresponding disk
-	 *     directory and enqueue every regular asset file underneath.
-	 *     The crawler can't follow JS string concatenation, so without
-	 *     this step files referenced only by JS (e.g. a search index
-	 *     JSON, a fonts manifest, an upload-listing JSON) would never
-	 *     be copied into the build dir.
-	 *
-	 * Non-directory URLs delegate straight to rewriteRef().
-	 */
 	public function rewriteJsUrl(array &$state, $url, $prefix, $crawlOrigin, $siteOrigin, $basePath)
 	{
 		$original = $url;
@@ -1542,9 +2139,8 @@ HTML;
 			return $original;
 		}
 
-		// Resolve to an in-site path-only URL, or bail if external.
 		if (preg_match('#^https?://#i', $url)) {
-			$urlOrigin = $this->originOf($url);
+			$urlOrigin = $this->sgjOriginOf($url);
 			if (strcasecmp($urlOrigin, $crawlOrigin) !== 0 && strcasecmp($urlOrigin, $siteOrigin) !== 0) {
 				return $original;
 			}
@@ -1557,14 +2153,12 @@ HTML;
 			return $original;
 		}
 
-		// Strip the site base path (if installed in a subdirectory).
 		if ($basePath !== '' && $basePath !== '/' && strpos($url, $basePath . '/') === 0) {
 			$url = substr($url, strlen($basePath));
 		} elseif ($basePath !== '' && $basePath !== '/' && $url === $basePath) {
 			$url = '/';
 		}
 
-		// Split off query / fragment for the trailing-slash check.
 		$frag = '';
 		$hashPos = strpos($url, '#');
 		if ($hashPos !== false) {
@@ -1578,33 +2172,21 @@ HTML;
 			$url = substr($url, 0, $qPos);
 		}
 
-		// Directory prefix: keep as a relative directory path and walk the
-		// matching disk directory to make sure JS-referenced files are
-		// included in the build.
 		if (substr($url, -1) === '/') {
-			$diskDir = $this->mapToDiskDir($url);
+			$diskDir = $this->sgjMapToDiskDir($url);
 			if ($diskDir !== null && is_dir($diskDir)) {
-				$this->enqueueDirContents($state, $url, $diskDir);
+				$this->sgjEnqueueDirContents($state, $url, $diskDir);
 			}
 			$inner = ltrim($url, '/');
 			return $prefix . $inner . $query . $frag;
 		}
 
-		// Non-directory: hand off to the existing path that classifies
-		// file vs page, enqueues, and relativises.
 		return $this->rewriteRef($state, $original, $prefix, $crawlOrigin, $siteOrigin, $basePath, true);
 	}
 
-	/**
-	 * Like mapToDisk() but maps a URL DIRECTORY (no extension required)
-	 * to a disk directory under PATH_ROOT, applying the same denylist
-	 * (admin, databases, workspaces, tmp, dotfile segments) and lexical
-	 * traversal protection. Returns null if the URL doesn't map to a
-	 * publicly-walkable directory.
-	 */
-	private function mapToDiskDir($urlPath)
+	private function sgjMapToDiskDir($urlPath)
 	{
-		$clean = $this->cleanPath($urlPath);
+		$clean = $this->sgjCleanPath($urlPath);
 		if ($clean === null) {
 			return null;
 		}
@@ -1628,16 +2210,10 @@ HTML;
 				return null;
 			}
 		}
-		return $this->resolveSafePath(rtrim(PATH_ROOT, DIRECTORY_SEPARATOR), $rel);
+		return $this->sgjResolveSafePath(rtrim(PATH_ROOT, DIRECTORY_SEPARATOR), $rel);
 	}
 
-	/**
-	 * Walk a disk directory and enqueue every regular asset file inside
-	 * it. Asset extension matching uses the same regex as the rest of
-	 * the plugin so we don't accidentally copy things that aren't safe
-	 * to expose statically. Dedupe is handled by enqueue().
-	 */
-	private function enqueueDirContents(array &$state, $urlDirPath, $diskDir)
+	private function sgjEnqueueDirContents(array &$state, $urlDirPath, $diskDir)
 	{
 		try {
 			$it = new RecursiveIteratorIterator(
@@ -1658,7 +2234,7 @@ HTML;
 			}
 			$relToRoot = substr($abs, $rootLen);
 			$relToRoot = str_replace(DIRECTORY_SEPARATOR, '/', $relToRoot);
-			if (!preg_match($this->fileExtRegex, $relToRoot)) {
+			if (!preg_match($this->sgjFileExtRegex, $relToRoot)) {
 				continue;
 			}
 			$skip = false;
@@ -1668,7 +2244,7 @@ HTML;
 			if ($skip) {
 				continue;
 			}
-			$this->enqueue($state, '/' . $relToRoot, 'asset');
+			$this->sgjEnqueue($state, '/' . $relToRoot, 'asset');
 		}
 	}
 
@@ -1677,9 +2253,9 @@ HTML;
 	// ----------------------------------------------------------------------
 	public function rewriteCss(array &$state, $path, $css)
 	{
-		$prefix = $this->depthPrefix($path);
+		$prefix = $this->sgjDepthPrefix($path);
 		$crawlOrigin = '';
-		$siteOrigin = $this->originOf(DOMAIN_BASE);
+		$siteOrigin = $this->sgjOriginOf(DOMAIN_BASE);
 		$basePath = rtrim($state['sitePathPrefix'], '/');
 
 		$plugin = $this;
@@ -1687,7 +2263,6 @@ HTML;
 			return $plugin->rewriteRef($state, $u, $prefix, $crawlOrigin, $siteOrigin, $basePath, true);
 		};
 
-		// url(...) and url("...") and url('...')
 		$css = preg_replace_callback(
 			'#url\(\s*("([^"]*)"|\'([^\']*)\'|([^)]*))\s*\)#i',
 			function ($m) use ($rewriteOne) {
@@ -1699,7 +2274,6 @@ HTML;
 			$css
 		);
 
-		// @import "..." (without url())
 		$css = preg_replace_callback(
 			'#@import\s+("([^"]+)"|\'([^\']+)\')#i',
 			function ($m) use ($rewriteOne) {
@@ -1716,42 +2290,21 @@ HTML;
 	// ----------------------------------------------------------------------
 	// Path mapping (URL -> filesystem)
 	// ----------------------------------------------------------------------
-	private function htmlSavePath($outDir, $path)
+	private function sgjHtmlSavePath($outDir, $path)
 	{
-		$clean = $this->cleanPath($path);
+		$clean = $this->sgjCleanPath($path);
 		if ($clean === null) {
 			return null;
 		}
-		$rel = $this->htmlRelFilename($clean['path'], $clean['query']);
-		return $this->resolveSafePath($outDir, $rel);
+		$rel = $this->sgjHtmlRelFilename($clean['path'], $clean['query']);
+		return $this->sgjResolveSafePath($outDir, $rel);
 	}
 
-	/**
-	 * Map a (path, query) pair to the relative filename used to STORE the
-	 * static copy on disk. Always ends in "index.html" so the file is
-	 * directly servable.
-	 *
-	 *   /                   -> index.html
-	 *   /foo                -> foo/index.html
-	 *   /?page=2            -> page/2/index.html
-	 *   /category/x?page=2  -> category/x/page/2/index.html
-	 *   /?page=1            -> index.html        (page 1 == unparameterised)
-	 *   /?preview=…         -> index.preview=….html  (unknown queries
-	 *                          keep the legacy slug-in-filename form so
-	 *                          they remain uniquely addressable)
-	 *
-	 * The companion htmlRelLinkTarget() returns the same locations as
-	 * DIRECTORY paths so internal page links can rely on the webserver's
-	 * directory-index resolution and don't need the explicit /index.html
-	 * suffix in every href.
-	 */
-	private function htmlRelFilename($path, $query)
+	private function sgjHtmlRelFilename($path, $query)
 	{
 		$pathPart = trim($path, '/');
-		$pageNum = $this->parsePageQuery($query);
+		$pageNum = $this->sgjParsePageQuery($query);
 
-		// Page 1 collapses onto the unparameterised page; bytes are
-		// identical so there's no value in writing two copies.
 		if ($query === '' || $pageNum === 1) {
 			return $pathPart === '' ? 'index.html' : $pathPart . '/index.html';
 		}
@@ -1760,37 +2313,15 @@ HTML;
 			return $pathPart === '' ? $sub : $pathPart . '/' . $sub;
 		}
 
-		// Unknown query - keep the legacy filename layout. These are rare
-		// (drafts, search filters, ad-hoc params) and don't have a
-		// natural directory translation.
 		$qSafe = preg_replace('/[^A-Za-z0-9_\-=&]/', '_', $query);
 		return $pathPart === '' ? 'index.' . $qSafe . '.html' : $pathPart . '/index.' . $qSafe . '.html';
 	}
 
-	/**
-	 * Map a (path, query) pair to the DIRECTORY URL used in <a href>
-	 * links inside rendered HTML. The directory's index.html is what
-	 * actually gets served by any directory-indexing webserver, so we
-	 * can drop the explicit suffix and produce cleaner-looking links.
-	 *
-	 *   /                   -> "./"
-	 *   /foo                -> "foo/"
-	 *   /?page=2            -> "page/2/"
-	 *   /category/x?page=2  -> "category/x/page/2/"
-	 *   /?page=1            -> "./"   (same target as /)
-	 *
-	 * For queries we don't know how to fold into a directory the link
-	 * falls back to the explicit .html filename so it still resolves.
-	 */
-	private function htmlRelLinkTarget($path, $query)
+	private function sgjHtmlRelLinkTarget($path, $query)
 	{
 		$pathPart = trim($path, '/');
-		$pageNum = $this->parsePageQuery($query);
+		$pageNum = $this->sgjParsePageQuery($query);
 
-		// Root returns "" rather than "./" so that callers can concatenate
-		// it with a depth prefix without ending up with a noisy
-		// "../.././" — the surrounding rewriteRef() rule collapses an
-		// empty final result to "./".
 		if ($query === '' || $pageNum === 1) {
 			return $pathPart === '' ? '' : $pathPart . '/';
 		}
@@ -1802,14 +2333,7 @@ HTML;
 		return $pathPart === '' ? 'index.' . $qSafe . '.html' : $pathPart . '/index.' . $qSafe . '.html';
 	}
 
-	/**
-	 * Recognise the "?page=N" pagination query. Returns the integer N or
-	 * null when the query isn't a pure page-number query (so callers
-	 * fall back to the generic filename form). Refuses queries that
-	 * include any other params — keeping them separate avoids silently
-	 * dropping data like "?page=2&preview=…".
-	 */
-	private function parsePageQuery($query)
+	private function sgjParsePageQuery($query)
 	{
 		if ($query === '' || !preg_match('/^page=(\d+)$/', $query, $m)) {
 			return null;
@@ -1818,9 +2342,9 @@ HTML;
 		return $n > 0 ? $n : null;
 	}
 
-	private function fileSavePath($outDir, $path)
+	private function sgjFileSavePath($outDir, $path)
 	{
-		$clean = $this->cleanPath($path);
+		$clean = $this->sgjCleanPath($path);
 		if ($clean === null) {
 			return null;
 		}
@@ -1828,12 +2352,11 @@ HTML;
 		if ($rel === '' || substr($rel, -1) === '/') {
 			return null;
 		}
-		return $this->resolveSafePath($outDir, $rel);
+		return $this->sgjResolveSafePath($outDir, $rel);
 	}
 
-	private function cleanPath($path)
+	private function sgjCleanPath($path)
 	{
-		// Split path from query.
 		$query = '';
 		$qPos = strpos($path, '?');
 		if ($qPos !== false) {
@@ -1841,11 +2364,9 @@ HTML;
 			$path = substr($path, 0, $qPos);
 		}
 		$path = rawurldecode($path);
-		// Reject control chars and null bytes.
 		if (preg_match('/[\x00-\x1F\x7F]/', $path)) {
 			return null;
 		}
-		// Reject traversal.
 		$segments = explode('/', $path);
 		foreach ($segments as $s) {
 			if ($s === '..') {
@@ -1855,22 +2376,20 @@ HTML;
 		return array('path' => $path, 'query' => $query);
 	}
 
-	private function resolveSafePath($outDir, $relative)
+	private function sgjResolveSafePath($outDir, $relative)
 	{
 		$relative = str_replace('/', DIRECTORY_SEPARATOR, $relative);
-		// Strip any drive letters or leading separators.
 		$relative = ltrim($relative, DIRECTORY_SEPARATOR);
 		$full = rtrim($outDir, DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR . $relative;
-		// Final canonicalisation: ensure the resolved path stays under outDir.
 		$normalizedBase = rtrim($outDir, DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR;
-		$normalized = $this->lexicallyNormalize($full);
+		$normalized = $this->sgjLexicallyNormalize($full);
 		if (strpos($normalized, $normalizedBase) !== 0) {
 			return null;
 		}
 		return $normalized;
 	}
 
-	private function lexicallyNormalize($path)
+	private function sgjLexicallyNormalize($path)
 	{
 		$isAbs = ($path !== '' && ($path[0] === DIRECTORY_SEPARATOR || (DIRECTORY_SEPARATOR === '\\' && preg_match('/^[A-Za-z]:/', $path))));
 		$parts = preg_split('#[' . preg_quote(DIRECTORY_SEPARATOR, '#') . ']+#', $path);
@@ -1891,19 +2410,9 @@ HTML;
 		return $isAbs ? DIRECTORY_SEPARATOR . $result : $result;
 	}
 
-	/**
-	 * Map a URL path to a file under PATH_ROOT, but only for paths that:
-	 *   - resolve lexically inside PATH_ROOT (no traversal),
-	 *   - are NOT under one of the deny prefixes (admin URI, the JSON
-	 *     databases, workspaces, tmp, dotfiles like .git),
-	 *   - have an asset-style extension we know how to serve statically.
-	 *
-	 * Returns the absolute filesystem path, or null if the URL doesn't
-	 * map to a publicly-servable file.
-	 */
-	private function mapToDisk($path)
+	private function sgjMapToDisk($path)
 	{
-		$clean = $this->cleanPath($path);
+		$clean = $this->sgjCleanPath($path);
 		if ($clean === null) {
 			return null;
 		}
@@ -1912,12 +2421,10 @@ HTML;
 			return null;
 		}
 
-		// Refuse anything that isn't an asset by extension.
-		if (!preg_match($this->fileExtRegex, $rel)) {
+		if (!preg_match($this->sgjFileExtRegex, $rel)) {
 			return null;
 		}
 
-		// Deny dotfiles, hidden dirs, and the private content dirs.
 		$denyPrefixes = array(
 			ADMIN_URI_FILTER . '/',
 			'bl-content/databases/',
@@ -1929,33 +2436,23 @@ HTML;
 				return null;
 			}
 		}
-		// Block .anything segments (.git, .env, .htaccess, etc.).
 		foreach (explode('/', $rel) as $seg) {
 			if ($seg !== '' && $seg[0] === '.') {
 				return null;
 			}
 		}
 
-		$candidate = $this->resolveSafePath(rtrim(PATH_ROOT, DIRECTORY_SEPARATOR), $rel);
+		$candidate = $this->sgjResolveSafePath(rtrim(PATH_ROOT, DIRECTORY_SEPARATOR), $rel);
 		return $candidate;
 	}
 
-	/**
-	 * Depth-prefix for document-relative URLs from the saved location of
-	 * the current resource. The depth is computed from the actual save
-	 * filename so that pages whose query expands into a subdirectory
-	 * (e.g. "?page=2" -> "page/2/index.html") get the right number of
-	 * leading "../" segments. Asset files (CSS/JS/etc.) are stored at
-	 * their request path verbatim, so their depth is just the number of
-	 * directory components above the file.
-	 */
-	private function depthPrefix($path)
+	private function sgjDepthPrefix($path)
 	{
-		$clean = $this->cleanPath($path);
+		$clean = $this->sgjCleanPath($path);
 		if ($clean === null) {
 			return '';
 		}
-		if (preg_match($this->fileExtRegex, $clean['path'])) {
+		if (preg_match($this->sgjFileExtRegex, $clean['path'])) {
 			$p = trim($clean['path'], '/');
 			if ($p === '') {
 				return '';
@@ -1963,12 +2460,12 @@ HTML;
 			$depth = count(explode('/', $p)) - 1;
 			return $depth > 0 ? str_repeat('../', $depth) : '';
 		}
-		$rel = $this->htmlRelFilename($clean['path'], $clean['query']);
+		$rel = $this->sgjHtmlRelFilename($clean['path'], $clean['query']);
 		$depth = substr_count($rel, '/');
 		return $depth > 0 ? str_repeat('../', $depth) : '';
 	}
 
-	private function originOf($url)
+	private function sgjOriginOf($url)
 	{
 		$p = parse_url($url);
 		if (!$p || !isset($p['scheme']) || !isset($p['host'])) {
@@ -1981,10 +2478,7 @@ HTML;
 		return $o;
 	}
 
-	// The URL the build should treat as the public-facing origin. Falls
-	// back to $site->url() so existing installs keep working when the
-	// "Production URL" field is left blank.
-	private function effectiveBuildUrl()
+	private function sgjEffectiveBuildUrl()
 	{
 		$override = trim((string) $this->getValue('productionUrl'));
 		if ($override !== '') {
@@ -1999,10 +2493,10 @@ HTML;
 	// ----------------------------------------------------------------------
 	public function outputDir()
 	{
-		return rtrim(PATH_CONTENT, DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR . self::OUTPUT_DIRNAME . DIRECTORY_SEPARATOR;
+		return rtrim(PATH_CONTENT, DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR . self::SGJ_OUTPUT_DIRNAME . DIRECTORY_SEPARATOR;
 	}
 
-	private function ensureDir($dir)
+	private function sgjEnsureDir($dir)
 	{
 		if (is_dir($dir)) {
 			return true;
@@ -2010,34 +2504,27 @@ HTML;
 		return @mkdir($dir, defined('DIR_PERMISSIONS') ? DIR_PERMISSIONS : 0755, true);
 	}
 
-	/**
-	 * Atomically write a file. Returns the number of bytes written on
-	 * success, or FALSE on any failure (mkdir, write, or rename). The
-	 * boolean false (rather than int 0) is what lets callers distinguish
-	 * "wrote an empty file" from "couldn't write" and bump the error
-	 * counter accordingly.
-	 */
-	private function writeFile($path, $contents)
+	private function sgjWriteFile($path, $contents)
 	{
-		if (!$this->ensureDir(dirname($path))) {
-			$this->log('ERROR mkdir ' . dirname($path));
+		if (!$this->sgjEnsureDir(dirname($path))) {
+			$this->sgjLog('ERROR mkdir ' . dirname($path));
 			return false;
 		}
 		$tmp = $path . '.part';
 		$wrote = @file_put_contents($tmp, $contents);
 		if ($wrote === false) {
-			$this->log('ERROR write ' . $path);
+			$this->sgjLog('ERROR write ' . $path);
 			return false;
 		}
 		if (!@rename($tmp, $path)) {
 			@unlink($tmp);
-			$this->log('ERROR rename ' . $path);
+			$this->sgjLog('ERROR rename ' . $path);
 			return false;
 		}
 		return $wrote;
 	}
 
-	private function clearDir($dir)
+	private function sgjClearDir($dir)
 	{
 		if (!is_dir($dir)) {
 			return;
@@ -2048,7 +2535,6 @@ HTML;
 		);
 		foreach ($it as $entry) {
 			$p = $entry->getPathname();
-			// Belt-and-braces: never delete anything outside our output dir.
 			if (strpos($p, $dir) !== 0) {
 				continue;
 			}
@@ -2063,24 +2549,24 @@ HTML;
 	// ----------------------------------------------------------------------
 	// Logging
 	// ----------------------------------------------------------------------
-	private function logPath()
+	private function sgjLogPath()
 	{
-		return $this->workspace() . self::LOG_FILENAME;
+		return $this->workspace() . self::SGJ_LOG_FILENAME;
 	}
 
-	private function logReset()
+	private function sgjLogReset()
 	{
-		@file_put_contents($this->logPath(), '');
+		@file_put_contents($this->sgjLogPath(), '');
 	}
 
-	private function log($msg)
+	private function sgjLog($msg)
 	{
-		@file_put_contents($this->logPath(), '[' . date('H:i:s') . '] ' . $msg . PHP_EOL, FILE_APPEND);
+		@file_put_contents($this->sgjLogPath(), '[' . date('H:i:s') . '] ' . $msg . PHP_EOL, FILE_APPEND);
 	}
 
-	private function readLogTail()
+	private function readSgjLogTail()
 	{
-		$p = $this->logPath();
+		$p = $this->sgjLogPath();
 		if (!is_file($p)) {
 			return '';
 		}
@@ -2089,75 +2575,9 @@ HTML;
 			return '';
 		}
 		$lines = preg_split('/\r?\n/', rtrim($raw, "\r\n"));
-		if (count($lines) > self::MAX_LOG_LINES) {
-			$lines = array_slice($lines, -self::MAX_LOG_LINES);
+		if (count($lines) > self::SGJ_MAX_LOG_LINES) {
+			$lines = array_slice($lines, -self::SGJ_MAX_LOG_LINES);
 		}
 		return implode(PHP_EOL, $lines);
-	}
-
-	// ----------------------------------------------------------------------
-	// Form rendering helpers (same conventions as the companion plugin so the
-	// admin UI stays visually consistent)
-	// ----------------------------------------------------------------------
-	private function openCard($titleKey, $icon = null, $subtitleKey = null)
-	{
-		global $L;
-		$html = '<div class="card mb-4 shadow-sm">';
-		$html .= '<div class="card-header bg-light">';
-		if ($icon) {
-			$html .= '<span class="fa fa-' . $icon . ' mr-2"></span>';
-		}
-		$html .= '<strong>' . $L->get($titleKey) . '</strong>';
-		$html .= '</div>';
-		$html .= '<div class="card-body">';
-		if ($subtitleKey) {
-			$html .= '<p class="text-muted mb-4">' . $L->get($subtitleKey) . '</p>';
-		}
-		return $html;
-	}
-
-	private function closeCard()
-	{
-		return '</div></div>';
-	}
-
-	private function textField($name, $labelText, $tip = null)
-	{
-		$html = '<div class="form-group">';
-		$html .= '<label for="sgj_' . $name . '"><strong>' . $labelText . '</strong></label>';
-		$html .= '<input id="sgj_' . $name . '" class="form-control" name="' . $name . '" type="text" dir="auto" value="' . $this->getValue($name) . '">';
-		if ($tip) {
-			$html .= '<small class="form-text text-muted">' . $tip . '</small>';
-		}
-		$html .= '</div>';
-		return $html;
-	}
-
-	private function numberField($name, $labelText, $min = null, $tip = null)
-	{
-		$attrs = '';
-		if ($min !== null) {
-			$attrs .= ' min="' . (int) $min . '"';
-		}
-		$html = '<div class="form-group">';
-		$html .= '<label for="sgj_' . $name . '"><strong>' . $labelText . '</strong></label>';
-		$html .= '<input id="sgj_' . $name . '" class="form-control" name="' . $name . '" type="number"' . $attrs . ' value="' . (int) $this->getValue($name) . '">';
-		if ($tip) {
-			$html .= '<small class="form-text text-muted">' . $tip . '</small>';
-		}
-		$html .= '</div>';
-		return $html;
-	}
-
-	private function textareaField($name, $labelText, $tip = null, $rows = 4)
-	{
-		$html = '<div class="form-group">';
-		$html .= '<label for="sgj_' . $name . '"><strong>' . $labelText . '</strong></label>';
-		$html .= '<textarea id="sgj_' . $name . '" class="form-control" name="' . $name . '" rows="' . (int) $rows . '" style="font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 0.85rem;">' . $this->getValue($name) . '</textarea>';
-		if ($tip) {
-			$html .= '<small class="form-text text-muted">' . $tip . '</small>';
-		}
-		$html .= '</div>';
-		return $html;
 	}
 }

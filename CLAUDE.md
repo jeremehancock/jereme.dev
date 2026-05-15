@@ -56,7 +56,7 @@ When working on sidebar ordering or analytics behavior, edit the `-jereme` varia
 
 ## Theme
 
-The active theme is `bl-themes/jereme-dev/` (there is also `jereme-dev-pro/`, which is older and less maintained — confirm before touching it). Structure:
+The active site theme is `bl-themes/nova/`. The admin theme is `bl-kernel/admin/themes/nova-admin/`. Structure of the site theme:
 
 - `index.php` — top-level HTML shell; dispatches to `php/page.php` or `php/home.php` based on `$WHERE_AM_I`.
 - `php/{head,header,footer,home,page,aside}.php` — template partials.

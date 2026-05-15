@@ -9,9 +9,9 @@
             <?php
             // Use the global helper to see if the plugin is actually enabled
             $companion = null;
-            if (function_exists('pluginActivated') && pluginActivated('pluginJeremeDevProCompanion')) {
+            if (function_exists('pluginActivated') && pluginActivated('pluginNovaPlugin')) {
                 global $plugins;
-                $companion = $plugins['all']['pluginJeremeDevProCompanion'];
+                $companion = $plugins['all']['pluginNovaPlugin'];
             }
             ?>
 
