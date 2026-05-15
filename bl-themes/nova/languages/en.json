@@ -1,7 +1,7 @@
 {
   "theme-data": {
-    "name": "jereme.dev Pro Theme",
-    "description": "Polished, fully responsive Bludit theme for <a href='https://jereme.dev' target='_blank'>jereme.dev</a> with first-class light &amp; dark mode.<br/><br/><b>Special Features:</b><br/><br/> Posts placed in a category named \"Archived\" will not show in search results or in the site navigation and will have an \"archived\" banner above the page content.<br/><br/>A static page whose Description field is set to 404 is hidden in search results and site navigation. The page is still served at its URL — it just stops appearing in search. Set the Description to 404 on the static page that you want to serve as your site's not-found page.<br/><br/>For additional features be sure to install the jereme-dev-companion plugin."
+    "name": "Nova Theme",
+    "description": "Polished, fully responsive Bludit theme with first-class light &amp; dark mode.<br/><br/><b>Special Features:</b><br/><br/> Posts placed in a category named \"Archived\" will not show in search results or in the site navigation and will have an \"archived\" banner above the page content.<br/><br/>A static page whose Description field is set to 404 is hidden in search results and site navigation. The page is still served at its URL — it just stops appearing in search. Set the Description to 404 on the static page that you want to serve as your site's not-found page.<br/><br/>For additional features be sure to install the Nova Companion plugin."
   },
   "menu": "Menu",
   "blog": "Blog",
