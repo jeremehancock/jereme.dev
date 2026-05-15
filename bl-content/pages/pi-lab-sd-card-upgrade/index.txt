@@ -49,19 +49,11 @@ Finally I used Gparted to resize partitions on the SD card to fully expand the f
 
 Select partition labeled **SETTINGS** – Right Click- Resize/Move, At Resize/Move – Drag the Bar from Left to Right – Click Resize/Move.
 
-<a href="bl-content/uploads/pages/c103fd8b6b8961f33b54a7c4b3aa152a/move-settings-to-end.png" data-lightbox="move-settings-to-end" data-title="Move 'SETTINGS' partition to the end."><img src="bl-content/uploads/pages/c103fd8b6b8961f33b54a7c4b3aa152a/move-settings-to-end.png" class="plugin-thumb"></a>
-
 Select **extended** File System (Cyan Color) – Click Resize/Move, At Resize/Move – Expand the Bar From Left to Right – Click Resize/Move.
-
-<a href="bl-content/uploads/pages/c103fd8b6b8961f33b54a7c4b3aa152a/expand-extended.png" data-lightbox="expand-extended" data-title="Expand 'extended' partition."><img src="bl-content/uploads/pages/c103fd8b6b8961f33b54a7c4b3aa152a/expand-extended.png" class="plugin-thumb"></a>
 
 Select partition labeled **root** – Right Click – Resize/Move, At Resize/Move – Expand the Bar From Left to Right – Click Resize/Move.
 
-<a href="bl-content/uploads/pages/c103fd8b6b8961f33b54a7c4b3aa152a/expand-root.png" data-lightbox="expand-root" data-title="Expand 'root' partition."><img src="bl-content/uploads/pages/c103fd8b6b8961f33b54a7c4b3aa152a/expand-root.png" class="plugin-thumb"></a>
-
 Select parition labeled **SETTINGS** – Right Click – Resize/Move, At Resize/Move – Expand the Bar from Right to Left – Click Resize/Move.
-
-<a href="bl-content/uploads/pages/c103fd8b6b8961f33b54a7c4b3aa152a/put-settings-back.png" data-lightbox="put-settings-back" data-title="Put 'SETTINGS' partition back in place."><img src="bl-content/uploads/pages/c103fd8b6b8961f33b54a7c4b3aa152a/put-settings-back.png" class="plugin-thumb"></a>
 
 Click **Apply All Operations** at taskbar to Apply the changes.
 
