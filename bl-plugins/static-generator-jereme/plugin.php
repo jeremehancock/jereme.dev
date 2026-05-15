@@ -985,6 +985,10 @@ HTML;
 		$saved = array(
 			'REQUEST_URI' => isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '/',
 			'QUERY_STRING' => isset($_SERVER['QUERY_STRING']) ? $_SERVER['QUERY_STRING'] : '',
+			'SERVER_PORT' => isset($_SERVER['SERVER_PORT']) ? $_SERVER['SERVER_PORT'] : null,
+			'HTTPS' => isset($_SERVER['HTTPS']) ? $_SERVER['HTTPS'] : null,
+			'HTTP_HOST' => isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : null,
+			'SERVER_NAME' => isset($_SERVER['SERVER_NAME']) ? $_SERVER['SERVER_NAME'] : null,
 			'GET' => $_GET,
 			'url' => $url,
 			'page' => isset($GLOBALS['page']) ? $GLOBALS['page'] : null,
@@ -1008,6 +1012,25 @@ HTML;
 			$_GET = array();
 			if ($queryStr !== '') {
 				parse_str($queryStr, $_GET);
+			}
+
+			// Make $_SERVER reflect the production site URL during this render
+			// so plugin hooks see a "production" frontend request rather than
+			// the dev port the admin happens to be served on. Without this,
+			// the companion plugin's webStatsDevport check suppresses web
+			// stats on every page in the build when the admin runs on the
+			// dev port, and any other plugin that branches on SERVER_PORT /
+			// HTTPS / HTTP_HOST gets the wrong context too.
+			$siteUrlParts = parse_url($site->url());
+			if (is_array($siteUrlParts) && isset($siteUrlParts['host'])) {
+				$scheme = isset($siteUrlParts['scheme']) ? $siteUrlParts['scheme'] : 'http';
+				$port = isset($siteUrlParts['port'])
+					? (int) $siteUrlParts['port']
+					: ($scheme === 'https' ? 443 : 80);
+				$_SERVER['SERVER_PORT'] = (string) $port;
+				$_SERVER['HTTPS'] = ($scheme === 'https') ? 'on' : '';
+				$_SERVER['HTTP_HOST'] = $siteUrlParts['host'] . (isset($siteUrlParts['port']) ? ':' . $siteUrlParts['port'] : '');
+				$_SERVER['SERVER_NAME'] = $siteUrlParts['host'];
 			}
 
 			// Re-derive Url state and replace the global.
@@ -1091,6 +1114,13 @@ HTML;
 			// request continues uninterrupted.
 			$_SERVER['REQUEST_URI'] = $saved['REQUEST_URI'];
 			$_SERVER['QUERY_STRING'] = $saved['QUERY_STRING'];
+			foreach (array('SERVER_PORT', 'HTTPS', 'HTTP_HOST', 'SERVER_NAME') as $k) {
+				if ($saved[$k] === null) {
+					unset($_SERVER[$k]);
+				} else {
+					$_SERVER[$k] = $saved[$k];
+				}
+			}
 			$_GET = $saved['GET'];
 			$GLOBALS['url'] = $saved['url'];
 			$GLOBALS['page'] = $saved['page'];
@@ -1269,6 +1299,62 @@ HTML;
 		}
 		if ($siteOrigin !== '' && $siteOrigin !== $crawlOrigin) {
 			$html = str_replace($siteOrigin, '', $html);
+		}
+
+		// Social cards (Open Graph, Twitter) and <link rel="canonical"> all
+		// REQUIRE absolute URLs — relative paths cause crawlers / link
+		// previewers to either ignore the value or resolve it against the
+		// wrong base. The origin-strip above turns those into bare paths
+		// (or, in the case of og:url that was just the bare origin, into
+		// an empty string). Re-absolutize them here using $site->url() so
+		// the static build's social previews work in production.
+		$absOrigin = rtrim($siteOrigin, '/');
+		if ($absOrigin !== '') {
+			global $site;
+			$siteUrl = rtrim($site->url(), '/');
+			$absolutize = function ($val) use ($absOrigin, $siteUrl) {
+				$decoded = htmlspecialchars_decode($val, ENT_QUOTES);
+				if ($decoded === '') {
+					$decoded = $siteUrl . '/';
+				} elseif ($decoded[0] === '/') {
+					$decoded = $absOrigin . $decoded;
+				} elseif (!preg_match('#^https?://#i', $decoded)) {
+					return $val;
+				}
+				return htmlspecialchars($decoded, ENT_QUOTES, 'UTF-8');
+			};
+			$metaProps = '(?:og:url|og:image|og:image:url|og:image:secure_url|og:video|og:video:url|og:video:secure_url|og:audio|og:audio:url|og:audio:secure_url)';
+			$metaNames = '(?:twitter:url|twitter:image|twitter:image:src|twitter:player|twitter:player:stream)';
+			$html = preg_replace_callback(
+				'#(<meta\s+property\s*=\s*"' . $metaProps . '"\s+content\s*=\s*")([^"]*)(")#i',
+				function ($m) use ($absolutize) { return $m[1] . $absolutize($m[2]) . $m[3]; },
+				$html
+			);
+			$html = preg_replace_callback(
+				'#(<meta\s+content\s*=\s*")([^"]*)("\s+property\s*=\s*"' . $metaProps . '")#i',
+				function ($m) use ($absolutize) { return $m[1] . $absolutize($m[2]) . $m[3]; },
+				$html
+			);
+			$html = preg_replace_callback(
+				'#(<meta\s+name\s*=\s*"' . $metaNames . '"\s+content\s*=\s*")([^"]*)(")#i',
+				function ($m) use ($absolutize) { return $m[1] . $absolutize($m[2]) . $m[3]; },
+				$html
+			);
+			$html = preg_replace_callback(
+				'#(<meta\s+content\s*=\s*")([^"]*)("\s+name\s*=\s*"' . $metaNames . '")#i',
+				function ($m) use ($absolutize) { return $m[1] . $absolutize($m[2]) . $m[3]; },
+				$html
+			);
+			$html = preg_replace_callback(
+				'#(<link\s+rel\s*=\s*"canonical"\s+href\s*=\s*")([^"]*)(")#i',
+				function ($m) use ($absolutize) { return $m[1] . $absolutize($m[2]) . $m[3]; },
+				$html
+			);
+			$html = preg_replace_callback(
+				'#(<link\s+href\s*=\s*")([^"]*)("\s+rel\s*=\s*"canonical")#i',
+				function ($m) use ($absolutize) { return $m[1] . $absolutize($m[2]) . $m[3]; },
+				$html
+			);
 		}
 
 		return $html;
