@@ -19,6 +19,6 @@ https://github.com/bhemar/raspberry-metrics.
 
 > *I have upgraded the Pi used for the Pi Lab Metrics node to a Raspberry Pi 3 Model B.*
 
-> *I have added a Plex metrics dashboard to the [Pi Lab Stats](/pi-lab-stats) page.*
+> *I have added a Plex metrics dashboard to the Pi Lab Stats page.*
 
 > *I have moved the Pi Lab Metrics node to an LXC container running in Proxmox.*
