@@ -11,6 +11,14 @@ class pluginNovaPlugin extends Plugin
 	// user-facing setting.
 	const SGJ_URL_HARD_CAP = 10000;
 
+	// ---- Link Checker ----
+	const LC_LOCK_FILENAME = 'linkcheck.lock';
+	const LC_LOG_FILENAME = 'linkcheck.log';
+	const LC_MAX_LOG_LINES = 200;
+	const LC_URL_HARD_CAP = 5000;
+	// Concurrent in-flight cURL requests.
+	const LC_CONCURRENCY = 8;
+
 	private $sgjFileExtRegex = '~\.(css|js|mjs|json|xml|txt|map|png|jpe?g|gif|webp|avif|svg|ico|bmp|tiff?|woff2?|ttf|otf|eot|mp4|webm|ogg|mp3|wav|flac|m4a|pdf|zip|gz|tar|br)([?#].*)?$~i';
 
 	public function init()
@@ -78,6 +86,20 @@ class pluginNovaPlugin extends Plugin
 			'lastBuildUrls' => 0,
 			'lastBuildBytes' => 0,
 			'lastBuildDuration' => 0,
+
+			// Link Checker — user settings
+			'linkCheckTimeout' => 10,
+			'linkCheckUserAgent' => 'Mozilla/5.0 (compatible; NovaLinkChecker/1.0; +https://jereme.dev)',
+			'linkCheckIncludeExternal' => true,
+			// Link Checker — written by runLinkCheck(), not user-editable.
+			'lastLinkCheckTime' => '',
+			'lastLinkCheckResult' => '',
+			'lastLinkCheckMessage' => '',
+			'lastLinkCheckPages' => 0,
+			'lastLinkCheckLinks' => 0,
+			'lastLinkCheckBroken' => 0,
+			'lastLinkCheckDuration' => 0,
+			'lastLinkCheckReport' => '',
 		);
 	}
 
@@ -110,6 +132,7 @@ class pluginNovaPlugin extends Plugin
 			'html'        => array('jdpc-section-html',        'code',              'jdpc-section-html-subtitle'),
 			'easymde'     => array('jdpc-section-easymde',     'edit',              'jdpc-section-easymde-subtitle'),
 			'version'     => array('jdpc-section-version',     'tag',               'jdpc-section-version-subtitle'),
+			'linkcheck'   => array('jdpc-section-linkcheck',   'link',              'jdpc-section-linkcheck-subtitle'),
 			'staticgen'   => array('jdpc-section-staticgen',   'cogs',              'jdpc-section-staticgen-subtitle'),
 			'howitworks'  => array('jdpc-section-howitworks',  'info-circle',       null),
 		);
@@ -232,6 +255,11 @@ class pluginNovaPlugin extends Plugin
 		// --- Admin version check tab ---
 		$html .= $this->openTabPane('version', $tabs['version'][2]);
 		$html .= $this->selectField('versionCheckEnabled', $L->get('jdpc-enable-version-check'));
+		$html .= $this->closeTabPane();
+
+		// --- Link Checker tab ---
+		$html .= $this->openTabPane('linkcheck', $tabs['linkcheck'][2]);
+		$html .= $this->renderLinkCheckerTab();
 		$html .= $this->closeTabPane();
 
 		// --- Static Site Generator tab ---
@@ -1279,6 +1307,8 @@ HTML;
 		parent::post();
 		if ($action === 'build') {
 			$this->runStaticBuild();
+		} elseif ($action === 'checklinks') {
+			$this->runLinkCheck();
 		}
 		return true;
 	}
@@ -2786,6 +2816,669 @@ HTML;
 		$lines = preg_split('/\r?\n/', rtrim($raw, "\r\n"));
 		if (count($lines) > self::SGJ_MAX_LOG_LINES) {
 			$lines = array_slice($lines, -self::SGJ_MAX_LOG_LINES);
+		}
+		return implode(PHP_EOL, $lines);
+	}
+
+	// ==================================================================
+	// Link Checker
+	//
+	// Scans every published / sticky / static page that is NOT in the
+	// "Archived" category, extracts all anchor hrefs (internal and
+	// external), and verifies each unique URL with cURL (HEAD, falling
+	// back to a small ranged GET when servers reject HEAD). A "broken"
+	// link is any URL whose final response is not in the 2xx/3xx range,
+	// or whose request returns no response at all.
+	//
+	// Security notes:
+	//   - This runs through the standard configure-plugin endpoint, so
+	//     the kernel's checkRole(['admin']) + tokenCSRF rules already
+	//     apply before post() runs.
+	//   - The user-supplied user agent string is set verbatim on the
+	//     outgoing cURL handle; it is rendered in the admin form with
+	//     standard escaping like every other text field.
+	// ==================================================================
+
+	private function renderLinkCheckerTab()
+	{
+		global $L;
+
+		// Reuse sgj-cfg class scope so the existing button / modal /
+		// loading CSS applies to the link-checker controls too.
+		$html = '<div class="sgj-cfg lc-cfg">';
+
+		// SECTION: Run
+		$html .= $this->openSgjCard('lc-section-action', 'search', 'lc-section-action-subtitle');
+		$runLabel = htmlspecialchars($L->get('lc-run-button'), ENT_QUOTES, 'UTF-8');
+		$html .= '<button type="submit" id="lc-run-btn" class="btn btn-primary"'
+			. ' name="action" value="checklinks">'
+			. $runLabel
+			. '</button>';
+		$html .= $this->closeSgjCard();
+
+		// SECTION: Settings
+		$html .= $this->openSgjCard('lc-section-settings', 'cog');
+		$html .= $this->selectField('linkCheckIncludeExternal', $L->get('lc-include-external-label'), $L->get('lc-include-external-tip'));
+		$html .= $this->numberField('linkCheckTimeout', $L->get('lc-timeout-label'), 1, $L->get('lc-timeout-tip'));
+		$html .= $this->textField('linkCheckUserAgent', $L->get('lc-user-agent-label'), $L->get('lc-user-agent-tip'));
+		$html .= $this->closeSgjCard();
+
+		// SECTION: Status / report
+		$html .= $this->openSgjCard('lc-section-status', 'history');
+		$html .= $this->renderLcStatus();
+		$html .= $this->closeSgjCard();
+
+		// Confirm modal + loading overlay + wiring JS.
+		$html .= $this->renderLcConfirmAndLoading();
+
+		$html .= '</div>'; // .sgj-cfg.lc-cfg
+		return $html;
+	}
+
+	private function renderLcConfirmAndLoading()
+	{
+		global $L;
+		$confirmTitle = htmlspecialchars($L->get('lc-confirm-title'), ENT_QUOTES, 'UTF-8');
+		$confirmBody = htmlspecialchars($L->get('lc-confirm-body'), ENT_QUOTES, 'UTF-8');
+		$confirmYes = htmlspecialchars($L->get('lc-confirm-yes'), ENT_QUOTES, 'UTF-8');
+		$confirmCancel = htmlspecialchars($L->get('lc-confirm-cancel'), ENT_QUOTES, 'UTF-8');
+		$loadingTitle = htmlspecialchars($L->get('lc-loading-title'), ENT_QUOTES, 'UTF-8');
+		$loadingBody = htmlspecialchars($L->get('lc-loading-body'), ENT_QUOTES, 'UTF-8');
+		$runningJson = json_encode($L->get('lc-running-button'), JSON_UNESCAPED_UNICODE);
+
+		return <<<HTML
+
+<div id="lc-confirm" class="sgj-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="lc-confirm-title" aria-hidden="true">
+	<div class="sgj-modal">
+		<h3 id="lc-confirm-title">{$confirmTitle}</h3>
+		<p>{$confirmBody}</p>
+		<div class="sgj-modal-actions">
+			<button type="button" class="btn btn-secondary btn-sm" id="lc-confirm-cancel">{$confirmCancel}</button>
+			<button type="button" class="btn btn-primary btn-sm" id="lc-confirm-yes">{$confirmYes}</button>
+		</div>
+	</div>
+</div>
+
+<div id="lc-loading" class="sgj-loading-overlay" role="alertdialog" aria-modal="true" aria-labelledby="lc-loading-title" aria-hidden="true">
+	<div class="sgj-loading">
+		<div class="sgj-spinner" aria-hidden="true"></div>
+		<h3 id="lc-loading-title">{$loadingTitle}</h3>
+		<p>{$loadingBody}</p>
+	</div>
+</div>
+
+<script>
+(function () {
+	var btn = document.getElementById('lc-run-btn');
+	if (!btn) return;
+	var form = btn.closest('form');
+	var confirmEl = document.getElementById('lc-confirm');
+	var confirmYes = document.getElementById('lc-confirm-yes');
+	var confirmCancel = document.getElementById('lc-confirm-cancel');
+	var loadingEl = document.getElementById('lc-loading');
+	var RUNNING_LABEL = {$runningJson};
+	var armed = false;
+
+	function openConfirm(e) {
+		if (armed) { return; }
+		e.preventDefault();
+		confirmEl.classList.add('is-open');
+		confirmEl.setAttribute('aria-hidden', 'false');
+		confirmYes.focus();
+	}
+
+	function closeConfirm() {
+		confirmEl.classList.remove('is-open');
+		confirmEl.setAttribute('aria-hidden', 'true');
+		btn.focus();
+	}
+
+	function startCheck() {
+		closeConfirm();
+		if (!form) { return; }
+		armed = true;
+		var hidden = document.createElement('input');
+		hidden.type = 'hidden';
+		hidden.name = 'action';
+		hidden.value = 'checklinks';
+		form.appendChild(hidden);
+		var controls = form.querySelectorAll('button, input[type=submit]');
+		for (var i = 0; i < controls.length; i++) { controls[i].disabled = true; }
+		btn.textContent = RUNNING_LABEL;
+		loadingEl.classList.add('is-open');
+		loadingEl.setAttribute('aria-hidden', 'false');
+		form.submit();
+	}
+
+	btn.addEventListener('click', openConfirm);
+	confirmCancel.addEventListener('click', closeConfirm);
+	confirmEl.addEventListener('click', function (e) {
+		if (e.target === confirmEl) { closeConfirm(); }
+	});
+	confirmYes.addEventListener('click', startCheck);
+	document.addEventListener('keydown', function (e) {
+		if (e.key === 'Escape' && confirmEl.classList.contains('is-open')) { closeConfirm(); }
+	});
+})();
+</script>
+
+HTML;
+	}
+
+	private function renderLcStatus()
+	{
+		global $L;
+
+		$lastTime = $this->getValue('lastLinkCheckTime');
+		if (empty($lastTime)) {
+			return '<p class="text-muted mb-0">' . $L->get('lc-status-never') . '</p>';
+		}
+
+		$result = $this->getValue('lastLinkCheckResult');
+		$brokenCount = (int) $this->getValue('lastLinkCheckBroken');
+		$resultLabel = $L->get('lc-result-fail');
+		$resultClass = 'danger';
+		if ($result === 'ok') {
+			$resultLabel = $L->get('lc-result-ok');
+			$resultClass = 'success';
+		} elseif ($result === 'broken') {
+			$resultLabel = $L->get('lc-result-broken');
+			$resultClass = 'warning';
+		}
+
+		$rows = array(
+			array($L->get('lc-status-result'), '<span class="badge badge-' . $resultClass . '">' . $resultLabel . '</span>'),
+			array($L->get('lc-status-time'), htmlspecialchars($lastTime, ENT_QUOTES, 'UTF-8')),
+			array($L->get('lc-status-pages'), (int) $this->getValue('lastLinkCheckPages')),
+			array($L->get('lc-status-links'), (int) $this->getValue('lastLinkCheckLinks')),
+			array($L->get('lc-status-broken'), $brokenCount),
+			array($L->get('lc-status-duration'), number_format((float) $this->getValue('lastLinkCheckDuration'), 2) . 's'),
+		);
+		$msg = trim((string) $this->getValue('lastLinkCheckMessage'));
+		if ($msg !== '') {
+			$rows[] = array($L->get('lc-status-message'), htmlspecialchars($msg, ENT_QUOTES, 'UTF-8'));
+		}
+
+		$html = '<table class="table table-sm mb-3"><tbody>';
+		foreach ($rows as $r) {
+			$html .= '<tr><th style="width: 12rem;">' . $r[0] . '</th><td>' . $r[1] . '</td></tr>';
+		}
+		$html .= '</tbody></table>';
+
+		$reportRaw = (string) $this->getValue('lastLinkCheckReport');
+		$report = $reportRaw !== '' ? json_decode($reportRaw, true) : array();
+		if (is_array($report) && !empty($report)) {
+			$html .= '<h6 class="text-uppercase text-muted mt-3 mb-2" style="letter-spacing: 0.05em; font-size: 0.75rem;">'
+				. $L->get('lc-broken-heading') . '</h6><hr class="mt-1 mb-3">';
+			$html .= '<div class="table-responsive">';
+			$html .= '<table class="table table-sm table-striped">';
+			$html .= '<thead><tr>'
+				. '<th style="width: 5rem;">' . $L->get('lc-col-status') . '</th>'
+				. '<th style="width: 6rem;">' . $L->get('lc-col-kind') . '</th>'
+				. '<th>' . $L->get('lc-col-url') . '</th>'
+				. '<th>' . $L->get('lc-col-found-on') . '</th>'
+				. '</tr></thead><tbody>';
+			foreach ($report as $row) {
+				$code = isset($row['code']) ? (int) $row['code'] : 0;
+				$kind = isset($row['kind']) ? (string) $row['kind'] : '';
+				$url = isset($row['url']) ? (string) $row['url'] : '';
+				$err = isset($row['error']) ? (string) $row['error'] : '';
+				$sources = isset($row['sources']) && is_array($row['sources']) ? $row['sources'] : array();
+
+				$statusText = $code > 0 ? (string) $code : ($err !== '' ? 'ERR' : '—');
+				$badgeClass = 'badge-danger';
+				if ($code >= 300 && $code < 400) {
+					$badgeClass = 'badge-warning';
+				}
+				$kindLabel = $kind === 'external' ? $L->get('lc-kind-external') : $L->get('lc-kind-internal');
+
+				$urlSafe = htmlspecialchars($url, ENT_QUOTES, 'UTF-8');
+				$urlLink = '<a href="' . $urlSafe . '" target="_blank" rel="noopener noreferrer">' . $urlSafe . '</a>';
+				if ($err !== '') {
+					$urlLink .= '<div class="text-muted" style="font-size: 0.75rem;">'
+						. htmlspecialchars($err, ENT_QUOTES, 'UTF-8') . '</div>';
+				}
+
+				$sourceLinks = array();
+				foreach ($sources as $src) {
+					if (!is_array($src)) {
+						continue;
+					}
+					$title = isset($src['title']) ? (string) $src['title'] : '';
+					$permalink = isset($src['permalink']) ? (string) $src['permalink'] : '';
+					$titleSafe = htmlspecialchars($title !== '' ? $title : $permalink, ENT_QUOTES, 'UTF-8');
+					$permalinkSafe = htmlspecialchars($permalink, ENT_QUOTES, 'UTF-8');
+					$sourceLinks[] = '<a href="' . $permalinkSafe . '" target="_blank" rel="noopener noreferrer">' . $titleSafe . '</a>';
+				}
+
+				$html .= '<tr>'
+					. '<td><span class="badge ' . $badgeClass . '">' . htmlspecialchars($statusText, ENT_QUOTES, 'UTF-8') . '</span></td>'
+					. '<td>' . $kindLabel . '</td>'
+					. '<td style="word-break: break-all;">' . $urlLink . '</td>'
+					. '<td>' . implode('<br>', $sourceLinks) . '</td>'
+					. '</tr>';
+			}
+			$html .= '</tbody></table></div>';
+		} elseif ($brokenCount === 0 && $result === 'ok') {
+			$html .= '<p class="text-success mb-0"><span class="fa fa-check mr-1"></span>' . $L->get('lc-all-good') . '</p>';
+		}
+
+		$log = $this->readLcLogTail();
+		if ($log !== '') {
+			$html .= '<details class="mt-3"><summary>' . $L->get('lc-status-log') . '</summary>';
+			$html .= '<pre style="max-height: 320px; overflow: auto;'
+				. ' background: var(--bg-warm, #f8f9fa);'
+				. ' color: var(--text-primary, #212529);'
+				. ' border: 1px solid var(--border-color, #dee2e6);'
+				. ' padding: 0.75rem; font-size: 0.8rem;">'
+				. htmlspecialchars($log, ENT_QUOTES, 'UTF-8')
+				. '</pre></details>';
+		}
+
+		return $html;
+	}
+
+	// ----------------------------------------------------------------------
+	// Run
+	// ----------------------------------------------------------------------
+	private function runLinkCheck()
+	{
+		global $L, $site;
+
+		@set_time_limit(0);
+		$start = microtime(true);
+
+		$workspace = $this->workspace();
+		if (!is_dir($workspace)) {
+			@mkdir($workspace, DIR_PERMISSIONS, true);
+		}
+
+		$lockPath = $workspace . self::LC_LOCK_FILENAME;
+		$lockFp = @fopen($lockPath, 'c');
+		if (!$lockFp || !@flock($lockFp, LOCK_EX | LOCK_NB)) {
+			$this->recordLcResult('fail', $L->get('lc-locked'), 0, 0, 0, microtime(true) - $start, array());
+			if ($lockFp) {
+				@fclose($lockFp);
+			}
+			Alert::set($L->get('lc-locked'), ALERT_STATUS_FAIL);
+			return;
+		}
+		@ftruncate($lockFp, 0);
+		@fwrite($lockFp, (string) getmypid());
+
+		$this->lcLogReset();
+		$this->lcLog('Link check started at ' . date('c'));
+
+		if (!function_exists('curl_multi_init')) {
+			$msg = 'PHP cURL extension is required for the link checker.';
+			$this->lcLog('FATAL ' . $msg);
+			$this->recordLcResult('fail', $msg, 0, 0, 0, microtime(true) - $start, array());
+			@flock($lockFp, LOCK_UN);
+			@fclose($lockFp);
+			Alert::set($msg, ALERT_STATUS_FAIL);
+			return;
+		}
+
+		$pages = $this->lcCollectPages();
+		$this->lcLog('Pages in scope: ' . count($pages));
+
+		$includeExternal = (bool) $this->getValue('linkCheckIncludeExternal');
+		$timeout = max(1, (int) $this->getValue('linkCheckTimeout'));
+		// Use the unsanitized value so an ampersand in the UA isn't sent as &amp;.
+		$userAgent = trim((string) $this->getValue('linkCheckUserAgent', false));
+		if ($userAgent === '') {
+			$userAgent = 'Mozilla/5.0 (compatible; NovaLinkChecker/1.0)';
+		}
+
+		$siteUrl = rtrim($site->url(), '/');
+		$siteHost = parse_url($siteUrl, PHP_URL_HOST);
+
+		// Collect unique URLs and track which pages each was found on.
+		$linkMap = array(); // urlAbsolute => array('kind'=>internal|external,'sources'=>[ ['title','permalink'] ])
+		$totalLinkOccurrences = 0;
+
+		foreach ($pages as $p) {
+			$pagePermalink = (string) $p->permalink(true);
+			$pageTitle = (string) $p->title();
+			try {
+				$content = (string) $p->content();
+			} catch (Throwable $e) {
+				$this->lcLog('WARN could not get content for ' . $p->key() . ': ' . $e->getMessage());
+				continue;
+			}
+
+			$hrefs = $this->lcExtractHrefs($content);
+			foreach ($hrefs as $href) {
+				$absolute = $this->lcResolveUrl($pagePermalink, $href);
+				if ($absolute === null) {
+					continue;
+				}
+				$urlHost = parse_url($absolute, PHP_URL_HOST);
+				$isInternal = ($urlHost && $siteHost && strcasecmp($urlHost, $siteHost) === 0);
+				if (!$isInternal && !$includeExternal) {
+					continue;
+				}
+				$totalLinkOccurrences++;
+				if (!isset($linkMap[$absolute])) {
+					$linkMap[$absolute] = array(
+						'kind' => $isInternal ? 'internal' : 'external',
+						'sources' => array(),
+						'sourceKeys' => array(),
+					);
+				}
+				if (!isset($linkMap[$absolute]['sourceKeys'][$pagePermalink])) {
+					$linkMap[$absolute]['sourceKeys'][$pagePermalink] = true;
+					$linkMap[$absolute]['sources'][] = array(
+						'title' => $pageTitle,
+						'permalink' => $pagePermalink,
+					);
+				}
+			}
+		}
+
+		$uniqueCount = count($linkMap);
+		$this->lcLog('Unique URLs to check: ' . $uniqueCount . ' (' . $totalLinkOccurrences . ' total occurrences)');
+
+		if ($uniqueCount > self::LC_URL_HARD_CAP) {
+			$this->lcLog('WARN URL count exceeded hard cap (' . self::LC_URL_HARD_CAP . '); truncating.');
+			$linkMap = array_slice($linkMap, 0, self::LC_URL_HARD_CAP, true);
+		}
+
+		$urls = array_keys($linkMap);
+		$results = $this->lcCheckUrls($urls, $timeout, $userAgent);
+
+		$broken = array();
+		foreach ($linkMap as $url => $info) {
+			$res = isset($results[$url]) ? $results[$url] : array('code' => 0, 'error' => 'no result');
+			$code = (int) $res['code'];
+			$err = isset($res['error']) ? (string) $res['error'] : '';
+			$isOk = ($code >= 200 && $code < 400);
+			if ($isOk) {
+				$this->lcLog('OK  ' . $code . '  ' . $url);
+				continue;
+			}
+			$this->lcLog('BAD ' . ($code > 0 ? (string) $code : 'ERR') . '  ' . $url . ($err !== '' ? '  (' . $err . ')' : ''));
+			$broken[] = array(
+				'url' => $url,
+				'kind' => $info['kind'],
+				'code' => $code,
+				'error' => $err,
+				'sources' => $info['sources'],
+			);
+		}
+
+		// Stable sort: code desc, then URL.
+		usort($broken, function ($a, $b) {
+			if ($a['code'] === $b['code']) {
+				return strcmp($a['url'], $b['url']);
+			}
+			return $b['code'] - $a['code'];
+		});
+
+		$duration = microtime(true) - $start;
+		$brokenCount = count($broken);
+		$result = $brokenCount === 0 ? 'ok' : 'broken';
+		$message = $brokenCount === 0
+			? 'All ' . $uniqueCount . ' link(s) returned a healthy status.'
+			: $brokenCount . ' of ' . $uniqueCount . ' link(s) appear broken.';
+
+		$this->lcLog('Finished: ' . $message . ' in ' . number_format($duration, 2) . 's');
+
+		$this->recordLcResult(
+			$result,
+			$message,
+			count($pages),
+			$uniqueCount,
+			$brokenCount,
+			$duration,
+			$broken
+		);
+
+		@flock($lockFp, LOCK_UN);
+		@fclose($lockFp);
+
+		$alertStatus = $brokenCount === 0 ? ALERT_STATUS_OK : ALERT_STATUS_FAIL;
+		Alert::set($message, $alertStatus);
+	}
+
+	private function recordLcResult($result, $message, $pages, $links, $broken, $duration, array $report)
+	{
+		$this->db['lastLinkCheckTime'] = date('Y-m-d H:i:s');
+		$this->db['lastLinkCheckResult'] = $result;
+		$this->db['lastLinkCheckMessage'] = Sanitize::html($message);
+		$this->db['lastLinkCheckPages'] = (int) $pages;
+		$this->db['lastLinkCheckLinks'] = (int) $links;
+		$this->db['lastLinkCheckBroken'] = (int) $broken;
+		$this->db['lastLinkCheckDuration'] = (float) $duration;
+		$this->db['lastLinkCheckReport'] = json_encode($report, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+		$this->save();
+	}
+
+	// ----------------------------------------------------------------------
+	// Page collection
+	// ----------------------------------------------------------------------
+	private function lcCollectPages()
+	{
+		global $pages;
+
+		$keys = array_merge(
+			(array) $pages->getDB(true),
+			(array) $pages->getStickyDB(true),
+			(array) $pages->getStaticDB(true)
+		);
+		$keys = array_unique($keys);
+
+		$out = array();
+		foreach ($keys as $key) {
+			try {
+				$p = new Page($key);
+			} catch (Exception $e) {
+				continue;
+			}
+			$cat = trim((string) $p->category());
+			if (strcasecmp($cat, 'Archived') === 0) {
+				continue;
+			}
+			$out[] = $p;
+		}
+		return $out;
+	}
+
+	// ----------------------------------------------------------------------
+	// Link extraction / resolution
+	// ----------------------------------------------------------------------
+	private function lcExtractHrefs($html)
+	{
+		$out = array();
+		if (!preg_match_all('#<a\b[^>]*\bhref\s*=\s*(["\'])(.*?)\1#i', $html, $m)) {
+			return $out;
+		}
+		foreach ($m[2] as $raw) {
+			$u = trim(html_entity_decode($raw, ENT_QUOTES, 'UTF-8'));
+			if ($u === '') {
+				continue;
+			}
+			if ($u[0] === '#') {
+				continue;
+			}
+			if (preg_match('#^(mailto|tel|javascript|data|sms|ftp|magnet):#i', $u)) {
+				continue;
+			}
+			$hashPos = strpos($u, '#');
+			if ($hashPos !== false) {
+				$u = substr($u, 0, $hashPos);
+			}
+			if ($u === '') {
+				continue;
+			}
+			$out[] = $u;
+		}
+		return array_values(array_unique($out));
+	}
+
+	private function lcResolveUrl($baseAbsolute, $url)
+	{
+		// Protocol-relative.
+		if (substr($url, 0, 2) === '//') {
+			$scheme = parse_url($baseAbsolute, PHP_URL_SCHEME);
+			return ($scheme ?: 'http') . ':' . $url;
+		}
+		// Absolute.
+		if (preg_match('#^https?://#i', $url)) {
+			return $url;
+		}
+		// Anything else with a scheme is not a web URL we can check.
+		if (preg_match('#^[a-z][a-z0-9+.\-]*:#i', $url)) {
+			return null;
+		}
+		$parts = parse_url($baseAbsolute);
+		if (!is_array($parts) || empty($parts['scheme']) || empty($parts['host'])) {
+			return null;
+		}
+		$origin = $parts['scheme'] . '://' . $parts['host'] . (isset($parts['port']) ? ':' . $parts['port'] : '');
+		// Root-relative.
+		if ($url !== '' && $url[0] === '/') {
+			return $origin . $url;
+		}
+		// Doc-relative: append onto the base's directory.
+		$basePath = isset($parts['path']) ? $parts['path'] : '/';
+		$baseDir = preg_replace('#/[^/]*$#', '/', $basePath);
+		if ($baseDir === null || $baseDir === '') {
+			$baseDir = '/';
+		}
+		return $origin . $baseDir . $url;
+	}
+
+	// ----------------------------------------------------------------------
+	// HTTP checking
+	// ----------------------------------------------------------------------
+	private function lcCheckUrls(array $urls, $timeout, $userAgent)
+	{
+		$results = array();
+		if (empty($urls)) {
+			return $results;
+		}
+		$chunks = array_chunk($urls, self::LC_CONCURRENCY);
+		foreach ($chunks as $chunk) {
+			$batch = $this->lcCheckBatch($chunk, $timeout, $userAgent, true);
+			// Retry anything that came back as 0/4xx/5xx with a small ranged GET,
+			// since some servers reject HEAD or treat it differently.
+			$retryUrls = array();
+			foreach ($batch as $u => $r) {
+				$code = (int) $r['code'];
+				if ($code === 0 || $code === 405 || $code === 400 || $code === 403 || $code >= 500) {
+					$retryUrls[] = $u;
+				}
+			}
+			if (!empty($retryUrls)) {
+				$retried = $this->lcCheckBatch($retryUrls, $timeout, $userAgent, false);
+				foreach ($retried as $u => $r) {
+					$prev = isset($batch[$u]) ? $batch[$u] : array('code' => 0, 'error' => '');
+					// Prefer the retry result when it actually produced a code.
+					if ((int) $r['code'] > 0) {
+						$batch[$u] = $r;
+					} else {
+						// Keep the first error message if neither attempt yielded a code.
+						if ($prev['error'] === '' && $r['error'] !== '') {
+							$prev['error'] = $r['error'];
+							$batch[$u] = $prev;
+						}
+					}
+				}
+			}
+			foreach ($batch as $u => $r) {
+				$results[$u] = $r;
+			}
+		}
+		return $results;
+	}
+
+	private function lcCheckBatch(array $urls, $timeout, $userAgent, $headFirst)
+	{
+		$multi = curl_multi_init();
+		$handles = array();
+		foreach ($urls as $u) {
+			$h = curl_init();
+			curl_setopt($h, CURLOPT_URL, $u);
+			curl_setopt($h, CURLOPT_RETURNTRANSFER, true);
+			curl_setopt($h, CURLOPT_FOLLOWLOCATION, true);
+			curl_setopt($h, CURLOPT_MAXREDIRS, 5);
+			curl_setopt($h, CURLOPT_TIMEOUT, $timeout);
+			curl_setopt($h, CURLOPT_CONNECTTIMEOUT, max(2, (int) ceil($timeout / 2)));
+			curl_setopt($h, CURLOPT_USERAGENT, $userAgent);
+			curl_setopt($h, CURLOPT_SSL_VERIFYPEER, false);
+			curl_setopt($h, CURLOPT_SSL_VERIFYHOST, 0);
+			curl_setopt($h, CURLOPT_HTTPHEADER, array(
+				'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+				'Accept-Language: en-US,en;q=0.9',
+			));
+			if ($headFirst) {
+				curl_setopt($h, CURLOPT_NOBODY, true);
+				curl_setopt($h, CURLOPT_CUSTOMREQUEST, 'HEAD');
+			} else {
+				curl_setopt($h, CURLOPT_NOBODY, false);
+				curl_setopt($h, CURLOPT_HTTPGET, true);
+				// Ask for just the first ~2 KiB to reduce bandwidth.
+				curl_setopt($h, CURLOPT_RANGE, '0-2047');
+			}
+			curl_multi_add_handle($multi, $h);
+			$handles[$u] = $h;
+		}
+
+		$running = null;
+		do {
+			$status = curl_multi_exec($multi, $running);
+			if ($running > 0) {
+				curl_multi_select($multi, 1.0);
+			}
+		} while ($running > 0 && $status === CURLM_OK);
+
+		$out = array();
+		foreach ($handles as $u => $h) {
+			$code = (int) curl_getinfo($h, CURLINFO_HTTP_CODE);
+			$err = curl_error($h);
+			$out[$u] = array(
+				'code' => $code,
+				'error' => $err,
+			);
+			curl_multi_remove_handle($multi, $h);
+			curl_close($h);
+		}
+		curl_multi_close($multi);
+		return $out;
+	}
+
+	// ----------------------------------------------------------------------
+	// Logging
+	// ----------------------------------------------------------------------
+	private function lcLogPath()
+	{
+		return $this->workspace() . self::LC_LOG_FILENAME;
+	}
+
+	private function lcLogReset()
+	{
+		@file_put_contents($this->lcLogPath(), '');
+	}
+
+	private function lcLog($msg)
+	{
+		@file_put_contents($this->lcLogPath(), '[' . date('H:i:s') . '] ' . $msg . PHP_EOL, FILE_APPEND);
+	}
+
+	private function readLcLogTail()
+	{
+		$p = $this->lcLogPath();
+		if (!is_file($p)) {
+			return '';
+		}
+		$raw = @file_get_contents($p);
+		if ($raw === false) {
+			return '';
+		}
+		$lines = preg_split('/\r?\n/', rtrim($raw, "\r\n"));
+		if (count($lines) > self::LC_MAX_LOG_LINES) {
+			$lines = array_slice($lines, -self::LC_MAX_LOG_LINES);
 		}
 		return implode(PHP_EOL, $lines);
 	}
