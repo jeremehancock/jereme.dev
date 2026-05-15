@@ -112,8 +112,55 @@ class pluginNovaPlugin extends Plugin
 		if (empty($path) || filter_var($path, FILTER_VALIDATE_URL)) {
 			return $path;
 		}
+		return $this->effectiveSiteUrl() . '/' . ltrim($path, '/');
+	}
+
+	// ------------------------------------------------------------------
+	// Effective site URL (shared)
+	//
+	// The "Production URL" setting on the Static Site Generator tab is
+	// treated as the canonical site URL for the whole plugin. When it's
+	// set, every URL we emit — Open Graph / Twitter / canonical meta
+	// tags, default-image absolutization, link-checker base resolution,
+	// the SSG build URL — is rewritten so its origin points at the
+	// production host instead of whatever Bludit has in site.php (which
+	// during local admin is typically a localhost or LAN address). If
+	// the field is left blank, the plugin falls back to $site->url() and
+	// nothing is rewritten.
+	// ------------------------------------------------------------------
+
+	// Returns the canonical site URL (no trailing slash) — production URL
+	// if set, otherwise the configured site URL from site.php.
+	public function effectiveSiteUrl()
+	{
+		$override = trim((string) $this->getValue('productionUrl'));
+		if ($override !== '') {
+			return rtrim($override, '/');
+		}
 		global $site;
-		return rtrim($site->url(), '/') . '/' . ltrim($path, '/');
+		return rtrim($site->url(), '/');
+	}
+
+	// If $absoluteUrl's origin matches the local site URL from site.php,
+	// rewrite it to use the production URL's origin. URLs with any other
+	// origin (true external links) and protocol-relative / relative URLs
+	// are returned unchanged. No-op when the production URL is unset or
+	// matches the local site URL.
+	public function toProductionUrl($absoluteUrl)
+	{
+		if (!is_string($absoluteUrl) || $absoluteUrl === '') {
+			return $absoluteUrl;
+		}
+		global $site;
+		$localOrigin = $this->sgjOriginOf(rtrim($site->url(), '/'));
+		$prodOrigin = $this->sgjOriginOf($this->effectiveSiteUrl());
+		if ($localOrigin === '' || $prodOrigin === '' || $localOrigin === $prodOrigin) {
+			return $absoluteUrl;
+		}
+		if (stripos($absoluteUrl, $localOrigin) === 0) {
+			return $prodOrigin . substr($absoluteUrl, strlen($localOrigin));
+		}
+		return $absoluteUrl;
 	}
 
 	// ------------------------------------------------------------------
@@ -270,6 +317,7 @@ class pluginNovaPlugin extends Plugin
 		// --- How it works tab ---
 		$html .= $this->openTabPane('howitworks', null);
 		$html .= '<ul class="mb-0" style="padding-left: 1.2rem; line-height: 1.7;">';
+		$html .= '<li class="mb-2">' . $L->get('jdpc-howitworks-productionurl') . '</li>';
 		$html .= '<li class="mb-2">' . $L->get('jdpc-howitworks-external') . '</li>';
 		$html .= '<li class="mb-2">' . $L->get('jdpc-howitworks-404') . '</li>';
 		$html .= '<li class="mb-2">' . $L->get('jdpc-howitworks-archived') . '</li>';
@@ -777,7 +825,7 @@ EOF;
 			'type' => 'website',
 			'title' => $this->metaSanitize($site->title()),
 			'description' => $this->metaSanitize($site->description(), 200),
-			'url' => $site->url(),
+			'url' => $this->effectiveSiteUrl() . '/',
 			'image' => '',
 			'siteName' => $this->metaSanitize($site->title()),
 			'publishedTime' => '',
@@ -794,8 +842,8 @@ EOF;
 				$description = Text::truncate(strip_tags($page->contentRaw()), 160);
 			}
 			$og['description'] = $this->metaSanitize($description, 200);
-			$og['url'] = $page->permalink(true);
-			$og['image'] = $page->coverImage(true);
+			$og['url'] = $this->toProductionUrl($page->permalink(true));
+			$og['image'] = $this->toProductionUrl($page->coverImage(true));
 			$og['publishedTime'] = $page->date('c');
 			$mod = $page->dateModified('c');
 			if (!empty($mod)) {
@@ -808,7 +856,7 @@ EOF;
 			if (!empty($default)) {
 				$og['image'] = $default;
 			} elseif (isset($content[0])) {
-				$og['image'] = $content[0]->coverImage(true);
+				$og['image'] = $this->toProductionUrl($content[0]->coverImage(true));
 				$pageContent = $content[0]->content();
 			}
 		}
@@ -886,7 +934,7 @@ EOF;
 				$description = Text::truncate(strip_tags($page->contentRaw()), 160);
 			}
 			$data['description'] = $this->metaSanitize($description, 200);
-			$data['image'] = $page->coverImage(true);
+			$data['image'] = $this->toProductionUrl($page->coverImage(true));
 			$data['imageAlt'] = $data['title'];
 			$pageContent = $page->content();
 		} else {
@@ -894,7 +942,7 @@ EOF;
 			if (!empty($default)) {
 				$data['image'] = $default;
 			} elseif (isset($content[0])) {
-				$data['image'] = $content[0]->coverImage(true);
+				$data['image'] = $this->toProductionUrl($content[0]->coverImage(true));
 				$data['imageAlt'] = $this->metaSanitize($content[0]->title(), 70);
 				$pageContent = $content[0]->content();
 			}
@@ -2719,12 +2767,10 @@ HTML;
 
 	private function sgjEffectiveBuildUrl()
 	{
-		$override = trim((string) $this->getValue('productionUrl'));
-		if ($override !== '') {
-			return $override;
-		}
-		global $site;
-		return $site->url();
+		// Delegates to the plugin-wide helper. Kept as a named method so
+		// existing SSG call sites read clearly ("the URL we're building
+		// the static mirror for").
+		return $this->effectiveSiteUrl();
 	}
 
 	// ----------------------------------------------------------------------
@@ -3083,7 +3129,7 @@ HTML;
 	// ----------------------------------------------------------------------
 	private function runLinkCheck()
 	{
-		global $L, $site;
+		global $L;
 
 		@set_time_limit(0);
 		$start = microtime(true);
@@ -3130,15 +3176,19 @@ HTML;
 			$userAgent = 'Mozilla/5.0 (compatible; NovaLinkChecker/1.0)';
 		}
 
-		$siteUrl = rtrim($site->url(), '/');
+		// Use the effective site URL (production override when set) so
+		// internal links are resolved and curl'd against the canonical
+		// host rather than localhost when the admin is being run locally.
+		$siteUrl = $this->effectiveSiteUrl();
 		$siteHost = parse_url($siteUrl, PHP_URL_HOST);
+		$this->lcLog('Effective site URL: ' . $siteUrl);
 
 		// Collect unique URLs and track which pages each was found on.
 		$linkMap = array(); // urlAbsolute => array('kind'=>internal|external,'sources'=>[ ['title','permalink'] ])
 		$totalLinkOccurrences = 0;
 
 		foreach ($pages as $p) {
-			$pagePermalink = (string) $p->permalink(true);
+			$pagePermalink = $this->toProductionUrl((string) $p->permalink(true));
 			$pageTitle = (string) $p->title();
 			try {
 				$content = (string) $p->content();
@@ -3153,6 +3203,11 @@ HTML;
 				if ($absolute === null) {
 					continue;
 				}
+				// Hand-written absolute links to the local origin (e.g. an
+				// editor pasted `http://localhost:8080/x`) get rewritten
+				// to the production origin so they're classified as
+				// internal and checked against the canonical host.
+				$absolute = $this->toProductionUrl($absolute);
 				$urlHost = parse_url($absolute, PHP_URL_HOST);
 				$isInternal = ($urlHost && $siteHost && strcasecmp($urlHost, $siteHost) === 0);
 				if (!$isInternal && !$includeExternal) {
