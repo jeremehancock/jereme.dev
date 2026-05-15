@@ -15,15 +15,6 @@ $hiddenCategories = ['archived'];
 
                 <h1 class="entry-title">
                     <?php echo $page->title(); ?>
-
-                    <?php if ($login->isLogged() && checkRole(array('admin', 'editor'))): ?>
-                        <a class="edit-link" href="<?php echo HTML_PATH_ADMIN_ROOT . 'edit-content/' . $page->slug(); ?>"
-                            target="_blank" aria-label="Edit">
-                            <svg viewBox="0 0 27 32" width="18" height="18" aria-hidden="true">
-                                <use xlink:href="#icon-pencil"></use>
-                            </svg>
-                        </a>
-                    <?php endif; ?>
                 </h1>
 
                 <?php if (!$page->isStatic()): ?>
