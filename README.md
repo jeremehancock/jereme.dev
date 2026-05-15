@@ -26,13 +26,7 @@ git update-index --assume-unchanged bl-content/databases/users.php
 
 That lets the Vagrant install carry the real values without ever staging them. The setting is per-clone — after a fresh clone, re-run both commands before logging into admin.
 
-As a safety net, `scripts/git-hooks/pre-commit` rejects any commit that stages either file with a non-sanitized value. Enable it once per clone:
-
-```bash
-git config core.hooksPath scripts/git-hooks
-```
-
-The hook enforces these exact JSON values on staged content:
+As a safety net, `scripts/git-hooks/pre-commit` rejects any commit that stages either file with a non-sanitized value. It enforces these exact JSON values on staged content:
 
 | File | Field | Required value |
 | --- | --- | --- |
@@ -41,6 +35,33 @@ The hook enforces these exact JSON values on staged content:
 | `bl-content/databases/site.php` | `url` | `"https:\/\/jereme.dev"` |
 
 If a check fails the commit is aborted with a message naming the offending field. Add new guards by appending another `check_field` line in `scripts/git-hooks/pre-commit`.
+
+#### Enabling the hook (once per clone)
+
+`core.hooksPath` is a per-clone Git setting, so each fresh clone needs to opt in:
+
+```bash
+git config core.hooksPath scripts/git-hooks
+```
+
+Verify with `git config --get core.hooksPath` — it should print `scripts/git-hooks`.
+
+#### Disabling the hook
+
+If you need to commit a legitimate change to one of the guarded fields (e.g. rotating the sanitized placeholder, moving the production URL), there are three ways to bypass:
+
+- **Skip a single commit** — pass `--no-verify` (or `-n`) on that one commit:
+  ```bash
+  git commit --no-verify -m "..."
+  ```
+- **Turn the hook off for this clone** — unset the hooks path, then re-enable later:
+  ```bash
+  git config --unset core.hooksPath          # disable
+  git config core.hooksPath scripts/git-hooks  # re-enable
+  ```
+- **Edit the hook itself** — comment out the relevant `check_field` line in `scripts/git-hooks/pre-commit`. Tracked, so any change is itself a commit.
+
+After making the change, restore the guard (re-enable the path, or revert the hook edit) so the next commit is protected again.
 
 ## AI Assistance Disclosure
 
