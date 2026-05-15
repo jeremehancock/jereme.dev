@@ -3254,7 +3254,7 @@ HTML;
 
 				$ambiguousSuggestion = null;
 				if ($isInternal) {
-					$ambiguousSuggestion = $this->lcAmbiguousRelativeTarget($href, $absolute, $knownPaths, $knownSlugs);
+					$ambiguousSuggestion = $this->lcAmbiguousRelativeTarget($href, $pagePermalink, $knownPaths, $knownSlugs);
 				}
 
 				$totalLinkOccurrences++;
@@ -3478,12 +3478,19 @@ HTML;
 	}
 
 	// Returns a suggested root-relative path (e.g. "/pi-lab-setup") if the
-	// raw href is doc-relative, the resolved absolute path is NOT a known
-	// page, but the href's leaf segment matches a known top-level page
-	// slug. Returns null otherwise. This catches markdown like
-	// `[x](pi-lab-setup)` written on a non-root page, where the SSG will
-	// emit /parent/pi-lab-setup even though the author meant /pi-lab-setup.
-	private function lcAmbiguousRelativeTarget($rawHref, $absoluteUrl, array $knownPaths, array $knownSlugs)
+	// raw href is doc-relative AND, under SSG resolution (where each page
+	// is written as path/index.html and therefore served with a trailing
+	// slash), the link will point at a non-page path while the href's leaf
+	// segment matches a known top-level page slug. Returns null otherwise.
+	//
+	// Important: we deliberately re-resolve here rather than using the
+	// link checker's `lcResolveUrl` output. The live Bludit router serves
+	// permalinks without a trailing slash, so file-style relative
+	// resolution gives the "correct" /pi-lab-setup URL — which is why the
+	// HTTP probe passes. The SSG output is directory-style, and the
+	// browser resolves the same href to /parent/pi-lab-setup. This check
+	// has to mirror the SSG, not the live router.
+	private function lcAmbiguousRelativeTarget($rawHref, $sourcePermalink, array $knownPaths, array $knownSlugs)
 	{
 		if ($rawHref === '' || $rawHref[0] === '/') {
 			return null;
@@ -3494,14 +3501,6 @@ HTML;
 		if (preg_match('#^[a-z][a-z0-9+.\-]*:#i', $rawHref)) {
 			return null;
 		}
-		$resolvedPath = parse_url($absoluteUrl, PHP_URL_PATH);
-		if ($resolvedPath === null || $resolvedPath === false) {
-			return null;
-		}
-		$resolvedNorm = '/' . trim($resolvedPath, '/');
-		if (isset($knownPaths[$resolvedNorm])) {
-			return null;
-		}
 		$hrefPath = $rawHref;
 		$qPos = strpos($hrefPath, '?');
 		if ($qPos !== false) {
@@ -3509,6 +3508,24 @@ HTML;
 		}
 		$hrefPath = trim($hrefPath, '/');
 		if ($hrefPath === '' || strpos($hrefPath, '/') !== false) {
+			return null;
+		}
+		// SSG-style resolution: the source permalink is treated as a
+		// directory (path/), so the resolved URL is path/href.
+		$sourcePath = parse_url($sourcePermalink, PHP_URL_PATH);
+		if ($sourcePath === null || $sourcePath === false || $sourcePath === '') {
+			$sourcePath = '/';
+		}
+		$baseDir = '/' . trim($sourcePath, '/');
+		if ($baseDir === '/') {
+			// Doc-relative href from the site root would resolve to /href,
+			// which equals /<slug>. If that slug exists at the root, the
+			// link is correct — nothing to flag.
+			return null;
+		}
+		$ssgResolved = $baseDir . '/' . $hrefPath;
+		$ssgNorm = '/' . trim($ssgResolved, '/');
+		if (isset($knownPaths[$ssgNorm])) {
 			return null;
 		}
 		if (isset($knownSlugs[$hrefPath])) {
