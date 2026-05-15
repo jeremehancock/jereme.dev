@@ -4,7 +4,19 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-A customized fork of **Bludit v3.21.1**, a flat-file PHP CMS (no database — content lives in JSON/PHP files under `bl-content/`). This instance powers a personal dev/homelab site. There is no build pipeline, no package manager, and no test suite. CSS/JS in the active theme are pre-minified by hand.
+A **Bludit** site (flat-file PHP CMS — no database, content lives in JSON/PHP files under `bl-content/`) powering a personal dev/homelab site. Bludit itself is upstream and kept on the latest release; the customization in this repo is limited to a custom site theme, a custom admin theme, and a single companion plugin. There is no package manager and no test suite. The theme's CSS/JS (`theme.css` / `theme.js`) are edited directly — they're not minified or built. The site is rendered through Bludit at runtime, and the plugin's Static Site Generator can mirror it to `bl-content/static-build/` (see below).
+
+### Do not edit core
+
+Treat the upstream as read-only. **Never edit anything under `bl-kernel/` or `bl-languages/`**, with one exception: `bl-kernel/admin/themes/nova-admin/` is the custom admin theme and is fair game. Everything else under those paths is upstream Bludit and will be overwritten on the next update.
+
+The customization surface is:
+
+- `bl-themes/nova/` — custom site theme
+- `bl-kernel/admin/themes/nova-admin/` — custom admin theme
+- `bl-plugins/nova-plugin/` — companion plugin for the Nova theme (see below)
+
+Do not pin or reference a specific Bludit version in this file or in code — it is updated regularly.
 
 ## Running locally
 
@@ -44,27 +56,59 @@ Plugins integrate by implementing named hook methods that the core calls — non
 - `afterPageCreate()` / `afterPageModify()` / `afterPageDelete()` — page lifecycle
 - `pageBegin()` — runs at the start of each page render
 
-### Custom plugins specific to this fork (not standard Bludit)
+### Companion plugin (custom to this site)
 
-- **`categories-jereme`** — sidebar categories widget; sorts the "Archived" category to the bottom instead of alphabetical (see the `$regularCategories` / `$archivedCategories` split in `siteSidebar()`).
-- **`static-pages-jereme`** — sidebar navigation for static pages.
-- **`open-links-new-tab-jereme`** — JS injection that retargets external links to `_blank`.
-- **`version-jereme`** — admin-area Bludit version display.
-- **`web-stats-jereme`** — analytics script injection, with a port-based check so it does not load on dev ports.
+There is one companion plugin: **`bl-plugins/nova-plugin/`** (class `pluginNovaPlugin`). It is the only plugin in this repo and bundles everything the Nova theme depends on. Previously this functionality was split across several `-jereme` plugins; do not re-introduce that split — add new behavior as a method on `pluginNovaPlugin` and wire it through the appropriate hook.
 
-When working on sidebar ordering or analytics behavior, edit the `-jereme` variant, not the upstream plugin of the same family.
+What it does:
+
+- **Sidebar widgets** — categories (with "Archived" pinned to the bottom), latest posts, and a static-pages list ("About") rendered via `siteSidebar()`.
+- **External-link rewrite** — JS injected via `siteBodyEnd()` retargets external anchors to `_blank` with `rel="noopener noreferrer"`.
+- **OpenGraph / Twitter Card meta** — emitted in `siteHead()`, configurable in the admin form.
+- **Web stats injection** — analytics code injected via `siteBodyEnd()`, skipped when `SERVER_PORT` matches the configured dev port.
+- **Custom HTML injection** — six free-form fields (site head/body-begin/body-end + admin head/body-begin/body-end).
+- **EasyMDE editor** — opt-in markdown editor for the page create/edit admin views (`new-content`, `edit-content`).
+- **Static Site Generator (SSG)** — runs in `post()`; crawls the site, mirrors output into `bl-content/static-build/`, copies extra top-level dirs (e.g. `homelab/`) verbatim, and records status under `bl-content/workspaces/nova-plugin/` (`build.lock`, `build.log`).
+- **Link Checker** — also runs in `post()`; walks all published / sticky / static pages outside the Archived category, reports broken anchors, and persists `linkcheck.lock` / `linkcheck.log` to the same workspace dir.
+- **Admin UI** — `adminSidebar()` / `adminHead()` / `adminBodyBegin()` / `adminBodyEnd()` render the tabbed settings form and load EasyMDE only on the relevant admin views.
+
+### Production URL
+
+The plugin's **`productionUrl`** setting (Static Site Generator tab) is the single source of truth for the canonical site origin. When set, `effectiveSiteUrl()` rewrites the origin of every emitted URL — OpenGraph / Twitter / canonical meta tags, default-image absolutization, link-checker base, SSG build base — so admin work from a localhost or LAN host still produces production-facing URLs. When unset, it falls back to `$site->url()`. If you add a new feature that emits absolute URLs, route them through `effectiveSiteUrl()`.
+
+### Static page description markers
+
+Bludit's `description` field on **static** pages doubles as a convention used by both the theme and the plugin:
+
+- `"404"` — marker for the 404 page; hidden from the About widget and excluded from the search index.
+- `"external:<url>"` — turns the static page into an external link. The sidebar widget renders it as a `_blank` anchor to `<url>`, and the SSG writes a redirect snippet at its slug in `static-build/`.
+
+If you're adding new static-page behavior, check `init.php` (search-index build), `siteSidebar()` (About widget), and the SSG rewrite in `nova-plugin/plugin.php` so all three stay aligned.
 
 ## Theme
 
 The active site theme is `bl-themes/nova/`. The admin theme is `bl-kernel/admin/themes/nova-admin/`. Structure of the site theme:
 
-- `index.php` — top-level HTML shell; dispatches to `php/page.php` or `php/home.php` based on `$WHERE_AM_I`.
+- `index.php` — top-level HTML shell; dispatches to `php/page.php` or `php/home.php` based on `$WHERE_AM_I`, mounts the sidebar via `Theme::plugins('siteSidebar')`, and loads `js/lozad.min.js` + `js/theme.js`.
 - `php/{head,header,footer,home,page,aside}.php` — template partials.
-- `php/lib/helper.php` — theme-specific helpers, notably `cdn_that_image()` / `cdn_cover_image()` which rewrite image URLs through `cdn.meln.top`.
-- `init.php` — builds a search-index JSON (excludes `Uncategorized` and `Archived`).
-- `js/lozad.min.js` + inline script in `index.php` — lazy-load all `<img>` in `.page-content` / `.entry-content` / `.entry-summary`, wrapping each in a `.lozad-wrap` span and applying an `is-loaded` class once the image actually paints. The two `requestAnimationFrame` calls are intentional — they let the placeholder state paint before the fade transition, otherwise cached images skip the fade.
+- `php/lib/helper.php` — theme-specific helpers, notably `cdn_that_image()` / `cdn_cover_image()` which rewrite image URLs through `cdn.meln.top` (the CDN is opt-in — `init.php` constructs `Helper` with `$useCdn=false` by default).
+- `php/lib/jsondb.php` — small JSON-on-disk helper used only by `init.php` to build the search index. Not a general-purpose DB layer.
+- `init.php` — builds the search index at `bl-content/uploads/bltsearch.json`. Indexes pages of type `published` / `sticky` / `static`, and excludes pages with no category, pages in the `Archived` category, and static pages whose description is `"404"` or starts with `"external:"`.
+- `js/theme.js` — main theme script (search lookup against `bltsearch.json`, lazy-load wiring, etc.). Edited directly, not built.
+- `js/lozad.min.js` + the lozad block in `theme.js` — lazy-load all `<img>` in `.page-content` / `.entry-content` / `.entry-summary`, wrapping each in a `.lozad-wrap` span and applying an `is-loaded` class once the image actually paints. The two `requestAnimationFrame` calls are intentional — they let the placeholder state paint before the fade transition, otherwise cached images skip the fade.
+- `css/theme.css` — main stylesheet. Edited directly, not built.
 
-There is no theme build step; `style.min.css` / `bundle.min.js` are edited or replaced directly.
+There is no theme build step; the CSS/JS files above are the source.
+
+### Admin theme (`bl-kernel/admin/themes/nova-admin/`)
+
+This is the only path under `bl-kernel/` that is intentionally customized. Layout:
+
+- `index.php` / `login.php` — admin shell and login page.
+- `init.php` — admin theme bootstrap.
+- `html/{navbar,sidebar,alert,media}.php` — admin partials.
+- `css/bludit.css` + `css/bludit.bootstrap.css` — admin styles.
+- `logo.svg` — admin logo.
 
 ## Data layout
 
@@ -73,14 +117,20 @@ Everything is files. No DB.
 - `bl-content/databases/*.php` — JSON databases (PHP-prefixed so direct access is denied): `pages.php`, `site.php`, `categories.php`, `tags.php`, `users.php`, `security.php`, `syslog.php`.
 - `bl-content/databases/plugins/{name}/db.php` — per-plugin settings.
 - `bl-content/pages/{slug}/index.txt` — markdown body for a page.
-- `bl-content/uploads/` — user uploads.
-- `bl-content/tmp/` — only path in `.gitignore`.
+- `bl-content/uploads/` — user uploads. Also where the theme writes `bltsearch.json` (the search index).
+- `bl-content/workspaces/{plugin}/` — scratch space for plugins. The Nova plugin keeps `build.lock` / `build.log` (SSG) and `linkcheck.lock` / `linkcheck.log` (Link Checker) here.
+- `bl-content/static-build/` — generated output of the Static Site Generator. **Committed to the repo** so the host can serve it as the production site. Treat it as build output: do not hand-edit; regenerate via the SSG tab in admin.
+- `bl-content/tmp/` — scratch; gitignored.
+
+Top-level static directories (siblings of `bl-content/`) can be mirrored into the SSG output via the plugin's `extraDirs` setting. `homelab/` is the current example — a stand-alone HTML directory served verbatim under `/homelab/`.
+
+`.gitignore` excludes `bl-content/tmp` and `jereme-dev-info.md` (local notes file).
 
 Page `type` is one of `published`, `draft`, `sticky`, `static`, `scheduled`.
 
 ## Editing conventions
 
-- Admin code paths live under `bl-kernel/admin/`; frontend rendering goes through the theme. Both paths share the kernel classes — changing a class affects both.
-- `bl-kernel/helpers/functions.php` (~1100 LOC) holds global utilities; check there before adding a new helper.
-- Markdown parsing is `bl-kernel/parsedown.class.php` (Parsedown). It is vendored — do not hand-edit.
-- The `.htaccess` 301-redirects `/resume` and `/dumbprojects` to external URLs; the local `resume/` and `dumbprojects/` directories only render under `php -S`.
+- `bl-kernel/` and `bl-languages/` are upstream — do not edit. The only exception is `bl-kernel/admin/themes/nova-admin/` (custom admin theme). If a change seems to require touching core, do it in a plugin or theme instead.
+- `bl-kernel/helpers/functions.php` (~1100 LOC) holds global utilities; read it to find a helper, but do not modify it.
+- Markdown parsing is `bl-kernel/parsedown.class.php` (Parsedown), vendored upstream — do not hand-edit.
+- The companion plugin's `productionUrl` setting is the canonical origin; emit absolute URLs through `effectiveSiteUrl()` rather than `$site->url()` so local admin work still produces production-facing URLs.
