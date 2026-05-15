@@ -5,6 +5,6 @@
 	"version": "1.0.0",
 	"releaseDate": "2026-05-09",
 	"license": "MIT",
-	"compatible": "3.0",
+	"compatible": "3.21,3.22",
 	"notes": "Polished, responsive Bludit theme with first-class light & dark mode."
 }
