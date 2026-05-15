@@ -3217,25 +3217,9 @@ HTML;
 		// (e.g. `[x](pi-lab-setup)` on /parent/ becomes /parent/pi-lab-setup,
 		// but a top-level /pi-lab-setup page exists — the markdown is
 		// ambiguous and the SSG will emit a broken link).
-		$knownPaths = array();
-		$knownSlugs = array();
-		foreach ($pages as $kp) {
-			$kperm = $this->toProductionUrl((string) $kp->permalink(true));
-			$kpath = parse_url($kperm, PHP_URL_PATH);
-			if ($kpath === null || $kpath === false) {
-				continue;
-			}
-			$norm = '/' . trim($kpath, '/');
-			if ($norm === '/') {
-				continue;
-			}
-			$knownPaths[$norm] = true;
-			$segs = explode('/', trim($norm, '/'));
-			$leaf = end($segs);
-			if ($leaf !== '') {
-				$knownSlugs[$leaf] = $norm;
-			}
-		}
+		// Built from all pages (not just $pages), since archived pages are
+		// excluded as link sources but are still valid link targets.
+		list($knownPaths, $knownSlugs) = $this->lcBuildKnownPageIndex();
 
 		// Collect unique URLs and track which pages each was found on.
 		$linkMap = array(); // urlAbsolute => array('kind'=>internal|external,'sources'=>[ ['title','permalink'] ])
@@ -3414,6 +3398,51 @@ HTML;
 			$out[] = $p;
 		}
 		return $out;
+	}
+
+	// Returns [pathSet, slugMap] over ALL pages (including archived and
+	// drafts) for use as valid link targets. We don't filter by category
+	// here because an archived page is still a real, reachable URL — a
+	// link pointing to it should not be flagged as broken just because it
+	// happens to live in the Archived bucket.
+	private function lcBuildKnownPageIndex()
+	{
+		global $pages;
+
+		$keys = array_merge(
+			(array) $pages->getDB(true),
+			(array) $pages->getStickyDB(true),
+			(array) $pages->getStaticDB(true),
+			(array) $pages->getDraftDB(true),
+			(array) $pages->getScheduledDB(true)
+		);
+		$keys = array_unique($keys);
+
+		$paths = array();
+		$slugs = array();
+		foreach ($keys as $key) {
+			try {
+				$p = new Page($key);
+			} catch (Exception $e) {
+				continue;
+			}
+			$perm = $this->toProductionUrl((string) $p->permalink(true));
+			$path = parse_url($perm, PHP_URL_PATH);
+			if ($path === null || $path === false) {
+				continue;
+			}
+			$norm = '/' . trim($path, '/');
+			if ($norm === '/') {
+				continue;
+			}
+			$paths[$norm] = true;
+			$segs = explode('/', trim($norm, '/'));
+			$leaf = end($segs);
+			if ($leaf !== '' && !isset($slugs[$leaf])) {
+				$slugs[$leaf] = $norm;
+			}
+		}
+		return array($paths, $slugs);
 	}
 
 	// ----------------------------------------------------------------------
