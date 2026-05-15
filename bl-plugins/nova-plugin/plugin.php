@@ -590,8 +590,14 @@ class pluginNovaPlugin extends Plugin
 		// SSG link — admin-only, since configure-plugin requires the admin role
 		if (checkRole(array('admin'), false)) {
 			$ssgHref = HTML_PATH_ADMIN_ROOT . 'configure-plugin/' . $this->className() . '#jdpc-staticgen';
+			$ssgIcon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14"'
+				. ' fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"'
+				. ' style="margin-right: .5rem; vertical-align: -2px;" aria-hidden="true" focusable="false">'
+				. '<path d="M14 4l6 6-3 3-6-6z"/>'
+				. '<path d="M11 7L3 15v4h4l8-8"/>'
+				. '</svg>';
 			$html .= '<a id="jdpc-sidebar-staticgen" class="nav-link" href="' . $ssgHref . '">';
-			$html .= '<span class="fa fa-hammer"></span> ' . $L->get('jdpc-sidebar-staticgen');
+			$html .= $ssgIcon . $L->get('jdpc-sidebar-staticgen');
 			$html .= '</a>';
 		}
 
