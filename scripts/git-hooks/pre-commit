@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# Reject commits that would publish real credentials in users.php / site.php.
-# The committed copies must keep the sanitized "!" placeholders; the live
-# values are held locally and masked via `git update-index --assume-unchanged`.
+# Reject commits that would publish non-sanitized values in users.php / site.php.
+# The committed copies must keep their public-safe values; live values are held
+# locally and masked via `git update-index --assume-unchanged`.
 set -euo pipefail
 
 fail() {
@@ -10,14 +10,17 @@ fail() {
     exit 1
 }
 
+# check_field <path> <json-field> <expected-value-regex>
+# The third arg is an ERE matching the JSON-encoded value (without quotes).
 check_field() {
-    local path="$1" field="$2"
+    local path="$1" field="$2" expected="$3"
     git diff --cached --name-only --diff-filter=AM | grep -Fxq "$path" || return 0
     local content
     content=$(git show ":$path")
-    grep -Eq "\"$field\"[[:space:]]*:[[:space:]]*\"!\"" <<<"$content" \
+    grep -Eq "\"$field\"[[:space:]]*:[[:space:]]*\"$expected\"" <<<"$content" \
         || fail "$path is staged with a non-sanitized \"$field\" value."
 }
 
-check_field "bl-content/databases/users.php" "password"
-check_field "bl-content/databases/site.php"  "adminTheme"
+check_field "bl-content/databases/users.php" "password"   '!'
+check_field "bl-content/databases/site.php"  "adminTheme" '!'
+check_field "bl-content/databases/site.php"  "url"        'https:\\/\\/jereme\.dev'
