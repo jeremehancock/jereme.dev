@@ -44,7 +44,7 @@ I recently upgra...">
 <meta property="og:url" content="https://jereme.dev/pi-lab-sd-card-upgrade">
 <meta property="og:site_name" content="jereme.dev">
 <meta property="article:published_time" content="2019-06-23T20:46:56-05:00">
-<meta property="article:modified_time" content="2026-05-06T21:02:10-05:00">
+<meta property="article:modified_time" content="2026-05-15T14:46:29-05:00">
 <meta property="article:author" content="Admin">
 <meta property="og:image" content="https://jereme.dev/bl-content/uploads/pages/c103fd8b6b8961f33b54a7c4b3aa152a/sdcard.png">
 <meta property="og:image:alt" content="Pi Lab SD Card Upgrade">
@@ -257,13 +257,9 @@ I recently upgra...">
 <p>Finally I used Gparted to resize partitions on the SD card to fully expand the file system.</p>
 <p><strong>Here are the basic steps.</strong></p>
 <p>Select partition labeled <strong>SETTINGS</strong> – Right Click- Resize/Move, At Resize/Move – Drag the Bar from Left to Right – Click Resize/Move.</p>
-<p><a href="bl-content/uploads/pages/c103fd8b6b8961f33b54a7c4b3aa152a/move-settings-to-end.png" data-lightbox="move-settings-to-end" data-title="Move 'SETTINGS' partition to the end."><img src="bl-content/uploads/pages/c103fd8b6b8961f33b54a7c4b3aa152a/move-settings-to-end.png" class="plugin-thumb"></a></p>
 <p>Select <strong>extended</strong> File System (Cyan Color) – Click Resize/Move, At Resize/Move – Expand the Bar From Left to Right – Click Resize/Move.</p>
-<p><a href="bl-content/uploads/pages/c103fd8b6b8961f33b54a7c4b3aa152a/expand-extended.png" data-lightbox="expand-extended" data-title="Expand 'extended' partition."><img src="bl-content/uploads/pages/c103fd8b6b8961f33b54a7c4b3aa152a/expand-extended.png" class="plugin-thumb"></a></p>
 <p>Select partition labeled <strong>root</strong> – Right Click – Resize/Move, At Resize/Move – Expand the Bar From Left to Right – Click Resize/Move.</p>
-<p><a href="bl-content/uploads/pages/c103fd8b6b8961f33b54a7c4b3aa152a/expand-root.png" data-lightbox="expand-root" data-title="Expand 'root' partition."><img src="bl-content/uploads/pages/c103fd8b6b8961f33b54a7c4b3aa152a/expand-root.png" class="plugin-thumb"></a></p>
 <p>Select parition labeled <strong>SETTINGS</strong> – Right Click – Resize/Move, At Resize/Move – Expand the Bar from Right to Left – Click Resize/Move.</p>
-<p><a href="bl-content/uploads/pages/c103fd8b6b8961f33b54a7c4b3aa152a/put-settings-back.png" data-lightbox="put-settings-back" data-title="Put 'SETTINGS' partition back in place."><img src="bl-content/uploads/pages/c103fd8b6b8961f33b54a7c4b3aa152a/put-settings-back.png" class="plugin-thumb"></a></p>
 <p>Click <strong>Apply All Operations</strong> at taskbar to Apply the changes.</p>
 <p>I then repeated this process for each card. Since Pi Lab is setup behind a load balancer the Pi Lab site remained online while upgrading each web node's SD card. When it was time to upgrade the load balancer's SD card I simply had to change the port forward on my network to route port 80 and 443 to one of the nodes that had already been completed. This way Pi Lab never had to go offline.</p>            </div>
         </div>
