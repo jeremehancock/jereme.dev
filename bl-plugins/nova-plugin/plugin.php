@@ -1337,6 +1337,11 @@ HTML;
 			),
 		);
 
+		// Rewrite content of any static page whose description is
+		// "external:<url>" so its body becomes the redirect snippet
+		// before we crawl.
+		$this->sgjSyncExternalStaticPages();
+
 		// Seed.
 		foreach ($this->sgjSeedPaths() as $path) {
 			$this->sgjEnqueue($state, $path, 'page');
@@ -1978,6 +1983,58 @@ HTML;
 			$GLOBALS['staticPages'] = $saved['staticPages'];
 			if ($saved['WAI'] !== null) {
 				$GLOBALS['WHERE_AM_I'] = $saved['WAI'];
+			}
+		}
+	}
+
+	// If $page is a static page whose description is "external:<url>",
+	// return the trimmed <url>. Mirrors the parsing in siteSidebar() so
+	// both the sidebar link and the generated static page agree.
+	private function sgjPageExternalRedirectUrl($page)
+	{
+		if (!is_object($page) || !method_exists($page, 'isStatic') || !$page->isStatic()) {
+			return '';
+		}
+		$desc = (string) $page->description();
+		if (stripos($desc, 'external:') !== 0) {
+			return '';
+		}
+		return trim(substr($desc, 9));
+	}
+
+	private function sgjExternalRedirectSnippet($url)
+	{
+		$safe = htmlspecialchars($url, ENT_QUOTES, 'UTF-8');
+		return "<style>\n\tbody {\n\t\tdisplay: none;\n\t}\n</style>\n"
+			. '<meta http-equiv="refresh" content="0; url=' . $safe . '">';
+	}
+
+	// Rewrite the on-disk content (bl-content/pages/<key>/index.txt) of
+	// every static page whose description is "external:<url>" so its
+	// body is the redirect snippet pointing at <url>. Idempotent: only
+	// writes when the file isn't already exactly the expected snippet.
+	private function sgjSyncExternalStaticPages()
+	{
+		$staticPages = buildStaticPages();
+		foreach ($staticPages as $sp) {
+			$extUrl = $this->sgjPageExternalRedirectUrl($sp);
+			if ($extUrl === '') {
+				continue;
+			}
+			$key = $sp->key();
+			if (empty($key)) {
+				continue;
+			}
+			$filePath = PATH_PAGES . $key . DS . FILENAME;
+			$snippet = $this->sgjExternalRedirectSnippet($extUrl);
+			$current = is_file($filePath) ? @file_get_contents($filePath) : '';
+			if ($current === $snippet) {
+				continue;
+			}
+			if (@file_put_contents($filePath, $snippet) === false) {
+				$this->sgjLog('ERROR writing external redirect content for ' . $key);
+			} else {
+				$this->sgjLog('OK  external redirect content -> ' . $key . ' (' . $extUrl . ')');
 			}
 		}
 	}
