@@ -1120,22 +1120,6 @@ body.menu-open .main-navigation {
   font-weight: 700;
 }
 
-.edit-link {
-  display: inline-flex;
-  vertical-align: middle;
-  margin-left: 0.5rem;
-  color: var(--text-mute);
-  width: 32px;
-  height: 32px;
-  border-radius: var(--radius-sm);
-  align-items: center;
-  justify-content: center;
-}
-.edit-link:hover {
-  color: var(--accent);
-  background: var(--bg-soft);
-}
-
 .entry-meta {
   color: var(--text-mute);
   font-family: var(--font-display);
