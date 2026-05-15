@@ -334,6 +334,10 @@ class pluginNovaPlugin extends Plugin
 		// would survive the form POST and outrank localStorage on the
 		// next render, snapping the user back to that tab regardless of
 		// where they actually submitted from.
+		// A `hashchange` listener picks up same-page navigations (e.g. the
+		// admin sidebar "Static Site Generator" link while already on the
+		// settings page) — without it, the URL hash updates but the tab
+		// stays put.
 		$html .= '<script>(function(){'
 			. 'var key="jdpcActiveTab";'
 			. 'var $tabs=$(\'#jdpc-nav-tab a[data-toggle="tab"]\');'
@@ -343,17 +347,25 @@ class pluginNovaPlugin extends Plugin
 			.     'window.history.replaceState(null,"",window.location.pathname+window.location.search+href);'
 			.   '}'
 			. '}'
+			. 'function activate(target){'
+			.   'if(!target)return;'
+			.   'var $link=$(\'#jdpc-nav-tab a[href="\'+target+\'"]\');'
+			.   'if(!$link.length)return;'
+			.   '$link.tab("show");'
+			.   'window.localStorage.setItem(key,target);'
+			.   'syncHash(target);'
+			. '}'
 			. '$tabs.on("click",function(e){'
 			.   'var href=$(e.target).attr("href");'
 			.   'window.localStorage.setItem(key,href);'
 			.   'syncHash(href);'
 			. '});'
+			. '$(window).on("hashchange",function(){'
+			.   'activate(window.location.hash);'
+			. '});'
 			. 'var hash=window.location.hash;'
 			. 'var active=(hash&&$(\'#jdpc-nav-tab a[href="\'+hash+\'"]\').length)?hash:window.localStorage.getItem(key);'
-			. 'if(active&&$(\'#jdpc-nav-tab a[href="\'+active+\'"]\').length){'
-			.   '$(\'#jdpc-nav-tab a[href="\'+active+\'"]\').tab("show");'
-			.   'syncHash(active);'
-			. '}'
+			. 'activate(active);'
 			. '})();</script>';
 
 		return $html;
