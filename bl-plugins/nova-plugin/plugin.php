@@ -1913,6 +1913,12 @@ HTML;
 				}
 			} elseif ($wai === 'page') {
 				$content[0] = $page = buildThePage();
+				if ($page) {
+					$extUrl = $this->sgjPageExternalRedirectUrl($page);
+					if ($extUrl !== '') {
+						$page->setField('content', $this->sgjExternalRedirectSnippet($extUrl));
+					}
+				}
 			} elseif ($wai === 'tag') {
 				$content = buildPagesByTag();
 			} elseif ($wai === 'category') {
@@ -1980,6 +1986,29 @@ HTML;
 				$GLOBALS['WHERE_AM_I'] = $saved['WAI'];
 			}
 		}
+	}
+
+	// If $page is a static page whose description is "external:<url>",
+	// return the trimmed <url>. Mirrors the parsing in siteSidebar() so
+	// both the sidebar link and the generated static page agree.
+	private function sgjPageExternalRedirectUrl($page)
+	{
+		if (!is_object($page) || !method_exists($page, 'isStatic') || !$page->isStatic()) {
+			return '';
+		}
+		$desc = (string) $page->description();
+		if (stripos($desc, 'external:') !== 0) {
+			return '';
+		}
+		return trim(substr($desc, 9));
+	}
+
+	private function sgjExternalRedirectSnippet($url)
+	{
+		$safe = htmlspecialchars($url, ENT_QUOTES, 'UTF-8');
+		return "<style>\n\tbody {\n\t\tdisplay: none;\n\t}\n</style>\n"
+			. '<meta charset="UTF-8">' . "\n"
+			. '<meta http-equiv="refresh" content="0; url=' . $safe . '">';
 	}
 
 	private function sgjSetupPaginator($url)
