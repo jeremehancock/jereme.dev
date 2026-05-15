@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# Reject commits that would publish real credentials in users.php / site.php.
+# The committed copies must keep the sanitized "!" placeholders; the live
+# values are held locally and masked via `git update-index --assume-unchanged`.
+set -euo pipefail
+
+fail() {
+    echo "pre-commit: $*" >&2
+    echo "pre-commit: aborting. See README \"Keeping local credentials out of the repo\"." >&2
+    exit 1
+}
+
+check_field() {
+    local path="$1" field="$2"
+    git diff --cached --name-only --diff-filter=AM | grep -Fxq "$path" || return 0
+    local content
+    content=$(git show ":$path")
+    grep -Eq "\"$field\"[[:space:]]*:[[:space:]]*\"!\"" <<<"$content" \
+        || fail "$path is staged with a non-sanitized \"$field\" value."
+}
+
+check_field "bl-content/databases/users.php" "password"
+check_field "bl-content/databases/site.php"  "adminTheme"

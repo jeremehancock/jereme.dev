@@ -26,6 +26,12 @@ git update-index --assume-unchanged bl-content/databases/users.php
 
 That lets the Vagrant install carry the real values without ever staging them. The setting is per-clone — after a fresh clone, re-run both commands before logging into admin.
 
+As a safety net, `scripts/git-hooks/pre-commit` rejects any commit that stages `users.php` or `site.php` with a non-sanitized value. Enable it once per clone:
+
+```bash
+git config core.hooksPath scripts/git-hooks
+```
+
 ## AI Assistance Disclosure
 
 This project was developed with assistance from AI language models.
