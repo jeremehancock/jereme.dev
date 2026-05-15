@@ -78,20 +78,55 @@ class pluginJeremeDevProCompanion extends Plugin
 	{
 		global $L;
 
-		$html = '<div class="alert alert-primary mb-4" role="alert">';
+		// Tab definitions: id => [labelKey, icon, subtitleKey|null]
+		$tabs = array(
+			'sidebar'     => array('jdpc-section-sidebar',     'list-alt',          'jdpc-section-sidebar-subtitle'),
+			'external'    => array('jdpc-section-external',    'external-link-alt', 'jdpc-section-external-subtitle'),
+			'social'      => array('jdpc-section-social',      'share-alt',         'jdpc-section-social-subtitle'),
+			'stats'       => array('jdpc-section-stats',       'chart-bar',         'jdpc-section-stats-subtitle'),
+			'html'        => array('jdpc-section-html',        'code',              'jdpc-section-html-subtitle'),
+			'easymde'     => array('jdpc-section-easymde',     'edit',              'jdpc-section-easymde-subtitle'),
+			'version'     => array('jdpc-section-version',     'tag',               'jdpc-section-version-subtitle'),
+			'howitworks'  => array('jdpc-section-howitworks',  'info-circle',       null),
+		);
+
+		$html  = '<div class="alert alert-primary mb-4" role="alert">';
 		$html .= $this->description();
 		$html .= '</div>';
 
-		// ============ SECTION: Sidebar widgets ============================
-		$html .= $this->openCard('jdpc-section-sidebar', 'list-alt', 'jdpc-section-sidebar-subtitle');
+		// Tab navigation
+		$html .= '<nav class="mb-3">';
+		$html .= '<div class="nav nav-tabs" id="jdpc-nav-tab" role="tablist">';
+		$first = true;
+		foreach ($tabs as $id => $meta) {
+			$activeCls = $first ? ' active' : '';
+			$selected  = $first ? 'true' : 'false';
+			$html .= '<a class="nav-item nav-link' . $activeCls . '"'
+				. ' id="jdpc-nav-' . $id . '-tab"'
+				. ' data-toggle="tab"'
+				. ' href="#jdpc-' . $id . '"'
+				. ' role="tab"'
+				. ' aria-controls="jdpc-' . $id . '"'
+				. ' aria-selected="' . $selected . '">'
+				. '<span class="fa fa-' . $meta[1] . ' mr-2"></span>'
+				. $L->get($meta[0])
+				. '</a>';
+			$first = false;
+		}
+		$html .= '</div>';
+		$html .= '</nav>';
 
-		// Categories sub-section
+		// Tab content
+		$html .= '<div class="tab-content" id="jdpc-nav-tab-content">';
+
+		// --- Sidebar widgets tab ---
+		$html .= $this->openTabPane('sidebar', $tabs['sidebar'][2], true);
+
 		$html .= $this->subHeading('jdpc-section-categories');
 		$html .= $this->selectField('categoriesEnabled', $L->get('jdpc-show-widget'));
 		$html .= $this->textField('categoriesLabel', $L->get('Label'));
 		$html .= $this->selectField('categoriesHideEmpty', $L->get('jdpc-hide-empty-categories'));
 
-		// Latest Posts sub-section
 		$html .= $this->subHeading('jdpc-section-latest');
 		$html .= $this->selectField('latestEnabled', $L->get('jdpc-show-widget'));
 		$html .= $this->textField('latestLabel', $L->get('Label'));
@@ -99,29 +134,25 @@ class pluginJeremeDevProCompanion extends Plugin
 			$html .= $this->numberField('latestNumberOfItems', $L->get('jdpc-amount-of-items'), 1);
 		}
 
-		// About sub-section
 		$html .= $this->subHeading('jdpc-section-static');
 		$html .= $this->selectField('staticEnabled', $L->get('jdpc-show-widget'));
 		$html .= $this->textField('staticLabel', $L->get('Label'));
 
-		$html .= $this->closeCard();
+		$html .= $this->closeTabPane();
 
-		// ============ SECTION: External links =============================
-		$html .= $this->openCard('jdpc-section-external', 'external-link-alt', 'jdpc-section-external-subtitle');
+		// --- External links tab ---
+		$html .= $this->openTabPane('external', $tabs['external'][2]);
 		$html .= $this->selectField('targetBlankEnabled', $L->get('jdpc-enable-external-target-blank'));
+		$html .= $this->closeTabPane();
 
-		$html .= $this->closeCard();
+		// --- Social previews tab ---
+		$html .= $this->openTabPane('social', $tabs['social'][2]);
 
-		// ============ SECTION: Social previews ============================
-		$html .= $this->openCard('jdpc-section-social', 'share-alt', 'jdpc-section-social-subtitle');
-
-		// Open Graph sub-section
 		$html .= $this->subHeading('jdpc-subsection-og');
 		$html .= $this->selectField('ogEnabled', $L->get('jdpc-enable-meta'));
 		$html .= $this->textField('ogDefaultImage', $L->get('jdpc-default-image-label'), $L->get('jdpc-og-default-image-tip'));
 		$html .= $this->textField('ogFbAppId', $L->get('jdpc-og-fb-appid-label'), $L->get('jdpc-og-fb-appid-tip'));
 
-		// Twitter / X Card sub-section
 		$html .= $this->subHeading('jdpc-subsection-twitter');
 		$html .= $this->selectField('twitterCardsEnabled', $L->get('jdpc-enable-meta'));
 
@@ -139,20 +170,20 @@ class pluginJeremeDevProCompanion extends Plugin
 		$html .= $this->textField('twitterSite', $L->get('jdpc-twitter-site-label'), $L->get('jdpc-twitter-site-tip'));
 		$html .= $this->textField('twitterDefaultImage', $L->get('jdpc-default-image-label'), $L->get('jdpc-twitter-default-image-tip'));
 
-		$html .= $this->closeCard();
+		$html .= $this->closeTabPane();
 
-		// ============ SECTION: Web stats ==================================
-		$html .= $this->openCard('jdpc-section-stats', 'chart-bar', 'jdpc-section-stats-subtitle');
+		// --- Web stats tab ---
+		$html .= $this->openTabPane('stats', $tabs['stats'][2]);
 		$html .= $this->numberField('webStatsDevport', $L->get('jdpc-dev-port'), null, $L->get('jdpc-dev-port-tip'));
 		$html .= '<div class="form-group">';
 		$html .= '<label for="jdpcStatsCode"><strong>' . $L->get('jdpc-stats-code') . '</strong></label>';
 		$html .= '<textarea id="jdpcStatsCode" class="form-control" name="webStatsCode" rows="8" style="font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 0.85rem;">' . $this->getValue('webStatsCode') . '</textarea>';
 		$html .= '<small class="form-text text-muted">' . $L->get('jdpc-stats-code-tip') . '</small>';
 		$html .= '</div>';
-		$html .= $this->closeCard();
+		$html .= $this->closeTabPane();
 
-		// ============ SECTION: Custom HTML injection ======================
-		$html .= $this->openCard('jdpc-section-html', 'code', 'jdpc-section-html-subtitle');
+		// --- Custom HTML tab ---
+		$html .= $this->openTabPane('html', $tabs['html'][2]);
 
 		$html .= $this->subHeading('jdpc-section-html-website');
 		$html .= $this->textareaField('htmlHead', $L->get('jdpc-html-head-label'), $L->get('jdpc-html-head-tip'));
@@ -164,36 +195,43 @@ class pluginJeremeDevProCompanion extends Plugin
 		$html .= $this->textareaField('htmlAdminBodyBegin', $L->get('jdpc-html-bodybegin-label'), $L->get('jdpc-html-adminbodybegin-tip'));
 		$html .= $this->textareaField('htmlAdminBodyEnd', $L->get('jdpc-html-bodyend-label'), $L->get('jdpc-html-adminbodyend-tip'));
 
-		$html .= $this->closeCard();
+		$html .= $this->closeTabPane();
 
-		// ============ SECTION: Markdown editor (EasyMDE) ==================
-		$html .= $this->openCard('jdpc-section-easymde', 'edit', 'jdpc-section-easymde-subtitle');
+		// --- Markdown editor (EasyMDE) tab ---
+		$html .= $this->openTabPane('easymde', $tabs['easymde'][2]);
 		$html .= $this->selectField('easymdeEnabled', $L->get('jdpc-enable-easymde'));
 		$html .= $this->textField('easymdeTabSize', $L->get('jdpc-easymde-tabsize-label'), $L->get('jdpc-easymde-tabsize-tip'));
 		$html .= $this->textField('easymdeToolbar', $L->get('jdpc-easymde-toolbar-label'), $L->get('jdpc-easymde-toolbar-tip'));
 		$html .= $this->selectField('easymdeSpellChecker', $L->get('jdpc-easymde-spellchecker-label'));
-		$html .= $this->closeCard();
+		$html .= $this->closeTabPane();
 
-		// ============ SECTION: Admin version check ========================
-		$html .= $this->openCard('jdpc-section-version', 'tag', 'jdpc-section-version-subtitle');
+		// --- Admin version check tab ---
+		$html .= $this->openTabPane('version', $tabs['version'][2]);
 		$html .= $this->selectField('versionCheckEnabled', $L->get('jdpc-enable-version-check'));
-		$html .= $this->closeCard();
+		$html .= $this->closeTabPane();
 
-		// ============ SECTION: How it works ===============================
-		$html .= '<div class="card mb-4 border-info">';
-		$html .= '<div class="card-header bg-info text-white">';
-		$html .= '<span class="fa fa-info-circle mr-2"></span>';
-		$html .= '<strong>' . $L->get('jdpc-section-howitworks') . '</strong>';
-		$html .= '</div>';
-		$html .= '<div class="card-body">';
+		// --- How it works tab ---
+		$html .= $this->openTabPane('howitworks', null);
 		$html .= '<ul class="mb-0" style="padding-left: 1.2rem; line-height: 1.7;">';
 		$html .= '<li class="mb-2">' . $L->get('jdpc-howitworks-external') . '</li>';
 		$html .= '<li class="mb-2">' . $L->get('jdpc-howitworks-404') . '</li>';
 		$html .= '<li class="mb-2">' . $L->get('jdpc-howitworks-archived') . '</li>';
 		$html .= '<li>' . $L->get('jdpc-howitworks-targetblank') . '</li>';
 		$html .= '</ul>';
-		$html .= '</div>';
-		$html .= '</div>';
+		$html .= $this->closeTabPane();
+
+		$html .= '</div>'; // /tab-content
+
+		// Remember the active tab across saves / refreshes
+		$html .= '<script>(function(){'
+			. 'var key="jdpcActiveTab";'
+			. 'var $tabs=$(\'#jdpc-nav-tab a[data-toggle="tab"]\');'
+			. '$tabs.on("click",function(e){window.localStorage.setItem(key,$(e.target).attr("href"));});'
+			. 'var active=window.localStorage.getItem(key);'
+			. 'if(active&&$(\'#jdpc-nav-tab a[href="\'+active+\'"]\').length){'
+			. '$(\'#jdpc-nav-tab a[href="\'+active+\'"]\').tab("show");'
+			. '}'
+			. '})();</script>';
 
 		return $html;
 	}
@@ -201,26 +239,20 @@ class pluginJeremeDevProCompanion extends Plugin
 	// ------------------------------------------------------------------
 	// Form rendering helpers
 	// ------------------------------------------------------------------
-	private function openCard($titleKey, $icon = null, $subtitleKey = null)
+	private function openTabPane($id, $subtitleKey = null, $active = false)
 	{
 		global $L;
-		$html = '<div class="card mb-4 shadow-sm">';
-		$html .= '<div class="card-header bg-light">';
-		if ($icon) {
-			$html .= '<span class="fa fa-' . $icon . ' mr-2"></span>';
-		}
-		$html .= '<strong>' . $L->get($titleKey) . '</strong>';
-		$html .= '</div>';
-		$html .= '<div class="card-body">';
+		$cls = 'tab-pane fade' . ($active ? ' show active' : '');
+		$html = '<div class="' . $cls . '" id="jdpc-' . $id . '" role="tabpanel" aria-labelledby="jdpc-nav-' . $id . '-tab">';
 		if ($subtitleKey) {
 			$html .= '<p class="text-muted mb-4">' . $L->get($subtitleKey) . '</p>';
 		}
 		return $html;
 	}
 
-	private function closeCard()
+	private function closeTabPane()
 	{
-		return '</div></div>';
+		return '</div>';
 	}
 
 	private function subHeading($titleKey)
