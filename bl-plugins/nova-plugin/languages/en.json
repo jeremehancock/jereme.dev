@@ -1,7 +1,7 @@
 {
   "plugin-data": {
-    "name": "jereme-dev-pro Companion",
-    "description": "Companion plugin for the jereme-dev-pro theme."
+    "name": "Nova Companion",
+    "description": "Companion plugin for the Nova theme."
   },
   "jdpc-section-sidebar": "Sidebar Widgets",
   "jdpc-section-sidebar-subtitle": "Three widgets that render in your sidebar, in this order: Categories → Latest Posts → About. <br/><br/> Latest Posts and About will also render in the footer aside.",

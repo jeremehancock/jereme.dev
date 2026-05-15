@@ -1,6 +1,6 @@
 <?php
 
-class pluginJeremeDevProCompanion extends Plugin
+class pluginNovaPlugin extends Plugin
 {
 	// ---- Static Site Generator (merged from static-generator-jereme) ----
 	const SGJ_OUTPUT_DIRNAME = 'static-build';
@@ -52,14 +52,14 @@ class pluginJeremeDevProCompanion extends Plugin
 
 			// Open Graph meta tags — Defaults are relative to avoid hardcoding localhost/domain in DB.
 			'ogEnabled' => false,
-			'ogDefaultImage' => 'bl-themes/jereme-dev-pro/img/jereme-meta.png',
+			'ogDefaultImage' => 'bl-themes/nova/img/jereme-meta.png',
 			'ogFbAppId' => '',
 
 			// Twitter / X Card meta tags
 			'twitterCardsEnabled' => false,
 			'twitterCardType' => 'summary_large_image',
 			'twitterSite' => '',
-			'twitterDefaultImage' => 'bl-themes/jereme-dev-pro/img/jereme-meta.png',
+			'twitterDefaultImage' => 'bl-themes/nova/img/jereme-meta.png',
 
 			// EasyMDE markdown editor — off by default; opt-in.
 			'easymdeEnabled' => false,
