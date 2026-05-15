@@ -15,6 +15,10 @@ Bludit core (`bl-kernel/`, `bl-languages/`) is upstream and kept on the latest r
 
 The site is hosted with [Coolify](https://coolify.io/), serving the contents of `bl-content/static-build/` as a static site. The companion plugin's Static Site Generator mirrors the live Bludit site into that directory; the generated output is committed to the repo so each push deploys the latest build.
 
+## AI Assistance Disclosure
+
+This project was developed with assistance from AI language models.
+
 ## License
 
 MIT — see [LICENSE](LICENSE). Bludit is © Diego Najar and contributors.
