@@ -4,7 +4,19 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-A customized fork of **Bludit v3.21.1**, a flat-file PHP CMS (no database — content lives in JSON/PHP files under `bl-content/`). This instance powers a personal dev/homelab site. There is no build pipeline, no package manager, and no test suite. CSS/JS in the active theme are pre-minified by hand.
+A **Bludit** site (flat-file PHP CMS — no database, content lives in JSON/PHP files under `bl-content/`) powering a personal dev/homelab site. Bludit itself is upstream and kept on the latest release; the customization in this repo is limited to a custom site theme, a custom admin theme, and a set of companion plugins. There is no build pipeline, no package manager, and no test suite. CSS/JS in the active theme are pre-minified by hand.
+
+### Do not edit core
+
+Treat the upstream as read-only. **Never edit anything under `bl-kernel/` or `bl-languages/`**, with one exception: `bl-kernel/admin/themes/nova-admin/` is the custom admin theme and is fair game. Everything else under those paths is upstream Bludit and will be overwritten on the next update.
+
+The customization surface is:
+
+- `bl-themes/nova/` — custom site theme
+- `bl-kernel/admin/themes/nova-admin/` — custom admin theme
+- `bl-plugins/*-jereme/` — companion plugins (see below)
+
+Do not pin or reference a specific Bludit version in this file or in code — it is updated regularly.
 
 ## Running locally
 
@@ -44,7 +56,7 @@ Plugins integrate by implementing named hook methods that the core calls — non
 - `afterPageCreate()` / `afterPageModify()` / `afterPageDelete()` — page lifecycle
 - `pageBegin()` — runs at the start of each page render
 
-### Custom plugins specific to this fork (not standard Bludit)
+### Companion plugins (custom to this site)
 
 - **`categories-jereme`** — sidebar categories widget; sorts the "Archived" category to the bottom instead of alphabetical (see the `$regularCategories` / `$archivedCategories` split in `siteSidebar()`).
 - **`static-pages-jereme`** — sidebar navigation for static pages.
@@ -80,7 +92,7 @@ Page `type` is one of `published`, `draft`, `sticky`, `static`, `scheduled`.
 
 ## Editing conventions
 
-- Admin code paths live under `bl-kernel/admin/`; frontend rendering goes through the theme. Both paths share the kernel classes — changing a class affects both.
-- `bl-kernel/helpers/functions.php` (~1100 LOC) holds global utilities; check there before adding a new helper.
-- Markdown parsing is `bl-kernel/parsedown.class.php` (Parsedown). It is vendored — do not hand-edit.
+- `bl-kernel/` and `bl-languages/` are upstream — do not edit. The only exception is `bl-kernel/admin/themes/nova-admin/` (custom admin theme). If a change seems to require touching core, do it in a plugin or theme instead.
+- `bl-kernel/helpers/functions.php` (~1100 LOC) holds global utilities; read it to find a helper, but do not modify it.
+- Markdown parsing is `bl-kernel/parsedown.class.php` (Parsedown), vendored upstream — do not hand-edit.
 - The `.htaccess` 301-redirects `/resume` and `/dumbprojects` to external URLs; the local `resume/` and `dumbprojects/` directories only render under `php -S`.
