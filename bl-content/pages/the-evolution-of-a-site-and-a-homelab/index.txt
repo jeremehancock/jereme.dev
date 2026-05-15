@@ -49,3 +49,4 @@ If you've been around since the pilab.dev days, thanks for sticking around. And 
 - The original Pi Lab write-up (archived): [jereme.dev/pi-lab-setup](/pi-lab-setup)
 - Current homelab specs: <a href="https://jereme.dev/homelab" target="_blank">jereme.dev/homelab</a>
 - Bludit Vagrant for local development: [jereme.dev/bludit-vagrant](/bludit-vagrant)
+- GitHub repo for this site: [jeremehancock/jereme.dev](https://github.com/jeremehancock/jereme.dev)
