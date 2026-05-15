@@ -357,7 +357,7 @@ h6 { font-size: var(--font-size-sm, 0.925rem); }
 .badge {
 	font-size: var(--font-size-xs, 0.8rem);
 	font-weight: var(--font-weight-semibold, 650);
-	padding: 6px 12px;
+	padding: 6px 8px 4px 8px;
 	border-radius: var(--radius-sm, 4px);
 }
 
