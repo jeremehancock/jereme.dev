@@ -1322,6 +1322,44 @@ HTML;
 			$html = str_replace($buildOrigin, '', $html);
 		}
 		$absOrigin = $buildOrigin !== '' ? $buildOrigin : rtrim($siteOrigin, '/');
+		$metaProps = '(?:og:url|og:image|og:image:url|og:image:secure_url|og:video|og:video:url|og:video:secure_url|og:audio|og:audio:url|og:audio:secure_url)';
+		$metaNames = '(?:twitter:url|twitter:image|twitter:image:src|twitter:player|twitter:player:stream)';
+		$imageProps = '(?:og:image|og:image:url|og:image:secure_url|og:video|og:video:url|og:video:secure_url|og:audio|og:audio:url|og:audio:secure_url)';
+		$imageNames = '(?:twitter:image|twitter:image:src|twitter:player|twitter:player:stream)';
+
+		// The attribute-rewriting pass above only enqueues URLs found in
+		// href/src/etc. The companion plugin's "Open Graph default image"
+		// and "Twitter default image" settings reach the page as
+		// <meta property="og:image" content="…"> — so without this pass
+		// the image file itself never gets copied into the static build
+		// and previews end up broken. Scan the image-bearing OG / Twitter
+		// meta tags and enqueue any in-site URL as an asset.
+		$enqueueFromMeta = function ($m) use (&$state) {
+			$url = htmlspecialchars_decode($m[1], ENT_QUOTES);
+			$this->enqueue($state, $url, 'asset');
+			return $m[0];
+		};
+		preg_replace_callback(
+			'#<meta\s+property\s*=\s*"' . $imageProps . '"\s+content\s*=\s*"([^"]*)"#i',
+			$enqueueFromMeta,
+			$html
+		);
+		preg_replace_callback(
+			'#<meta\s+content\s*=\s*"([^"]*)"\s+property\s*=\s*"' . $imageProps . '"#i',
+			$enqueueFromMeta,
+			$html
+		);
+		preg_replace_callback(
+			'#<meta\s+name\s*=\s*"' . $imageNames . '"\s+content\s*=\s*"([^"]*)"#i',
+			$enqueueFromMeta,
+			$html
+		);
+		preg_replace_callback(
+			'#<meta\s+content\s*=\s*"([^"]*)"\s+name\s*=\s*"' . $imageNames . '"#i',
+			$enqueueFromMeta,
+			$html
+		);
+
 		if ($absOrigin !== '') {
 			$siteUrl = $buildUrl;
 			$absolutize = function ($val) use ($absOrigin, $siteUrl) {
@@ -1335,8 +1373,6 @@ HTML;
 				}
 				return htmlspecialchars($decoded, ENT_QUOTES, 'UTF-8');
 			};
-			$metaProps = '(?:og:url|og:image|og:image:url|og:image:secure_url|og:video|og:video:url|og:video:secure_url|og:audio|og:audio:url|og:audio:secure_url)';
-			$metaNames = '(?:twitter:url|twitter:image|twitter:image:src|twitter:player|twitter:player:stream)';
 			$html = preg_replace_callback(
 				'#(<meta\s+property\s*=\s*"' . $metaProps . '"\s+content\s*=\s*")([^"]*)(")#i',
 				function ($m) use ($absolutize) { return $m[1] . $absolutize($m[2]) . $m[3]; },
