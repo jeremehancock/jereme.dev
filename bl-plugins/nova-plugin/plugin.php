@@ -104,13 +104,13 @@ class pluginNovaPlugin extends Plugin
 		// Tab definitions: id => [labelKey, icon, subtitleKey|null]
 		$tabs = array(
 			'sidebar'     => array('jdpc-section-sidebar',     'list-alt',          'jdpc-section-sidebar-subtitle'),
-			'external'    => array('jdpc-section-external',    'external-link-alt', 'jdpc-section-external-subtitle'),
+			'external'    => array('jdpc-section-external',    'external-link',     'jdpc-section-external-subtitle'),
 			'social'      => array('jdpc-section-social',      'share-alt',         'jdpc-section-social-subtitle'),
-			'stats'       => array('jdpc-section-stats',       'chart-bar',         'jdpc-section-stats-subtitle'),
+			'stats'       => array('jdpc-section-stats',       'bar-chart',         'jdpc-section-stats-subtitle'),
 			'html'        => array('jdpc-section-html',        'code',              'jdpc-section-html-subtitle'),
 			'easymde'     => array('jdpc-section-easymde',     'edit',              'jdpc-section-easymde-subtitle'),
 			'version'     => array('jdpc-section-version',     'tag',               'jdpc-section-version-subtitle'),
-			'staticgen'   => array('jdpc-section-staticgen',   'hammer',            'jdpc-section-staticgen-subtitle'),
+			'staticgen'   => array('jdpc-section-staticgen',   'cogs',              'jdpc-section-staticgen-subtitle'),
 			'howitworks'  => array('jdpc-section-howitworks',  'info-circle',       null),
 		);
 
