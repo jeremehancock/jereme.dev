@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-A **Bludit** site (flat-file PHP CMS — no database, content lives in JSON/PHP files under `bl-content/`) powering a personal dev/homelab site. Bludit itself is upstream and kept on the latest release; the customization in this repo is limited to a custom site theme, a custom admin theme, and a set of companion plugins. There is no build pipeline, no package manager, and no test suite. CSS/JS in the active theme are pre-minified by hand.
+A **Bludit** site (flat-file PHP CMS — no database, content lives in JSON/PHP files under `bl-content/`) powering a personal dev/homelab site. Bludit itself is upstream and kept on the latest release; the customization in this repo is limited to a custom site theme, a custom admin theme, and a single companion plugin. There is no build pipeline, no package manager, and no test suite. CSS/JS in the active theme are pre-minified by hand.
 
 ### Do not edit core
 
@@ -14,7 +14,7 @@ The customization surface is:
 
 - `bl-themes/nova/` — custom site theme
 - `bl-kernel/admin/themes/nova-admin/` — custom admin theme
-- `bl-plugins/*-jereme/` — companion plugins (see below)
+- `bl-plugins/nova-plugin/` — companion plugin for the Nova theme (see below)
 
 Do not pin or reference a specific Bludit version in this file or in code — it is updated regularly.
 
@@ -56,15 +56,16 @@ Plugins integrate by implementing named hook methods that the core calls — non
 - `afterPageCreate()` / `afterPageModify()` / `afterPageDelete()` — page lifecycle
 - `pageBegin()` — runs at the start of each page render
 
-### Companion plugins (custom to this site)
+### Companion plugin (custom to this site)
 
-- **`categories-jereme`** — sidebar categories widget; sorts the "Archived" category to the bottom instead of alphabetical (see the `$regularCategories` / `$archivedCategories` split in `siteSidebar()`).
-- **`static-pages-jereme`** — sidebar navigation for static pages.
-- **`open-links-new-tab-jereme`** — JS injection that retargets external links to `_blank`.
-- **`version-jereme`** — admin-area Bludit version display.
-- **`web-stats-jereme`** — analytics script injection, with a port-based check so it does not load on dev ports.
+There is one companion plugin: **`bl-plugins/nova-plugin/`** (class `pluginNovaPlugin`). It is the only plugin in this repo and bundles everything the Nova theme depends on — sidebar widgets, head/body injection, admin UI tweaks, OpenGraph/Twitter meta, the EasyMDE editor wiring, and an in-admin static-site generator. Previously this functionality was split across several `-jereme` plugins; do not re-introduce that split — add new behavior as a method on `pluginNovaPlugin` and wire it through the appropriate hook.
 
-When working on sidebar ordering or analytics behavior, edit the `-jereme` variant, not the upstream plugin of the same family.
+Notable hooks it implements (see `bl-plugins/nova-plugin/plugin.php`):
+
+- `siteSidebar()` — renders the categories / latest-posts / static-pages widgets (the categories widget sorts the "Archived" category to the bottom).
+- `siteHead()` / `siteBodyBegin()` / `siteBodyEnd()` — frontend injection, including OpenGraph/Twitter tags and the external-link `target="_blank"` rewrite.
+- `adminSidebar()` / `adminHead()` / `adminBodyBegin()` / `adminBodyEnd()` — admin UI, including EasyMDE setup and the static-generator tab.
+- `post()` — handles the static-site generator build request.
 
 ## Theme
 
