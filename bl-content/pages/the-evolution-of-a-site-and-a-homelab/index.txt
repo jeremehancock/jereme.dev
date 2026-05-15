@@ -32,7 +32,7 @@ The practical difference, day to day, is enormous. Pushing a change used to invo
 
 One thing that didn't change is the CMS. The site is still running Bludit, the same flat-file CMS I started with back in 2019. I've looked at alternatives over the years, but Bludit keeps doing what I want it to do, and there's a certain satisfaction in still using the same tool that started this whole thing.
 
-What did change is how I work with it. In production, the Bludit admin panel is locked down and isn't reachable from outside my local network at all. I don't draft or publish from the live site. Instead, I run a full local copy using another project of mine, [Bludit Vagrant](https://jereme.dev/bludit-vagrant), which spins up a fresh Bludit install in a virtual machine with a single command. I write and edit there, and only the finished result ever touches production.
+What did change is how I work with it. I now use my [Bludit Vagrant](https://jereme.dev/bludit-vagrant) project for local development, which spins up a fresh Bludit install in a virtual machine with a single command. Alongside that, I’ve created a completely new site theme, admin theme, and companion plugin that combines the features from the various plugins I typically use into a single streamlined setup. The companion plugin also adds a new static site generation option, allowing Bludit to generate a fully static HTML version of the site. From there, I can use Coolify to build and deploy the site statically by simply defining the build directory.
 
 That setup gives me the editing experience of a hosted CMS with the security profile of a static site.
 
