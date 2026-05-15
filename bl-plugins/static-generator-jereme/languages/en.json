@@ -14,6 +14,8 @@
 	"sgj-loading-title": "Generating static site…",
 	"sgj-loading-body": "Rendering pages and copying assets. Please don’t close this tab — the page will refresh automatically when the build finishes.",
 	"sgj-section-settings": "Settings",
+	"sgj-production-url-label": "Production URL",
+	"sgj-production-url-tip": "Optional. Public URL the static build will be served from, e.g. <code>https://example.com</code>. When set, this overrides the site URL during the build: <code>$_SERVER</code> is faked to match (so plugins that branch on <code>SERVER_PORT</code> / <code>HTTPS</code> / <code>HTTP_HOST</code> — like the companion's web-stats dev-port check — see production values), and Open Graph / Twitter / canonical URLs are re-absolutized against this host. Leave blank to use the site URL from <em>Settings → Advanced</em>.",
 	"sgj-exclude-paths-label": "Exclude paths",
 	"sgj-exclude-paths-tip": "One path per line. Any URL whose path starts with one of these is skipped (admin and bl-content/databases are always skipped).",
 	"sgj-section-status": "Last build",

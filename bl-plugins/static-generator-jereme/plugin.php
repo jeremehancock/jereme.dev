@@ -35,6 +35,7 @@ class pluginStaticGeneratorJereme extends Plugin
 	{
 		$this->dbFields = array(
 			'excludePaths' => '',
+			'productionUrl' => '',
 
 			// Written by runBuild() — not user-editable.
 			'lastBuildTime' => '',
@@ -76,6 +77,7 @@ class pluginStaticGeneratorJereme extends Plugin
 
 		// ============ SECTION: Settings ===================================
 		$html .= $this->openCard('sgj-section-settings', 'cog');
+		$html .= $this->textField('productionUrl', $L->get('sgj-production-url-label'), $L->get('sgj-production-url-tip'));
 		$html .= $this->textareaField('excludePaths', $L->get('sgj-exclude-paths-label'), $L->get('sgj-exclude-paths-tip'), 4);
 		$html .= $this->closeCard();
 
@@ -1016,12 +1018,16 @@ HTML;
 
 			// Make $_SERVER reflect the production site URL during this render
 			// so plugin hooks see a "production" frontend request rather than
-			// the dev port the admin happens to be served on. Without this,
-			// the companion plugin's webStatsDevport check suppresses web
-			// stats on every page in the build when the admin runs on the
-			// dev port, and any other plugin that branches on SERVER_PORT /
-			// HTTPS / HTTP_HOST gets the wrong context too.
-			$siteUrlParts = parse_url($site->url());
+			// the dev port / hostname the admin happens to be served on.
+			// Without this, the companion plugin's webStatsDevport check
+			// suppresses web stats on every page in the build when the admin
+			// runs on the dev port, and any other plugin that branches on
+			// SERVER_PORT / HTTPS / HTTP_HOST gets the wrong context too.
+			// The "Production URL" plugin setting takes precedence over
+			// $site->url() so a local install at http://localhost:8080 can
+			// still produce a build targeting the public domain.
+			$buildUrl = $this->effectiveBuildUrl();
+			$siteUrlParts = parse_url($buildUrl);
 			if (is_array($siteUrlParts) && isset($siteUrlParts['host'])) {
 				$scheme = isset($siteUrlParts['scheme']) ? $siteUrlParts['scheme'] : 'http';
 				$port = isset($siteUrlParts['port'])
@@ -1301,17 +1307,23 @@ HTML;
 			$html = str_replace($siteOrigin, '', $html);
 		}
 
-		// Social cards (Open Graph, Twitter) and <link rel="canonical"> all
+		// Social cards (Open Graph, Twitter) and <link rel="canonical") all
 		// REQUIRE absolute URLs — relative paths cause crawlers / link
 		// previewers to either ignore the value or resolve it against the
 		// wrong base. The origin-strip above turns those into bare paths
 		// (or, in the case of og:url that was just the bare origin, into
-		// an empty string). Re-absolutize them here using $site->url() so
-		// the static build's social previews work in production.
-		$absOrigin = rtrim($siteOrigin, '/');
+		// an empty string). Re-absolutize them here using the effective
+		// build URL (the "Production URL" plugin setting if set, else
+		// $site->url()) so the static build's social previews work no
+		// matter what hostname the local install is running on.
+		$buildUrl = rtrim($this->effectiveBuildUrl(), '/');
+		$buildOrigin = $this->originOf($buildUrl);
+		if ($buildOrigin !== '' && $buildOrigin !== $siteOrigin) {
+			$html = str_replace($buildOrigin, '', $html);
+		}
+		$absOrigin = $buildOrigin !== '' ? $buildOrigin : rtrim($siteOrigin, '/');
 		if ($absOrigin !== '') {
-			global $site;
-			$siteUrl = rtrim($site->url(), '/');
+			$siteUrl = $buildUrl;
 			$absolutize = function ($val) use ($absOrigin, $siteUrl) {
 				$decoded = htmlspecialchars_decode($val, ENT_QUOTES);
 				if ($decoded === '') {
@@ -1931,6 +1943,19 @@ HTML;
 			$o .= ':' . $p['port'];
 		}
 		return $o;
+	}
+
+	// The URL the build should treat as the public-facing origin. Falls
+	// back to $site->url() so existing installs keep working when the
+	// "Production URL" field is left blank.
+	private function effectiveBuildUrl()
+	{
+		$override = trim((string) $this->getValue('productionUrl'));
+		if ($override !== '') {
+			return $override;
+		}
+		global $site;
+		return $site->url();
 	}
 
 	// ----------------------------------------------------------------------
