@@ -64,7 +64,7 @@
   "jdpc-section-staticgen-subtitle": "Generate a fully static HTML copy of the site to bl-content/static-build/. Useful for archiving, mirroring, or hosting the site without PHP.",
   "sgj-section-action": "Generate static site",
   "sgj-section-action-subtitle": "Renders every public URL, copies referenced assets, rewrites links to document-relative paths, and writes the result to bl-content/static-build/. The admin area, drafts, and the bl-content databases are never included.",
-  "sgj-build-button": "Generate static site",
+  "sgj-build-button": "Generate",
   "sgj-building-button": "Generating…",
   "sgj-confirm-title": "Generate static site?",
   "sgj-confirm-body": "This will render every public page and overwrite anything currently in bl-content/static-build/. The build runs synchronously — keep this tab open until it finishes.",
