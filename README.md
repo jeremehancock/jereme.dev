@@ -26,11 +26,21 @@ git update-index --assume-unchanged bl-content/databases/users.php
 
 That lets the Vagrant install carry the real values without ever staging them. The setting is per-clone — after a fresh clone, re-run both commands before logging into admin.
 
-As a safety net, `scripts/git-hooks/pre-commit` rejects any commit that stages `users.php` or `site.php` with a non-sanitized value. Enable it once per clone:
+As a safety net, `scripts/git-hooks/pre-commit` rejects any commit that stages either file with a non-sanitized value. Enable it once per clone:
 
 ```bash
 git config core.hooksPath scripts/git-hooks
 ```
+
+The hook enforces these exact JSON values on staged content:
+
+| File | Field | Required value |
+| --- | --- | --- |
+| `bl-content/databases/users.php` | `password` | `"!"` |
+| `bl-content/databases/site.php` | `adminTheme` | `"!"` |
+| `bl-content/databases/site.php` | `url` | `"https:\/\/jereme.dev"` |
+
+If a check fails the commit is aborted with a message naming the offending field. Add new guards by appending another `check_field` line in `scripts/git-hooks/pre-commit`.
 
 ## AI Assistance Disclosure
 
