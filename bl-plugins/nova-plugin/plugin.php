@@ -3212,6 +3212,15 @@ HTML;
 		$siteHost = parse_url($siteUrl, PHP_URL_HOST);
 		$this->lcLog('Effective site URL: ' . $siteUrl);
 
+		// Build the set of known internal page paths so we can detect
+		// doc-relative hrefs that the SSG will resolve to a non-page path
+		// (e.g. `[x](pi-lab-setup)` on /parent/ becomes /parent/pi-lab-setup,
+		// but a top-level /pi-lab-setup page exists — the markdown is
+		// ambiguous and the SSG will emit a broken link).
+		// Built from all pages (not just $pages), since archived pages are
+		// excluded as link sources but are still valid link targets.
+		list($knownPaths, $knownSlugs) = $this->lcBuildKnownPageIndex();
+
 		// Collect unique URLs and track which pages each was found on.
 		$linkMap = array(); // urlAbsolute => array('kind'=>internal|external,'sources'=>[ ['title','permalink'] ])
 		$totalLinkOccurrences = 0;
@@ -3242,13 +3251,22 @@ HTML;
 				if (!$isInternal && !$includeExternal) {
 					continue;
 				}
+
+				$ambiguousSuggestion = null;
+				if ($isInternal) {
+					$ambiguousSuggestion = $this->lcAmbiguousRelativeTarget($href, $pagePermalink, $knownPaths, $knownSlugs);
+				}
+
 				$totalLinkOccurrences++;
 				if (!isset($linkMap[$absolute])) {
 					$linkMap[$absolute] = array(
 						'kind' => $isInternal ? 'internal' : 'external',
 						'sources' => array(),
 						'sourceKeys' => array(),
+						'ambiguousSuggestion' => $ambiguousSuggestion,
 					);
+				} elseif ($ambiguousSuggestion !== null && empty($linkMap[$absolute]['ambiguousSuggestion'])) {
+					$linkMap[$absolute]['ambiguousSuggestion'] = $ambiguousSuggestion;
 				}
 				if (!isset($linkMap[$absolute]['sourceKeys'][$pagePermalink])) {
 					$linkMap[$absolute]['sourceKeys'][$pagePermalink] = true;
@@ -3268,15 +3286,29 @@ HTML;
 			$linkMap = array_slice($linkMap, 0, self::LC_URL_HARD_CAP, true);
 		}
 
-		$urls = array_keys($linkMap);
-		$results = $this->lcCheckUrls($urls, $timeout, $userAgent);
+		// Ambiguous doc-relative links are reported as broken without an HTTP
+		// probe, because the runtime router may serve a 200 for them even
+		// though the SSG will write a broken link.
+		$urlsToCheck = array();
+		foreach ($linkMap as $url => $info) {
+			if (empty($info['ambiguousSuggestion'])) {
+				$urlsToCheck[] = $url;
+			}
+		}
+		$results = $this->lcCheckUrls($urlsToCheck, $timeout, $userAgent);
 
 		$broken = array();
 		foreach ($linkMap as $url => $info) {
-			$res = isset($results[$url]) ? $results[$url] : array('code' => 0, 'error' => 'no result');
-			$code = (int) $res['code'];
-			$err = isset($res['error']) ? (string) $res['error'] : '';
-			$isOk = ($code >= 200 && $code < 400);
+			if (!empty($info['ambiguousSuggestion'])) {
+				$code = 0;
+				$err = 'ambiguous relative link, did you mean ' . $info['ambiguousSuggestion'] . '?';
+				$isOk = false;
+			} else {
+				$res = isset($results[$url]) ? $results[$url] : array('code' => 0, 'error' => 'no result');
+				$code = (int) $res['code'];
+				$err = isset($res['error']) ? (string) $res['error'] : '';
+				$isOk = ($code >= 200 && $code < 400);
+			}
 			if ($isOk) {
 				$this->lcLog('OK  ' . $code . '  ' . $url);
 				continue;
@@ -3368,6 +3400,51 @@ HTML;
 		return $out;
 	}
 
+	// Returns [pathSet, slugMap] over ALL pages (including archived and
+	// drafts) for use as valid link targets. We don't filter by category
+	// here because an archived page is still a real, reachable URL — a
+	// link pointing to it should not be flagged as broken just because it
+	// happens to live in the Archived bucket.
+	private function lcBuildKnownPageIndex()
+	{
+		global $pages;
+
+		$keys = array_merge(
+			(array) $pages->getDB(true),
+			(array) $pages->getStickyDB(true),
+			(array) $pages->getStaticDB(true),
+			(array) $pages->getDraftDB(true),
+			(array) $pages->getScheduledDB(true)
+		);
+		$keys = array_unique($keys);
+
+		$paths = array();
+		$slugs = array();
+		foreach ($keys as $key) {
+			try {
+				$p = new Page($key);
+			} catch (Exception $e) {
+				continue;
+			}
+			$perm = $this->toProductionUrl((string) $p->permalink(true));
+			$path = parse_url($perm, PHP_URL_PATH);
+			if ($path === null || $path === false) {
+				continue;
+			}
+			$norm = '/' . trim($path, '/');
+			if ($norm === '/') {
+				continue;
+			}
+			$paths[$norm] = true;
+			$segs = explode('/', trim($norm, '/'));
+			$leaf = end($segs);
+			if ($leaf !== '' && !isset($slugs[$leaf])) {
+				$slugs[$leaf] = $norm;
+			}
+		}
+		return array($paths, $slugs);
+	}
+
 	// ----------------------------------------------------------------------
 	// Link extraction / resolution
 	// ----------------------------------------------------------------------
@@ -3398,6 +3475,63 @@ HTML;
 			$out[] = $u;
 		}
 		return array_values(array_unique($out));
+	}
+
+	// Returns a suggested root-relative path (e.g. "/pi-lab-setup") if the
+	// raw href is doc-relative AND, under SSG resolution (where each page
+	// is written as path/index.html and therefore served with a trailing
+	// slash), the link will point at a non-page path while the href's leaf
+	// segment matches a known top-level page slug. Returns null otherwise.
+	//
+	// Important: we deliberately re-resolve here rather than using the
+	// link checker's `lcResolveUrl` output. The live Bludit router serves
+	// permalinks without a trailing slash, so file-style relative
+	// resolution gives the "correct" /pi-lab-setup URL — which is why the
+	// HTTP probe passes. The SSG output is directory-style, and the
+	// browser resolves the same href to /parent/pi-lab-setup. This check
+	// has to mirror the SSG, not the live router.
+	private function lcAmbiguousRelativeTarget($rawHref, $sourcePermalink, array $knownPaths, array $knownSlugs)
+	{
+		if ($rawHref === '' || $rawHref[0] === '/') {
+			return null;
+		}
+		if (substr($rawHref, 0, 2) === '//') {
+			return null;
+		}
+		if (preg_match('#^[a-z][a-z0-9+.\-]*:#i', $rawHref)) {
+			return null;
+		}
+		$hrefPath = $rawHref;
+		$qPos = strpos($hrefPath, '?');
+		if ($qPos !== false) {
+			$hrefPath = substr($hrefPath, 0, $qPos);
+		}
+		$hrefPath = trim($hrefPath, '/');
+		if ($hrefPath === '' || strpos($hrefPath, '/') !== false) {
+			return null;
+		}
+		// SSG-style resolution: the source permalink is treated as a
+		// directory (path/), so the resolved URL is path/href.
+		$sourcePath = parse_url($sourcePermalink, PHP_URL_PATH);
+		if ($sourcePath === null || $sourcePath === false || $sourcePath === '') {
+			$sourcePath = '/';
+		}
+		$baseDir = '/' . trim($sourcePath, '/');
+		if ($baseDir === '/') {
+			// Doc-relative href from the site root would resolve to /href,
+			// which equals /<slug>. If that slug exists at the root, the
+			// link is correct — nothing to flag.
+			return null;
+		}
+		$ssgResolved = $baseDir . '/' . $hrefPath;
+		$ssgNorm = '/' . trim($ssgResolved, '/');
+		if (isset($knownPaths[$ssgNorm])) {
+			return null;
+		}
+		if (isset($knownSlugs[$hrefPath])) {
+			return $knownSlugs[$hrefPath];
+		}
+		return null;
 	}
 
 	private function lcResolveUrl($baseAbsolute, $url)
