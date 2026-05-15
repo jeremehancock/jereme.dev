@@ -1,51 +1,51 @@
-[17:07:24] Link check started at 2026-05-15T17:07:24-05:00
-[17:07:24] Pages in scope: 20
-[17:07:24] Effective site URL: https://jereme.dev
-[17:07:24] Unique URLs to check: 46 (51 total occurrences)
-[17:07:31] OK  200  https://bludit.com
-[17:07:31] OK  200  https://jereme.dev/pi-lab-setup
-[17:07:31] OK  200  https://coolify.io
-[17:07:31] OK  200  https://jereme.dev/homelab
-[17:07:31] OK  200  https://jereme.dev/homelab-md-offline-homelab-documentation
-[17:07:31] OK  200  https://jereme.dev/bludit-vagrant
-[17:07:31] OK  200  https://github.com/jeremehancock/homelab.md
-[17:07:31] OK  200  https://github.com/jeremehancock/Glimpse
-[17:07:31] OK  200  https://glimpse.vitaminsocks.com/
-[17:07:31] OK  200  https://github.com/jeremehancock/CLIX
-[17:07:31] OK  200  https://www.howtogeek.com/5-essential-self-hosted-media-apps-that-belong-on-every-plex-server/
-[17:07:31] OK  200  https://posteria.app
-[17:07:31] OK  200  https://tailscale.com
-[17:07:31] OK  200  https://www.buymeacoffee.com/jeremehancock
-[17:07:31] OK  200  https://github.com/jeremehancock/Libretto
-[17:07:31] OK  200  https://aigamecollection.com/
-[17:07:31] OK  200  https://github.com/jeremehancock/AI-Game-Collection
-[17:07:31] OK  200  https://www.amazon.com/Android-Streaming-Device-Remote-Control/dp/B0BRBLG3W6/ref=sr_1_1
-[17:07:31] OK  200  https://play.google.com/store/apps/details?id=com.plexapp.android
-[17:07:31] OK  200  https://play.google.com/store/apps/details?id=org.xbmc.kodi
-[17:07:31] OK  200  https://play.google.com/store/apps/details?id=org.jellyfin.mobile
-[17:07:31] OK  200  https://play.google.com/store/apps/details?id=com.google.android.apps.youtube.unplugged
-[17:07:31] OK  200  https://play.google.com/store/apps/details?id=com.tailscale.ipn
-[17:07:31] OK  200  https://www.amazon.com/WD-1TB-Elements-Compatible-WDBAYN0010BBK-WESN/dp/B097TTZD48
-[17:07:31] OK  200  https://www.amazon.com/dp/B083KJ1B5H
-[17:07:31] OK  200  https://jereme.dev/plex-server-upgrade
-[17:07:31] OK  200  https://store.minisforum.com/products/minisforum-ms-a1?variant=45707673338101
-[17:07:31] OK  200  https://www.youtube.com/@VirtualizationHowto
-[17:07:31] OK  200  https://proxmox.com/en/
-[17:07:31] OK  200  https://store.acer.com/en-us/aspire-tc-desktop-tc-1750-ur11
-[17:07:31] OK  200  https://www.youtube.com/watch?v=-tKf3uV2kTc
-[17:07:31] OK  200  https://www.plex.tv/
-[17:07:31] OK  200  https://github.com/jeremehancock/moviecli
-[17:07:31] OK  200  https://pi-hole.net/
-[17:07:31] OK  200  https://tailscale.com/
-[17:07:31] OK  200  https://docs.pi-hole.net/main/post-install/
-[17:07:31] OK  200  https://www.loc.gov/free-to-use/john-margolies-roadside-america-photograph-archive
-[17:07:31] OK  200  https://roadside-america.dumbprojects.com/
-[17:07:31] OK  200  https://roadside-america.dumbprojects.com/demo/
-[17:07:31] OK  200  https://www.bludit.com/
-[17:07:31] OK  200  https://www.vagrantup.com/
-[17:07:31] OK  200  https://www.virtualbox.org/
-[17:07:31] OK  200  https://github.com/jeremehancock/Bludit-Vagrant/
-[17:07:31] OK  200  https://www.bludit.com
-[17:07:31] OK  200  https://github.com/jeremehancock/RandomGoat.com
-[17:07:31] OK  200  https://randomgoat.com
-[17:07:31] Finished: All 46 link(s) returned a healthy status. in 7.86s
+[17:20:43] Link check started at 2026-05-15T17:20:43-05:00
+[17:20:43] Pages in scope: 20
+[17:20:43] Effective site URL: https://jereme.dev
+[17:20:43] Unique URLs to check: 46 (51 total occurrences)
+[17:20:52] OK  200  https://bludit.com
+[17:20:52] OK  200  https://jereme.dev/pi-lab-setup
+[17:20:52] OK  200  https://coolify.io
+[17:20:52] OK  200  https://jereme.dev/homelab
+[17:20:52] OK  200  https://jereme.dev/homelab-md-offline-homelab-documentation
+[17:20:52] OK  200  https://jereme.dev/bludit-vagrant
+[17:20:52] OK  200  https://github.com/jeremehancock/homelab.md
+[17:20:52] OK  200  https://github.com/jeremehancock/Glimpse
+[17:20:52] OK  200  https://glimpse.vitaminsocks.com/
+[17:20:52] OK  200  https://github.com/jeremehancock/CLIX
+[17:20:52] OK  200  https://www.howtogeek.com/5-essential-self-hosted-media-apps-that-belong-on-every-plex-server/
+[17:20:52] OK  200  https://posteria.app
+[17:20:52] OK  200  https://tailscale.com
+[17:20:52] OK  200  https://www.buymeacoffee.com/jeremehancock
+[17:20:52] OK  200  https://github.com/jeremehancock/Libretto
+[17:20:52] OK  200  https://aigamecollection.com/
+[17:20:52] OK  200  https://github.com/jeremehancock/AI-Game-Collection
+[17:20:52] OK  200  https://www.amazon.com/Android-Streaming-Device-Remote-Control/dp/B0BRBLG3W6/ref=sr_1_1
+[17:20:52] OK  200  https://play.google.com/store/apps/details?id=com.plexapp.android
+[17:20:52] OK  200  https://play.google.com/store/apps/details?id=org.xbmc.kodi
+[17:20:52] OK  200  https://play.google.com/store/apps/details?id=org.jellyfin.mobile
+[17:20:52] OK  200  https://play.google.com/store/apps/details?id=com.google.android.apps.youtube.unplugged
+[17:20:52] OK  200  https://play.google.com/store/apps/details?id=com.tailscale.ipn
+[17:20:52] OK  200  https://www.amazon.com/WD-1TB-Elements-Compatible-WDBAYN0010BBK-WESN/dp/B097TTZD48
+[17:20:52] OK  200  https://www.amazon.com/dp/B083KJ1B5H
+[17:20:52] OK  200  https://jereme.dev/plex-server-upgrade
+[17:20:52] OK  200  https://store.minisforum.com/products/minisforum-ms-a1?variant=45707673338101
+[17:20:52] OK  200  https://www.youtube.com/@VirtualizationHowto
+[17:20:52] OK  200  https://proxmox.com/en/
+[17:20:52] OK  200  https://store.acer.com/en-us/aspire-tc-desktop-tc-1750-ur11
+[17:20:52] OK  200  https://www.youtube.com/watch?v=-tKf3uV2kTc
+[17:20:52] OK  200  https://www.plex.tv/
+[17:20:52] OK  200  https://github.com/jeremehancock/moviecli
+[17:20:52] OK  200  https://pi-hole.net/
+[17:20:52] OK  200  https://tailscale.com/
+[17:20:52] OK  200  https://docs.pi-hole.net/main/post-install/
+[17:20:52] OK  200  https://www.loc.gov/free-to-use/john-margolies-roadside-america-photograph-archive
+[17:20:52] OK  200  https://roadside-america.dumbprojects.com/
+[17:20:52] OK  200  https://roadside-america.dumbprojects.com/demo/
+[17:20:52] OK  200  https://www.bludit.com/
+[17:20:52] OK  200  https://www.vagrantup.com/
+[17:20:52] OK  200  https://www.virtualbox.org/
+[17:20:52] OK  200  https://github.com/jeremehancock/Bludit-Vagrant/
+[17:20:52] OK  200  https://www.bludit.com
+[17:20:52] OK  200  https://github.com/jeremehancock/RandomGoat.com
+[17:20:52] OK  200  https://randomgoat.com
+[17:20:52] Finished: All 46 link(s) returned a healthy status. in 8.55s
