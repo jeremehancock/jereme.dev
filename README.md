@@ -11,17 +11,9 @@ Source for [jereme.dev](https://jereme.dev) — my personal dev / homelab site.
 
 Bludit core (`bl-kernel/`, `bl-languages/`) is upstream and kept on the latest release. Only the three paths above are customized in this repo.
 
-## Running locally
+## Hosting
 
-```bash
-php -S 0.0.0.0:8080 -t .
-```
-
-Then open <http://localhost:8080>. The same `php -S` invocation is used for deployment via `nixpacks.toml`.
-
-## Deployment
-
-The companion plugin's Static Site Generator mirrors the live site to `bl-content/static-build/`, which is committed to the repo and served as the production output.
+The site is hosted with [Coolify](https://coolify.io/), serving the contents of `bl-content/static-build/` as a static site. The companion plugin's Static Site Generator mirrors the live Bludit site into that directory; the generated output is committed to the repo so each push deploys the latest build.
 
 ## License
 
