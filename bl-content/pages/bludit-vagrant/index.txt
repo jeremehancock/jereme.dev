@@ -26,7 +26,7 @@ vagrant up
 
 ### Usage
 1. Make sure the vagrant process is completed and your virtual machine is ready
-2. Point your web browser to http://localhost:8080 to view your Bludit site
+2. Point your web browser to `http://localhost:8080` to view your Bludit site
 3. Follow the steps to complete the Bludit installation
 4. If you'd like to login into your virtual machine run
 ```
