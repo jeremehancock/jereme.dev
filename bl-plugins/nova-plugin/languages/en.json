@@ -50,7 +50,7 @@
   "jdpc-section-html-subtitle": "Inject raw HTML at specific points in the page. Common uses: verification meta tags (Search Console, Mastodon, IndieAuth), custom fonts or analytics that don't fit the Web stats section, third-party chat widgets, schema.org JSON-LD, or experimental scripts. Anything pasted here is emitted verbatim on every page in its area — be deliberate about what you put in.",
   "jdpc-section-html-website": "Website (public pages)",
   "jdpc-section-html-admin": "Admin area",
-  "jdpc-html-head-label": "<head>",
+  "jdpc-html-head-label": "Head",
   "jdpc-html-bodybegin-label": "Body begin",
   "jdpc-html-bodyend-label": "Body end",
   "jdpc-html-head-tip": "Emitted inside the &lt;head&gt; tag on every public page. Use for meta tags, link rel=preconnect, JSON-LD, fonts, etc.",
