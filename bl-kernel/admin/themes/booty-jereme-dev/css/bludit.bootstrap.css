@@ -129,6 +129,16 @@ a.text-danger:hover {
 	transform: translateY(-1px);
 }
 
+.btn-primary:focus,
+.btn-primary.focus,
+.btn-primary:not(:disabled):not(.disabled):active,
+.btn-primary:not(:disabled):not(.disabled).active {
+	background: var(--primary-blue-dark, #6ee7b7);
+	border: none;
+	color: var(--accent-ink, #0a0c10);
+	box-shadow: none;
+}
+
 .btn-secondary {
 	background-color: var(--color-secondary, #64748B);
 	border: none;
