@@ -256,7 +256,8 @@ class pluginNovaPlugin extends Plugin
 			. 'var key="jdpcActiveTab";'
 			. 'var $tabs=$(\'#jdpc-nav-tab a[data-toggle="tab"]\');'
 			. '$tabs.on("click",function(e){window.localStorage.setItem(key,$(e.target).attr("href"));});'
-			. 'var active=window.localStorage.getItem(key);'
+			. 'var hash=window.location.hash;'
+			. 'var active=(hash&&$(\'#jdpc-nav-tab a[href="\'+hash+\'"]\').length)?hash:window.localStorage.getItem(key);'
 			. 'if(active&&$(\'#jdpc-nav-tab a[href="\'+active+\'"]\').length){'
 			. '$(\'#jdpc-nav-tab a[href="\'+active+\'"]\').tab("show");'
 			. '}'
@@ -583,21 +584,31 @@ class pluginNovaPlugin extends Plugin
 	// ------------------------------------------------------------------
 	public function adminSidebar()
 	{
-		if (!$this->getValue('versionCheckEnabled')) {
-			return '';
-		}
 		global $L;
-		$isPro = defined('BLUDIT_PRO');
-		$heart = $isPro ? '<span class="fa fa-heart" style="color: #ffc107"></span>' : '';
-		$newHref = $isPro ? 'https://www.patreon.com/bludit/posts' : 'https://www.bludit.com';
+		$html = '';
 
-		$html = '<a id="current-version" class="nav-link" href="' . HTML_PATH_ADMIN_ROOT . 'about">';
-		$html .= 'Version ' . $heart;
-		$html .= '<span class="badge badge-warning badge-pill">' . BLUDIT_VERSION . '</span>';
-		$html .= '</a>';
-		$html .= '<a id="new-version" style="display: none;" target="_blank" rel="noopener" href="' . $newHref . '">';
-		$html .= $L->get('New version available') . ' <span class="fa fa-bell" style="color: red"></span>';
-		$html .= '</a>';
+		// SSG link — admin-only, since configure-plugin requires the admin role
+		if (checkRole(array('admin'), false)) {
+			$ssgHref = HTML_PATH_ADMIN_ROOT . 'configure-plugin/' . $this->className() . '#jdpc-staticgen';
+			$html .= '<a id="jdpc-sidebar-staticgen" class="nav-link" href="' . $ssgHref . '">';
+			$html .= '<span class="fa fa-hammer"></span> ' . $L->get('jdpc-sidebar-staticgen');
+			$html .= '</a>';
+		}
+
+		if ($this->getValue('versionCheckEnabled')) {
+			$isPro = defined('BLUDIT_PRO');
+			$heart = $isPro ? '<span class="fa fa-heart" style="color: #ffc107"></span>' : '';
+			$newHref = $isPro ? 'https://www.patreon.com/bludit/posts' : 'https://www.bludit.com';
+
+			$html .= '<a id="current-version" class="nav-link" href="' . HTML_PATH_ADMIN_ROOT . 'about">';
+			$html .= 'Version ' . $heart;
+			$html .= '<span class="badge badge-warning badge-pill">' . BLUDIT_VERSION . '</span>';
+			$html .= '</a>';
+			$html .= '<a id="new-version" style="display: none;" target="_blank" rel="noopener" href="' . $newHref . '">';
+			$html .= $L->get('New version available') . ' <span class="fa fa-bell" style="color: red"></span>';
+			$html .= '</a>';
+		}
+
 		return $html;
 	}
 

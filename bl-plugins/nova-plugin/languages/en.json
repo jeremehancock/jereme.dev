@@ -59,6 +59,7 @@
   "jdpc-html-adminhead-tip": "Emitted inside the &lt;head&gt; tag of every admin page. Generally only useful for custom admin styling.",
   "jdpc-html-adminbodybegin-tip": "Emitted immediately after &lt;body&gt; on every admin page.",
   "jdpc-html-adminbodyend-tip": "Emitted just before &lt;/body&gt; on every admin page.",
+  "jdpc-sidebar-staticgen": "Static Site Generator",
   "jdpc-section-staticgen": "Static Site Generator",
   "jdpc-section-staticgen-subtitle": "Generate a fully static HTML copy of the site to bl-content/static-build/. Useful for archiving, mirroring, or hosting the site without PHP.",
   "sgj-section-action": "Generate static site",
