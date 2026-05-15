@@ -1384,8 +1384,13 @@ HTML;
 		parent::post();
 		if ($action === 'build') {
 			$this->runStaticBuild();
+			// runStaticBuild() sets its own Alert with the build result;
+			// return false so the kernel doesn't overwrite it with the
+			// generic "The changes have been saved" message.
+			return false;
 		} elseif ($action === 'checklinks') {
 			$this->runLinkCheck();
+			return false;
 		}
 		return true;
 	}
