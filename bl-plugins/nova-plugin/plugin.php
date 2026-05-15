@@ -327,15 +327,32 @@ class pluginNovaPlugin extends Plugin
 
 		$html .= '</div>'; // /tab-content
 
-		// Remember the active tab across saves / refreshes
+		// Remember the active tab across saves / refreshes. We also keep
+		// window.location.hash in sync with the active tab — otherwise a
+		// stale fragment from an entry point like the admin sidebar's
+		// "Static Site Generator" link (which targets #jdpc-staticgen)
+		// would survive the form POST and outrank localStorage on the
+		// next render, snapping the user back to that tab regardless of
+		// where they actually submitted from.
 		$html .= '<script>(function(){'
 			. 'var key="jdpcActiveTab";'
 			. 'var $tabs=$(\'#jdpc-nav-tab a[data-toggle="tab"]\');'
-			. '$tabs.on("click",function(e){window.localStorage.setItem(key,$(e.target).attr("href"));});'
+			. 'function syncHash(href){'
+			.   'if(!href||href.charAt(0)!=="#")return;'
+			.   'if(window.history&&window.history.replaceState){'
+			.     'window.history.replaceState(null,"",window.location.pathname+window.location.search+href);'
+			.   '}'
+			. '}'
+			. '$tabs.on("click",function(e){'
+			.   'var href=$(e.target).attr("href");'
+			.   'window.localStorage.setItem(key,href);'
+			.   'syncHash(href);'
+			. '});'
 			. 'var hash=window.location.hash;'
 			. 'var active=(hash&&$(\'#jdpc-nav-tab a[href="\'+hash+\'"]\').length)?hash:window.localStorage.getItem(key);'
 			. 'if(active&&$(\'#jdpc-nav-tab a[href="\'+active+\'"]\').length){'
-			. '$(\'#jdpc-nav-tab a[href="\'+active+\'"]\').tab("show");'
+			.   '$(\'#jdpc-nav-tab a[href="\'+active+\'"]\').tab("show");'
+			.   'syncHash(active);'
 			. '}'
 			. '})();</script>';
 
