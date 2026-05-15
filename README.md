@@ -30,6 +30,10 @@ That lets the Vagrant install carry the real values without ever staging them. T
 
 This project was developed with assistance from AI language models.
 
+## Disclaimer
+
+This repository is published as-is, primarily as a reference for how I run my own site. It is **not** a supported product. No warranty of any kind is provided, express or implied, including merchantability, fitness for a particular purpose, or non-infringement. Use it at your own risk — I make no commitment to maintain it, accept contributions, or respond to issues, and I am not liable for any damages arising from its use.
+
 ## License
 
 MIT — see [LICENSE](LICENSE). Bludit is © Diego Najar and contributors.
