@@ -122,9 +122,15 @@ Everything is files. No DB.
 - `bl-content/static-build/` — generated output of the Static Site Generator. **Committed to the repo** so the host can serve it as the production site. Treat it as build output: do not hand-edit; regenerate via the SSG tab in admin.
 - `bl-content/tmp/` — scratch; gitignored.
 
+Top-level static directories (siblings of `bl-content/`) can be mirrored into the SSG output via the plugin's `extraDirs` setting. `homelab/` is the current example — a stand-alone HTML directory served verbatim under `/homelab/`.
+
+`.gitignore` excludes `bl-content/tmp` and `jereme-dev-info.md` (local notes file).
+
+Page `type` is one of `published`, `draft`, `sticky`, `static`, `scheduled`.
+
 ### Locally-diverged tracked files
 
-`bl-content/databases/users.php` and `bl-content/databases/site.php` are tracked, but the working copy on a real Bludit install carries values that must never reach the repo — the admin password hash + salt + auth tokens in `users.php`, and the real `adminTheme` in `site.php`. The committed copies are sanitized (`"password": "!"`, `"adminTheme": "!"`), and locally the files are masked with:
+`bl-content/databases/users.php` and `bl-content/databases/site.php` are tracked, but the working copy on a real Bludit install carries values that must never reach the repo — the admin password hash + salt + auth tokens in `users.php`, and the real `adminTheme` plus host-specific fields in `site.php`. The committed copies are sanitized (`"password": "!"`, `"adminTheme": "!"`, `"url": "https:\/\/jereme.dev"`), and locally the files are masked with:
 
 ```bash
 git update-index --assume-unchanged bl-content/databases/site.php
@@ -133,11 +139,7 @@ git update-index --assume-unchanged bl-content/databases/users.php
 
 This is a per-clone setting, not stored in the repo. After a fresh clone, re-run those two commands before logging into admin, otherwise the next commit from that clone will leak the real values. If you need to legitimately update the sanitized copy in the repo (e.g. to add a new field), `git update-index --no-assume-unchanged <file>`, edit to the sanitized form, commit, then re-mask.
 
-Top-level static directories (siblings of `bl-content/`) can be mirrored into the SSG output via the plugin's `extraDirs` setting. `homelab/` is the current example — a stand-alone HTML directory served verbatim under `/homelab/`.
-
-`.gitignore` excludes `bl-content/tmp` and `jereme-dev-info.md` (local notes file).
-
-Page `type` is one of `published`, `draft`, `sticky`, `static`, `scheduled`.
+A tracked safety net lives at `scripts/git-hooks/pre-commit` — it rejects commits that stage either file with non-sanitized `password` / `adminTheme` / `url` values. Enabled per-clone with `git config core.hooksPath scripts/git-hooks`. See the README ("Keeping local credentials out of the repo") for the full table of enforced values and bypass options. If you're committing on behalf of the user and the hook fires, do not bypass with `--no-verify` — confirm with the user first; it usually means the working copy isn't masked.
 
 ## Editing conventions
 

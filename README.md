@@ -17,7 +17,7 @@ Bludit runs locally in a [Vagrant](https://jereme.dev/bludit-vagrant/) VM, where
 
 ### Keeping local credentials out of the repo
 
-`bl-content/databases/users.php` (admin password hash, salt, auth tokens) and `bl-content/databases/site.php` (real `adminTheme` value) are tracked with sanitized placeholders so the source tree stays runnable end-to-end. Locally the files are masked with:
+`bl-content/databases/users.php` (admin password hash, salt, auth tokens) and `bl-content/databases/site.php` (real `adminTheme`, plus host-specific fields that drift locally) are tracked with sanitized placeholders so the source tree stays runnable end-to-end. Locally the files are masked with:
 
 ```bash
 git update-index --assume-unchanged bl-content/databases/site.php
