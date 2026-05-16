@@ -1,7 +1,3 @@
-# Bludit-Vagrant
-
-Vagrant setup for [Bludit Flat File CMS](https://www.bludit.com/).
-
 The goal of this project is to create a quick virtual machine environment with a Bludit installation for testing and development purposes. You can halt and resume the VM without overwriting your Bludit install.
 
 The following technologies are automatically installed for you:
