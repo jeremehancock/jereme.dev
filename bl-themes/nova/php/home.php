@@ -48,14 +48,44 @@ if ($isHome) {
     foreach ($paginatedKeys as $key) {
         $content[] = buildPage($key);
     }
+} elseif ($WHERE_AM_I === 'tag') {
+    // Filter out pages in hidden categories from tag listings and paginate
+    // ourselves so the totals stay accurate.
+    global $tags;
+    $tagKey = $url->slug();
+    $allTagKeys = isset($tags->db[$tagKey]['list']) ? $tags->db[$tagKey]['list'] : array();
+
+    $filteredKeys = array();
+    foreach ($allTagKeys as $key) {
+        try {
+            $p = buildPage($key);
+        } catch (Exception $e) {
+            continue;
+        }
+        $type = $p->type();
+        if ($type !== 'published' && $type !== 'sticky' && $type !== 'static') continue;
+        if (in_array($p->categoryKey(), $hiddenCategories, true)) continue;
+        $filteredKeys[] = $key;
+    }
+
+    $totalItems = count($filteredKeys);
+    $totalPages = max(1, (int)ceil($totalItems / $itemsPerPage));
+
+    $offset = ($currentPage - 1) * $itemsPerPage;
+    $paginatedKeys = array_slice($filteredKeys, $offset, $itemsPerPage);
+
+    $content = array();
+    foreach ($paginatedKeys as $key) {
+        $content[] = buildPage($key);
+    }
 } else {
     $totalPages = Paginator::numberOfPages();
 }
 ?>
 <?php Theme::plugins('pageBegin'); ?>
 
-<main class="site-main<?php echo (!$isFirstPage && $WHERE_AM_I !== 'category' && $WHERE_AM_I !== 'tag') ? ' site-main-padded' : ''; ?>" id="main" role="main">
-    <?php if ($isFirstPage): ?>
+<main class="site-main<?php echo (!$isHome && $WHERE_AM_I !== 'category' && $WHERE_AM_I !== 'tag') ? ' site-main-padded' : ''; ?>" id="main" role="main">
+    <?php if ($isHome): ?>
     <section class="page-band" aria-label="Latest">
         <div class="container">
             <p class="page-band-eyebrow"><span class="band-tick" aria-hidden="true"></span><?php echo $L->get('Latest posts'); ?></p>
