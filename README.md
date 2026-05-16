@@ -2,6 +2,10 @@
 
 Source for [jereme.dev](https://jereme.dev) — my personal dev / homelab site.
 
+<div align="center">
+    <img src="https://raw.githubusercontent.com/jeremehancock/jereme.dev/refs/heads/master/bl-themes/nova/img/jereme-dev-meta.png" width="100% alt="jereme.dev" />
+</div>
+
 ## Stack
 
 - [Bludit](https://www.bludit.com/) — flat-file PHP CMS (no database; content lives as JSON / Markdown under `bl-content/`).
