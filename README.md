@@ -3,7 +3,7 @@
 Source for [jereme.dev](https://jereme.dev) — my personal dev / homelab site.
 
 <div align="center">
-    <img src="https://raw.githubusercontent.com/jeremehancock/jereme.dev/refs/heads/master/bl-themes/nova/img/jereme-dev-meta.png" width="100% alt="jereme.dev" />
+    <a href="https://jereme.dev" target="_blank"><img src="https://raw.githubusercontent.com/jeremehancock/jereme.dev/refs/heads/master/bl-themes/nova/img/jereme-dev-meta.png" width="100% alt="jereme.dev" /></a>
 </div>
 
 ## Stack
