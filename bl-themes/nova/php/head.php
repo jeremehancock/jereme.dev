@@ -7,7 +7,7 @@
 <?php echo Theme::headTitle(); ?>
 <?php echo $helper->head_description(); ?>
 
-<?php echo Theme::favicon('img/favicon.ico', HTML_PATH_THEME); ?>
+<?php echo Theme::favicon('img/favicon.png', HTML_PATH_THEME); ?>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
