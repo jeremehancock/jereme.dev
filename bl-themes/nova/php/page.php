@@ -50,7 +50,7 @@ $hiddenCategories = ['archived'];
         </div>
 
         <footer class="entry-footer container">
-            <?php if ($page->tags()): ?>
+            <?php if ($page->tags() && !in_array($page->categoryKey(), $hiddenCategories, true)): ?>
                 <div class="entry-tags">
                     <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
                         <use xlink:href="#icon-tag"></use>
