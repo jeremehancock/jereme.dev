@@ -32,7 +32,7 @@ The practical difference, day to day, is enormous. Pushing a change used to invo
 
 One thing that didn't change is the CMS. The site is still running Bludit, the same flat-file CMS I started with back in 2019. I've looked at alternatives over the years, but Bludit keeps doing what I want it to do, and there's a certain satisfaction in still using the same tool that started this whole thing.
 
-What did change is how I work with it. I now use my [Bludit Vagrant](https://jereme.dev/bludit-vagrant) project for local development, which spins up a fresh Bludit install in a virtual machine with a single command. Alongside that, I’ve created a completely new site theme, admin theme, and companion plugin that combines the features from the various plugins I typically use into a single streamlined setup. The companion plugin also adds a new static site generation option, allowing Bludit to generate a fully static HTML version of the site. From there, I can use Coolify to build and deploy the site statically by simply defining the build directory.
+What did change is how I work with it. I now use my [Bludit Docker](/bludit-docker) project for local development, which spins up a fresh Bludit install in a virtual machine with a single command. Alongside that, I’ve created a completely new site theme, admin theme, and companion plugin that combines the features from the various plugins I typically use into a single streamlined setup. The companion plugin also adds a new static site generation option, allowing Bludit to generate a fully static HTML version of the site. From there, I can use Coolify to build and deploy the site statically by simply defining the build directory.
 
 That setup gives me the editing experience of a hosted CMS with the security profile of a static site.
 
@@ -48,5 +48,9 @@ If you've been around since the pilab.dev days, thanks for sticking around. And 
 
 - The original Pi Lab write-up (archived): [jereme.dev/pi-lab-setup](/pi-lab-setup)
 - Current homelab specs: <a href="https://jereme.dev/homelab" target="_blank">jereme.dev/homelab</a>
-- Bludit Vagrant for local development: [jereme.dev/bludit-vagrant](/bludit-vagrant)
+- Bludit Docker for local deployment: [jereme.dev/bludit-vagrant](/bludit-docker)
+- Bludit Vagrant for local deployment: [jereme.dev/bludit-vagrant](/bludit-vagrant)
 - GitHub repo for this site: [jeremehancock/jereme.dev](https://github.com/jeremehancock/jereme.dev#jeremedev)
+
+**Updates:**
+> *I have switched from my [Bludit Vagrant](/bludit-vagrant) setup for running Bludit locally to a Docker based setup. See: [Bludit Docker](/bludit-docker)*

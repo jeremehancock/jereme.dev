@@ -41,7 +41,7 @@
 <meta property="og:url" content="https://jereme.dev/the-evolution-of-a-site-and-a-homelab">
 <meta property="og:site_name" content="jereme.dev">
 <meta property="article:published_time" content="2026-05-08T11:18:25-05:00">
-<meta property="article:modified_time" content="2026-05-15T22:13:03-05:00">
+<meta property="article:modified_time" content="2026-05-17T09:37:07-05:00">
 <meta property="article:author" content="Admin">
 <meta property="og:image" content="https://jereme.dev/bl-content/uploads/pages/327e0dfa19bb26d9f9a78d54efa5ef47/pilab-jerme-png.png">
 <meta property="og:image:alt" content="Evolution of a Homelab">
@@ -239,7 +239,7 @@
 <p>The practical difference, day to day, is enormous. Pushing a change used to involve a sandbox node, a bash script, and a quiet hope that nothing went sideways during the rsync. Now it's a Git push and Coolify handles the rest. The redundancy that I was hand-stitching with NGINX and load balancing is now just a property of the platform. The hardware I was babysitting is now a single VM I almost never think about.</p>
 <h2>Still on Bludit</h2>
 <p>One thing that didn't change is the CMS. The site is still running Bludit, the same flat-file CMS I started with back in 2019. I've looked at alternatives over the years, but Bludit keeps doing what I want it to do, and there's a certain satisfaction in still using the same tool that started this whole thing.</p>
-<p>What did change is how I work with it. I now use my <a href="/bludit-vagrant">Bludit Vagrant</a> project for local development, which spins up a fresh Bludit install in a virtual machine with a single command. Alongside that, I’ve created a completely new site theme, admin theme, and companion plugin that combines the features from the various plugins I typically use into a single streamlined setup. The companion plugin also adds a new static site generation option, allowing Bludit to generate a fully static HTML version of the site. From there, I can use Coolify to build and deploy the site statically by simply defining the build directory.</p>
+<p>What did change is how I work with it. I now use my <a href="../bludit-docker/">Bludit Docker</a> project for local development, which spins up a fresh Bludit install in a virtual machine with a single command. Alongside that, I’ve created a completely new site theme, admin theme, and companion plugin that combines the features from the various plugins I typically use into a single streamlined setup. The companion plugin also adds a new static site generation option, allowing Bludit to generate a fully static HTML version of the site. From there, I can use Coolify to build and deploy the site statically by simply defining the build directory.</p>
 <p>That setup gives me the editing experience of a hosted CMS with the security profile of a static site.</p>
 <h2>What stayed the same</h2>
 <p>The thing I want to be careful not to lose, even as the stack got nicer, is the spirit of the original site. Pi Lab existed because I wanted to learn by doing, and because writing about what I was doing forced me to understand it well enough to explain it. That's still the entire point.</p>
@@ -249,9 +249,14 @@
 <ul>
 <li>The original Pi Lab write-up (archived): <a href="../pi-lab-setup/">jereme.dev/pi-lab-setup</a></li>
 <li>Current homelab specs: <a href="/homelab" target="_blank">jereme.dev/homelab</a></li>
-<li>Bludit Vagrant for local development: <a href="../bludit-vagrant/">jereme.dev/bludit-vagrant</a></li>
+<li>Bludit Docker for local deployment: <a href="../bludit-docker/">jereme.dev/bludit-vagrant</a></li>
+<li>Bludit Vagrant for local deployment: <a href="../bludit-vagrant/">jereme.dev/bludit-vagrant</a></li>
 <li>GitHub repo for this site: <a href="https://github.com/jeremehancock/jereme.dev#jeremedev">jeremehancock/jereme.dev</a></li>
-</ul>            </div>
+</ul>
+<p><strong>Updates:</strong></p>
+<blockquote>
+<p><em>I have switched from my <a href="../bludit-vagrant/">Bludit Vagrant</a> setup for running Bludit locally to a Docker based setup. See: <a href="../bludit-docker/">Bludit Docker</a></em></p>
+</blockquote>            </div>
         </div>
 
         <footer class="entry-footer container">

@@ -17,7 +17,7 @@ Bludit core (`bl-kernel/`, `bl-languages/`) is upstream and kept on the latest r
 
 ## Authoring & hosting
 
-Bludit runs locally in a [Vagrant](https://jereme.dev/bludit-vagrant/) VM, where I author and preview content as a normal dynamic Bludit install. When a change is ready to ship, the companion plugin's Static Site Generator mirrors the rendered site into `bl-content/static-build/`. That directory is committed to the repo, and [Coolify](https://coolify.io/) serves it as a static site — so production never runs PHP, but I retain the option to host Bludit dynamically again at any time.
+Bludit runs locally in a [Docker](https://jereme.dev/bludit-docker/) Container, where I author and preview content as a normal dynamic Bludit install. When a change is ready to ship, the companion plugin's Static Site Generator mirrors the rendered site into `bl-content/static-build/`. That directory is committed to the repo, and [Coolify](https://coolify.io/) serves it as a static site — so production never runs PHP, but I retain the option to host Bludit dynamically again at any time.
 
 ### Keeping local credentials out of the repo
 
@@ -28,7 +28,7 @@ git update-index --assume-unchanged bl-content/databases/site.php
 git update-index --assume-unchanged bl-content/databases/users.php
 ```
 
-That lets the Vagrant install carry the real values without ever staging them. The setting is per-clone — after a fresh clone, re-run both commands before logging into admin.
+That lets the Docker install carry the real values without ever staging them. The setting is per-clone — after a fresh clone, re-run both commands before logging into admin.
 
 As a safety net, `scripts/git-hooks/pre-commit` rejects any commit that stages either file with a non-sanitized value. It enforces these exact JSON values on staged content:
 
