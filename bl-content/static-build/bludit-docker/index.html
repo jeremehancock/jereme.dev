@@ -41,7 +41,7 @@
 <meta property="og:url" content="https://jereme.dev/bludit-docker">
 <meta property="og:site_name" content="jereme.dev">
 <meta property="article:published_time" content="2026-05-16T16:23:16-05:00">
-<meta property="article:modified_time" content="2026-05-16T16:59:47-05:00">
+<meta property="article:modified_time" content="2026-05-17T09:19:54-05:00">
 <meta property="article:author" content="Admin">
 <meta property="og:image" content="https://jereme.dev/bl-content/uploads/pages/b04010c1ec245f93cbba69a87e1a31df/ChatGPT-Image-May-16-2026-04-23-07-PM-png.png">
 <meta property="og:image:alt" content="Bludit Docker">
@@ -237,13 +237,28 @@
 </ol>
 <h2>Installation Instructions</h2>
 <ol>
-<li>Find a directory on your computer where you'd like to install this repo</li>
-<li>Run <code>git clone https://github.com/jeremehancock/Bludit-Docker.git</code></li>
-<li>Run <code>cd Bludit-Docker</code></li>
-<li>(Linux/macOS, recommended) Create a <code>.env</code> file so Bludit files on the host are owned by your user instead of <code>root</code>:<pre><code>printf "PUID=%s\nPGID=%s\n" "$(id -u)" "$(id -g)" &gt; .env</code></pre>
-<p>On Docker Desktop (macOS/Windows) this step is optional — the bind mount is already remapped to your user.</p>
+<li>
+<p>Find a directory on your computer where you'd like to install this repo</p>
 </li>
-<li>Run <code>docker compose up -d --build</code></li>
+<li>
+<p>Run <code>git clone https://github.com/jeremehancock/Bludit-Docker.git</code></p>
+</li>
+<li>
+<p>Run <code>cd Bludit-Docker</code></p>
+</li>
+<li>
+<p>(Linux, recommended) Set up <code>.env</code> so Bludit files on the host are owned by your user instead of <code>root</code>. Without this, files created by the root-running container in the bind-mounted <code>localhost/www/html/bludit</code> directory end up owned by <code>root</code> and are awkward to edit or delete. The entrypoint re-aligns the in-container <code>www-data</code> user to match the <code>PUID</code> and <code>PGID</code> you set in <code>.env</code>, then chowns <code>/var/www/html</code> recursively.</p>
+<p>The repo ships with an <code>.env.example</code> file you can copy as a starting point:</p>
+<pre><code>cp .env.example .env</code></pre>
+<p>The defaults (<code>PUID=1000</code>, <code>PGID=1000</code>) match the first user on most Linux systems. If your user's IDs differ, populate <code>.env</code> with them directly:</p>
+<pre><code>printf "PUID=%s\nPGID=%s\n" "$(id -u)" "$(id -g)" &gt; .env</code></pre>
+<p>If you already had a <code>bludit</code> directory owned by <code>root</code>, the entrypoint will chown the existing files to your user on the next start. If anything is still owned by <code>root</code> after that, run a one-off fix:</p>
+<pre><code>sudo chown -R "$(id -u):$(id -g)" localhost/www/html</code></pre>
+<p>On Docker Desktop (macOS/Windows) the bind mount is already remapped to your user, so this step is optional.</p>
+</li>
+<li>
+<p>Run <code>docker compose up -d --build</code></p>
+</li>
 </ol>
 <p>On the first start the container will:</p>
 <ul>
@@ -287,18 +302,6 @@ docker compose up -d</code></pre>
 <blockquote>
 <p>A forced re-install will overwrite custom modifications to Bludit. It will not overwrite the content or settings that you have applied in the Bludit admin panel (those live under <code>bl-content/</code> and are preserved), but you should still back up first.</p>
 </blockquote>
-<h2>File Ownership on the Host</h2>
-<p>On Linux, files created by a root-running container end up owned by <code>root</code> on
-the host, which makes the bind-mounted <code>localhost/www/html/bludit</code> directory
-awkward to edit or delete. To fix this, the entrypoint re-aligns the
-in-container <code>www-data</code> user to match the UID/GID you pass in via the <code>PUID</code>
-and <code>PGID</code> environment variables (set in <code>.env</code>, see step 4 above), then
-chowns <code>/var/www/html</code> recursively. If you already have a <code>bludit</code> directory
-owned by <code>root</code>, create the <code>.env</code> file and run:</p>
-<pre><code>docker compose up -d</code></pre>
-<p>The entrypoint will chown the existing files to your user on the next start.
-If anything is still owned by <code>root</code> after that, run a one-off fix:</p>
-<pre><code>sudo chown -R "$(id -u):$(id -g)" localhost/www/html</code></pre>
 <h2>Rebuilding the Image</h2>
 <p>If you change the <code>Dockerfile</code>, <code>setup/bludit.conf</code>, or <code>setup/entrypoint.sh</code>, rebuild with:</p>
 <pre><code>docker compose up -d --build</code></pre>
