@@ -1,6 +1,4 @@
-<div class="centered">
-    <img src="/bl-content/uploads/pages/726f105976d23905b8de01992f54c3a4/pizero-big.png" class="image-border" /><br><br>
-</div>
+[image src="/bl-content/uploads/pages/726f105976d23905b8de01992f54c3a4/pizero-big.png"]
 
 This may be the coolest thing that I have ever built. As a web developer one of the most challenging things can be getting a nice dev environment setup. I have a local dev environment setup on my laptop using [Vagrant](https://www.vagrantup.com/) and it is nice. However, I wanted to have something that I could use anywhere even if I didn't have access to my laptop.
 
@@ -40,9 +38,7 @@ http://raspberrypi.local/My-Awesome-Site
 
 I took things one step further and created a custom "project list" page so I could easily access all of my projects from a single page as well as many other tools that I use during development.
 
-<div class="centered">
-    <img data-src="/bl-content/uploads/pages/726f105976d23905b8de01992f54c3a4/pizero-dashboard.png" class="image-border lozad" /><br><br>
-</div>
+[image src="/bl-content/uploads/pages/726f105976d23905b8de01992f54c3a4/pizero-dashboard.png"]
 
 Since all the projects are setup in [GitHub](https://github.com/mhancoc7?tab=repositories) this is truly a portable dev environment. I can just plug it into any computer and I have a full dev environment on the go.
 

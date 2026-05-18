@@ -33,9 +33,7 @@ Fully mobile-responsive and installable as a Progressive Web App (PWA), Posteria
 
 ## Screenshot
 
-<div class="centered">
-    <img src="https://raw.githubusercontent.com/jeremehancock/Posteria/main/images/posteria.png" class="image-border" />
-</div>
+[image src="https://raw.githubusercontent.com/jeremehancock/Posteria/main/images/posteria.png"]
 
 ## More Than Just an App
 
@@ -83,11 +81,9 @@ Posteria includes basic authentication to protect your poster collection. For ac
 
 Posteria isn't just an app – it's your Plex library's new best friend. Organize, beautify, and enjoy your collection like never before!
 
-## AI Disclosure
-
-This project was created with the help of AI.
+[ai-disclosure]
 
 ## Links
 
-- GitHub: [jeremehancock/Posteria](https://github.com/jeremehancock/Posteria)
+- GitHub: [github repo="jeremehancock/Posteria"]
 - Posteria Website: [posteria.app](https://posteria.app)

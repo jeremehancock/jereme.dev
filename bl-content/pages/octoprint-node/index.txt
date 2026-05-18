@@ -6,15 +6,11 @@ It is described as *"The snappy web interface for your 3D printer."*.  That does
 
 I have re-purposed my [Monitor Node](pi-lab-monitor-node) into my new OctoPi Node. 
 
-<div class="centered">
-    <img src="/bl-content/uploads/pages/b488323d86f5d481bf4bac8f975a2ca3/octoprint-node.png" class="image-border" /><br><br>
-</div>
+[image src="/bl-content/uploads/pages/b488323d86f5d481bf4bac8f975a2ca3/octoprint-node.png"]
 
 So far I have mostly printed [3DBenchies](http://www.3dbenchy.com/) trying to really get my print quality dialed in. I have one functional print under my belt that I am very happy with. I have had issues with my Roomba getting stuck under our coach. So I went looking on [Thingverse](https://www.thingiverse.com) and I found this [Bumper Extension for Roomba](https://www.thingiverse.com/thing:1756175). It was for a different model and I had to do some scaling to make it large enough to keep my Roomba from going under the couch. So far it is working great!
 
-<div class="centered">
-    <img src="/bl-content/uploads/pages/b488323d86f5d481bf4bac8f975a2ca3/roomba-mod.png" class="image-border" /><br><br>
-</div>
+[image src="/bl-content/uploads/pages/b488323d86f5d481bf4bac8f975a2ca3/roomba-mod.png"]
 
 I have added a new [3D Printing](category/3d-printing) category to the blog and I hope to be posting many more prints very soon.
 

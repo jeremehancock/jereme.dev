@@ -54,10 +54,8 @@ With Libretto in your corner, you'll never need to stress over losing your lovin
 
 Happy backing up, Plex friends!<span class="emoji"> 🤗📚🎬🎵</span>
 
-## AI Disclosure
-
-This project was created with the help of AI.
+[ai-disclosure]
 
 ## Links
 
-- Project on GitHub: [jeremehancock/Libretto](https://github.com/jeremehancock/Libretto)
+- Project on GitHub: [github repo="jeremehancock/Libretto"]

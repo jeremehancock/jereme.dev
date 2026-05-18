@@ -1,6 +1,4 @@
-<div class="centered">
-    <img src="/bl-content/uploads/pages/47f17725790d2c6f040eb40ec8456bfb/RaspController.png" class="image-border" /><br><br>
-</div>
+[image src="/bl-content/uploads/pages/47f17725790d2c6f040eb40ec8456bfb/RaspController.png"]
 
 [RaspController](https://play.google.com/store/apps/details?id=it.Ettore.raspcontroller&hl=en_US) is one of the many tools that I use for managing Pi Lab. 
 

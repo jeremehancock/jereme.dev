@@ -42,5 +42,5 @@ This blog post including the post thumbnail was crafted with the help of artific
 
 ## Links
 
-- GitHub: [jeremehancock/AI-Game-Collection](https://github.com/jeremehancock/AI-Game-Collection)
+- GitHub: [github repo="jeremehancock/AI-Game-Collection"]
 - Project Website: [aigamecollection.com](https://aigamecollection.com)

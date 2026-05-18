@@ -8,9 +8,7 @@ I have also added an SMS alert node that, after a failed `ping` check,  sends an
 
 Below is a screenshot of the flow.
 
-<div class="centered">
-    <img src="/bl-content/uploads/pages/b3c9f34aa0cb8225b2ce75d480025d36/node-red-twitter-bot-with-junctions.png" class="image-border" /><br><br>
-</div>
+[image src="/bl-content/uploads/pages/b3c9f34aa0cb8225b2ce75d480025d36/node-red-twitter-bot-with-junctions.png"]
 
 I am very impressed with [Node-RED](https://nodered.org/). I definitely recommend it for anyone who enjoys coding and automation.
 

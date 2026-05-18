@@ -12,5 +12,4 @@ I also created a demo site that shows a random image from the collection:
 
 It started as a small experiment — making historic archival photos easier to explore and reuse.
 
-### AI Disclaimer
-This project was originally developed without the use of AI. It has since been updated to a more modern stack with the help of AI.
+[ai-disclosure type="updated"]

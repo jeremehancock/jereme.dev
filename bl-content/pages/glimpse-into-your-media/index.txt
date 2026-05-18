@@ -1,6 +1,4 @@
-<div class="centered">
-    <img src="/bl-content/uploads/pages/403721c70917a1fdddf11e33a1fa0365/glimpse-large-png.png" class="image-border" /><br><br>
-</div>
+[image src="/bl-content/uploads/pages/403721c70917a1fdddf11e33a1fa0365/glimpse-large-png.png"]
 
 Most of the tooling around self-hosted media servers is aimed at the people running them. Dashboards, request systems, analytics, transcoder tweaks. All useful, all important, but none of it really answers a much simpler question that comes up all the time: what's actually in there? When a friend asks if you have a particular show, or when you sit down and can't decide what to watch, you want a clean, fast way to just look at your library. That's the problem [Glimpse](https://github.com/jeremehancock/Glimpse) is built around.
 
@@ -47,11 +45,9 @@ If you only ever use your media server alone, from your own clients, Glimpse may
 
 It's the kind of tool that turns "let me check if I have it" into something you can hand off, and that's surprisingly hard to come by.
 
-## AI Disclosure
-
-This project was created with the help of AI.
+[ai-disclosure]
 
 ## Links
 
-- Project on GitHub: [jeremehancock/Glimpse](https://github.com/jeremehancock/Glimpse)
+- Project on GitHub: [github repo="jeremehancock/Glimpse"]
 - Checkout out my Glimpse here:  [glimpse.vitaminsocks.com](https://glimpse.vitaminsocks.com/)
