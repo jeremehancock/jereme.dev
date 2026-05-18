@@ -1,4 +1,4 @@
-## <span class="emoji">🤖</span> Unleashing the Power of AI in Gaming: The AI Game Collection! 
+## <span class="emoji">🤖</span> Unleashing the Power of AI in Gaming
 
 Get ready for a wild ride into the world of AI-powered gaming! I've been on a mission to see if I could create entire JavaScript games using almost nothing but the magic of artificial intelligence. 
 
