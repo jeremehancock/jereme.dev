@@ -271,7 +271,7 @@ class pluginNovaPlugin extends Plugin
 		$html .= $this->numberField('webStatsDevport', $L->get('jdpc-dev-port'), null, $L->get('jdpc-dev-port-tip'));
 		$html .= '<div class="form-group">';
 		$html .= '<label for="jdpcStatsCode"><strong>' . $L->get('jdpc-stats-code') . '</strong></label>';
-		$html .= '<textarea id="jdpcStatsCode" class="form-control" name="webStatsCode" rows="8" style="font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 0.85rem;">' . htmlspecialchars((string) $this->getValue('webStatsCode'), ENT_QUOTES, 'UTF-8') . '</textarea>';
+		$html .= '<textarea id="jdpcStatsCode" class="form-control" name="webStatsCode" rows="8" style="font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 0.85rem;">' . $this->getValue('webStatsCode') . '</textarea>';
 		$html .= '<small class="form-text text-muted">' . $L->get('jdpc-stats-code-tip') . '</small>';
 		$html .= '</div>';
 		$html .= $this->closeTabPane();
@@ -402,7 +402,7 @@ class pluginNovaPlugin extends Plugin
 	{
 		$html = '<div class="form-group">';
 		$html .= '<label for="jdpc_' . $name . '"><strong>' . $labelText . '</strong></label>';
-		$html .= '<input id="jdpc_' . $name . '" class="form-control" name="' . $name . '" type="text" dir="auto" value="' . $this->attrEscape($this->getValue($name)) . '">';
+		$html .= '<input id="jdpc_' . $name . '" class="form-control" name="' . $name . '" type="text" dir="auto" value="' . $this->getValue($name) . '">';
 		if ($tip) {
 			$html .= '<small class="form-text text-muted">' . $tip . '</small>';
 		}
@@ -418,7 +418,7 @@ class pluginNovaPlugin extends Plugin
 		}
 		$html = '<div class="form-group">';
 		$html .= '<label for="jdpc_' . $name . '"><strong>' . $labelText . '</strong></label>';
-		$html .= '<input id="jdpc_' . $name . '" class="form-control" name="' . $name . '" type="number"' . $attrs . ' value="' . $this->attrEscape($this->getValue($name)) . '">';
+		$html .= '<input id="jdpc_' . $name . '" class="form-control" name="' . $name . '" type="number"' . $attrs . ' value="' . $this->getValue($name) . '">';
 		if ($tip) {
 			$html .= '<small class="form-text text-muted">' . $tip . '</small>';
 		}
@@ -441,7 +441,7 @@ class pluginNovaPlugin extends Plugin
 	{
 		$html = '<div class="form-group">';
 		$html .= '<label for="jdpc_' . $name . '"><strong>' . $labelText . '</strong></label>';
-		$html .= '<textarea id="jdpc_' . $name . '" class="form-control" name="' . $name . '" rows="' . (int) $rows . '" style="font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 0.85rem;">' . htmlspecialchars((string) $this->getValue($name), ENT_QUOTES, 'UTF-8') . '</textarea>';
+		$html .= '<textarea id="jdpc_' . $name . '" class="form-control" name="' . $name . '" rows="' . (int) $rows . '" style="font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 0.85rem;">' . $this->getValue($name) . '</textarea>';
 		if ($tip) {
 			$html .= '<small class="form-text text-muted">' . $tip . '</small>';
 		}
@@ -493,7 +493,7 @@ class pluginNovaPlugin extends Plugin
 
 		$html = '<div class="plugin plugin-categories">';
 		if (!empty($label)) {
-			$html .= '<h2 class="plugin-label">' . htmlspecialchars($label, ENT_QUOTES, 'UTF-8') . '</h2>';
+			$html .= '<h2 class="plugin-label">' . $label . '</h2>';
 		}
 		$html .= '<div class="plugin-content">';
 		$html .= '<ul>';
@@ -514,8 +514,8 @@ class pluginNovaPlugin extends Plugin
 			$count = count($fields['list']);
 			if (!$hideZero || $count > 0) {
 				$html .= '<li>';
-				$html .= '<a href="' . htmlspecialchars(DOMAIN_CATEGORIES . $key, ENT_QUOTES, 'UTF-8') . '">';
-				$html .= htmlspecialchars($fields['name'], ENT_QUOTES, 'UTF-8') . ' (' . $count . ')';
+				$html .= '<a href="' . DOMAIN_CATEGORIES . $key . '">';
+				$html .= $fields['name'] . ' (' . $count . ')';
 				$html .= '</a>';
 				$html .= '</li>';
 			}
@@ -533,7 +533,7 @@ class pluginNovaPlugin extends Plugin
 
 		$html = '<div class="plugin plugin-navigation">';
 		if (!empty($label)) {
-			$html .= '<h2 class="plugin-label">' . htmlspecialchars($label, ENT_QUOTES, 'UTF-8') . '</h2>';
+			$html .= '<h2 class="plugin-label">' . $label . '</h2>';
 		}
 		$html .= '<div class="plugin-content">';
 		$html .= '<ul>';
@@ -543,11 +543,11 @@ class pluginNovaPlugin extends Plugin
 			$parents = buildParentPages();
 			foreach ($parents as $parent) {
 				$html .= '<li class="parent">';
-				$html .= '<a href="' . htmlspecialchars($parent->permalink(), ENT_QUOTES, 'UTF-8') . '">' . htmlspecialchars($parent->title(), ENT_QUOTES, 'UTF-8') . '</a>';
+				$html .= '<a href="' . $parent->permalink() . '">' . $parent->title() . '</a>';
 				if ($parent->hasChildren()) {
 					$html .= '<ul class="child">';
 					foreach ($parent->children() as $child) {
-						$html .= '<li class="child"><a class="child" href="' . htmlspecialchars($child->permalink(), ENT_QUOTES, 'UTF-8') . '">' . htmlspecialchars($child->title(), ENT_QUOTES, 'UTF-8') . '</a></li>';
+						$html .= '<li class="child"><a class="child" href="' . $child->permalink() . '">' . $child->title() . '</a></li>';
 					}
 					$html .= '</ul>';
 				}
@@ -560,7 +560,7 @@ class pluginNovaPlugin extends Plugin
 			foreach ($publishedPages as $pageKey) {
 				try {
 					$p = new Page($pageKey);
-					$html .= '<li><a href="' . htmlspecialchars($p->permalink(), ENT_QUOTES, 'UTF-8') . '">' . htmlspecialchars($p->title(), ENT_QUOTES, 'UTF-8') . '</a></li>';
+					$html .= '<li><a href="' . $p->permalink() . '">' . $p->title() . '</a></li>';
 				} catch (Exception $e) {
 					// Skip pages that fail to construct
 				}
@@ -577,7 +577,7 @@ class pluginNovaPlugin extends Plugin
 
 		$html = '<div class="plugin plugin-static-pages">';
 		if (!empty($label)) {
-			$html .= '<h2 class="plugin-label">' . htmlspecialchars($label, ENT_QUOTES, 'UTF-8') . '</h2>';
+			$html .= '<h2 class="plugin-label">' . $label . '</h2>';
 		}
 		$html .= '<div class="plugin-content">';
 		$html .= '<ul>';
@@ -603,8 +603,8 @@ class pluginNovaPlugin extends Plugin
 			$liStyle = $p->isParent() ? '' : ' style="margin-left: 10px"';
 			$html .= '<li class="' . $liClass . '"' . $liStyle . '>';
 			if ($externalUrl !== '') {
-				$html .= '<a href="' . htmlspecialchars($externalUrl, ENT_QUOTES, 'UTF-8') . '" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: baseline; gap: 4px;">';
-				$html .= htmlspecialchars($p->title(), ENT_QUOTES, 'UTF-8');
+				$html .= '<a href="' . htmlspecialchars($externalUrl, ENT_QUOTES) . '" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: baseline; gap: 4px;">';
+				$html .= $p->title();
 				$html .= '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0;">
             <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
             <polyline points="15 3 21 3 21 9"></polyline>
@@ -612,7 +612,7 @@ class pluginNovaPlugin extends Plugin
           </svg>';
 				$html .= '</a>';
 			} else {
-				$html .= '<a href="' . htmlspecialchars($p->permalink(), ENT_QUOTES, 'UTF-8') . '">' . htmlspecialchars($p->title(), ENT_QUOTES, 'UTF-8') . '</a>';
+				$html .= '<a href="' . $p->permalink() . '">' . $p->title() . '</a>';
 			}
 			$html .= '</li>';
 		}
