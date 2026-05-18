@@ -593,7 +593,11 @@ class pluginNovaPlugin extends Plugin
 			}
 			$externalUrl = '';
 			if (stripos($desc, 'external:') === 0) {
-				$externalUrl = trim(substr($desc, 9));
+				$candidate = trim(substr($desc, 9));
+				// Only allow http(s) targets — block javascript:, data:, file:, etc.
+				if (preg_match('#^https?://#i', $candidate)) {
+					$externalUrl = $candidate;
+				}
 			}
 			$liClass = $p->isParent() ? 'parent' : 'subpage';
 			$liStyle = $p->isParent() ? '' : ' style="margin-left: 10px"';
@@ -2127,6 +2131,10 @@ HTML;
 
 	private function sgjExternalRedirectSnippet($url)
 	{
+		// Only allow http(s) targets — block javascript:, data:, file:, etc.
+		if (!preg_match('#^https?://#i', (string) $url)) {
+			return '';
+		}
 		$safe = htmlspecialchars($url, ENT_QUOTES, 'UTF-8');
 		return "<style>\n\tbody {\n\t\tdisplay: none;\n\t}\n</style>\n"
 			. '<meta http-equiv="refresh" content="0; url=' . $safe . '">';
@@ -2150,6 +2158,10 @@ HTML;
 			}
 			$filePath = PATH_PAGES . $key . DS . FILENAME;
 			$snippet = $this->sgjExternalRedirectSnippet($extUrl);
+			if ($snippet === '') {
+				$this->sgjLog('WARN skipping external redirect with unsupported scheme for ' . $key . ' (' . $extUrl . ')');
+				continue;
+			}
 			$current = is_file($filePath) ? @file_get_contents($filePath) : '';
 			if ($current === $snippet) {
 				continue;
@@ -3629,8 +3641,10 @@ HTML;
 			curl_setopt($h, CURLOPT_TIMEOUT, $timeout);
 			curl_setopt($h, CURLOPT_CONNECTTIMEOUT, max(2, (int) ceil($timeout / 2)));
 			curl_setopt($h, CURLOPT_USERAGENT, $userAgent);
-			curl_setopt($h, CURLOPT_SSL_VERIFYPEER, false);
-			curl_setopt($h, CURLOPT_SSL_VERIFYHOST, 0);
+			curl_setopt($h, CURLOPT_SSL_VERIFYPEER, true);
+			curl_setopt($h, CURLOPT_SSL_VERIFYHOST, 2);
+			curl_setopt($h, CURLOPT_PROTOCOLS, CURLPROTO_HTTP | CURLPROTO_HTTPS);
+			curl_setopt($h, CURLOPT_REDIR_PROTOCOLS, CURLPROTO_HTTP | CURLPROTO_HTTPS);
 			curl_setopt($h, CURLOPT_HTTPHEADER, array(
 				'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
 				'Accept-Language: en-US,en;q=0.9',
