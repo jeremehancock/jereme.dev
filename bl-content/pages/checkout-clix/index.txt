@@ -37,11 +37,11 @@ There's a small category of tools that don't try to replace anything, they just 
 
 If you live in a terminal, or you maintain a headless Plex box, or you just like the idea of launching a movie with a few keystrokes, it's worth a look. Setup details and the latest release live on the project's GitHub page, which is the right place to look since that's where everything stays current as the tool evolves.
 
+## AI Disclosure
+
+This project was created with the help of AI.
+
 ## Links
 
 - Project on GitHub: [jeremehancock/CLIX](https://github.com/jeremehancock/CLIX)
 - How-To Geek feature: [5 apps that turn your Plex server from chaos into infrastructure](https://www.howtogeek.com/5-essential-self-hosted-media-apps-that-belong-on-every-plex-server/)
-
-## AI Disclosure
-
-This project was created with the help of AI.

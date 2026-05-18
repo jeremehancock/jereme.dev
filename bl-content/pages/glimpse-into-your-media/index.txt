@@ -47,11 +47,11 @@ If you only ever use your media server alone, from your own clients, Glimpse may
 
 It's the kind of tool that turns "let me check if I have it" into something you can hand off, and that's surprisingly hard to come by.
 
+## AI Disclosure
+
+This project was created with the help of AI.
+
 ## Links
 
 - Project on GitHub: [jeremehancock/Glimpse](https://github.com/jeremehancock/Glimpse)
 - Checkout out my Glimpse here:  [glimpse.vitaminsocks.com](https://glimpse.vitaminsocks.com/)
-
-## AI Disclosure
-
-This project was created with the help of AI.

@@ -57,3 +57,7 @@ Happy backing up, Plex friends!<span class="emoji"> 🤗📚🎬🎵</span>
 ## AI Disclosure
 
 This project was created with the help of AI.
+
+## Links
+
+- Project on GitHub: [jeremehancock/Libretto](https://github.com/jeremehancock/Libretto)

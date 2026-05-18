@@ -86,3 +86,8 @@ Posteria isn't just an app – it's your Plex library's new best friend. Organiz
 ## AI Disclosure
 
 This project was created with the help of AI.
+
+## Links
+
+- GitHub: [jeremehancock/Posteria](https://github.com/jeremehancock/Posteria)
+- Posteria Website: [posteria.app](https://posteria.app)
