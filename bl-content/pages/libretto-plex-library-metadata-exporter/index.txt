@@ -54,5 +54,6 @@ With Libretto in your corner, you'll never need to stress over losing your lovin
 
 Happy backing up, Plex friends!<span class="emoji"> 🤗📚🎬🎵</span>
 
-## AI Assistance Disclosure
-This tool was developed with assistance from AI language models.
+## AI Disclosure
+
+This project was created with the help of AI.

@@ -52,5 +52,6 @@ It's the kind of tool that turns "let me check if I have it" into something you 
 - Project on GitHub: [jeremehancock/Glimpse](https://github.com/jeremehancock/Glimpse)
 - Checkout out my Glimpse here:  [glimpse.vitaminsocks.com](https://glimpse.vitaminsocks.com/)
 
-## AI Assistance Disclosure
-This tool was developed with assistance from AI language models.
+## AI Disclosure
+
+This project was created with the help of AI.

@@ -83,5 +83,6 @@ Posteria includes basic authentication to protect your poster collection. For ac
 
 Posteria isn't just an app – it's your Plex library's new best friend. Organize, beautify, and enjoy your collection like never before!
 
-## AI Assistance Disclosure
-This tool was developed with assistance from AI language models.
+## AI Disclosure
+
+This project was created with the help of AI.

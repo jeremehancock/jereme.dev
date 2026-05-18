@@ -42,5 +42,6 @@ If you live in a terminal, or you maintain a headless Plex box, or you just like
 - Project on GitHub: [jeremehancock/CLIX](https://github.com/jeremehancock/CLIX)
 - How-To Geek feature: [5 apps that turn your Plex server from chaos into infrastructure](https://www.howtogeek.com/5-essential-self-hosted-media-apps-that-belong-on-every-plex-server/)
 
-## AI Assistance Disclosure
-This tool was developed with assistance from AI language models.
+## AI Disclosure
+
+This project was created with the help of AI.

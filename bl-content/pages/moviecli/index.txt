@@ -22,8 +22,11 @@ SERVER="username@hostname"
 
 *MovieCLI is best used when the machine that you are using it on is configured to connect to the remote server using SSH Keys.*
 
-## AI Assistance Disclosure
-This tool was developed with assistance from AI language models.
 
-[<img data-src="/images/check-it-out-on-github.png" alt="Get it on GitHub" class="on-github lozad" />](https://github.com/jeremehancock/moviecli#moviecli)
+## Links
 
+- GitHub: [jeremehancock/moviecli](https://github.com/jeremehancock/moviecli)
+- 
+## AI Disclosure
+
+This project was created with the help of AI.
