@@ -1,6 +1,4 @@
-<div class="centered">
-    <img src="/bl-content/uploads/pages/63d64ed2633a1938cd79e877208f471f/media-nodes-stacked.png" class="image-border" /><br><br>
-</div>
+[image src="/bl-content/uploads/pages/63d64ed2633a1938cd79e877208f471f/media-nodes-stacked.png"]
 
 I was recently going through a box of old tech that I have held on to over the years. I am across two [SanDisk Media Drives](https://www.amazon.com/SanDisk-Wireless-Smartphones-Tablets-SDWS1-032G-A57/dp/B00DR8LBAK) that I purchased for next to nothing on a clearance aisle at Target many years back. I had previously used these for their intended purpose. While traveling I would set them up with movies so we could watch when we otherwise didn't have easy access to streaming. Like I said I have had them for a while.
 

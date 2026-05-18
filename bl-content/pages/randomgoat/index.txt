@@ -20,8 +20,7 @@ Click or tap to see a new goat anytime. No ads, no tracking, no sign-ups. Just f
 
 ## Links
 
-- Project on GitHub: [jeremehancock/RandomGoat.com](https://github.com/jeremehancock/RandomGoat.com)
+- Project on GitHub: [github repo="jeremehancock/RandomGoat.com"]
 - Visit Random Goat: [RandomGoat.com](https://randomgoat.com)
 
-## AI Disclaimer
-This project was originally developed without the use of AI. It has since been updated to a more modern stack with the help of AI.
+[ai-disclosure type="updated"]

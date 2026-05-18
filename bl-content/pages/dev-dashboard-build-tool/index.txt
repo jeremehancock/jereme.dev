@@ -1,6 +1,4 @@
-<div class="centered">
-    <img src="/bl-content/uploads/pages/e7452072631a01dcade0155ff1add7d1/pizero-dashboard.png" class="image-border" /><br><br>
-</div>
+[image src="/bl-content/uploads/pages/e7452072631a01dcade0155ff1add7d1/pizero-dashboard.png"]
 
 I recently posted about a project that I started to create a [Raspberry Pi Powered Portable Dev Server](raspberry-pi-portable-dev-server). 
 

@@ -103,11 +103,9 @@ Bludit-Vagrant/
             └── bludit/      # Bludit lives here after first vagrant up (gitignored)
 ```
 
-## AI Disclaimer
-
-This project was originally developed without the use of AI. It has since been updated to a more modern stack with the help of AI.
+[ai-disclosure type="updated"]
 
 
 ## Links
 
-- GitHub: [jeremehancock/Bludit-Vagrant](https://github.com/jeremehancock/Bludit-Vagrant)
+- GitHub: [github repo="jeremehancock/Bludit-Vagrant"]

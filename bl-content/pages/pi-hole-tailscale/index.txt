@@ -47,15 +47,11 @@ sudo tailscale up --advertise-exit-node --advertise-routes=192.168.1.0/24 --acce
 
 Login to [Tailscale](https://tailscale.com/) and click the "three dots" menu next to the Machine entry for the [Pi-hole](https://pi-hole.net/). Select "Disable key expiry" from the drop-down. Since the [Pi-hole](https://pi-hole.net/) is not directly exposed to the internet it is safe to not require re-authentication. Then select "Edit route settings..." from the same drop-down menu and enable both options. See image below.
 
-<div class="centered">
-    <img src="/bl-content/uploads/pages/b2824f25debdfd4c320c3717545b05c8/tailscale-setup.png" class="image-border" /><br><br>
-</div>
+[image src="/bl-content/uploads/pages/b2824f25debdfd4c320c3717545b05c8/tailscale-setup.png"]
 
 Next copy the [Tailscale](https://tailscale.com/) IP address for [Pi-hole](https://pi-hole.net/) and use it as the Global Nameservers on the DNS tab. Set them override local DNS. See image below.
 
-<div class="centered">
-    <img src="/bl-content/uploads/pages/b2824f25debdfd4c320c3717545b05c8/tailscale-dns.png" class="image-border" /><br><br>
-</div>
+[image src="/bl-content/uploads/pages/b2824f25debdfd4c320c3717545b05c8/tailscale-dns.png"]
 
 Turn on MagicDNS on the DNS tab. This way the [Pi-hole's](https://pi-hole.net/) interfaces will work when on or off the Tailscale network using their hostnames.
 

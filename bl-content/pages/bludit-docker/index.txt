@@ -127,11 +127,9 @@ Bludit-Docker/
             └── bludit/      # Bludit lives here after first start (gitignored)
 ```
 
-## AI Disclaimer
-
-This project was created with the help of AI.
+[ai-disclosure]
 
 
 ## Links
 
-- GitHub: [jeremehancock/Bludit-Docker](https://github.com/jeremehancock/Bludit-Docker)
+- GitHub: [github repo="jeremehancock/Bludit-Docker"]

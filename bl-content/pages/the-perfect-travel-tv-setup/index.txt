@@ -17,6 +17,4 @@ In this setup I have Plex (Jellyfin as backup) for when I have a good internet c
 
 *Note: I chose the ONN 4K 2023 box because it is cheap and it supports connecting an SSD via OTG cable. I had issues with other cheap boxes not recognizing the connection.*
 
-<div class="centered">
-    <img src="/bl-content/uploads/pages/2e2762b3524a642f87e1dda68eabfc0d/travel-tv-box.png" class="image-border" /><br><br>
-</div>
+[image src="/bl-content/uploads/pages/2e2762b3524a642f87e1dda68eabfc0d/travel-tv-box.png"]

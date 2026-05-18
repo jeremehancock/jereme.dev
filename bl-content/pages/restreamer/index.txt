@@ -10,9 +10,7 @@ This is where the new Pi Lab Restreamer Node comes in. I have setup a Raspberry 
 
 The setup for this was so easy! It allowed me to setup local stream URLs that I can use with a reverse proxy entry on the Pi Lab Load Balancer. It also allows me to easily push the streams to [YouTube](https://www.youtube.com/) which is what I have elected to do. 
 
-<div class="centered">
-    <img src="/bl-content/uploads/pages/241c4852179f57be27536866df35d4ae/restreamer.png" class="image-border" /><br><br>
-</div>
+[image src="/bl-content/uploads/pages/241c4852179f57be27536866df35d4ae/restreamer.png"]
 
 **Here are the streams that we have setup so far.**
 

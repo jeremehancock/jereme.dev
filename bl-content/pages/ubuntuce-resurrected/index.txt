@@ -1,6 +1,4 @@
-<div class="centered">
-    <img src="/bl-content/uploads/pages/ad9fa4c4897cf959012c3604fefeda53/ubuntuce-welcome-tab2.png" class="image-border" /><br><br>
-</div>
+[image src="/bl-content/uploads/pages/ad9fa4c4897cf959012c3604fefeda53/ubuntuce-welcome-tab2.png"]
 
 In 2004 I created Ubuntu Christian Edition (UbuntuCE). It started as an idea that I got from a satire distro called Jesux. I liked the idea of creating a distro that was based on one of the most popular Linux distros and have it pre-configured with Christian software. 
 
