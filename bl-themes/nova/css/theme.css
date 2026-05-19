@@ -64,9 +64,9 @@
   --code-text: #1f2330;
 
   /* Inline code (single backticks) */
-  --inline-code-bg: #fbe9d8;
-  --inline-code-text: #ad2a1a;
-  --inline-code-border: #e8b994;
+  --inline-code-bg: #f1ece4;
+  --inline-code-text: #8a4636;
+  --inline-code-border: #ddd2c2;
 
   /* Banner */
   --banner-bg: #f3faf6;
@@ -144,9 +144,9 @@
   --code-text: #ebedf2;
 
   /* Inline code (single backticks) */
-  --inline-code-bg: #3a1f1a;
-  --inline-code-text: #ffb4a2;
-  --inline-code-border: #6b3a30;
+  --inline-code-bg: #241c1f;
+  --inline-code-text: #e8b8a8;
+  --inline-code-border: #3d3034;
 
   /* Banner */
   --banner-bg: rgba(52, 211, 153, 0.08);
@@ -265,11 +265,11 @@ blockquote {
 code {
   font-family: var(--font-mono);
   font-size: 0.9em;
-  font-weight: 600;
+  font-weight: 500;
   background: var(--inline-code-bg);
   color: var(--inline-code-text);
   border: 1px solid var(--inline-code-border);
-  padding: 0.15em 0.45em;
+  padding: 0.12em 0.4em;
   border-radius: 4px;
 }
 
