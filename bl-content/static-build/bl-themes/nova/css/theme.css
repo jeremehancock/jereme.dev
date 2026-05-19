@@ -237,6 +237,14 @@ p {
   margin: 1.3rem 0 1em 0;
 }
 
+.page-content p:first-of-type {
+  margin-top: 0;
+}
+
+.page-content .centered + p {
+  margin-top: 1.3rem;
+}
+
 h1,
 h2,
 h3,
@@ -1779,11 +1787,10 @@ body.search-open .body-overlay {
     padding-bottom: 1.3rem;
     margin-bottom: 1.3rem;
   }
+  
   .page-band {
     padding: 0 0 0.3rem;
     margin-top: -0.1rem;
   }
-  p {
-  margin: 0 0 1em;
-  }
+  
 }
