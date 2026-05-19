@@ -64,9 +64,9 @@
   --code-text: #1f2330;
 
   /* Inline code (single backticks) */
-  --inline-code-bg: #f1ece4;
-  --inline-code-text: #8a4636;
-  --inline-code-border: #ddd2c2;
+  --inline-code-bg: #f0ebe2;
+  --inline-code-text: #1f2330;
+  --inline-code-border: #d6cfc1;
 
   /* Banner */
   --banner-bg: #f3faf6;
@@ -144,9 +144,9 @@
   --code-text: #ebedf2;
 
   /* Inline code (single backticks) */
-  --inline-code-bg: #241c1f;
-  --inline-code-text: #e8b8a8;
-  --inline-code-border: #3d3034;
+  --inline-code-bg: #14181f;
+  --inline-code-text: #ebedf2;
+  --inline-code-border: #2a303b;
 
   /* Banner */
   --banner-bg: rgba(52, 211, 153, 0.08);
