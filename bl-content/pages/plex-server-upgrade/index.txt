@@ -12,4 +12,4 @@ It has been an awesome upgrade and the migration was super simple!
 
 [image src="/bl-content/uploads/pages/43b7edbcad678bca496b82316ea68fed/plex-upgrade-large.png"]
 
-See full server specs  [homelab text="here"].
+See full server specs here:  [homelab]

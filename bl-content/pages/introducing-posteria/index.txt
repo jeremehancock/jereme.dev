@@ -68,7 +68,7 @@ Posteria includes basic authentication to protect your poster collection. For ac
 
 <span class="emoji">❤️</span> Found Posteria useful? Consider supporting the developer and helping them continue improving this amazing tool!
 
-<a href="https://www.buymeacoffee.com/jeremehancock"><img src="https://img.buymeacoffee.com/button-api/?text=Hard drive fund&emoji=💻&slug=jeremehancock&button_colour=f5a623&font_colour=000000&font_family=Bree&outline_colour=000000&coffee_colour=FFDD00" /></a>
+<a href="https://www.buymeacoffee.com/jeremehancock"><img src="https://img.buymeacoffee.com/button-api/?text=Hard%20drive%20fund&amp;emoji=%F0%9F%92%BB&amp;slug=jeremehancock&amp;button_colour=f5a623&amp;font_colour=000000&amp;font_family=Bree&amp;outline_colour=000000&amp;coffee_colour=FFDD00" /></a>
 
 ## Technical Highlights
 

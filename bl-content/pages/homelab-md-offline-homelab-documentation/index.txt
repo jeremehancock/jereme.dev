@@ -33,7 +33,7 @@ The second is **homelab.md Public**, which produces a sanitized Markdown file su
 
 The third, and the one I want to spend a moment on, is **homelab.html Public**. This export builds a single, self-contained HTML file that mirrors the look and feel of the live app, but in read-only form. Same theme, same search, same filters, same device detail modals. No add or edit controls, and the same sanitization applied to the public Markdown export. You can drop it on any static host and you've got a live, interactive dashboard of your homelab that won't leak your internal network.
 
-I used that last feature to publish my own homelab specs at [homelab text="jereme.dev/homelab"] It's the public HTML export, dropped onto my site, no extra work. The page is searchable, filterable, and looks the same as the editor I use locally, just without anything I'd rather not advertise. That's a workflow I've wanted forever and never quite gotten to with other documentation tools, because they always assumed I wanted to maintain "the public version" as a separate artifact. With homelab.md, the private file is the only thing I maintain. The public version is one click and a file upload.
+I used that last feature to publish my own homelab specs at [homelab] It's the public HTML export, dropped onto my site, no extra work. The page is searchable, filterable, and looks the same as the editor I use locally, just without anything I'd rather not advertise. That's a workflow I've wanted forever and never quite gotten to with other documentation tools, because they always assumed I wanted to maintain "the public version" as a separate artifact. With homelab.md, the private file is the only thing I maintain. The public version is one click and a file upload.
 
 ## The shape of the workflow
 
@@ -52,4 +52,4 @@ It's also genuinely small. One HTML file. You can read the source, audit the san
 ## Links
 
 - Project on GitHub: [github repo="jeremehancock/homelab.md"]
-- Live example using the public HTML export: [homelab text="jereme.dev/homelab"]
+- Live example using the public HTML export: [homelab]
