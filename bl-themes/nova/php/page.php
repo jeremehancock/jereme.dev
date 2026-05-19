@@ -6,30 +6,32 @@ $hiddenCategories = ['archived'];
         <?php Theme::plugins('pageBegin'); ?>
 
         <?php if ($page->description() !== "404"): ?>
-            <header class="entry-header container">
-                <?php if ($page->category() && !$page->isStatic()): ?>
-                    <div class="entry-eyebrow">
-                        <a href="<?php echo DOMAIN_CATEGORIES . $page->categoryKey(); ?>"><?php echo $page->category(); ?></a>
-                    </div>
-                <?php endif; ?>
+            <header class="entry-header">
+                <div class="container">
+                    <?php if ($page->category() && !$page->isStatic()): ?>
+                        <div class="entry-eyebrow">
+                            <a href="<?php echo DOMAIN_CATEGORIES . $page->categoryKey(); ?>"><?php echo $page->category(); ?></a>
+                        </div>
+                    <?php endif; ?>
 
-                <h1 class="entry-title">
-                    <?php echo $page->title(); ?>
-                </h1>
+                    <h1 class="entry-title">
+                        <?php echo $page->title(); ?>
+                    </h1>
 
-                <?php if (!$page->isStatic()): ?>
-                    <div class="entry-meta">
-                        <time class="entry-date" datetime="<?php echo $page->dateRaw('c'); ?>">
-                            <?php echo $page->date(); ?>
-                        </time>
+                    <?php if (!$page->isStatic()): ?>
+                        <div class="entry-meta">
+                            <time class="entry-date" datetime="<?php echo $page->dateRaw('c'); ?>">
+                                <?php echo $page->date(); ?>
+                            </time>
 
-                        <?php $lastmod = $page->dateModified();
-                        if (!empty($lastmod)): ?>
-                            <time class="entry-updated"
-                                datetime="<?php echo Date::format($lastmod, DB_DATE_FORMAT, 'c'); ?>"></time>
-                        <?php endif; ?>
-                    </div>
-                <?php endif; ?>
+                            <?php $lastmod = $page->dateModified();
+                            if (!empty($lastmod)): ?>
+                                <time class="entry-updated"
+                                    datetime="<?php echo Date::format($lastmod, DB_DATE_FORMAT, 'c'); ?>"></time>
+                            <?php endif; ?>
+                        </div>
+                    <?php endif; ?>
+                </div>
             </header>
         <?php endif; ?>
 
