@@ -1,0 +1,43 @@
+If you've written more than a handful of posts in any CMS, you've probably had this moment: you find yourself typing the same little chunk of markup over and over. The YouTube embed boilerplate. A "last updated" line. The same callout box markup. Your email address. The current year in a sidebar. None of it is hard. But it adds up, and the second you want to change one of them across the site, you're hunting through old posts doing search-and-replace.
+
+WordPress solved this years ago with shortcodes. Bludit, beautifully minimal as it is, doesn't ship with anything like that out of the box. [Shorthand](https://github.com/jeremehancock/Shorthand) fills that gap. Define a tag once in the admin panel, drop it anywhere in your posts and pages, and the plugin expands it at render time. That's the whole pitch.
+
+## Define once, use anywhere
+
+The idea is simple. In the plugin settings you give a shortcode a **name** and a **template**. From then on, anywhere you write `[name]` in a post, the plugin swaps it for whatever the template says.
+
+The simplest case is plain text replacement. Define a shortcode named `year` with the template `2026` and `[year]` produces `2026` wherever you put it. When the new year rolls around you change it in one place and the entire site updates.
+
+It gets more useful when you bring in attributes. A template can reference attribute values with `{attr-name}` placeholders, so an `email` shortcode with the template `<a href="mailto:{to}">{to}</a>` lets you write `[email to="hi@example.com"]` in a post and get back a proper mailto link. Define a `yt` shortcode for YouTube embeds and you never have to remember the iframe boilerplate again.
+
+For shortcodes that wrap content, there's a `{content}` placeholder for the text between opening and closing tags. A styled callout box becomes `[callout type="warning"]Heads up![/callout]`. The plugin figures out whether your template needs a closing tag by checking if `{content}` appears in it.
+
+## Works in both editors
+
+This matters more than it sounds. Bludit lets you write pages in either Markdown or its HTML editor, and Shorthand handles both. Shortcodes are expanded *before* the Markdown parser runs, which means a template can emit Markdown or HTML on Markdown-source pages, and HTML on HTML-source pages. If you're not sure which you'll use, write HTML-emitting templates and they'll work in either editor.
+
+## Safe by default
+
+Templating features in a CMS can make me a little nervous, because they're often a path for an editor account to inject something nasty. Shorthand has sensible guardrails built in.
+
+Only administrators can define or edit templates. Editors only ever *use* them. Attribute values that editors type into a post are escaped before they hit the template, URL-style attributes are checked for dangerous schemes, and the admin form will warn you if a template puts a placeholder somewhere risky. If you're a solo admin you won't think about it much, but it's a nice safety net the day you add a contributor.
+
+## The small things that make it nicer to use
+
+A few touches I appreciated once I started using it:
+
+- Templates can reference *other* shortcodes. The plugin resolves up to three passes deep and then stops, so you can compose shortcodes without ever risking an infinite loop.
+- Attribute values can be wrapped in double quotes, single quotes, or written bare for simple values.
+- Shortcode names accept letters, digits, hyphens, and underscores, so you can write something readable like `[product-card]` instead of cramming everything into one word.
+
+## Who this is for
+
+Anyone running Bludit who's noticed they're copying and pasting the same snippets across posts. Anyone who wants to be able to change one bit of markup site-wide without opening every page. Anyone who'd rather their post source read `[callout type="warning"]Heads up![/callout]` than a `<div>` with three nested classes.
+
+It's a small plugin that solves a problem you don't necessarily realize you have until you stop having it. If you're already on Bludit 3.22, it's worth the ten minutes of setup.
+
+[ai-disclosure]
+
+## Links
+
+- GitHub: [github repo="jeremehancock/Shorthand"]
