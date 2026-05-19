@@ -1168,7 +1168,7 @@ body.menu-open .main-navigation {
 .entry-content iframe {
   max-width: 100%;
   border-radius: var(--radius-md);
-  margin: 1.5rem 0;
+  margin: 0 0 1.5rem 0;
 }
 
 .archived-banner {
@@ -1777,6 +1777,7 @@ body.search-open .body-overlay {
   }
   .entry-header {
     padding-bottom: 1.3rem;
+    margin-bottom: 1.3rem;
   }
   .page-band {
     padding: 0 0 0.3rem;

@@ -248,11 +248,11 @@ sudo sysctl -p /etc/sysctl.conf</code></pre>
 <p><strong>Step 5:</strong></p>
 <p>Login to <a href="https://tailscale.com/">Tailscale</a> and click the "three dots" menu next to the Machine entry for the <a href="https://pi-hole.net/">Pi-hole</a>. Select "Disable key expiry" from the drop-down. Since the <a href="https://pi-hole.net/">Pi-hole</a> is not directly exposed to the internet it is safe to not require re-authentication. Then select "Edit route settings..." from the same drop-down menu and enable both options. See image below.</p>
 <div class="centered">
-    <img src="../bl-content/uploads/pages/b2824f25debdfd4c320c3717545b05c8/tailscale-setup.png" alt="" class="image-border"  width="525" height="346" /><br><br>
+    <img src="../bl-content/uploads/pages/b2824f25debdfd4c320c3717545b05c8/tailscale-setup.png" alt="" class="image-border"  width="525" height="346" />
 </div>
 <p>Next copy the <a href="https://tailscale.com/">Tailscale</a> IP address for <a href="https://pi-hole.net/">Pi-hole</a> and use it as the Global Nameservers on the DNS tab. Set them override local DNS. See image below.</p>
 <div class="centered">
-    <img src="../bl-content/uploads/pages/b2824f25debdfd4c320c3717545b05c8/tailscale-dns.png" alt="" class="image-border"  width="698" height="136" /><br><br>
+    <img src="../bl-content/uploads/pages/b2824f25debdfd4c320c3717545b05c8/tailscale-dns.png" alt="" class="image-border"  width="698" height="136" />
 </div>
 <p>Turn on MagicDNS on the DNS tab. This way the <a href="https://pi-hole.net/">Pi-hole's</a> interfaces will work when on or off the Tailscale network using their hostnames.</p>
 <p><strong>Step 6:</strong></p>
