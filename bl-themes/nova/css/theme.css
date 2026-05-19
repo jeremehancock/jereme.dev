@@ -64,9 +64,9 @@
   --code-text: #1f2330;
 
   /* Inline code (single backticks) */
-  --inline-code-bg: rgba(15, 107, 62, 0.08);
-  --inline-code-text: #0c5a34;
-  --inline-code-border: rgba(15, 107, 62, 0.18);
+  --inline-code-bg: #fbe9d8;
+  --inline-code-text: #ad2a1a;
+  --inline-code-border: #e8b994;
 
   /* Banner */
   --banner-bg: #f3faf6;
@@ -144,9 +144,9 @@
   --code-text: #ebedf2;
 
   /* Inline code (single backticks) */
-  --inline-code-bg: rgba(52, 211, 153, 0.12);
-  --inline-code-text: #6ee7b7;
-  --inline-code-border: rgba(52, 211, 153, 0.22);
+  --inline-code-bg: #3a1f1a;
+  --inline-code-text: #ffb4a2;
+  --inline-code-border: #6b3a30;
 
   /* Banner */
   --banner-bg: rgba(52, 211, 153, 0.08);
@@ -264,11 +264,12 @@ blockquote {
 
 code {
   font-family: var(--font-mono);
-  font-size: 0.88em;
+  font-size: 0.9em;
+  font-weight: 600;
   background: var(--inline-code-bg);
   color: var(--inline-code-text);
   border: 1px solid var(--inline-code-border);
-  padding: 0.1em 0.4em;
+  padding: 0.15em 0.45em;
   border-radius: 4px;
 }
 
@@ -291,6 +292,7 @@ pre code {
   padding: 0;
   border-radius: 0;
   font-size: inherit;
+  font-weight: inherit;
 }
 
 table {
