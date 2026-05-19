@@ -270,7 +270,13 @@ class Helper
     {
         $cont = str_replace('<', ' <', $cont);
         $cont = html_entity_decode($cont, ENT_QUOTES | ENT_HTML5, "UTF-8");
-        $descr = $this->truncate2nearest_word(Text::removeHTMLTags($cont), $limit, $ending);
+        $cont = Text::removeHTMLTags($cont);
+        // Strip leftover Shorthand-style shortcode tokens (e.g. [image src="..."],
+        // [/wrap]). home.php rebuilds $content with buildPage() after the plugin's
+        // beforeSiteLoad expansion, so card pages still carry literal [tag] markup.
+        $cont = preg_replace('/\[\/?[a-zA-Z][a-zA-Z0-9_-]*(\s+[^\]\n\r]*)?\]/', '', $cont);
+        $cont = preg_replace('/\s+/', ' ', $cont);
+        $descr = $this->truncate2nearest_word($cont, $limit, $ending);
         $descr = trim($descr);
         return $descr;
     }
