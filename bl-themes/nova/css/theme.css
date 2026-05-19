@@ -234,7 +234,7 @@ a:focus-visible {
 }
 
 p {
-  margin: 0 0 1em;
+  margin: 1.3rem 0 1em 0;
 }
 
 h1,
@@ -1782,5 +1782,8 @@ body.search-open .body-overlay {
   .page-band {
     padding: 0 0 0.3rem;
     margin-top: -0.1rem;
+  }
+  p {
+  margin: 0 0 1em;
   }
 }
