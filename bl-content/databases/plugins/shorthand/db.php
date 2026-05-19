@@ -1,2 +1,2 @@
 <?php defined('BLUDIT') or die('Bludit CMS.'); ?>
-{"shortcodes":"[{\"name\":\"test\",\"template\":\"## This is a test\\r\\n\\r\\nI love it\\r\\n\\r\\n{temp}\\r\\n\\r\\n<div>{content}<\\\/div>\"}]","position":1}
+{"shortcodes":"[]","position":1}
