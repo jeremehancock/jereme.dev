@@ -321,8 +321,7 @@ class pluginNovaPlugin extends Plugin
 		$html .= '<li class="mb-2">' . $L->get('jdpc-howitworks-external') . '</li>';
 		$html .= '<li class="mb-2">' . $L->get('jdpc-howitworks-404') . '</li>';
 		$html .= '<li class="mb-2">' . $L->get('jdpc-howitworks-archived') . '</li>';
-		$html .= '<li class="mb-2">' . $L->get('jdpc-howitworks-targetblank') . '</li>';
-		$html .= '<li>' . $L->get('jdpc-howitworks-shortcodes') . $this->renderShortcodeReference() . '</li>';
+		$html .= '<li>' . $L->get('jdpc-howitworks-targetblank') . '</li>';
 		$html .= '</ul>';
 		$html .= $this->closeTabPane();
 
@@ -690,180 +689,6 @@ class pluginNovaPlugin extends Plugin
 	}
 
 	// ------------------------------------------------------------------
-	// Shortcodes
-	//
-	// Lightweight pre-Parsedown text replacement on page bodies. Hooked
-	// via pageBegin(), which the theme fires before $page->content() is
-	// rendered on both single-page and listing views. The SSG re-runs the
-	// same theme through sgjRenderInternal(), so the expansion lands in
-	// static output for free.
-	//
-	// Supported tags — keep in sync with the Info tab in admin:
-	//
-	//   [ai-disclosure]                 "created with the help of AI" block
-	//   [ai-disclosure type="updated"]  "originally without AI, since updated" block
-	//   [image src="..." alt="..."]     centered image-border block
-	//   [homelab]                       anchor to <effectiveSiteUrl>/homelab
-	//   [homelab text="..."]            same anchor, inline text override
-	//   [github repo="user/name"]       markdown link to https://github.com/user/name
-	//   [youtube id="VIDEOID"]          centered iframe-border youtube-nocookie embed
-	// ------------------------------------------------------------------
-	public function pageBegin()
-	{
-		global $page, $content;
-		if (is_object($page)) {
-			$this->shortcodeExpandPage($page);
-		}
-		if (is_array($content)) {
-			foreach ($content as $p) {
-				if (!is_object($p)) {
-					continue;
-				}
-				if (is_object($page) && $p === $page) {
-					continue;
-				}
-				$this->shortcodeExpandPage($p);
-			}
-		}
-	}
-
-	private function shortcodeExpandPage($page)
-	{
-		// If content is already cached on this Page object (either because
-		// content() ran first or because we already expanded once), don't
-		// re-run — setField on the cached value would double-parse.
-		$cached = $page->getValue('content');
-		if (!empty($cached)) {
-			return;
-		}
-
-		$raw = $page->contentRaw();
-		if ($raw === '' || strpos($raw, '[') === false) {
-			return;
-		}
-
-		$expanded = $this->shortcodeExpandString($raw);
-		if ($expanded === $raw) {
-			return;
-		}
-
-		// Mirror Pagex::content() so the cached value matches what the
-		// normal pipeline would have produced.
-		if (defined('MARKDOWN_PARSER') && MARKDOWN_PARSER) {
-			$parsedown = new Parsedown();
-			$expanded = $parsedown->text($expanded);
-		}
-		if (defined('IMAGE_RELATIVE_TO_ABSOLUTE') && IMAGE_RELATIVE_TO_ABSOLUTE) {
-			$domain = (defined('IMAGE_RESTRICT') && IMAGE_RESTRICT)
-				? DOMAIN_UPLOADS_PAGES . $page->uuid() . '/'
-				: DOMAIN_UPLOADS;
-			$expanded = Text::imgRel2Abs($expanded, $domain);
-		}
-
-		$page->setField('content', $expanded);
-	}
-
-	private function shortcodeExpandString($text)
-	{
-		$result = preg_replace_callback(
-			'/\[(ai-disclosure|image|homelab|github|youtube)(\s+[^\]\r\n]*)?\]/i',
-			array($this, 'shortcodeReplaceCallback'),
-			$text
-		);
-		return ($result === null) ? $text : $result;
-	}
-
-	private function shortcodeReplaceCallback($m)
-	{
-		$name = strtolower($m[1]);
-		$attrs = $this->shortcodeParseAttrs(isset($m[2]) ? $m[2] : '');
-		switch ($name) {
-			case 'ai-disclosure':
-				return $this->shortcodeAiDisclosure($attrs);
-			case 'image':
-				return $this->shortcodeImage($attrs);
-			case 'homelab':
-				return $this->shortcodeHomelab($attrs);
-			case 'github':
-				return $this->shortcodeGithub($attrs);
-			case 'youtube':
-				return $this->shortcodeYoutube($attrs);
-		}
-		return $m[0];
-	}
-
-	private function shortcodeParseAttrs($s)
-	{
-		$attrs = array();
-		if (!is_string($s) || $s === '') {
-			return $attrs;
-		}
-		if (preg_match_all('/([a-zA-Z][a-zA-Z0-9_-]*)\s*=\s*"([^"]*)"/', $s, $matches, PREG_SET_ORDER)) {
-			foreach ($matches as $m) {
-				$attrs[strtolower($m[1])] = $m[2];
-			}
-		}
-		return $attrs;
-	}
-
-	private function shortcodeAiDisclosure($attrs)
-	{
-		$type = isset($attrs['type']) ? strtolower($attrs['type']) : 'default';
-		if ($type === 'updated') {
-			return "\n\n## AI Disclosure\n\nThis project was originally developed without the use of AI. It has since been updated to a more modern stack with the help of AI.\n\n";
-		}
-		return "\n\n## AI Disclosure\n\nThis project was created with the help of AI.\n\n";
-	}
-
-	private function shortcodeImage($attrs)
-	{
-		if (empty($attrs['src'])) {
-			return '';
-		}
-		$src = $this->attrEscape($attrs['src']);
-		$alt = isset($attrs['alt']) ? $this->attrEscape($attrs['alt']) : '';
-		// Leading/trailing blank lines so Parsedown treats the <div> as a
-		// block element instead of wrapping it in a <p>.
-		return "\n\n<div class=\"centered\">\n    <img src=\"" . $src . "\" alt=\"" . $alt . "\" class=\"image-border\" /><br><br>\n</div>\n\n";
-	}
-
-	private function shortcodeHomelab($attrs)
-	{
-		$text = isset($attrs['text']) && $attrs['text'] !== '' ? $attrs['text'] : 'jereme.dev/homelab';
-		$href = $this->effectiveSiteUrl() . '/homelab';
-		return '<a href="' . $this->attrEscape($href) . '" target="_blank" rel="noopener noreferrer">'
-			. htmlspecialchars($text, ENT_QUOTES, 'UTF-8')
-			. '</a>';
-	}
-
-	private function shortcodeGithub($attrs)
-	{
-		if (empty($attrs['repo'])) {
-			return '';
-		}
-		$repo = trim($attrs['repo'], "/ \t\r\n");
-		// Strict "owner/name" — bail safely on anything else so a typo
-		// doesn't smuggle arbitrary text into a markdown link.
-		if (!preg_match('~^[A-Za-z0-9_.\-]+/[A-Za-z0-9_.\-]+$~', $repo)) {
-			return '';
-		}
-		return '[' . $repo . '](https://github.com/' . $repo . ')';
-	}
-
-	private function shortcodeYoutube($attrs)
-	{
-		if (empty($attrs['id'])) {
-			return '';
-		}
-		$id = $attrs['id'];
-		if (!preg_match('~^[A-Za-z0-9_\-]{6,}$~', $id)) {
-			return '';
-		}
-		$idEsc = $this->attrEscape($id);
-		return "\n\n<div class=\"centered\">\n<iframe class=\"iframe-border\" width=\"100%\" height=\"500\" src=\"https://www.youtube-nocookie.com/embed/" . $idEsc . "\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>\n</div>\n\n";
-	}
-
-	// ------------------------------------------------------------------
 	// Admin: version chip in sidebar + AJAX check for newer Bludit releases
 	// ------------------------------------------------------------------
 	public function adminSidebar()
@@ -999,49 +824,6 @@ EOF;
 	{
 		$val = $this->getValue($key);
 		return ($val === '' || $val === null) ? '' : html_entity_decode($val);
-	}
-
-	// Renders the shortcode reference shown on the Info tab. Kept here
-	// rather than in the language file so the example HTML stays escaped
-	// once at the source.
-	private function renderShortcodeReference()
-	{
-		$rows = array(
-			array(
-				'tag'  => '[ai-disclosure]',
-				'desc' => 'Inserts an "## AI Disclosure" heading and the standard "created with the help of AI" paragraph.',
-			),
-			array(
-				'tag'  => '[ai-disclosure type="updated"]',
-				'desc' => 'Variant for projects that were originally built without AI and have since been updated with AI assistance.',
-			),
-			array(
-				'tag'  => '[image src="/bl-content/uploads/pages/UUID/file.png" alt="..."]',
-				'desc' => 'Renders the centered, bordered image block used throughout posts (<code>&lt;div class="centered"&gt;&lt;img class="image-border" …&gt;&lt;/div&gt;</code>). <code>alt</code> is optional.',
-			),
-			array(
-				'tag'  => '[homelab]',
-				'desc' => 'Inline link to <code>&lt;site&gt;/homelab</code> opening in a new tab. Origin tracks the <em>Production URL</em> setting. Pass <code>text="here"</code> to override the visible label.',
-			),
-			array(
-				'tag'  => '[github repo="user/name"]',
-				'desc' => 'Expands to a markdown link <code>[user/name](https://github.com/user/name)</code>. Use inside list items such as <code>- GitHub: [github repo="..."]</code>.',
-			),
-			array(
-				'tag'  => '[youtube id="VIDEOID"]',
-				'desc' => 'Centered, bordered YouTube embed (16:9, <code>youtube-nocookie.com</code>). Pass just the ID from the video URL.',
-			),
-		);
-		$html  = '<div class="table-responsive mt-3"><table class="table table-sm mb-0">';
-		$html .= '<thead><tr><th style="width: 38%;">Shortcode</th><th>Effect</th></tr></thead><tbody>';
-		foreach ($rows as $row) {
-			$html .= '<tr>';
-			$html .= '<td><code>' . htmlspecialchars($row['tag'], ENT_QUOTES, 'UTF-8') . '</code></td>';
-			$html .= '<td>' . $row['desc'] . '</td>';
-			$html .= '</tr>';
-		}
-		$html .= '</tbody></table></div>';
-		return $html;
 	}
 
 	// ------------------------------------------------------------------
@@ -2278,8 +2060,15 @@ HTML;
 			}
 			$GLOBALS['page'] = $page;
 			$GLOBALS['content'] = $content;
+			$GLOBALS['WHERE_AM_I'] = $url->whereAmI();
 
 			$this->sgjSetupPaginator($url);
+
+			// Fire beforeSiteLoad so plugins that hook it (e.g. Shorthand,
+			// which expands shortcodes here) see the per-page state. The
+			// normal site bootstrap fires this in boot/site.php, but the SSG
+			// runs under the admin bootstrap and would otherwise skip it.
+			Theme::plugins('beforeSiteLoad');
 
 			ob_start();
 			$themeDir = PATH_THEMES . $site->theme() . DS;
@@ -3432,6 +3221,23 @@ HTML;
 		$pages = $this->lcCollectPages();
 		$this->lcLog('Pages in scope: ' . count($pages));
 
+		// Fire beforeSiteLoad so plugins that hook it (Shorthand) pre-expand
+		// shortcodes on each Page object. Without this $p->content() returns
+		// literal [tag] markers and URLs emitted by shortcode templates
+		// (homelab href, github link, image/iframe src, etc.) are invisible
+		// to the checker. The hook is normally invoked from boot/site.php,
+		// which the admin POST handler bypasses.
+		if (!empty($pages)) {
+			$savedWai = isset($GLOBALS['WHERE_AM_I']) ? $GLOBALS['WHERE_AM_I'] : null;
+			$savedContent = isset($GLOBALS['content']) ? $GLOBALS['content'] : null;
+			// Any value ≠ 'page' takes Shorthand's array-iteration branch.
+			$GLOBALS['WHERE_AM_I'] = 'home';
+			$GLOBALS['content'] = $pages;
+			Theme::plugins('beforeSiteLoad');
+			$GLOBALS['WHERE_AM_I'] = $savedWai;
+			$GLOBALS['content'] = $savedContent;
+		}
+
 		$includeExternal = (bool) $this->getValue('linkCheckIncludeExternal');
 		$timeout = max(1, (int) $this->getValue('linkCheckTimeout'));
 		// Use the unsanitized value so an ampersand in the UA isn't sent as &amp;.
@@ -3686,7 +3492,10 @@ HTML;
 	private function lcExtractHrefs($html)
 	{
 		$out = array();
-		if (!preg_match_all('#<a\b[^>]*\bhref\s*=\s*(["\'])(.*?)\1#i', $html, $m)) {
+		// Pull href from <a> and src from media tags so shortcode-generated
+		// <img>/<iframe> URLs are checked alongside anchor links.
+		$pattern = '#<(?:a|img|iframe|video|audio|source|track|embed)\b[^>]*\b(?:href|src)\s*=\s*(["\'])(.*?)\1#i';
+		if (!preg_match_all($pattern, $html, $m)) {
 			return $out;
 		}
 		foreach ($m[2] as $raw) {
@@ -3697,7 +3506,7 @@ HTML;
 			if ($u[0] === '#') {
 				continue;
 			}
-			if (preg_match('#^(mailto|tel|javascript|data|sms|ftp|magnet):#i', $u)) {
+			if (preg_match('#^(mailto|tel|javascript|data|sms|ftp|magnet|blob):#i', $u)) {
 				continue;
 			}
 			$hashPos = strpos($u, '#');
