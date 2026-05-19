@@ -3221,6 +3221,23 @@ HTML;
 		$pages = $this->lcCollectPages();
 		$this->lcLog('Pages in scope: ' . count($pages));
 
+		// Fire beforeSiteLoad so plugins that hook it (Shorthand) pre-expand
+		// shortcodes on each Page object. Without this $p->content() returns
+		// literal [tag] markers and URLs emitted by shortcode templates
+		// (homelab href, github link, image/iframe src, etc.) are invisible
+		// to the checker. The hook is normally invoked from boot/site.php,
+		// which the admin POST handler bypasses.
+		if (!empty($pages)) {
+			$savedWai = isset($GLOBALS['WHERE_AM_I']) ? $GLOBALS['WHERE_AM_I'] : null;
+			$savedContent = isset($GLOBALS['content']) ? $GLOBALS['content'] : null;
+			// Any value ≠ 'page' takes Shorthand's array-iteration branch.
+			$GLOBALS['WHERE_AM_I'] = 'home';
+			$GLOBALS['content'] = $pages;
+			Theme::plugins('beforeSiteLoad');
+			$GLOBALS['WHERE_AM_I'] = $savedWai;
+			$GLOBALS['content'] = $savedContent;
+		}
+
 		$includeExternal = (bool) $this->getValue('linkCheckIncludeExternal');
 		$timeout = max(1, (int) $this->getValue('linkCheckTimeout'));
 		// Use the unsanitized value so an ampersand in the UA isn't sent as &amp;.
@@ -3475,7 +3492,10 @@ HTML;
 	private function lcExtractHrefs($html)
 	{
 		$out = array();
-		if (!preg_match_all('#<a\b[^>]*\bhref\s*=\s*(["\'])(.*?)\1#i', $html, $m)) {
+		// Pull href from <a> and src from media tags so shortcode-generated
+		// <img>/<iframe> URLs are checked alongside anchor links.
+		$pattern = '#<(?:a|img|iframe|video|audio|source|track|embed)\b[^>]*\b(?:href|src)\s*=\s*(["\'])(.*?)\1#i';
+		if (!preg_match_all($pattern, $html, $m)) {
 			return $out;
 		}
 		foreach ($m[2] as $raw) {
@@ -3486,7 +3506,7 @@ HTML;
 			if ($u[0] === '#') {
 				continue;
 			}
-			if (preg_match('#^(mailto|tel|javascript|data|sms|ftp|magnet):#i', $u)) {
+			if (preg_match('#^(mailto|tel|javascript|data|sms|ftp|magnet|blob):#i', $u)) {
 				continue;
 			}
 			$hashPos = strpos($u, '#');
