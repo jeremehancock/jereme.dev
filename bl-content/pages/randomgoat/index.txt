@@ -18,7 +18,7 @@ Click or tap to see a new goat anytime. No ads, no tracking, no sign-ups. Just f
 
 **In a chaotic world, be someone’s random goat. 🐐**
 
-[ai-disclosure type="updated"]
+[ai-disclosure-updated]
 
 ## Links
 

@@ -103,7 +103,7 @@ Bludit-Vagrant/
             └── bludit/      # Bludit lives here after first vagrant up (gitignored)
 ```
 
-[ai-disclosure type="updated"]
+[ai-disclosure-updated]
 
 
 ## Links

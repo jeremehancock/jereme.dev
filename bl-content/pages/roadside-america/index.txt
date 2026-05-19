@@ -6,7 +6,7 @@ I also created a demo site that shows a random image from the collection.
 
 It started as a small experiment — making historic archival photos easier to explore and reuse.
 
-[ai-disclosure type="updated"]
+[ai-disclosure-updated]
 
 ## Links
 
