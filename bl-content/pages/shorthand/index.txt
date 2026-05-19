@@ -41,3 +41,4 @@ It's a small plugin that solves a problem you don't necessarily realize you have
 ## Links
 
 - GitHub: [github repo="jeremehancock/Shorthand"]
+- Official Plugin Page: [plugins.bludit.com/plugin/shorthand](https://plugins.bludit.com/plugin/shorthand)
