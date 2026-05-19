@@ -2060,8 +2060,15 @@ HTML;
 			}
 			$GLOBALS['page'] = $page;
 			$GLOBALS['content'] = $content;
+			$GLOBALS['WHERE_AM_I'] = $url->whereAmI();
 
 			$this->sgjSetupPaginator($url);
+
+			// Fire beforeSiteLoad so plugins that hook it (e.g. Shorthand,
+			// which expands shortcodes here) see the per-page state. The
+			// normal site bootstrap fires this in boot/site.php, but the SSG
+			// runs under the admin bootstrap and would otherwise skip it.
+			Theme::plugins('beforeSiteLoad');
 
 			ob_start();
 			$themeDir = PATH_THEMES . $site->theme() . DS;
