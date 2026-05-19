@@ -1,0 +1,7 @@
+{
+	"plugin-data":
+	{
+		"name": "Shorthand",
+		"description": "Define custom shortcodes once and reuse them anywhere in your pages and posts. Works with both the Markdown and HTML editors."
+	}
+}
