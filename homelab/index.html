@@ -39,9 +39,9 @@ body{font-family:'IBM Plex Sans',sans-serif;background:var(--bg-primary);color:v
 .service-tag{font-family:'JetBrains Mono',monospace;font-size:12px;padding:2px 8px;border-radius:3px;background:var(--tag-bg);border:1px solid var(--tag-border);color:var(--accent);}
 .child-count-badge{font-family:'JetBrains Mono',monospace;font-size:12px;padding:2px 8px;border-radius:3px;background:var(--blue-bg);color:var(--blue);margin-top:8px;display:inline-block;}
 .detail-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:200;align-items:center;justify-content:center;backdrop-filter:blur(4px);}.detail-overlay.open{display:flex;}
-.detail-panel{background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;width:85%;max-width:1000px;max-height:90vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,0.5);}
-.detail-header{display:flex;justify-content:space-between;align-items:flex-start;padding:22px;border-bottom:1px solid var(--border);}
-.detail-body{padding:22px;}.detail-section{margin-bottom:20px;}
+.detail-panel{background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;width:85%;max-width:1000px;max-height:90vh;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 20px 60px rgba(0,0,0,0.5);}
+.detail-header{flex-shrink:0;display:flex;justify-content:space-between;align-items:flex-start;padding:22px;border-bottom:1px solid var(--border);background:var(--bg-secondary);}
+.detail-body{padding:22px;flex:1 1 auto;overflow-y:auto;min-height:0;}.detail-section{margin-bottom:20px;}
 .detail-section-title{font-family:'JetBrains Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--border);}
 .detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}.detail-field-label{font-size:13px;color:var(--text-secondary);text-transform:uppercase;letter-spacing:0.5px;}.detail-field-value{font-family:'JetBrains Mono',monospace;font-size:15px;color:var(--text-primary);}
 .detail-notes{font-size:15px;color:var(--text-secondary);line-height:1.7;white-space:pre-wrap;}
@@ -50,7 +50,23 @@ body{font-family:'IBM Plex Sans',sans-serif;background:var(--bg-primary);color:v
 .child-device{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border:1px solid var(--border);border-radius:var(--radius);margin-bottom:6px;cursor:pointer;transition:all 0.15s;}.child-device:hover{border-color:var(--border-active);background:var(--bg-tertiary);}.child-device-name{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:500;}.child-device-info{font-size:13px;color:var(--text-secondary);}
 .empty-state{text-align:center;padding:80px 20px;}.empty-icon{font-size:52px;margin-bottom:16px;opacity:0.3;}.empty-title{font-family:'JetBrains Mono',monospace;font-size:18px;color:var(--text-secondary);margin-bottom:8px;}.empty-text{font-size:15px;color:var(--text-muted);margin-bottom:20px;}
 .footer{text-align:center;padding:24px 16px;border-top:1px solid var(--border);margin-top:40px;}.footer-link{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--text-muted);text-decoration:none;transition:color 0.15s;}.footer-link:hover{color:var(--accent);}
-@media (max-width:640px){.header{padding:12px 16px;}.main{padding:16px;}.device-grid{grid-template-columns:1fr;}.detail-grid{grid-template-columns:1fr;}.toolbar{flex-direction:column;align-items:stretch;}.search-wrap{display:block;}.search-box{width:100%;}.stats-bar{flex-wrap:wrap;gap:16px;}}
+.view-toggle{display:inline-flex;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+.view-btn{font-family:'JetBrains Mono',monospace;font-size:13px;padding:5px 12px;border:none;background:transparent;color:var(--text-secondary);cursor:pointer;transition:all 0.15s;text-transform:uppercase;letter-spacing:0.5px;}
+.view-btn:hover{color:var(--text-primary);background:var(--bg-tertiary);}.view-btn.active{color:var(--accent);background:var(--accent-glow);}.view-btn+.view-btn{border-left:1px solid var(--border);}
+.topology-view{display:none;}.topology-view.active{display:block;}
+.topology-empty{text-align:center;padding:60px 20px;color:var(--text-muted);font-size:15px;}
+.topology-clusters{display:grid;grid-template-columns:repeat(auto-fill,280px);gap:28px 24px;align-items:start;justify-content:center;}
+.topo-cluster{overflow:visible;display:block;}
+.topo-cluster .topo-box{fill:var(--bg-card);stroke:var(--border);stroke-width:1;transition:fill 0.15s,stroke 0.15s,filter 0.15s;}
+.topo-cluster .topo-node{cursor:pointer;}
+.topo-cluster .topo-node:hover .topo-box,.topo-cluster .topo-node:focus-visible .topo-box{fill:var(--bg-tertiary);stroke:var(--border-active);filter:drop-shadow(0 0 8px rgba(57,197,187,0.35));}
+.topo-cluster .topo-node:focus{outline:none;}
+.topo-cluster .topo-text-name{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:600;fill:var(--text-primary);pointer-events:none;}
+.topo-cluster .topo-text-type{font-family:'JetBrains Mono',monospace;font-size:10px;fill:var(--text-muted);letter-spacing:0.5px;pointer-events:none;}
+.topo-cluster .topo-edge{stroke:var(--border-active);stroke-width:1;fill:none;}
+.topo-cluster .topo-accent{pointer-events:none;}
+.topo-accent-server{fill:var(--accent);}.topo-accent-vm{fill:var(--blue);}.topo-accent-container{fill:var(--purple);}.topo-accent-network{fill:#e6b43c;}.topo-accent-storage{fill:#e67850;}.topo-accent-other{fill:#9696aa;}
+@media (max-width:640px){.header{padding:12px 16px;}.main{padding:16px;}.device-grid{grid-template-columns:1fr;}.detail-grid{grid-template-columns:1fr;}.toolbar{flex-direction:column;align-items:stretch;}.search-wrap{display:block;}.search-box{width:100%;}.stats-bar{flex-wrap:wrap;gap:16px;}.view-toggle{display:flex;}.view-toggle .view-btn{flex:1;text-align:center;justify-content:center;}.topology-clusters{grid-template-columns:1fr;max-width:320px;margin:0 auto;justify-content:center;}.topo-cluster{width:100%;height:auto;}}
 </style>
 </head>
 <body>
@@ -63,8 +79,13 @@ body{font-family:'IBM Plex Sans',sans-serif;background:var(--bg-primary);color:v
       <button type="button" class="search-clear" id="searchClear" aria-label="Clear search" title="Clear search">✕</button>
     </div>
     <div class="filter-group" id="filterGroup"></div>
+    <div class="view-toggle" role="tablist" aria-label="View mode">
+      <button type="button" class="view-btn active" data-view="grid" role="tab" aria-selected="true" title="Card view">Cards</button>
+      <button type="button" class="view-btn" data-view="topology" role="tab" aria-selected="false" title="Topology view">Topology</button>
+    </div>
   </div>
   <div class="device-grid" id="deviceGrid"></div>
+  <div class="topology-view" id="topologyView" aria-live="polite"></div>
 </div>
 <footer class="footer"><a href="https://github.com/jeremehancock/homelab.md" target="_blank" rel="noopener" class="footer-link">Generated by homelab.md</a></footer>
 <div class="detail-overlay" id="detailOverlay"><div class="detail-panel" id="detailPanel"></div></div>
@@ -72,6 +93,7 @@ body{font-family:'IBM Plex Sans',sans-serif;background:var(--bg-primary);color:v
 "use strict";
 var DEVICES = [{"id":"plexmedia1","parentId":null,"name":"anansi","type":"server","system":"Acer Aspire TC-1750-UR11","os":"Ubuntu Server 22.04.3 LTS","cpu":"Intel Core i5-12400 (up to 4.4GHz)","ram":"32GB Corsair VENGEANCE LPX DDR4 3200MHz","storage":[{"type":"WD Blue SN570 NVMe SSD","size":"1TB","notes":"OS Drive"},{"type":"WD Blue SN570 NVMe SSD","size":"1TB","notes":"Cache Drive via SABRENT PCIe Adapter"},{"type":"WD_Black","size":"12TB","notes":"Movies - Shucked WD Ultrastar DC HC520"},{"type":"WD Elements","size":"14TB","notes":"Movies 2 - Shucked WD140EDGZ"},{"type":"WD easystore","size":"14TB","notes":"TV Shows - Shucked WD140EDGZ"},{"type":"WD easystore","size":"16TB","notes":"TV Shows 2 - Shucked WD160EDGZ"},{"type":"Seagate Ironwolf","size":"8TB","notes":"TV Shows 3 - Internal Drive"},{"type":"WD easystore","size":"20TB","notes":"TV Shows 4 - Shucked WD200EDGZ"},{"type":"Seagate BarraCuda","size":"2TB","notes":"Music - ST2000DM008-2FR102"}],"services":[{"name":"Plex Media Server","notes":"Primary media server"},{"name":"Jellyfin","notes":"Backup media server (Docker)"},{"name":"Seerr","notes":"Media request management (Docker)"},{"name":"Dispatcharr","notes":"IPTV proxy (Docker)"},{"name":"Tunarr","notes":"Custom TV channels (Docker)"},{"name":"Radarr","notes":"Movie management (Docker)"},{"name":"Sonarr","notes":"TV show management (Docker)"},{"name":"Lidarr","notes":"Music management (Docker)"},{"name":"Aurral","notes":"Music discovery (Docker)"},{"name":"LidaTube","notes":"YouTube integration (Docker)"},{"name":"Prowlarr","notes":"Indexer management (Docker)"},{"name":"qBittorrent","notes":"Torrent client (Docker)"},{"name":"SABnzbd","notes":"Usenet client (Docker)"},{"name":"Gluetun","notes":"VPN client (Docker)"},{"name":"FlareSolverr","notes":"Cloudflare solver (Docker)"},{"name":"Posteria","notes":"Poster management (Docker)"},{"name":"Glimpse","notes":"Media server viewer (Docker)"},{"name":"Tautulli","notes":"Plex monitoring (Docker)"},{"name":"Jellystat","notes":"Jellyfin statistics (Docker)"},{"name":"PlexTraktSync","notes":"Trakt.tv sync (Docker)"},{"name":"JellyPlex-Watched","notes":"Cross-platform sync (Docker)"},{"name":"Plex Exporter","notes":"Prometheus metrics (Docker)"},{"name":"Portainer","notes":"Container management (Docker)"},{"name":"Dozzle","notes":"Log viewer (Docker)"},{"name":"Scrutiny","notes":"Drive monitoring (Docker)"},{"name":"Lidarr Exportarr","notes":"Lidarr metrics (Docker)"},{"name":"Radarr Exportarr","notes":"Radarr metrics (Docker)"},{"name":"Sonarr Exportarr","notes":"Sonarr metrics (Docker)"},{"name":"Unpackerr (Movies)","notes":"Archive extractor (Docker)"},{"name":"Unpackerr (TV)","notes":"Archive extractor (Docker)"},{"name":"Sonarr (Private)","notes":"Private TV Show management (Docker)"},{"name":"Radarr (Private)","notes":"Private Movie management (Docker)"},{"name":"Jackett","notes":"Indexer management (Docker)"}],"notes":"CLI Tools: yt-dlp, deno, abcde (CD ripping), Ludanta (Plex/Jellyfin now playing script)"},{"id":"monbackup1","parentId":null,"name":"optimus","type":"server","system":"Dell OptiPlex 3060 Small Form Factor","os":"Ubuntu Server 22.04.3 LTS","cpu":"Intel Core i3-8100 @ 3.60GHz","ram":"32GB DDR4 SDRAM 2133 MT/s","storage":[{"type":"WD Blue SN580 NVMe SSD","size":"1TB","notes":"OS Drive via SABRENT PCIe Adapter"},{"type":"Seagate BarraCuda HDD","size":"4TB","notes":"Backup Storage - Internal SATA"}],"services":[{"name":"Portainer","notes":"Container management (Docker)"},{"name":"Dozzle","notes":"Log viewer (Docker)"},{"name":"Scrutiny","notes":"Drive monitoring (Docker)"},{"name":"Watchtower","notes":"Auto-updates (Docker)"}],"notes":""},{"id":"tnasstor01","parentId":null,"name":"truenas","type":"server","system":"Dell Precision 5820","os":"TrueNAS Community Edition","cpu":"Intel Xeon W-2135 @ 3.70GHz","ram":"128GB DDR4 ECC SDRAM","storage":[{"type":"Crucial SSD","size":"500GB","notes":"Boot Drive via Sedna PCIe SATA Adapter"},{"type":"Seagate IronWolf","size":"4TB x2","notes":"RAIDZ2 Array"},{"type":"Seagate Internal","size":"4TB","notes":"RAIDZ2 Array"},{"type":"HGST Ultrastar","size":"4TB x2","notes":"RAIDZ2 Array"}],"services":[{"name":"Tailscale","notes":"VPN access (TrueNAS App)"},{"name":"Scrutiny","notes":"SMART Monitoring (TrueNAS App)"},{"name":"Syncthing","notes":"File synchronization (TrueNAS App)"},{"name":"Pi-hole","notes":"DNS Filtering (TrueNAS App)"},{"name":"TrueNAS","notes":"TrueNAS WebUI"}],"notes":"GPU: NVIDIA GeForce 8400 GS Rev. 3\nPSU: 950W\nDrive Bay: 3.5\" to 5.25\" Cage Adapter for additional mounting"},{"id":"tnasstrvm1","parentId":"tnasstor01","name":"docker-vm","type":"container","system":"","os":"Ubuntu Server 22.04","cpu":"4 cores","ram":"16GB","storage":[],"services":[{"name":"Paperless-ngx","notes":"Document management (Docker)"},{"name":"Nextcloud","notes":"Cloud storage (Docker)"},{"name":"KaraKeep","notes":"Bookmark manager (Docker)"},{"name":"Portainer","notes":"Container management (Docker)"},{"name":"Dozzle","notes":"Log viewer (Docker)"},{"name":"Watchtower","notes":"Auto-updates (Docker)"}],"notes":""},{"id":"tnashost01","parentId":null,"name":"truenas-hosting","type":"server","system":"Custom (Fractal case)","os":"TrueNAS Community Edition","cpu":"AMD Ryzen 5 3400G with Radeon Vega Graphics","ram":"64GB GIGASTONE Game PRO DDR4 3200MHz","storage":[{"type":"ORICO M.2 NVMe SSD","size":"128GB","notes":"OS Drive - PCIe Gen3x4 2280"},{"type":"WD Blue Mobile Hard Drives","size":"1TB x4","notes":"RAIDZ1 Array"}],"services":[{"name":"Tailscale","notes":"VPN access (TrueNAS App)"},{"name":"Scrutiny","notes":"SMART Monitoring (TrueNAS App)"},{"name":"TrueNAS","notes":"TrueNAS WebUI"}],"notes":""},{"id":"tnashstvm1","parentId":"tnashost01","name":"coolify","type":"container","system":"","os":"Ubuntu Focal AMD64","cpu":"4 cores","ram":"16GB","storage":[],"services":[{"name":"Coolify","notes":"Self-hosting platform (Docker)"}],"notes":""},{"id":"proxmox001","parentId":null,"name":"proxmox","type":"server","system":"Minisforum MS-A1","os":"Proxmox VE","cpu":"AMD Ryzen 7 8700G","ram":"64GB DDR5","storage":[{"type":"NVMe SSD","size":"512GB","notes":"OS / Boot drive"},{"type":"NVMe SSD","size":"1TB x2","notes":"VM Storage - Mirrored"},{"type":"WD Blue SN580 NVMe SSD","size":"1TB","notes":"VM Backups"}],"services":[{"name":"proxmox","notes":"Proxmox Web UI"}],"notes":""},{"id":"proxmoxvm1","parentId":"proxmox001","name":"omega","type":"vm","system":"","os":"Ubuntu Server 22.04","cpu":"8 (2 sockets, 4 cores) [x86-64-v4]","ram":"16GB","storage":[],"services":[{"name":"Nginx Proxy Manager","notes":"Reverse proxy (Docker)"},{"name":"Homarr","notes":"Dashboard (Docker)"},{"name":"Uptime Kuma","notes":"Uptime monitoring (Docker)"},{"name":"Speed Tracker","notes":"Speed monitoring (Docker)"},{"name":"OpenSpeedTest","notes":"Speed testing (Docker)"},{"name":"Prometheus","notes":"Metrics collection (Docker)"},{"name":"Portainer","notes":"Container management (Docker)"},{"name":"Dozzle","notes":"Log viewer (Docker)"},{"name":"Watchtower","notes":"Auto-updates (Docker)"},{"name":"AI Game Collection","notes":"AI Games (Docker)"}],"notes":"Uses Pushover for notifications"},{"id":"piholelxc1","parentId":"proxmox001","name":"pihole","type":"container","system":"","os":"","cpu":"2 cores","ram":"512MB","storage":[],"services":[{"name":"Pi-hole","notes":"DNS filtering"}],"notes":"Proxmox LXC container"},{"id":"grafnalxc1","parentId":"proxmox001","name":"grafana","type":"container","system":"","os":"","cpu":"1 core","ram":"512MB","storage":[],"services":[{"name":"Grafana","notes":"Data visualization"}],"notes":"Proxmox LXC container"},{"id":"noderedlx1","parentId":"proxmox001","name":"nodered","type":"container","system":"","os":"","cpu":"1 core","ram":"1GB","storage":[],"services":[{"name":"Node-RED","notes":"Automation"}],"notes":"Proxmox LXC container"},{"id":"vaultlxc01","parentId":"proxmox001","name":"vaultwarden","type":"container","system":"","os":"","cpu":"4 cores","ram":"6GB","storage":[],"services":[{"name":"Vaultwarden","notes":"Password manager"}],"notes":"Proxmox LXC container"},{"id":"searxnglx1","parentId":"proxmox001","name":"searxng","type":"container","system":"","os":"","cpu":"2 cores","ram":"2GB","storage":[],"services":[{"name":"SearXNG","notes":"Search engine"}],"notes":"Proxmox LXC container"},{"id":"gateway001","parentId":null,"name":"ATT Gateway","type":"network","system":"AT\u0026T BGW-320","os":"","cpu":"","ram":"","storage":[],"services":[{"name":"Fiber Gateway","notes":"Passthrough mode to mesh network"}],"notes":"ISP: AT\u0026T 1 GIG Fiber\nMode: Passthrough Mode"},{"id":"nestwifi01","parentId":null,"name":"Nest Mesh WiFi","type":"network","system":"Google Nest WiFi Pro (4-pack)","os":"","cpu":"","ram":"","storage":[],"services":[],"notes":"Mesh WiFi network covering the home"},{"id":"tplink1601","parentId":null,"name":"Main Switch","type":"network","system":"TP-Link 16 Port Gigabit Ethernet Switch","os":"","cpu":"","ram":"","storage":[],"services":[],"notes":"Primary network switch"},{"id":"netgear051","parentId":null,"name":"Secondary Switch","type":"network","system":"NETGEAR 5-Port Gigabit Ethernet Switch (GS105NA)","os":"","cpu":"","ram":"","storage":[],"services":[],"notes":"Additional network ports"},{"id":"cyberups01","parentId":null,"name":"UPS 1","type":"other","system":"CyberPower LX1500GAVR","os":"","cpu":"","ram":"","storage":[],"services":[],"notes":"1500VA AVR 900 Watts UPS"},{"id":"cyberups02","parentId":null,"name":"UPS 2","type":"other","system":"CyberPower CP1000PFCLCD","os":"","cpu":"","ram":"","storage":[],"services":[],"notes":"1000VA Pure Sine Wave UPS"},{"id":"mmuslkrj8ka766","parentId":"plexmedia1","name":"Storage Tower","type":"storage","system":"Syba 8 Bay HDD Enclosure","os":"","cpu":"","ram":"","storage":[],"services":[],"notes":""},{"id":"mpbcpuakv7f4ux","parentId":null,"name":"UPS 3","type":"other","system":"APC BN450M-CA","os":"","cpu":"","ram":"","storage":[],"services":[],"notes":""}];
 var currentFilter = "all";
+var currentView = "grid";
 function esc(str){if(!str&&str!==0)return "";var d=document.createElement("div");d.textContent=String(str);return d.innerHTML;}
 function getTypeClass(type){var map={server:"badge-server",vm:"badge-vm",container:"badge-container",network:"badge-network",storage:"badge-storage"};return map[type]||"badge-other";}
 function getDevice(id){for(var i=0;i<DEVICES.length;i++)if(DEVICES[i].id===id)return DEVICES[i];return null;}
@@ -93,8 +115,8 @@ function renderFilters(){
     return '<button class="filter-btn '+(t===currentFilter?"active":"")+'" data-filter="'+esc(t)+'">'+esc(t)+'</button>';
   }).join("");
 }
-function setFilter(f){currentFilter=f;renderFilters();renderDevices();}
-function renderDevices(){
+function setFilter(f){currentFilter=f;renderFilters();renderDevices();if(currentView==="topology")renderTopology();}
+function getFilteredDevices(){
   var query=document.getElementById("searchBox").value.toLowerCase();
   var filtered=DEVICES.filter(function(d){
     if(currentFilter!=="all"&&d.type!==currentFilter)return false;
@@ -107,6 +129,10 @@ function renderDevices(){
     return true;
   });
   filtered.sort(function(a,b){return (a.name||"").localeCompare(b.name||"",undefined,{sensitivity:"base"});});
+  return filtered;
+}
+function renderDevices(){
+  var filtered=getFilteredDevices();
   var grid=document.getElementById("deviceGrid");
   if(!filtered.length){
     grid.innerHTML='<div class="empty-state" style="grid-column:1/-1;"><div class="empty-icon">\u29E1</div><div class="empty-title">'+(DEVICES.length===0?"No devices":"No matches")+'</div><div class="empty-text">'+(DEVICES.length===0?"":"Try adjusting your search or filter.")+'</div></div>';
@@ -142,6 +168,69 @@ function renderDevices(){
       (children.length?'<span class="child-count-badge">'+children.length+" "+(children.length===1?"child":"children")+'</span>':"")+
     '</div>';
   }).join("");
+}
+function truncateLabel(s,n){s=String(s||"");return s.length>n?s.slice(0,n-1)+"\u2026":s;}
+function topoBoxSvg(d,x,y,w,h,isParent){
+  var textX=x+14;
+  var nameY=y+h/2-3;
+  var typeY=y+h/2+13;
+  var nameMax=isParent?24:22;
+  var clipId="topo-clip-"+esc(d.id);
+  return '<g class="topo-node" data-id="'+esc(d.id)+'">'+
+    '<defs><clipPath id="'+clipId+'"><rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'" rx="6"/></clipPath></defs>'+
+    '<rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'" rx="6" class="topo-box"/>'+
+    '<rect x="'+x+'" y="'+y+'" width="3" height="'+h+'" class="topo-accent topo-accent-'+(d.type||"other")+'" clip-path="url(#'+clipId+')"/>'+
+    '<text x="'+textX+'" y="'+nameY+'" class="topo-text-name">'+esc(truncateLabel(d.name,nameMax))+'</text>'+
+    '<text x="'+textX+'" y="'+typeY+'" class="topo-text-type">'+esc((d.type||"other").toUpperCase())+'</text>'+
+    '<title>'+esc(d.name)+(d.type?" ('+esc(d.type)+')":"")+'</title>'+
+  '</g>';
+}
+function topologyClusterSvg(parent,children){
+  var w=280,parentH=60,childH=50,childIndent=26,childGap=10,childTopGap=20,pad=6;
+  var childW=w-childIndent;
+  var svg=topoBoxSvg(parent,0,0,w,parentH,true);
+  if(children.length){
+    var trunkX=11,trunkTop=parentH;
+    var lastChildCenter=parentH+childTopGap+(children.length-1)*(childH+childGap)+childH/2;
+    svg+='<line x1="'+trunkX+'" y1="'+trunkTop+'" x2="'+trunkX+'" y2="'+lastChildCenter+'" class="topo-edge"/>';
+    children.forEach(function(c,i){
+      var y=parentH+childTopGap+i*(childH+childGap);
+      var cy=y+childH/2;
+      svg+='<line x1="'+trunkX+'" y1="'+cy+'" x2="'+childIndent+'" y2="'+cy+'" class="topo-edge"/>';
+      svg+=topoBoxSvg(c,childIndent,y,childW,childH,false);
+    });
+  }
+  var contentH=children.length?parentH+childTopGap+children.length*(childH+childGap)-childGap:parentH;
+  var svgW=w+pad*2,svgH=contentH+pad*2;
+  var ariaLabel=esc(parent.name)+(children.length?" with "+children.length+" child device"+(children.length===1?"":"s"):"");
+  return '<svg class="topo-cluster" viewBox="'+(-pad)+' '+(-pad)+' '+svgW+' '+svgH+'" width="'+svgW+'" height="'+svgH+'" xmlns="http://www.w3.org/2000/svg" role="group" aria-label="'+ariaLabel+'">'+svg+'</svg>';
+}
+function renderTopology(){
+  var filtered=getFilteredDevices();
+  var container=document.getElementById("topologyView");
+  if(!filtered.length){container.innerHTML='<div class="topology-empty">'+(DEVICES.length===0?"No devices yet.":"No matches for the current search/filter.")+'</div>';return;}
+  var filteredIds={};filtered.forEach(function(d){filteredIds[d.id]=1;});
+  var roots=filtered.filter(function(d){return !d.parentId;});
+  var orphans=filtered.filter(function(d){return d.parentId&&!filteredIds[d.parentId];});
+  var clusters=[];
+  roots.forEach(function(p){clusters.push({parent:p,children:filtered.filter(function(c){return c.parentId===p.id;})});});
+  orphans.forEach(function(o){clusters.push({parent:o,children:[]});});
+  clusters.sort(function(a,b){return (a.parent.name||"").localeCompare(b.parent.name||"",undefined,{sensitivity:"base"});});
+  container.innerHTML='<div class="topology-clusters">'+clusters.map(function(c){return topologyClusterSvg(c.parent,c.children);}).join("")+'</div>';
+}
+var VIEW_KEY="homelab_view";
+try{var savedView=localStorage.getItem(VIEW_KEY);if(savedView==="topology"||savedView==="grid")currentView=savedView;}catch(_){}
+function applyViewUI(){
+  var btns=document.querySelectorAll("[data-view]");
+  for(var i=0;i<btns.length;i++){var active=btns[i].getAttribute("data-view")===currentView;btns[i].classList.toggle("active",active);btns[i].setAttribute("aria-selected",active?"true":"false");}
+  document.getElementById("deviceGrid").style.display=currentView==="grid"?"":"none";
+  document.getElementById("topologyView").classList.toggle("active",currentView==="topology");
+}
+function setView(v){
+  currentView=v;
+  try{localStorage.setItem(VIEW_KEY,v);}catch(_){}
+  applyViewUI();
+  if(v==="topology")renderTopology();
 }
 function showDetail(id){
   var d=getDevice(id);if(!d)return;
@@ -197,15 +286,17 @@ function showDetail(id){
   document.getElementById("detailOverlay").classList.add("open");
 }
 function closeDetail(){document.getElementById("detailOverlay").classList.remove("open");}
-document.getElementById("searchBox").addEventListener("input",function(){document.getElementById("searchWrap").classList.toggle("has-value",!!this.value);renderDevices();});
-document.getElementById("searchClear").addEventListener("click",function(){var b=document.getElementById("searchBox");b.value="";document.getElementById("searchWrap").classList.remove("has-value");b.focus();renderDevices();});
+document.getElementById("searchBox").addEventListener("input",function(){document.getElementById("searchWrap").classList.toggle("has-value",!!this.value);renderDevices();if(currentView==="topology")renderTopology();});
+document.getElementById("searchClear").addEventListener("click",function(){var b=document.getElementById("searchBox");b.value="";document.getElementById("searchWrap").classList.remove("has-value");b.focus();renderDevices();if(currentView==="topology")renderTopology();});
 document.getElementById("filterGroup").addEventListener("click",function(e){var b=e.target.closest("[data-filter]");if(b)setFilter(b.getAttribute("data-filter"));});
 document.getElementById("deviceGrid").addEventListener("click",function(e){var c=e.target.closest("[data-id]");if(c)showDetail(c.getAttribute("data-id"));});
 document.getElementById("deviceGrid").addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){var c=e.target.closest("[data-id]");if(c){e.preventDefault();showDetail(c.getAttribute("data-id"));}}});
+document.getElementById("topologyView").addEventListener("click",function(e){var n=e.target.closest("[data-id]");if(n)showDetail(n.getAttribute("data-id"));});
+document.querySelectorAll("[data-view]").forEach(function(b){b.addEventListener("click",function(){setView(b.getAttribute("data-view"));});});
 document.getElementById("detailPanel").addEventListener("click",function(e){var n=e.target.closest("[data-detail-id]");if(n){showDetail(n.getAttribute("data-detail-id"));return;}if(e.target.closest("[data-action=close-detail]"))closeDetail();});
 document.getElementById("detailOverlay").addEventListener("click",function(e){if(e.target.id==="detailOverlay")closeDetail();});
 document.addEventListener("keydown",function(e){if(e.key==="Escape")closeDetail();});
-renderStats();renderFilters();renderDevices();
+applyViewUI();renderStats();renderFilters();renderDevices();if(currentView==="topology")renderTopology();
 </script>
 </body>
 </html>

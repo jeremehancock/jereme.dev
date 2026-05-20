@@ -53,3 +53,6 @@ It's also genuinely small. One HTML file. You can read the source, audit the san
 
 - Project on GitHub: [github repo="jeremehancock/homelab.md"]
 - Live example using the public HTML export: [homelab]
+
+**Updates:**
+> *I have updated `homelab.md` to include a Topology view, CSV Export option, Undo Deletion option, and many other improvements.*
