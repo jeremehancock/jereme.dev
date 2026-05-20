@@ -43,7 +43,10 @@
 
                             $asideExternalUrl = '';
                             if (stripos($asideDesc, 'external:') === 0) {
-                                $asideExternalUrl = trim(substr($asideDesc, 9));
+                                $candidate = trim(substr($asideDesc, 9));
+                                if (preg_match('#^https?://#i', $candidate)) {
+                                    $asideExternalUrl = $candidate;
+                                }
                             }
 
                             $asideHref = ($asideExternalUrl !== '') ? $asideExternalUrl : $staticPage->permalink(FALSE);
