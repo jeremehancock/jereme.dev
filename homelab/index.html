@@ -44,7 +44,7 @@ body{font-family:'IBM Plex Sans',sans-serif;background:var(--bg-primary);color:v
 .device-name{font-family:'JetBrains Mono',monospace;font-size:17px;font-weight:600;color:var(--text-primary);}
 .device-type-badge{font-family:'JetBrains Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.8px;padding:3px 8px;border-radius:3px;font-weight:600;white-space:nowrap;display:inline-flex;align-items:center;gap:5px;}
 .device-type-badge svg{flex-shrink:0;display:block;}
-.badge-server{background:rgba(57,197,187,0.15);color:var(--accent);}.badge-vm{background:var(--blue-bg);color:var(--blue);}.badge-container{background:var(--purple-bg);color:var(--purple);}.badge-network{background:rgba(230,180,60,0.15);color:#e6b43c;}.badge-storage{background:rgba(230,120,80,0.15);color:#e67850;}.badge-other{background:rgba(150,150,170,0.15);color:#9696aa;}
+.badge-server{background:rgba(57,197,187,0.15);color:var(--accent);}.badge-vm{background:var(--blue-bg);color:var(--blue);}.badge-container{background:var(--purple-bg);color:var(--purple);}.badge-network{background:rgba(230,180,60,0.15);color:#e6b43c;}.badge-storage{background:rgba(230,120,80,0.15);color:#e67850;}.badge-ups{background:rgba(180,230,120,0.15);color:#b4e678;}.badge-other{background:rgba(150,150,170,0.15);color:#9696aa;}
 .device-parent-link{font-size:13px;color:var(--text-muted);margin-bottom:8px;}.device-parent-link strong{color:var(--text-secondary);}
 .device-meta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:8px;}.meta-item{font-size:14px;color:var(--text-secondary);}.meta-item strong{color:var(--text-primary);font-weight:500;}
 .device-services{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px;}
@@ -76,11 +76,16 @@ body{font-family:'IBM Plex Sans',sans-serif;background:var(--bg-primary);color:v
 .topo-cluster .topo-text-name{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:600;fill:var(--text-primary);pointer-events:none;}
 .topo-cluster .topo-text-type{font-family:'JetBrains Mono',monospace;font-size:10px;fill:var(--text-muted);letter-spacing:0.5px;pointer-events:none;}
 .topo-cluster .topo-edge{stroke:var(--border-active);stroke-width:1;fill:none;}
+.topo-cluster .topo-edge-power{stroke:#b4e678;stroke-width:1.25;stroke-dasharray:4 3;fill:none;opacity:0.85;}
 .topo-cluster .topo-accent{pointer-events:none;}
-.topo-accent-server{fill:var(--accent);}.topo-accent-vm{fill:var(--blue);}.topo-accent-container{fill:var(--purple);}.topo-accent-network{fill:#e6b43c;}.topo-accent-storage{fill:#e67850;}.topo-accent-other{fill:#9696aa;}
+.topo-accent-server{fill:var(--accent);}.topo-accent-vm{fill:var(--blue);}.topo-accent-container{fill:var(--purple);}.topo-accent-network{fill:#e6b43c;}.topo-accent-storage{fill:#e67850;}.topo-accent-ups{fill:#b4e678;}.topo-accent-other{fill:#9696aa;}
 .topo-cluster .topo-type-icon{pointer-events:none;}
-.topo-type-icon-server{color:var(--accent);}.topo-type-icon-vm{color:var(--blue);}.topo-type-icon-container{color:var(--purple);}.topo-type-icon-network{color:#e6b43c;}.topo-type-icon-storage{color:#e67850;}.topo-type-icon-other{color:#9696aa;}
-@media (max-width:640px){.header{padding:12px 16px;}.main{padding:16px;}.device-grid{grid-template-columns:1fr;}.detail-grid{grid-template-columns:1fr;}.toolbar{flex-direction:column;align-items:stretch;}.search-wrap{display:block;}.search-box{width:100%;}.stats-bar{flex-wrap:wrap;gap:16px;}.view-toggle{display:flex;}.view-toggle .view-btn{flex:1;text-align:center;justify-content:center;}.topology-clusters{grid-template-columns:1fr;max-width:320px;margin:0 auto;justify-content:center;}.topo-cluster{width:100%;height:auto;}.filter-group{display:none;}.filter-select{display:block;}}
+.topo-type-icon-server{color:var(--accent);}.topo-type-icon-vm{color:var(--blue);}.topo-type-icon-container{color:var(--purple);}.topo-type-icon-network{color:#e6b43c;}.topo-type-icon-storage{color:#e67850;}.topo-type-icon-ups{color:#b4e678;}.topo-type-icon-other{color:#9696aa;}
+.topo-mode-toggle[hidden]{display:none;}
+.toolbar-secondary{display:flex;justify-content:flex-end;margin:-8px 0 20px;}
+.toolbar-secondary[hidden]{display:none;}
+.toolbar-secondary .topo-mode-toggle .view-btn{flex:1;text-align:center;justify-content:center;}
+@media (max-width:640px){.header{padding:12px 16px;}.main{padding:16px;}.device-grid{grid-template-columns:1fr;}.detail-grid{grid-template-columns:1fr;}.toolbar{flex-direction:column;align-items:stretch;}.search-wrap{display:block;}.search-box{width:100%;}.stats-bar{flex-wrap:wrap;gap:16px;}.view-toggle{display:flex;}.view-toggle .view-btn{flex:1;text-align:center;justify-content:center;}.toolbar-secondary{margin:0 0 16px;}.toolbar-secondary .topo-mode-toggle{flex:1;}.topology-clusters{grid-template-columns:1fr;max-width:320px;margin:0 auto;justify-content:center;}.topo-cluster{width:100%;height:auto;}.filter-group{display:none;}.filter-select{display:block;}}
 </style>
 </head>
 <body>
@@ -102,6 +107,12 @@ body{font-family:'IBM Plex Sans',sans-serif;background:var(--bg-primary);color:v
       <button type="button" class="view-btn" data-view="topology" role="tab" aria-selected="false" title="Topology view">Topology</button>
     </div>
   </div>
+  <div class="toolbar-secondary" id="topoModeRow" hidden>
+    <div class="view-toggle topo-mode-toggle" id="topoModeToggle" role="tablist" aria-label="Topology mode">
+      <button type="button" class="view-btn active" data-topo-mode="network" role="tab" aria-selected="true" title="Network parent &rarr; child tree">Network</button>
+      <button type="button" class="view-btn" data-topo-mode="power" role="tab" aria-selected="false" title="UPS &rarr; powered devices">Power</button>
+    </div>
+  </div>
   <div class="device-grid" id="deviceGrid"></div>
   <div class="topology-view" id="topologyView" aria-live="polite"></div>
 </div>
@@ -109,12 +120,12 @@ body{font-family:'IBM Plex Sans',sans-serif;background:var(--bg-primary);color:v
 <div class="detail-overlay" id="detailOverlay"><div class="detail-panel" id="detailPanel"></div></div>
 <script>
 "use strict";
-var DEVICES = [{"id":"plexmedia1","parentId":null,"name":"anansi","type":"server","system":"Acer Aspire TC-1750-UR11","os":"Ubuntu Server 22.04.3 LTS","cpu":"Intel Core i5-12400 (up to 4.4GHz)","ram":"32GB Corsair VENGEANCE LPX DDR4 3200MHz","storage":[{"type":"Seagate BarraCuda","size":"2TB","notes":"Music - ST2000DM008-2FR102"},{"type":"Seagate Ironwolf","size":"8TB","notes":"TV Shows 3 - Internal Drive"},{"type":"WD Blue SN570 NVMe SSD","size":"1TB","notes":"OS Drive"},{"type":"WD Blue SN570 NVMe SSD","size":"1TB","notes":"Cache Drive via SABRENT PCIe Adapter"},{"type":"WD easystore","size":"14TB","notes":"TV Shows - Shucked WD140EDGZ"},{"type":"WD easystore","size":"16TB","notes":"TV Shows 2 - Shucked WD160EDGZ"},{"type":"WD easystore","size":"20TB","notes":"TV Shows 4 - Shucked WD200EDGZ"},{"type":"WD Elements","size":"14TB","notes":"Movies 2 - Shucked WD140EDGZ"},{"type":"WD_Black","size":"12TB","notes":"Movies - Shucked WD Ultrastar DC HC520"}],"services":[{"name":"Aurral","notes":"Music discovery (Docker)"},{"name":"Dispatcharr","notes":"IPTV proxy (Docker)"},{"name":"Dozzle","notes":"Log viewer (Docker)"},{"name":"FlareSolverr","notes":"Cloudflare solver (Docker)"},{"name":"Glimpse","notes":"Media server viewer (Docker)"},{"name":"Gluetun","notes":"VPN client (Docker)"},{"name":"Jackett","notes":"Indexer management (Docker)"},{"name":"Jellyfin","notes":"Backup media server (Docker)"},{"name":"JellyPlex-Watched","notes":"Cross-platform sync (Docker)"},{"name":"Jellystat","notes":"Jellyfin statistics (Docker)"},{"name":"Lidarr","notes":"Music management (Docker)"},{"name":"Lidarr Exportarr","notes":"Lidarr metrics (Docker)"},{"name":"LidaTube","notes":"YouTube integration (Docker)"},{"name":"Plex Exporter","notes":"Prometheus metrics (Docker)"},{"name":"Plex Media Server","notes":"Primary media server"},{"name":"PlexTraktSync","notes":"Trakt.tv sync (Docker)"},{"name":"Portainer","notes":"Container management (Docker)"},{"name":"Posteria","notes":"Poster management (Docker)"},{"name":"Prowlarr","notes":"Indexer management (Docker)"},{"name":"qBittorrent","notes":"Torrent client (Docker)"},{"name":"Radarr","notes":"Movie management (Docker)"},{"name":"Radarr (Private)","notes":"Private Movie management (Docker)"},{"name":"Radarr Exportarr","notes":"Radarr metrics (Docker)"},{"name":"SABnzbd","notes":"Usenet client (Docker)"},{"name":"Scrutiny","notes":"Drive monitoring (Docker)"},{"name":"Seerr","notes":"Media request management (Docker)"},{"name":"Sonarr","notes":"TV show management (Docker)"},{"name":"Sonarr (Private)","notes":"Private TV Show management (Docker)"},{"name":"Sonarr Exportarr","notes":"Sonarr metrics (Docker)"},{"name":"Tautulli","notes":"Plex monitoring (Docker)"},{"name":"Tunarr","notes":"Custom TV channels (Docker)"},{"name":"Unpackerr (Movies)","notes":"Archive extractor (Docker)"},{"name":"Unpackerr (TV)","notes":"Archive extractor (Docker)"}],"notes":"CLI Tools: yt-dlp, deno, abcde (CD ripping), Ludanta (Plex/Jellyfin now playing script)"},{"id":"monbackup1","parentId":null,"name":"optimus","type":"server","system":"Dell OptiPlex 3060 Small Form Factor","os":"Ubuntu Server 22.04.3 LTS","cpu":"Intel Core i3-8100 @ 3.60GHz","ram":"32GB DDR4 SDRAM 2133 MT/s","storage":[{"type":"Seagate BarraCuda HDD","size":"4TB","notes":"Backup Storage - Internal SATA"},{"type":"WD Blue SN580 NVMe SSD","size":"1TB","notes":"OS Drive via SABRENT PCIe Adapter"}],"services":[{"name":"Dozzle","notes":"Log viewer (Docker)"},{"name":"Portainer","notes":"Container management (Docker)"},{"name":"Scrutiny","notes":"Drive monitoring (Docker)"},{"name":"Watchtower","notes":"Auto-updates (Docker)"}],"notes":""},{"id":"tnasstor01","parentId":null,"name":"truenas","type":"server","system":"Dell Precision 5820","os":"TrueNAS Community Edition","cpu":"Intel Xeon W-2135 @ 3.70GHz","ram":"128GB DDR4 ECC SDRAM","storage":[{"type":"Crucial SSD","size":"500GB","notes":"Boot Drive via Sedna PCIe SATA Adapter"},{"type":"HGST Ultrastar","size":"4TB x2","notes":"RAIDZ2 Array"},{"type":"Seagate Internal","size":"4TB","notes":"RAIDZ2 Array"},{"type":"Seagate IronWolf","size":"4TB x2","notes":"RAIDZ2 Array"}],"services":[{"name":"Pi-hole","notes":"DNS Filtering (TrueNAS App)"},{"name":"Scrutiny","notes":"SMART Monitoring (TrueNAS App)"},{"name":"Syncthing","notes":"File synchronization (TrueNAS App)"},{"name":"Tailscale","notes":"VPN access (TrueNAS App)"},{"name":"TrueNAS","notes":"TrueNAS WebUI"}],"notes":"GPU: NVIDIA GeForce 8400 GS Rev. 3\nPSU: 950W\nDrive Bay: 3.5\" to 5.25\" Cage Adapter for additional mounting"},{"id":"tnasstrvm1","parentId":"tnasstor01","name":"docker-vm","type":"container","system":"","os":"Ubuntu Server 22.04","cpu":"4 cores","ram":"16GB","storage":[],"services":[{"name":"Dozzle","notes":"Log viewer (Docker)"},{"name":"KaraKeep","notes":"Bookmark manager (Docker)"},{"name":"Nextcloud","notes":"Cloud storage (Docker)"},{"name":"Paperless-ngx","notes":"Document management (Docker)"},{"name":"Portainer","notes":"Container management (Docker)"},{"name":"Watchtower","notes":"Auto-updates (Docker)"}],"notes":""},{"id":"tnashost01","parentId":null,"name":"truenas-hosting","type":"server","system":"Custom (Fractal case)","os":"TrueNAS Community Edition","cpu":"AMD Ryzen 5 3400G with Radeon Vega Graphics","ram":"64GB GIGASTONE Game PRO DDR4 3200MHz","storage":[{"type":"ORICO M.2 NVMe SSD","size":"128GB","notes":"OS Drive - PCIe Gen3x4 2280"},{"type":"WD Blue Mobile Hard Drives","size":"1TB x4","notes":"RAIDZ1 Array"}],"services":[{"name":"Scrutiny","notes":"SMART Monitoring (TrueNAS App)"},{"name":"Tailscale","notes":"VPN access (TrueNAS App)"},{"name":"TrueNAS","notes":"TrueNAS WebUI"}],"notes":""},{"id":"tnashstvm1","parentId":"tnashost01","name":"coolify","type":"container","system":"","os":"Ubuntu Focal AMD64","cpu":"4 cores","ram":"16GB","storage":[],"services":[{"name":"Coolify","notes":"Self-hosting platform (Docker)"}],"notes":""},{"id":"proxmox001","parentId":null,"name":"proxmox","type":"server","system":"Minisforum MS-A1","os":"Proxmox VE","cpu":"AMD Ryzen 7 8700G","ram":"64GB DDR5","storage":[{"type":"NVMe SSD","size":"512GB","notes":"OS / Boot drive"},{"type":"NVMe SSD","size":"1TB x2","notes":"VM Storage - Mirrored"},{"type":"WD Blue SN580 NVMe SSD","size":"1TB","notes":"VM Backups"}],"services":[{"name":"proxmox","notes":"Proxmox Web UI"}],"notes":""},{"id":"proxmoxvm1","parentId":"proxmox001","name":"omega","type":"vm","system":"","os":"Ubuntu Server 22.04","cpu":"8 (2 sockets, 4 cores) [x86-64-v4]","ram":"16GB","storage":[],"services":[{"name":"AI Game Collection","notes":"AI Games (Docker)"},{"name":"Cloudflare DDNS","notes":"Cloudflare DDNS updater (Docker)"},{"name":"Dozzle","notes":"Log viewer (Docker)"},{"name":"Homarr","notes":"Dashboard (Docker)"},{"name":"Nginx Proxy Manager","notes":"Reverse proxy (Docker)"},{"name":"OpenSpeedTest","notes":"Speed testing (Docker)"},{"name":"Portainer","notes":"Container management (Docker)"},{"name":"Prometheus","notes":"Metrics collection (Docker)"},{"name":"Speed Tracker","notes":"Speed monitoring (Docker)"},{"name":"Uptime Kuma","notes":"Uptime monitoring (Docker)"},{"name":"Watchtower","notes":"Auto-updates (Docker)"}],"notes":"Uses Pushover for notifications"},{"id":"piholelxc1","parentId":"proxmox001","name":"pihole","type":"container","system":"","os":"","cpu":"2 cores","ram":"512MB","storage":[],"services":[{"name":"Pi-hole","notes":"DNS filtering"}],"notes":"Proxmox LXC container"},{"id":"grafnalxc1","parentId":"proxmox001","name":"grafana","type":"container","system":"","os":"","cpu":"1 core","ram":"512MB","storage":[],"services":[{"name":"Grafana","notes":"Data visualization"}],"notes":"Proxmox LXC container"},{"id":"noderedlx1","parentId":"proxmox001","name":"nodered","type":"container","system":"","os":"","cpu":"1 core","ram":"1GB","storage":[],"services":[{"name":"Node-RED","notes":"Automation"}],"notes":"Proxmox LXC container"},{"id":"vaultlxc01","parentId":"proxmox001","name":"vaultwarden","type":"container","system":"","os":"","cpu":"4 cores","ram":"6GB","storage":[],"services":[{"name":"Vaultwarden","notes":"Password manager"}],"notes":"Proxmox LXC container"},{"id":"searxnglx1","parentId":"proxmox001","name":"searxng","type":"container","system":"","os":"","cpu":"2 cores","ram":"2GB","storage":[],"services":[{"name":"SearXNG","notes":"Search engine"}],"notes":"Proxmox LXC container"},{"id":"gateway001","parentId":null,"name":"ATT Gateway","type":"network","system":"AT\u0026T BGW-320","os":"","cpu":"","ram":"","storage":[],"services":[{"name":"Fiber Gateway","notes":"Passthrough mode to mesh network"}],"notes":"ISP: AT\u0026T 1 GIG Fiber\nMode: Passthrough Mode"},{"id":"nestwifi01","parentId":null,"name":"Nest Mesh WiFi","type":"network","system":"Google Nest WiFi Pro (4-pack)","os":"","cpu":"","ram":"","storage":[],"services":[],"notes":"Mesh WiFi network covering the home"},{"id":"tplink1601","parentId":null,"name":"Main Switch","type":"network","system":"TP-Link 16 Port Gigabit Ethernet Switch","os":"","cpu":"","ram":"","storage":[],"services":[],"notes":"Primary network switch"},{"id":"netgear051","parentId":null,"name":"Secondary Switch","type":"network","system":"NETGEAR 5-Port Gigabit Ethernet Switch (GS105NA)","os":"","cpu":"","ram":"","storage":[],"services":[],"notes":"Additional network ports"},{"id":"cyberups01","parentId":null,"name":"UPS 1","type":"other","system":"CyberPower LX1500GAVR","os":"","cpu":"","ram":"","storage":[],"services":[],"notes":"1500VA AVR 900 Watts UPS"},{"id":"cyberups02","parentId":null,"name":"UPS 2","type":"other","system":"CyberPower CP1000PFCLCD","os":"","cpu":"","ram":"","storage":[],"services":[],"notes":"1000VA Pure Sine Wave UPS"},{"id":"mmuslkrj8ka766","parentId":"plexmedia1","name":"Storage Tower","type":"storage","system":"Syba 8 Bay HDD Enclosure","os":"","cpu":"","ram":"","storage":[],"services":[],"notes":""},{"id":"mpbcpuakv7f4ux","parentId":null,"name":"UPS 3","type":"other","system":"APC BN450M-CA","os":"","cpu":"","ram":"","storage":[],"services":[],"notes":""}];
+var DEVICES = [{"id":"plexmedia1","parentId":"tplink1601","poweredById":"cyberups01","name":"anansi","type":"server","system":"Acer Aspire TC-1750-UR11","os":"Ubuntu Server 22.04.3 LTS","cpu":"Intel Core i5-12400 (up to 4.4GHz)","ram":"32GB Corsair VENGEANCE LPX DDR4 3200MHz","storage":[{"type":"Seagate BarraCuda","size":"2TB","notes":"Music - ST2000DM008-2FR102"},{"type":"Seagate Ironwolf","size":"8TB","notes":"TV Shows 3 - Internal Drive"},{"type":"WD Blue SN570 NVMe SSD","size":"1TB","notes":"OS Drive"},{"type":"WD Blue SN570 NVMe SSD","size":"1TB","notes":"Cache Drive via SABRENT PCIe Adapter"},{"type":"WD easystore","size":"14TB","notes":"TV Shows - Shucked WD140EDGZ"},{"type":"WD easystore","size":"16TB","notes":"TV Shows 2 - Shucked WD160EDGZ"},{"type":"WD easystore","size":"20TB","notes":"TV Shows 4 - Shucked WD200EDGZ"},{"type":"WD Elements","size":"14TB","notes":"Movies 2 - Shucked WD140EDGZ"},{"type":"WD_Black","size":"12TB","notes":"Movies - Shucked WD Ultrastar DC HC520"}],"services":[{"name":"Aurral","notes":"Music discovery (Docker)"},{"name":"Dispatcharr","notes":"IPTV proxy (Docker)"},{"name":"Dozzle","notes":"Log viewer (Docker)"},{"name":"FlareSolverr","notes":"Cloudflare solver (Docker)"},{"name":"Glimpse","notes":"Media server viewer (Docker)"},{"name":"Gluetun","notes":"VPN client (Docker)"},{"name":"Jackett","notes":"Indexer management (Docker)"},{"name":"Jellyfin","notes":"Backup media server (Docker)"},{"name":"JellyPlex-Watched","notes":"Cross-platform sync (Docker)"},{"name":"Jellystat","notes":"Jellyfin statistics (Docker)"},{"name":"Lidarr","notes":"Music management (Docker)"},{"name":"Lidarr Exportarr","notes":"Lidarr metrics (Docker)"},{"name":"LidaTube","notes":"YouTube integration (Docker)"},{"name":"Plex Exporter","notes":"Prometheus metrics (Docker)"},{"name":"Plex Media Server","notes":"Primary media server"},{"name":"PlexTraktSync","notes":"Trakt.tv sync (Docker)"},{"name":"Portainer","notes":"Container management (Docker)"},{"name":"Posteria","notes":"Poster management (Docker)"},{"name":"Prowlarr","notes":"Indexer management (Docker)"},{"name":"qBittorrent","notes":"Torrent client (Docker)"},{"name":"Radarr","notes":"Movie management (Docker)"},{"name":"Radarr (Private)","notes":"Private Movie management (Docker)"},{"name":"Radarr Exportarr","notes":"Radarr metrics (Docker)"},{"name":"SABnzbd","notes":"Usenet client (Docker)"},{"name":"Scrutiny","notes":"Drive monitoring (Docker)"},{"name":"Seerr","notes":"Media request management (Docker)"},{"name":"Sonarr","notes":"TV show management (Docker)"},{"name":"Sonarr (Private)","notes":"Private TV Show management (Docker)"},{"name":"Sonarr Exportarr","notes":"Sonarr metrics (Docker)"},{"name":"Tautulli","notes":"Plex monitoring (Docker)"},{"name":"Tunarr","notes":"Custom TV channels (Docker)"},{"name":"Unpackerr (Movies)","notes":"Archive extractor (Docker)"},{"name":"Unpackerr (TV)","notes":"Archive extractor (Docker)"}],"notes":"CLI Tools: yt-dlp, deno, abcde (CD ripping), Ludanta (Plex/Jellyfin now playing script)"},{"id":"monbackup1","parentId":"tplink1601","poweredById":"cyberups01","name":"optimus","type":"server","system":"Dell OptiPlex 3060 Small Form Factor","os":"Ubuntu Server 22.04.3 LTS","cpu":"Intel Core i3-8100 @ 3.60GHz","ram":"32GB DDR4 SDRAM 2133 MT/s","storage":[{"type":"Seagate BarraCuda HDD","size":"4TB","notes":"Backup Storage - Internal SATA"},{"type":"WD Blue SN580 NVMe SSD","size":"1TB","notes":"OS Drive via SABRENT PCIe Adapter"}],"services":[{"name":"Dozzle","notes":"Log viewer (Docker)"},{"name":"Portainer","notes":"Container management (Docker)"},{"name":"Scrutiny","notes":"Drive monitoring (Docker)"},{"name":"Watchtower","notes":"Auto-updates (Docker)"}],"notes":""},{"id":"tnasstor01","parentId":"tplink1601","poweredById":"cyberups02","name":"truenas","type":"server","system":"Dell Precision 5820","os":"TrueNAS Community Edition","cpu":"Intel Xeon W-2135 @ 3.70GHz","ram":"128GB DDR4 ECC SDRAM","storage":[{"type":"Crucial SSD","size":"500GB","notes":"Boot Drive via Sedna PCIe SATA Adapter"},{"type":"HGST Ultrastar","size":"4TB x2","notes":"RAIDZ2 Array"},{"type":"Seagate Internal","size":"4TB","notes":"RAIDZ2 Array"},{"type":"Seagate IronWolf","size":"4TB x2","notes":"RAIDZ2 Array"}],"services":[{"name":"Pi-hole","notes":"DNS Filtering (TrueNAS App)"},{"name":"Scrutiny","notes":"SMART Monitoring (TrueNAS App)"},{"name":"Syncthing","notes":"File synchronization (TrueNAS App)"},{"name":"Tailscale","notes":"VPN access (TrueNAS App)"},{"name":"TrueNAS","notes":"TrueNAS WebUI"}],"notes":"GPU: NVIDIA GeForce 8400 GS Rev. 3\nPSU: 950W\nDrive Bay: 3.5\" to 5.25\" Cage Adapter for additional mounting"},{"id":"tnasstrvm1","parentId":"tnasstor01","poweredById":null,"name":"docker-vm","type":"container","system":"","os":"Ubuntu Server 22.04","cpu":"4 cores","ram":"16GB","storage":[],"services":[{"name":"Dozzle","notes":"Log viewer (Docker)"},{"name":"KaraKeep","notes":"Bookmark manager (Docker)"},{"name":"Nextcloud","notes":"Cloud storage (Docker)"},{"name":"Paperless-ngx","notes":"Document management (Docker)"},{"name":"Portainer","notes":"Container management (Docker)"},{"name":"Watchtower","notes":"Auto-updates (Docker)"}],"notes":""},{"id":"tnashost01","parentId":"tplink1601","poweredById":"cyberups02","name":"truenas-hosting","type":"server","system":"Custom (Fractal case)","os":"TrueNAS Community Edition","cpu":"AMD Ryzen 5 3400G with Radeon Vega Graphics","ram":"64GB GIGASTONE Game PRO DDR4 3200MHz","storage":[{"type":"ORICO M.2 NVMe SSD","size":"128GB","notes":"OS Drive - PCIe Gen3x4 2280"},{"type":"WD Blue Mobile Hard Drives","size":"1TB x4","notes":"RAIDZ1 Array"}],"services":[{"name":"Scrutiny","notes":"SMART Monitoring (TrueNAS App)"},{"name":"Tailscale","notes":"VPN access (TrueNAS App)"},{"name":"TrueNAS","notes":"TrueNAS WebUI"}],"notes":""},{"id":"tnashstvm1","parentId":"tnashost01","poweredById":null,"name":"coolify","type":"container","system":"","os":"Ubuntu Focal AMD64","cpu":"4 cores","ram":"16GB","storage":[],"services":[{"name":"Coolify","notes":"Self-hosting platform (Docker)"}],"notes":""},{"id":"proxmox001","parentId":"tplink1601","poweredById":"cyberups02","name":"proxmox","type":"server","system":"Minisforum MS-A1","os":"Proxmox VE","cpu":"AMD Ryzen 7 8700G","ram":"64GB DDR5","storage":[{"type":"NVMe SSD","size":"512GB","notes":"OS / Boot drive"},{"type":"NVMe SSD","size":"1TB x2","notes":"VM Storage - Mirrored"},{"type":"WD Blue SN580 NVMe SSD","size":"1TB","notes":"VM Backups"}],"services":[{"name":"proxmox","notes":"Proxmox Web UI"}],"notes":""},{"id":"proxmoxvm1","parentId":"proxmox001","poweredById":null,"name":"omega","type":"vm","system":"","os":"Ubuntu Server 22.04","cpu":"8 (2 sockets, 4 cores) [x86-64-v4]","ram":"16GB","storage":[],"services":[{"name":"AI Game Collection","notes":"AI Games (Docker)"},{"name":"Cloudflare DDNS","notes":"Cloudflare DDNS updater (Docker)"},{"name":"Dozzle","notes":"Log viewer (Docker)"},{"name":"Homarr","notes":"Dashboard (Docker)"},{"name":"Nginx Proxy Manager","notes":"Reverse proxy (Docker)"},{"name":"OpenSpeedTest","notes":"Speed testing (Docker)"},{"name":"Portainer","notes":"Container management (Docker)"},{"name":"Prometheus","notes":"Metrics collection (Docker)"},{"name":"Speed Tracker","notes":"Speed monitoring (Docker)"},{"name":"Uptime Kuma","notes":"Uptime monitoring (Docker)"},{"name":"Watchtower","notes":"Auto-updates (Docker)"}],"notes":"Uses Pushover for notifications"},{"id":"piholelxc1","parentId":"proxmox001","poweredById":null,"name":"pihole","type":"container","system":"","os":"","cpu":"2 cores","ram":"512MB","storage":[],"services":[{"name":"Pi-hole","notes":"DNS filtering"}],"notes":"Proxmox LXC container"},{"id":"grafnalxc1","parentId":"proxmox001","poweredById":null,"name":"grafana","type":"container","system":"","os":"","cpu":"1 core","ram":"512MB","storage":[],"services":[{"name":"Grafana","notes":"Data visualization"}],"notes":"Proxmox LXC container"},{"id":"noderedlx1","parentId":"proxmox001","poweredById":null,"name":"nodered","type":"container","system":"","os":"","cpu":"1 core","ram":"1GB","storage":[],"services":[{"name":"Node-RED","notes":"Automation"}],"notes":"Proxmox LXC container"},{"id":"vaultlxc01","parentId":"proxmox001","poweredById":null,"name":"vaultwarden","type":"container","system":"","os":"","cpu":"4 cores","ram":"6GB","storage":[],"services":[{"name":"Vaultwarden","notes":"Password manager"}],"notes":"Proxmox LXC container"},{"id":"searxnglx1","parentId":"proxmox001","poweredById":null,"name":"searxng","type":"container","system":"","os":"","cpu":"2 cores","ram":"2GB","storage":[],"services":[{"name":"SearXNG","notes":"Search engine"}],"notes":"Proxmox LXC container"},{"id":"gateway001","parentId":null,"poweredById":"mpbcpuakv7f4ux","name":"ATT Gateway","type":"network","system":"AT\u0026T BGW-320","os":"","cpu":"","ram":"","storage":[],"services":[{"name":"Fiber Gateway","notes":"Passthrough mode to mesh network"}],"notes":"ISP: AT\u0026T 1 GIG Fiber\nMode: Passthrough Mode"},{"id":"nestwifi01","parentId":"gateway001","poweredById":"cyberups02","name":"Nest Mesh WiFi","type":"network","system":"Google Nest WiFi Pro (4-pack)","os":"","cpu":"","ram":"","storage":[],"services":[],"notes":"Mesh WiFi network covering the home"},{"id":"tplink1601","parentId":"netgear051","poweredById":"mpbcpuakv7f4ux","name":"Secondary Switch","type":"network","system":"TP-Link 16 Port Gigabit Ethernet Switch","os":"","cpu":"","ram":"","storage":[],"services":[],"notes":"Primary network switch"},{"id":"netgear051","parentId":"nestwifi01","poweredById":"mpbcpuakv7f4ux","name":"Main Switch","type":"network","system":"NETGEAR 5-Port Gigabit Ethernet Switch (GS105NA)","os":"","cpu":"","ram":"","storage":[],"services":[],"notes":"Additional network ports"},{"id":"cyberups01","parentId":null,"poweredById":null,"name":"CyberPower 1500","type":"ups","system":"CyberPower LX1500GAVR","os":"","cpu":"","ram":"","storage":[],"services":[],"notes":"1500VA AVR 900 Watts UPS"},{"id":"cyberups02","parentId":null,"poweredById":null,"name":"CyberPower 1000","type":"ups","system":"CyberPower CP1000PFCLCD","os":"","cpu":"","ram":"","storage":[],"services":[],"notes":"1000VA Pure Sine Wave UPS"},{"id":"mmuslkrj8ka766","parentId":"plexmedia1","poweredById":"cyberups01","name":"Storage Tower","type":"storage","system":"Syba 8 Bay HDD Enclosure","os":"","cpu":"","ram":"","storage":[],"services":[],"notes":""},{"id":"mpbcpuakv7f4ux","parentId":null,"poweredById":null,"name":"APC 450","type":"ups","system":"APC BN450M-CA","os":"","cpu":"","ram":"","storage":[],"services":[],"notes":""}];
 var currentFilter = "all";
 var currentView = "grid";
 function esc(str){if(!str&&str!==0)return "";var d=document.createElement("div");d.textContent=String(str);return d.innerHTML;}
-function getTypeClass(type){var map={server:"badge-server",vm:"badge-vm",container:"badge-container",network:"badge-network",storage:"badge-storage"};return map[type]||"badge-other";}
-var TYPE_ICON_PATHS={server:'<rect x="2" y="2.5" width="12" height="4.5" rx="1"/><rect x="2" y="9" width="12" height="4.5" rx="1"/><circle cx="4.5" cy="4.75" r="0.6" fill="currentColor" stroke="none"/><circle cx="4.5" cy="11.25" r="0.6" fill="currentColor" stroke="none"/><line x1="7" y1="4.75" x2="12" y2="4.75"/><line x1="7" y1="11.25" x2="12" y2="11.25"/>',vm:'<rect x="1.75" y="2.75" width="12.5" height="8.5" rx="1"/><line x1="5.5" y1="14" x2="10.5" y2="14"/><line x1="8" y1="11.25" x2="8" y2="14"/><circle cx="8" cy="7" r="2" fill="currentColor" stroke="none"/>',container:'<path d="M8 1.75l5.75 2.75v7L8 14.25 2.25 11.5v-7z"/><path d="M2.25 4.5L8 7.25l5.75-2.75"/><line x1="8" y1="7.25" x2="8" y2="14.25"/>',network:'<circle cx="8" cy="3" r="1.6"/><circle cx="3" cy="13" r="1.6"/><circle cx="13" cy="13" r="1.6"/><line x1="8" y1="4.6" x2="8" y2="7.5"/><line x1="8" y1="7.5" x2="3.8" y2="11.6"/><line x1="8" y1="7.5" x2="12.2" y2="11.6"/>',storage:'<ellipse cx="8" cy="3.5" rx="5.25" ry="1.75"/><path d="M2.75 3.5v9c0 .97 2.35 1.75 5.25 1.75s5.25-.78 5.25-1.75v-9"/><path d="M2.75 8c0 .97 2.35 1.75 5.25 1.75s5.25-.78 5.25-1.75"/>',other:'<circle cx="8" cy="8" r="6"/><circle cx="8" cy="8" r="1.4" fill="currentColor" stroke="none"/>'};
+function getTypeClass(type){var map={server:"badge-server",vm:"badge-vm",container:"badge-container",network:"badge-network",storage:"badge-storage",ups:"badge-ups"};return map[type]||"badge-other";}
+var TYPE_ICON_PATHS={server:'<rect x="2" y="2.5" width="12" height="4.5" rx="1"/><rect x="2" y="9" width="12" height="4.5" rx="1"/><circle cx="4.5" cy="4.75" r="0.6" fill="currentColor" stroke="none"/><circle cx="4.5" cy="11.25" r="0.6" fill="currentColor" stroke="none"/><line x1="7" y1="4.75" x2="12" y2="4.75"/><line x1="7" y1="11.25" x2="12" y2="11.25"/>',vm:'<rect x="1.75" y="2.75" width="12.5" height="8.5" rx="1"/><line x1="5.5" y1="14" x2="10.5" y2="14"/><line x1="8" y1="11.25" x2="8" y2="14"/><circle cx="8" cy="7" r="2" fill="currentColor" stroke="none"/>',container:'<path d="M8 1.75l5.75 2.75v7L8 14.25 2.25 11.5v-7z"/><path d="M2.25 4.5L8 7.25l5.75-2.75"/><line x1="8" y1="7.25" x2="8" y2="14.25"/>',network:'<circle cx="8" cy="3" r="1.6"/><circle cx="3" cy="13" r="1.6"/><circle cx="13" cy="13" r="1.6"/><line x1="8" y1="4.6" x2="8" y2="7.5"/><line x1="8" y1="7.5" x2="3.8" y2="11.6"/><line x1="8" y1="7.5" x2="12.2" y2="11.6"/>',storage:'<ellipse cx="8" cy="3.5" rx="5.25" ry="1.75"/><path d="M2.75 3.5v9c0 .97 2.35 1.75 5.25 1.75s5.25-.78 5.25-1.75v-9"/><path d="M2.75 8c0 .97 2.35 1.75 5.25 1.75s5.25-.78 5.25-1.75"/>',ups:'<rect x="2.5" y="3" width="11" height="10" rx="1"/><rect x="6" y="1.75" width="4" height="1.5" rx="0.4" fill="currentColor" stroke="none"/><path d="M8.5 5.5l-2.25 3.5h1.75l-0.5 2.5 2.25-3.5h-1.75z" fill="currentColor" stroke="none"/>',other:'<circle cx="8" cy="8" r="6"/><circle cx="8" cy="8" r="1.4" fill="currentColor" stroke="none"/>'};
 function getTypeIcon(type){var t=TYPE_ICON_PATHS[type]?type:"other";return '<svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true">'+TYPE_ICON_PATHS[t]+'</svg>';}
 function getTopoTypeIcon(type,x,y,size){var t=TYPE_ICON_PATHS[type]?type:"other";return '<svg x="'+x+'" y="'+y+'" width="'+size+'" height="'+size+'" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" class="topo-type-icon topo-type-icon-'+t+'" aria-hidden="true">'+TYPE_ICON_PATHS[t]+'</svg>';}
 function typeBadge(type){var t=type||"other";return '<span class="device-type-badge '+getTypeClass(t)+'">'+getTypeIcon(t)+'<span>'+esc(t)+'</span></span>';}
@@ -186,7 +197,7 @@ function renderDevices(){
       (parent?'<div class="device-parent-link">on <strong>'+esc(parent.name)+'</strong></div>':"")+
       '<div class="device-meta">'+
         (d.system?'<span class="meta-item"><strong>System:</strong> '+esc(d.system)+'</span>':"")+
-        (d.os?'<span class="meta-item"><strong>OS:</strong> '+esc(d.os)+'</span>':"")+
+        (d.os?'<span class="meta-item"><strong>OS / Firmware:</strong> '+esc(d.os)+'</span>':"")+
         (d.cpu?'<span class="meta-item"><strong>CPU:</strong> '+esc(d.cpu)+'</span>':"")+
         (d.ram?'<span class="meta-item"><strong>RAM:</strong> '+esc(d.ram)+'</span>':"")+
         (storageHtml?'<span class="meta-item"><strong>Storage:</strong> '+storageHtml+'</span>':"")+
@@ -218,46 +229,101 @@ function topoBoxSvg(d,x,y,w,h,isParent){
     '<title>'+esc(d.name)+(d.type?" ('+esc(d.type)+')":"")+'</title>'+
   '</g>';
 }
-function topologyClusterSvg(parent,children){
+function topologyClusterSvg(rootNode,opts){
   var w=280,parentH=60,childH=50,childIndent=26,childGap=10,childTopGap=20,pad=6;
-  var childW=w-childIndent;
-  var svg=topoBoxSvg(parent,0,0,w,parentH,true);
-  if(children.length){
-    var trunkX=11,trunkTop=parentH;
-    var lastChildCenter=parentH+childTopGap+(children.length-1)*(childH+childGap)+childH/2;
-    svg+='<line x1="'+trunkX+'" y1="'+trunkTop+'" x2="'+trunkX+'" y2="'+lastChildCenter+'" class="topo-edge"/>';
-    children.forEach(function(c,i){
-      var y=parentH+childTopGap+i*(childH+childGap);
-      var cy=y+childH/2;
-      svg+='<line x1="'+trunkX+'" y1="'+cy+'" x2="'+childIndent+'" y2="'+cy+'" class="topo-edge"/>';
-      svg+=topoBoxSvg(c,childIndent,y,childW,childH,false);
-    });
+  var edgeClass=(opts&&opts.edgeType==="power")?"topo-edge-power":"topo-edge";
+  var descendantCount=0;
+  function countDescendants(n){if(!n.children)return;descendantCount+=n.children.length;n.children.forEach(countDescendants);}
+  countDescendants(rootNode);
+  function layout(node,startY,depth){
+    var nodeH=depth===0?parentH:childH;
+    var x=depth*childIndent;
+    var boxW=Math.max(120,w-x);
+    var svg=topoBoxSvg(node.device,x,startY,boxW,nodeH,depth===0);
+    var y=startY+nodeH;
+    var kids=node.children||[];
+    if(kids.length){
+      var trunkX=x+11,trunkTop=startY+nodeH,childX=(depth+1)*childIndent;
+      var childCenters=[],childSvg="";
+      y+=childTopGap;
+      kids.forEach(function(c,i){
+        if(i>0)y+=childGap;
+        var cy=y+childH/2;
+        childCenters.push(cy);
+        childSvg+='<line x1="'+trunkX+'" y1="'+cy+'" x2="'+childX+'" y2="'+cy+'" class="'+edgeClass+'"/>';
+        var sub=layout(c,y,depth+1);
+        childSvg+=sub.svg;
+        y=sub.endY;
+      });
+      var trunkBottom=childCenters[childCenters.length-1];
+      svg+='<line x1="'+trunkX+'" y1="'+trunkTop+'" x2="'+trunkX+'" y2="'+trunkBottom+'" class="'+edgeClass+'"/>';
+      svg+=childSvg;
+    }
+    return {svg:svg,endY:y};
   }
-  var contentH=children.length?parentH+childTopGap+children.length*(childH+childGap)-childGap:parentH;
-  var svgW=w+pad*2,svgH=contentH+pad*2;
-  var ariaLabel=esc(parent.name)+(children.length?" with "+children.length+" child device"+(children.length===1?"":"s"):"");
-  return '<svg class="topo-cluster" viewBox="'+(-pad)+' '+(-pad)+' '+svgW+' '+svgH+'" width="'+svgW+'" height="'+svgH+'" xmlns="http://www.w3.org/2000/svg" role="group" aria-label="'+ariaLabel+'">'+svg+'</svg>';
+  var result=layout(rootNode,0,0);
+  var contentH=result.endY,svgW=w+pad*2,svgH=contentH+pad*2;
+  var parent=rootNode.device;
+  var linkWord=(opts&&opts.edgeType==="power")?"powered device":"descendant device";
+  var ariaLabel=esc(parent.name)+(descendantCount?" with "+descendantCount+" "+linkWord+(descendantCount===1?"":"s"):"");
+  return '<svg class="topo-cluster" viewBox="'+(-pad)+' '+(-pad)+' '+svgW+' '+svgH+'" width="'+svgW+'" height="'+svgH+'" xmlns="http://www.w3.org/2000/svg" role="group" aria-label="'+ariaLabel+'">'+result.svg+'</svg>';
 }
 function renderTopology(){
   var filtered=getFilteredDevices();
   var container=document.getElementById("topologyView");
   if(!filtered.length){container.innerHTML='<div class="topology-empty">'+(DEVICES.length===0?"No devices yet.":"No matches for the current search/filter.")+'</div>';return;}
   var filteredIds={};filtered.forEach(function(d){filteredIds[d.id]=1;});
-  var roots=filtered.filter(function(d){return !d.parentId;});
-  var orphans=filtered.filter(function(d){return d.parentId&&!filteredIds[d.parentId];});
-  var clusters=[];
-  roots.forEach(function(p){clusters.push({parent:p,children:filtered.filter(function(c){return c.parentId===p.id;})});});
-  orphans.forEach(function(o){clusters.push({parent:o,children:[]});});
-  clusters.sort(function(a,b){return (a.parent.name||"").localeCompare(b.parent.name||"",undefined,{sensitivity:"base"});});
-  container.innerHTML='<div class="topology-clusters">'+clusters.map(function(c){return topologyClusterSvg(c.parent,c.children);}).join("")+'</div>';
+  function buildNetworkTree(device){
+    var kids=filtered.filter(function(c){return c.parentId===device.id;})
+      .sort(function(a,b){return (a.name||"").localeCompare(b.name||"",undefined,{sensitivity:"base"});});
+    return {device:device,children:kids.map(buildNetworkTree)};
+  }
+  function buildPowerTree(device,seen){
+    seen=seen||{};
+    if(seen[device.id])return {device:device,children:[]};
+    seen[device.id]=1;
+    var powerKids=filtered.filter(function(c){return c.poweredById===device.id;});
+    var virtualKids=filtered.filter(function(c){return c.parentId===device.id&&(c.type==="vm"||c.type==="container")&&!c.poweredById;});
+    var kids=powerKids.concat(virtualKids)
+      .sort(function(a,b){return (a.name||"").localeCompare(b.name||"",undefined,{sensitivity:"base"});});
+    return {device:device,children:kids.map(function(k){return buildPowerTree(k,seen);})};
+  }
+  var networkRoots=filtered.filter(function(d){return !d.parentId&&d.type!=="ups";});
+  var networkOrphans=filtered.filter(function(d){return d.parentId&&!filteredIds[d.parentId];});
+  var networkTrees=networkRoots.concat(networkOrphans).map(buildNetworkTree)
+    .sort(function(a,b){return (a.device.name||"").localeCompare(b.device.name||"",undefined,{sensitivity:"base"});});
+  var poweringIds={};filtered.forEach(function(d){if(d.poweredById&&filteredIds[d.poweredById])poweringIds[d.poweredById]=1;});
+  var powerRoots=filtered.filter(function(d){return (poweringIds[d.id]||d.type==="ups")&&(!d.poweredById||!filteredIds[d.poweredById]);});
+  var powerOrphans=filtered.filter(function(d){return d.poweredById&&!filteredIds[d.poweredById];});
+  var powerTrees=powerRoots.concat(powerOrphans).map(function(d){return buildPowerTree(d);})
+    .sort(function(a,b){return (a.device.name||"").localeCompare(b.device.name||"",undefined,{sensitivity:"base"});});
+  var trees=topoMode==="power"?powerTrees:networkTrees;
+  var opts=topoMode==="power"?{edgeType:"power"}:{};
+  if(!trees.length){
+    var msg;
+    if(topoMode==="power"&&(currentFilter==="vm"||currentFilter==="container"))msg=(currentFilter==="vm"?"VMs":"Containers")+" inherit power from their host, so they don\u2019t appear here on their own.";
+    else if(topoMode==="power")msg="No power relationships in this set.";
+    else if(currentFilter==="ups")msg="UPS devices are shown in the Power view — switch the topology mode above.";
+    else msg="No matches for the current search/filter.";
+    container.innerHTML='<div class="topology-empty">'+msg+'</div>';return;
+  }
+  container.innerHTML='<div class="topology-clusters">'+trees.map(function(t){return topologyClusterSvg(t,opts);}).join("")+'</div>';
 }
 var VIEW_KEY="homelab_view";
+var TOPO_MODE_KEY="homelab_topo_mode";
+var topoMode="network";
 try{var savedView=localStorage.getItem(VIEW_KEY);if(savedView==="topology"||savedView==="grid")currentView=savedView;}catch(_){}
+try{var savedMode=localStorage.getItem(TOPO_MODE_KEY);if(savedMode==="power")topoMode=savedMode;}catch(_){}
 function applyViewUI(){
   var btns=document.querySelectorAll("[data-view]");
   for(var i=0;i<btns.length;i++){var active=btns[i].getAttribute("data-view")===currentView;btns[i].classList.toggle("active",active);btns[i].setAttribute("aria-selected",active?"true":"false");}
   document.getElementById("deviceGrid").style.display=currentView==="grid"?"":"none";
   document.getElementById("topologyView").classList.toggle("active",currentView==="topology");
+  var modeRow=document.getElementById("topoModeRow");
+  if(modeRow)modeRow.hidden=currentView!=="topology";
+  syncTopoToggleWidth();
+  var mbtns=document.querySelectorAll("[data-topo-mode]");
+  for(var j=0;j<mbtns.length;j++){var a=mbtns[j].getAttribute("data-topo-mode")===topoMode;mbtns[j].classList.toggle("active",a);mbtns[j].setAttribute("aria-selected",a?"true":"false");}
 }
 function setView(v){
   currentView=v;
@@ -265,29 +331,40 @@ function setView(v){
   applyViewUI();
   if(v==="topology")renderTopology();
 }
+function syncTopoToggleWidth(){
+  var primary=document.querySelector(".toolbar .view-toggle");
+  var secondary=document.getElementById("topoModeToggle");
+  if(!primary||!secondary)return;
+  if(window.innerWidth>640)secondary.style.width=primary.offsetWidth+"px";
+  else secondary.style.width="";
+}
+window.addEventListener("resize",syncTopoToggleWidth);
+function setTopoMode(m){
+  topoMode=m;
+  try{localStorage.setItem(TOPO_MODE_KEY,m);}catch(_){}
+  applyViewUI();
+  renderTopology();
+}
 function showDetail(id){
   var d=getDevice(id);if(!d)return;
   var children=getChildren(d.id);
   var parent=d.parentId?getDevice(d.parentId):null;
+  var powerSource=d.poweredById?getDevice(d.poweredById):null;
+  var poweredDevices=DEVICES.filter(function(x){return x.poweredById===d.id;}).sort(function(a,b){return (a.name||"").localeCompare(b.name||"",undefined,{sensitivity:"base"});});
   var html='<div class="detail-header"><div>'+
     '<div style="font-family:\'JetBrains Mono\',monospace;font-size:22px;font-weight:700;margin-bottom:4px;">'+esc(d.name)+'</div>'+
     typeBadge(d.type)+
     (parent?' <span style="font-size:14px;color:var(--text-secondary);margin-left:10px;">on <strong>'+esc(parent.name)+'</strong></span>':"")+
   '</div><button class="btn btn-ghost btn-sm" data-action="close-detail">\u2715</button></div>';
-  var hasOverview=d.system||d.os;
-  var hasHardware=d.cpu||d.ram;
+  var field=function(label,val){return val?'<div><div class="detail-field-label">'+label+'</div><div class="detail-field-value">'+esc(val)+'</div></div>':"";};
+  var overview=field("System",d.system)+field("OS / Firmware",d.os);
+  var hardware=field("CPU",d.cpu)+field("RAM",d.ram);
   html+='<div class="detail-body">';
-  if(hasOverview){
-    html+='<div class="detail-section"><div class="detail-section-title">Overview</div><div class="detail-grid">'+
-      '<div><div class="detail-field-label">System</div><div class="detail-field-value">'+(esc(d.system)||"\u2014")+'</div></div>'+
-      '<div><div class="detail-field-label">OS</div><div class="detail-field-value">'+(esc(d.os)||"\u2014")+'</div></div>'+
-    '</div></div>';
+  if(overview){
+    html+='<div class="detail-section"><div class="detail-section-title">Overview</div><div class="detail-grid">'+overview+'</div></div>';
   }
-  if(hasHardware){
-    html+='<div class="detail-section"><div class="detail-section-title">Hardware</div><div class="detail-grid">'+
-      '<div><div class="detail-field-label">CPU</div><div class="detail-field-value">'+(esc(d.cpu)||"\u2014")+'</div></div>'+
-      '<div><div class="detail-field-label">RAM</div><div class="detail-field-value">'+(esc(d.ram)||"\u2014")+'</div></div>'+
-    '</div></div>';
+  if(hardware){
+    html+='<div class="detail-section"><div class="detail-section-title">Hardware</div><div class="detail-grid">'+hardware+'</div></div>';
   }
   if(d.storage&&d.storage.length){
     var sortedSt=sortedStorage(d.storage);
@@ -313,6 +390,16 @@ function showDetail(id){
       '<div class="child-device" data-detail-id="'+esc(parent.id)+'"><div><div class="child-device-name">'+esc(parent.name)+'</div><div class="child-device-info">'+esc(parent.type)+'</div></div>'+typeBadge(parent.type)+'</div>'+
     '</div>';
   }
+  if(powerSource){
+    html+='<div class="detail-section"><div class="detail-section-title">Power Source</div>'+
+      '<div class="child-device" data-detail-id="'+esc(powerSource.id)+'"><div><div class="child-device-name">'+esc(powerSource.name)+'</div><div class="child-device-info">'+esc(powerSource.type)+'</div></div>'+typeBadge(powerSource.type)+'</div>'+
+    '</div>';
+  }
+  if(poweredDevices.length){
+    html+='<div class="detail-section"><div class="detail-section-title">Powered devices ('+poweredDevices.length+')</div>'+
+      poweredDevices.map(function(c){return '<div class="child-device" data-detail-id="'+esc(c.id)+'"><div><div class="child-device-name">'+esc(c.name)+'</div><div class="child-device-info">'+esc(c.type)+'</div></div>'+typeBadge(c.type)+'</div>';}).join("")+
+    '</div>';
+  }
   if(d.notes){
     html+='<div class="detail-section"><div class="detail-section-title">Notes</div><div class="detail-notes">'+esc(d.notes)+'</div></div>';
   }
@@ -332,6 +419,7 @@ document.getElementById("deviceGrid").addEventListener("click",function(e){var c
 document.getElementById("deviceGrid").addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){var c=e.target.closest("[data-id]");if(c){e.preventDefault();showDetail(c.getAttribute("data-id"));}}});
 document.getElementById("topologyView").addEventListener("click",function(e){var n=e.target.closest("[data-id]");if(n)showDetail(n.getAttribute("data-id"));});
 document.querySelectorAll("[data-view]").forEach(function(b){b.addEventListener("click",function(){setView(b.getAttribute("data-view"));});});
+document.querySelectorAll("[data-topo-mode]").forEach(function(b){b.addEventListener("click",function(){setTopoMode(b.getAttribute("data-topo-mode"));});});
 document.getElementById("detailPanel").addEventListener("click",function(e){var n=e.target.closest("[data-detail-id]");if(n){showDetail(n.getAttribute("data-detail-id"));return;}if(e.target.closest("[data-action=close-detail]"))closeDetail();});
 document.getElementById("detailOverlay").addEventListener("click",function(e){if(e.target.id==="detailOverlay")closeDetail();});
 document.addEventListener("keydown",function(e){if(e.key==="Escape")closeDetail();});
