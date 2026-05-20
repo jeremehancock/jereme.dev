@@ -24,6 +24,17 @@ body{font-family:'IBM Plex Sans',sans-serif;background:var(--bg-primary);color:v
 .filter-group{display:flex;gap:4px;flex-wrap:wrap;}
 .filter-btn{font-family:'JetBrains Mono',monospace;font-size:13px;padding:5px 12px;border-radius:20px;border:1px solid var(--border);background:transparent;color:var(--text-secondary);cursor:pointer;transition:all 0.15s ease;text-transform:uppercase;letter-spacing:0.5px;}
 .filter-btn:hover{border-color:var(--border-active);color:var(--text-primary);}.filter-btn.active{border-color:var(--accent);color:var(--accent);background:var(--accent-glow);}
+.filter-select{display:none;position:relative;width:100%;min-width:0;}
+.filter-select-toggle{width:100%;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:8px;font-family:'JetBrains Mono',monospace;font-size:14px;padding:10px 14px;border-radius:var(--radius);border:1px solid var(--border);background:var(--bg-secondary);color:var(--text-primary);cursor:pointer;text-transform:uppercase;letter-spacing:0.5px;text-align:left;transition:border-color 0.15s;}
+.filter-select-toggle:hover{border-color:var(--border-active);}
+.filter-select-toggle[aria-expanded="true"]{border-color:var(--accent);}
+.filter-select-chevron{color:var(--text-muted);flex-shrink:0;transition:transform 0.15s;}
+.filter-select-toggle[aria-expanded="true"] .filter-select-chevron{transform:rotate(180deg);}
+.filter-select-menu{list-style:none;position:absolute;top:calc(100% + 4px);left:0;right:0;margin:0;padding:4px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius);z-index:50;max-height:240px;overflow-y:auto;box-shadow:0 8px 24px rgba(0,0,0,0.4);}
+.filter-select-menu[hidden]{display:none;}
+.filter-select-option{font-family:'JetBrains Mono',monospace;font-size:14px;padding:8px 12px;border-radius:4px;color:var(--text-secondary);cursor:pointer;text-transform:uppercase;letter-spacing:0.5px;transition:background 0.1s,color 0.1s;}
+.filter-select-option:hover{background:var(--bg-tertiary);color:var(--text-primary);}
+.filter-select-option.active{background:var(--accent-glow);color:var(--accent);}
 .stats-bar{display:flex;gap:24px;margin-bottom:24px;padding:14px 20px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius);flex-wrap:wrap;}
 .stat{display:flex;align-items:baseline;gap:6px;}.stat-value{font-family:'JetBrains Mono',monospace;font-size:24px;font-weight:700;color:var(--accent);}.stat-label{font-size:14px;color:var(--text-secondary);text-transform:uppercase;letter-spacing:0.5px;}
 .device-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:14px;}
@@ -66,7 +77,7 @@ body{font-family:'IBM Plex Sans',sans-serif;background:var(--bg-primary);color:v
 .topo-cluster .topo-edge{stroke:var(--border-active);stroke-width:1;fill:none;}
 .topo-cluster .topo-accent{pointer-events:none;}
 .topo-accent-server{fill:var(--accent);}.topo-accent-vm{fill:var(--blue);}.topo-accent-container{fill:var(--purple);}.topo-accent-network{fill:#e6b43c;}.topo-accent-storage{fill:#e67850;}.topo-accent-other{fill:#9696aa;}
-@media (max-width:640px){.header{padding:12px 16px;}.main{padding:16px;}.device-grid{grid-template-columns:1fr;}.detail-grid{grid-template-columns:1fr;}.toolbar{flex-direction:column;align-items:stretch;}.search-wrap{display:block;}.search-box{width:100%;}.stats-bar{flex-wrap:wrap;gap:16px;}.view-toggle{display:flex;}.view-toggle .view-btn{flex:1;text-align:center;justify-content:center;}.topology-clusters{grid-template-columns:1fr;max-width:320px;margin:0 auto;justify-content:center;}.topo-cluster{width:100%;height:auto;}}
+@media (max-width:640px){.header{padding:12px 16px;}.main{padding:16px;}.device-grid{grid-template-columns:1fr;}.detail-grid{grid-template-columns:1fr;}.toolbar{flex-direction:column;align-items:stretch;}.search-wrap{display:block;}.search-box{width:100%;}.stats-bar{flex-wrap:wrap;gap:16px;}.view-toggle{display:flex;}.view-toggle .view-btn{flex:1;text-align:center;justify-content:center;}.topology-clusters{grid-template-columns:1fr;max-width:320px;margin:0 auto;justify-content:center;}.topo-cluster{width:100%;height:auto;}.filter-group{display:none;}.filter-select{display:block;}}
 </style>
 </head>
 <body>
@@ -79,6 +90,10 @@ body{font-family:'IBM Plex Sans',sans-serif;background:var(--bg-primary);color:v
       <button type="button" class="search-clear" id="searchClear" aria-label="Clear search" title="Clear search">✕</button>
     </div>
     <div class="filter-group" id="filterGroup"></div>
+    <div class="filter-select" id="filterSelectWrap">
+      <button type="button" class="filter-select-toggle" id="filterToggle" aria-haspopup="listbox" aria-expanded="false" aria-label="Filter by type"><span id="filterValue">all</span><svg class="filter-select-chevron" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M2 4l4 4 4-4"/></svg></button>
+      <ul class="filter-select-menu" id="filterMenu" role="listbox" hidden></ul>
+    </div>
     <div class="view-toggle" role="tablist" aria-label="View mode">
       <button type="button" class="view-btn active" data-view="grid" role="tab" aria-selected="true" title="Card view">Cards</button>
       <button type="button" class="view-btn" data-view="topology" role="tab" aria-selected="false" title="Topology view">Topology</button>
@@ -114,7 +129,13 @@ function renderFilters(){
   document.getElementById("filterGroup").innerHTML=types.map(function(t){
     return '<button class="filter-btn '+(t===currentFilter?"active":"")+'" data-filter="'+esc(t)+'">'+esc(t)+'</button>';
   }).join("");
+  document.getElementById("filterValue").textContent=currentFilter;
+  document.getElementById("filterMenu").innerHTML=types.map(function(t){
+    return '<li class="filter-select-option '+(t===currentFilter?"active":"")+'" role="option" aria-selected="'+(t===currentFilter)+'" data-filter="'+esc(t)+'">'+esc(t)+'</li>';
+  }).join("");
 }
+function toggleFilterMenu(){var b=document.getElementById("filterToggle"),m=document.getElementById("filterMenu");var open=b.getAttribute("aria-expanded")==="true";b.setAttribute("aria-expanded",open?"false":"true");m.hidden=open;}
+function closeFilterMenu(){var b=document.getElementById("filterToggle"),m=document.getElementById("filterMenu");if(!b||!m)return;b.setAttribute("aria-expanded","false");m.hidden=true;}
 function setFilter(f){currentFilter=f;renderFilters();renderDevices();if(currentView==="topology")renderTopology();}
 function getFilteredDevices(){
   var query=document.getElementById("searchBox").value.toLowerCase();
@@ -289,6 +310,10 @@ function closeDetail(){document.getElementById("detailOverlay").classList.remove
 document.getElementById("searchBox").addEventListener("input",function(){document.getElementById("searchWrap").classList.toggle("has-value",!!this.value);renderDevices();if(currentView==="topology")renderTopology();});
 document.getElementById("searchClear").addEventListener("click",function(){var b=document.getElementById("searchBox");b.value="";document.getElementById("searchWrap").classList.remove("has-value");b.focus();renderDevices();if(currentView==="topology")renderTopology();});
 document.getElementById("filterGroup").addEventListener("click",function(e){var b=e.target.closest("[data-filter]");if(b)setFilter(b.getAttribute("data-filter"));});
+document.getElementById("filterToggle").addEventListener("click",function(e){e.stopPropagation();toggleFilterMenu();});
+document.getElementById("filterMenu").addEventListener("click",function(e){var o=e.target.closest("[data-filter]");if(o){closeFilterMenu();setFilter(o.getAttribute("data-filter"));}});
+document.addEventListener("click",function(e){var w=document.getElementById("filterSelectWrap");if(w&&!w.contains(e.target))closeFilterMenu();});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")closeFilterMenu();});
 document.getElementById("deviceGrid").addEventListener("click",function(e){var c=e.target.closest("[data-id]");if(c)showDetail(c.getAttribute("data-id"));});
 document.getElementById("deviceGrid").addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){var c=e.target.closest("[data-id]");if(c){e.preventDefault();showDetail(c.getAttribute("data-id"));}}});
 document.getElementById("topologyView").addEventListener("click",function(e){var n=e.target.closest("[data-id]");if(n)showDetail(n.getAttribute("data-id"));});
