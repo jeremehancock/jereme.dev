@@ -120,16 +120,130 @@ body{font-family:'IBM Plex Sans',sans-serif;background:var(--bg-primary);color:v
 var DEVICES = [{"id":"plexmedia1","parentId":"tplink1601","poweredById":"cyberups01","name":"anansi","type":"server","system":"Acer Aspire TC-1750-UR11","os":"Ubuntu Server 22.04.3 LTS","cpu":"Intel Core i5-12400 (up to 4.4GHz)","ram":"32GB Corsair VENGEANCE LPX DDR4 3200MHz","gpu":"","storage":[{"type":"Seagate BarraCuda","size":"2TB","notes":"Music - ST2000DM008-2FR102"},{"type":"Seagate Ironwolf","size":"8TB","notes":"TV Shows 3 - Internal Drive"},{"type":"WD Blue SN570 NVMe SSD","size":"1TB","notes":"OS Drive"},{"type":"WD Blue SN570 NVMe SSD","size":"1TB","notes":"Cache Drive via SABRENT PCIe Adapter"},{"type":"WD easystore","size":"14TB","notes":"TV Shows - Shucked WD140EDGZ"},{"type":"WD easystore","size":"16TB","notes":"TV Shows 2 - Shucked WD160EDGZ"},{"type":"WD easystore","size":"20TB","notes":"TV Shows 4 - Shucked WD200EDGZ"},{"type":"WD Elements","size":"14TB","notes":"Movies 2 - Shucked WD140EDGZ"},{"type":"WD_Black","size":"12TB","notes":"Movies - Shucked WD Ultrastar DC HC520"}],"services":[{"name":"Aurral","notes":"Music discovery (Docker)"},{"name":"Dispatcharr","notes":"IPTV proxy (Docker)"},{"name":"Dozzle","notes":"Log viewer (Docker)"},{"name":"FlareSolverr","notes":"Cloudflare solver (Docker)"},{"name":"Glimpse","notes":"Media server viewer (Docker)"},{"name":"Gluetun","notes":"VPN client (Docker)"},{"name":"Jackett","notes":"Indexer management (Docker)"},{"name":"Jellyfin","notes":"Backup media server (Docker)"},{"name":"JellyPlex-Watched","notes":"Cross-platform sync (Docker)"},{"name":"Jellystat","notes":"Jellyfin statistics (Docker)"},{"name":"Lidarr","notes":"Music management (Docker)"},{"name":"Lidarr Exportarr","notes":"Lidarr metrics (Docker)"},{"name":"LidaTube","notes":"YouTube integration (Docker)"},{"name":"Plex Exporter","notes":"Prometheus metrics (Docker)"},{"name":"Plex Media Server","notes":"Primary media server"},{"name":"PlexTraktSync","notes":"Trakt.tv sync (Docker)"},{"name":"Portainer","notes":"Container management (Docker)"},{"name":"Posteria","notes":"Poster management (Docker)"},{"name":"Prowlarr","notes":"Indexer management (Docker)"},{"name":"qBittorrent","notes":"Torrent client (Docker)"},{"name":"Radarr","notes":"Movie management (Docker)"},{"name":"Radarr Exportarr","notes":"Radarr metrics (Docker)"},{"name":"SABnzbd","notes":"Usenet client (Docker)"},{"name":"Scrutiny","notes":"Drive monitoring (Docker)"},{"name":"Seerr","notes":"Media request management (Docker)"},{"name":"Sonarr","notes":"TV show management (Docker)"},{"name":"Sonarr Exportarr","notes":"Sonarr metrics (Docker)"},{"name":"Tautulli","notes":"Plex monitoring (Docker)"},{"name":"Tunarr","notes":"Custom TV channels (Docker)"},{"name":"Unpackerr (Movies)","notes":"Archive extractor (Docker)"},{"name":"Unpackerr (TV)","notes":"Archive extractor (Docker)"}],"notes":"CLI Tools: yt-dlp, deno, abcde (CD ripping), Ludanta (Plex/Jellyfin now playing script)"},{"id":"monbackup1","parentId":"tplink1601","poweredById":"cyberups01","name":"optimus","type":"server","system":"Dell OptiPlex 3060 Small Form Factor","os":"Ubuntu Server 22.04.3 LTS","cpu":"Intel Core i3-8100 @ 3.60GHz","ram":"32GB DDR4 SDRAM 2133 MT/s","gpu":"","storage":[{"type":"Seagate BarraCuda HDD","size":"4TB","notes":"Backup Storage - Internal SATA"},{"type":"WD Blue SN580 NVMe SSD","size":"1TB","notes":"OS Drive via SABRENT PCIe Adapter"}],"services":[{"name":"Dozzle","notes":"Log viewer (Docker)"},{"name":"Portainer","notes":"Container management (Docker)"},{"name":"Scrutiny","notes":"Drive monitoring (Docker)"},{"name":"Watchtower","notes":"Auto-updates (Docker)"}],"notes":""},{"id":"tnasstor01","parentId":"tplink1601","poweredById":"cyberups02","name":"truenas","type":"server","system":"Dell Precision 5820","os":"TrueNAS Community Edition","cpu":"Intel Xeon W-2135 @ 3.70GHz","ram":"128GB DDR4 ECC SDRAM","gpu":"NVIDIA GeForce 8400 GS Rev. 3","storage":[{"type":"Crucial SSD","size":"500GB","notes":"Boot Drive via Sedna PCIe SATA Adapter"},{"type":"HGST Ultrastar","size":"4TB x2","notes":"RAIDZ2 Array"},{"type":"Seagate Internal","size":"4TB","notes":"RAIDZ2 Array"},{"type":"Seagate IronWolf","size":"4TB x2","notes":"RAIDZ2 Array"}],"services":[{"name":"Pi-hole","notes":"DNS Filtering (TrueNAS App)"},{"name":"Scrutiny","notes":"SMART Monitoring (TrueNAS App)"},{"name":"Syncthing","notes":"File synchronization (TrueNAS App)"},{"name":"Tailscale","notes":"VPN access (TrueNAS App)"},{"name":"TrueNAS","notes":"TrueNAS WebUI"}],"notes":"PSU: 950W\nDrive Bay: 3.5\" to 5.25\" Cage Adapter for additional mounting"},{"id":"tnasstrvm1","parentId":"tnasstor01","poweredById":null,"name":"docker-vm","type":"container","system":"","os":"Ubuntu Server 22.04","cpu":"4 cores","ram":"16GB","gpu":"","storage":[],"services":[{"name":"Dozzle","notes":"Log viewer (Docker)"},{"name":"KaraKeep","notes":"Bookmark manager (Docker)"},{"name":"Nextcloud","notes":"Cloud storage (Docker)"},{"name":"Paperless-ngx","notes":"Document management (Docker)"},{"name":"Portainer","notes":"Container management (Docker)"},{"name":"Watchtower","notes":"Auto-updates (Docker)"}],"notes":""},{"id":"tnashost01","parentId":"tplink1601","poweredById":"cyberups02","name":"truenas-hosting","type":"server","system":"Custom (Fractal case)","os":"TrueNAS Community Edition","cpu":"AMD Ryzen 5 3400G with Radeon Vega Graphics","ram":"64GB GIGASTONE Game PRO DDR4 3200MHz","gpu":"","storage":[{"type":"ORICO M.2 NVMe SSD","size":"128GB","notes":"OS Drive - PCIe Gen3x4 2280"},{"type":"WD Blue Mobile Hard Drives","size":"1TB x4","notes":"RAIDZ1 Array"}],"services":[{"name":"Scrutiny","notes":"SMART Monitoring (TrueNAS App)"},{"name":"Tailscale","notes":"VPN access (TrueNAS App)"},{"name":"TrueNAS","notes":"TrueNAS WebUI"}],"notes":""},{"id":"tnashstvm1","parentId":"tnashost01","poweredById":null,"name":"coolify","type":"container","system":"","os":"Ubuntu Focal AMD64","cpu":"4 cores","ram":"16GB","gpu":"","storage":[],"services":[{"name":"Coolify","notes":"Self-hosting platform (Docker)"}],"notes":""},{"id":"proxmox001","parentId":"tplink1601","poweredById":"cyberups02","name":"proxmox","type":"server","system":"Minisforum MS-A1","os":"Proxmox VE","cpu":"AMD Ryzen 7 8700G","ram":"64GB DDR5","gpu":"","storage":[{"type":"NVMe SSD","size":"512GB","notes":"OS / Boot drive"},{"type":"NVMe SSD","size":"1TB x2","notes":"VM Storage - Mirrored"},{"type":"WD Blue SN580 NVMe SSD","size":"1TB","notes":"VM Backups"}],"services":[{"name":"proxmox","notes":"Proxmox Web UI"}],"notes":""},{"id":"proxmoxvm1","parentId":"proxmox001","poweredById":null,"name":"omega","type":"vm","system":"","os":"Ubuntu Server 22.04","cpu":"8 (2 sockets, 4 cores) [x86-64-v4]","ram":"16GB","gpu":"","storage":[],"services":[{"name":"AI Game Collection","notes":"AI Games (Docker)"},{"name":"Cloudflare DDNS","notes":"Cloudflare DDNS updater (Docker)"},{"name":"Dozzle","notes":"Log viewer (Docker)"},{"name":"Homarr","notes":"Dashboard (Docker)"},{"name":"Nginx Proxy Manager","notes":"Reverse proxy (Docker)"},{"name":"OpenSpeedTest","notes":"Speed testing (Docker)"},{"name":"Portainer","notes":"Container management (Docker)"},{"name":"Prometheus","notes":"Metrics collection (Docker)"},{"name":"Speed Tracker","notes":"Speed monitoring (Docker)"},{"name":"Uptime Kuma","notes":"Uptime monitoring (Docker)"},{"name":"Watchtower","notes":"Auto-updates (Docker)"}],"notes":"Uses Pushover for notifications"},{"id":"piholelxc1","parentId":"proxmox001","poweredById":null,"name":"pihole","type":"container","system":"","os":"","cpu":"2 cores","ram":"512MB","gpu":"","storage":[],"services":[{"name":"Pi-hole","notes":"DNS filtering"}],"notes":"Proxmox LXC container"},{"id":"grafnalxc1","parentId":"proxmox001","poweredById":null,"name":"grafana","type":"container","system":"","os":"","cpu":"1 core","ram":"512MB","gpu":"","storage":[],"services":[{"name":"Grafana","notes":"Data visualization"}],"notes":"Proxmox LXC container"},{"id":"noderedlx1","parentId":"proxmox001","poweredById":null,"name":"nodered","type":"container","system":"","os":"","cpu":"1 core","ram":"1GB","gpu":"","storage":[],"services":[{"name":"Node-RED","notes":"Automation"}],"notes":"Proxmox LXC container"},{"id":"vaultlxc01","parentId":"proxmox001","poweredById":null,"name":"vaultwarden","type":"container","system":"","os":"","cpu":"4 cores","ram":"6GB","gpu":"","storage":[],"services":[{"name":"Vaultwarden","notes":"Password manager"}],"notes":"Proxmox LXC container"},{"id":"searxnglx1","parentId":"proxmox001","poweredById":null,"name":"searxng","type":"container","system":"","os":"","cpu":"2 cores","ram":"2GB","gpu":"","storage":[],"services":[{"name":"SearXNG","notes":"Search engine"}],"notes":"Proxmox LXC container"},{"id":"gateway001","parentId":null,"poweredById":"mpbcpuakv7f4ux","name":"AT\u0026T Gateway","type":"network","system":"AT\u0026T BGW-320","os":"","cpu":"","ram":"","gpu":"","storage":[],"services":[{"name":"Fiber Gateway","notes":"Passthrough mode to mesh network"}],"notes":"ISP: AT\u0026T 1 GIG Fiber\nMode: Passthrough Mode"},{"id":"nestwifi01","parentId":"gateway001","poweredById":"cyberups02","name":"WiFi Router","type":"network","system":"Nest Mesh WiFi","os":"","cpu":"","ram":"","gpu":"","storage":[],"services":[],"notes":""},{"id":"tplink1601","parentId":"nestwifi01","poweredById":"mpbcpuakv7f4ux","name":"Main Switch","type":"network","system":"TP-Link 16 Port Gigabit Ethernet Switch","os":"","cpu":"","ram":"","gpu":"","storage":[],"services":[],"notes":"Primary network switch"},{"id":"netgear051","parentId":"tplink1601","poweredById":"mpbcpuakv7f4ux","name":"Secondary Switch","type":"network","system":"NETGEAR 5-Port Gigabit Ethernet Switch (GS105NA)","os":"","cpu":"","ram":"","gpu":"","storage":[],"services":[],"notes":"Additional network ports"},{"id":"cyberups01","parentId":null,"poweredById":null,"name":"CyberPower 1500","type":"ups","system":"CyberPower LX1500GAVR","os":"","cpu":"","ram":"","gpu":"","storage":[],"services":[],"notes":"1500VA AVR 900 Watts UPS"},{"id":"cyberups02","parentId":null,"poweredById":null,"name":"CyberPower 1000","type":"ups","system":"CyberPower CP1000PFCLCD","os":"","cpu":"","ram":"","gpu":"","storage":[],"services":[],"notes":"1000VA Pure Sine Wave UPS"},{"id":"mmuslkrj8ka766","parentId":"plexmedia1","poweredById":"cyberups01","name":"Storage Tower","type":"storage","system":"Syba 8 Bay HDD Enclosure","os":"","cpu":"","ram":"","gpu":"","storage":[],"services":[],"notes":""},{"id":"mpbcpuakv7f4ux","parentId":null,"poweredById":null,"name":"APC 450","type":"ups","system":"APC BN450M-CA","os":"","cpu":"","ram":"","gpu":"","storage":[],"services":[],"notes":""},{"id":"mpeko99nofn800","parentId":"netgear051","poweredById":null,"name":"Living Room WiFi Point","type":"network","system":"Nest Mesh WiFi","os":"","cpu":"","ram":"","gpu":"","storage":[],"services":[],"notes":""},{"id":"mpekowipg6648p","parentId":"netgear051","poweredById":null,"name":"Mir's Office WiFi Point","type":"network","system":"Nest Mesh WiFi","os":"","cpu":"","ram":"","gpu":"","storage":[],"services":[],"notes":""},{"id":"mpekpkvcbhnwkp","parentId":"netgear051","poweredById":null,"name":"Media Room WiFi Point","type":"network","system":"Nest Mesh WiFi","os":"","cpu":"","ram":"","gpu":"","storage":[],"services":[],"notes":""},{"id":"mpem0lrkfe8w08","parentId":null,"poweredById":"cyberups01","name":"Monitor","type":"other","system":"Hyundai","os":"","cpu":"","ram":"","gpu":"","storage":[],"services":[],"notes":"Goodwill Monitor\n\nNo power backup. Just plugged into surge only outlet on UPS.\n\nUsed to display Grafana and other stats."},{"id":"mpem3aeupbh8s0","parentId":null,"poweredById":null,"name":"Cooling Fan 1","type":"other","system":"AC Infinity","os":"","cpu":"","ram":"","gpu":"","storage":[],"services":[],"notes":"Used to cool the Proxmox server's power supply."},{"id":"mpem43ygfthpf7","parentId":null,"poweredById":null,"name":"Cooling Fan 2","type":"other","system":"AC Infinity","os":"","cpu":"","ram":"","gpu":"","storage":[],"services":[],"notes":"Used to cool the WiFi Router"},{"id":"mpemfghkuyvdm4","parentId":null,"poweredById":"mpbcpuakv7f4ux","name":"Google Nest Hub","type":"other","system":"","os":"","cpu":"","ram":"","gpu":"","storage":[],"services":[],"notes":""}];
 var currentFilter = "all";
 var currentView = "grid";
-function esc(str){if(!str&&str!==0)return "";var d=document.createElement("div");d.textContent=String(str);return d.innerHTML;}
-function getTypeClass(type){var map={server:"badge-server",vm:"badge-vm",container:"badge-container",network:"badge-network",storage:"badge-storage",ups:"badge-ups"};return map[type]||"badge-other";}
-var TYPE_ICON_PATHS={server:'<rect x="2" y="2.5" width="12" height="4.5" rx="1"/><rect x="2" y="9" width="12" height="4.5" rx="1"/><circle cx="4.5" cy="4.75" r="0.6" fill="currentColor" stroke="none"/><circle cx="4.5" cy="11.25" r="0.6" fill="currentColor" stroke="none"/><line x1="7" y1="4.75" x2="12" y2="4.75"/><line x1="7" y1="11.25" x2="12" y2="11.25"/>',vm:'<rect x="1.75" y="2.75" width="12.5" height="8.5" rx="1"/><line x1="5.5" y1="14" x2="10.5" y2="14"/><line x1="8" y1="11.25" x2="8" y2="14"/><circle cx="8" cy="7" r="2" fill="currentColor" stroke="none"/>',container:'<path d="M8 1.75l5.75 2.75v7L8 14.25 2.25 11.5v-7z"/><path d="M2.25 4.5L8 7.25l5.75-2.75"/><line x1="8" y1="7.25" x2="8" y2="14.25"/>',network:'<circle cx="8" cy="3" r="1.6"/><circle cx="3" cy="13" r="1.6"/><circle cx="13" cy="13" r="1.6"/><line x1="8" y1="4.6" x2="8" y2="7.5"/><line x1="8" y1="7.5" x2="3.8" y2="11.6"/><line x1="8" y1="7.5" x2="12.2" y2="11.6"/>',storage:'<ellipse cx="8" cy="3.5" rx="5.25" ry="1.75"/><path d="M2.75 3.5v9c0 .97 2.35 1.75 5.25 1.75s5.25-.78 5.25-1.75v-9"/><path d="M2.75 8c0 .97 2.35 1.75 5.25 1.75s5.25-.78 5.25-1.75"/>',ups:'<rect x="2.5" y="3" width="11" height="10" rx="1"/><rect x="6" y="1.75" width="4" height="1.5" rx="0.4" fill="currentColor" stroke="none"/><path d="M8.5 5.5l-2.25 3.5h1.75l-0.5 2.5 2.25-3.5h-1.75z" fill="currentColor" stroke="none"/>',other:'<circle cx="8" cy="8" r="6"/><circle cx="8" cy="8" r="1.4" fill="currentColor" stroke="none"/>'};
-function getTypeIcon(type){var t=TYPE_ICON_PATHS[type]?type:"other";return '<svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true">'+TYPE_ICON_PATHS[t]+'</svg>';}
-function getTopoTypeIcon(type,x,y,size){var t=TYPE_ICON_PATHS[type]?type:"other";return '<svg x="'+x+'" y="'+y+'" width="'+size+'" height="'+size+'" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" class="topo-type-icon topo-type-icon-'+t+'" aria-hidden="true">'+TYPE_ICON_PATHS[t]+'</svg>';}
-function typeBadge(type){var t=type||"other";return '<span class="device-type-badge '+getTypeClass(t)+'">'+getTypeIcon(t)+'<span>'+esc(t)+'</span></span>';}
-function getDevice(id){for(var i=0;i<DEVICES.length;i++)if(DEVICES[i].id===id)return DEVICES[i];return null;}
-function getChildren(parentId){return DEVICES.filter(function(d){return d.parentId===parentId;}).sort(function(a,b){return (a.name||"").localeCompare(b.name||"",undefined,{sensitivity:"base"});});}
-function sortedStorage(storage){return Array.isArray(storage)?storage.slice().sort(function(a,b){return (a.type||"").localeCompare(b.type||"",undefined,{sensitivity:"base"});}):storage;}
-function sortedServices(services){return (services||[]).slice().sort(function(a,b){var an=typeof a==="string"?a:(a.name||"");var bn=typeof b==="string"?b:(b.name||"");return an.localeCompare(bn,undefined,{sensitivity:"base"});});}
+const TYPE_ICON_PATHS = {"server":"<rect x=\"2\" y=\"2.5\" width=\"12\" height=\"4.5\" rx=\"1\"/><rect x=\"2\" y=\"9\" width=\"12\" height=\"4.5\" rx=\"1\"/><circle cx=\"4.5\" cy=\"4.75\" r=\"0.6\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"4.5\" cy=\"11.25\" r=\"0.6\" fill=\"currentColor\" stroke=\"none\"/><line x1=\"7\" y1=\"4.75\" x2=\"12\" y2=\"4.75\"/><line x1=\"7\" y1=\"11.25\" x2=\"12\" y2=\"11.25\"/>","vm":"<rect x=\"1.75\" y=\"2.75\" width=\"12.5\" height=\"8.5\" rx=\"1\"/><line x1=\"5.5\" y1=\"14\" x2=\"10.5\" y2=\"14\"/><line x1=\"8\" y1=\"11.25\" x2=\"8\" y2=\"14\"/><circle cx=\"8\" cy=\"7\" r=\"2\" fill=\"currentColor\" stroke=\"none\"/>","container":"<path d=\"M8 1.75l5.75 2.75v7L8 14.25 2.25 11.5v-7z\"/><path d=\"M2.25 4.5L8 7.25l5.75-2.75\"/><line x1=\"8\" y1=\"7.25\" x2=\"8\" y2=\"14.25\"/>","network":"<circle cx=\"8\" cy=\"3\" r=\"1.6\"/><circle cx=\"3\" cy=\"13\" r=\"1.6\"/><circle cx=\"13\" cy=\"13\" r=\"1.6\"/><line x1=\"8\" y1=\"4.6\" x2=\"8\" y2=\"7.5\"/><line x1=\"8\" y1=\"7.5\" x2=\"3.8\" y2=\"11.6\"/><line x1=\"8\" y1=\"7.5\" x2=\"12.2\" y2=\"11.6\"/>","storage":"<ellipse cx=\"8\" cy=\"3.5\" rx=\"5.25\" ry=\"1.75\"/><path d=\"M2.75 3.5v9c0 .97 2.35 1.75 5.25 1.75s5.25-.78 5.25-1.75v-9\"/><path d=\"M2.75 8c0 .97 2.35 1.75 5.25 1.75s5.25-.78 5.25-1.75\"/>","ups":"<rect x=\"2.5\" y=\"3\" width=\"11\" height=\"10\" rx=\"1\"/><rect x=\"6\" y=\"1.75\" width=\"4\" height=\"1.5\" rx=\"0.4\" fill=\"currentColor\" stroke=\"none\"/><path d=\"M8.5 5.5l-2.25 3.5h1.75l-0.5 2.5 2.25-3.5h-1.75z\" fill=\"currentColor\" stroke=\"none\"/>","other":"<circle cx=\"8\" cy=\"8\" r=\"6\"/><circle cx=\"8\" cy=\"8\" r=\"1.4\" fill=\"currentColor\" stroke=\"none\"/>"};
+const sortByName = (a, b) => (a.name || '').localeCompare(b.name || '', undefined, { sensitivity: 'base' });
+const isUps = type => type === 'ups';
+const isNetworkType = type => type === 'network';
+const isVirtualType = type => type === 'vm' || type === 'container';
+const isStorageType = type => type === 'storage';
+function esc(str) {
+  if (!str) return '';
+  const d = document.createElement('div');
+  d.textContent = str;
+  return d.innerHTML;
+}
+function truncateLabel(s, n) {
+  s = String(s || '');
+  return s.length > n ? s.slice(0, n - 1) + '…' : s;
+}
+function getTypeClass(type) {
+  const map = { server: 'badge-server', vm: 'badge-vm', container: 'badge-container', network: 'badge-network', storage: 'badge-storage', ups: 'badge-ups' };
+  return map[type] || 'badge-other';
+}
+function getTypeIcon(type) {
+  const t = TYPE_ICON_PATHS[type] ? type : 'other';
+  return `<svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true">${TYPE_ICON_PATHS[t]}</svg>`;
+}
+function getTopoTypeIcon(type, x, y, size) {
+  const t = TYPE_ICON_PATHS[type] ? type : 'other';
+  return `<svg x="${x}" y="${y}" width="${size}" height="${size}" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" class="topo-type-icon topo-type-icon-${t}" aria-hidden="true">${TYPE_ICON_PATHS[t]}</svg>`;
+}
+function typeBadge(type, extraStyle) {
+  const t = type || 'other';
+  return `<span class="device-type-badge ${getTypeClass(t)}"${extraStyle ? ` style="${extraStyle}"` : ''}>${getTypeIcon(t)}<span>${esc(t)}</span></span>`;
+}
+function sortedStorage(storage) { return Array.isArray(storage) ? storage.slice().sort((a, b) => (a.type || '').localeCompare(b.type || '', undefined, { sensitivity: 'base' })) : storage; }
+function sortedServices(services) { return (services || []).slice().sort((a, b) => { const an = typeof a === 'string' ? a : (a.name || ''); const bn = typeof b === 'string' ? b : (b.name || ''); return an.localeCompare(bn, undefined, { sensitivity: 'base' }); }); }
+function topoBoxSvg(d, x, y, w, h, isParent, opts) {
+  const showStatus = opts && opts.showStatus !== false;
+  const status = d.status || 'unknown';
+  const dotX = x + 14;
+  const dotY = y + h / 2;
+  const textX = showStatus ? x + 26 : x + 14;
+  const nameY = y + h / 2 - 3;
+  const typeY = y + h / 2 + 13;
+  const iconSize = 12;
+  const iconX = textX;
+  const iconY = typeY - 11;
+  const typeTextX = textX + iconSize + 4;
+  const t = d.type || 'other';
+  // Derive the name char limit from the actual box width so deeply-nested
+  // children don't overflow. JetBrains Mono at 14px is ~8.4px per char.
+  const textAvail = Math.max(40, w - (textX - x) - 12);
+  const nameMax = Math.max(6, Math.floor(textAvail / 8.4));
+  const clipId = 'topo-clip-' + esc(d.id);
+  return `<g class="topo-node" data-id="${esc(d.id)}">
+    <defs><clipPath id="${clipId}"><rect x="${x}" y="${y}" width="${w}" height="${h}" rx="6"/></clipPath></defs>
+    <rect x="${x}" y="${y}" width="${w}" height="${h}" rx="6" class="topo-box"/>
+    <rect x="${x}" y="${y}" width="3" height="${h}" class="topo-accent topo-accent-${t}" clip-path="url(#${clipId})"/>
+    ${showStatus ? `<circle cx="${dotX}" cy="${dotY}" r="4" class="topo-status status-${status}"/>` : ''}
+    <text x="${textX}" y="${nameY}" class="topo-text-name">${esc(truncateLabel(d.name, nameMax))}</text>
+    ${getTopoTypeIcon(t, iconX, iconY, iconSize)}
+    <text x="${typeTextX}" y="${typeY}" class="topo-text-type">${esc(t.toUpperCase())}</text>
+    <title>${esc(d.name)}${d.type ? ' (' + esc(d.type) + ')' : ''}</title>
+  </g>`;
+}
+function topologyClusterSvg(rootNode, opts) {
+  const w = 280;
+  const parentH = 60;
+  const childH = 50;
+  const childIndent = 26;
+  const childGap = 10;
+  const childTopGap = 20;
+  const pad = 6;
+  const edgeClass = (opts && opts.edgeType === 'power') ? 'topo-edge-power' : 'topo-edge';
+
+  let descendantCount = 0;
+  function countDescendants(n) {
+    if (!n.children) return;
+    descendantCount += n.children.length;
+    n.children.forEach(countDescendants);
+  }
+  countDescendants(rootNode);
+
+  function layout(node, startY, depth) {
+    const nodeH = depth === 0 ? parentH : childH;
+    const x = depth * childIndent;
+    const boxW = Math.max(120, w - x);
+    let svg = topoBoxSvg(node.device, x, startY, boxW, nodeH, depth === 0, opts);
+    let y = startY + nodeH;
+
+    const kids = node.children || [];
+    if (kids.length) {
+      const trunkX = x + 11;
+      const trunkTop = startY + nodeH;
+      const childX = (depth + 1) * childIndent;
+      const childCenters = [];
+      y += childTopGap;
+      let childSvg = '';
+      kids.forEach((c, i) => {
+        if (i > 0) y += childGap;
+        const cy = y + childH / 2;
+        childCenters.push(cy);
+        childSvg += `<line x1="${trunkX}" y1="${cy}" x2="${childX}" y2="${cy}" class="${edgeClass}"/>`;
+        const sub = layout(c, y, depth + 1);
+        childSvg += sub.svg;
+        y = sub.endY;
+      });
+      const trunkBottom = childCenters[childCenters.length - 1];
+      svg += `<line x1="${trunkX}" y1="${trunkTop}" x2="${trunkX}" y2="${trunkBottom}" class="${edgeClass}"/>`;
+      svg += childSvg;
+    }
+
+    return { svg, endY: y };
+  }
+
+  const result = layout(rootNode, 0, 0);
+  const contentH = result.endY;
+  const svgW = w + pad * 2;
+  const svgH = contentH + pad * 2;
+  const parent = rootNode.device;
+  const linkWord = (opts && opts.edgeType === 'power') ? 'powered device' : 'descendant device';
+
+  return `<svg class="topo-cluster" viewBox="${-pad} ${-pad} ${svgW} ${svgH}" width="${svgW}" height="${svgH}" xmlns="http://www.w3.org/2000/svg" role="group" aria-label="${esc(parent.name)}${descendantCount ? ' with ' + descendantCount + ' ' + linkWord + (descendantCount === 1 ? '' : 's') : ''}">${result.svg}</svg>`;
+}
+function getDevice(id){return DEVICES.find(function(d){return d.id===id;})||null;}
+function getChildren(parentId){return DEVICES.filter(function(d){return d.parentId===parentId;}).sort(sortByName);}
 function renderFilters(){
   var seen={},types=["all"];
   DEVICES.forEach(function(d){if(!seen[d.type]){seen[d.type]=1;types.push(d.type);}});
@@ -156,7 +270,7 @@ function getFilteredDevices(){
     }
     return true;
   });
-  filtered.sort(function(a,b){return (a.name||"").localeCompare(b.name||"",undefined,{sensitivity:"base"});});
+  filtered.sort(sortByName);
   return filtered;
 }
 function renderDevices(){
@@ -198,101 +312,41 @@ function renderDevices(){
     '</div>';
   }).join("");
 }
-function truncateLabel(s,n){s=String(s||"");return s.length>n?s.slice(0,n-1)+"\u2026":s;}
-function topoBoxSvg(d,x,y,w,h,isParent){
-  var textX=x+14;
-  var nameY=y+h/2-3;
-  var typeY=y+h/2+13;
-  var iconSize=12,iconX=textX,iconY=typeY-11,typeTextX=textX+iconSize+4;
-  var t=d.type||"other";
-  var textAvail=Math.max(40,w-(textX-x)-12);
-  var nameMax=Math.max(6,Math.floor(textAvail/8.4));
-  var clipId="topo-clip-"+esc(d.id);
-  return '<g class="topo-node" data-id="'+esc(d.id)+'">'+
-    '<defs><clipPath id="'+clipId+'"><rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'" rx="6"/></clipPath></defs>'+
-    '<rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'" rx="6" class="topo-box"/>'+
-    '<rect x="'+x+'" y="'+y+'" width="3" height="'+h+'" class="topo-accent topo-accent-'+t+'" clip-path="url(#'+clipId+')"/>'+
-    '<text x="'+textX+'" y="'+nameY+'" class="topo-text-name">'+esc(truncateLabel(d.name,nameMax))+'</text>'+
-    getTopoTypeIcon(t,iconX,iconY,iconSize)+
-    '<text x="'+typeTextX+'" y="'+typeY+'" class="topo-text-type">'+esc(t.toUpperCase())+'</text>'+
-    '<title>'+esc(d.name)+(d.type?" ('+esc(d.type)+')":"")+'</title>'+
-  '</g>';
-}
-function topologyClusterSvg(rootNode,opts){
-  var w=280,parentH=60,childH=50,childIndent=26,childGap=10,childTopGap=20,pad=6;
-  var edgeClass=(opts&&opts.edgeType==="power")?"topo-edge-power":"topo-edge";
-  var descendantCount=0;
-  function countDescendants(n){if(!n.children)return;descendantCount+=n.children.length;n.children.forEach(countDescendants);}
-  countDescendants(rootNode);
-  function layout(node,startY,depth){
-    var nodeH=depth===0?parentH:childH;
-    var x=depth*childIndent;
-    var boxW=Math.max(120,w-x);
-    var svg=topoBoxSvg(node.device,x,startY,boxW,nodeH,depth===0);
-    var y=startY+nodeH;
-    var kids=node.children||[];
-    if(kids.length){
-      var trunkX=x+11,trunkTop=startY+nodeH,childX=(depth+1)*childIndent;
-      var childCenters=[],childSvg="";
-      y+=childTopGap;
-      kids.forEach(function(c,i){
-        if(i>0)y+=childGap;
-        var cy=y+childH/2;
-        childCenters.push(cy);
-        childSvg+='<line x1="'+trunkX+'" y1="'+cy+'" x2="'+childX+'" y2="'+cy+'" class="'+edgeClass+'"/>';
-        var sub=layout(c,y,depth+1);
-        childSvg+=sub.svg;
-        y=sub.endY;
-      });
-      var trunkBottom=childCenters[childCenters.length-1];
-      svg+='<line x1="'+trunkX+'" y1="'+trunkTop+'" x2="'+trunkX+'" y2="'+trunkBottom+'" class="'+edgeClass+'"/>';
-      svg+=childSvg;
-    }
-    return {svg:svg,endY:y};
-  }
-  var result=layout(rootNode,0,0);
-  var contentH=result.endY,svgW=w+pad*2,svgH=contentH+pad*2;
-  var parent=rootNode.device;
-  var linkWord=(opts&&opts.edgeType==="power")?"powered device":"descendant device";
-  var ariaLabel=esc(parent.name)+(descendantCount?" with "+descendantCount+" "+linkWord+(descendantCount===1?"":"s"):"");
-  return '<svg class="topo-cluster" viewBox="'+(-pad)+' '+(-pad)+' '+svgW+' '+svgH+'" width="'+svgW+'" height="'+svgH+'" xmlns="http://www.w3.org/2000/svg" role="group" aria-label="'+ariaLabel+'">'+result.svg+'</svg>';
-}
 function renderTopology(){
   var filtered=getFilteredDevices();
   var container=document.getElementById("topologyView");
   if(!filtered.length){container.innerHTML='<div class="topology-empty">'+(DEVICES.length===0?"No entries yet.":"No matches for the current search/filter.")+'</div>';return;}
   var filteredIds={};filtered.forEach(function(d){filteredIds[d.id]=1;});
-  function buildNetworkTree(device){
-    var kids=filtered.filter(function(c){return c.parentId===device.id;})
-      .sort(function(a,b){return (a.name||"").localeCompare(b.name||"",undefined,{sensitivity:"base"});});
-    return {device:device,children:kids.map(buildNetworkTree)};
+  function buildNetworkTree(device,seen){
+    if(seen&&seen[device.id])return {device:device,children:[]};
+    var next={};for(var k in seen)next[k]=seen[k];next[device.id]=1;
+    var kids=filtered.filter(function(c){return c.parentId===device.id;}).sort(sortByName);
+    return {device:device,children:kids.map(function(k){return buildNetworkTree(k,next);})};
   }
   function buildPowerTree(device,seen){
-    seen=seen||{};
-    if(seen[device.id])return {device:device,children:[]};
-    seen[device.id]=1;
+    if(seen&&seen[device.id])return {device:device,children:[]};
+    var next={};for(var k in seen)next[k]=seen[k];next[device.id]=1;
     var powerKids=filtered.filter(function(c){return c.poweredById===device.id;});
-    var virtualKids=filtered.filter(function(c){return c.parentId===device.id&&(c.type==="vm"||c.type==="container")&&!c.poweredById;});
-    var kids=powerKids.concat(virtualKids)
-      .sort(function(a,b){return (a.name||"").localeCompare(b.name||"",undefined,{sensitivity:"base"});});
-    return {device:device,children:kids.map(function(k){return buildPowerTree(k,seen);})};
+    var virtualKids=filtered.filter(function(c){return c.parentId===device.id&&isVirtualType(c.type)&&!c.poweredById;});
+    var kids=powerKids.concat(virtualKids).sort(sortByName);
+    return {device:device,children:kids.map(function(k){return buildPowerTree(k,next);})};
   }
-  var networkRoots=filtered.filter(function(d){return !d.parentId&&d.type!=="ups";});
+  var networkRoots=filtered.filter(function(d){return !d.parentId&&!isUps(d.type);});
   var networkOrphans=filtered.filter(function(d){return d.parentId&&!filteredIds[d.parentId];});
-  var networkTrees=networkRoots.concat(networkOrphans).map(buildNetworkTree)
-    .sort(function(a,b){return (a.device.name||"").localeCompare(b.device.name||"",undefined,{sensitivity:"base"});});
+  var networkTrees=networkRoots.concat(networkOrphans).map(function(d){return buildNetworkTree(d);})
+    .sort(function(a,b){return sortByName(a.device,b.device);});
   var poweringIds={};filtered.forEach(function(d){if(d.poweredById&&filteredIds[d.poweredById])poweringIds[d.poweredById]=1;});
-  var powerRoots=filtered.filter(function(d){return (poweringIds[d.id]||d.type==="ups")&&(!d.poweredById||!filteredIds[d.poweredById]);});
+  var powerRoots=filtered.filter(function(d){return (poweringIds[d.id]||isUps(d.type))&&(!d.poweredById||!filteredIds[d.poweredById]);});
   var powerOrphans=filtered.filter(function(d){return d.poweredById&&!filteredIds[d.poweredById];});
   var powerTrees=powerRoots.concat(powerOrphans).map(function(d){return buildPowerTree(d);})
-    .sort(function(a,b){return (a.device.name||"").localeCompare(b.device.name||"",undefined,{sensitivity:"base"});});
+    .sort(function(a,b){return sortByName(a.device,b.device);});
   var trees=topoMode==="power"?powerTrees:networkTrees;
-  var opts=topoMode==="power"?{edgeType:"power"}:{};
+  var opts=topoMode==="power"?{edgeType:"power",showStatus:false}:{showStatus:false};
   if(!trees.length){
     var msg;
-    if(topoMode==="power"&&(currentFilter==="vm"||currentFilter==="container"))msg=(currentFilter==="vm"?"VMs":"Containers")+" inherit power from their host, so they don\u2019t appear here on their own.";
+    if(topoMode==="power"&&isVirtualType(currentFilter))msg=(currentFilter==="vm"?"VMs":"Containers")+" inherit power from their host, so they don\u2019t appear here on their own.";
     else if(topoMode==="power")msg="No power relationships in this set.";
-    else if(currentFilter==="ups")msg="UPS devices are shown in the Power view — switch the topology mode above.";
+    else if(isUps(currentFilter))msg="UPS devices are shown in the Power view — switch the topology mode above.";
     else msg="No matches for the current search/filter.";
     container.innerHTML='<div class="topology-empty">'+msg+'</div>';return;
   }
@@ -339,7 +393,7 @@ function showDetail(id){
   var children=getChildren(d.id);
   var parent=d.parentId?getDevice(d.parentId):null;
   var powerSource=d.poweredById?getDevice(d.poweredById):null;
-  var poweredDevices=DEVICES.filter(function(x){return x.poweredById===d.id;}).sort(function(a,b){return (a.name||"").localeCompare(b.name||"",undefined,{sensitivity:"base"});});
+  var poweredDevices=DEVICES.filter(function(x){return x.poweredById===d.id;}).sort(sortByName);
   var html='<div class="detail-header"><div>'+
     '<div style="font-family:\'JetBrains Mono\',monospace;font-size:22px;font-weight:700;margin-bottom:4px;">'+esc(d.name)+'</div>'+
     typeBadge(d.type)+
