@@ -28,6 +28,8 @@ body{font-family:'IBM Plex Sans',sans-serif;background:var(--bg-primary);color:v
 .filter-select-toggle{width:100%;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:8px;font-family:'JetBrains Mono',monospace;font-size:14px;padding:10px 14px;border-radius:var(--radius);border:1px solid var(--border);background:var(--bg-secondary);color:var(--text-primary);cursor:pointer;text-transform:uppercase;letter-spacing:0.5px;text-align:left;transition:border-color 0.15s;}
 .filter-select-toggle:hover{border-color:var(--border-active);}
 .filter-select-toggle[aria-expanded="true"]{border-color:var(--accent);}
+.filter-select-text{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.filter-select-prefix{color:var(--text-muted);}
 .filter-select-chevron{color:var(--text-muted);flex-shrink:0;transition:transform 0.15s;}
 .filter-select-toggle[aria-expanded="true"] .filter-select-chevron{transform:rotate(180deg);}
 .filter-select-menu{list-style:none;position:absolute;top:calc(100% + 4px);left:0;right:0;margin:0;padding:4px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius);z-index:50;max-height:240px;overflow-y:auto;box-shadow:0 8px 24px rgba(0,0,0,0.4);}
@@ -94,7 +96,7 @@ body{font-family:'IBM Plex Sans',sans-serif;background:var(--bg-primary);color:v
 .toolbar-secondary{display:flex;justify-content:flex-end;margin:-8px 0 20px;}
 .toolbar-secondary[hidden]{display:none;}
 .toolbar-secondary .topo-mode-toggle .view-btn{flex:1;text-align:center;justify-content:center;}
-@media (max-width:640px){.header{padding:12px 16px;}.main{padding:16px;}.device-grid{grid-template-columns:1fr;}.detail-grid{grid-template-columns:1fr;}.toolbar{flex-direction:column;align-items:stretch;}.search-wrap{display:block;}.search-box{width:100%;}.view-toggle{display:flex;}.view-toggle .view-btn{flex:1;text-align:center;justify-content:center;}.toolbar-secondary{margin:0 0 16px;}.toolbar-secondary .topo-mode-toggle{flex:1;}.topology-clusters{grid-template-columns:1fr;max-width:320px;margin:0 auto;justify-content:center;}.topo-cluster{width:100%;height:auto;}.filter-group{display:none;}.filter-select{display:block;}}
+@media (max-width:640px){.header{padding:12px 16px;}.main{padding:16px;}.device-grid{grid-template-columns:1fr;}.detail-grid{grid-template-columns:1fr;}.toolbar{flex-direction:column;align-items:stretch;}.search-wrap{display:block;}.search-box{width:100%;}.view-toggle{display:flex;}.view-toggle .view-btn{flex:1;text-align:center;justify-content:center;}.toolbar-secondary{margin:0 0 16px;}.toolbar-secondary .topo-mode-toggle{flex:1;}.topology-clusters{grid-template-columns:1fr;max-width:320px;margin:0 auto;justify-content:center;}.topo-cluster{width:100%;height:auto;}.filter-group{display:none;}.filter-select{display:block;}.secondary-row{flex-direction:column;align-items:stretch;}.secondary-row>.toolbar-secondary{margin-left:0;}.tag-filter-row{display:block;}.tag-filter-label{display:none;}}
 </style>
 </head>
 <body>
@@ -107,7 +109,7 @@ body{font-family:'IBM Plex Sans',sans-serif;background:var(--bg-primary);color:v
     </div>
     <div class="filter-group" id="filterGroup"></div>
     <div class="filter-select" id="filterSelectWrap">
-      <button type="button" class="filter-select-toggle" id="filterToggle" aria-haspopup="listbox" aria-expanded="false" aria-label="Filter by type"><span id="filterValue">all</span><svg class="filter-select-chevron" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M2 4l4 4 4-4"/></svg></button>
+      <button type="button" class="filter-select-toggle" id="filterToggle" aria-haspopup="listbox" aria-expanded="false" aria-label="Filter by type"><span class="filter-select-text"><span class="filter-select-prefix">Type:</span> <span id="filterValue">all</span></span><svg class="filter-select-chevron" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M2 4l4 4 4-4"/></svg></button>
       <ul class="filter-select-menu" id="filterMenu" role="listbox" hidden></ul>
     </div>
     <div class="view-toggle" role="tablist" aria-label="View mode">
@@ -119,6 +121,10 @@ body{font-family:'IBM Plex Sans',sans-serif;background:var(--bg-primary);color:v
     <div class="tag-filter-row" id="tagFilterRow" hidden aria-label="Filter by tag">
       <span class="tag-filter-label">Tags</span>
       <div class="filter-group" id="tagFilterGroup"></div>
+      <div class="filter-select" id="tagFilterSelectWrap">
+        <button type="button" class="filter-select-toggle" id="tagFilterToggle" aria-haspopup="listbox" aria-expanded="false" aria-label="Filter by tag"><span class="filter-select-text"><span class="filter-select-prefix">Tags:</span> <span id="tagFilterValue">all</span></span><svg class="filter-select-chevron" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M2 4l4 4 4-4"/></svg></button>
+        <ul class="filter-select-menu" id="tagFilterMenu" role="listbox" hidden></ul>
+      </div>
     </div>
     <div class="toolbar-secondary" id="topoModeRow" hidden>
       <div class="view-toggle topo-mode-toggle" id="topoModeToggle" role="tablist" aria-label="Topology mode">
@@ -285,6 +291,13 @@ function renderTagFilters(){
   group.innerHTML=tags.map(function(t){
     return '<button class="filter-btn filter-btn-tag '+(t===currentTagFilter?"active":"")+'" data-tag="'+esc(t)+'">#'+esc(t)+'</button>';
   }).join("");
+  var tagVal=document.getElementById("tagFilterValue");
+  if(tagVal)tagVal.textContent=currentTagFilter?"#"+currentTagFilter:"all";
+  var tagMenu=document.getElementById("tagFilterMenu");
+  if(tagMenu){tagMenu.innerHTML=[""].concat(tags).map(function(t){
+    var sel=t?t===currentTagFilter:!currentTagFilter;
+    return '<li class="filter-select-option '+(sel?"active":"")+'" role="option" aria-selected="'+sel+'" data-tag-option="'+esc(t)+'">'+(t?"#"+esc(t):"all")+'</li>';
+  }).join("");}
   updateSecondaryRow();
 }
 function updateSecondaryRow(){
@@ -298,6 +311,9 @@ function toggleFilterMenu(){var b=document.getElementById("filterToggle"),m=docu
 function closeFilterMenu(){var b=document.getElementById("filterToggle"),m=document.getElementById("filterMenu");if(!b||!m)return;b.setAttribute("aria-expanded","false");m.hidden=true;}
 function setFilter(f){currentFilter=f;renderFilters();renderDevices();if(currentView==="topology")renderTopology();}
 function setTagFilter(t){currentTagFilter=currentTagFilter===t?null:t;renderTagFilters();renderDevices();if(currentView==="topology")renderTopology();}
+function applyTagFilter(t){currentTagFilter=t||null;renderTagFilters();renderDevices();if(currentView==="topology")renderTopology();}
+function toggleTagFilterMenu(){var b=document.getElementById("tagFilterToggle"),m=document.getElementById("tagFilterMenu");if(!b||!m)return;var open=b.getAttribute("aria-expanded")==="true";b.setAttribute("aria-expanded",open?"false":"true");m.hidden=open;}
+function closeTagFilterMenu(){var b=document.getElementById("tagFilterToggle"),m=document.getElementById("tagFilterMenu");if(!b||!m)return;b.setAttribute("aria-expanded","false");m.hidden=true;}
 function getFilteredDevices(){
   var query=document.getElementById("searchBox").value.toLowerCase();
   var filtered=DEVICES.filter(function(d){
@@ -506,10 +522,13 @@ document.getElementById("searchBox").addEventListener("input",function(){documen
 document.getElementById("searchClear").addEventListener("click",function(){var b=document.getElementById("searchBox");b.value="";document.getElementById("searchWrap").classList.remove("has-value");b.focus();renderDevices();if(currentView==="topology")renderTopology();});
 document.getElementById("filterGroup").addEventListener("click",function(e){var b=e.target.closest("[data-filter]");if(b)setFilter(b.getAttribute("data-filter"));});
 document.getElementById("tagFilterGroup").addEventListener("click",function(e){var b=e.target.closest("[data-tag]");if(b)setTagFilter(b.getAttribute("data-tag"));});
+document.getElementById("tagFilterToggle").addEventListener("click",function(e){e.stopPropagation();toggleTagFilterMenu();});
+document.getElementById("tagFilterMenu").addEventListener("click",function(e){var o=e.target.closest("[data-tag-option]");if(o){closeTagFilterMenu();applyTagFilter(o.getAttribute("data-tag-option")||null);}});
+document.addEventListener("click",function(e){var w=document.getElementById("tagFilterSelectWrap");if(w&&!w.contains(e.target))closeTagFilterMenu();});
 document.getElementById("filterToggle").addEventListener("click",function(e){e.stopPropagation();toggleFilterMenu();});
 document.getElementById("filterMenu").addEventListener("click",function(e){var o=e.target.closest("[data-filter]");if(o){closeFilterMenu();setFilter(o.getAttribute("data-filter"));}});
 document.addEventListener("click",function(e){var w=document.getElementById("filterSelectWrap");if(w&&!w.contains(e.target))closeFilterMenu();});
-document.addEventListener("keydown",function(e){if(e.key==="Escape")closeFilterMenu();});
+document.addEventListener("keydown",function(e){if(e.key==="Escape"){closeFilterMenu();closeTagFilterMenu();}});
 document.getElementById("deviceGrid").addEventListener("click",function(e){var c=e.target.closest("[data-id]");if(c)showDetail(c.getAttribute("data-id"));});
 document.getElementById("deviceGrid").addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){var c=e.target.closest("[data-id]");if(c){e.preventDefault();showDetail(c.getAttribute("data-id"));}}});
 document.getElementById("topologyView").addEventListener("click",function(e){var n=e.target.closest("[data-id]");if(n)showDetail(n.getAttribute("data-id"));});
