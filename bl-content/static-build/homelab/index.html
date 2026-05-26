@@ -307,12 +307,12 @@ function updateSecondaryRow(){
   if(!wrap)return;
   wrap.hidden=(!tag||tag.hidden)&&(!topo||topo.hidden);
 }
-function toggleFilterMenu(){var b=document.getElementById("filterToggle"),m=document.getElementById("filterMenu");var open=b.getAttribute("aria-expanded")==="true";b.setAttribute("aria-expanded",open?"false":"true");m.hidden=open;}
+function toggleFilterMenu(){var b=document.getElementById("filterToggle"),m=document.getElementById("filterMenu");var open=b.getAttribute("aria-expanded")==="true";if(!open)closeTagFilterMenu();b.setAttribute("aria-expanded",open?"false":"true");m.hidden=open;}
 function closeFilterMenu(){var b=document.getElementById("filterToggle"),m=document.getElementById("filterMenu");if(!b||!m)return;b.setAttribute("aria-expanded","false");m.hidden=true;}
 function setFilter(f){currentFilter=f;renderFilters();renderDevices();if(currentView==="topology")renderTopology();}
 function setTagFilter(t){currentTagFilter=currentTagFilter===t?null:t;renderTagFilters();renderDevices();if(currentView==="topology")renderTopology();}
 function applyTagFilter(t){currentTagFilter=t||null;renderTagFilters();renderDevices();if(currentView==="topology")renderTopology();}
-function toggleTagFilterMenu(){var b=document.getElementById("tagFilterToggle"),m=document.getElementById("tagFilterMenu");if(!b||!m)return;var open=b.getAttribute("aria-expanded")==="true";b.setAttribute("aria-expanded",open?"false":"true");m.hidden=open;}
+function toggleTagFilterMenu(){var b=document.getElementById("tagFilterToggle"),m=document.getElementById("tagFilterMenu");if(!b||!m)return;var open=b.getAttribute("aria-expanded")==="true";if(!open)closeFilterMenu();b.setAttribute("aria-expanded",open?"false":"true");m.hidden=open;}
 function closeTagFilterMenu(){var b=document.getElementById("tagFilterToggle"),m=document.getElementById("tagFilterMenu");if(!b||!m)return;b.setAttribute("aria-expanded","false");m.hidden=true;}
 function getFilteredDevices(){
   var query=document.getElementById("searchBox").value.toLowerCase();
@@ -529,6 +529,7 @@ document.getElementById("filterToggle").addEventListener("click",function(e){e.s
 document.getElementById("filterMenu").addEventListener("click",function(e){var o=e.target.closest("[data-filter]");if(o){closeFilterMenu();setFilter(o.getAttribute("data-filter"));}});
 document.addEventListener("click",function(e){var w=document.getElementById("filterSelectWrap");if(w&&!w.contains(e.target))closeFilterMenu();});
 document.addEventListener("keydown",function(e){if(e.key==="Escape"){closeFilterMenu();closeTagFilterMenu();}});
+window.addEventListener("scroll",function(){closeFilterMenu();closeTagFilterMenu();},{passive:true});
 document.getElementById("deviceGrid").addEventListener("click",function(e){var c=e.target.closest("[data-id]");if(c)showDetail(c.getAttribute("data-id"));});
 document.getElementById("deviceGrid").addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){var c=e.target.closest("[data-id]");if(c){e.preventDefault();showDetail(c.getAttribute("data-id"));}}});
 document.getElementById("topologyView").addEventListener("click",function(e){var n=e.target.closest("[data-id]");if(n)showDetail(n.getAttribute("data-id"));});
