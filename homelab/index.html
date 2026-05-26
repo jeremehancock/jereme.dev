@@ -156,6 +156,7 @@
     display: flex; flex-direction: column; gap: 18px;
   }
   .side-section { display: flex; flex-direction: column; gap: 4px; }
+  .side-section[hidden] { display: none; }
   .side-head {
     font-size: 10.5px; letter-spacing: 1.5px; text-transform: uppercase;
     color: var(--text-faint); padding: 2px 8px 4px; font-weight: 600;
@@ -364,11 +365,6 @@
     background: var(--blue-bg); color: var(--blue);
     margin-top: 8px; display: inline-block;
   }
-
-  .device-status { width: 8px; height: 8px; border-radius: 50%; display: inline-block; margin-right: 7px; flex-shrink: 0; }
-  .status-online { background: var(--success); box-shadow: 0 0 6px rgba(91, 199, 122, 0.45); }
-  .status-offline { background: var(--danger); }
-  .status-unknown { background: var(--text-faint); }
 
   /* ============================ STATUS BAR ============================ */
   .statusbar {
@@ -705,10 +701,6 @@
   .topo-cluster .topo-text-type { font-family: var(--font-mono); font-size: 10px; fill: var(--text-faint); letter-spacing: 0.5px; pointer-events: none; }
   .topo-cluster .topo-edge { stroke: var(--border-active); stroke-width: 1; fill: none; }
   .topo-cluster .topo-edge-power { stroke: #a6e25a; stroke-width: 1.25; stroke-dasharray: 4 3; fill: none; opacity: 0.85; }
-  .topo-cluster .topo-status { stroke: none; pointer-events: none; }
-  .topo-status.status-online { fill: var(--success); }
-  .topo-status.status-offline { fill: var(--danger); }
-  .topo-status.status-unknown { fill: var(--text-faint); }
   .topo-cluster .topo-accent { pointer-events: none; }
   .topo-accent-server { fill: var(--accent); }
   .topo-accent-vm { fill: var(--blue); }
@@ -843,11 +835,7 @@ function typeBadge(type, extraStyle) {
 function sortedStorage(storage) { return Array.isArray(storage) ? storage.slice().sort((a, b) => (a.type || '').localeCompare(b.type || '', undefined, { sensitivity: 'base' })) : storage; }
 function sortedServices(services) { return (services || []).slice().sort((a, b) => { const an = typeof a === 'string' ? a : (a.name || ''); const bn = typeof b === 'string' ? b : (b.name || ''); return an.localeCompare(bn, undefined, { sensitivity: 'base' }); }); }
 function topoBoxSvg(d, x, y, w, h, isParent, opts) {
-  const showStatus = opts && opts.showStatus !== false;
-  const status = d.status || 'unknown';
-  const dotX = x + 14;
-  const dotY = y + h / 2;
-  const textX = showStatus ? x + 26 : x + 14;
+  const textX = x + 14;
   const nameY = y + h / 2 - 3;
   const typeY = y + h / 2 + 13;
   const iconSize = 12;
@@ -864,7 +852,6 @@ function topoBoxSvg(d, x, y, w, h, isParent, opts) {
     <defs><clipPath id="${clipId}"><rect x="${x}" y="${y}" width="${w}" height="${h}" rx="6"/></clipPath></defs>
     <rect x="${x}" y="${y}" width="${w}" height="${h}" rx="6" class="topo-box"/>
     <rect x="${x}" y="${y}" width="3" height="${h}" class="topo-accent topo-accent-${t}" clip-path="url(#${clipId})"/>
-    ${showStatus ? `<circle cx="${dotX}" cy="${dotY}" r="4" class="topo-status status-${status}"/>` : ''}
     <text x="${textX}" y="${nameY}" class="topo-text-name">${esc(truncateLabel(d.name, nameMax))}</text>
     ${getTopoTypeIcon(t, iconX, iconY, iconSize)}
     <text x="${typeTextX}" y="${typeY}" class="topo-text-type">${esc(t.toUpperCase())}</text>
@@ -1052,7 +1039,7 @@ function renderTopology(){
   var powerTrees=powerRoots.concat(powerOrphans).map(function(d){return buildPowerTree(d);})
     .sort(function(a,b){return sortByName(a.device,b.device);});
   var trees=topoMode==="power"?powerTrees:networkTrees;
-  var opts=topoMode==="power"?{edgeType:"power",showStatus:false}:{showStatus:false};
+  var opts=topoMode==="power"?{edgeType:"power"}:{};
   if(!trees.length){
     var msg;
     if(topoMode==="power"&&isVirtualType(currentFilter))msg=(currentFilter==="vm"?"VMs":"Containers")+" inherit power from their host, so they don\u2019t appear here on their own.";
