@@ -47,6 +47,10 @@ If you keep your homelab documentation in a Notion page, a Google Doc, a wiki yo
 
 It's also genuinely small. One HTML file. You can read the source, audit the sanitization, or fork it without a build environment. That kind of thing is rare enough now that it feels worth pointing out.
 
+## Demo
+
+[video video="/homelab-demo.mp4"]
+
 [ai-disclosure]
 
 ## Links
