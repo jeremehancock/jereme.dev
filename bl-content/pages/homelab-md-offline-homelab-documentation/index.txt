@@ -49,7 +49,7 @@ It's also genuinely small. One HTML file. You can read the source, audit the san
 
 ## Demo
 
-[video video="/homelab-demo.mp4"]
+[video video-path="/videos/homelab/demo.mp4" preview-path="/videos/homelab/preview.png"]
 
 [ai-disclosure]
 
