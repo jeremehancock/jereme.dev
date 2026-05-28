@@ -846,6 +846,17 @@ EOF;
 		return htmlspecialchars((string) $s, ENT_QUOTES, 'UTF-8');
 	}
 
+	// Build a fallback meta description from raw page content, dropping
+	// shorthand-style shortcode tags (e.g. [tag], [/tag], [tag attr="x"])
+	// so a shortcode at the top of a post doesn't leak into og/twitter
+	// descriptions. The negative lookahead for "(" leaves markdown links
+	// like [text](url) intact.
+	private function descriptionFromContent($raw)
+	{
+		$text = preg_replace('/\[\/?[^\]]*\](?!\()/', ' ', (string) $raw);
+		return Text::truncate(strip_tags($text), 160);
+	}
+
 	private function renderOpenGraphTags()
 	{
 		global $site;
@@ -872,7 +883,7 @@ EOF;
 			$og['title'] = $this->metaSanitize($page->title());
 			$description = $page->description();
 			if (empty($description)) {
-				$description = Text::truncate(strip_tags($page->contentRaw()), 160);
+				$description = $this->descriptionFromContent($page->contentRaw());
 			}
 			$og['description'] = $this->metaSanitize($description, 200);
 			$og['url'] = $this->toProductionUrl($page->permalink(true));
@@ -964,7 +975,7 @@ EOF;
 			$data['title'] = $this->metaSanitize($page->title(), 70);
 			$description = $page->description();
 			if (empty($description)) {
-				$description = Text::truncate(strip_tags($page->contentRaw()), 160);
+				$description = $this->descriptionFromContent($page->contentRaw());
 			}
 			$data['description'] = $this->metaSanitize($description, 200);
 			$data['image'] = $this->toProductionUrl($page->coverImage(true));
