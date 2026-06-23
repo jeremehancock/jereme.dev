@@ -1,0 +1,11 @@
+{
+  "theme-data": {
+    "name": "Nova",
+    "description": "Polished, fully responsive Bludit theme with first-class light &amp; dark mode.<br/><br/><b>Special Features:</b><br/><br/> Posts placed in a category named \"Archived\" will not show in search results, in the site navigation, or in tag listings, and will have an \"archived\" banner above the page content. Their tags section is also hidden on the post itself so they don't link back into tag pages.<br/><br/>A static page whose Description field is set to 404 is hidden in search results and site navigation. The page is still served at its URL — it just stops appearing in search. Set the Description to 404 on the static page that you want to serve as your site's not-found page.<br/><br/>For additional features be sure to install the Nova Companion plugin."
+  },
+  "menu": "Menu",
+  "blog": "Blog",
+  "type-to-start-searching": "Type at least 3 characters to search",
+  "powered-by": "Powered by Bludit",
+  "bludit-backer": "Bludit Backer"
+}

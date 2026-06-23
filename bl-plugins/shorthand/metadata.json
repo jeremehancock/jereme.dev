@@ -1,0 +1,10 @@
+{
+	"author": "Jereme",
+	"email": "michael@jeremehancock.com",
+	"website": "https://jereme.dev",
+	"version": "1.0.0",
+	"releaseDate": "2026-05-18",
+	"license": "MIT",
+	"compatible": "3.22",
+	"notes": "Custom shortcodes for Bludit. Define once, reuse anywhere in your pages and posts."
+}
