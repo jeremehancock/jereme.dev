@@ -1,0 +1,11 @@
+[image src="/bl-content/uploads/pages/e7452072631a01dcade0155ff1add7d1/pizero-dashboard.png"]
+
+I recently posted about a project that I started to create a [Raspberry Pi Powered Portable Dev Server](raspberry-pi-portable-dev-server). 
+
+I have really enjoyed that project and I have expanded it into a build tool so other's can create the same thing more easily. I actually setup the build tool to configure a local dev environment in two different ways.
+
+The first method uses Vagrant. So if you run the tool on your computer it will use Vagrant to build a local dev server, clone your repos, and provide a browser based "dashboard" for easy access to your projects.
+
+The second method converts a Pi Zero that has been setup as a USB dongle into a portable dev server with the same "dashboard" setup.
+
+[<img data-src="/images/check-it-out-on-github.png" alt="Get it on GitHub" class="on-github lozad" />](https://github.com/mhancoc7/Dev-Dashboard/blob/master/README.md)

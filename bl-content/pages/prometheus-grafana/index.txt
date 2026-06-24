@@ -1,0 +1,24 @@
+I have been wanting to track more data related to the Pi Lab nodes. After a lot of research I decided to use [Prometheus](https://prometheus.io/) and [Grafana](https://grafana.com/). 
+
+The results are really awesome!
+
+I have updated the Pi Lab Stats page to incorporate these dashboards. 
+
+If you are interested in how I set this up check out this GitHub repo.
+https://github.com/bhemar/raspberry-metrics.
+
+<!-- #### Pi Lab Metrics Playlist
+<iframe width="100%" height="750" data-src="https://pilab.dev/metrics/playlists/play/be0wm2c9uw4cgc?kiosk=tv&autofitpanels" frameborder="0" class="iframe-border lozad"></iframe>
+
+<a href="https://pilab.dev/metrics/" target="_blank" style="float:right;">View Fullscreen</a> -->
+
+**Updates:**
+> *I have made some updates to the Pi Lab Metrics dashboard to include more graphs. I have also finally added the Pi-hole Node to the dashboard.*
+
+> *I have created a [Grafana](https://grafana.com/) Playlist to cycle through each node in Pi Lab.*
+
+> *I have upgraded the Pi used for the Pi Lab Metrics node to a Raspberry Pi 3 Model B.*
+
+> *I have added a Plex metrics dashboard to the Pi Lab Stats page.*
+
+> *I have moved the Pi Lab Metrics node to an LXC container running in Proxmox.*

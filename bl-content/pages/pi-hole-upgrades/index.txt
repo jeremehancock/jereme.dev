@@ -1,0 +1,82 @@
+I recently stumbled across a nice [Pi-hole](https://pi-hole.net/) setup that provides a quick and easy way to deploy Pi-hole along with a [Grafana](https://grafana.com/) dashboard to collect metrics on your network.
+
+The project is simply called [Internet Pi](https://github.com/geerlingguy/internet-pi). 
+
+The instructions provided with the project worked without any issues. Now I have Pi-hole setup on a Pi 4 and also have a nice dashboard to keep up with my network speeds.
+
+I have also been playing with [Tailscale](https://tailscale.com/), which is a zero config VPN. I thought it would be super cool if I could set things up so that when I am connected to my Tailscale network I could also take advantage of the Pi-hole ad blocking.
+
+After a bit of research I was able to get it all working.
+
+Once I had Pi-hole setup I installed Tailscale to the Raspberry Pi running Pi-hole using their simple [install command](https://tailscale.com/download).
+
+After install I started up Tailscale with this command.
+
+```
+sudo tailscale up --advertise-routes=192.168.1.0/24 --accept-dns=false
+```
+
+**Note:** You will need to change the command to match your networks subnet.
+
+After I started Tailscale up I got an error referring to [IP forwarding](https://tailscale.com/kb/1019/subnets/#setting-up-a-subnet-router). I had to run the following commands to clear that up.
+
+```
+echo 'net.ipv4.ip_forward = 1' | sudo tee -a /etc/sysctl.conf
+echo 'net.ipv6.conf.all.forwarding = 1' | sudo tee -a /etc/sysctl.conf
+sudo sysctl -p /etc/sysctl.conf
+```
+
+Then I logged into Tailscale and clicked the "three dots" menu next to the Machine entry for my Pi-hole. I selected "Disable key expiry" from the drop-down. Since the Pi-hole is not directly exposed to the internet it is safe to not require re-authentication. Then I selected "Edit route settings..." from the same drop-down menu and enabled the first option. See image below.
+
+[image src="/bl-content/uploads/pages/fcdb80d303d1fe7901dd6d939ebe87c3/tailscale-settings-route-updated-new.png"]
+
+Next I copied the Tailscale IP address for my Pi-hole and used it as the Nameserver on the DNS tab. I set it to override local DNS. See image below.
+
+[image src="/bl-content/uploads/pages/fcdb80d303d1fe7901dd6d939ebe87c3/tailscale-dns.png"]
+
+I also turned on MagicDNS on the DNS tab so that my servers would be accessible via their hostnames when on the Tailscale network. This way the Pi-hole interface would work when I am on or off the Tailscale network when I use the Pi-hole's hostname.
+
+Now I have a Tailscale VPN setup that uses my Pi-hole. 
+
+I installed the Tailscale Android app so now when I am away from my home network I can still access my servers as well as be protected from ads using my Pi-hole.
+
+I also like to use [PADD](https://github.com/pi-hole/PADD) to display my Pi-hole status on a monitor in my office. However, I noticed that it wouldn't work with this new setup. After a bit more research I found the answer. 
+
+On the Pi-hole I ran the following to setup PADD.
+
+```
+mkdir -p /home/pi/padd && cd padd && wget -N https://raw.githubusercontent.com/pi-hole/PADD/master/padd.sh && chmod +x padd.sh
+```
+
+Now that I had PADD setup I needed to update my Pi-hole configuration to use it.
+
+I had to add the following volume to the `pi-hole-docker-compose.yml.j2` file which is located at `/home/pi/internet-pi/templates/`.
+
+```
+- '${HOME}/padd:/padd'
+```
+
+I then ran the following command from inside the `internet-pi` directory per the project's instructions.
+
+```
+ansible-playbook main.yml
+```
+
+Next I added the following alias to my `.bash_aliases` file in the Pi-hole home directory.
+
+```
+alias padd="docker exec -it pihole bash /padd/padd.sh"
+```
+
+Now I can use the `padd` command to startup PADD.
+
+**Updates:**
+> *I originally had Tailscale setup to use Pi-hole as an Exit Node. I found that I was having issues resolving hostnames. I have updated the setup to not use the Pi-hole as the Exit Node. I still get the ad-blocking, and now the hostname resolution issues have been resolved.*
+ 
+> *I started having odd issues where the internet speeds from the Pi 4 running Pi-hole would drop off significantly around 2am everyday. I have since moved back to Pi-hole's default installation.*
+ 
+> *Check out my new dual Pi-hole + Tailscale setup [here](dual-pi-hole-tailscale).
+ 
+> *I have moved my Pi-hole setup to an older Pi 2 Model B so that I could free the Pi 4 up for some retro gaming.
+
+> *I have moved my Pi-hole setup to an LXC container running in Proxmox.

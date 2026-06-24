@@ -1,0 +1,59 @@
+[image src="/bl-content/uploads/pages/e678e6a723a26a5ecb7a5f79030f0ab7/screenshot-improved-fixed-png.png"]
+
+If you've run a homelab for any length of time, you've probably had the same thought I have: "I should really write this down." You spin up a Proxmox host, throw a few LXCs on it, add a NAS, layer in some VMs, expose a handful of services, and a year later you can't remember which container is running what or which port maps to which app. The fix is documentation. The reason no one does it is that documentation tools tend to be heavier than the thing being documented.
+
+[homelab.md](https://github.com/jeremehancock/homelab.md) takes the opposite approach. It's a single HTML file. You drop it in a folder, double-click it, and you've got a clean interface for cataloging every device in your lab. No server, no Docker container, no database, no internet connection required.
+
+## The whole app is one file
+
+That isn't a marketing line, it's literally how the project is built. There's no backend, no API, no build step, no `node_modules` directory waiting to bit-rot — and it doesn't even reach out for fonts, which are embedded right in the file, so it makes zero external network requests. You open `index.html` in a browser and you have a fully functional homelab dashboard with full CRUD, search, filtering, and stats. Your edits live in `localStorage` while you work, and the source of truth is a `homelab.md` Markdown file that you save to disk and re-import as needed.
+
+That last part is what makes it actually usable long term. The Markdown file is human-readable, version-controllable, and edit-able in any text editor. Each device is an `h1` section, services and storage are Markdown tables, and parent-child relationships (LXCs on a Proxmox host, VMs on a NAS, that kind of thing) are preserved through IDs in the footer of each section. If you want a Git repo of your homelab history, you can just commit the file. If you want to make a quick edit on a flight, open it in any editor and re-import when you land — the round-trip is lossless, so nothing you typed gets dropped along the way.
+
+## What you can actually catalog
+
+The data model is shaped around what people actually run, not an abstract idea of infrastructure:
+
+- Servers, virtual machines, LXC containers, network gear, dedicated storage, and a catch-all "other" for things like UPS units and KVMs
+- Per-device specs (system, OS, CPU, RAM, IPs, MAC, etc.)
+- Parent-child links so a Proxmox host can show the LXCs and VMs running on it
+- Multiple services per device, each with name, port, notes, and a clickable URL
+- Multiple drives per device, each with type, size, and notes
+- Free-form notes wherever you need them
+
+You can filter by device type or run a search across hostnames, IPs, services, and notes. There's a small stats panel up top with at-a-glance counts: total devices, online status, hosts, VMs and LXCs, total services. It's the right amount of detail for a personal lab. Not a CMDB, not an asset database, just enough to actually be useful.
+
+## Saving is one keystroke
+
+The file you actually care about is **homelab.md** — the full, private source of truth, with every IP, port, and URL intact. A **Save** button, and **Ctrl/⌘+S**, write it straight back to disk. On Chromium-based browsers it uses the File System Access API: the first save asks where `homelab.md` should live, and every save after that — including the keyboard shortcut — writes to that exact file with no download prompt, and the file is remembered across reloads. On Firefox and Safari it cleanly falls back to a normal download. Either way the canonical file is yours and stays local.
+
+For backups and interop there are two more full exports. **homelab.csv** is a flat, one-row-per-device dump for spreadsheets, audits, or feeding into other tools. **homelab.json** is a complete, lossless snapshot of everything exactly as stored — and because the importer accepts it too, it doubles as a guaranteed-faithful restore file if you'd rather not round-trip through Markdown.
+
+## The export that steals the show
+
+The one I want to spend a moment on is the **public HTML export**. It builds a single, self-contained HTML file that mirrors the look and feel of the live app, but in read-only form. Same theme, same search, same filters, same device detail modals. No add or edit controls, and a sanitization pass runs before anything is written: IPs and MAC addresses are stripped out, every URL is removed, ports are dropped, and internal IDs and timestamps are taken out. What's left is the hardware and software story of the lab without anything that could expose your network. You can drop it on any static host and you've got a live, interactive dashboard of your homelab that won't leak your internal network. Like the app itself, the exported file is fully self-contained — the fonts travel with it, so it makes no external requests either.
+
+I used that feature to publish my own homelab specs at [homelab] It's the public HTML export, dropped onto my site, no extra work. The page is searchable, filterable, and looks the same as the editor I use locally, just without anything I'd rather not advertise. That's a workflow I've wanted forever and never quite gotten to with other documentation tools, because they always assumed I wanted to maintain "the public version" as a separate artifact. With homelab.md, the private file is the only thing I maintain. The public version is one click and a file upload.
+
+## The shape of the workflow
+
+The intended loop is small and stays out of your way: import your `homelab.md` if the file is newer than the browser session, make changes, hit **Save** (or **Ctrl/⌘+S**) to write them back, optionally commit to Git. When you want to share, run the public HTML export and publish it.
+
+There's no auto-sync, no cloud, no account to create. The file is the file. Your browser is the editor. That's the whole thing.
+
+## Who this is for
+
+If you keep your homelab documentation in a Notion page, a Google Doc, a wiki you spun up and never updated, or worst of all, in your head, this is worth a look. It works offline by design, it makes zero external requests, it leaves no trail beyond a Markdown file you fully control, and it gives you a believable path from "I should document this" to "here's a public dashboard of my lab" without any infrastructure in between.
+
+It's also genuinely small. One HTML file. You can read the source, audit the sanitization, or fork it without a build environment. That kind of thing is rare enough now that it feels worth pointing out.
+
+## Demo
+
+[video video-path="/videos/homelab/demo.mp4" preview-path="/videos/homelab/preview.png"]
+
+[ai-disclosure]
+
+## Links
+
+- GitHub: [github repo="jeremehancock/homelab.md"]
+- Live example using the public HTML export: [homelab]

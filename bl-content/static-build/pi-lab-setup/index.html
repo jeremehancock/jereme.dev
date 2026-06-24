@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="auto">
+
+<head>
+    <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d0f12" media="(prefers-color-scheme: dark)">
+
+<title>Pi Lab Setup | jereme.dev</title>
+<meta name="description" content="I have received several requests to post more details on how I setup Pi Lab. The majority of these requests were from people wanting information on how I setup Bludit...">
+
+<link rel="icon" href="../bl-themes/nova/img/favicon.svg" type="/bl-themes/nova/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" /></noscript>
+
+<link rel="stylesheet" type="text/css" href="../bl-themes/nova/css/theme.css?version=3.22.0">
+
+<script>
+    // Apply theme as early as possible to avoid flash of incorrect theme.
+    (function () {
+        try {
+            var stored = localStorage.getItem('jdpro-theme');
+            var prefDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            var theme = stored || (prefDark ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        } catch (e) { /* localStorage unavailable */ }
+    })();
+</script>
+
+
+
+<meta property="og:locale" content="en, en_US, en_AU, en_CA, en_GB, en_IE, en_NZ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pi Lab Setup">
+<meta property="og:description" content="I have received several requests to post more details on how I setup Pi Lab. The majority of these requests were from people wanting information on how I setup...">
+<meta property="og:url" content="https://jereme.dev/pi-lab-setup">
+<meta property="og:site_name" content="jereme.dev">
+<meta property="article:published_time" content="2019-05-28T21:06:25-05:00">
+<meta property="article:modified_time" content="2026-05-15T16:14:00-05:00">
+<meta property="article:author" content="Admin">
+<meta property="og:image" content="https://jereme.dev/bl-content/uploads/pages/75985f8036100bd2c1f9c4ca271e499f/pilab-setup-new-png.png">
+<meta property="og:image:alt" content="Pi Lab Setup">
+<meta property="fb:app_id" content="950993698565690">
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pi Lab Setup">
+<meta name="twitter:description" content="I have received several requests to post more details on how I setup Pi Lab. The majority of these requests were from people wanting information on how I setup...">
+<meta name="twitter:image" content="https://jereme.dev/bl-content/uploads/pages/75985f8036100bd2c1f9c4ca271e499f/pilab-setup-new-png.png">
+<meta name="twitter:image:alt" content="Pi Lab Setup">
+
+<script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      "name": "jereme.dev",
+      "alternateName": "My Homelab & more ...",
+      "url": "../"
+    }
+</script>
+</head>
+
+<body class="bl-body">
+    
+    <header class="site-header" id="site-header">
+    <div class="site-header-ribbon" aria-hidden="true"></div>
+    <div class="header-inner">
+        <div class="site-branding">
+            <a class="navbar-brand" href="../" rel="home">
+                                    <img class="site-logo" src="../bl-content/uploads/jereme-dev.png" alt="jereme.dev" />
+                            </a>
+        </div>
+
+        <div class="header-actions">
+            <button type="button" class="icon-btn search-toggle" id="search-toggle" aria-controls="search-panel" aria-expanded="false" aria-label="Search">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="11" cy="11" r="7"></circle>
+                    <path d="m20 20-3.5-3.5"></path>
+                </svg>
+            </button>
+
+            <button type="button" class="icon-btn theme-toggle" id="theme-toggle" aria-label="Toggle light/dark mode">
+                <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+                </svg>
+                <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+
+            <button type="button" class="icon-btn menu-toggle" id="menu-toggle" aria-controls="site-navigation" aria-expanded="false" aria-label="Toggle menu">
+                <span class="hamburger" aria-hidden="true">
+                    <span></span><span></span><span></span>
+                </span>
+            </button>
+        </div>
+    </div>
+
+    <div class="search-panel" id="search-panel" hidden>
+        <div class="search-inner" role="search">
+            <form class="search-form" name="search" onsubmit="return false;">
+                <svg class="search-form-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="11" cy="11" r="7"></circle>
+                    <path d="m20 20-3.5-3.5"></path>
+                </svg>
+                <input type="text" class="search-input" name="query" placeholder="Search" autocorrect="off" autocomplete="off" spellcheck="false" />
+                <button type="button" class="icon-btn search-close" id="search-close" aria-label="Close search">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M18 6 6 18M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </form>
+            <div class="search-output">
+                <div class="search-result" data-component="result">
+                    <div class="search-result-meta">
+                        Type at least 3 characters to search                        <script>
+                            var translations = {
+                                "type-to-start-searching": "Type at least 3 characters to search"
+                            };
+                        </script>
+                    </div>
+                    <ol class="search-result-list"></ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+        <symbol id="icon-pencil" viewBox="0 0 27 32">
+            <path d="M6.5 27.4l1.6-1.6-4.2-4.2-1.6 1.6v1.9h2.3v2.3h1.9zM15.8 10.9q0-0.4-0.4-0.4-0.2 0-0.3 0.1l-9.7 9.7q-0.1 0.1-0.1 0.3 0 0.4 0.4 0.4 0.2 0 0.3-0.1l9.7-9.7q0.1-0.1 0.1-0.3zM14.9 7.4l7.4 7.4-14.9 14.9h-7.4v-7.4zM27.1 9.1q0 0.9-0.7 1.6l-3 3-7.4-7.4 3-2.9q0.6-0.7 1.6-0.7 0.9 0 1.6 0.7l4.2 4.2q0.7 0.7 0.7 1.6z"></path>
+        </symbol>
+        <symbol id="icon-twitter" viewBox="0 0 32 32">
+            <path d="M31.6 5.4c-1.1 0.8-2.4 1.2-3.7 1.2 1.4-0.9 2.5-2.3 3-3.9 -1.2 1-2.7 1.6-4.2 1.7 -1.3-1.3-3-2.1-4.8-2.1 -3.7 0-6.7 3.2-6.7 7 0 0.5 0 1 0.1 1.4 -5.3-0.3-10.2-2.9-13.5-7.2 -1.7 3.1-0.8 7.1 2 9.1 -1 0-2-0.2-3-0.7 0.1 3.2 2.2 6 5.2 6.7 -1 0.3-2 0.3-3 0.1 0.9 2.8 3.4 4.8 6.2 4.9 -2.9 1.9-6.3 2.8-9.8 2.8 3 2.1 6.6 3.2 10.2 3.2 10.2 0 18.6-8.8 18.6-19.5 0-0.4 0-0.7 0-1.1 1.2-1 2.3-2.3 3.3-3.6"></path>
+        </symbol>
+        <symbol id="icon-github" viewBox="0 0 32 32">
+            <path d="M22.1 28.4c1 0 0.8 1.1 0.8 1.1l-12.6 0c0 0-0.1-1.1 0.8-1.1 0.9 0 1.1-0.4 1.1-0.8l-0.1-3.4c-4.9 1.1-6-1.9-6-1.9 -0.8-2-1.9-2.5-1.9-2.5 -1.7-1.1 0.1-1.1 0.1-1.1 1.8 0.1 2.8 1.8 2.8 1.8 1.5 2.6 4.1 1.9 5.1 1.5 0.1-1.1 0.6-1.9 1.1-2.4 -3.9-0.4-8-1.9-8-8.5 0-1.9 0.7-3.4 1.8-4.7 -0.2-0.4-0.8-2.2 0.2-4.5 0 0 1.5-0.5 4.8 1.8 2.9-0.8 6-0.8 8.9 0 3.4-2.2 4.8-1.8 4.8-1.8 1 2.4 0.4 4.1 0.2 4.5 1.1 1.2 1.8 2.8 1.8 4.7 0 6.6-4.2 8.1-8.1 8.5 0.7 0.5 1.2 1.6 1.2 3.2l-0.1 4.7c0 0.4 0.2 0.8 1.1 0.8Z"></path>
+        </symbol>
+        <symbol id="icon-facebook" viewBox="0 0 32 32">
+            <path d="M17.5 31.6l0-14.2 4.5 0 0.6-5.5 -5.2 0 0-3.5c0-1.6 0.4-2.7 2.6-2.7l2.8 0 0-4.9c-0.5-0.1-2.1-0.2-4-0.2 -4 0-6.7 2.5-6.7 7.3l0 4 -4.5 0 0 5.5 4.5 0 0 14.2 5.4 0Z"></path>
+        </symbol>
+        <symbol id="icon-codepen" viewBox="0 0 32 32">
+            <path d="M32 11l0 0 0 0c0 0 0 0 0 0 0 0 0 0 0 0l0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -15-10c0 0-1 0-2 0l-15 10 0 0 0 0 0 0 0 0 0 0 0 0 0 0c0 0 0 0 0 0l0 0 0 0c0 0 0 0 0 0l0 0c0 0 0 0 0 0l0 10c0 0 0 0 0 0l0 0c0 0 0 0 0 0l0 0c0 0 0 0 0 0l0 0c0 0 0 0 0 0l0 0c0 0 0 0 0 0l0 0 0 0c0 0 0 0 0 0l0 0 0 0 0 0 15 10c0 0 1 0 1 0 0 0 1 0 1 0l15-10 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0-10c0 0 0 0 0 0l0 0 0 0 0 0Zm-16 8l-5-3 5-3 5 3 -5 3 0 0Zm-1-9l-6 4 -5-3 11-7 0 6 0 0Zm-8 6l-3 2 0-5 3 2 0 0Zm2 2l6 4 0 6 -11-7 5-3 0 0 0 0Zm9 4l6-4 5 3 -11 7 0-6 0 0Zm8-6l3-2 0 5 -3-2 0 0Zm-2-2l-6-4 0-6 11 7 -5 3 0 0Z"></path>
+        </symbol>
+        <symbol id="icon-linkedin" viewBox="0 0 32 32">
+            <path d="M17.7 30.5l-5.9 0 0-19.2 5.7 0 0 2.6 0.1 0c0.8-1.5 2.7-3.1 5.6-3.1 6 0 7.1 4 7.1 9.1l0 10.5 0 0 -5.9 0 0-9.3c0-2.2 0-5.1-3.1-5.1 -3.1 0-3.5 2.4-3.5 4.9l0 9.5Zm-9.6 0l-5.9 0 0-19.2 5.9 0 0 19.2Zm-3-21.8c-1.9 0-3.4-1.6-3.4-3.5 0-1.9 1.5-3.5 3.4-3.5 1.9 0 3.4 1.6 3.4 3.5 0 1.9-1.5 3.5-3.4 3.5Z"></path>
+        </symbol>
+        <symbol id="icon-instagram" viewBox="0 0 32 32">
+            <path d="M23 1.1c4.3 0 7.8 3.5 7.8 7.8l0 14c0 4.3-3.5 7.8-7.8 7.8l-14 0c-4.3 0-7.8-3.5-7.8-7.8l0-14c0-4.3 3.5-7.8 7.8-7.8l14 0Zm-7 7.9c3.8 0 6.9 3.1 6.9 6.9 0 3.8-3.1 6.9-6.9 6.9 -3.8 0-6.9-3.1-6.9-6.9 0-3.8 3.1-6.9 6.9-6.9Zm8.7-3.7c1.1 0 1.9 0.9 1.9 1.9 0 1.1-0.9 1.9-1.9 1.9 -1.1 0-1.9-0.9-1.9-1.9 0-1 0.9-1.9 1.9-1.9Z"></path>
+        </symbol>
+        <symbol id="icon-folder" viewBox="0 0 24 24">
+            <path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </symbol>
+        <symbol id="icon-tag" viewBox="0 0 24 24">
+            <path d="M20.59 13.41 13.41 20.59a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <circle cx="7" cy="7" r="1.5" fill="currentColor"></circle>
+        </symbol>
+        <symbol id="icon-arrow-left" viewBox="0 0 24 24">
+            <path d="M19 12H5M12 19l-7-7 7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </symbol>
+        <symbol id="icon-arrow-right" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </symbol>
+    </defs>
+</svg>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation" aria-label="Primary" aria-hidden="true">
+        <div class="main-navigation-inner">
+            <div class="main-navigation-header">
+                <p class="main-navigation-title">Menu</p>
+                <button type="button" class="icon-btn nav-close" id="nav-close" aria-label="Close menu">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M18 6 6 18M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="plugin plugin-categories"><h2 class="plugin-label">Categories</h2><div class="plugin-content"><ul><li><a href="../category/general/">General (13)</a></li><li><a href="../category/media-servers/">Media Servers (7)</a></li><li><a href="../category/archived/">Archived (34)</a></li></ul></div></div><div class="plugin plugin-navigation"><h2 class="plugin-label">Latest Posts</h2><div class="plugin-content"><ul><li><a href="../stickies/">Stickies</a></li><li><a href="../retrocities-portfolio/">RetroCities Portfolio</a></li><li><a href="../whoami-web/">whoami - Terminal Résumé</a></li><li><a href="../shorthand/">Bludit Shortcodes!</a></li><li><a href="../bludit-docker/">Bludit Docker</a></li></ul></div></div><div class="plugin plugin-static-pages"><h2 class="plugin-label">About</h2><div class="plugin-content"><ul><li class="parent"><a href="https://jeremehancock.com" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: baseline; gap: 4px;">Résumé<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0;">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg></a></li><li class="parent"><a href="/homelab" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: baseline; gap: 4px;">Homelab<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0;">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg></a></li><li class="parent"><a href="https://dumbprojects.com" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: baseline; gap: 4px;">DumbProjects<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0;">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg></a></li><li class="parent"><a href="https://whoami.jereme.dev" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: baseline; gap: 4px;">whoami<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0;">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg></a></li><li class="parent"><a href="https://retrocities.jereme.dev" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: baseline; gap: 4px;">RetroCities<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0;">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg></a></li></ul></div></div>        </div>
+    </nav>
+
+    <div class="body-overlay" id="body-overlay" aria-hidden="true"></div>
+
+    <main class="site-main site-main-single" id="main" role="main">
+    <article class="entry">
+        
+                    <header class="entry-header">
+                <div class="container">
+                                            <div class="entry-eyebrow">
+                            <a href="../category/archived/">Archived</a>
+                        </div>
+                    
+                    <h1 class="entry-title">
+                        Pi Lab Setup                    </h1>
+
+                                            <div class="entry-meta">
+                            <time class="entry-date" datetime="2019-05-28 21:06:25">
+                                May 28, 2019                            </time>
+
+                                                            <time class="entry-updated"
+                                    datetime=""></time>
+                                                    </div>
+                                    </div>
+            </header>
+        
+        <div class="entry-content container">
+                            <div class="archived-banner" role="note">
+                    <svg class="archived-banner-icon" viewBox="0 0 16 16" aria-hidden="true" width="18" height="18">
+                        <path fill-rule="evenodd"
+                            d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v1.5A1.75 1.75 0 0 1 14.25 5H1.75A1.75 1.75 0 0 1 0 3.25v-1.5zM1.75 1.5a.25.25 0 0 0-.25.25v1.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25v-1.5a.25.25 0 0 0-.25-.25H1.75zM1.5 6.75a.75.75 0 0 1 1.5 0v6.75c0 .138.112.25.25.25h9.5a.25.25 0 0 0 .25-.25V6.75a.75.75 0 0 1 1.5 0v6.75A1.75 1.75 0 0 1 12.75 15.5h-9.5A1.75 1.75 0 0 1 1.5 13.5V6.75zm4 .75a.75.75 0 0 0 0 1.5h5a.75.75 0 0 0 0-1.5h-5z" />
+                    </svg>
+                    <span>This post has been archived. The content may be out of date or no longer maintained.</span>
+                </div>
+            
+            <div class="page-content">
+                <p>I have received several requests to post more details on how I setup Pi Lab. The majority of these requests were from people wanting information on how I setup <a href="https://bludit.com">Bludit</a> to work on a Raspberry Pi cluster. </p>
+<p>This post will not attempt to be a step by step guide or an exhaustive guide on setting up a Raspberry Pi cluster. I will simply highlight the specific challenges that I had with setting Pi Lab up to properly run  <a href="https://bludit.com">Bludit</a>. </p>
+<blockquote>
+<p><em><strong>Note</strong>: This is NOT a copy paste how-to. It is an overview. I will include reference articles thoughout that I used during the setup of Pi Lab.</em></p>
+</blockquote>
+<h3>Raspberry Pi Cluster</h3>
+<p>I am using four Raspberry Pi 2 Model Bs. One is used as the Load Balancer and the other three are setup as the web nodes. I am using NGINX as the Load Balancer and Web Server. Here is one of the many articles that I used to setup NGINX and php-fpm on each of the nodes.</p>
+<p><a href="https://www.raspberrypi.org/documentation/remote-access/web-server/nginx.md">Setting up an NGINX web server on a Raspberry Pi</a></p>
+<p>Once each node was setup with NGINX and php-fpm I setup the load balancing. This is done on the Load Balancing Node. </p>
+<blockquote>
+<p><em><strong>Tip</strong>: I recommend setting up the hostnames for each Pi so that it is easy to remember which Pi is which. I chose pi0, pi1, pi2, and pi3. pi0 being the Load Balancer</em></p>
+</blockquote>
+<h5>Example Load Balancer NGINX conf</h5>
+<p>This example NGINX conf file assumes that you have already setup Let's Encrypt for your domain (<em>production-domain.com, www.production-domain.com</em>). I used several articles to learn how to best install Let's Encrypt with the Pi Lab setup. So I don't have a single article to reference. </p>
+<p>Port forwarding is also assumed. Since Port Forwarding works differently depending on your home network I will leave that for you to Google. Here is a decent article covering Port Forwarding. <a href="https://www.noip.com/support/knowledgebase/general-port-forwarding-guide/">How to Port Forward – General Guide to Multiple Router Brands</a>. </p>
+<p>This example also includes specific recommendations from the <a href="https://docs.bludit.com/en/webservers/nginx">Bludit Docs</a> as well as other specific configuration options such as forcing SSL and non-www on the domain.</p>
+<pre><code>user www-data;
+worker_processes auto;
+pid /run/nginx.pid;
+include /etc/nginx/modules-enabled/*.conf;
+
+events {
+    worker_connections 768;
+    # multi_accept on;
+}
+
+http {
+  # HTTP Redirect
+  server {
+      listen 80;
+      server_name production-domain.com www.production-domain.com;
+      return 301 https://production-domain.com$request_uri;
+  }
+
+  upstream picluster {
+    least_conn;
+    server 192.168.xx.xx1 max_fails=3 fail_timeout=30s;
+    server 192.168.xx.xx2 max_fails=3 fail_timeout=30s;
+    server 192.168.xx.xx3 max_fails=3 fail_timeout=30s;
+  }
+
+   # HTTPS Server
+   server {
+      listen 443 ssl;
+      server_name production-domain.com;
+      root /var/www/html;
+      ssl_certificate /etc/letsencrypt/live/production-domain.com/fullchain.pem;
+      ssl_certificate_key /etc/letsencrypt/live/production-domain.com/privkey.pem;
+      ssl_session_cache shared:SSL:10m;
+      ssl_session_timeout 5m;
+      ssl_protocols TLSv1.1 TLSv1.2;
+      ssl_dhparam /etc/ssl/certs/dhparam.pem;
+      ssl_prefer_server_ciphers on;
+      ssl_ciphers ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES128-SHA:ECDHE-ECDSA-AES256-SHA:ECDHE-ECDSA-AES128-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-SHA:ECDHE-RSA-AES256-SHA:ECDHE-RSA-AES128-SHA256:ECDHE-RSA-AES256-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES128-SHA:DHE-RSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES256-SHA256;
+      add_header Strict-Transport-Security "max-age=31536000; includeSubdomains";
+      location / {
+         proxy_pass http://picluster;
+      }
+
+      add_header Strict-Transport-Security "max-age=31557600; includeSubDomains";
+
+      location ^~ /bl-content/databases/ { deny all; }
+      location ^~ /bl-content/workspaces/ { deny all; }
+      location ^~ /bl-content/pages/ { deny all; }
+      location ^~ /bl-kernel/*.php { deny all; }
+      location ~ /.well-known { allow all; }
+      gzip on;
+      gzip_vary on;
+      gzip_min_length 10240;
+      gzip_proxied expired no-cache no-store private auth;
+      gzip_types text/plain text/css text/xml text/javascript application/x-javascript application/xml;
+      gzip_disable "MSIE [1-6]\.";
+   }
+}</code></pre>
+<p>At this point I had a load balanced Raspberry Pi cluster.</p>
+<h3>Bludit Prod Setup</h3>
+<p>Before attempting to install <a href="https://bludit.com">Bludit</a> I updated my NGINX conf so that only one of my web nodes was in rotation. Once I had the other web nodes commented out I restarted NGINX.</p>
+<p>Once that was completed I could follow the <a href="https://docs.bludit.com/en/getting-started/installation-guide">Bludit Install Instructions</a>. I followed the very simple "Installation from zip file" instructions and simply extracted the contents to my "/var/www/html" directory on the web node that I left in rotation.</p>
+<p>I did run into some php modules that needed to be installed.</p>
+<p>The following command should install all the necessary prerequisites.</p>
+<pre><code>sudo apt-get install php-mbstring php-json php-gd php-xml</code></pre>
+<p>At this point I had <a href="https://bludit.com">Bludit</a> setup and installed on my "primary" web node.</p>
+<p>Now I simply copied the contents of "/var/www/html" from my "primary" web node to the other two nodes. Once copied I put the other two nodes back into rotation and restarted NGINX. </p>
+<p>At this point I had <a href="https://bludit.com">Bludit</a> setup and running on a load balanced cluster. This was great, however, there was an issue. I couldn't login to the <a href="https://bludit.com">Bludit</a> Admin panel. This is due to the way that sessions are handled. There are several ways that I could solve this. I could have gone the route of using NFS so that each web node would actually read the files from a single source. I didn't like this since one of the reasons that I wanted to run a cluster was for the redundancy. </p>
+<p>So I decided to setup a seperate installation of <a href="https://bludit.com">Bludit</a> on the "primary" web node in a different directory using a different domain and port. This copy serves as my source of truth and a "sandbox" to try things before I push them live. </p>
+<h3>Bludit Dev Setup</h3>
+<p>For this portion I setup Port Forwarding for a different domain on a different port to point directly to my "primary" web node. Below is an example of the NGINX configuration that I setup in "/etc/nginx/sites-enabled" on the "primary" web node.</p>
+<h5>Example NGINX conf</h5>
+<pre><code>server {
+    listen 8000 default_server;
+    listen [::]:8000 default_server;
+
+    root /var/www/dev;
+
+    index.php;
+
+    server_name _;
+
+    location / {
+        try_files $uri $uri/ /index.php?$args;
+    }
+
+    location ~ \.php$ {
+       include snippets/fastcgi-php.conf;
+     fastcgi_pass unix:/var/run/php/php7.0-fpm.sock;
+    }
+}</code></pre>
+<p>Now I copied the contents of "/var/www/html" to "/var/www/dev" on my "primary" web node. I also had to edit "/var/www/dev/bl-content/databases/site.php" so that it used the domain and port that I setup to point directly to my "primary" web node.</p>
+<p>Now when I hit this domain I should get a working copy of <a href="https://bludit.com">Bludit</a> running on a single node. </p>
+<p><strong>For example:</strong> <em>development-domain.com:8000</em></p>
+<p>Now I can login to <em>development-domain.com:8000/admin</em> and make changes and add posts to my "dev" copy of <a href="https://bludit.com">Bludit</a> without any issues.</p>
+<p>Now for the fun part!</p>
+<h3>Pushing changes from Bludit Dev to Bludit Prod</h3>
+<p>For this part to work I needed to setup my "primary" web node so that it could connect to each of the other web nodes. To do this I setup SSH keys so that my "primary" node could login to each of the other web nodes without a password.</p>
+<p>This article covers this setup very well. <a href="https://www.raspberrypi.org/documentation/remote-access/ssh/passwordless.md">Passwordless SSH access</a></p>
+<p>Once that was setup I wrote a simple bash script to "promote" my "dev" copy of <a href="https://bludit.com">Bludit</a> to all three web nodes. This script is run on the "primary" web node once I have made changes to the "dev" copy. These changes could be from modifying files directly in the "/var/www/dev" directory or more commonly updating via the <a href="https://bludit.com">Bludit</a> admin panel on my "dev" copy.</p>
+<h5>Example Promote script</h5>
+<pre><code>#!/bin/bash
+
+echo "Updating file permisions to 'pi:www-data'\n"
+sudo chown -R pi:www-data /var/www/dev
+
+echo "Updating url in settings\n"
+sudo sed -i 's/http:\\\/\\\/development-domain.com:8000/https:\\\/\\\/production-domain.com/g' /var/www/dev/bl-content/databases/site.php
+echo "Complete\n"
+
+echo "Updating url in rss\n"
+sudo sed -i 's/http:\/\/development-domain.com:8000/https:\/\/production-domain.com/g' /var/www/dev/bl-content/workspaces/rss/rss.xml
+echo "Complete\n"
+
+echo "Updating url in sitemap\n"
+sudo sed -i 's/http:\/\/development-domain.com:8000/https:\/\/production-domain.com/g' /var/www/dev/bl-content/workspaces/sitemap/sitemap.xml
+echo "Complete\n"
+
+echo "Copying dev to html\n"
+sudo rsync -azvr /var/www/dev/ /var/www/html/ --delete
+echo "Complete\n"
+
+echo "Syncing pi1 to pi2\n"
+ssh pi@192.168.xx.xx2 'sudo chown -R pi:www-data /var/www/html'
+rsync -azvr /var/www/html/ -e ssh pi@192.168.xx.xx2:/var/www/html/ --delete 
+ssh pi@192.168.xx.xx2 'sudo chown -R www-data:www-data /var/www/html'
+echo "Complete\n"
+
+echo "Syncing pi1 to pi3\n"
+ssh pi@192.168.xx.xx3 'sudo chown -R pi:www-data /var/www/html'
+rsync -azvr /var/www/html/ -e ssh pi@192.168.xx.xx3:/var/www/html/ --delete 
+ssh pi@192.168.xx.xx3 'sudo chown -R www-data:www-data /var/www/html'
+echo "Complete\n"
+
+echo "Reverting url in settings\n"
+sudo sed -i 's/https:\\\/\\\/production-domain.com/http:\\\/\\\/development-domain.com:8000/g' /var/www/dev/bl-content/databases/site.php
+echo "Complete\n"
+
+echo "Updating file permisions to 'www-data:'\n"
+sudo chown -R www-data: /var/www/dev
+sudo chown -R www-data: /var/www/html
+echo "Promote Complete\n"</code></pre>
+<p>So what is this script doing?</p>
+<ul>
+<li>Update permissions of the "/var/www/dev" directory to "pi:www-data". This ensures that the script doesn't run into any issues with perms on the "dev" copy.</li>
+<li>Modify the "/var/www/dev/bl-content/databases/site.php" file with the production url.</li>
+<li>Modify the "/var/www/dev/bl-content/workspaces/rss/rss.xml" file with the production url.</li>
+<li>Modify the "/var/www/dev/bl-content/workspaces/sitemap/sitemap.xml" file with the production url.</li>
+<li>Copy the "dev" copy to the "prod" directory of the  "primary" web node</li>
+<li>Syncronize the "primary" web node to the second web node. This includes some temporary permission changes.</li>
+<li>Syncronize the "primary" web node to the third web node. This includes some temporary permission changes.</li>
+<li>Revert the changes made to "/var/www/dev/bl-content/databases/site.php" file on the "dev" copy.</li>
+<li>Update the file permissions of the "dev" copy back to "www-data:www-data"</li>
+</ul>
+<p>Now all the changes that were made on the "dev" copy are live on each web node!</p>
+<p>This workflow is something that I am still polishing, but this is working very well for me. It allows me to try things in a "sandbox" without affecting my live site. It also gives me some redundancy with things. So if I somehow really mess up the "dev" copy I can always revert to the latest "prod" copy by copying the files from one of the live web nodes to the "dev" copy.</p>
+<p>I actually have an additional step setup that I didn't cover with my "promote" script to push the latest and greatest to Github. </p>
+<p>I hope this helps someone looking to run <a href="https://bludit.com">Bludit</a> on a Raspberry Pi cluster. I welcome comments and feedback. I will keep this article updated with any changes to my workflow that I feel would be beneficial to share.</p>
+<p><strong>Updates:</strong></p>
+<blockquote>
+<p>I have added a few more items to the promote script. I found that the Sitemap and RSS plugins needed to also have the URL updated during the promotion to ensure that the production URL was used.</p>
+</blockquote>
+<blockquote>
+<p>Checkout the plugins that I built specifically for Pi Lab: <a href="plugins">Plugins</a></p>
+</blockquote>
+<blockquote>
+<p>I have upgraded the SD cards for Pi Lab. <a href="pi-lab-sd-card-upgrade">Pi Lab SD Card Upgrade</a></p>
+</blockquote>
+<blockquote>
+<p>I have updated the nginx.conf file. I had issues with Let's Encrypt auto renewal. The updates should allow auto renewal to work with the cluster setup.</p>
+</blockquote>
+<blockquote>
+<p>I have upgraded Pi Lab with new Prod Nodes including 2 Raspberry Pi 4 4GB nodes. <a href="specs">Current Specs</a></p>
+</blockquote>
+<blockquote>
+<p>I have done a bit of reorganizing/upgrading. Pi Lab "proper" now uses Raspberry Pi 4 2GBs for all production nodes including the load balancer. The Dev Node is now only used for dev and not in the production rotation. I moved the Raspberry Pi 4 4GBs to use on some of the other "ancillary nodes" such as the BOINC Node. <a href="specs">Current Specs</a></p>
+</blockquote>
+<blockquote>
+<p>I have updated the Dev Node to a Raspberry PI 4 2GBs. I also updated the Dev Node to also run as a production node as it was before. There have been some other nodes that have been removed like the BOINC Node. <a href="specs">Current Specs</a></p>
+</blockquote>            </div>
+        </div>
+
+        <footer class="entry-footer container">
+            
+            
+                    </footer>
+    </article>
+</main>
+    <aside class="site-aside" role="complementary">
+    <div class="container">
+        <div class="aside-grid">
+            <div class="aside-col aside-brand">
+                <p class="aside-title">jereme.dev</p>
+                <p class="aside-desc">My Homelab & more ...</p>
+            </div>
+
+            
+                            <div class="aside-col">
+                    <h3 class="aside-heading">Latest Posts</h3>
+                    <ul class="aside-list">
+                                                        <li><a href="../stickies/">Stickies</a></li>
+                                                            <li><a href="../retrocities-portfolio/">RetroCities Portfolio</a></li>
+                                                            <li><a href="../whoami-web/">whoami - Terminal Résumé</a></li>
+                                                            <li><a href="../shorthand/">Bludit Shortcodes!</a></li>
+                                                            <li><a href="../bludit-docker/">Bludit Docker</a></li>
+                                                </ul>
+                </div>
+            
+                            <div class="aside-col">
+                    <h3 class="aside-heading">About</h3>
+                    <ul class="aside-list">
+                                                    <li>
+                                <a href="https://jeremehancock.com"  target="_blank" rel="noopener noreferrer"                                    style="display: inline-flex; align-items: baseline; gap: 0.35em;">
+                                    Résumé
+                                                                            <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
+                                            style="display: block;">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                            <polyline points="15 3 21 3 21 9"></polyline>
+                                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                                        </svg>
+                                                                    </a>
+                            </li>
+                                                    <li>
+                                <a href="/homelab"  target="_blank" rel="noopener noreferrer"                                    style="display: inline-flex; align-items: baseline; gap: 0.35em;">
+                                    Homelab
+                                                                            <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
+                                            style="display: block;">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                            <polyline points="15 3 21 3 21 9"></polyline>
+                                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                                        </svg>
+                                                                    </a>
+                            </li>
+                                                    <li>
+                                <a href="https://dumbprojects.com"  target="_blank" rel="noopener noreferrer"                                    style="display: inline-flex; align-items: baseline; gap: 0.35em;">
+                                    DumbProjects
+                                                                            <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
+                                            style="display: block;">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                            <polyline points="15 3 21 3 21 9"></polyline>
+                                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                                        </svg>
+                                                                    </a>
+                            </li>
+                                                    <li>
+                                <a href="https://whoami.jereme.dev"  target="_blank" rel="noopener noreferrer"                                    style="display: inline-flex; align-items: baseline; gap: 0.35em;">
+                                    whoami
+                                                                            <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
+                                            style="display: block;">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                            <polyline points="15 3 21 3 21 9"></polyline>
+                                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                                        </svg>
+                                                                    </a>
+                            </li>
+                                                    <li>
+                                <a href="https://retrocities.jereme.dev"  target="_blank" rel="noopener noreferrer"                                    style="display: inline-flex; align-items: baseline; gap: 0.35em;">
+                                    RetroCities
+                                                                            <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
+                                            style="display: block;">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                            <polyline points="15 3 21 3 21 9"></polyline>
+                                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                                        </svg>
+                                                                    </a>
+                            </li>
+                                            </ul>
+                </div>
+            
+            <div class="aside-col aside-bludit-col">
+                <a class="aside-bludit-link" href="https://www.bludit.com" target="_blank" rel="noopener">
+                    <img class="aside-bludit-logo lozad" data-src="../bl-themes/nova/img/bludit.png"
+                        alt="Bludit" width="140" />
+                    <p class="aside-powered">
+                        Powered by Bludit                    </p>
+                </a>
+            </div>
+        </div>
+    </div>
+</aside>    <footer class="site-footer" id="site-footer">
+    <div class="container footer-inner">
+        <div class="footer-left">
+                            <a class="bludit-backer" href="https://www.patreon.com/bludit" target="_blank" rel="noopener">
+                    <img class="patreon-icon lozad" data-src="../bl-themes/nova/img/patreon.png" alt="Patreon"
+                        width="20" height="20" />
+                    <span>Bludit Backer</span>
+                </a>
+                    </div>
+
+        <div class="footer-right">
+            <span class="footer-copy">
+                <script>
+                    today = new Date();
+                    y0 = today.getFullYear();
+                    document.write('© 2019-' + y0);
+                </script>
+                                    <span class="footer-sep" aria-hidden="true">&middot;</span>
+                    <span class="footer-custom">jereme.dev</span>
+                            </span>
+        </div>
+    </div>
+</footer>
+
+<script>
+    var uploadsFolder = '../bl-content/uploads/';
+    var siteRoot = '../';
+</script>
+    <script  src="../bl-themes/nova/js/lozad.min.js?version=3.22.0"></script>
+    <script  src="../bl-themes/nova/js/theme.js?version=3.22.0"></script>
+
+    <script>(function(){var ls=document.querySelectorAll("a[href]");for(var i=0,n=ls.length;i<n;i++){var a=ls[i];if(!a.hostname||a.hostname===window.location.hostname)continue;a.target="_blank";var r=(a.getAttribute("rel")||"").split(/\s+/).filter(Boolean);if(r.indexOf("noopener")===-1)r.push("noopener");if(r.indexOf("noreferrer")===-1)r.push("noreferrer");a.setAttribute("rel",r.join(" "));}})();</script>
+<!-- Default Statcounter code for jereme.dev / -->
+<script type="text/javascript">
+var sc_project=12007932; 
+var sc_invisible=1; 
+var sc_security="71cfc510"; 
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js"
+async></script>
+<noscript><div class="statcounter"><a title="Web Analytics"
+href="https://statcounter.com/" target="_blank"><img
+class="statcounter"
+src="https://c.statcounter.com/12007932/0/71cfc510/1/"
+alt="Web Analytics"></a></div></noscript>
+<!-- End of Statcounter Code -->	</body>
+
+</html>

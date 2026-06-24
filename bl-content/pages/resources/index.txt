@@ -1,0 +1,31 @@
+This is a list of various resources that I have found to be useful.
+
+---
+
+#### Raspberry Pi
+* [Raspberry Pi Foundation](https://www.raspberrypi.org/) -- The Official Raspberry Pi site.
+* [Pi My Life Up](https://pimylifeup.com/) -- Tons of great tutorials.
+* [Raspberry Pi Spy](https://www.raspberrypi-spy.co.uk/) -- Great resources for all things Raspberry Pi.
+* [Pi-hole](https://pi-hole.net/) -- No more ads!
+* [Internet Pi](https://github.com/geerlingguy/internet-pi) - Pi-hole + Metrics Dashboards!
+* [PiVPN](http://www.pivpn.io/) -- Securely access your Pi from anywhere.
+* [The MagPi](https://magpi.raspberrypi.org/books) -- Free digital book downloads.
+
+#### Bludit
+* [Bludit](https://www.bludit.com/) -- Awesome flat file CMS!
+* [Bludit Themes](https://themes.bludit.com/) -- Official Bludit themes.
+* [Bludit Documentation](https://docs.bludit.com/) -- Everything you need to know about Bludit.
+* [Bludit Forums](https://forum.bludit.org/) -- Bludit community.
+
+#### Live Streaming
+* [Restreamer](https://datarhei.github.io/restreamer/) -- Live video streaming on your website without a streaming provider.
+
+#### Misc. Development
+* [GitHub](https://github.com) -- Version control. Must have for all developers.
+* [Vagrant](https://www.vagrantup.com/) -- Virtualized local development.
+* [Ansible](https://www.ansible.com/) -- Automate, automate, automate.
+* [Prometheus](https://prometheus.io) -- Gather and track server metrics.
+* [Grafana](https://grafana.com/) -- Create awesome dashboards to visualize your metrics.
+* [Darkmode.js](https://darkmodejs.learn.uno/) -- Add "dark mode" to your site easily.
+* [Node-RED](https://nodered.org/) -- Automate all the things!
+* [Gatsby](https://www.gatsbyjs.com/) -- Static site generator.

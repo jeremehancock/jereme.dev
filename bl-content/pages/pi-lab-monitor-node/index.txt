@@ -1,0 +1,14 @@
+I have added a new node to Pi Lab to provide a screen. I have it setup to cycle through the [Grafana](https://grafana.com/) interface from the [Prometheus Node](prometheus-grafana).
+
+I had an older [LCD screen](https://wiki.52pi.com/index.php/5-Inch-800x480-HDMI-GPIO-Touch-Screen_SKU:EP-0072) that I bought several years ago. I haven't been able to get the touch screen working yet, but not sure I really need it.
+
+### Check it out!
+
+[image src="/bl-content/uploads/pages/afc7a527f2b1d3dac643a3a2567b279f/pi-lab-monitor-large.png"]
+
+**Updates:**
+> *I started having issues with the resolution of the LCD screen.  I have updated the screen to an old 22 inch Dell monitor. *
+ 
+> *I have re-purposed the Monitor Node into the [OctoPrint Node](octoprint-node). I now have my dashbard displayed using an old Dell Latitude E6530. *
+ 
+> *This Node is now running on a re-purposed Dell Optiplex 3026 with an off brand monitor from Goodwill.*

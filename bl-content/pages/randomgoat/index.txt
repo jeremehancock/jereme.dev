@@ -1,0 +1,26 @@
+**Random Goat** is a simple website that shows random goat GIFs.
+
+That’s it — just goats.
+
+Click or tap to see a new goat anytime. No ads, no tracking, no sign-ups. Just fun, fast goat content designed to make you smile.
+
+---
+
+### Features
+
+- 🎲 Endless random goat GIFs  
+- 📱 Works on all devices  
+- ⚡ Fast and lightweight  
+- 🎃 Seasonal holiday goats  
+- 🔗 Easy to embed  
+
+---
+
+**In a chaotic world, be someone’s random goat. 🐐**
+
+[ai-disclosure-updated]
+
+## Links
+
+- Project on GitHub: [github repo="jeremehancock/RandomGoat.com"]
+- Visit Random Goat: [RandomGoat.com](https://randomgoat.com)

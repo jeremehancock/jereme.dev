@@ -1,0 +1,18 @@
+My wife and kids got me a new 3D printer for my Birthday! I have been wanting one for quite some time. It is an [Ender 3 Pro](https://creality3d.shop/collections/3d-printer/products/creality3d-ender-3-pro-high-precision-3d-printer). I am really just getting into using it but one of the first things I was told to do was check out [OctoPrint](https://octoprint.org/). 
+
+> So what is OctoPrint?
+
+It is described as *"The snappy web interface for your 3D printer."*.  That doesn't begin to explain how great I think it is. It definitely does provide a web interface for your 3D printer, but it does so much more. It also provides the ability to run manual commands and even select from a very nice selection of plugins for a variety of tasks. It truly made a nice 3D printer a much more enjoyable piece of equipment.
+
+I have re-purposed my [Monitor Node](pi-lab-monitor-node) into my new OctoPi Node. 
+
+[image src="/bl-content/uploads/pages/b488323d86f5d481bf4bac8f975a2ca3/octoprint-node.png"]
+
+So far I have mostly printed [3DBenchies](http://www.3dbenchy.com/) trying to really get my print quality dialed in. I have one functional print under my belt that I am very happy with. I have had issues with my Roomba getting stuck under our coach. So I went looking on [Thingverse](https://www.thingiverse.com) and I found this [Bumper Extension for Roomba](https://www.thingiverse.com/thing:1756175). It was for a different model and I had to do some scaling to make it large enough to keep my Roomba from going under the couch. So far it is working great!
+
+[image src="/bl-content/uploads/pages/b488323d86f5d481bf4bac8f975a2ca3/roomba-mod.png"]
+
+I have added a new [3D Printing](category/3d-printing) category to the blog and I hope to be posting many more prints very soon.
+
+**Updates:**
+> *I have added the [OctoPrint Node Live Stream](octoprint-node-live-stream)*.

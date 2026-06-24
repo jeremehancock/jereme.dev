@@ -1,0 +1,22 @@
+I have been working on getting my [Jellyfin](https://jellyfin.org/) setup configured. I am not planning on switching from [Plex](https://www.plex.tv/) just yet. I just wanted to be ready in case I needed to. It is also just fun to tinker with stuff. :)
+
+One thing that I really like in my [Plex](https://www.plex.tv/) setup is a script that I use to display what is currently playing on my server from the command line. I have it setup to run when I `ssh` in to the server. The script is called [Plex NowPlaying](https://github.com/arcadellama/plex-nowplaying).
+
+I decided to create a simplified version for [Jellyfin](https://jellyfin.org/). 
+
+Here are the variables to configure:
+
+```
+# The Jellyfin server url.
+JELLYFIN_URL="http://YOUR-DOMAIN:8096"
+
+# THe Jellyfin API key.
+API_KEY=""
+
+```
+
+![Image description](/bl-content/uploads/pages/b374f0cffd10282127faa3aad2061f6d/jellyfin-nowplaying-terminal.png)
+
+[<img data-src="/images/check-it-out-on-github.png" alt="Get it on GitHub" class="on-github lozad" />](https://github.com/jeremehancock/Jellyfin-NowPlaying#jellyfin-nowplaying)
+
+

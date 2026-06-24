@@ -1,0 +1,347 @@
+# Pi Lab Homelab Specifications
+
+*Pi Lab is my homelab that consists primarily of Raspberry Pis. This blog is hosted on the Raspberry Pi cluster that started it all.*
+
+---
+
+## <span class="emoji">📝</span> Legend & Quick Navigation
+
+| Symbol | Meaning | Jump to Section |
+|--------|---------|-----------------|
+| <span class="emoji">🍓</span> | Raspberry Pi | [Raspberry Pi Cluster](#raspberry-pi-cluster) |
+| <span class="emoji">🎬</span> | Media Server | [Plex Media Server](#plex) |
+| <span class="emoji">📊</span> | Monitoring | [Monitoring & Backup Server](#monitoring-backup-server) |
+| <span class="emoji">💾</span> | Storage/NAS | [TrueNAS Storage Server](#truenas) |
+| <span class="emoji">🚀</span> | Hosting/Platform | [TrueNAS Hosting Server](#truenas-hosting) |
+| <span class="emoji">⚡</span> | Virtualization | [Proxmox Server](#proxmox) |
+| <span class="emoji">🌐</span> | Networking | [Networking & Infrastructure](#networking-infrastructure) |
+
+---
+
+## <span class="emoji">🍓</span> Raspberry Pi Cluster <span id="raspberry-pi-cluster"/>
+
+### Common Specifications
+
+| Component | Specification |
+|-----------|--------------|
+| **Operating System** | [Raspberry Pi OS](https://www.raspberrypi.org/software/) |
+| **Storage** | Samsung EVO Plus 32GB microSDHC Cards |
+| **Power** | [Anker 60W 10-Port USB Wall Charger](https://www.amazon.com/dp/B00YRYS4T4) |
+| **Cooling** | [C4Labs Zebra Bramble Case](https://www.amazon.com/dp/B07VQKPZZT) |
+| **CMS** | [Bludit v3.13.1 PRO](https://www.bludit.com/) |
+| **Theme** | [Blekathlon](https://blthemes.pp.ua/) - Customized |
+| **Plugins** | [Pi Lab Plugins](plugins) |
+
+### Monitoring (All Nodes)
+
+| Service | Purpose |
+|---------|---------|
+| [Node Exporter](https://github.com/prometheus/node_exporter) | Linux metrics |
+| [RPi Exporter](https://github.com/lukasmalkmus/rpi_exporter) | Raspberry Pi metrics |
+
+### Node Details
+
+| Node | Hardware | Role | Services | Monitoring |
+|------|----------|------|----------|------------|
+| **pi0** | 1x RPi 4 2GB | Load Balancer | [Nginx](https://nginx.org/), [Let's Encrypt SSL](https://letsencrypt.org/) | [Dashboard](https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=2&refresh=30s&var-node=pi0) |
+| **pi1** | 1x RPi 4 2GB | Dev/Production | Development and production workloads | [Dashboard](https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=2&refresh=30s&var-node=pi1) |
+| **pi2** | 1x RPi 4 2GB | Production | Production workloads | [Dashboard](https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=2&refresh=30s&var-node=pi2) |
+| **pi3** | 1x RPi 4 2GB | Production | Production workloads | [Dashboard](https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=2&refresh=30s&var-node=pi3) |
+| **pi4** | 1x RPi 4 2GB | Production | Production workloads | [Dashboard](https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=2&refresh=30s&var-node=pi4) |
+| **pi5** | 1x RPi 4 2GB | Production | Production workloads | [Dashboard](https://pilab.dev/metrics/d/wc_mbnZRz2/pi-lab-metrics?orgId=2&refresh=30s&var-node=pi5) |
+
+**[More Pi Lab Setup Details](pi-lab-setup)**
+
+---
+
+## <span class="emoji">🖥️</span> x86 Servers
+
+---
+
+### <span class="emoji">🎬</span> Plex Media Server <span id="plex"/>
+
+#### Hardware Specifications
+
+| Component | Specification |
+|-----------|--------------|
+| **System** | [Aspire TC-1750-UR11](https://store.acer.com/en-us/aspire-tc-desktop-tc-1750-ur11) |
+| **CPU** | [Intel Core i5-12400 (up to 4.4GHz)](https://ark.intel.com/content/www/us/en/ark/products/134586/intel-core-i5-12400-processor-18m-cache-up-to-4-40-ghz.html) |
+| **RAM** | [32GB Corsair VENGEANCE LPX DDR4 3200MHz](https://www.amazon.com/Corsair-VENGEANCE-3200MHz-Compatible-Computer/dp/B07RS1G6XW) |
+| **OS** | [Ubuntu Server 22.04.3 LTS](https://ubuntu.com/download/server) |
+
+#### Storage Configuration
+
+| Purpose | Drive | Capacity | Notes |
+|---------|--------|----------|--------|
+| **OS Drive** | [WD Blue SN570 NVMe SSD](https://www.amazon.com/Western-Digital-SN570-Internal-Solid/dp/B09HKDQ1RN) | 1TB | Primary boot drive |
+| **Cache Drive** | [WD Blue SN570 NVMe SSD](https://www.amazon.com/Western-Digital-SN570-Internal-Solid/dp/B09HKDQ1RN) | 1TB | Via [SABRENT PCIe Adapter](https://www.amazon.com/dp/B084GDY2PW) |
+| **Movies** | WD_Black | 12TB | Shucked WD Ultrastar DC HC520 |
+| **Movies 2** | WD Elements | 14TB | Shucked WD140EDGZ |
+| **TV Shows** | WD easystore | 14TB | Shucked WD140EDGZ |
+| **TV Shows 2** | WD easystore | 16TB | Shucked WD160EDGZ |
+| **TV Shows 3** | Seagate Ironwolf | 8TB | Internal Drive |
+| **TV Shows 4** | WD easystore | 20TB | Shucked WD200EDGZ |
+| **Music** | Seagate BarraCuda | 2TB | ST2000DM008-2FR102 |
+| **Enclosure** | [Syba 8 Bay HDD Enclosure](https://www.amazon.com/dp/B07MD2LNYX) | - | External storage |
+
+#### Services
+
+**Core Media Services**
+
+| Service | Purpose | Type |
+|---------|---------|------|
+| [Plex Media Server](https://www.plex.tv/) | Primary media server | Native |
+| [Jellyfin](https://hub.docker.com/r/linuxserver/jellyfin) | Backup media server | Docker |
+| [Seerr](https://seerr.dev/) | Media request management | Docker |
+
+**TV/Streaming Services**
+
+| Service | Purpose | Type |
+|---------|---------|------|
+| [Dispatcharr](https://github.com/Dispatcharr/Dispatcharr) | IPTV proxy | Docker |
+| [Tunarr](https://tunarr.com) | Custom TV channels | Docker |
+
+**Content Acquisition**
+
+| Service | Purpose | Type |
+|---------|---------|------|
+| [Radarr](https://hub.docker.com/r/linuxserver/radarr) | Movie management | Docker |
+| [Sonarr](https://hub.docker.com/r/linuxserver/sonarr) | TV show management | Docker |
+| [Lidarr](https://hub.docker.com/r/linuxserver/lidarr) | Music management | Docker |
+| [Aurral](https://github.com/lklynet/aurral) | Music discovery | Docker |
+| [LidaTube](https://github.com/TheWicklowWolf/LidaTube) | YouTube integration | Docker |
+| [Prowlarr](https://hub.docker.com/r/linuxserver/prowlarr) | Indexer management | Docker |
+
+**Download Clients**
+
+| Service | Purpose | Type |
+|---------|---------|------|
+| [qBittorrent](https://github.com/linuxserver/docker-qbittorrent) | Torrent client | Docker |
+| [SABnzbd](https://hub.docker.com/r/linuxserver/sabnzbd) | Usenet client | Docker |
+
+**Support Tools**
+
+| Service | Purpose | Type |
+|---------|---------|------|
+| [Gluetun](https://github.com/qdm12/gluetun) | VPN client | Docker |
+| [FlareSolverr](https://github.com/FlareSolverr/FlareSolverr) | Cloudflare solver | Docker |
+| [Unpackerr](https://github.com/davidnewhall/unpackerr) | Archive extractor | Docker |
+| [Posteria](https://posteria.app/) | Poster management | Docker |
+| [Glimpse](https://github.com/jeremehancock/Glimpse) | Media server viewer | Docker |
+
+**Monitoring & Sync**
+
+| Service | Purpose | Type |
+|---------|---------|------|
+| [Tautulli](https://tautulli.com/) | Plex monitoring | Docker |
+| [Jellystat](https://hub.docker.com/r/cyfershepard/jellystat) | Jellyfin statistics | Docker |
+| [PlexTraktSync](https://github.com/Taxel/PlexTraktSync) | Trakt.tv sync | Docker |
+| [JellyPlex-Watched](https://github.com/luigi311/JellyPlex-Watched) | Cross-platform sync | Docker |
+| [Plex Exporter](https://github.com/axsuul/plex-media-server-exporter) | Prometheus metrics | Docker |
+| [Exportarr](https://github.com/onedr0p/exportarr) | *arr metrics | Docker |
+
+**System Management**
+
+| Service | Purpose | Type |
+|---------|---------|------|
+| [Portainer](https://www.portainer.io/) | Container management | Docker |
+| [Dozzle](https://dozzle.dev/) | Log viewer | Docker |
+| [Scrutiny](https://github.com/AnalogJ/scrutiny) | Drive monitoring | Docker |
+
+**CLI Tools**
+
+| Tool | Purpose |
+|------|---------|
+| [yt-dlp](https://github.com/yt-dlp/yt-dlp) | Music/Video downloading |
+| [deno](https://deno.com/) | JavaScript runtime for `yt-dlp` |
+| [abcde](https://manpages.ubuntu.com/manpages/jammy/en/man1/abcde.1.html) | CD ripping |
+| [Ludanta](https://github.com/jeremehancock/Ludanta) | Plex/Jellyfin Now playing script |
+
+---
+
+### <span class="emoji">📊</span> Monitoring & Backup Server <span id="monitoring-backup-server"/>
+
+#### Hardware Specifications
+
+| Component | Specification |
+|-----------|--------------|
+| **System** | Dell OptiPlex 3060 Small Form Factor |
+| **CPU** | [Intel Core i3-8100 @ 3.60GHz](https://ark.intel.com/content/www/us/en/ark/products/126688/intel-core-i38100-processor-6m-cache-3-60-ghz.html) |
+| **RAM** | 32GB DDR4 SDRAM 2133 MT/s |
+| **OS** | [Ubuntu Server 22.04.3 LTS](https://ubuntu.com/download/server) |
+
+#### Storage Configuration
+
+| Purpose | Drive | Capacity | Connection |
+|---------|--------|----------|------------|
+| **OS Drive** | [WD Blue SN580 NVMe SSD](https://www.amazon.com/dp/B0C8XMH264) | 1TB | Via [SABRENT PCIe Adapter](https://www.amazon.com/dp/B084GDY2PW) |
+| **Backup Storage** | [Seagate BarraCuda HDD](https://www.amazon.com/Seagate-Barracuda-ST4000LM024-Internal-Drive/dp/B01LXCE9W9/) | 4TB | Internal SATA |
+
+#### Services
+
+| Service | Purpose | Type |
+|---------|---------|------|
+| [Portainer](https://www.portainer.io/) | Container management | Docker |
+| [Dozzle](https://dozzle.dev/) | Log viewer | Docker |
+| [Scrutiny](https://github.com/AnalogJ/scrutiny) | Drive monitoring | Docker |
+| [Watchtower](https://hub.docker.com/r/nickfedor/watchtower) | Auto-updates | Docker |
+
+---
+
+### <span class="emoji">💾</span> TrueNAS Storage Server <span id="truenas"/>
+
+#### Hardware Specifications
+
+| Component | Specification |
+|-----------|--------------|
+| **System** | Dell Precision 5820 |
+| **CPU** | [Intel Xeon W-2135 @ 3.70GHz](https://www.intel.com/content/www/us/en/products/sku/126709/intel-xeon-w2135-processor-8-25m-cache-3-70-ghz/specifications.html) |
+| **RAM** | 128GB DDR4 ECC SDRAM |
+| **GPU** | NVIDIA GeForce 8400 GS Rev. 3 |
+| **PSU** | 950W |
+| **OS** | [TrueNAS Community Edition](https://www.truenas.com/truenas-community-edition/) |
+
+#### Storage Configuration
+
+| Purpose | Drive | Capacity | Configuration |
+|---------|--------|----------|---------------|
+| **Boot Drive** | [Crucial 500GB SSD](https://www.amazon.com/dp/B0786QNS9B) | 500GB | Via [Sedna PCIe SATA Adapter](https://www.amazon.com/dp/B01452SP1O) |
+| **Storage Array** | [Seagate IronWolf](https://www.amazon.com/dp/B09NHV3CK9) | 4TB x2 | RAIDZ2 |
+| **Storage Array** | [Seagate Internal](https://www.amazon.com/dp/B07J46FXHK) | 4TB | RAIDZ2 |
+| **Storage Array** | [HGST Ultrastar](https://www.amazon.com/dp/B079JRGP4N) | 4TB x2 | RAIDZ2 |
+| **Drive Bay** | [3.5" to 5.25" Cage Adapter](https://www.amazon.com/dp/B08BNTNTCY) | - | Additional mounting |
+
+#### TrueNAS Apps
+
+| App | Purpose |
+|-----|---------|
+| [Tailscale](https://apps.truenas.com/catalog/tailscale/) | VPN access |
+| [Scrutiny](https://apps.truenas.com/catalog/scrutiny/) | SMART Monitoring |
+| [Syncthing](https://syncthing.net/) | File synchronization |
+| [Pi-Hole](https://pi-hole.net/) | DNS filtering |
+
+#### Virtual Machines (Containers)
+
+**Ubuntu 22.04 Server**
+
+| Service | Purpose | Type |
+|---------|---------|------|
+| [Paperless-ngx](https://docs.paperless-ngx.com/) | Document management | Docker |
+| [Nextcloud](https://hub.docker.com/_/nextcloud) | Cloud storage | Docker |
+| [KaraKeep](https://karakeep.app) | Bookmark manager | Docker |
+| [Portainer](https://www.portainer.io/) | Container management | Docker |
+| [Dozzle](https://dozzle.dev/) | Log viewer | Docker |
+| [Watchtower](https://hub.docker.com/r/nickfedor/watchtower) | Auto-updates | Docker |
+
+---
+
+### <span class="emoji">🚀</span> TrueNAS Hosting Server <span id="truenas-hosting"/>
+
+#### Hardware Specifications
+
+| Component | Specification |
+|-----------|--------------|
+| **System** | Custom system in Fractal case |
+| **CPU** | [AMD Ryzen 5 3400G with Radeon Vega Graphics](https://www.cpubenchmark.net/cpu.php?cpu=AMD+Ryzen+5+3400G&id=3498) |
+| **RAM** | [64GB GIGASTONE Game PRO DDR4 3200MHz](https://www.amazon.com/dp/B0D5R7PJCJ) |
+| **OS** | [TrueNAS Community Edition](https://www.truenas.com/truenas-community-edition/) |
+
+#### Storage Configuration
+
+| Purpose | Drive | Capacity | Configuration |
+|---------|--------|----------|---------------|
+| **OS Drive** | ORICO 128GB M.2 NVMe SSD | 128GB | PCIe Gen3x4 2280 SSD |
+| **Storage Array** | [WD Blue Mobile Hard Drives](https://www.amazon.com/dp/B071F9MLJJ) | 1TB x4 | RAIDZ1 Array |
+
+
+#### TrueNAS Apps
+| App | Purpose |
+|-----|---------|
+| [Tailscale](https://apps.truenas.com/catalog/tailscale/) | VPN access |
+| [Scrutiny](https://apps.truenas.com/catalog/scrutiny/) | SMART Monitoring |
+
+#### Virtual Machines (Containers)
+
+**Ubuntu Focal AMD64**
+
+| Service | Purpose | Type |
+|---------|---------|------|
+| [Coolify](https://coolify.io/) | Self-hosted platform | Docker |
+
+---
+
+### <span class="emoji">⚡</span> Proxmox Virtualization Server <span id="proxmox"/>
+
+#### Hardware Specifications
+
+| Component | Specification |
+|-----------|--------------|
+| **System** | [Minisforum MS-A1](https://store.minisforum.com/products/minisforum-ms-a1?variant=45707673338101) |
+| **CPU** | [AMD Ryzen 7 8700G](https://www.amd.com/en/products/processors/desktops/ryzen/8000-series/amd-ryzen-7-8700g.html) |
+| **RAM** | [64GB DDR5](https://www.amazon.com/dp/B09YN1SMYJ) |
+| **OS** | [Proxmox VE](https://proxmox.com/) |
+
+#### Storage Configuration
+
+| Purpose | Drive | Capacity | Configuration |
+|---------|--------|----------|---------------|
+| **OS** | NVMe SSD | 512GB | Boot drive |
+| **VM Storage** | NVMe SSD | 1TB x2 | Mirrored |
+| **VM Backups** | [WD Blue SN580 NVMe SSD](https://www.amazon.com/dp/B0C8XMH264) | 1TB | Backup storage |
+
+#### Virtual Machines
+
+**Ubuntu 22.04 Server**
+
+| Service | Purpose | Type |
+|---------|---------|------|
+| [Nginx Proxy Manager](https://github.com/NginxProxyManager/nginx-proxy-manager) | Reverse proxy | Docker |
+| [Homarr](https://homarr.dev) | Dashboard | Docker |
+| [Uptime Kuma](https://github.com/louislam/uptime-kuma) | Uptime monitoring | Docker |
+| [Pushover](https://pushover.net/) | Notifications | Service |
+| [Speedtest Tracker](https://docs.speedtest-tracker.dev/) | Speed monitoring | Docker |
+| [OpenSpeedTest](https://openspeedtest.com/) | Speed testing | Docker |
+| [Prometheus](https://hub.docker.com/r/ubuntu/prometheus) | Metrics collection | Docker |
+| [Restreamer](https://github.com/datarhei/restreamer) | Video streaming | Docker |
+| [Portainer](https://www.portainer.io/) | Container management | Docker |
+| [Dozzle](https://dozzle.dev/) | Log viewer | Docker |
+| [Watchtower](https://hub.docker.com/r/nickfedor/watchtower) | Auto-updates | Docker |
+
+#### LXC Containers
+
+| Container | Purpose | Link |
+|-----------|---------|------|
+| [Pi-hole](https://community-scripts.github.io/ProxmoxVE/scripts?id=pihole) | DNS filtering | [Setup Guide](https://community-scripts.github.io/ProxmoxVE/scripts?id=pihole) |
+| [Grafana](https://community-scripts.github.io/ProxmoxVE/scripts?id=grafana) | Data visualization | [Setup Guide](https://community-scripts.github.io/ProxmoxVE/scripts?id=grafana) |
+| [Node-RED](https://community-scripts.github.io//Proxmox/#node-red-lxc) | Automation | [Setup Guide](https://community-scripts.github.io//Proxmox/#node-red-lxc) |
+| [Vaultwarden](https://github.com/dani-garcia/vaultwarden) | Password manager | [Repository](https://github.com/dani-garcia/vaultwarden) |
+| [SearXNG](https://community-scripts.github.io/ProxmoxVE/scripts?id=searxng) | Search Engine | [Setup Guide](https://community-scripts.github.io/ProxmoxVE/scripts?id=searxng) |
+
+---
+
+## <span class="emoji">🌐</span> Networking & Infrastructure <span id="networking-infrastructure"/>
+
+### Internet & Routing
+
+| Component | Model | Purpose |
+|-----------|-------|---------|
+| **ISP** | AT&T 1 GIG Fiber | Internet connection |
+| **Gateway** | [AT&T BGW-320](https://www.amazon.com/802-11a-Wireless-ax-Integrated-Residential-Replaces/dp/B08PCRYJPW) | Fiber gateway (Passthrough Mode) |
+| **WiFi** | [Google Nest WiFi Pro](https://www.amazon.com/Google-Nest-WiFi-Pro-Reliable/dp/B0BQCRST1K) | Mesh network (4-pack) |
+
+### Network Switching
+
+| Component | Model | Ports | Purpose |
+|-----------|-------|-------|---------|
+| **Main Switch** | [TP-Link 16 Port Gigabit](https://www.amazon.com/TP-Link-16-Port-Gigabit-Ethernet-Switch/dp/B07GR9S6FN) | 16 | Primary network switch |
+| **Secondary Switch** | [NETGEAR 5-Port Gigabit](https://www.amazon.com/NETGEAR-Ethernet-Unmanaged-Protection-GS105NA/dp/B0000BVYT3) | 5 | Additional ports |
+
+### Power Protection
+
+| Component | Model | Capacity | Quantity |
+|-----------|-------|----------|----------|
+| **UPS** | [CyberPower CP1000PFCLCD](https://www.amazon.com/CyberPower-CP1000PFCLCD-Sinewave-Outlets-Mini-Tower/dp/B00429N192) | 1000VA | 2 units |
+
+---
+
+*For more detailed Pi Lab setup information, visit the [Pi Lab Setup Guide](pi-lab-setup).

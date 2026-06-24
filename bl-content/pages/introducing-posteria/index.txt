@@ -1,0 +1,89 @@
+Imagine a world where your Plex media library looks as professional as it feels. Posteria is the solution Plex enthusiasts have been waiting for – a sleek, intuitive platform that transforms how you organize and showcase your movie, TV show, and collection artwork.
+
+## Why Posteria Matters
+
+For anyone with a growing Plex media collection, poster management can quickly become a frustrating mess. Mismatched artwork, cluttered folders, and inconsistent designs can turn your digital library into a visual nightmare. Posteria changes all that.
+
+### Features That Make a Difference
+
+<span class="emoji">🖥️</span> **Clean, Modern Interface**  
+Say goodbye to cluttered poster libraries. Posteria offers an intuitive design that makes managing your media artwork as enjoyable as watching your favorite shows.
+
+<span class="emoji">📁</span> **Smart Organization**  
+Keep everything perfectly sorted with dedicated categories for:
+* Movies
+* TV Shows
+* TV Seasons
+* Collections
+
+<span class="emoji">📥</span> **Import from Plex**  
+Easily import existing posters directly from your Plex Media Server with just a few clicks.
+
+<span class="emoji">📤</span> **Export to Plex**  
+Send your custom posters directly back to your Plex Media Server, ensuring visual consistency across your entire media library.
+
+<span class="emoji">🎬</span> **TMDB Integration**  
+The Movie Database (TMDB) is now fully integrated with Posteria, allowing for automatic poster fetching directly TMDB.
+
+<span class="emoji">🧹</span> **Orphan Detection**  
+Identify and manage orphaned posters that aren't linked to media, keeping your collection clean and relevant.
+
+<span class="emoji">📱</span> **Installable PWA**  
+Fully mobile-responsive and installable as a Progressive Web App (PWA), Posteria goes wherever you go.
+
+## Screenshot
+
+[image src="https://raw.githubusercontent.com/jeremehancock/Posteria/main/images/posteria.png"]
+
+## More Than Just an App
+
+Posteria isn't just a tool – it's a love letter to Plex users who care about the details. It's designed for people who see their media library as more than just files – it's a reflection of their taste, memories, and passion for visual consistency.
+
+### Who Is Posteria For?
+
+- Plex server owners who take pride in their media presentation
+- Movie collectors seeking visual consistency
+- TV show enthusiasts wanting organized season posters
+- Media enthusiasts who appreciate attention to detail
+
+## Get Started
+
+Ready to transform your Plex media library? Visit [posteria.app](https://posteria.app) for full installation instructions, configuration options, and how to get started.
+
+## Finding the Perfect Posters
+
+Posteria works wonderfully with popular poster sources like:
+- The Poster Database (TPDB)
+- **The Movie Database (TMDB)** - Now fully integrated for automatic poster fetching
+- The TV Database (TVDB)
+- Mediux
+
+The application even supports using Mediux YAML files in the URL uploader when changing posters, making it a convenient choice for managing your collection.
+
+## Security Made Simple
+
+Posteria includes basic authentication to protect your poster collection. For accessing Posteria outside your network, it's recommended to use a service like [Tailscale](https://tailscale.com) or another VPN solution rather than exposing it directly to the internet.
+
+## Support the Project
+
+<span class="emoji">❤️</span> Found Posteria useful? Consider supporting the developer and helping them continue improving this amazing tool!
+
+<a href="https://www.buymeacoffee.com/jeremehancock"><img src="https://img.buymeacoffee.com/button-api/?text=Hard%20drive%20fund&amp;emoji=%F0%9F%92%BB&amp;slug=jeremehancock&amp;button_colour=f5a623&amp;font_colour=000000&amp;font_family=Bree&amp;outline_colour=000000&amp;coffee_colour=FFDD00" /></a>
+
+## Technical Highlights
+
+- **Docker-based**: Easy deployment on any system
+- **Flexible Configuration**: Customize to fit your needs
+- **TMDB Integration**: Seamless access to thousands of posters
+- **Simple Authentication**: Protect your poster collection
+- **Open Source**: MIT Licensed
+- **Built with <span class="emoji">❤️</span> for the Plex community**
+
+Posteria isn't just an app – it's your Plex library's new best friend. Organize, beautify, and enjoy your collection like never before!
+
+[ai-disclosure]
+
+## Links
+
+- GitHub: [github repo="jeremehancock/Posteria"]
+- Posteria Website: [posteria.app](https://posteria.app)

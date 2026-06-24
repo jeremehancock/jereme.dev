@@ -1,0 +1,15 @@
+Recently while visiting a friend for their retirement ceremony I came across a deal too good to pass up. I was in Oklahoma for the event. It was an Air Force retirement. The base is a smaller one so I knew I had to check out the BX. I have always found great deals on returned items at the BX on small bases.
+
+I was shocked to find something better than a returned item. It was a display model. It was a [Aspire TC-1750-UR11](https://store.acer.com/en-us/aspire-tc-desktop-tc-1750-ur11) which has an i5-12400 Intel CPU with QuickSync. This would be a nice upgrade from my Dell OptiPlex 3060 with an i3-8100. The price was the best part.** $150!** 
+
+That's right I got it for $150 with no sales tax since it was at the BX.
+
+I was able to migrate my existing Plex install to a 1TB NVMe drive that I already had. I put that drive in the new machine and it just fired right up. I also upgraded the RAM with 2 16GB sticks that I already had on hand.
+
+It has been an awesome upgrade and the migration was super simple!
+
+### Check it out!
+
+[image src="/bl-content/uploads/pages/43b7edbcad678bca496b82316ea68fed/plex-upgrade-large.png"]
+
+See full server specs here:  [homelab]

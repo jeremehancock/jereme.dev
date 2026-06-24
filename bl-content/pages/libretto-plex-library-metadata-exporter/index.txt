@@ -1,0 +1,61 @@
+Hello, fellow Plex enthusiasts! If you're anything like me, you've poured countless hours into organizing your Plex media libraries just the way you like them. Carefully filling in movie details, series summaries, episode titles - it's a true labor of love. <span class="emoji">😊</span>
+
+But have you considered what would happen if you lost all that painstakingly curated metadata? Server crashes, database corruptions - these things happen, and they could wipe out all your hard work in a heartbeat! <span class="emoji">😱</span>
+
+Fear not, for Libretto is here to save the day! <span class="emoji">🦸‍♂️</span>
+
+## Libretto: Your Metadata Safety Net <span class="emoji">🌟</span>
+
+Libretto is a clever Python script that interfaces with your Plex server and exports detailed metadata about your Movie, TV Show, and Music libraries into neatly formatted CSV files.
+
+So, what sort of metadata does Libretto back up? Here's a peek:
+
+### Movies <span class="emoji">🎬</span>
+- Title, Year, Duration, Rating 
+- Studio, Content Rating, Tagline, Summary
+- Media Info (Resolution, Audio/Video Codecs, etc.)
+- File Details (Size, Container, etc.)
+- Genre, Country, Director, Writer, Actor Info
+- ...and more!
+
+### TV Shows <span class="emoji">📺</span>
+- Series Title, Episode Count, Season Count
+- Studio, Content Rating, Summary, Rating  
+- Original Air Date, Duration
+- Genre, Country, Actor Info
+- ...and more!
+
+### Music <span class="emoji">🎵</span>
+- Artist, Album, Year
+- Genre, Studio
+- ...and more!
+
+Libretto fetches all this valuable metadata and saves it into tidy CSV files, giving you a full backup of your library details at the time of export.
+
+## The Importance of Metadata Backups <span class="emoji">💡</span>
+
+You might be thinking, "I already back up my media files themselves. Why do I need a separate metadata backup?"
+
+While your media files do contain the actual content, it's the metadata that truly makes your Plex library unique. Details like summaries, ratings, original air dates - these are what could be lost if something goes wrong with your Plex server.
+
+With Libretto, you'll have a metadata backup at the ready. If you ever need to rebuild your Plex library from the ground up, you can use these CSV files to restore key details. Think of it as an insurance policy for your Plex library metadata!
+
+## Using Libretto is a Breeze <span class="emoji">🍃</span>
+
+Getting started with Libretto couldn't be easier. Just grab the Python script from the [GitHub repo](https://github.com/jeremehancock/Libretto), set it up with your Plex server info, and let it do its thing! You can back up individual libraries or your entire server in one go.
+
+You can even set up a cron job or scheduled task to run Libretto automatically, ensuring your metadata backups are always up to date without you having to lift a finger. Set it and forget it, and enjoy the peace of mind that comes with knowing your Plex library metadata is safe and sound.
+
+## Get Libretto Today! <span class="emoji">💾</span>
+
+Ready to give your Plex metadata the safety net it deserves? Snag Libretto from [GitHub](https://github.com/jeremehancock/Libretto) now - it's 100% free and open-source!
+
+With Libretto in your corner, you'll never need to stress over losing your lovingly curated Plex library details again. <span class="emoji">🎉</span>
+
+Happy backing up, Plex friends!<span class="emoji"> 🤗📚🎬🎵</span>
+
+[ai-disclosure]
+
+## Links
+
+- Project on GitHub: [github repo="jeremehancock/Libretto"]

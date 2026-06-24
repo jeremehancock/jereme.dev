@@ -1,0 +1,134 @@
+The goal of this project is to create a quick containerized environment with a Bludit installation for testing and development purposes. You can stop and start the container without overwriting your Bludit install.
+
+The following technologies are automatically installed for you:
+
+* Debian (slim, via the official `php:8.2-apache` image)
+* Apache 2
+* PHP 8
+* [Bludit](https://www.bludit.com/) (Latest Version)
+
+## Pre-Installation
+
+1. Install [Docker](https://docs.docker.com/get-docker/)
+2. Install [Docker Compose](https://docs.docker.com/compose/install/) (bundled with Docker Desktop)
+
+## Installation Instructions
+
+1. Find a directory on your computer where you'd like to install this repo
+2. Run `git clone https://github.com/jeremehancock/Bludit-Docker.git`
+3. Run `cd Bludit-Docker`
+4. (Linux, recommended) Set up `.env` so Bludit files on the host are owned by your user instead of `root`. Without this, files created by the root-running container in the bind-mounted `localhost/www/html/bludit` directory end up owned by `root` and are awkward to edit or delete. The entrypoint re-aligns the in-container `www-data` user to match the `PUID` and `PGID` you set in `.env`, then chowns `/var/www/html` recursively.
+
+   The repo ships with an `.env.example` file you can copy as a starting point:
+   ```
+   cp .env.example .env
+   ```
+   The defaults (`PUID=1000`, `PGID=1000`) match the first user on most Linux systems. If your user's IDs differ, populate `.env` with them directly:
+   ```
+   printf "PUID=%s\nPGID=%s\n" "$(id -u)" "$(id -g)" > .env
+   ```
+   If you already had a `bludit` directory owned by `root`, the entrypoint will chown the existing files to your user on the next start. If anything is still owned by `root` after that, run a one-off fix:
+   ```
+   sudo chown -R "$(id -u):$(id -g)" localhost/www/html
+   ```
+   On Docker Desktop (macOS/Windows) the bind mount is already remapped to your user, so this step is optional.
+5. Run `docker compose up -d --build`
+
+On the first start the container will:
+
+* Query the GitHub API for the **latest** Bludit release
+* Download and extract the zip into `localhost/www/html/bludit`
+* Drop a marker file (`.bludit-installed`) so subsequent starts skip the download
+* Configure Apache (`mod_rewrite`, virtual host with `DocumentRoot` pointing at the Bludit directory)
+* Start Apache in the foreground
+
+## Usage
+
+1. Wait for the container to finish provisioning. You can follow along with:
+   ```
+   docker compose logs -f
+   ```
+2. Point your web browser to `http://localhost:9090` to view your Bludit site
+3. Follow the steps to complete the Bludit installation
+4. If you'd like a shell inside the running container:
+   ```
+   docker compose exec bludit bash
+   ```
+5. Bludit files are located in `localhost/www/html/bludit` on your local machine and are bind-mounted to `/var/www/html/bludit` inside the container
+
+## Start / Stop
+
+Because Bludit lives in a bind-mounted directory on your host, you can stop and start the container freely without losing your site.
+
+* Stop the container (keep data):
+  ```
+  docker compose stop
+  ```
+* Start it again later:
+  ```
+  docker compose start
+  ```
+* Or bring it down and back up (image stays cached):
+  ```
+  docker compose down
+  docker compose up -d
+  ```
+
+## Upgrade
+
+Bludit is only downloaded and copied on the **first** `docker compose up`. After that, recreating the container will re-apply the Apache/PHP configuration but will **not** touch your existing Bludit install. This is tracked by the marker file `localhost/www/html/bludit/.bludit-installed`.
+
+To force a fresh Bludit download (overwriting your site):
+
+1. Back up `localhost/www/html/bludit` first
+2. Delete the marker file:
+   ```
+   rm localhost/www/html/bludit/.bludit-installed
+   ```
+3. Restart the container so the entrypoint re-runs:
+   ```
+   docker compose restart
+   ```
+
+> A forced re-install will overwrite custom modifications to Bludit. It will not overwrite the content or settings that you have applied in the Bludit admin panel (those live under `bl-content/` and are preserved), but you should still back up first.
+
+## Rebuilding the Image
+
+If you change the `Dockerfile`, `setup/bludit.conf`, or `setup/entrypoint.sh`, rebuild with:
+
+```
+docker compose up -d --build
+```
+
+## Cleanup
+
+* Stop and remove the container but keep your Bludit site on disk:
+  ```
+  docker compose down
+  ```
+* Remove the container, image, **and** your local Bludit install:
+  ```
+  docker compose down --rmi local
+  rm -rf localhost/www/html/bludit
+  ```
+
+## Project Layout
+
+```
+Bludit-Docker/
+├── Dockerfile               # PHP 8 + Apache + required extensions
+├── docker-compose.yml       # Service definition, port mapping, bind mount
+├── setup/
+│   ├── bludit.conf          # Apache virtual host for Bludit
+│   └── entrypoint.sh        # Downloads latest Bludit on first run; chowns and starts Apache
+└── localhost/
+    └── www/
+        └── html/            # Bind-mounted to /var/www/html inside the container
+            └── bludit/      # Bludit lives here after first start (gitignored)
+```
+
+[ai-disclosure]
+
+## Links
+
+- GitHub: [github repo="jeremehancock/Bludit-Docker"]
