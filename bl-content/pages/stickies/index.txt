@@ -1,4 +1,4 @@
-[image src="/bl-content/uploads/pages/a731e541cf09bb5a73708da611f70142/screenshot-updated-png.png"]
+[image src="/bl-content/uploads/pages/a731e541cf09bb5a73708da611f70142/screenshot-with-md-png.png"]
 
 ## A Sticky Note App That Doesn't Want Your Email
 
