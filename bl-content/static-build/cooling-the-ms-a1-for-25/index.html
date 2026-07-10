@@ -41,7 +41,7 @@
 <meta property="og:url" content="https://jereme.dev/cooling-the-ms-a1-for-25">
 <meta property="og:site_name" content="jereme.dev">
 <meta property="article:published_time" content="2026-07-10T12:24:04-05:00">
-<meta property="article:modified_time" content="2026-07-10T12:52:42-05:00">
+<meta property="article:modified_time" content="2026-07-10T13:49:42-05:00">
 <meta property="article:author" content="Admin">
 <meta property="og:image" content="https://jereme.dev/bl-content/uploads/pages/b959f15ae4e9b4058d6d3bea20c24ce1/cooling-minisforum-png.png">
 <meta property="og:image:alt" content="Cooling the MS-A1 for $25">
@@ -234,11 +234,15 @@
             <div class="page-content">
                 <p>My Proxmox host had a problem. The Minisforum MS-A1 sitting on my shelf was hot. Not "warm because the aluminum chassis doubles as a heatsink" hot — that part is by design. This was "put your hand on the lid and immediately reconsider your life choices" hot.</p>
 <p>The weirder part: after a reboot, it would run cool for about a day, and then heat up and <em>stay</em> hot. That pattern nagged at me enough to actually go get some numbers instead of relying on the highly scientific hand-on-lid test.</p>
-<h2>Getting temps</h2>
+<h2>Getting temps out of the thing</h2>
 <p>If you run <code>sensors-detect</code> on one of these and it comes up empty, don't panic. The embedded controller on Minisforum boards isn't supported by mainline lm-sensors, so probing finds nothing. The good news is you don't need it — the sensors that actually matter come through completely different paths:</p>
 <blockquote>
-<p><strong>Note:</strong> All the commands in this post are from my Proxmox host, run directly on the host shell as root. They'll work on most Debian-based systems (you may need <code>sudo</code> and <code>apt install lm-sensors</code> first), but package names and paths can differ on other distros.</p>
+<p><strong>Note:</strong> All the commands in this post are from my Proxmox host, run directly on the host shell as root. Proxmox is Debian under the hood, so this should translate to most Debian-based systems (add <code>sudo</code> as needed), but package names and paths can differ on other distros.</p>
 </blockquote>
+<p>Proxmox doesn't ship with lm-sensors, so install it first:</p>
+<pre><code class="language-bash">apt update
+apt install lm-sensors</code></pre>
+<p>Then load the AMD CPU temp driver and read everything:</p>
 <pre><code class="language-bash">modprobe k10temp   # AMD CPU die temp
 sensors</code></pre>
 <p>On a recent kernel, that gets you the CPU (<code>k10temp</code>), every NVMe drive (<code>nvme-pci-*</code>), the iGPU (<code>amdgpu</code>), the DDR5 DIMM sensors (<code>spd5118</code>), and even the Realtek NICs. No config, no drama.</p>

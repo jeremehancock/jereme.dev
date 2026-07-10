@@ -2,11 +2,20 @@ My Proxmox host had a problem. The Minisforum MS-A1 sitting on my shelf was hot.
 
 The weirder part: after a reboot, it would run cool for about a day, and then heat up and *stay* hot. That pattern nagged at me enough to actually go get some numbers instead of relying on the highly scientific hand-on-lid test.
 
-## Getting temps
+## Getting temps out of the thing
 
 If you run `sensors-detect` on one of these and it comes up empty, don't panic. The embedded controller on Minisforum boards isn't supported by mainline lm-sensors, so probing finds nothing. The good news is you don't need it — the sensors that actually matter come through completely different paths:
 
-> **Note:** All the commands in this post are from my Proxmox host, run directly on the host shell as root. They'll work on most Debian-based systems (you may need `sudo` and `apt install lm-sensors` first), but package names and paths can differ on other distros.
+> **Note:** All the commands in this post are from my Proxmox host, run directly on the host shell as root. Proxmox is Debian under the hood, so this should translate to most Debian-based systems (add `sudo` as needed), but package names and paths can differ on other distros.
+
+Proxmox doesn't ship with lm-sensors, so install it first:
+
+```bash
+apt update
+apt install lm-sensors
+```
+
+Then load the AMD CPU temp driver and read everything:
 
 ```bash
 modprobe k10temp   # AMD CPU die temp
