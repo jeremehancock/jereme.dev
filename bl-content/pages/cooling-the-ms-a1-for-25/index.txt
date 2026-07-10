@@ -1,0 +1,72 @@
+My Proxmox host had a problem. The Minisforum MS-A1 sitting on my shelf was hot. Not "warm because the aluminum chassis doubles as a heatsink" hot — that part is by design. This was "put your hand on the lid and immediately reconsider your life choices" hot.
+
+The weirder part: after a reboot, it would run cool for about a day, and then heat up and *stay* hot. That pattern nagged at me enough to actually go get some numbers instead of relying on the highly scientific hand-on-lid test.
+
+## Getting temps out of the thing
+
+If you run `sensors-detect` on one of these and it comes up empty, don't panic. The embedded controller on Minisforum boards isn't supported by mainline lm-sensors, so probing finds nothing. The good news is you don't need it — the sensors that actually matter come through completely different paths:
+
+> **Note:** All the commands in this post are from my Proxmox host, run directly on the host shell as root. They'll work on most Debian-based systems (you may need `sudo` and `apt install lm-sensors` first), but package names and paths can differ on other distros.
+
+```bash
+modprobe k10temp   # AMD CPU die temp
+sensors
+```
+
+On a recent kernel, that gets you the CPU (`k10temp`), every NVMe drive (`nvme-pci-*`), the iGPU (`amdgpu`), the DDR5 DIMM sensors (`spd5118`), and even the Realtek NICs. No config, no drama.
+
+## The numbers were not great
+
+Both RAM sticks were sitting at ~57°C and tripping their high-temp alarm — at *idle*. But the real headline was one NVMe drive whose controller sensor read **82.8°C**. That's about 5°C from the drive's critical threshold, on a box that was mostly loafing.
+
+Here's the part that made it all click: that drive is mounted on the **underside of the motherboard**. It's not under the SSD heatsink plate with the other drives. There's a small fan next to it that's supposed to keep it happy, but the drive itself is bare — no heatsink, no pad, no thermal mass. Blowing air across a naked drive only cools the surfaces the air can touch, and the controller die is buried under the label and casing. That little fan clearly wasn't enough on its own, and the drive was slowly cooking itself anyway.
+
+That also explained the reboot mystery. The chassis has a lot of thermal mass. After a reboot (and the downtime around it), all that metal starts cool, and it takes most of a day for the case to fully heat-soak. Once it does, the whole box settles into a new, hotter equilibrium — and a naked drive in stagnant air feels every degree of it.
+
+## The fix: $25 and ten minutes
+
+Two parts:
+
+**1. A 1mm copper heatsink on the naked drive.** I used [this copper NVMe heatsink kit](https://www.amazon.com/dp/B0CWNKFWLJ) — a thin copper plate with a thermal pad. Copper is a fantastic lateral spreader, so it takes the concentrated hot spot on the controller die and smears it across the whole drive footprint. The drive goes from zero thermal solution to an actual heat path.
+
+**2. A USB fan on top of the case, blowing in.** I used an [AC Infinity MULTIFAN](https://www.amazon.com/AC-Infinity-MULTIFAN-Receiver-Playstation/dp/B00G05A2MU) sitting on the top mesh, pushing air *into* the chassis. On my unit, the top mesh is the intake and exhaust flows out both the front and the back (mostly the front, going by hand-feel) — so a fan pushing down through the top mesh supercharges the intake instead of fighting it. (Worth verifying on your own unit before committing: hold a tissue strip over the mesh and see which way it moves. A fan fighting the existing airflow can make things worse.) It's dead quiet and powers straight off a USB port on the box itself.
+
+That second part matters more than it sounds. Since the chassis *is* the heatsink, the whole system's equilibrium is set by how fast the case can shed heat into room air. Forcing air through it lowers that equilibrium for everything inside — which is exactly what kills the heat-soak problem.
+
+## Before and after
+
+Same box, same workload. Before is the fully heat-soaked state; after is with the copper heatsink and fan in place.
+
+| Sensor | Before | After | Δ |
+|---|---|---|---|
+| NVMe controller (problem drive, Sensor 1) | 82.8°C 🔥 | 65.8°C | **−17.0°C** |
+| NVMe composite (problem drive) | 60.9°C | 45.9°C | **−15.0°C** |
+| RAM (DIMM 1) | 57.2°C ⚠️ | 37.2°C | **−20.0°C** |
+| RAM (DIMM 2) | 56.8°C ⚠️ | 37.8°C | **−19.0°C** |
+| CPU (Tctl) | 53.6°C | 37.6°C | **−16.0°C** |
+| iGPU (edge) | 50.0°C | 33.0°C | **−17.0°C** |
+| NVMe 2 (composite) | 51.9°C | 30.9°C | **−21.0°C** |
+| NVMe 3 (composite) | 46.9°C | 34.9°C | **−12.0°C** |
+| NVMe 4 (composite) | 41.9°C | 39.9°C | −2.0°C |
+| 2.5G NIC 1 | 55.5°C | 39.0°C | **−16.5°C** |
+| 2.5G NIC 2 | 56.5°C | 40.0°C | **−16.5°C** |
+
+Every alarm cleared. The problem drive's controller dropped out of the danger zone entirely, the RAM went from actively alarming to 18 degrees of headroom, and even the NICs — which I did nothing to — dropped 16 degrees, because the entire internal air environment cooled off.
+
+## Takeaways
+
+- **The hand-on-lid test lies.** On a machine designed to dump heat through its chassis, a hot case can mean everything is working *or* that something inside is dying. Only `sensors` knows the difference. (In my case the lid ended up cool too — with the fan moving air through the box, most of the heat leaves in the airflow instead of soaking into the shell.)
+- **Check the underside of the board.** The MS-A1 has four M.2 slots and not all of them get love from the stock cooling. If one drive runs 20-30°C hotter than its siblings, figure out where it physically lives before theorizing. `ls -l /sys/class/nvme/` maps the PCI addresses in the sensor names to actual drives, and `cat /sys/class/nvme/nvme*/model` tells you which is which.
+- **Reboot-cool-then-hot = heat soak.** If temps are fine for hours and then creep to a hot plateau, you're watching the chassis thermal mass saturate, not a software problem. The fix is physical.
+- **Log it.** A dumb loop appending `sensors` output to a file every five minutes turns "I think it's better?" into an actual before/after curve. One line of bash, zero regrets:
+
+  ```bash
+  while true; do echo "=== $(date) ===" >> /root/temps.log; sensors >> /root/temps.log; sleep 300; done &
+  ```
+
+Total cost: about $25 and one evening. The box has been holding these temps ever since, Texas summer and all.
+
+## Links
+
+- Heatsink: [1mm copper NVMe heatsink kit](https://www.amazon.com/dp/B0CWNKFWLJ) 
+- Fan : [AC Infinity MULTIFAN USB fan](https://www.amazon.com/AC-Infinity-MULTIFAN-Receiver-Playstation/dp/B00G05A2MU) 

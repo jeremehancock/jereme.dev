@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="auto">
+
+<head>
+    <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d0f12" media="(prefers-color-scheme: dark)">
+
+<title>Cooling the MS-A1 for $25 | jereme.dev</title>
+<meta name="description" content="My Proxmox host had a problem. The Minisforum MS-A1 sitting on my shelf was hot. Not "warm because the aluminum chassis doubles as a heatsink" hot — that part is by...">
+
+<link rel="icon" href="../bl-themes/nova/img/favicon.svg" type="/bl-themes/nova/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" /></noscript>
+
+<link rel="stylesheet" type="text/css" href="../bl-themes/nova/css/theme.css?version=3.22.0">
+
+<script>
+    // Apply theme as early as possible to avoid flash of incorrect theme.
+    (function () {
+        try {
+            var stored = localStorage.getItem('jdpro-theme');
+            var prefDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            var theme = stored || (prefDark ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        } catch (e) { /* localStorage unavailable */ }
+    })();
+</script>
+
+
+
+<meta property="og:locale" content="en, en_US, en_AU, en_CA, en_GB, en_IE, en_NZ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Cooling the MS-A1 for $25">
+<meta property="og:description" content="My Proxmox host had a problem. The Minisforum MS-A1 sitting on my shelf was hot. Not &quot;warm because the aluminum chassis doubles as a heatsink&quot; hot — that part i...">
+<meta property="og:url" content="https://jereme.dev/cooling-the-ms-a1-for-25">
+<meta property="og:site_name" content="jereme.dev">
+<meta property="article:published_time" content="2026-07-10T12:24:04-05:00">
+<meta property="article:modified_time" content="2026-07-10T12:35:39-05:00">
+<meta property="article:author" content="Admin">
+<meta property="og:image" content="https://jereme.dev/bl-content/uploads/pages/b959f15ae4e9b4058d6d3bea20c24ce1/cooling-minisforum-png.png">
+<meta property="og:image:alt" content="Cooling the MS-A1 for $25">
+<meta property="fb:app_id" content="950993698565690">
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cooling the MS-A1 for $25">
+<meta name="twitter:description" content="My Proxmox host had a problem. The Minisforum MS-A1 sitting on my shelf was hot. Not &quot;warm because the aluminum chassis doubles as a heatsink&quot; hot — that part i...">
+<meta name="twitter:image" content="https://jereme.dev/bl-content/uploads/pages/b959f15ae4e9b4058d6d3bea20c24ce1/cooling-minisforum-png.png">
+<meta name="twitter:image:alt" content="Cooling the MS-A1 for $25">
+
+<script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      "name": "jereme.dev",
+      "alternateName": "My Homelab & more ...",
+      "url": "../"
+    }
+</script>
+</head>
+
+<body class="bl-body">
+    
+    <header class="site-header" id="site-header">
+    <div class="site-header-ribbon" aria-hidden="true"></div>
+    <div class="header-inner">
+        <div class="site-branding">
+            <a class="navbar-brand" href="../" rel="home">
+                                    <img class="site-logo" src="../bl-content/uploads/jereme-dev.png" alt="jereme.dev" />
+                            </a>
+        </div>
+
+        <div class="header-actions">
+            <button type="button" class="icon-btn search-toggle" id="search-toggle" aria-controls="search-panel" aria-expanded="false" aria-label="Search">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="11" cy="11" r="7"></circle>
+                    <path d="m20 20-3.5-3.5"></path>
+                </svg>
+            </button>
+
+            <button type="button" class="icon-btn theme-toggle" id="theme-toggle" aria-label="Toggle light/dark mode">
+                <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+                </svg>
+                <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+
+            <button type="button" class="icon-btn menu-toggle" id="menu-toggle" aria-controls="site-navigation" aria-expanded="false" aria-label="Toggle menu">
+                <span class="hamburger" aria-hidden="true">
+                    <span></span><span></span><span></span>
+                </span>
+            </button>
+        </div>
+    </div>
+
+    <div class="search-panel" id="search-panel" hidden>
+        <div class="search-inner" role="search">
+            <form class="search-form" name="search" onsubmit="return false;">
+                <svg class="search-form-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="11" cy="11" r="7"></circle>
+                    <path d="m20 20-3.5-3.5"></path>
+                </svg>
+                <input type="text" class="search-input" name="query" placeholder="Search" autocorrect="off" autocomplete="off" spellcheck="false" />
+                <button type="button" class="icon-btn search-close" id="search-close" aria-label="Close search">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M18 6 6 18M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </form>
+            <div class="search-output">
+                <div class="search-result" data-component="result">
+                    <div class="search-result-meta">
+                        Type at least 3 characters to search                        <script>
+                            var translations = {
+                                "type-to-start-searching": "Type at least 3 characters to search"
+                            };
+                        </script>
+                    </div>
+                    <ol class="search-result-list"></ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+        <symbol id="icon-pencil" viewBox="0 0 27 32">
+            <path d="M6.5 27.4l1.6-1.6-4.2-4.2-1.6 1.6v1.9h2.3v2.3h1.9zM15.8 10.9q0-0.4-0.4-0.4-0.2 0-0.3 0.1l-9.7 9.7q-0.1 0.1-0.1 0.3 0 0.4 0.4 0.4 0.2 0 0.3-0.1l9.7-9.7q0.1-0.1 0.1-0.3zM14.9 7.4l7.4 7.4-14.9 14.9h-7.4v-7.4zM27.1 9.1q0 0.9-0.7 1.6l-3 3-7.4-7.4 3-2.9q0.6-0.7 1.6-0.7 0.9 0 1.6 0.7l4.2 4.2q0.7 0.7 0.7 1.6z"></path>
+        </symbol>
+        <symbol id="icon-twitter" viewBox="0 0 32 32">
+            <path d="M31.6 5.4c-1.1 0.8-2.4 1.2-3.7 1.2 1.4-0.9 2.5-2.3 3-3.9 -1.2 1-2.7 1.6-4.2 1.7 -1.3-1.3-3-2.1-4.8-2.1 -3.7 0-6.7 3.2-6.7 7 0 0.5 0 1 0.1 1.4 -5.3-0.3-10.2-2.9-13.5-7.2 -1.7 3.1-0.8 7.1 2 9.1 -1 0-2-0.2-3-0.7 0.1 3.2 2.2 6 5.2 6.7 -1 0.3-2 0.3-3 0.1 0.9 2.8 3.4 4.8 6.2 4.9 -2.9 1.9-6.3 2.8-9.8 2.8 3 2.1 6.6 3.2 10.2 3.2 10.2 0 18.6-8.8 18.6-19.5 0-0.4 0-0.7 0-1.1 1.2-1 2.3-2.3 3.3-3.6"></path>
+        </symbol>
+        <symbol id="icon-github" viewBox="0 0 32 32">
+            <path d="M22.1 28.4c1 0 0.8 1.1 0.8 1.1l-12.6 0c0 0-0.1-1.1 0.8-1.1 0.9 0 1.1-0.4 1.1-0.8l-0.1-3.4c-4.9 1.1-6-1.9-6-1.9 -0.8-2-1.9-2.5-1.9-2.5 -1.7-1.1 0.1-1.1 0.1-1.1 1.8 0.1 2.8 1.8 2.8 1.8 1.5 2.6 4.1 1.9 5.1 1.5 0.1-1.1 0.6-1.9 1.1-2.4 -3.9-0.4-8-1.9-8-8.5 0-1.9 0.7-3.4 1.8-4.7 -0.2-0.4-0.8-2.2 0.2-4.5 0 0 1.5-0.5 4.8 1.8 2.9-0.8 6-0.8 8.9 0 3.4-2.2 4.8-1.8 4.8-1.8 1 2.4 0.4 4.1 0.2 4.5 1.1 1.2 1.8 2.8 1.8 4.7 0 6.6-4.2 8.1-8.1 8.5 0.7 0.5 1.2 1.6 1.2 3.2l-0.1 4.7c0 0.4 0.2 0.8 1.1 0.8Z"></path>
+        </symbol>
+        <symbol id="icon-facebook" viewBox="0 0 32 32">
+            <path d="M17.5 31.6l0-14.2 4.5 0 0.6-5.5 -5.2 0 0-3.5c0-1.6 0.4-2.7 2.6-2.7l2.8 0 0-4.9c-0.5-0.1-2.1-0.2-4-0.2 -4 0-6.7 2.5-6.7 7.3l0 4 -4.5 0 0 5.5 4.5 0 0 14.2 5.4 0Z"></path>
+        </symbol>
+        <symbol id="icon-codepen" viewBox="0 0 32 32">
+            <path d="M32 11l0 0 0 0c0 0 0 0 0 0 0 0 0 0 0 0l0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -15-10c0 0-1 0-2 0l-15 10 0 0 0 0 0 0 0 0 0 0 0 0 0 0c0 0 0 0 0 0l0 0 0 0c0 0 0 0 0 0l0 0c0 0 0 0 0 0l0 10c0 0 0 0 0 0l0 0c0 0 0 0 0 0l0 0c0 0 0 0 0 0l0 0c0 0 0 0 0 0l0 0c0 0 0 0 0 0l0 0 0 0c0 0 0 0 0 0l0 0 0 0 0 0 15 10c0 0 1 0 1 0 0 0 1 0 1 0l15-10 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0-10c0 0 0 0 0 0l0 0 0 0 0 0Zm-16 8l-5-3 5-3 5 3 -5 3 0 0Zm-1-9l-6 4 -5-3 11-7 0 6 0 0Zm-8 6l-3 2 0-5 3 2 0 0Zm2 2l6 4 0 6 -11-7 5-3 0 0 0 0Zm9 4l6-4 5 3 -11 7 0-6 0 0Zm8-6l3-2 0 5 -3-2 0 0Zm-2-2l-6-4 0-6 11 7 -5 3 0 0Z"></path>
+        </symbol>
+        <symbol id="icon-linkedin" viewBox="0 0 32 32">
+            <path d="M17.7 30.5l-5.9 0 0-19.2 5.7 0 0 2.6 0.1 0c0.8-1.5 2.7-3.1 5.6-3.1 6 0 7.1 4 7.1 9.1l0 10.5 0 0 -5.9 0 0-9.3c0-2.2 0-5.1-3.1-5.1 -3.1 0-3.5 2.4-3.5 4.9l0 9.5Zm-9.6 0l-5.9 0 0-19.2 5.9 0 0 19.2Zm-3-21.8c-1.9 0-3.4-1.6-3.4-3.5 0-1.9 1.5-3.5 3.4-3.5 1.9 0 3.4 1.6 3.4 3.5 0 1.9-1.5 3.5-3.4 3.5Z"></path>
+        </symbol>
+        <symbol id="icon-instagram" viewBox="0 0 32 32">
+            <path d="M23 1.1c4.3 0 7.8 3.5 7.8 7.8l0 14c0 4.3-3.5 7.8-7.8 7.8l-14 0c-4.3 0-7.8-3.5-7.8-7.8l0-14c0-4.3 3.5-7.8 7.8-7.8l14 0Zm-7 7.9c3.8 0 6.9 3.1 6.9 6.9 0 3.8-3.1 6.9-6.9 6.9 -3.8 0-6.9-3.1-6.9-6.9 0-3.8 3.1-6.9 6.9-6.9Zm8.7-3.7c1.1 0 1.9 0.9 1.9 1.9 0 1.1-0.9 1.9-1.9 1.9 -1.1 0-1.9-0.9-1.9-1.9 0-1 0.9-1.9 1.9-1.9Z"></path>
+        </symbol>
+        <symbol id="icon-folder" viewBox="0 0 24 24">
+            <path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </symbol>
+        <symbol id="icon-tag" viewBox="0 0 24 24">
+            <path d="M20.59 13.41 13.41 20.59a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <circle cx="7" cy="7" r="1.5" fill="currentColor"></circle>
+        </symbol>
+        <symbol id="icon-arrow-left" viewBox="0 0 24 24">
+            <path d="M19 12H5M12 19l-7-7 7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </symbol>
+        <symbol id="icon-arrow-right" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </symbol>
+    </defs>
+</svg>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation" aria-label="Primary" aria-hidden="true">
+        <div class="main-navigation-inner">
+            <div class="main-navigation-header">
+                <p class="main-navigation-title">Menu</p>
+                <button type="button" class="icon-btn nav-close" id="nav-close" aria-label="Close menu">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M18 6 6 18M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="plugin plugin-categories"><h2 class="plugin-label">Categories</h2><div class="plugin-content"><ul><li><a href="../category/general/">General (14)</a></li><li><a href="../category/media-servers/">Media Servers (7)</a></li><li><a href="../category/archived/">Archived (34)</a></li></ul></div></div><div class="plugin plugin-navigation"><h2 class="plugin-label">Latest Posts</h2><div class="plugin-content"><ul><li><a href="../cooling-the-ms-a1-for-25/">Cooling the MS-A1 for $25</a></li><li><a href="../stickies/">Stickies</a></li><li><a href="../retrocities-portfolio/">RetroCities Portfolio</a></li><li><a href="../whoami-web/">whoami - Terminal Résumé</a></li><li><a href="../shorthand/">Bludit Shortcodes!</a></li></ul></div></div><div class="plugin plugin-static-pages"><h2 class="plugin-label">About</h2><div class="plugin-content"><ul><li class="parent"><a href="https://jeremehancock.com" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: baseline; gap: 4px;">Résumé<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0;">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg></a></li><li class="parent"><a href="/homelab" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: baseline; gap: 4px;">Homelab<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0;">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg></a></li><li class="parent"><a href="https://dumbprojects.com" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: baseline; gap: 4px;">DumbProjects<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0;">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg></a></li><li class="parent"><a href="https://whoami.jereme.dev" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: baseline; gap: 4px;">whoami<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0;">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg></a></li><li class="parent"><a href="https://retrocities.jereme.dev" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: baseline; gap: 4px;">RetroCities<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0;">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg></a></li></ul></div></div>        </div>
+    </nav>
+
+    <div class="body-overlay" id="body-overlay" aria-hidden="true"></div>
+
+    <main class="site-main site-main-single" id="main" role="main">
+    <article class="entry">
+        
+                    <header class="entry-header">
+                <div class="container">
+                                            <div class="entry-eyebrow">
+                            <a href="../category/general/">General</a>
+                        </div>
+                    
+                    <h1 class="entry-title">
+                        Cooling the MS-A1 for $25                    </h1>
+
+                                            <div class="entry-meta">
+                            <time class="entry-date" datetime="2026-07-10 12:24:04">
+                                July 10, 2026                            </time>
+
+                                                            <time class="entry-updated"
+                                    datetime=""></time>
+                                                    </div>
+                                    </div>
+            </header>
+        
+        <div class="entry-content container">
+            
+            <div class="page-content">
+                <p>My Proxmox host had a problem. The Minisforum MS-A1 sitting on my shelf was hot. Not "warm because the aluminum chassis doubles as a heatsink" hot — that part is by design. This was "put your hand on the lid and immediately reconsider your life choices" hot.</p>
+<p>The weirder part: after a reboot, it would run cool for about a day, and then heat up and <em>stay</em> hot. That pattern nagged at me enough to actually go get some numbers instead of relying on the highly scientific hand-on-lid test.</p>
+<h2>Getting temps out of the thing</h2>
+<p>If you run <code>sensors-detect</code> on one of these and it comes up empty, don't panic. The embedded controller on Minisforum boards isn't supported by mainline lm-sensors, so probing finds nothing. The good news is you don't need it — the sensors that actually matter come through completely different paths:</p>
+<blockquote>
+<p><strong>Note:</strong> All the commands in this post are from my Proxmox host, run directly on the host shell as root. They'll work on most Debian-based systems (you may need <code>sudo</code> and <code>apt install lm-sensors</code> first), but package names and paths can differ on other distros.</p>
+</blockquote>
+<pre><code class="language-bash">modprobe k10temp   # AMD CPU die temp
+sensors</code></pre>
+<p>On a recent kernel, that gets you the CPU (<code>k10temp</code>), every NVMe drive (<code>nvme-pci-*</code>), the iGPU (<code>amdgpu</code>), the DDR5 DIMM sensors (<code>spd5118</code>), and even the Realtek NICs. No config, no drama.</p>
+<h2>The numbers were not great</h2>
+<p>Both RAM sticks were sitting at ~57°C and tripping their high-temp alarm — at <em>idle</em>. But the real headline was one NVMe drive whose controller sensor read <strong>82.8°C</strong>. That's about 5°C from the drive's critical threshold, on a box that was mostly loafing.</p>
+<p>Here's the part that made it all click: that drive is mounted on the <strong>underside of the motherboard</strong>. It's not under the SSD heatsink plate with the other drives. There's a small fan next to it that's supposed to keep it happy, but the drive itself is bare — no heatsink, no pad, no thermal mass. Blowing air across a naked drive only cools the surfaces the air can touch, and the controller die is buried under the label and casing. That little fan clearly wasn't enough on its own, and the drive was slowly cooking itself anyway.</p>
+<p>That also explained the reboot mystery. The chassis has a lot of thermal mass. After a reboot (and the downtime around it), all that metal starts cool, and it takes most of a day for the case to fully heat-soak. Once it does, the whole box settles into a new, hotter equilibrium — and a naked drive in stagnant air feels every degree of it.</p>
+<h2>The fix: $25 and ten minutes</h2>
+<p>Two parts:</p>
+<p><strong>1. A 1mm copper heatsink on the naked drive.</strong> I used <a href="https://www.amazon.com/dp/B0CWNKFWLJ">this copper NVMe heatsink kit</a> — a thin copper plate with a thermal pad. Copper is a fantastic lateral spreader, so it takes the concentrated hot spot on the controller die and smears it across the whole drive footprint. The drive goes from zero thermal solution to an actual heat path.</p>
+<p><strong>2. A USB fan on top of the case, blowing in.</strong> I used an <a href="https://www.amazon.com/AC-Infinity-MULTIFAN-Receiver-Playstation/dp/B00G05A2MU">AC Infinity MULTIFAN</a> sitting on the top mesh, pushing air <em>into</em> the chassis. On my unit, the top mesh is the intake and exhaust flows out both the front and the back (mostly the front, going by hand-feel) — so a fan pushing down through the top mesh supercharges the intake instead of fighting it. (Worth verifying on your own unit before committing: hold a tissue strip over the mesh and see which way it moves. A fan fighting the existing airflow can make things worse.) It's dead quiet and powers straight off a USB port on the box itself.</p>
+<p>That second part matters more than it sounds. Since the chassis <em>is</em> the heatsink, the whole system's equilibrium is set by how fast the case can shed heat into room air. Forcing air through it lowers that equilibrium for everything inside — which is exactly what kills the heat-soak problem.</p>
+<h2>Before and after</h2>
+<p>Same box, same workload. Before is the fully heat-soaked state; after is with the copper heatsink and fan in place.</p>
+<table>
+<thead>
+<tr>
+<th>Sensor</th>
+<th>Before</th>
+<th>After</th>
+<th>Δ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NVMe controller (problem drive, Sensor 1)</td>
+<td>82.8°C 🔥</td>
+<td>65.8°C</td>
+<td><strong>−17.0°C</strong></td>
+</tr>
+<tr>
+<td>NVMe composite (problem drive)</td>
+<td>60.9°C</td>
+<td>45.9°C</td>
+<td><strong>−15.0°C</strong></td>
+</tr>
+<tr>
+<td>RAM (DIMM 1)</td>
+<td>57.2°C ⚠️</td>
+<td>37.2°C</td>
+<td><strong>−20.0°C</strong></td>
+</tr>
+<tr>
+<td>RAM (DIMM 2)</td>
+<td>56.8°C ⚠️</td>
+<td>37.8°C</td>
+<td><strong>−19.0°C</strong></td>
+</tr>
+<tr>
+<td>CPU (Tctl)</td>
+<td>53.6°C</td>
+<td>37.6°C</td>
+<td><strong>−16.0°C</strong></td>
+</tr>
+<tr>
+<td>iGPU (edge)</td>
+<td>50.0°C</td>
+<td>33.0°C</td>
+<td><strong>−17.0°C</strong></td>
+</tr>
+<tr>
+<td>NVMe 2 (composite)</td>
+<td>51.9°C</td>
+<td>30.9°C</td>
+<td><strong>−21.0°C</strong></td>
+</tr>
+<tr>
+<td>NVMe 3 (composite)</td>
+<td>46.9°C</td>
+<td>34.9°C</td>
+<td><strong>−12.0°C</strong></td>
+</tr>
+<tr>
+<td>NVMe 4 (composite)</td>
+<td>41.9°C</td>
+<td>39.9°C</td>
+<td>−2.0°C</td>
+</tr>
+<tr>
+<td>2.5G NIC 1</td>
+<td>55.5°C</td>
+<td>39.0°C</td>
+<td><strong>−16.5°C</strong></td>
+</tr>
+<tr>
+<td>2.5G NIC 2</td>
+<td>56.5°C</td>
+<td>40.0°C</td>
+<td><strong>−16.5°C</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Every alarm cleared. The problem drive's controller dropped out of the danger zone entirely, the RAM went from actively alarming to 18 degrees of headroom, and even the NICs — which I did nothing to — dropped 16 degrees, because the entire internal air environment cooled off.</p>
+<h2>Takeaways</h2>
+<ul>
+<li>
+<p><strong>The hand-on-lid test lies.</strong> On a machine designed to dump heat through its chassis, a hot case can mean everything is working <em>or</em> that something inside is dying. Only <code>sensors</code> knows the difference. (In my case the lid ended up cool too — with the fan moving air through the box, most of the heat leaves in the airflow instead of soaking into the shell.)</p>
+</li>
+<li>
+<p><strong>Check the underside of the board.</strong> The MS-A1 has four M.2 slots and not all of them get love from the stock cooling. If one drive runs 20-30°C hotter than its siblings, figure out where it physically lives before theorizing. <code>ls -l /sys/class/nvme/</code> maps the PCI addresses in the sensor names to actual drives, and <code>cat /sys/class/nvme/nvme*/model</code> tells you which is which.</p>
+</li>
+<li>
+<p><strong>Reboot-cool-then-hot = heat soak.</strong> If temps are fine for hours and then creep to a hot plateau, you're watching the chassis thermal mass saturate, not a software problem. The fix is physical.</p>
+</li>
+<li>
+<p><strong>Log it.</strong> A dumb loop appending <code>sensors</code> output to a file every five minutes turns "I think it's better?" into an actual before/after curve. One line of bash, zero regrets:</p>
+<pre><code class="language-bash">while true; do echo "=== $(date) ===" &gt;&gt; /root/temps.log; sensors &gt;&gt; /root/temps.log; sleep 300; done &amp;</code></pre>
+</li>
+</ul>
+<p>Total cost: about $25 and one evening. The box has been holding these temps ever since, Texas summer and all.</p>
+<h2>Links</h2>
+<ul>
+<li>Heatsink: <a href="https://www.amazon.com/dp/B0CWNKFWLJ">1mm copper NVMe heatsink kit</a> </li>
+<li>Fan : <a href="https://www.amazon.com/AC-Infinity-MULTIFAN-Receiver-Playstation/dp/B00G05A2MU">AC Infinity MULTIFAN USB fan</a> </li>
+</ul>            </div>
+        </div>
+
+        <footer class="entry-footer container">
+                            <div class="entry-tags">
+                    <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+                        <use xlink:href="#icon-tag"></use>
+                    </svg>
+                                            <a class="tag-pill" href="../tag/mini-pc/"
+                            rel="tag">mini-pc</a>
+                                            <a class="tag-pill" href="../tag/server/"
+                            rel="tag">server</a>
+                                            <a class="tag-pill" href="../tag/cooling/"
+                            rel="tag">cooling</a>
+                                            <a class="tag-pill" href="../tag/overheating/"
+                            rel="tag">overheating</a>
+                                    </div>
+            
+                            <nav class="post-navigation" role="navigation" aria-label="Post navigation">
+                                            <a class="nav-prev" href="../stickies/" rel="prev">
+                            <span class="nav-direction"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true">
+                                    <use xlink:href="#icon-arrow-left"></use>
+                                </svg> Previous</span>
+                            <span class="nav-title">Stickies</span>
+                        </a>
+                                                        </nav>
+            
+                    </footer>
+    </article>
+</main>
+    <aside class="site-aside" role="complementary">
+    <div class="container">
+        <div class="aside-grid">
+            <div class="aside-col aside-brand">
+                <p class="aside-title">jereme.dev</p>
+                <p class="aside-desc">My Homelab & more ...</p>
+            </div>
+
+            
+                            <div class="aside-col">
+                    <h3 class="aside-heading">Latest Posts</h3>
+                    <ul class="aside-list">
+                                                        <li><a href="../cooling-the-ms-a1-for-25/">Cooling the MS-A1 for $25</a></li>
+                                                            <li><a href="../stickies/">Stickies</a></li>
+                                                            <li><a href="../retrocities-portfolio/">RetroCities Portfolio</a></li>
+                                                            <li><a href="../whoami-web/">whoami - Terminal Résumé</a></li>
+                                                            <li><a href="../shorthand/">Bludit Shortcodes!</a></li>
+                                                </ul>
+                </div>
+            
+                            <div class="aside-col">
+                    <h3 class="aside-heading">About</h3>
+                    <ul class="aside-list">
+                                                    <li>
+                                <a href="https://jeremehancock.com"  target="_blank" rel="noopener noreferrer"                                    style="display: inline-flex; align-items: baseline; gap: 0.35em;">
+                                    Résumé
+                                                                            <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
+                                            style="display: block;">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                            <polyline points="15 3 21 3 21 9"></polyline>
+                                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                                        </svg>
+                                                                    </a>
+                            </li>
+                                                    <li>
+                                <a href="/homelab"  target="_blank" rel="noopener noreferrer"                                    style="display: inline-flex; align-items: baseline; gap: 0.35em;">
+                                    Homelab
+                                                                            <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
+                                            style="display: block;">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                            <polyline points="15 3 21 3 21 9"></polyline>
+                                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                                        </svg>
+                                                                    </a>
+                            </li>
+                                                    <li>
+                                <a href="https://dumbprojects.com"  target="_blank" rel="noopener noreferrer"                                    style="display: inline-flex; align-items: baseline; gap: 0.35em;">
+                                    DumbProjects
+                                                                            <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
+                                            style="display: block;">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                            <polyline points="15 3 21 3 21 9"></polyline>
+                                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                                        </svg>
+                                                                    </a>
+                            </li>
+                                                    <li>
+                                <a href="https://whoami.jereme.dev"  target="_blank" rel="noopener noreferrer"                                    style="display: inline-flex; align-items: baseline; gap: 0.35em;">
+                                    whoami
+                                                                            <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
+                                            style="display: block;">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                            <polyline points="15 3 21 3 21 9"></polyline>
+                                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                                        </svg>
+                                                                    </a>
+                            </li>
+                                                    <li>
+                                <a href="https://retrocities.jereme.dev"  target="_blank" rel="noopener noreferrer"                                    style="display: inline-flex; align-items: baseline; gap: 0.35em;">
+                                    RetroCities
+                                                                            <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
+                                            style="display: block;">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                            <polyline points="15 3 21 3 21 9"></polyline>
+                                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                                        </svg>
+                                                                    </a>
+                            </li>
+                                            </ul>
+                </div>
+            
+            <div class="aside-col aside-bludit-col">
+                <a class="aside-bludit-link" href="https://www.bludit.com" target="_blank" rel="noopener">
+                    <img class="aside-bludit-logo lozad" data-src="../bl-themes/nova/img/bludit.png"
+                        alt="Bludit" width="140" />
+                    <p class="aside-powered">
+                        Powered by Bludit                    </p>
+                </a>
+            </div>
+        </div>
+    </div>
+</aside>    <footer class="site-footer" id="site-footer">
+    <div class="container footer-inner">
+        <div class="footer-left">
+                            <a class="bludit-backer" href="https://www.patreon.com/bludit" target="_blank" rel="noopener">
+                    <img class="patreon-icon lozad" data-src="../bl-themes/nova/img/patreon.png" alt="Patreon"
+                        width="20" height="20" />
+                    <span>Bludit Backer</span>
+                </a>
+                    </div>
+
+        <div class="footer-right">
+            <span class="footer-copy">
+                <script>
+                    today = new Date();
+                    y0 = today.getFullYear();
+                    document.write('© 2019-' + y0);
+                </script>
+                                    <span class="footer-sep" aria-hidden="true">&middot;</span>
+                    <span class="footer-custom">jereme.dev</span>
+                            </span>
+        </div>
+    </div>
+</footer>
+
+<script>
+    var uploadsFolder = '../bl-content/uploads/';
+    var siteRoot = '../';
+</script>
+    <script  src="../bl-themes/nova/js/lozad.min.js?version=3.22.0"></script>
+    <script  src="../bl-themes/nova/js/theme.js?version=3.22.0"></script>
+
+    <script>(function(){var ls=document.querySelectorAll("a[href]");for(var i=0,n=ls.length;i<n;i++){var a=ls[i];if(!a.hostname||a.hostname===window.location.hostname)continue;a.target="_blank";var r=(a.getAttribute("rel")||"").split(/\s+/).filter(Boolean);if(r.indexOf("noopener")===-1)r.push("noopener");if(r.indexOf("noreferrer")===-1)r.push("noreferrer");a.setAttribute("rel",r.join(" "));}})();</script>
+<!-- Default Statcounter code for jereme.dev / -->
+<script type="text/javascript">
+var sc_project=12007932; 
+var sc_invisible=1; 
+var sc_security="71cfc510"; 
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js"
+async></script>
+<noscript><div class="statcounter"><a title="Web Analytics"
+href="https://statcounter.com/" target="_blank"><img
+class="statcounter"
+src="https://c.statcounter.com/12007932/0/71cfc510/1/"
+alt="Web Analytics"></a></div></noscript>
+<!-- End of Statcounter Code -->	</body>
+
+</html>
