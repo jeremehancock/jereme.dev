@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="auto">
+
+<head>
+    <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d0f12" media="(prefers-color-scheme: dark)">
+
+<title>Introducing Marquee | jereme.dev</title>
+<meta name="description" content="I already built a Plex poster manager. It's called Posteria, it works, and people use it every day. So the reasonable thing to do was leave it alone. 
+ Instead, I...">
+
+<link rel="icon" href="../bl-themes/nova/img/favicon.svg" type="/bl-themes/nova/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" /></noscript>
+
+<link rel="stylesheet" type="text/css" href="../bl-themes/nova/css/theme.css?version=3.22.0">
+
+<script>
+    // Apply theme as early as possible to avoid flash of incorrect theme.
+    (function () {
+        try {
+            var stored = localStorage.getItem('jdpro-theme');
+            var prefDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            var theme = stored || (prefDark ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        } catch (e) { /* localStorage unavailable */ }
+    })();
+</script>
+
+
+
+<meta property="og:locale" content="en, en_US, en_AU, en_CA, en_GB, en_IE, en_NZ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Introducing Marquee">
+<meta property="og:description" content="I already built a Plex poster manager. It&#039;s called Posteria, it works, and people use it every day. So the reasonable thing to do was leave it alone.
+
+Instead...">
+<meta property="og:url" content="https://jereme.dev/introducing-marquee">
+<meta property="og:site_name" content="jereme.dev">
+<meta property="article:published_time" content="2026-08-03T07:12:02-05:00">
+<meta property="article:modified_time" content="2026-08-03T07:29:21-05:00">
+<meta property="article:author" content="Admin">
+<meta property="og:image" content="https://jereme.dev/bl-content/uploads/pages/840b807a4dbd4c616234bcb27ef15a44/marquee-thumb-png.png">
+<meta property="og:image:alt" content="Introducing Marquee">
+<meta property="fb:app_id" content="950993698565690">
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Introducing Marquee">
+<meta name="twitter:description" content="I already built a Plex poster manager. It&#039;s called Posteria, it works, and people use it every day. So the reasonable thing to do was leave it alone.
+
+Instead...">
+<meta name="twitter:image" content="https://jereme.dev/bl-content/uploads/pages/840b807a4dbd4c616234bcb27ef15a44/marquee-thumb-png.png">
+<meta name="twitter:image:alt" content="Introducing Marquee">
+
+<script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      "name": "jereme.dev",
+      "alternateName": "My Homelab & more ...",
+      "url": "../"
+    }
+</script>
+</head>
+
+<body class="bl-body">
+    
+    <header class="site-header" id="site-header">
+    <div class="site-header-ribbon" aria-hidden="true"></div>
+    <div class="header-inner">
+        <div class="site-branding">
+            <a class="navbar-brand" href="../" rel="home">
+                                    <img class="site-logo" src="../bl-content/uploads/jereme-dev.png" alt="jereme.dev" />
+                            </a>
+        </div>
+
+        <div class="header-actions">
+            <button type="button" class="icon-btn search-toggle" id="search-toggle" aria-controls="search-panel" aria-expanded="false" aria-label="Search">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="11" cy="11" r="7"></circle>
+                    <path d="m20 20-3.5-3.5"></path>
+                </svg>
+            </button>
+
+            <button type="button" class="icon-btn theme-toggle" id="theme-toggle" aria-label="Toggle light/dark mode">
+                <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+                </svg>
+                <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+
+            <button type="button" class="icon-btn menu-toggle" id="menu-toggle" aria-controls="site-navigation" aria-expanded="false" aria-label="Toggle menu">
+                <span class="hamburger" aria-hidden="true">
+                    <span></span><span></span><span></span>
+                </span>
+            </button>
+        </div>
+    </div>
+
+    <div class="search-panel" id="search-panel" hidden>
+        <div class="search-inner" role="search">
+            <form class="search-form" name="search" onsubmit="return false;">
+                <svg class="search-form-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="11" cy="11" r="7"></circle>
+                    <path d="m20 20-3.5-3.5"></path>
+                </svg>
+                <input type="text" class="search-input" name="query" placeholder="Search" autocorrect="off" autocomplete="off" spellcheck="false" />
+                <button type="button" class="icon-btn search-close" id="search-close" aria-label="Close search">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M18 6 6 18M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </form>
+            <div class="search-output">
+                <div class="search-result" data-component="result">
+                    <div class="search-result-meta">
+                        Type at least 3 characters to search                        <script>
+                            var translations = {
+                                "type-to-start-searching": "Type at least 3 characters to search"
+                            };
+                        </script>
+                    </div>
+                    <ol class="search-result-list"></ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+        <symbol id="icon-pencil" viewBox="0 0 27 32">
+            <path d="M6.5 27.4l1.6-1.6-4.2-4.2-1.6 1.6v1.9h2.3v2.3h1.9zM15.8 10.9q0-0.4-0.4-0.4-0.2 0-0.3 0.1l-9.7 9.7q-0.1 0.1-0.1 0.3 0 0.4 0.4 0.4 0.2 0 0.3-0.1l9.7-9.7q0.1-0.1 0.1-0.3zM14.9 7.4l7.4 7.4-14.9 14.9h-7.4v-7.4zM27.1 9.1q0 0.9-0.7 1.6l-3 3-7.4-7.4 3-2.9q0.6-0.7 1.6-0.7 0.9 0 1.6 0.7l4.2 4.2q0.7 0.7 0.7 1.6z"></path>
+        </symbol>
+        <symbol id="icon-twitter" viewBox="0 0 32 32">
+            <path d="M31.6 5.4c-1.1 0.8-2.4 1.2-3.7 1.2 1.4-0.9 2.5-2.3 3-3.9 -1.2 1-2.7 1.6-4.2 1.7 -1.3-1.3-3-2.1-4.8-2.1 -3.7 0-6.7 3.2-6.7 7 0 0.5 0 1 0.1 1.4 -5.3-0.3-10.2-2.9-13.5-7.2 -1.7 3.1-0.8 7.1 2 9.1 -1 0-2-0.2-3-0.7 0.1 3.2 2.2 6 5.2 6.7 -1 0.3-2 0.3-3 0.1 0.9 2.8 3.4 4.8 6.2 4.9 -2.9 1.9-6.3 2.8-9.8 2.8 3 2.1 6.6 3.2 10.2 3.2 10.2 0 18.6-8.8 18.6-19.5 0-0.4 0-0.7 0-1.1 1.2-1 2.3-2.3 3.3-3.6"></path>
+        </symbol>
+        <symbol id="icon-github" viewBox="0 0 32 32">
+            <path d="M22.1 28.4c1 0 0.8 1.1 0.8 1.1l-12.6 0c0 0-0.1-1.1 0.8-1.1 0.9 0 1.1-0.4 1.1-0.8l-0.1-3.4c-4.9 1.1-6-1.9-6-1.9 -0.8-2-1.9-2.5-1.9-2.5 -1.7-1.1 0.1-1.1 0.1-1.1 1.8 0.1 2.8 1.8 2.8 1.8 1.5 2.6 4.1 1.9 5.1 1.5 0.1-1.1 0.6-1.9 1.1-2.4 -3.9-0.4-8-1.9-8-8.5 0-1.9 0.7-3.4 1.8-4.7 -0.2-0.4-0.8-2.2 0.2-4.5 0 0 1.5-0.5 4.8 1.8 2.9-0.8 6-0.8 8.9 0 3.4-2.2 4.8-1.8 4.8-1.8 1 2.4 0.4 4.1 0.2 4.5 1.1 1.2 1.8 2.8 1.8 4.7 0 6.6-4.2 8.1-8.1 8.5 0.7 0.5 1.2 1.6 1.2 3.2l-0.1 4.7c0 0.4 0.2 0.8 1.1 0.8Z"></path>
+        </symbol>
+        <symbol id="icon-facebook" viewBox="0 0 32 32">
+            <path d="M17.5 31.6l0-14.2 4.5 0 0.6-5.5 -5.2 0 0-3.5c0-1.6 0.4-2.7 2.6-2.7l2.8 0 0-4.9c-0.5-0.1-2.1-0.2-4-0.2 -4 0-6.7 2.5-6.7 7.3l0 4 -4.5 0 0 5.5 4.5 0 0 14.2 5.4 0Z"></path>
+        </symbol>
+        <symbol id="icon-codepen" viewBox="0 0 32 32">
+            <path d="M32 11l0 0 0 0c0 0 0 0 0 0 0 0 0 0 0 0l0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -15-10c0 0-1 0-2 0l-15 10 0 0 0 0 0 0 0 0 0 0 0 0 0 0c0 0 0 0 0 0l0 0 0 0c0 0 0 0 0 0l0 0c0 0 0 0 0 0l0 10c0 0 0 0 0 0l0 0c0 0 0 0 0 0l0 0c0 0 0 0 0 0l0 0c0 0 0 0 0 0l0 0c0 0 0 0 0 0l0 0 0 0c0 0 0 0 0 0l0 0 0 0 0 0 15 10c0 0 1 0 1 0 0 0 1 0 1 0l15-10 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0-10c0 0 0 0 0 0l0 0 0 0 0 0Zm-16 8l-5-3 5-3 5 3 -5 3 0 0Zm-1-9l-6 4 -5-3 11-7 0 6 0 0Zm-8 6l-3 2 0-5 3 2 0 0Zm2 2l6 4 0 6 -11-7 5-3 0 0 0 0Zm9 4l6-4 5 3 -11 7 0-6 0 0Zm8-6l3-2 0 5 -3-2 0 0Zm-2-2l-6-4 0-6 11 7 -5 3 0 0Z"></path>
+        </symbol>
+        <symbol id="icon-linkedin" viewBox="0 0 32 32">
+            <path d="M17.7 30.5l-5.9 0 0-19.2 5.7 0 0 2.6 0.1 0c0.8-1.5 2.7-3.1 5.6-3.1 6 0 7.1 4 7.1 9.1l0 10.5 0 0 -5.9 0 0-9.3c0-2.2 0-5.1-3.1-5.1 -3.1 0-3.5 2.4-3.5 4.9l0 9.5Zm-9.6 0l-5.9 0 0-19.2 5.9 0 0 19.2Zm-3-21.8c-1.9 0-3.4-1.6-3.4-3.5 0-1.9 1.5-3.5 3.4-3.5 1.9 0 3.4 1.6 3.4 3.5 0 1.9-1.5 3.5-3.4 3.5Z"></path>
+        </symbol>
+        <symbol id="icon-instagram" viewBox="0 0 32 32">
+            <path d="M23 1.1c4.3 0 7.8 3.5 7.8 7.8l0 14c0 4.3-3.5 7.8-7.8 7.8l-14 0c-4.3 0-7.8-3.5-7.8-7.8l0-14c0-4.3 3.5-7.8 7.8-7.8l14 0Zm-7 7.9c3.8 0 6.9 3.1 6.9 6.9 0 3.8-3.1 6.9-6.9 6.9 -3.8 0-6.9-3.1-6.9-6.9 0-3.8 3.1-6.9 6.9-6.9Zm8.7-3.7c1.1 0 1.9 0.9 1.9 1.9 0 1.1-0.9 1.9-1.9 1.9 -1.1 0-1.9-0.9-1.9-1.9 0-1 0.9-1.9 1.9-1.9Z"></path>
+        </symbol>
+        <symbol id="icon-folder" viewBox="0 0 24 24">
+            <path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </symbol>
+        <symbol id="icon-tag" viewBox="0 0 24 24">
+            <path d="M20.59 13.41 13.41 20.59a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <circle cx="7" cy="7" r="1.5" fill="currentColor"></circle>
+        </symbol>
+        <symbol id="icon-arrow-left" viewBox="0 0 24 24">
+            <path d="M19 12H5M12 19l-7-7 7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </symbol>
+        <symbol id="icon-arrow-right" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </symbol>
+    </defs>
+</svg>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation" aria-label="Primary" aria-hidden="true">
+        <div class="main-navigation-inner">
+            <div class="main-navigation-header">
+                <p class="main-navigation-title">Menu</p>
+                <button type="button" class="icon-btn nav-close" id="nav-close" aria-label="Close menu">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M18 6 6 18M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="plugin plugin-categories"><h2 class="plugin-label">Categories</h2><div class="plugin-content"><ul><li><a href="../category/general/">General (14)</a></li><li><a href="../category/media-servers/">Media Servers (8)</a></li><li><a href="../category/archived/">Archived (34)</a></li></ul></div></div><div class="plugin plugin-navigation"><h2 class="plugin-label">Latest Posts</h2><div class="plugin-content"><ul><li><a href="../introducing-marquee/">Introducing Marquee</a></li><li><a href="../cooling-the-ms-a1-for-25/">Cooling the MS-A1 for $25</a></li><li><a href="../stickies/">Stickies</a></li><li><a href="../retrocities-portfolio/">RetroCities Portfolio</a></li><li><a href="../whoami-web/">whoami - Terminal Résumé</a></li></ul></div></div><div class="plugin plugin-static-pages"><h2 class="plugin-label">About</h2><div class="plugin-content"><ul><li class="parent"><a href="https://jeremehancock.com" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: baseline; gap: 4px;">Résumé<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0;">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg></a></li><li class="parent"><a href="/homelab" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: baseline; gap: 4px;">Homelab<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0;">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg></a></li><li class="parent"><a href="https://dumbprojects.com" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: baseline; gap: 4px;">DumbProjects<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0;">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg></a></li><li class="parent"><a href="https://whoami.jereme.dev" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: baseline; gap: 4px;">whoami<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0;">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg></a></li><li class="parent"><a href="https://retrocities.jereme.dev" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: baseline; gap: 4px;">RetroCities<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0;">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg></a></li></ul></div></div>        </div>
+    </nav>
+
+    <div class="body-overlay" id="body-overlay" aria-hidden="true"></div>
+
+    <main class="site-main site-main-single" id="main" role="main">
+    <article class="entry">
+        
+                    <header class="entry-header">
+                <div class="container">
+                                            <div class="entry-eyebrow">
+                            <a href="../category/media-servers/">Media Servers</a>
+                        </div>
+                    
+                    <h1 class="entry-title">
+                        Introducing Marquee                    </h1>
+
+                                            <div class="entry-meta">
+                            <time class="entry-date" datetime="2026-08-03 07:12:02">
+                                August 3, 2026                            </time>
+
+                                                            <time class="entry-updated"
+                                    datetime=""></time>
+                                                    </div>
+                                    </div>
+            </header>
+        
+        <div class="entry-content container">
+            
+            <div class="page-content">
+                <p>I already built a Plex poster manager. It's called Posteria, it works, and people use it every day. So the reasonable thing to do was leave it alone.</p>
+<p>Instead, I rewrote the whole thing from scratch.</p>
+<p>Marquee is that rewrite — a self-hosted web app for managing the posters in your Plex library. Movies, TV Shows, Seasons, and Collections. Import them all, fix the ones that never looked right, and send your choice back to Plex <em>locked</em> so it actually sticks. Feature for feature, it's the same app Posteria always was — I didn't rewrite it to add things. I rewrote it to build it right.</p>
+<h2>Why Rebuild Something That Works?</h2>
+<p>Posteria grew the way side projects grow: a feature here, a fix there, until the code underneath was harder to change than it should be. Every new idea meant working around the last one. Marquee keeps everything the app <em>does</em> and throws out everything about how it was doing it — a clean start on a foundation I actually trust.</p>
+<p>So this time the <em>how</em> comes first. Every capability in Marquee gets written down as a spec <em>before</em> any code exists, using a tool called <a href="https://github.com/Fission-AI/OpenSpec">OpenSpec</a>. For a side project that sounds like needless bureaucracy, but it's the opposite: deciding exactly what a feature should do up front keeps the codebase clean and heads off a whole category of regressions before they ever ship. Posteria taught me what that discipline is worth by not having it.</p>
+<h2>Sharper Poster Search</h2>
+<p>There's one place the rewrite shows up on screen, not just under it: <strong>Find Posters</strong>, the search you reach for when Plex's own artwork isn't cutting it. It runs on a brand-new backend — a poster-search API rebuilt from scratch — that pulls from three providers, <a href="https://www.thetvdb.com/">TVDB</a>, <a href="https://www.themoviedb.org/">TMDB</a>, and <a href="https://fanart.tv/">Fanart.tv</a>, and reconciles their results into the closest, cleanest match for the exact title you're looking at. Same button as before. Much better answers behind it.</p>
+<div class="centered">
+    <img src="../bl-content/uploads/pages/840b807a4dbd4c616234bcb27ef15a44/screenshot-gallery-png.png" alt="" class="image-border"  width="1163" height="896" />
+</div>
+<h2>Features That Make a Difference</h2>
+<p>📥 <strong>Import from Plex</strong><br />
+Pull the current poster for every Movie, TV Show, Season, and Collection you own. A step-by-step picker asks what you want first, then shows only the libraries that can actually provide it — no scrolling past things that don't apply.</p>
+<p>🎨 <strong>Edit posters in place</strong><br />
+Found one that bugs you? Upload your own art, paste an image URL, or search <strong>Find Posters</strong>, the built-in online poster search. You see every change full screen and confirm it before anything happens.</p>
+<p>🔒 <strong>Locked in Plex</strong><br />
+This is the part that matters. When you set a poster, Marquee uploads it to Plex <em>and locks the artwork</em> — so the next agent refresh won't quietly swap your choice back out. The poster you picked is the poster that stays.</p>
+<p>⏱️ <strong>Auto-import on a schedule</strong><br />
+Let Marquee re-import every 1, 3, 6, 12, or 24 hours. It skips anything that hasn't changed in Plex, so recurring imports stay cheap and easy on your server.</p>
+<p>🧹 <strong>Orphan detection</strong><br />
+Removed some media from Plex? Marquee finds the posters left behind with nothing to point at and lets you clear them out — without ever touching Plex itself.</p>
+<p>🗂️ <strong>Browse and sort your way</strong><br />
+Filter by type, or drop the whole library into one grid with every poster tagged. Sort alphabetically or by date added to Plex, newest first.</p>
+<p>📱 <strong>Mobile-first and installable</strong><br />
+On a phone, the gallery stays front and center — navigation and poster actions tuck into full-size trays so nothing crowds your artwork. Install it as a PWA on your phone or desktop and it behaves like a native app.</p>
+<h2>The Poster Wall</h2>
+<p>The Poster Wall isn't new — Posteria had it too — but it's different enough from the rest of the app to be worth its own section.</p>
+<p>It's a full-screen, slideshow view of your library that turns into a live now-playing board the moment someone in your house starts watching something. It shows the poster of whatever is streaming, with a <em>Currently Streaming</em> banner, the media details, and which Plex user is watching. More than one stream going at once? It rotates through them automatically.</p>
+<p>No sign-in required. Point a spare monitor or an old TV straight at it and walk away. It's the kind of feature that does nothing strictly useful and somehow becomes the best thing in the room.</p>
+<div class="centered">
+    <img src="../bl-content/uploads/pages/840b807a4dbd4c616234bcb27ef15a44/screenshot-wall-png.png" alt="" class="image-border"  width="1308" height="942" />
+</div>
+<h2>How It Works</h2>
+<p>Three steps, and none of them are complicated.</p>
+<ol>
+<li><strong>Connect and import.</strong> Point Marquee at your Plex server, choose what to bring in, and pick the libraries. It pulls the current poster for each item and remembers what it belongs to.</li>
+<li><strong>Fix the ones that bug you.</strong> Hover a poster — or tap it on mobile — to open its actions. Upload a file, paste a URL, or search Find Posters, then apply.</li>
+<li><strong>Send it to Plex and keep it.</strong> Marquee uploads the poster and locks it. Pull fresh art back any time, and use Orphans to tidy up what's gone.</li>
+</ol>
+<h2>Who Is Marquee For?</h2>
+<ul>
+<li>Plex owners who care what their library <em>looks</em> like, not just what's in it</li>
+<li>Anyone tired of a perfect poster getting silently replaced on the next scan</li>
+<li>People with a spare screen that's begging to become a now-playing display</li>
+<li>Self-hosters who want their tools running on their own hardware, full stop</li>
+</ul>
+<h2>Coming from Posteria?</h2>
+<p>There's no migration, and you don't need one. Marquee treats Plex as the source of truth, so your posters come <em>from Plex</em> — not from a Posteria export. Make sure Plex has the art you want to keep, retire your Posteria container, set up Marquee, and run an import. That's the whole process.</p>
+<p>And to be straight about Posteria: it's still available and it still runs, but I'm not updating it anymore. Its Find Posters also still calls the old search API — the one Marquee replaced — and that older backend has started to degrade. Marquee is where the work goes from here.</p>
+<h2>Still Alpha, but Coming Along</h2>
+<p>Marquee is still alpha on paper, but further along than the word usually implies, and it's under active, steady development. There are still a few rough edges, and some things will change as it settles — so keep your own backups, same as you would with anything new pointed at your library. That's about the extent of the fine print.</p>
+<p>Feedback is genuinely welcome, though — a lot of what makes a tool like this good comes from people running it in setups I'd never think of.</p>
+<h2>Get Started</h2>
+<p>Marquee runs as a single self-hosted container that talks to your Plex server — no accounts, no cloud, nothing leaving your network. Drop in a Docker Compose file, point it at Plex, and open <strong>Import from Plex</strong>.</p>
+<p>Full setup instructions, every configuration option, and release notes live on GitHub. The project site has a tour of everything above if you'd rather see it first.</p>
+<ul>
+<li><strong>Project site:</strong> <a href="https://getmarquee.now">getmarquee.now</a></li>
+<li><strong>Source &amp; install guide:</strong> <a href="https://github.com/jeremehancock/Marquee">jeremehancock/Marquee</a></li>
+</ul>
+<h2>Technical Highlights</h2>
+<ul>
+<li><strong>Self-hosted</strong> — runs in Docker with a single Compose file</li>
+<li><strong>Yours alone</strong> — no accounts, no telemetry, nothing leaves your network</li>
+<li><strong>Your posters, your folder</strong> — everything persists in one directory you control</li>
+<li><strong>Reverse-proxy friendly</strong> — sits behind whatever you already run</li>
+<li><strong>Installable PWA</strong> — add it to your phone or desktop home screen</li>
+<li><strong>Open source</strong> — MIT licensed</li>
+</ul>
+<h2>Support the Project</h2>
+<p>Marquee is free, and it's staying that way. If it earns a spot in your setup and you feel like chipping in, you can throw a few dollars at ongoing development — or, let's be honest, at another hard drive for my Plex server that I absolutely need and can definitely justify.</p>
+<p><a href="https://www.buymeacoffee.com/jeremehancock">Hard drive fund →</a></p>
+<h2>AI Disclosure</h2>
+<p>This project was created with the help of AI.</p>
+<h2>Links</h2>
+<ul>
+<li>GitHub: <a href="https://github.com/jeremehancock/Marquee">jeremehancock/Marquee</a></li>
+<li>Marquee Website: <a href="https://getmarquee.now">getmarquee.now</a></li>
+</ul>            </div>
+        </div>
+
+        <footer class="entry-footer container">
+                            <div class="entry-tags">
+                    <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+                        <use xlink:href="#icon-tag"></use>
+                    </svg>
+                                            <a class="tag-pill" href="../tag/ai/"
+                            rel="tag">ai</a>
+                                            <a class="tag-pill" href="../tag/plex/"
+                            rel="tag">plex</a>
+                                            <a class="tag-pill" href="../tag/selfhosting/"
+                            rel="tag">selfhosting</a>
+                                    </div>
+            
+                            <nav class="post-navigation" role="navigation" aria-label="Post navigation">
+                                            <a class="nav-prev" href="../cooling-the-ms-a1-for-25/" rel="prev">
+                            <span class="nav-direction"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true">
+                                    <use xlink:href="#icon-arrow-left"></use>
+                                </svg> Previous</span>
+                            <span class="nav-title">Cooling the MS-A1 for $25</span>
+                        </a>
+                                                        </nav>
+            
+                    </footer>
+    </article>
+</main>
+    <aside class="site-aside" role="complementary">
+    <div class="container">
+        <div class="aside-grid">
+            <div class="aside-col aside-brand">
+                <p class="aside-title">jereme.dev</p>
+                <p class="aside-desc">My Homelab & more ...</p>
+            </div>
+
+            
+                            <div class="aside-col">
+                    <h3 class="aside-heading">Latest Posts</h3>
+                    <ul class="aside-list">
+                                                        <li><a href="../introducing-marquee/">Introducing Marquee</a></li>
+                                                            <li><a href="../cooling-the-ms-a1-for-25/">Cooling the MS-A1 for $25</a></li>
+                                                            <li><a href="../stickies/">Stickies</a></li>
+                                                            <li><a href="../retrocities-portfolio/">RetroCities Portfolio</a></li>
+                                                            <li><a href="../whoami-web/">whoami - Terminal Résumé</a></li>
+                                                </ul>
+                </div>
+            
+                            <div class="aside-col">
+                    <h3 class="aside-heading">About</h3>
+                    <ul class="aside-list">
+                                                    <li>
+                                <a href="https://jeremehancock.com"  target="_blank" rel="noopener noreferrer"                                    style="display: inline-flex; align-items: baseline; gap: 0.35em;">
+                                    Résumé
+                                                                            <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
+                                            style="display: block;">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                            <polyline points="15 3 21 3 21 9"></polyline>
+                                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                                        </svg>
+                                                                    </a>
+                            </li>
+                                                    <li>
+                                <a href="/homelab"  target="_blank" rel="noopener noreferrer"                                    style="display: inline-flex; align-items: baseline; gap: 0.35em;">
+                                    Homelab
+                                                                            <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
+                                            style="display: block;">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                            <polyline points="15 3 21 3 21 9"></polyline>
+                                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                                        </svg>
+                                                                    </a>
+                            </li>
+                                                    <li>
+                                <a href="https://dumbprojects.com"  target="_blank" rel="noopener noreferrer"                                    style="display: inline-flex; align-items: baseline; gap: 0.35em;">
+                                    DumbProjects
+                                                                            <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
+                                            style="display: block;">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                            <polyline points="15 3 21 3 21 9"></polyline>
+                                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                                        </svg>
+                                                                    </a>
+                            </li>
+                                                    <li>
+                                <a href="https://whoami.jereme.dev"  target="_blank" rel="noopener noreferrer"                                    style="display: inline-flex; align-items: baseline; gap: 0.35em;">
+                                    whoami
+                                                                            <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
+                                            style="display: block;">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                            <polyline points="15 3 21 3 21 9"></polyline>
+                                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                                        </svg>
+                                                                    </a>
+                            </li>
+                                                    <li>
+                                <a href="https://retrocities.jereme.dev"  target="_blank" rel="noopener noreferrer"                                    style="display: inline-flex; align-items: baseline; gap: 0.35em;">
+                                    RetroCities
+                                                                            <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
+                                            style="display: block;">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                            <polyline points="15 3 21 3 21 9"></polyline>
+                                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                                        </svg>
+                                                                    </a>
+                            </li>
+                                            </ul>
+                </div>
+            
+            <div class="aside-col aside-bludit-col">
+                <a class="aside-bludit-link" href="https://www.bludit.com" target="_blank" rel="noopener">
+                    <img class="aside-bludit-logo lozad" data-src="../bl-themes/nova/img/bludit.png"
+                        alt="Bludit" width="140" />
+                    <p class="aside-powered">
+                        Powered by Bludit                    </p>
+                </a>
+            </div>
+        </div>
+    </div>
+</aside>    <footer class="site-footer" id="site-footer">
+    <div class="container footer-inner">
+        <div class="footer-left">
+                            <a class="bludit-backer" href="https://www.patreon.com/bludit" target="_blank" rel="noopener">
+                    <img class="patreon-icon lozad" data-src="../bl-themes/nova/img/patreon.png" alt="Patreon"
+                        width="20" height="20" />
+                    <span>Bludit Backer</span>
+                </a>
+                    </div>
+
+        <div class="footer-right">
+            <span class="footer-copy">
+                <script>
+                    today = new Date();
+                    y0 = today.getFullYear();
+                    document.write('© 2019-' + y0);
+                </script>
+                                    <span class="footer-sep" aria-hidden="true">&middot;</span>
+                    <span class="footer-custom">jereme.dev</span>
+                            </span>
+        </div>
+    </div>
+</footer>
+
+<script>
+    var uploadsFolder = '../bl-content/uploads/';
+    var siteRoot = '../';
+</script>
+    <script  src="../bl-themes/nova/js/lozad.min.js?version=3.22.0"></script>
+    <script  src="../bl-themes/nova/js/theme.js?version=3.22.0"></script>
+
+    <script>(function(){var ls=document.querySelectorAll("a[href]");for(var i=0,n=ls.length;i<n;i++){var a=ls[i];if(!a.hostname||a.hostname===window.location.hostname)continue;a.target="_blank";var r=(a.getAttribute("rel")||"").split(/\s+/).filter(Boolean);if(r.indexOf("noopener")===-1)r.push("noopener");if(r.indexOf("noreferrer")===-1)r.push("noreferrer");a.setAttribute("rel",r.join(" "));}})();</script>
+<!-- Default Statcounter code for jereme.dev / -->
+<script type="text/javascript">
+var sc_project=12007932; 
+var sc_invisible=1; 
+var sc_security="71cfc510"; 
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js"
+async></script>
+<noscript><div class="statcounter"><a title="Web Analytics"
+href="https://statcounter.com/" target="_blank"><img
+class="statcounter"
+src="https://c.statcounter.com/12007932/0/71cfc510/1/"
+alt="Web Analytics"></a></div></noscript>
+<!-- End of Statcounter Code -->	</body>
+
+</html>
