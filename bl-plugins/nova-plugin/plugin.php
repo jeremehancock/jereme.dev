@@ -1574,9 +1574,12 @@ HTML;
 			}
 		}
 
+		// Seed these only for plugins that are actually activated, not just
+		// present on disk. A deactivated plugin's folder still exists, but its
+		// beforeAll() hook never runs, so the endpoint 404s. Activation is the
+		// presence of the per-plugin db.php (see Plugin::installed()).
 		foreach (array('sitemap' => '/sitemap.xml', 'rss' => '/rss.xml') as $pluginName => $endpoint) {
-			$pluginPath = PATH_PLUGINS . $pluginName;
-			if (is_dir($pluginPath)) {
+			if (is_file(PATH_PLUGINS_DATABASES . $pluginName . DS . 'db.php')) {
 				$paths[] = $endpoint;
 			}
 		}
