@@ -98,7 +98,7 @@ Full setup instructions, every configuration option, and release notes live on G
 
 Marquee is free, and it's staying that way. If it earns a spot in your setup and you feel like chipping in, you can throw a few dollars at ongoing development — or, let's be honest, at another hard drive for my Plex server that I absolutely need and can definitely justify.
 
-[Hard drive fund →](https://www.buymeacoffee.com/jeremehancock)
+### [Hard drive fund →](https://www.buymeacoffee.com/jeremehancock)
 
 [ai-disclosure]
 
