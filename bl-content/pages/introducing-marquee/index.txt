@@ -14,7 +14,7 @@ So this time the *how* comes first. Every capability in Marquee gets written dow
 
 There's one place the rewrite shows up on screen, not just under it: **Find Posters**, the search you reach for when Plex's own artwork isn't cutting it. It runs on a brand-new backend — a poster-search API rebuilt from scratch — that pulls from three providers, [TVDB](https://www.thetvdb.com/), [TMDB](https://www.themoviedb.org/), and [Fanart.tv](https://fanart.tv/), and reconciles their results into the closest, cleanest match for the exact title you're looking at. Same button as before. Much better answers behind it.
 
-[image src="/bl-content/uploads/pages/840b807a4dbd4c616234bcb27ef15a44/screenshot-gallery-png.png"]
+[image src="/bl-content/uploads/pages/840b807a4dbd4c616234bcb27ef15a44/screenshot-gallery-updated-png.png"]
 
 ## Features That Make a Difference
 
