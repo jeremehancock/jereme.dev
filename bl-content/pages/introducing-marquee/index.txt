@@ -70,12 +70,6 @@ There's no migration, and you don't need one. Marquee treats Plex as the source 
 
 And to be straight about Posteria: it's still available and it still runs, but I'm not updating it anymore. Its Find Posters also still calls the old search API — the one Marquee replaced — and that older backend has started to degrade. Marquee is where the work goes from here.
 
-## Still Alpha, but Coming Along
-
-Marquee is still alpha on paper, but further along than the word usually implies, and it's under active, steady development. There are still a few rough edges, and some things will change as it settles — so keep your own backups, same as you would with anything new pointed at your library. That's about the extent of the fine print.
-
-Feedback is genuinely welcome, though — a lot of what makes a tool like this good comes from people running it in setups I'd never think of.
-
 ## Get Started
 
 Marquee runs as a single self-hosted container that talks to your Plex server — no accounts, no cloud, nothing leaving your network. Drop in a Docker Compose file, point it at Plex, and open **Import from Plex**.
@@ -98,7 +92,7 @@ Full setup instructions, every configuration option, and release notes live on G
 
 Marquee is free, and it's staying that way. If it earns a spot in your setup and you feel like chipping in, you can throw a few dollars at ongoing development — or, let's be honest, at another hard drive for my Plex server that I absolutely need and can definitely justify.
 
-### [Hard drive fund →](https://www.buymeacoffee.com/jeremehancock)
+### [Buy me a coffee →](https://www.buymeacoffee.com/jeremehancock)
 
 [ai-disclosure]
 
