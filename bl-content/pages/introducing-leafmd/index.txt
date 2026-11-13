@@ -1,7 +1,5 @@
 I write a lot of markdown. Notes, READMEs, docs for my homelab, plans for whatever I'm building next. And for a long time, my options on Linux were either a plain text editor that shows me a wall of asterisks and pound signs, or a full-blown writing app with so many panels and settings that I spent more time configuring it than writing in it. So I built **LeafMD**, a markdown editor for Linux that's simple on purpose.
 
-[image src="/bl-content/uploads/pages/e20639ae62aeb13af39225a19b086353/split-png.png"]
-
 ## Why I Built LeafMD
 
 I wanted something in between. An app that opens a markdown file and just shows it to me, nicely formatted, the way it would look on GitHub. And when I want to change something, I can flip to the raw text, make my edit and save. No plugins, no vaults, no workspace setup, no learning curve.
@@ -22,6 +20,8 @@ The markdown text in a comfortable column down the middle of the window. This is
 
 🪟 **Split**  
 Raw text on the left, formatted on the right, and the formatted side updates as you type. Scrolling one side scrolls the other to the same spot, and double-clicking a word on the formatted side jumps to that same word in the raw text.
+
+[image src="/bl-content/uploads/pages/e20639ae62aeb13af39225a19b086353/split-png.png"]
 
 Switching views is one click in the header bar, or Ctrl+1, 2 and 3.
 
