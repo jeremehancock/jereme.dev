@@ -20,11 +20,17 @@ Do not pin or reference a specific Bludit version in this file or in code — it
 
 ## Running locally
 
-```bash
-php -S 0.0.0.0:8080 -t .
-```
+Bludit runs in the `bludit` Docker container from the parent [Bludit-Docker](https://github.com/jeremehancock/Bludit-Docker) setup (`~/github/jereme_dev-Admin-Docker`, started with `docker compose up -d`), served by Apache at http://localhost:9090. This folder is bind-mounted into the container at `/var/www/html/bludit`, so edits here show up immediately. Apache honors `.htaccess`, which rewrites every non-existent path to `index.php` and 404s any direct request under `bl-content/{databases,workspaces,pages,tmp}/`.
 
-`nixpacks.toml` uses the same `php -S` invocation for deployment. `.htaccess` rewrites every non-existent path to `index.php` and 404s any direct request under `bl-content/{databases,workspaces,pages,tmp}/`. When testing locally with `php -S`, those rewrites do not run — the built-in server has different routing, so URL behavior may differ from production.
+## Deployment
+
+Production never runs PHP. To publish:
+
+1. Run the Static Site Generator from the Nova plugin's admin tab (writes `bl-content/static-build/`).
+2. Commit and push to `master`.
+3. Deploy by hand in Coolify. Deploys are manual; a push alone changes nothing on the live site.
+
+Coolify serves the repo with its **Static** build strategy (`nginx:alpine`, publish directory `/bl-content/static-build`), and Nginx Proxy Manager on the homelab points jereme.dev and www.jereme.dev at it.
 
 ## Request flow
 
