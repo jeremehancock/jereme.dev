@@ -10,7 +10,7 @@
 
 <title>Pi-hole + Tailscale | jereme.dev</title>
 <meta name="description" content="This might be the perfect Pi-hole setup! 
- Now when I am on the go not only can I access my home network with ease I am also able to take advantage of the ad blocking...">
+ Now when I am on the go not only can I access my home network with ease, I also get the ad blocking of Pi-hole wherever I...">
 
 <link rel="icon" href="../bl-themes/nova/img/favicon.svg" type="/bl-themes/nova/">
 
@@ -38,13 +38,13 @@
 <meta property="og:locale" content="en, en_US, en_AU, en_CA, en_GB, en_IE, en_NZ">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Pi-hole + Tailscale">
-<meta property="og:description" content="This might be the perfect [Pi-hole](https://pi-hole.net/) setup!
+<meta property="og:description" content="This might be the perfect Pi-hole setup!
 
-Now when I am on the go not only can I access my home network with ease I am also able to ta...">
+Now when I am on the go not only can I access my home network with ease, I also get the ad blocking of Pi-hole where...">
 <meta property="og:url" content="https://jereme.dev/pi-hole-tailscale">
 <meta property="og:site_name" content="jereme.dev">
 <meta property="article:published_time" content="2022-09-30T21:28:01-05:00">
-<meta property="article:modified_time" content="2026-05-13T18:47:35-05:00">
+<meta property="article:modified_time" content="2026-11-17T14:42:52-06:00">
 <meta property="article:author" content="Admin">
 <meta property="og:image" content="https://jereme.dev/bl-content/uploads/pages/b2824f25debdfd4c320c3717545b05c8/pihole-tailscale-png.png">
 <meta property="og:image:alt" content="Pi-hole + Tailscale">
@@ -53,9 +53,9 @@ Now when I am on the go not only can I access my home network with ease I am als
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Pi-hole + Tailscale">
-<meta name="twitter:description" content="This might be the perfect [Pi-hole](https://pi-hole.net/) setup!
+<meta name="twitter:description" content="This might be the perfect Pi-hole setup!
 
-Now when I am on the go not only can I access my home network with ease I am also able to ta...">
+Now when I am on the go not only can I access my home network with ease, I also get the ad blocking of Pi-hole where...">
 <meta name="twitter:image" content="https://jereme.dev/bl-content/uploads/pages/b2824f25debdfd4c320c3717545b05c8/pihole-tailscale-png.png">
 <meta name="twitter:image:alt" content="Pi-hole + Tailscale">
 
@@ -237,45 +237,68 @@ Now when I am on the go not only can I access my home network with ease I am als
         <div class="entry-content container">
             
             <div class="page-content">
-                <p>This might be the perfect <a href="https://pi-hole.net/">Pi-hole</a> setup!</p>
-<p>Now when I am on the go not only can I access my home network with ease I am also able to take advantage of the ad blocking of <a href="https://pi-hole.net/">Pi-hole</a>.</p>
-<p>Here are the basic steps to get things setup. There are more configuration steps available for each installation. Please check their websites for full details before proceeding.</p>
-<p><strong>Step 1:</strong></p>
-<p>Install <a href="https://pi-hole.net/">Pi-hole</a>. This can be done on a Raspberry Pi, in a VM, or any server on your local network.</p>
+                <p>This might be the perfect Pi-hole setup!</p>
+<p>Now when I am on the go not only can I access my home network with ease, I also get the ad blocking of Pi-hole wherever I am.</p>
+<p><strong>Updated November 2026:</strong> I went back through my own setup and found a few things in this post that were out of date or could trip you up (one of them was quietly still running on my network three years later). The steps below are the fixed version, updated for Pi-hole v6.</p>
+<p>Here are the basic steps to get things set up. There are more configuration options for each piece, so please check their websites for full details before proceeding.</p>
+<h2>Step 1: Install Pi-hole</h2>
+<p>This can be done on a Raspberry Pi, in a VM, in a container, or on any server on your local network.</p>
 <pre><code>curl -sSL https://install.pi-hole.net | bash</code></pre>
-<h3>Note:</h3>
-<blockquote>
-<p>In the <a href="https://pi-hole.net/">Pi-hole</a> Admin page in Settings &gt; DNS, make sure that Listen on all interfaces, permit all origins is selected.</p>
-<p>Tailscale traffic comes in on the tailscale0 network interface, so this option is needed to allow your <a href="https://pi-hole.net/">Pi-hole</a> to respond to Tailscale-based DNS traffic. When using this option, make sure your <a href="https://pi-hole.net/">Pi-hole</a> is properly firewalled.</p>
-</blockquote>
-<p><strong>Step 2:</strong></p>
-<p>Install <a href="https://tailscale.com/">Tailscale</a> on the server where you installed <a href="https://pi-hole.net/">Pi-hole</a>.</p>
+<p><strong>Note:</strong><br />
+In the Pi-hole admin page, go to <strong>Settings &gt; DNS</strong> and under <strong>Interface settings</strong> select <strong>Permit all origins</strong>.</p>
+<p>Tailscale traffic comes in on the <code>tailscale0</code> network interface, not your local network, so this option is needed for Pi-hole to answer DNS questions from your Tailscale devices. It is safe for a Pi-hole inside your home network, as long as you have <strong>not</strong> forwarded port 53 on your router to it.</p>
+<h2>Step 2: Install Tailscale on the Pi-hole server</h2>
 <pre><code>curl -fsSL https://tailscale.com/install.sh | sh</code></pre>
-<p><strong>Step 3:</strong></p>
-<p>Enable IP forwarding on the server where you installed  <a href="https://pi-hole.net/">Pi-hole</a>.</p>
-<pre><code>echo 'net.ipv4.ip_forward = 1' | sudo tee -a /etc/sysctl.conf
-echo 'net.ipv6.conf.all.forwarding = 1' | sudo tee -a /etc/sysctl.conf
-sudo sysctl -p /etc/sysctl.conf</code></pre>
-<p><strong>Step 4:</strong></p>
-<p>Start <a href="https://tailscale.com/">Tailscale</a> on the server where you installed <a href="https://pi-hole.net/">Pi-hole</a>.</p>
-<pre><code>sudo tailscale up --advertise-exit-node --advertise-routes=192.168.1.0/24 --accept-dns=false --accept-routes=true</code></pre>
-<p><strong>Step 5:</strong></p>
-<p>Login to <a href="https://tailscale.com/">Tailscale</a> and click the "three dots" menu next to the Machine entry for the <a href="https://pi-hole.net/">Pi-hole</a>. Select "Disable key expiry" from the drop-down. Since the <a href="https://pi-hole.net/">Pi-hole</a> is not directly exposed to the internet it is safe to not require re-authentication. Then select "Edit route settings..." from the same drop-down menu and enable both options. See image below.</p>
+<h2>Step 3: Enable IP forwarding</h2>
+<p>This lets the server pass traffic along for other devices, which it needs to act as an exit node or share your home network (Step 4).</p>
+<pre><code>echo 'net.ipv4.ip_forward = 1' | sudo tee -a /etc/sysctl.d/99-tailscale.conf
+echo 'net.ipv6.conf.all.forwarding = 1' | sudo tee -a /etc/sysctl.d/99-tailscale.conf
+sudo sysctl -p /etc/sysctl.d/99-tailscale.conf</code></pre>
+<p>The original version of this post wrote these lines to <code>/etc/sysctl.conf</code>. Newer systems (Debian 13, for example) no longer read that file at boot, so the setting quietly disappeared after a restart. The <code>sysctl.d</code> file above is what Tailscale's own docs use and works everywhere.</p>
+<h2>Step 4: Start Tailscale</h2>
+<p>First find your home network's range:</p>
+<pre><code>ip route</code></pre>
+<p>Look for a line like <code>192.168.1.0/24 dev eth0</code>. That first part is your range. Then start Tailscale, <strong>replacing <code>192.168.1.0/24</code> with your own range:</strong></p>
+<pre><code>sudo tailscale up --advertise-exit-node --advertise-routes=192.168.1.0/24 --accept-dns=false</code></pre>
+<ul>
+<li><code>--advertise-exit-node</code> lets your devices send all their internet traffic through home when you want to.</li>
+<li><code>--advertise-routes</code> lets your Tailscale devices reach things at home that can't run Tailscale themselves (printers, the router's page and so on). If every device you care about runs Tailscale, you can leave it off.</li>
+<li><code>--accept-dns=false</code> keeps the Pi-hole from sending its own DNS questions to itself through Tailscale.</li>
+</ul>
+<p><strong>Don't copy the range blindly.</strong> I used <code>192.168.1.0/24</code> as the example in the first version of this post, and it turns out I had copied it onto my own servers, even though my home network uses a different range. It did nothing useful at home, and on any other Wi-Fi that happens to use <code>192.168.1.x</code> (hotels, friends' houses) it could send my laptop's local traffic back home instead. Oops.</p>
+<p>The first version also had <code>--accept-routes=true</code> on this command. I've removed it: the Pi-hole server is already on your home network, so it doesn't need routes to it, and accepting a route to its own network can break its local traffic.</p>
+<h2>Step 5: Set up Tailscale's admin console</h2>
+<p>Log in to the Tailscale admin console and find the Pi-hole on the <strong>Machines</strong> page. From its <strong>three dots (…)</strong> menu:</p>
+<ol>
+<li>Select <strong>Disable key expiry</strong>. Since the Pi-hole is not directly exposed to the internet, it is safe to not require re-authentication.</li>
+<li>Select <strong>Edit route settings...</strong> and approve both options: <strong>Use as exit node</strong> and your home network range. See image below.</li>
+</ol>
 <div class="centered">
     <img src="../bl-content/uploads/pages/b2824f25debdfd4c320c3717545b05c8/tailscale-setup.png" alt="" class="image-border"  width="525" height="346" />
 </div>
-<p>Next copy the <a href="https://tailscale.com/">Tailscale</a> IP address for <a href="https://pi-hole.net/">Pi-hole</a> and use it as the Global Nameservers on the DNS tab. Set them override local DNS. See image below.</p>
+<p>Next, copy the Pi-hole's Tailscale IP address (it starts with <code>100.</code>). On the <strong>DNS</strong> tab, add it under <strong>Global nameservers</strong> and turn on <strong>Override DNS servers</strong>. See image below.</p>
 <div class="centered">
     <img src="../bl-content/uploads/pages/b2824f25debdfd4c320c3717545b05c8/tailscale-dns.png" alt="" class="image-border"  width="698" height="136" />
 </div>
-<p>Turn on MagicDNS on the DNS tab. This way the <a href="https://pi-hole.net/">Pi-hole's</a> interfaces will work when on or off the Tailscale network using their hostnames.</p>
-<p><strong>Step 6:</strong></p>
-<p>Configure your router to use the <a href="https://pi-hole.net/">Pi-hole's</a> local IP addresses for your DNS.</p>
-<p><strong>Step 7:</strong></p>
-<p>Install <a href="https://tailscale.com/">Tailscale</a> on other devices such as your phone so you can connect to your <a href="https://tailscale.com/">Tailscale</a> network.</p>
-<p>Thats it!</p>
-<p>Now you should have all your devices setup with ad blocking and VPN. Now when you are connected to your <a href="https://tailscale.com/">Tailscale</a> network you will also get ad blocking even when you are not on your local network.</p>
-<p>Don't forget if you want everyone on your home network (even without being on <a href="https://tailscale.com/">Tailscale</a>) to be covered by <a href="https://pi-hole.net/">Pi-hole</a> to update your router's DNS configuration. Instructions can be found <a href="https://docs.pi-hole.net/main/post-install/">here</a>.</p>            </div>
+<p>Also turn on <strong>MagicDNS</strong> on the DNS tab. It lets you reach every device on your Tailscale network by its name (for example <code>pihole</code> instead of <code>100.101.102.103</code>) while you're connected to Tailscale.</p>
+<p><strong>Tip: run two Pi-holes.</strong> If your only Pi-hole goes down, every Tailscale device loses DNS, which looks exactly like "the internet is broken". If you have a second machine, put Pi-hole and Tailscale on it too and add its Tailscale IP as a second global nameserver. I run one in a Proxmox container and one as an app on my NAS.</p>
+<h2>Step 6: Point your router at Pi-hole</h2>
+<p>In your router's settings, set the DNS server to the Pi-hole's <strong>local</strong> IP address (add both if you have two). This covers everyone on your home network, even devices that aren't on Tailscale. Pi-hole has <a href="https://docs.pi-hole.net/main/post-install/">instructions for common routers</a>.</p>
+<h2>Step 7: Teach Pi-hole your device names</h2>
+<p>Out of the box, Pi-hole doesn't know the names of the machines on your network, so things like <code>nas</code> or <code>server.lan</code> won't work. The fix: in the Pi-hole admin page, go to <strong>Settings &gt; Local DNS Records</strong> and add each server's name and local IP address (do it on both Pi-holes if you have two). Give those devices reserved addresses in your router so the list doesn't go out of date.</p>
+<p>Pi-hole also offers <strong>Conditional forwarding</strong> (asking your router about names it doesn't know), but skip it if your router uses Pi-hole for DNS like in Step 6. The two end up asking each other, and a mistyped name bounces back and forth until it times out.</p>
+<h2>Step 8: Install Tailscale on your other devices</h2>
+<p>Install Tailscale on your phone, laptop and anything else, and sign in to the same account.</p>
+<p>That's it!</p>
+<p>Now when you're connected to Tailscale you get ad blocking everywhere, even when you're not at home, plus access to your home network.</p>
+<h2>AI Disclosure</h2>
+<p>This project was created with the help of AI.</p>
+<h2>Links</h2>
+<ul>
+<li>Pi-hole: <a href="https://pi-hole.net">https://pi-hole.net</a></li>
+<li>Tailscale: <a href="https://tailscale.com">https://tailscale.com</a></li>
+<li>Tailscale subnet routers: <a href="https://tailscale.com/kb/1019/subnets">https://tailscale.com/kb/1019/subnets</a></li>
+</ul>            </div>
         </div>
 
         <footer class="entry-footer container">
